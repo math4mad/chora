@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T09:23:22Z",
- "chora_head": "6f602a9",
+ "generated": "2026-09-11T09:23:24Z",
+ "chora_head": "4a32de9",
  "benches": [
   {
    "name": "JacobiGP",
@@ -18,7 +18,7 @@
    "commit_at": "2026-09-11T17:23:22+08:00",
    "subject": "gitignore stage18 checkpoints + eval tensors (deterministic from seed; their hashes live in the mirrored base_",
    "dirty": 2,
-   "state": "local +1 unpushed",
+   "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
