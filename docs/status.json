@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T09:35:17Z",
- "chora_head": "d50e151",
+ "generated": "2026-09-11T09:40:46Z",
+ "chora_head": "dde82d5",
  "benches": [
   {
    "name": "JacobiGP",
@@ -44,9 +44,9 @@
   },
   {
    "name": "Kairos",
-   "head": "c106940",
-   "commit_at": "2026-09-11T17:35:17+08:00",
-   "subject": "IDEAS.md opened with I-01: 'language grows where the soil is freshest' — the human's intuition, dated and sign",
+   "head": "07f8703",
+   "commit_at": "2026-09-11T17:40:46+08:00",
+   "subject": "I-02 registered: gate-not-capacity — plasticity always on, update-channel conductance degrades (the biology's ",
    "dirty": 0,
    "state": "no-remote",
    "repo": null,
