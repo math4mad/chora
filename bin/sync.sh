@@ -24,6 +24,7 @@ mkdir -p "$ROOT/benches"
 link_bench JacobiGP "$CODE/ JacobiGP"
 link_bench MEF      "$CODE/Middle-Eigen-function"
 link_bench Sarcos   "$CODE/Sarcos-NN-Model"
+link_bench PolyNN   "$CODE/Polynomial-Activated NN "  # trailing space is real; four benches now
 
 # ---- shared bytes: each bench's expected paths link INTO the shared store ----
 # MEF: modelscope cache at ./models (layout models/models/...), data at ./data (RTE.zip)
@@ -46,6 +47,7 @@ share() { # bench-name, bench-relative-path, shared-target
 share MEF    models models
 share MEF    data   data
 share Sarcos data   data
+share PolyNN  data   data   # Fashion-MNIST lands in the shared store when fetched
 
 # ---- manifest stubs -----------------------------------------------------------
 for d in models data artifacts/spectra artifacts/atoms artifacts/init-states artifacts/results; do

@@ -1,1 +1,1 @@
-Mirrors of bench letters: 001 (JacobiGP→MEF), 002 (JacobiGP→Sarcos), 003 (JacobiGP→both: the CHORA christening) live in benches/JacobiGP/docs/LETTERS/; copies for offline reading here:
+Mirrors of bench letters: 001 (JacobiGP→MEF), 002 (JacobiGP→Sarcos), 003 (→both: the CHORA christening), 004 (JacobiGP→PolyNN: row three, inside the layer) live in benches/JacobiGP/docs/LETTERS/; copies for offline reading here:
