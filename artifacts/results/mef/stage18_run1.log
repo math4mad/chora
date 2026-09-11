@@ -1,0 +1,125 @@
+/Users/mac/Programming/code-2026/Middle-Eigen-function/scripts/stage18_kairos_mini.py:246: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  curve2.append({"step": i, "loss": float(loss), "secs": round(time.time()-t0, 1)})
+params 2,025,152 · dev mps · corpus tinystories | B=held-out tail | P=case-toggled-B (380.0MB A / 16.0MB B)
+  latched k=25% at step 500
+  latched k=50% at step 1000
+  latched k=75% at step 1500
+base ladder saved: 0, 25, 50, 75, 100
+/Users/mac/Programming/code-2026/Middle-Eigen-function/scripts/stage18_kairos_mini.py:196: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  curve.append({"step": i + 1, "train_loss": float(loss), **ev, "secs": round(time.time() - t0, 1)})
+/Users/mac/Programming/code-2026/Middle-Eigen-function/scripts/stage18_kairos_mini.py:282: UserWarning: linalg.svd: matrix too large to stage in MPS threadgroup memory (294912 > 32768 bytes); falling back to CPU. (Triggered internally at /Users/runner/work/pytorch/pytorch/aten/src/ATen/native/mps/operations/LinearAlgebra.mm:1934.)
+  svs = torch.linalg.svdvals(dW); ers.append(float((svs.sum()**2) / (svs**2).sum()))
+k0 r2 step 100/600 loss 1.992 Bval 2.023 Aval 2.031 Pval 6.656
+k0 r2 step 200/600 loss 1.518 Bval 1.527 Aval 1.540 Pval 7.211
+k0 r2 step 300/600 loss 1.316 Bval 1.348 Aval 1.355 Pval 7.528
+k0 r2 step 400/600 loss 1.229 Bval 1.249 Aval 1.262 Pval 8.037
+k0 r2 step 500/600 loss 1.142 Bval 1.189 Aval 1.199 Pval 7.744
+k0 r2 step 600/600 loss 1.086 Bval 1.150 Aval 1.158 Pval 7.773
+  k=0% r=2: B 1.150 A 1.158 P 7.773 effrank 1.46
+k0 r8 step 100/600 loss 2.054 Bval 2.025 Aval 2.038 Pval 6.626
+k0 r8 step 200/600 loss 1.443 Bval 1.539 Aval 1.548 Pval 7.176
+k0 r8 step 300/600 loss 1.331 Bval 1.371 Aval 1.371 Pval 7.552
+k0 r8 step 400/600 loss 1.289 Bval 1.265 Aval 1.266 Pval 8.022
+k0 r8 step 500/600 loss 1.199 Bval 1.205 Aval 1.206 Pval 7.842
+k0 r8 step 600/600 loss 1.126 Bval 1.158 Aval 1.166 Pval 7.709
+  k=0% r=8: B 1.158 A 1.166 P 7.709 effrank 2.12
+k0 r32 step 100/600 loss 2.058 Bval 2.015 Aval 2.021 Pval 6.543
+k0 r32 step 200/600 loss 1.452 Bval 1.518 Aval 1.528 Pval 6.658
+k0 r32 step 300/600 loss 1.272 Bval 1.338 Aval 1.351 Pval 7.345
+k0 r32 step 400/600 loss 1.180 Bval 1.252 Aval 1.262 Pval 7.768
+k0 r32 step 500/600 loss 1.161 Bval 1.193 Aval 1.205 Pval 7.600
+k0 r32 step 600/600 loss 1.158 Bval 1.144 Aval 1.156 Pval 7.776
+  k=0% r=32: B 1.144 A 1.156 P 7.776 effrank 2.44
+k25 r2 step 100/600 loss 1.274 Bval 1.289 Aval 1.298 Pval 8.464
+k25 r2 step 200/600 loss 1.220 Bval 1.258 Aval 1.265 Pval 8.632
+k25 r2 step 300/600 loss 1.244 Bval 1.235 Aval 1.245 Pval 8.646
+k25 r2 step 400/600 loss 1.252 Bval 1.218 Aval 1.224 Pval 8.598
+k25 r2 step 500/600 loss 1.194 Bval 1.203 Aval 1.211 Pval 8.666
+k25 r2 step 600/600 loss 1.143 Bval 1.185 Aval 1.195 Pval 8.793
+  k=25% r=2: B 1.185 A 1.195 P 8.793 effrank 1.78
+k25 r8 step 100/600 loss 1.244 Bval 1.286 Aval 1.292 Pval 8.517
+k25 r8 step 200/600 loss 1.266 Bval 1.257 Aval 1.264 Pval 8.673
+k25 r8 step 300/600 loss 1.199 Bval 1.244 Aval 1.247 Pval 8.613
+k25 r8 step 400/600 loss 1.194 Bval 1.220 Aval 1.222 Pval 8.706
+k25 r8 step 500/600 loss 1.170 Bval 1.199 Aval 1.204 Pval 8.772
+k25 r8 step 600/600 loss 1.122 Bval 1.184 Aval 1.190 Pval 8.703
+  k=25% r=8: B 1.184 A 1.190 P 8.703 effrank 4.35
+k25 r32 step 100/600 loss 1.269 Bval 1.287 Aval 1.293 Pval 8.480
+k25 r32 step 200/600 loss 1.248 Bval 1.256 Aval 1.267 Pval 8.703
+k25 r32 step 300/600 loss 1.166 Bval 1.236 Aval 1.243 Pval 8.620
+k25 r32 step 400/600 loss 1.272 Bval 1.213 Aval 1.227 Pval 8.721
+k25 r32 step 500/600 loss 1.154 Bval 1.203 Aval 1.208 Pval 8.766
+k25 r32 step 600/600 loss 1.101 Bval 1.185 Aval 1.192 Pval 8.849
+  k=25% r=32: B 1.185 A 1.192 P 8.849 effrank 6.46
+k50 r2 step 100/600 loss 1.103 Bval 1.136 Aval 1.140 Pval 8.943
+k50 r2 step 200/600 loss 1.117 Bval 1.122 Aval 1.127 Pval 9.178
+k50 r2 step 300/600 loss 1.066 Bval 1.110 Aval 1.119 Pval 9.081
+k50 r2 step 400/600 loss 1.031 Bval 1.100 Aval 1.105 Pval 9.041
+k50 r2 step 500/600 loss 1.068 Bval 1.092 Aval 1.099 Pval 9.219
+k50 r2 step 600/600 loss 1.085 Bval 1.083 Aval 1.094 Pval 9.195
+  k=50% r=2: B 1.083 A 1.094 P 9.195 effrank 1.82
+k50 r8 step 100/600 loss 1.020 Bval 1.140 Aval 1.144 Pval 9.043
+k50 r8 step 200/600 loss 1.024 Bval 1.124 Aval 1.128 Pval 9.256
+k50 r8 step 300/600 loss 1.078 Bval 1.110 Aval 1.116 Pval 9.194
+k50 r8 step 400/600 loss 1.021 Bval 1.104 Aval 1.111 Pval 9.118
+k50 r8 step 500/600 loss 1.067 Bval 1.092 Aval 1.102 Pval 9.119
+k50 r8 step 600/600 loss 1.041 Bval 1.086 Aval 1.096 Pval 8.976
+  k=50% r=8: B 1.086 A 1.096 P 8.976 effrank 4.54
+k50 r32 step 100/600 loss 1.153 Bval 1.138 Aval 1.138 Pval 9.031
+k50 r32 step 200/600 loss 1.084 Bval 1.124 Aval 1.131 Pval 9.126
+k50 r32 step 300/600 loss 1.039 Bval 1.111 Aval 1.118 Pval 9.163
+k50 r32 step 400/600 loss 1.064 Bval 1.100 Aval 1.110 Pval 9.210
+k50 r32 step 500/600 loss 1.085 Bval 1.095 Aval 1.102 Pval 9.209
+k50 r32 step 600/600 loss 1.079 Bval 1.084 Aval 1.093 Pval 9.198
+  k=50% r=32: B 1.084 A 1.093 P 9.198 effrank 7.23
+k75 r2 step 100/600 loss 1.052 Bval 1.076 Aval 1.078 Pval 8.946
+k75 r2 step 200/600 loss 1.089 Bval 1.065 Aval 1.068 Pval 8.862
+k75 r2 step 300/600 loss 1.032 Bval 1.054 Aval 1.058 Pval 8.936
+k75 r2 step 400/600 loss 0.937 Bval 1.047 Aval 1.051 Pval 9.031
+k75 r2 step 500/600 loss 1.004 Bval 1.039 Aval 1.048 Pval 9.142
+k75 r2 step 600/600 loss 0.999 Bval 1.037 Aval 1.042 Pval 9.088
+  k=75% r=2: B 1.037 A 1.042 P 9.088 effrank 1.85
+k75 r8 step 100/600 loss 1.032 Bval 1.078 Aval 1.077 Pval 8.843
+k75 r8 step 200/600 loss 1.051 Bval 1.064 Aval 1.068 Pval 8.685
+k75 r8 step 300/600 loss 0.981 Bval 1.054 Aval 1.058 Pval 8.759
+k75 r8 step 400/600 loss 1.088 Bval 1.047 Aval 1.053 Pval 8.928
+k75 r8 step 500/600 loss 0.962 Bval 1.041 Aval 1.047 Pval 8.759
+k75 r8 step 600/600 loss 0.998 Bval 1.032 Aval 1.041 Pval 8.894
+  k=75% r=8: B 1.032 A 1.041 P 8.894 effrank 4.63
+k75 r32 step 100/600 loss 1.044 Bval 1.078 Aval 1.080 Pval 8.865
+k75 r32 step 200/600 loss 1.064 Bval 1.064 Aval 1.068 Pval 8.964
+k75 r32 step 300/600 loss 1.063 Bval 1.054 Aval 1.061 Pval 8.883
+k75 r32 step 400/600 loss 0.985 Bval 1.046 Aval 1.053 Pval 8.847
+k75 r32 step 500/600 loss 1.027 Bval 1.040 Aval 1.047 Pval 8.907
+k75 r32 step 600/600 loss 1.036 Bval 1.036 Aval 1.042 Pval 8.955
+  k=75% r=32: B 1.036 A 1.042 P 8.955 effrank 7.18
+k100 r2 step 100/600 loss 1.053 Bval 1.057 Aval 1.060 Pval 8.847
+k100 r2 step 200/600 loss 0.965 Bval 1.049 Aval 1.053 Pval 8.821
+k100 r2 step 300/600 loss 1.070 Bval 1.044 Aval 1.049 Pval 8.785
+k100 r2 step 400/600 loss 1.007 Bval 1.041 Aval 1.045 Pval 8.800
+k100 r2 step 500/600 loss 1.002 Bval 1.039 Aval 1.043 Pval 8.782
+k100 r2 step 600/600 loss 1.019 Bval 1.037 Aval 1.040 Pval 8.769
+  k=100% r=2: B 1.037 A 1.040 P 8.769 effrank 1.84
+k100 r8 step 100/600 loss 0.984 Bval 1.055 Aval 1.060 Pval 8.849
+k100 r8 step 200/600 loss 1.066 Bval 1.044 Aval 1.048 Pval 8.884
+k100 r8 step 300/600 loss 0.918 Bval 1.038 Aval 1.043 Pval 8.838
+k100 r8 step 400/600 loss 1.026 Bval 1.033 Aval 1.039 Pval 8.816
+k100 r8 step 500/600 loss 0.913 Bval 1.031 Aval 1.036 Pval 8.786
+k100 r8 step 600/600 loss 0.997 Bval 1.028 Aval 1.032 Pval 8.781
+  k=100% r=8: B 1.028 A 1.032 P 8.781 effrank 3.87
+k100 r32 step 100/600 loss 1.013 Bval 1.054 Aval 1.058 Pval 8.864
+k100 r32 step 200/600 loss 0.986 Bval 1.045 Aval 1.048 Pval 8.876
+k100 r32 step 300/600 loss 0.945 Bval 1.039 Aval 1.042 Pval 8.859
+k100 r32 step 400/600 loss 1.028 Bval 1.034 Aval 1.037 Pval 8.800
+k100 r32 step 500/600 loss 0.995 Bval 1.031 Aval 1.035 Pval 8.791
+k100 r32 step 600/600 loss 1.032 Bval 1.028 Aval 1.031 Pval 8.723
+  k=100% r=32: B 1.028 A 1.031 P 8.723 effrank 4.52
+  frozen k=0%: B 5.546 A 5.545 P 5.511
+  frozen k=25%: B 1.404 A 1.402 P 8.637
+  frozen k=50%: B 1.219 A 1.215 P 9.008
+  frozen k=75%: B 1.153 A 1.150 P 8.570
+  frozen k=100%: B 1.091 A 1.094 P 8.984
+sweep saved → outputs/stage18_kairos_mini/sweep_sched_a_full.json
+STAGE18_DONE

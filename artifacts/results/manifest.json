@@ -57,6 +57,33 @@
       "obtained": "2026-09-11",
       "by": "Sarcos@50dcf1d",
       "notes": "canonical block-level downstream-task provenance: block lists, NN-distance ranges, sizes; the arena Step 0 chooses doses inside"
+    },
+    {
+      "path": "artifacts/results/mef/base_run.json",
+      "sha256": "6a3097154778917a8298112cb575a00819dadfb79d8cd238f9166695c00ddd2b",
+      "bytes": 2273,
+      "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
+      "obtained": "2026-09-11",
+      "by": "MEF@f453b7e",
+      "notes": "stage18 run1 base pretrain meta: ladder cfg, corpus hashes (shaA/shaB/shaP inside), 2000-step curve; checkpoints not mirrored (deterministic from seed 13 + script @ MEF@f453b7e)"
+    },
+    {
+      "path": "artifacts/results/mef/sweep_sched_a_full.json",
+      "sha256": "bf2f74cfa61a4541b858283418589fc598b8cb53117e0480886cf2c47bb524b5",
+      "bytes": 20930,
+      "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
+      "obtained": "2026-09-11",
+      "by": "MEF@f453b7e",
+      "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test — single seed, no band"
+    },
+    {
+      "path": "artifacts/results/mef/stage18_run1.log",
+      "sha256": "777b8825e2bcde29a1ff0aa612c56d01e8d7e1818c76d11c3de7cd60cbecbf8e",
+      "bytes": 8373,
+      "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
+      "obtained": "2026-09-11",
+      "by": "MEF@f453b7e",
+      "notes": "run log of stage18 run 1 (MEF's log/ is gitignored; provenance crosses here instead)"
     }
   ]
 }
