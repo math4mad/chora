@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T05:24:40Z",
- "chora_head": "f990ba0",
+ "generated": "2026-09-11T05:26:11Z",
+ "chora_head": "c41ee0e",
  "benches": [
   {
    "name": "JacobiGP",
@@ -35,7 +35,7 @@
   {
    "name": "PolyNN",
    "head": "548855e",
-   "age": "86 minutes ago",
+   "age": "88 minutes ago",
    "subject": "exp8 complete: 40/40 cells, P-shape holds (jacobi>hermite +1.15/+1.75pp > band), P-eff dies honestly (matched ",
    "dirty": 0,
    "state": "synced",
@@ -45,7 +45,7 @@
   {
    "name": "Kairos",
    "head": "b1b4f33",
-   "age": "14 minutes ago",
+   "age": "16 minutes ago",
    "subject": "Second reading session: B2 gets a family and a fence — C-05/C-06/C-07 filed, composite claim still unsourced",
    "dirty": 0,
    "state": "no-remote",
