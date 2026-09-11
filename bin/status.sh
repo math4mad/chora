@@ -19,7 +19,7 @@ def g(d, *args):
     r = subprocess.run(["git", "-C", d, *args], capture_output=True, text=True)
     return r.stdout.strip() if r.returncode == 0 else None
 cb = g(root, "rev-parse", "--short", "HEAD")
-out = {"generated": datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+out = {"generated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
        "chora_head": cb, "benches": []}
 for b in benches:
     d = os.path.join(root, "benches", b)

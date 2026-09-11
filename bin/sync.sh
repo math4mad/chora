@@ -59,23 +59,11 @@ done
 if [ ! -x "$(command -v shasum)" ]; then
   echo "  [warn] shasum not found (needed by the hashing step)"; fi
 # ---- fleet dashboard snapshot ------------------------------------------------
-# Refresh docs/status.json; commit+push ONLY that path, and only when a real
-# field moved (the "generated" timestamp alone never triggers a commit).
-if bash "$ROOT/bin/status.sh" --publish >/dev/null 2>&1; then
-  # NB: 'generated' and 'chora_head' are provenance, not state — chora_head
-  # changes *because* the snapshot commits, so ignoring it breaks the
-  # self-sustaining ping-pong (first publish after each real move commits;
-  # every later publish sees only these two lines and stays silent).
-  if ! git -C "$ROOT" diff --quiet -I '.*"generated".*' -I '.*"chora_head".*' -- docs/status.json 2>/dev/null; then
-    echo "[chora] fleet status moved — publishing snapshot"
-    git -C "$ROOT" commit -q -m "status snapshot (auto: bin/sync.sh)" -- docs/status.json \
-      && { git -C "$ROOT" remote get-url origin >/dev/null 2>&1 \
-           && git -C "$ROOT" push -q origin "$(git -C "$ROOT" branch --show-current)" 2>/dev/null \
-           && echo "[chora] dashboard pushed to origin" \
-           || echo "[chora] snapshot committed (not pushed — no origin or network; push at leisure)"; }
-  else
-    echo "[chora] fleet status current (snapshot unchanged — a one-line 'provenance' drift of docs/status.json vs HEAD is expected: timestamp + chora_head refresh locally, never commit-worthy)"
-  fi
+# Refresh docs/status.json via the same publisher the launchd agent uses.
+if [ -x "$ROOT/bin/publish-status.sh" ]; then
+  bash "$ROOT/bin/publish-status.sh" | sed 's/\[publish\]/[chora][publish]/'
+else
+  echo "[chora] bin/publish-status.sh missing — skipping snapshot"
 fi
 echo "[chora] done. Next: verify hashes before consuming anything:"
 echo "    cd $ROOT && while read -r p h; do [ \"\$(shasum -a 256 \"\$p\" | cut -d' ' -f1)\" = \"\$h\" ] || echo MISMATCH \$p; done \\"

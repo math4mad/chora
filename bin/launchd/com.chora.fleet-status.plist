@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!-- CHORA fleet publisher: beats the drum so the glass stays fresh without
+     anyone remembering to. Install:
+       cp bin/launchd/com.chora.fleet-status.plist ~/Library/LaunchAgents/
+       launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.chora.fleet-status.plist
+     Uninstall:
+       launchctl bootout gui/$(id -u)/com.chora.fleet-status
+-->
+<plist version="1.0"><dict>
+  <key>Label</key><string>com.chora.fleet-status</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/mac/Programming/code-2026/chora/bin/publish-status.sh</string>
+  </array>
+  <!-- backstop beat: every 5 minutes -->
+  <key>StartInterval</key><integer>300</integer>
+  <!-- eager: any commit in any bench fires a publish. Commits land on the
+       loose branch ref, not HEAD (HEAD only moves on branch switches), so we
+       watch each bench's checked-out ref; if a bench repacks refs the 5-min
+       backstop beat still catches it. Paths are the REAL checkouts — a few
+       dirs in code-2026 have leading/trailing spaces, preserved literally. -->
+  <key>WatchPaths</key>
+  <array>
+    <string>/Users/mac/Programming/code-2026/ JacobiGP/.git/refs/heads/main</string>
+    <string>/Users/mac/Programming/code-2026/Middle-Eigen-function/.git/refs/heads/multi-model</string>
+    <string>/Users/mac/Programming/code-2026/Sarcos-NN-Model/.git/refs/heads/main</string>
+    <string>/Users/mac/Programming/code-2026/Polynomial-Activated NN /.git/refs/heads/main</string>
+    <string>/Users/mac/Programming/code-2026/Kairos/.git/refs/heads/main</string>
+  </array>
+  <key>StandardOutPath</key><string>/tmp/chora-fleet-status.log</string>
+  <key>StandardErrorPath</key><string>/tmp/chora-fleet-status.log</string>
+</dict></plist>

@@ -107,6 +107,15 @@
       "obtained": "2026-09-11",
       "by": "human",
       "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/静态HTML实时接收Git信息方案总结.docx",
+      "sha256": "60f04126d6e100c888ce7b61a442b2042b5d46ed2893aa23e4918e9a3a0130da",
+      "bytes": 22305,
+      "source": "external: Qwen3.7 model, delivered by human 2026-09-11 13:29 (late arrival; not fetched, not reproducible)",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "Architecture note for the fleet dashboard: webhook+WebSocket vs polling vs third-party push. Disposition: chair letter 010 — polling kept (already live), self-hosted server declined (no servers in the law), hosted push declined (unanchored channel), launchd publisher adopted."
     }
   ]
 }
