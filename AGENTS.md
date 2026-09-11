@@ -33,6 +33,7 @@ artifacts/      cross-bench facts: spectra, atom dictionaries, init states,
 letters/        the cross-repo correspondence archive (see § Letters)
 meetings/       the Meeting Room: multipartite, in-character debate (see § Meetings)
 schemas/        manifest.schema.json — the contract for every shared file
+docs/           the home page (GitHub Pages: math4mad.github.io/chora)
 bin/sync.sh     idempotent setup: symlinks benches + shared model/data paths
 ```
 
