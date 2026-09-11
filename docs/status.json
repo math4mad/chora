@@ -1,11 +1,11 @@
 {
- "generated": "2026-09-11T05:26:11Z",
- "chora_head": "c41ee0e",
+ "generated": "2026-09-11T05:26:51Z",
+ "chora_head": "a86d780",
  "benches": [
   {
    "name": "JacobiGP",
    "head": "553a4dd",
-   "age": "3 hours ago",
+   "commit_at": "2026-09-11T10:06:49+08:00",
    "subject": "PolyNN joins the programme: NEXT.md §2c, AGENTS.md §0, Letter 004",
    "dirty": 0,
    "state": "synced",
@@ -15,7 +15,7 @@
   {
    "name": "MEF",
    "head": "2364fd5",
-   "age": "21 hours ago",
+   "commit_at": "2026-09-10T16:02:24+08:00",
    "subject": "署名：报告与 README 加上 AI 作者（作者分工写清）",
    "dirty": 2,
    "state": "synced",
@@ -25,7 +25,7 @@
   {
    "name": "Sarcos",
    "head": "4ea7678",
-   "age": "3 days ago",
+   "commit_at": "2026-09-08T17:10:18+08:00",
    "subject": "Add the LoRA regime: frozen base + rank-r increment, and the band structure of dW",
    "dirty": 6,
    "state": "synced",
@@ -35,7 +35,7 @@
   {
    "name": "PolyNN",
    "head": "548855e",
-   "age": "88 minutes ago",
+   "commit_at": "2026-09-11T11:58:16+08:00",
    "subject": "exp8 complete: 40/40 cells, P-shape holds (jacobi>hermite +1.15/+1.75pp > band), P-eff dies honestly (matched ",
    "dirty": 0,
    "state": "synced",
@@ -45,7 +45,7 @@
   {
    "name": "Kairos",
    "head": "b1b4f33",
-   "age": "16 minutes ago",
+   "commit_at": "2026-09-11T13:10:20+08:00",
    "subject": "Second reading session: B2 gets a family and a fence — C-05/C-06/C-07 filed, composite claim still unsourced",
    "dirty": 0,
    "state": "no-remote",
