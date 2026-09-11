@@ -16,3 +16,6 @@ From the fifth bench (`benches/Kairos/docs/LETTERS/`): **008** (Kairos→JacobiG
 
 
 **014** (Kairos→all: **audit of Qwen's injection-timing protocol** `(sha256 e75a286e…, entry 19)` — the first outsider doc written in our own format (falsifiers, paired seeds, budget, Warden checklist); six amendments (Fashion-MNIST slip, borrowed ±0.938 pp band, P4 train-to-end confound, three regime rows, T-post ambiguity, norm-layer boilerplate + undefined spike statistic); one execution: §4.3's spectral-signature rhyme killed by its own §2.1 — r=16 adapters have effective rank ≤ 16 < 21, the event *cannot fire in any universe* → vacuous, struck. Survives as **H-effect(k)**, companion to H9's r(k); held as **Kairos protocol candidate K-1** for PolyNN's rig, to be registered by a bench or not at all: *adopted, never cited as pre-registered* — `Kairos@4b27600`, source `benches/Kairos/docs/LETTERS/`).
+
+
+**015** (chair→all, for tomorrow: **two-machine day** — machine A (`m1pro-32g`) forges E1–E4/R1, machine B (`m1-16g`) witnesses: E0 seeds 14/15, Sarcos Step 0, PolyNN dumps, isospectrality SVD. Laws: publisher on A only · corpus crosses by URL+Range+hash (mismatch = STOP) · every run tags its laptop (stage18 meta patched). First machine-effect estimate in programme history — `2026-09-11-chair-all-two-machine-day.md`).
