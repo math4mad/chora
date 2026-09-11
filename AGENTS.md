@@ -1,5 +1,8 @@
 # AGENTS.md — CHORA joint brief
 
+> Remote: https://github.com/math4mad/chora (this file's bytes: `AGENTS.md`,
+> versioned here; clones reconstruct benches/ + shared paths via
+> `bin/sync.sh`).
 > **CHORA** (χώρα — Plato's *Timaeus*: "the nurse and the place of becoming",
 > the receptacle that must have a shape before anything can be poured in).
 > The working title ONE SPACE remains accurate — one manifold, four charts —
