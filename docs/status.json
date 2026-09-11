@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T06:34:33Z",
- "chora_head": "bd5f986",
+ "generated": "2026-09-11T06:35:27Z",
+ "chora_head": "7c2c031",
  "benches": [
   {
    "name": "JacobiGP",
@@ -28,7 +28,7 @@
    "commit_at": "2026-09-11T14:34:33+08:00",
    "subject": "Letter 011 Sarcos->Kairos: floor accepted and amended (ep300/ep60 schedule + row-level geometry confounds); St",
    "dirty": 0,
-   "state": "local +1 unpushed",
+   "state": "synced",
    "repo": "Sarcos-NN-Model",
    "branch": "main"
   },
