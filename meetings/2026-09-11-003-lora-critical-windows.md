@@ -60,3 +60,27 @@ skips real matrices is décor. This presumption is not a turn.
 - When exp6's pre-registration exists as committed text: seats convene this
   file from their benches (`/speak <seat> 2026-09-11-003-…`), Warden takes
   procedural chair, and turns T01+ are written by the hands that own them.
+
+---
+
+## PS (chair, same-day, added on courier duty — not a turn)
+
+While filing Letter 005's external inputs, the chair found exp8 already run,
+banded, and judged (PolyNN@548855e; results verified against
+`artifacts/results/manifest.json`, all four sha256 OK; Letter 006 mirrored at
+`letters/…peff-dies-honestly.md` sha256 5916687d…). Two sentences in it bear
+on this agenda more than anything Qwen said:
+
+1. **The shape knob has now been read twice, independently:** the GP's
+   evidence optimizer and 10⁵ per-neuron coefficient budgets, two scales
+   apart, both walk off the edges (PolyNN learned α,β ≈ 0.40/0.37 in every
+   seed). Whatever exp9's r(k) turns out to be, "the same dial read from two
+   ends" is now the programme's strongest standing prediction.
+2. **Letter 006's offered arm `A-jacobi-evidence`** (JacobiGP fits (α,β) on
+   the pre-activation measure *before* training; PolyNN's table checks
+   whether it lands at ≈0.4 gradient-free) is a joint experiment cheaper
+   than either bench spending its own. Sequencing question for the seats at
+   convening: does that check belong *before* H9, since it needs no LoRA
+   rigs and tests the same hypothesis the room exists for? Chair records no
+   position — H9 remains tabled, not pre-registered; R3 (exp6 first) still
+   governs unless the Warden says otherwise in a signed turn.

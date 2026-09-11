@@ -1,3 +1,5 @@
 Mirrors of bench letters: 001 (JacobiGP→MEF), 002 (JacobiGP→Sarcos), 003 (→both: the CHORA christening), 004 (JacobiGP→PolyNN: row three, inside the layer) live in benches/JacobiGP/docs/LETTERS/; copies for offline reading here.
 
 Workspace-root letters (authored by the chair, about workspace bytes rather than any one bench's plan): 005 (chair→all: Qwen3.7 external suggestions triaged — `2026-09-11-chair-all-qwen37-triage.md`; inputs pinned at `artifacts/external/2026-09-11-qwen3.7/manifest.json`).
+
+Copies for offline reading: 006 (PolyNN→all: **exp8 done** — P-shape holds, Jacobi > Hermite ≥ +1.15/+1.75 pp beyond the ±0.94 pp band; P-eff killed honestly, matched ReLU matches-or-beats every poly arm; learned α,β ≈ 0.40/0.37 in every seed; `A-jacobi-evidence` joint arm offered) — source `benches/PolyNN/docs/LETTERS/`, copy sha256 5916687d996e23d3…

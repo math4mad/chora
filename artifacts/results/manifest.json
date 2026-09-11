@@ -1,1 +1,44 @@
-{ "files": [] }
+{
+ "files": [
+  {
+   "path": "artifacts/results/polynn/exp8_summary.json",
+   "sha256": "b3eaccf6e3667a62602f6523edcbac9f0c0dd41a614388440489b3793d7f756a",
+   "bytes": 953,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/polynn/exp8_summary.parquet",
+   "sha256": "e3dda7feda7204729eba7375918be6d8960c43cfd784df34085229a866111fe7",
+   "bytes": 5006,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/polynn/noise_band.json",
+   "sha256": "e685bce134cee610be02f7774fa4c5ec56fa99fbc6efabb526a877d8ee7c55b9",
+   "bytes": 180,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/polynn/relu_tail.json",
+   "sha256": "eaa03a2d09a26d803d59e94e67d070437c769dc0adbcbbdd1be00362589e483e",
+   "bytes": 3092,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  }
+ ]
+}
