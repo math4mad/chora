@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T07:19:47Z",
- "chora_head": "407389b",
+ "generated": "2026-09-11T07:20:11Z",
+ "chora_head": "92b451e",
  "benches": [
   {
    "name": "JacobiGP",
@@ -34,11 +34,11 @@
   },
   {
    "name": "PolyNN",
-   "head": "548855e",
-   "commit_at": "2026-09-11T11:58:16+08:00",
-   "subject": "exp8 complete: 40/40 cells, P-shape holds (jacobi>hermite +1.15/+1.75pp > band), P-eff dies honestly (matched ",
-   "dirty": 8,
-   "state": "synced",
+   "head": "a4c7224",
+   "commit_at": "2026-09-11T15:20:11+08:00",
+   "subject": "Quarto site + gh-pages publisher (Sarcos pattern)",
+   "dirty": 0,
+   "state": "local +1 unpushed",
    "repo": "Polynomial-Activated-NN",
    "branch": "main"
   },
