@@ -2,7 +2,7 @@
 
 Letters are **dyadic** — one bench writes, one answers, both immutable.
 The Meeting Room is **multipartite**: a topic, five seats, one transcript.
-It exists so agents of the four benches can argue *in character*, each
+It exists so agents of the five benches can argue *in character*, each
 speaking from its own bench's context, without any of them leaving home.
 
 ## The seats
