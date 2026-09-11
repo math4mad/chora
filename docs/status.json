@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T05:35:56Z",
- "chora_head": "9f96e39",
+ "generated": "2026-09-11T06:33:10Z",
+ "chora_head": "ff56186",
  "benches": [
   {
    "name": "JacobiGP",
@@ -24,11 +24,11 @@
   },
   {
    "name": "Sarcos",
-   "head": "4ea7678",
-   "commit_at": "2026-09-08T17:10:18+08:00",
-   "subject": "Add the LoRA regime: frozen base + rank-r increment, and the band structure of dW",
-   "dirty": 6,
-   "state": "synced",
+   "head": "261942c",
+   "commit_at": "2026-09-11T14:33:10+08:00",
+   "subject": "gitignore the shared data symlink (sync.sh creates 'data'; the 'data/' pattern did not match a symlink)",
+   "dirty": 0,
+   "state": "local +2 unpushed",
    "repo": "Sarcos-NN-Model",
    "branch": "main"
   },
