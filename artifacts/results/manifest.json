@@ -1,44 +1,62 @@
 {
- "files": [
-  {
-   "path": "artifacts/results/polynn/exp8_summary.json",
-   "sha256": "b3eaccf6e3667a62602f6523edcbac9f0c0dd41a614388440489b3793d7f756a",
-   "bytes": 953,
-   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-   "obtained": "2026-09-11",
-   "by": "Polynomial-Activated-NN@33afdb8",
-   "script": "compare.py --report / --calibration; visualize.py --tails-only",
-   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-  },
-  {
-   "path": "artifacts/results/polynn/exp8_summary.parquet",
-   "sha256": "e3dda7feda7204729eba7375918be6d8960c43cfd784df34085229a866111fe7",
-   "bytes": 5006,
-   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-   "obtained": "2026-09-11",
-   "by": "Polynomial-Activated-NN@33afdb8",
-   "script": "compare.py --report / --calibration; visualize.py --tails-only",
-   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-  },
-  {
-   "path": "artifacts/results/polynn/noise_band.json",
-   "sha256": "e685bce134cee610be02f7774fa4c5ec56fa99fbc6efabb526a877d8ee7c55b9",
-   "bytes": 180,
-   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-   "obtained": "2026-09-11",
-   "by": "Polynomial-Activated-NN@33afdb8",
-   "script": "compare.py --report / --calibration; visualize.py --tails-only",
-   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-  },
-  {
-   "path": "artifacts/results/polynn/relu_tail.json",
-   "sha256": "eaa03a2d09a26d803d59e94e67d070437c769dc0adbcbbdd1be00362589e483e",
-   "bytes": 3092,
-   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-   "obtained": "2026-09-11",
-   "by": "Polynomial-Activated-NN@33afdb8",
-   "script": "compare.py --report / --calibration; visualize.py --tails-only",
-   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-  }
- ]
+  "files": [
+    {
+      "path": "artifacts/results/polynn/exp8_summary.json",
+      "sha256": "b3eaccf6e3667a62602f6523edcbac9f0c0dd41a614388440489b3793d7f756a",
+      "bytes": 953,
+      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+      "obtained": "2026-09-11",
+      "by": "Polynomial-Activated-NN@33afdb8",
+      "script": "compare.py --report / --calibration; visualize.py --tails-only",
+      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+    },
+    {
+      "path": "artifacts/results/polynn/exp8_summary.parquet",
+      "sha256": "e3dda7feda7204729eba7375918be6d8960c43cfd784df34085229a866111fe7",
+      "bytes": 5006,
+      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+      "obtained": "2026-09-11",
+      "by": "Polynomial-Activated-NN@33afdb8",
+      "script": "compare.py --report / --calibration; visualize.py --tails-only",
+      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+    },
+    {
+      "path": "artifacts/results/polynn/noise_band.json",
+      "sha256": "e685bce134cee610be02f7774fa4c5ec56fa99fbc6efabb526a877d8ee7c55b9",
+      "bytes": 180,
+      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+      "obtained": "2026-09-11",
+      "by": "Polynomial-Activated-NN@33afdb8",
+      "script": "compare.py --report / --calibration; visualize.py --tails-only",
+      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+    },
+    {
+      "path": "artifacts/results/polynn/relu_tail.json",
+      "sha256": "eaa03a2d09a26d803d59e94e67d070437c769dc0adbcbbdd1be00362589e483e",
+      "bytes": 3092,
+      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+      "obtained": "2026-09-11",
+      "by": "Polynomial-Activated-NN@33afdb8",
+      "script": "compare.py --report / --calibration; visualize.py --tails-only",
+      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+    },
+    {
+      "path": "artifacts/results/sarcos/shift_summary_exploratory.json",
+      "sha256": "16b95129ee96ee1bdb2c46c9466d43c0c89591b43b4eb435aceb2eb7a5fea54e",
+      "bytes": 3238,
+      "source": "Sarcos bench, results/shift_summary.json (same bytes, status renamed into path)",
+      "obtained": "2026-09-11",
+      "by": "Sarcos@50dcf1d",
+      "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict — see Letter 011"
+    },
+    {
+      "path": "artifacts/results/sarcos/shift_task_blocklevel_seed13.json",
+      "sha256": "2d9dc0dc3778965df53b4f6c46079c3a1e89db17efee41ef60a0d2f1f57b75ed",
+      "bytes": 967,
+      "source": "produced: PYTHONPATH=src python -m sarcos_svd.data --shift-task --seed 13 --block-size 256 --fractions .8 .1 .1 @ Sarcos@50dcf1d",
+      "obtained": "2026-09-11",
+      "by": "Sarcos@50dcf1d",
+      "notes": "canonical block-level downstream-task provenance: block lists, NN-distance ranges, sizes; the arena Step 0 chooses doses inside"
+    }
+  ]
 }

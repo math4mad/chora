@@ -1,0 +1,64 @@
+{
+  "kind": "covariate-shift domain = whole blocks farthest from train, fit/eval split by block",
+  "seed": 13,
+  "block_size": 256,
+  "train_frac": 0.8,
+  "val_frac": 0.1,
+  "test_frac": 0.1,
+  "far_frac": 0.5,
+  "fit_frac": 0.75,
+  "nn_chunk": 1024,
+  "val_block_distance_range": [
+    0.393,
+    5.649
+  ],
+  "test_block_distance_range": [
+    1.63,
+    3.858
+  ],
+  "far_test_block_distance_min": 2.4265,
+  "near_test_block_distance_max": 2.3781,
+  "sizes": {
+    "fit": 1792,
+    "select": 512,
+    "eval_downstream": 2304,
+    "eval_indistribution": 2304
+  },
+  "blocks": {
+    "fit": [
+      87,
+      48,
+      97,
+      147,
+      13,
+      86,
+      17
+    ],
+    "select": [
+      15,
+      92
+    ],
+    "eval_downstream": [
+      60,
+      51,
+      90,
+      7,
+      57,
+      52,
+      1,
+      150,
+      42
+    ],
+    "eval_indistribution": [
+      40,
+      167,
+      49,
+      27,
+      170,
+      33,
+      132,
+      107,
+      154
+    ]
+  }
+}
