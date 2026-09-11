@@ -11,12 +11,12 @@
 > sub-motto (unchanged, earned): *to see the world — we choose the bounds,
 > and the evidence chooses them, never the hand.*
 
-**You are in a workspace shared by four benches. Read this before anything
+**You are in a workspace shared by five benches. Read this before anything
 else.** The benches are normal git repos with their own `AGENTS.md`;
 this file governs only what is *between* them.
 
 ```
-benches/        symlinks to the four working checkouts (edit in place)
+benches/        symlinks to the five working checkouts (edit in place)
   JacobiGP/     function space: Jacobi-basis GP, learnable (α,β), evidence
                 optimizer, exp1–5             → https://github.com/math4mad/JacobiGP
   MEF/          weight space of real LLMs: SVD ablations, LoRA rigs (Qwen2.5+RTE)
@@ -26,6 +26,9 @@ benches/        symlinks to the four working checkouts (edit in place)
   PolyNN/       shape inside the layer: polynomial activations vs ReLU,
                 Fashion-MNIST, exp8
                 → https://github.com/math4mad/Polynomial-Activated-NN
+  Kairos/       time: the 设想5 dossier (LoRA critical windows, H9/H-effect),
+                owner of the question, borrower of apparatus; IDEAS registry
+                → https://github.com/math4mad/Kairos
 models/         ONE copy of every model + data set (git-ignored bytes,
 data/           pinned by manifest.json entries)
 artifacts/      cross-bench facts: spectra, atom dictionaries, init states,
