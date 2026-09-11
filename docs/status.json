@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T06:33:10Z",
- "chora_head": "ff56186",
+ "generated": "2026-09-11T06:34:33Z",
+ "chora_head": "bd5f986",
  "benches": [
   {
    "name": "JacobiGP",
@@ -24,11 +24,11 @@
   },
   {
    "name": "Sarcos",
-   "head": "261942c",
-   "commit_at": "2026-09-11T14:33:10+08:00",
-   "subject": "gitignore the shared data symlink (sync.sh creates 'data'; the 'data/' pattern did not match a symlink)",
+   "head": "fb37e04",
+   "commit_at": "2026-09-11T14:34:33+08:00",
+   "subject": "Letter 011 Sarcos->Kairos: floor accepted and amended (ep300/ep60 schedule + row-level geometry confounds); St",
    "dirty": 0,
-   "state": "local +2 unpushed",
+   "state": "local +1 unpushed",
    "repo": "Sarcos-NN-Model",
    "branch": "main"
   },
