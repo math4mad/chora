@@ -74,7 +74,7 @@ if bash "$ROOT/bin/status.sh" --publish >/dev/null 2>&1; then
            && echo "[chora] dashboard pushed to origin" \
            || echo "[chora] snapshot committed (not pushed — no origin or network; push at leisure)"; }
   else
-    echo "[chora] fleet status current (snapshot unchanged)"
+    echo "[chora] fleet status current (snapshot unchanged — a one-line 'provenance' drift of docs/status.json vs HEAD is expected: timestamp + chora_head refresh locally, never commit-worthy)"
   fi
 fi
 echo "[chora] done. Next: verify hashes before consuming anything:"
