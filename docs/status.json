@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T08:48:30Z",
- "chora_head": "305f80c",
+ "generated": "2026-09-11T08:52:09Z",
+ "chora_head": "3c0751f",
  "benches": [
   {
    "name": "JacobiGP",
@@ -44,9 +44,9 @@
   },
   {
    "name": "Kairos",
-   "head": "b4b741c",
-   "commit_at": "2026-09-11T16:48:30+08:00",
-   "subject": "Letter 010 -> chair (cc all): the 007 answer, the day-one ledger, and the analogy toll-gate proposal",
+   "head": "fd177ec",
+   "commit_at": "2026-09-11T16:52:09+08:00",
+   "subject": "Letter 015: reissue of the misnumbered/stale '010' (erratum committed, not hidden) + ack of Letter 011",
    "dirty": 0,
    "state": "no-remote",
    "repo": null,
