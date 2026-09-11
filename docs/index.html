@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHORA — the shape of the container is the knowledge</title>
+<meta name="description" content="CHORA (χώρα): one object, three knobs, four benches. The joint workspace of the JacobiGP, MEF, Sarcos and PolyNN research programme.">
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#14161b; --line:#2a2d36;
+    --ink:#d8d4c8; --dim:#8d8a80; --gold:#c9a959; --red:#b46a5a; --green:#7fa07a;
+    --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);
+       font-size:17px;line-height:1.65;padding-bottom:6rem}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 1.4rem}
+  header{text-align:center;padding:6.5rem 0 3.5rem;border-bottom:1px solid var(--line)}
+  .glyph{font-size:1.05rem;letter-spacing:.45em;text-transform:uppercase;color:var(--dim)}
+  h1{font-size:4.6rem;font-weight:400;letter-spacing:.09em;color:var(--ink);margin:.5rem 0 .2rem}
+  h1 .greek{color:var(--gold)}
+  .pron{color:var(--dim);font-style:italic;margin-bottom:1.8rem}
+  .motto{font-size:1.35rem;max-width:640px;margin:0 auto 1rem}
+  .motto em{color:var(--gold);font-style:normal}
+  .sub{color:var(--dim);font-size:.98rem;max-width:600px;margin:0 auto;font-style:italic}
+  h2{font-size:1.05rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);
+     font-weight:400;margin:4.2rem 0 1.4rem;text-align:center}
+  h2::before,h2::after{content:"·";margin:0 1.1rem;color:var(--line)}
+  p.lede{text-align:center;color:var(--ink);max-width:660px;margin:0 auto 1rem}
+  .formula{font-family:var(--mono);text-align:center;font-size:1.15rem;color:var(--ink);
+     margin:1.6rem 0;letter-spacing:.02em}
+  .formula b{color:var(--gold);font-weight:400}
+  /* three knobs */
+  .knobs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
+  .knob{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--line);
+        padding:1.2rem 1.3rem;border-radius:2px}
+  .knob h3{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:400}
+  .knob .greekname{font-size:1.5rem;margin:.25rem 0 .4rem}
+  .knob p{font-size:.92rem;color:var(--dim)}
+  .knob.size{border-top-color:var(--green)} .knob.size .greekname{color:var(--green)}
+  .knob.order{border-top-color:var(--red)} .knob.order .greekname{color:var(--red)}
+  .knob.shape{border-top-color:var(--gold)} .knob.shape .greekname{color:var(--gold)}
+  .verdict{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
+           margin-top:.6rem;padding:.1rem .5rem;border:1px solid currentColor;border-radius:2px}
+  /* benches */
+  table{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.95rem}
+  th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);
+     text-align:left;padding:.5rem .8rem;border-bottom:1px solid var(--line);font-weight:400}
+  td{padding:.75rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+  td.name{white-space:nowrap} td.note{color:var(--dim)}
+  /* cast */
+  .cast{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1.4rem}
+  .seat{background:var(--panel);border:1px solid var(--line);padding:1.1rem 1.2rem;border-radius:2px}
+  .seat .who{color:var(--gold);font-size:1.1rem}
+  .seat .bench{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:.5rem}
+  .seat q{display:block;font-style:italic;color:var(--ink);font-size:.95rem;margin-bottom:.45rem}
+  .seat q::before{content:"“"} .seat q::after{content:"”"}
+  .seat p{font-size:.86rem;color:var(--dim)}
+  /* law */
+  ol.law{max-width:640px;margin:1.2rem auto 0;counter-reset:n;list-style:none}
+  ol.law li{counter-increment:n;padding:.7rem 0 .7rem 3.2rem;position:relative;
+            border-bottom:1px solid var(--line);font-size:.97rem}
+  ol.law li::before{content:counter(n,upper-roman);position:absolute;left:.4rem;top:.75rem;
+                    color:var(--gold);font-size:.85rem;letter-spacing:.05em}
+  ol.law b{color:var(--ink);font-weight:400}
+  ol.law span{color:var(--dim)}
+  /* bootstrap */
+  pre{background:#0a0b0d;border:1px solid var(--line);border-radius:2px;padding:1.1rem 1.3rem;
+      overflow-x:auto;font-family:var(--mono);font-size:.86rem;line-height:1.7;color:#b8c4b0;margin-top:1rem}
+  pre .c{color:#5d6a5a}
+  footer{text-align:center;margin-top:5rem;padding-top:2rem;border-top:1px solid var(--line);
+         color:var(--dim);font-size:.9rem}
+  footer .links a{margin:0 .8rem}
+  @media(max-width:700px){.knobs,.cast{grid-template-columns:1fr}
+    h1{font-size:3.2rem}header{padding-top:4rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="glyph">χ · ῶ · ρ</div>
+    <h1>CH<span class="greek">O</span>RA</h1>
+    <div class="pron">χώρα — Plato’s <em>Timaeus</em>: the nurse and the place of becoming;
+      the receptacle that must have a shape before anything can be poured in</div>
+    <p class="motto"><em>The shape of the container is the knowledge.</em></p>
+    <p class="sub">“To see the world — we choose the bounds,
+      and the evidence chooses them, never the hand.”</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<h2>The one idea</h2>
+<p class="lede">One object, studied from four benches. Every function the
+programme cares about is a sum in an orthogonal basis — and there are exactly
+three knobs:</p>
+<div class="formula">Δ = Σ<sub>n</sub> <b>c</b><sub>n</sub> φ<sub>n</sub> ,&nbsp;&nbsp;
+  c<sub>n</sub> ~ 𝒩(0, λ<sub>n</sub>) ,&nbsp;&nbsp; φ<sub>n</sub> ⊥ under w<sub>(α,β)</sub></div>
+<div class="knobs">
+  <div class="knob size">
+    <h3>Knob I</h3><div class="greekname">N — size</div>
+    <p>How much you are allowed to change: basis terms, rank, parameters.</p>
+    <span class="verdict">agreed: dominates</span>
+  </div>
+  <div class="knob order">
+    <h3>Knob II</h3><div class="greekname">λₙ — order</div>
+    <p>Where in the spectrum the energy sits (σ-position of directions).</p>
+    <span class="verdict">killed twice · honestly</span>
+  </div>
+  <div class="knob shape">
+    <h3>Knob III</h3><div class="greekname">(α, β) — shape</div>
+    <p>Where the container allows change: boundary weight, the measure of orthogonality.</p>
+    <span class="verdict">open — ours to close</span>
+  </div>
+</div>
+<p class="lede" style="margin-top:1.6rem;font-size:.93rem;color:var(--dim)">
+The spectrum-order hypothesis died by pre-registered experiment — once on real
+LLM weight matrices (MEF), once on a small controlled net (Sarcos). The negative
+results are kept as load-bearing walls, not embarrassments. What remains —
+shape — is the contribution.</p>
+
+<h2>Four benches</h2>
+<table>
+  <tr><th>Bench</th><th>Space</th><th>At the table</th></tr>
+  <tr><td class="name"><a href="https://github.com/math4mad/JacobiGP">JacobiGP</a></td>
+      <td>function space</td>
+      <td class="note">Jacobi-basis GP, learnable (α,β) by evidence; exps 1–5, joint 6/7/7.5; keeper of the joint spec</td></tr>
+  <tr><td class="name"><a href="https://github.com/math4mad/Middle-Eigen-function">MEF</a></td>
+      <td>weight space</td>
+      <td class="note">SVD ablation of real LLMs (Qwen2.5 + RTE), LoRA rigs; the fine-scale verdict on σ-position</td></tr>
+  <tr><td class="name"><a href="https://github.com/math4mad/Sarcos-NN-Model">Sarcos</a></td>
+      <td>controlled fast bench</td>
+      <td class="note">small MLPs on the robot-arm data with physical joint limits; pre-registration, pinned splits, W and ΔW bands</td></tr>
+  <tr><td class="name"><a href="https://github.com/math4mad/Polynomial-Activated-NN">PolyNN</a></td>
+      <td>inside the layer</td>
+      <td class="note">the shape knob internalized: learnable polynomial activations vs ReLU on Fashion-MNIST; exp 8</td></tr>
+</table>
+
+<h2>The Meeting Room</h2>
+<p class="lede">Correspondence is dyadic — <a href="https://github.com/math4mad/chora/tree/main/letters">letters</a>,
+immutable, hash-anchored. When one open question puts four verdicts in tension,
+the benches take their seats. A seat is a <em>context contract</em>: it speaks only
+from its own bench’s files, signs every turn <span style="font-family:var(--mono);font-size:.85rem">bench@sha</span>,
+and resolutions bind the workspace — never a bench’s plan.</p>
+<div class="cast">
+  <div class="seat"><span class="who">I · The Geometer</span><div class="bench">JacobiGP</div>
+    <q>Before anything is learned, something must be shaped.</q>
+    <p>theorist of the container; concedes losses gracefully; allergic to unanchored numbers</p></div>
+  <div class="seat"><span class="who">II · The Anatomist</span><div class="bench">MEF</div>
+    <q>Cut it open. The middle of the spectrum is a corpse with opinions.</q>
+    <p>shows only numbers from real matrices; holds standing dissent against décor that skips the knife</p></div>
+  <div class="seat"><span class="who">III · The Warden</span><div class="bench">Sarcos</div>
+    <q>You pre-registered it before the first epoch. Yes or no.</q>
+    <p>procedural veto: adjourns any meeting whose output is a prediction made after seeing the data</p></div>
+  <div class="seat"><span class="who">IV · The Joiner</span><div class="bench">PolyNN</div>
+    <q>Give me the knob and a per-neuron budget, and I’ll build it inside.</q>
+    <p>translates every macro claim into a mechanism one neuron could execute; will not breathe at unequal parameters</p></div>
+</div>
+
+<h2>The law of the workspace</h2>
+<ol class="law">
+  <li><b>Share inputs and artifacts, never histories.</b> <span>Four repos, one store; no merges across benches.</span></li>
+  <li><b>Nothing crosses benches without a hash.</b> <span>Every shared byte carries a manifest entry: path, sha256, producer repo@sha.</span></li>
+  <li><b>Single writer, many readers.</b> <span>Produce → hash → append manifest → announce by letter.</span></li>
+  <li><b>Pre-register; keep regimes in separate rows; report retained energy.</b> <span>Never tune on test. One hypothesis check per number.</span></li>
+  <li><b>Negative results are first-class citizens.</b> <span>Never quietly dropped — they are why the third knob is still standing.</span></li>
+</ol>
+
+<h2>Enter</h2>
+<pre><span class="c"># the front door (any agent CLI reads AGENTS.md from here)</span>
+git clone https://github.com/math4mad/chora &amp;&amp; cd chora
+bin/sync.sh                         <span class="c"># links the four benches + shared model/data store</span>
+cat benches/JacobiGP/docs/NEXT.md   <span class="c"># the joint spec — single source of truth</span>
+<span class="c"># /meeting new &lt;question&gt;   ·   /speak &lt;seat&gt; &lt;file&gt;</span></pre>
+
+<footer>
+  <div class="links">
+    <a href="https://github.com/math4mad/chora">the repo</a>
+    <a href="https://github.com/math4mad/chora/blob/main/AGENTS.md">joint brief</a>
+    <a href="https://github.com/math4mad/chora/tree/main/letters">letters</a>
+    <a href="https://github.com/math4mad/chora/tree/main/meetings">meeting room</a>
+  </div>
+  <p style="margin-top:.8rem">χ — the vessel has the name, because the programme’s soul is the choice of vessel.</p>
+</footer>
+
+</div>
+</body>
+</html>
