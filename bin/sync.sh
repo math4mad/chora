@@ -60,7 +60,11 @@ if [ ! -x "$(command -v shasum)" ]; then
   echo "  [warn] shasum not found (needed by the hashing step)"; fi
 # ---- fleet dashboard snapshot ------------------------------------------------
 # Refresh docs/status.json via the same publisher the launchd agent uses.
-if [ -x "$ROOT/bin/publish-status.sh" ]; then
+# Law (Letter 016): the glass is kept by ONE machine. Workers export
+# CHORA_NOPUBLISH=1 and their sync never writes/pushes status.json.
+if [ "${CHORA_NOPUBLISH:-0}" = "1" ]; then
+  echo "[chora] CHORA_NOPUBLISH=1 — skipping fleet snapshot (this machine is a worker, not the glass)"
+elif [ -x "$ROOT/bin/publish-status.sh" ]; then
   bash "$ROOT/bin/publish-status.sh" | sed 's/\[publish\]/[chora][publish]/'
 else
   echo "[chora] bin/publish-status.sh missing — skipping snapshot"

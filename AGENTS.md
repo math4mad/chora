@@ -37,6 +37,7 @@ letters/        the cross-repo correspondence archive (see § Letters)
 meetings/       the Meeting Room: multipartite, in-character debate (see § Meetings)
 schemas/        manifest.schema.json — the contract for every shared file
 docs/           the home page (GitHub Pages: math4mad.github.io/chora)
+docs/onboarding-B.md  worker-machine protocol (B = m1-16g; A keeps the glass)
 bin/sync.sh     idempotent setup: symlinks benches + shared model/data paths
 ```
 
