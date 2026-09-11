@@ -58,6 +58,21 @@ done
 # ---- hash helper reminder ------------------------------------------------------
 if [ ! -x "$(command -v shasum)" ]; then
   echo "  [warn] shasum not found (needed by the hashing step)"; fi
+# ---- fleet dashboard snapshot ------------------------------------------------
+# Refresh docs/status.json; commit+push ONLY that path, and only when a real
+# field moved (the "generated" timestamp alone never triggers a commit).
+if bash "$ROOT/bin/status.sh" --publish >/dev/null 2>&1; then
+  if ! git -C "$ROOT" diff --quiet -I '.*"generated".*' -- docs/status.json 2>/dev/null; then
+    echo "[chora] fleet status moved — publishing snapshot"
+    git -C "$ROOT" commit -q -m "status snapshot (auto: bin/sync.sh)" -- docs/status.json \
+      && { git -C "$ROOT" remote get-url origin >/dev/null 2>&1 \
+           && git -C "$ROOT" push -q origin "$(git -C "$ROOT" branch --show-current)" 2>/dev/null \
+           && echo "[chora] dashboard pushed to origin" \
+           || echo "[chora] snapshot committed (not pushed — no origin or network; push at leisure)"; }
+  else
+    echo "[chora] fleet status current (snapshot unchanged)"
+  fi
+fi
 echo "[chora] done. Next: verify hashes before consuming anything:"
 echo "    cd $ROOT && while read -r p h; do [ \"\$(shasum -a 256 \"\$p\" | cut -d' ' -f1)\" = \"\$h\" ] || echo MISMATCH \$p; done \\"
 echo "      < <(python3 -c \"import json;[print(f['path'],f['sha256']) for m in ['models','data'] for f in json.load(open(m+'/manifest.json'))['files']]\")"

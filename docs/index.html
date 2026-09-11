@@ -352,14 +352,18 @@ the workspace — then the page asks GitHub, live, whether each public bench’s
 <script>
 (async function(){
   const el = document.getElementById('fleet'), note = document.getElementById('fleet-note');
+  function ago(iso){ const s=(Date.now()-Date.parse(iso))/1000;
+    if (s<90) return 'just now'; if (s<5400) return Math.round(s/60)+' min ago';
+    if (s<172800) return Math.round(s/3600)+' hours ago'; return Math.round(s/86400)+' days ago'; }
   let s;
   try { s = await (await fetch('status.json', {cache:'no-store'})).json(); }
   catch(e){ el.innerHTML = '<p style="text-align:center;color:var(--dim)">status.json unavailable</p>'; return; }
   const rows = s.benches.map(b => {
     const id = 'st-' + b.name;
+    const age = b.commit_at ? ago(b.commit_at) : '—';
     return `<tr><td class="name"><span class="dot checking" id="${id}"></span>${b.name}</td>` +
       `<td><span style="font-family:var(--mono)">${b.missing ? '—' : b.head}</span></td>` +
-      `<td class="note">${b.missing ? 'missing' : b.age}</td>` +
+      `<td class="note">${b.missing ? 'missing' : age}</td>` +
       `<td class="note">${b.dirty ? `<span class="dirtyflag">⚠ ${b.dirty} uncommitted</span>` : '<span class="cleanflag">tree clean</span>'}</td>` +
       `<td class="state" id="${id}-txt">${b.state}</td>` +
       `<td class="note subject">${b.subject || ''}</td></tr>`;

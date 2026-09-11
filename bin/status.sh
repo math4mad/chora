@@ -36,7 +36,7 @@ for b in benches:
         else:
             ahead = g(d, "rev-list", "--count", f"origin/{br}..HEAD") or "?"
             state = "synced" if ahead == "0" else f"local +{ahead} unpushed"
-    out["benches"].append({"name": b, "head": head, "age": g(d, "log", "-1", "--format=%cr"),
+    out["benches"].append({"name": b, "head": head, "commit_at": g(d, "log", "-1", "--format=%cI"),
         "subject": g(d, "log", "-1", "--format=%s")[:110], "dirty": len(dirty),
         "state": state, "repo": repo_for[b], "branch": br})
 p = os.path.join(root, "docs", "status.json")
