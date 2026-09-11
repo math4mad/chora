@@ -16,4 +16,7 @@ pi                                            # (or any agent CLI) — it reads 
 Started here you speak with the JOINT session (all four benches visible).
 Started inside `benches/<name>` you speak with that specialist; each bench's
 AGENTS.md §0 tells it about the other three and the waiting letters.
+Debate between the four is held in `meetings/` (the Meeting Room — seats,
+context law, append-only minutes); type `/meeting` or `/speak <seat>`.
 The conversation is not the memory — git is.
+
