@@ -84,6 +84,15 @@
       "obtained": "2026-09-11",
       "by": "MEF@f453b7e",
       "notes": "run log of stage18 run 1 (MEF's log/ is gitignored; provenance crosses here instead)"
+    },
+    {
+      "path": "artifacts/results/mef/A-env.json",
+      "sha256": "cbef6b34a2c3ea3dea57e3aa546d0a2a5a2d40f2a9e1fa99fa7e66f7c731f53d",
+      "bytes": 924,
+      "source": "probe: benches/MEF/.venv/bin/python -c 'import torch,numpy;...' + sysctl hw.memsize (A, this session)",
+      "obtained": "2026-09-11",
+      "by": "MEF@a98508e",
+      "notes": "A's half of the machine-effect metadata, answering B's open_item_for_A by the report-by-letter option; python 3.14 (A) vs 3.11 (B) divergence flagged"
     }
   ]
 }

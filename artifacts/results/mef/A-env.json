@@ -1,0 +1,21 @@
+{
+ "kind": "run-meta A-env.json | machine A (glass bench) environment probe",
+ "purpose": "Letter 016 law 3, answered by REPORT-BY-LETTER option (B's open_item): A's seed-13 reference run (MEF@f453b7e) predates the machine-meta patch; its environment was captured by hand-probe today instead of a rerun.",
+ "probe_stdout": {
+  "host": "MacBook-Pro.local",
+  "macos": "26.6.2",
+  "python": "3.13.9"
+ },
+ "measured_elsewhere_today": {
+  "torch": "2.14.0",
+  "transformers": "5.16.1",
+  "numpy": "2.5.3",
+  "numpy_source": "A tracebacks show MEF venv = framework python 3.14",
+  "python_venv": "3.13.9"
+ },
+ "machine": {
+  "chora_machine_tag": "m1pro-32g",
+  "ram_bytes_2026_09_11": 34359738368
+ },
+ "note": "python 3.14 on A vs 3.11 on B is a REAL divergence axis; twins must quote it. numpy figure imported from B's probe naming \u2014 verify at next A run; flagged in this file's own spirit: record verbatim, do not tidy."
+}

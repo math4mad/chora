@@ -1,1 +1,481 @@
-{ "files": [] }
+{
+ "files": [
+  {
+   "path": "models/README.md",
+   "sha256": "b64cf0c1ebdc5f94204d1244313d64b65b35a01c9ac15ba9b10e7925f194005f",
+   "bytes": 258,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/model.safetensors",
+   "sha256": "88c142557820ccad55bb59756bfcfcf891de9cc6202816bd346445188a0ed342",
+   "bytes": 988097824,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/tokenizer_config.json",
+   "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+   "bytes": 7228,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/config.json",
+   "sha256": "479dcf0c5286339e41ad3992cd08ae88a467c4187587936248e2b7c96283484b",
+   "bytes": 681,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/tokenizer.json",
+   "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "bytes": 7031645,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/generation_config.json",
+   "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+   "bytes": 138,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/merges.txt",
+   "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "bytes": 1671839,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/configuration.json",
+   "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "bytes": 2,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/vocab.json",
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "bytes": 2776833,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/google--electra-small-discriminator/snapshots/master/tokenizer_config.json",
+   "sha256": "a025160ef0431f1a392f6f050c1310f4c5d9fb6f275932dbccba73c4d214bf10",
+   "bytes": 48,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/google--electra-small-discriminator/snapshots/master/config.json",
+   "sha256": "9708dadc5705ed0b5b8f6a63e723e959fe52b18aceedd9e704d8058739d3747b",
+   "bytes": 665,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/google--electra-small-discriminator/snapshots/master/tokenizer.json",
+   "sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+   "bytes": 466062,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/google--electra-small-discriminator/snapshots/master/configuration.json",
+   "sha256": "625c81a3527ce4f7a739854b431f380a987dc4af5e07e099b568e50e2e3b248c",
+   "bytes": 64,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/google--electra-small-discriminator/snapshots/master/vocab.txt",
+   "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+   "bytes": 231508,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/google--electra-small-discriminator/snapshots/master/pytorch_model.bin",
+   "sha256": "735154b1a8a78ba97da3c8c53c2e3d1d58b8dec5fa5caf0e144661c8bbe0e787",
+   "bytes": 54245363,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/model.safetensors",
+   "sha256": "68d45e234eb4a928074dfd868cead0219ab85354cc53d20e772753c6bb9169d3",
+   "bytes": 440449768,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/rust_model.ot.incomplete",
+   "sha256": "031f11f386e231c06451d61a11c05463cee66e4e0e374b80b3109b8e0f3c3755",
+   "bytes": 177209344,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "PARTIAL/ABORTED FETCH — pinned for disk honesty; DO NOT CONSUME as weights"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/LICENSE",
+   "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+   "bytes": 11356,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/tokenizer_config.json",
+   "sha256": "53b6f42b8b8daddbdc6d3532c324187a92b46c1602bd6e8d4ad5a413b4fc90e1",
+   "bytes": 28,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/config.json",
+   "sha256": "7160e1553ad2ca51d8c1cb066be533db31826e12d173824c1bb0cb1a4f187d20",
+   "bytes": 570,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/tokenizer.json",
+   "sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+   "bytes": 466062,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/README.md",
+   "sha256": "48677c44b6480c6d4a2841bc79131e9d844ec635594fba491ab820512e573330",
+   "bytes": 10551,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/configuration.json",
+   "sha256": "b405db587b191d859ff3d69aa2006b8f030c061da1aa12ef4421cb818cfc99ba",
+   "bytes": 66,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/vocab.txt",
+   "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+   "bytes": 231508,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/model.onnx",
+   "sha256": "44d7a2896d341c51fb1eba89aea3a590e6af0ce33e25481136f7eeecb62e5f7f",
+   "bytes": 532091246,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/.gitattributes",
+   "sha256": "f0edc261ebfcf55ab4408dc897b0ab873161871b341ed1e3a27761a69c268240",
+   "bytes": 491,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/pytorch_model.bin",
+   "sha256": "097417381d6c7230bd9e3557456d726de6e83245ec8b24f529f60198a67b203a",
+   "bytes": 440473133,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/tf_model.h5.incomplete",
+   "sha256": "c06b96ecf612165fd36cb2765b3c541eb9ae501c69526d8cee3f03b329d97ffd",
+   "bytes": 122683392,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "PARTIAL/ABORTED FETCH — pinned for disk honesty; DO NOT CONSUME as weights"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/flax_model.msgpack",
+   "sha256": "ea201fabe466ef7182f1f687fb5be4b62a73d3a78883f11264ff7f682cdb54bf",
+   "bytes": 438064459,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/coreml/fill-mask/float32_model.mlpackage/Manifest.json",
+   "sha256": "4e9566ed44c3c401dada9ff243e0efbd570f9bc4e55dd7fdfb937cb23993c94c",
+   "bytes": 617,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/coreml/fill-mask/float32_model.mlpackage/Data/com.apple.CoreML/model.mlmodel",
+   "sha256": "59ebda1b73ce46947d8e6be8b39f018aae7d6c4d5809537225fdaaadd940e993",
+   "bytes": 164911,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--bert-base-uncased/snapshots/master/coreml/fill-mask/float32_model.mlpackage/Data/com.apple.CoreML/weights/weight.bin.incomplete",
+   "sha256": "a83bde337fa548b2b6cf7cd0072659dae12ae708de26791a8bb1e0c2b2eeb5c8",
+   "bytes": 47185920,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "PARTIAL/ABORTED FETCH — pinned for disk honesty; DO NOT CONSUME as weights"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/model.safetensors",
+   "sha256": "5bde1d28afb363d0103324efeb5afc8b2b397fe5e04beabb9b1ef355255ade81",
+   "bytes": 498818054,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/config.json",
+   "sha256": "ef0185e2aae6e06c5f105a285006952c340e20c7dbf43c86ec82601b13fc45e9",
+   "bytes": 481,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/tokenizer.json",
+   "sha256": "847bbeab6174d66a88898f729d52fa8d355fafe1bea101cf960dd404581df70e",
+   "bytes": 1355863,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/merges.txt",
+   "sha256": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+   "bytes": 456318,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/configuration.json",
+   "sha256": "b405db587b191d859ff3d69aa2006b8f030c061da1aa12ef4421cb818cfc99ba",
+   "bytes": 66,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/vocab.json",
+   "sha256": "9e7f63c2d15d666b52e21d250d2e513b87c9b713cfa6987a82ed89e5e6e50655",
+   "bytes": 898823,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--roberta-base/snapshots/master/dict.txt",
+   "sha256": "2c31c5b236661067fe8626775eb995ef5fe808ac87d2ad4a6ddbef68550f5cc6",
+   "bytes": 603290,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--distilbert-base-uncased/snapshots/master/model.safetensors",
+   "sha256": "5e3f1108e3cb34ee048634875d8482665b65ac713291a7e32396fb18f6ff0063",
+   "bytes": 267954768,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--distilbert-base-uncased/snapshots/master/tokenizer_config.json",
+   "sha256": "53b6f42b8b8daddbdc6d3532c324187a92b46c1602bd6e8d4ad5a413b4fc90e1",
+   "bytes": 28,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--distilbert-base-uncased/snapshots/master/config.json",
+   "sha256": "69c94b0222d5d1f4b0ad027ca7416cdafb98378cbbb8305d0bf47c9365c60c83",
+   "bytes": 483,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--distilbert-base-uncased/snapshots/master/tokenizer.json",
+   "sha256": "ce64fce797c24f68df90b40a3f74f579b336a493db14bd583fd520ea0d8c9a98",
+   "bytes": 466062,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--distilbert-base-uncased/snapshots/master/configuration.json",
+   "sha256": "16875d907246b0542709704ecf62fc1d93c001bc55d6af362ad4c3f8314c0615",
+   "bytes": 67,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/AI-ModelScope--distilbert-base-uncased/snapshots/master/vocab.txt",
+   "sha256": "07eced375cec144d27c900241f3e339478dec958f92fddbc551f295c992038a3",
+   "bytes": 231508,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/model.safetensors",
+   "sha256": "a961db72e75d52b18e6b0c9d379e51a26973b233385e0e127fdda7d648aec796",
+   "bytes": 3087467144,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/tokenizer_config.json",
+   "sha256": "c91efca15ceff6e9ee9424db58a6f59cd41294e550a86cbd07e3c1fb500b34f9",
+   "bytes": 7228,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/config.json",
+   "sha256": "0e8c8aa86468aba09c9d32157ff4bc2301c7e6c50e4398960425b2ea71e66f77",
+   "bytes": 684,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/tokenizer.json",
+   "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+   "bytes": 7031645,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/generation_config.json",
+   "sha256": "8c970692323e3ea0e9b8b0a4dca79388d31226e41f83c9fd6014804280ebf6e8",
+   "bytes": 138,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/merges.txt",
+   "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+   "bytes": 1671839,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/configuration.json",
+   "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+   "bytes": 2,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  },
+  {
+   "path": "models/models/Qwen--Qwen2.5-1.5B/snapshots/master/vocab.json",
+   "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+   "bytes": 2776833,
+   "source": "REBUILT 2026-09-11 22:0x: entry re-derived by hashing the on-disk bytes after the stash-pop race wiped the prior manifest text (incident: models/manifest.json was tracked-but-empty while gitignored edits lived only in the working tree; recovered by rescan per the reconstruction law: bytes -> hash -> entry). Original fetch source per prior session: ModelScope mirror via modelscope CLI.",
+   "obtained": "2026-09-11",
+   "by": "MEF@2364fd5",
+   "notes": "rebuild entry; pre-existing hashes for the Qwen family were independently verified in-session today (0.5B safetensors 88c142557820ccad… matched before the loss)"
+  }
+ ]
+}
