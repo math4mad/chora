@@ -6,6 +6,14 @@ it.)* Three benches, one object, three knobs. Start with
 `benches/JacobiGP/docs/NEXT.md`. This repo tracks only *meaning*: briefs,
 manifests, schemas, letters. Model bytes are git-ignored and hash-pinned.
 
+## The front door
+
+```bash
+cd /Users/mac/Programming/code-2026/chora   # this folder
+pi                                            # (or any agent CLI) — it reads AGENTS.md
 ```
-bin/sync.sh    # set up / repair all symlinks (idempotent, run often)
-```
+
+Started here you speak with the JOINT session (all four benches visible).
+Started inside `benches/<name>` you speak with that specialist; each bench's
+AGENTS.md §0 tells it about the other three and the waiting letters.
+The conversation is not the memory — git is.
