@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T08:08:21Z",
- "chora_head": "f1ed8cc",
+ "generated": "2026-09-11T08:12:58Z",
+ "chora_head": "c80418e",
  "benches": [
   {
    "name": "JacobiGP",
@@ -34,11 +34,11 @@
   },
   {
    "name": "PolyNN",
-   "head": "731845e",
-   "commit_at": "2026-09-11T15:54:42+08:00",
-   "subject": "exp9: depth ablation — ReLU degradation point vs a possible Jacobi comeback",
-   "dirty": 1,
-   "state": "synced",
+   "head": "0eb2930",
+   "commit_at": "2026-09-11T16:12:58+08:00",
+   "subject": "exp9 amendment: band unit bug (double x100) caught at calibration, re-derived from same committed L=1 cells: m",
+   "dirty": 0,
+   "state": "local +1 unpushed",
    "repo": "Polynomial-Activated-NN",
    "branch": "main"
   },
