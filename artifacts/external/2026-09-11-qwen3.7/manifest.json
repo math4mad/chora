@@ -116,6 +116,42 @@
       "obtained": "2026-09-11",
       "by": "human",
       "notes": "Architecture note for the fleet dashboard: webhook+WebSocket vs polling vs third-party push. Disposition: chair letter 010 — polling kept (already live), self-hosted server declined (no servers in the law), hosted push declined (unanchored channel), launchd publisher adopted."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /outline_season1.md",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "EMPTY FILE — 0 bytes; sha256 e3b0c442… is the hash of nothing, the known hash of the empty string. The season outline was announced and not written: an accurate portrait of method-vs-promise across the whole submission, filed as such. Disposition: chair Letter 012."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /pilot.md",
+      "sha256": "88e5c16d5d21064d2002e4ac39050de32a104316f60878e5e0a2b1cfc0df809b",
+      "bytes": 888,
+      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "chat fragment: the human's pitch-back and Qwen's meta-comment ('好的研究本来就需要好的叙事') plus the first 3-line sketch of 'The Newcomer'. Disposition: chair Letter 012."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod1.md",
+      "sha256": "13253bb0202498ff84ee43e38711df7572715e96ec7cdb0506626c72609e55f9",
+      "bytes": 5058,
+      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "Ep1 '一线生机': the magic-number breakthrough scene. Cast error: seat V appears as Qwen's old DECLINED persona 'Neural Plasticity Simulator', not the seated Horologist. Filename missing an 'e' — preserved untouched. Disposition: chair Letter 012."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod2.md",
+      "sha256": "6ef69b21487d5a7981072c62acc48072ba358d4c81e286ff1793f5a0df4ffb14",
+      "bytes": 5826,
+      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "Ep2 '谱签名': junction-signature mythos; a 30-year-old USB drive enters the room unhashed; ends on the Warden's stamp in thin air reading 'Listen'. Disposition: chair Letter 012."
     }
   ]
 }
