@@ -62,7 +62,11 @@ if [ ! -x "$(command -v shasum)" ]; then
 # Refresh docs/status.json; commit+push ONLY that path, and only when a real
 # field moved (the "generated" timestamp alone never triggers a commit).
 if bash "$ROOT/bin/status.sh" --publish >/dev/null 2>&1; then
-  if ! git -C "$ROOT" diff --quiet -I '.*"generated".*' -- docs/status.json 2>/dev/null; then
+  # NB: 'generated' and 'chora_head' are provenance, not state — chora_head
+  # changes *because* the snapshot commits, so ignoring it breaks the
+  # self-sustaining ping-pong (first publish after each real move commits;
+  # every later publish sees only these two lines and stays silent).
+  if ! git -C "$ROOT" diff --quiet -I '.*"generated".*' -I '.*"chora_head".*' -- docs/status.json 2>/dev/null; then
     echo "[chora] fleet status moved — publishing snapshot"
     git -C "$ROOT" commit -q -m "status snapshot (auto: bin/sync.sh)" -- docs/status.json \
       && { git -C "$ROOT" remote get-url origin >/dev/null 2>&1 \
