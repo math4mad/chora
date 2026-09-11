@@ -71,4 +71,7 @@ echo "artifacts manifests:"
 for m in "$ROOT"/artifacts/*/manifest.json "$ROOT"/artifacts/*/*/manifest.json; do
   [ -f "$m" ] && printf '  %-46s %s files\n' "${m#$ROOT/}" "$(python3 -c "import json;print(len(json.load(open('$m'))['files']))" 2>/dev/null || echo ?)"
 done
-[ -L "$ROOT/benches/Kairos" ] && ! git -C "$ROOT/benches/Kairos" remote -v | grep -q . && echo "  note: Kairos has no remote (local-only bench)"
+for b in "${BENCHES[@]}"; do
+  [ -d "$ROOT/benches/$b" ] && ! git -C "$ROOT/benches/$b" remote -v 2>/dev/null | grep -q . \
+    && echo "  note: $b has no remote (local-only bench)"
+done; true
