@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T08:22:13Z",
- "chora_head": "23a9ed8",
+ "generated": "2026-09-11T08:48:30Z",
+ "chora_head": "305f80c",
  "benches": [
   {
    "name": "JacobiGP",
@@ -44,9 +44,9 @@
   },
   {
    "name": "Kairos",
-   "head": "4b27600",
-   "commit_at": "2026-09-11T15:57:04+08:00",
-   "subject": "Letter 014: audit of Qwen's injection-timing protocol (entry 19) — six amendments, one arithmetic execution, h",
+   "head": "b4b741c",
+   "commit_at": "2026-09-11T16:48:30+08:00",
+   "subject": "Letter 010 -> chair (cc all): the 007 answer, the day-one ledger, and the analogy toll-gate proposal",
    "dirty": 0,
    "state": "no-remote",
    "repo": null,
