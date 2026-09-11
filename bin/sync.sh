@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# ONE SPACE — idempotent workspace setup. Safe to re-run after every clone/pull.
+# CHORA (formerly ONE SPACE) — idempotent workspace setup. Safe to re-run after every clone/pull.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 CODE="$HOME/Programming/code-2026"
 
-echo "[one-space] root: $ROOT"
+echo "[chora] root: $ROOT"
 
 mkdir -p "$ROOT/benches"
 mkdir -p "$ROOT"/{models,data,artifacts/spectra,artifacts/atoms,artifacts/init-states,artifacts/results,letters,schemas,bin}
@@ -55,6 +55,6 @@ done
 # ---- hash helper reminder ------------------------------------------------------
 if [ ! -x "$(command -v shasum)" ]; then
   echo "  [warn] shasum not found (needed by the hashing step)"; fi
-echo "[one-space] done. Next: verify hashes before consuming anything:"
+echo "[chora] done. Next: verify hashes before consuming anything:"
 echo "    cd $ROOT && while read -r p h; do [ \"\$(shasum -a 256 \"\$p\" | cut -d' ' -f1)\" = \"\$h\" ] || echo MISMATCH \$p; done \\"
 echo "      < <(python3 -c \"import json;[print(f['path'],f['sha256']) for m in ['models','data'] for f in json.load(open(m+'/manifest.json'))['files']]\")"

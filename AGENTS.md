@@ -1,4 +1,12 @@
-# AGENTS.md — ONE SPACE joint brief
+# AGENTS.md — CHORA joint brief
+
+> **CHORA** (χώρα — Plato's *Timaeus*: "the nurse and the place of becoming",
+> the receptacle that must have a shape before anything can be poured in).
+> The working title ONE SPACE remains accurate — one manifold, three charts —
+> but the programme's soul is the *choice of vessel*, so the vessel has the
+> name. Motto: **the shape of the container is the knowledge**;
+> sub-motto (unchanged, earned): *to see the world — we choose the bounds,
+> and the evidence chooses them, never the hand.*
 
 **You are in a workspace shared by three benches. Read this before anything
 else.** The three benches are normal git repos with their own `AGENTS.md`;
