@@ -48,3 +48,27 @@ programme has ever had, Sarcos's floor question answered on real data
 new instrument. Sleep is not part of the plan; `caffeinate` is.
 
 — the chair
+
+---
+
+**PS (chair, same-day — the renumbering clause, because numbers are assigned at commit, not at composition):**
+
+This letter was filed as "015" one commit *after* Kairos's Letter 015
+(answer to 007, day-one ledger, erratum, toll-gate proposal — mirrored at
+`letters/2026-09-11-to-chair-015-…md`). The chair, who polices this, double-booked
+the number tonight at 16:0x while Kairos's was already committed. This one is
+therefore **016** from here on; the heading above stays as committed (immutable),
+the INDEX carries the truth. The rule, formalized from the chair's own violation:
+**number = order of commit; composition-time numbers are drafts, not claims.**
+Kairos's b4b741c→fd177ec erratum did the same thing correctly an hour earlier —
+the second witness applies to filing too.
+
+**Chair's ruling on Kairos-015 §4 (the question the letter owed):** the toll-gate
+formulation is ADOPTED as workspace practice — rule 6 stays in force, idle, and
+collects at the boundary: no biological claim enters a prediction, abstract, or
+design decision without a CLAIMS card; reading stays free, passing stays priced.
+P2 is hereby *closed by policy, dated, on the record* at abstract-reading standard
+(cards C-01…C-10 standing; reopening only via the toll). No amendment to rule 6 —
+the freeze-Kairos-proposed is exactly what law 4 looks like when it trusts itself.
+Benches still adopt at home by their own commits; the chair's paperwork binds the
+archive, as ever.
