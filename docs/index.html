@@ -32,6 +32,29 @@
   .formula{font-family:var(--mono);text-align:center;font-size:1.15rem;color:var(--ink);
      margin:1.6rem 0;letter-spacing:.02em}
   .formula b{color:var(--gold);font-weight:400}
+  
+  /* the plate */
+  figure.plate{margin:2rem auto 0;max-width:100%}
+  .plate svg{width:100%;height:auto;display:block}
+  .plate svg rect{fill:none;stroke:var(--gold);stroke-opacity:.55;stroke-width:1.5}
+  .plate svg .mat{fill:none;stroke:var(--gold);stroke-opacity:.25;stroke-width:1}
+  .plate svg .floor{stroke:var(--ink);stroke-opacity:.25;stroke-width:1.5}
+  .plate svg .fig{fill:none;stroke:#cfc9b6;stroke-opacity:.85;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .plate svg .vacant{stroke:var(--gold);stroke-opacity:.75}
+  .plate svg text{font-family:var(--serif);fill:var(--dim)}
+  .plate svg .title{fill:var(--gold);fill-opacity:.8;font-size:19px;letter-spacing:.5em;text-anchor:middle}
+  .plate svg .badge{fill:var(--gold);font-size:14px;text-anchor:middle}
+  .plate svg circle{fill:none;stroke:var(--gold);stroke-opacity:.7;stroke-width:1.5}
+  .plate svg .fig circle{stroke:#cfc9b6}
+  .plate svg .seatname{fill:var(--ink);fill-opacity:.85;font-size:14px;letter-spacing:.22em;text-anchor:middle}
+  .plate svg .seatbench{fill:var(--dim);font-size:11px;letter-spacing:.08em;text-anchor:middle;font-style:italic}
+  .plate svg .plaque1{fill:var(--gold);font-size:12px;letter-spacing:.3em;text-anchor:middle}
+  .plate svg .plaque2{fill:var(--ink);font-size:15px;text-anchor:middle}
+  .plate svg .plaque3{fill:var(--dim);font-size:9.5px;letter-spacing:.04em;text-anchor:middle}
+  .plate svg .chairlabel{font-size:11px;font-style:italic;text-anchor:middle}
+  figure.plate figcaption{max-width:760px;margin:1rem auto 0;font-size:.88rem;color:var(--dim);text-align:center}
+  figure.plate figcaption b{color:var(--gold);font-weight:400}
+
   /* three knobs */
   .knobs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
   .knob{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--line);
@@ -92,6 +115,122 @@
 </header>
 
 <div class="wrap">
+
+
+<h2>The Group Chart</h2>
+<p class="lede" style="font-size:.93rem;color:var(--dim)">In the manner of the Solvay photograph &#8212;
+etched, not photographed; and in the Knox tradition, one seat is left vacant for what the programme killed and kept.</p>
+<figure class="plate">
+<svg viewBox="0 0 1200 700" role="img" aria-label="Engraved group portrait: the four original seats and the Horologist seated around a table, a vacant chair bearing Knob II at the centre, the Chair standing at the shoulder.">
+  <rect x="6" y="6" width="1188" height="688"/>
+  <rect x="18" y="18" width="1164" height="664"/>
+  <text x="600" y="52" class="title">CHORA &#183; THE JOINT SESSION &#183; MMXXVI</text>
+  <path d="M70 70 h1060 M70 560 h1060 M70 70 V560 M1130 70 V560" class="mat"/>
+  <path d="M70 548 h1060" class="floor"/>
+  
+    <g class="fig vacant">
+      <path d="M438 262 q0 -16 16 -16 h52 q16 0 16 16 V444"/>
+      <path d="M438 444 L438 546 M522 444 L522 546 M438 444 L522 444"/>
+      <path d="M452 300 q34 26 76 0 q-10 60 -38 66 q-28 -6 -38 -66 z" opacity=".5"/>
+      <path d="M470 330 q8 12 18 14 M510 330 q-8 12 -18 14"/>
+      <rect x="428" y="420" width="104" height="66" rx="2"/>
+      <text x="480" y="440" class="plaque1">KNOB II</text>
+      <text x="480" y="459" class="plaque2">&#955;&#8345; &#8212; order</text>
+      <text x="480" y="477" class="plaque3">killed by pre-registration</text>
+      <text x="480" y="489" class="plaque3">kept load-bearing</text>
+      <path d="M436 320 h-12 M524 320 h12"/>
+    </g>
+  
+    <g class="fig" transform="translate(0,0)">
+      <path d="M78 262 q0 -16 16 -16 h52 q16 0 16 16 V444"/>
+      <path d="M78 444 L78 546 M162 444 L162 546"/>
+      <circle cx="120" cy="300" r="17"/>
+      <path d="M90 348 C 92 322 106 316 120 316 C 134 316 148 322 150 348 L 154 442 L 86 442 Z"/>
+      <path d="M90 354 Q 78 396 104 424"/>
+      <path d="M150 354 Q 162 396 136 424"/>
+      <circle cx="104" cy="426" r="4.5"/>
+      <circle cx="136" cy="426" r="4.5"/>
+      <path d="M104 442 L 104 546 M132 442 L 138 546"/>
+      <path d="M94 546 h18 M130 546 h20"/>
+    </g>
+    <path d="M86 420 h68 M120 416 v8"/>
+    <path d="M108 414 L100 380 M132 414 L140 380 M104 396 h32"/>
+    <g class="fig" transform="translate(0,0)">
+      <path d="M258 262 q0 -16 16 -16 h52 q16 0 16 16 V444"/>
+      <path d="M258 444 L258 546 M342 444 L342 546"/>
+      <circle cx="300" cy="300" r="17"/>
+      <path d="M270 348 C 272 322 286 316 300 316 C 314 316 328 322 330 348 L 334 442 L 266 442 Z"/>
+      <path d="M270 354 Q 258 396 284 424"/>
+      <path d="M330 354 Q 342 396 316 424"/>
+      <circle cx="284" cy="426" r="4.5"/>
+      <circle cx="316" cy="426" r="4.5"/>
+      <path d="M284 442 L 284 546 M312 442 L 318 546"/>
+      <path d="M274 546 h18 M310 546 h20"/>
+    </g>
+    <path d="M284 424 l-26 -14 M254 406 l8 6 l-4 4 l-8 -6 z"/>
+    <path d="M266 430 h44 M270 440 h34 M274 450 h24 M278 460 h14"/>
+    <g class="fig" transform="translate(0,0)">
+      <path d="M618 262 q0 -16 16 -16 h52 q16 0 16 16 V444"/>
+      <path d="M618 444 L618 546 M702 444 L702 546"/>
+      <circle cx="660" cy="300" r="17"/>
+      <path d="M630 348 C 632 322 646 316 660 316 C 674 316 688 322 690 348 L 694 442 L 626 442 Z"/>
+      <path d="M630 354 Q 618 396 644 424"/>
+      <path d="M690 354 Q 702 396 676 424"/>
+      <circle cx="644" cy="426" r="4.5"/>
+      <circle cx="676" cy="426" r="4.5"/>
+      <path d="M644 442 L 644 546 M672 442 L 678 546"/>
+      <path d="M634 546 h18 M670 546 h20"/>
+    </g>
+    <path d="M690 424 L690 540 M682 540 h16 M690 528 h10 M690 518 h8"/>
+    <circle cx="690" cy="416" r="9"/>
+    <path d="M614 470 h44 v34 h-44 z M636 470 v34"/>
+    <g class="fig" transform="translate(0,0)">
+      <path d="M798 262 q0 -16 16 -16 h52 q16 0 16 16 V444"/>
+      <path d="M798 444 L798 546 M882 444 L882 546"/>
+      <circle cx="840" cy="300" r="17"/>
+      <path d="M810 348 C 812 322 826 316 840 316 C 854 316 868 322 870 348 L 874 442 L 806 442 Z"/>
+      <path d="M810 354 Q 798 396 824 424"/>
+      <path d="M870 354 Q 882 396 856 424"/>
+      <circle cx="824" cy="426" r="4.5"/>
+      <circle cx="856" cy="426" r="4.5"/>
+      <path d="M824 442 L 824 546 M852 442 L 858 546"/>
+      <path d="M814 546 h18 M850 546 h20"/>
+    </g>
+    <path d="M806 402 q34 -40 68 0 M840 362 v52 M828 414 h24"/>
+    <g class="fig" transform="translate(0,0)">
+      <path d="M978 262 q0 -16 16 -16 h52 q16 0 16 16 V444"/>
+      <path d="M978 444 L978 546 M1062 444 L1062 546"/>
+      <circle cx="1020" cy="300" r="17"/>
+      <path d="M990 348 C 992 322 1006 316 1020 316 C 1034 316 1048 322 1050 348 L 1054 442 L 986 442 Z"/>
+      <path d="M990 354 Q 978 396 1004 424"/>
+      <path d="M1050 354 Q 1062 396 1036 424"/>
+      <circle cx="1004" cy="426" r="4.5"/>
+      <circle cx="1036" cy="426" r="4.5"/>
+      <path d="M1004 442 L 1004 546 M1032 442 L 1038 546"/>
+      <path d="M994 546 h18 M1030 546 h20"/>
+    </g>
+    <path d="M1004 424 Q1000 386 1004 362"/>
+    <circle cx="1004" cy="352" r="11"/>
+    <path d="M1004 352 v-7 M1004 352 l6 4"/>
+  
+    <g class="fig">
+      <circle cx="1146" cy="236" r="14"/>
+      <path d="M1130 288 Q1132 262 1146 258 Q1160 262 1162 288 L1166 372 L1126 372 Z"/>
+      <path d="M1134 372 V546 M1156 372 V546 M1124 546 h18 M1148 546 h18"/>
+      <path d="M1128 300 Q1110 330 1120 356"/>
+      <rect x="1096" y="352" width="30" height="38"/>
+      <path d="M1162 300 Q1176 316 1170 330"/>
+      <path d="M1170 330 l10 -14"/>
+    </g>
+  <circle cx="120" cy="592" r="12"/><text x="120" y="597" class="badge">1</text><text x="120" y="624" class="seatname">GEOMETER</text><text x="120" y="641" class="seatbench">JacobiGP</text><circle cx="300" cy="592" r="12"/><text x="300" y="597" class="badge">2</text><text x="300" y="624" class="seatname">ANATOMIST</text><text x="300" y="641" class="seatbench">MEF</text><circle cx="480" cy="592" r="12"/><text x="480" y="597" class="badge">&#8212;</text><text x="480" y="624" class="seatname">VACANT</text><text x="480" y="641" class="seatbench">in honour of the negatives</text><circle cx="660" cy="592" r="12"/><text x="660" y="597" class="badge">3</text><text x="660" y="624" class="seatname">WARDEN</text><text x="660" y="641" class="seatbench">Sarcos</text><circle cx="840" cy="592" r="12"/><text x="840" y="597" class="badge">4</text><text x="840" y="624" class="seatname">JOINER</text><text x="840" y="641" class="seatbench">PolyNN</text><circle cx="1020" cy="592" r="12"/><text x="1020" y="597" class="badge">5</text><text x="1020" y="624" class="seatname">HOROLOGIST</text><text x="1020" y="641" class="seatbench">Kairos</text>
+  <text x="1146" y="222" class="chairlabel">the Chair &#183; recording</text>
+</svg>
+<figcaption>Seated, left to right: <b>1</b> The Geometer &#183; <b>2</b> The Anatomist &#183;
+<i>vacant</i> &#183; <b>3</b> The Warden &#183; <b>4</b> The Joiner &#183; <b>5</b> The Horologist.
+Standing, at the shoulder: the Chair (root session), recording.
+The vacant seat holds <b>Knob II (&#955;&#8345;, spectrum order)</b> &#8212; killed at fine scale by MEF
+and pre-registration by Sarcos; in this programme the dead hold rank, not corners.</figcaption>
+</figure>
 
 <h2>The one idea</h2>
 <p class="lede">One object, studied from five benches. Every function the
