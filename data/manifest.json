@@ -1,0 +1,14 @@
+{
+ "files": [
+  {
+   "path": "data/tiny_stories.txt",
+   "sha256": "2427881798fb3b3926c841757f76293dedf6323bbcffa432e2ef001273fcf993",
+   "bytes": 400000000,
+   "source": "curl -s -r 0-399999999 -L -o data/tiny_stories.txt \"https://hf-mirror.com/datasets/roneneldan/TinyStories/resolve/main/TinyStories-train.txt\"",
+   "obtained": "2026-09-11",
+   "by": "Middle-Eigen-function@a98508e",
+   "upstream": "TinyStories-train.txt full file is larger; this is bytes 0..399,999,999 taken by HTTP Range per Letter 016 law 2 (corpus crosses by URL+hash, not by copy)",
+   "notes": "run-on: m1-16g (machine B). Verified three ways before consumption: (1) sha256 prefix 2427881798fb3b39 as pinned in Letter 016 law 2 and docs/onboarding-B.md Phase 4; (2) shaA = sha256(bytes 0..379,999,999) = f0afe3164daa5fa0bdbbf15a1040f371740a4dc4f1e917d673d587decddb361f, exactly A's value in artifacts/results/mef/base_run.json (6a3097154778917a8298112cb575a00819dadfb79d8cd238f9166695c00ddd2b); (3) shaB = sha256(bytes 380,000,000..399,999,999) = e19676fd84cf045efe0665b92a93c0b637aabc3fea95fae1689521c05aad0c39, same. data/manifest.json carried NO entry for this file when B fetched it (the shared-store manifests were empty on origin/main) \u2014 this entry is B's first act on the shared record and may want the chair's re-endorsement."
+  }
+ ]
+}

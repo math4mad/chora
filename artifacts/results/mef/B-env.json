@@ -1,0 +1,51 @@
+{
+  "kind": "run-meta B-env.json | machine B (worker bench) environment probe",
+  "purpose": "Letter 016 law 3: the machine-effect estimate needs the environment half of both twins. This is B's half. Record it verbatim, do not tidy it.",
+  "probe_stdout": {
+    "host": "lunardeMacBook-Pro.local",
+    "macos": "15.7.5",
+    "torch": "2.14.0",
+    "numpy": "2.4.6",
+    "mps_ok": true
+  },
+  "machine": {
+    "chora_machine_tag": "m1-16g",
+    "model": "MacBook Pro (Model Number G11D0CH/A)",
+    "chip": "Apple M1 (base, 8 logical cores)",
+    "ram_gib": 16,
+    "disk_gib_total": 228,
+    "disk_gib_free_at_bootstrap": 40.0,
+    "disk_gib_free_after_corpus": 39.0,
+    "hostname_reported": "lunardeMacBook-Pro.local"
+  },
+  "python": {
+    "interpreter": "homebrew python@3.11 (installed during Phase 1)",
+    "version": "3.11.16",
+    "venvs": [
+      "Middle-Eigen-function/.venv (torch 2.14.0, numpy 2.4.6)",
+      "Sarcos-NN-Model/.venv (pip in flight at probe time)"
+    ]
+  },
+  "fetch_paths": {
+    "git_https": "https://github.com/math4mad/* — `git ls-remote` succeeds but bulk `git clone` fails (curl 28, port 443, 75 s timeout). All six repos cloned over SSH instead.",
+    "pip_index": "http://mirrors.aliyun.com/pypi/simple/ (machine-global ~/.pip/pip.conf); torch 2.14.0 wheel = macosx_14_0_arm64, landed on first try",
+    "corpus": "hf-mirror.com Range request, 0-399999999, ~9 min"
+  },
+  "deviations_from_brief": [
+    "Brief header and docs/onboarding-B.md Phase 0 both say `macOS 12 Monterey` (tier-2, pin torch backwards). This machine runs macOS 15.7.5 on Apple Silicon: no pin-backwards was needed, torch 2.14.0 (a macOS>=14 wheel) installed directly. The 'wheel version divergence is part of the measurement' clause is therefore about a different axis than the brief anticipated: B is on a NEWER OS than the brief assumed, not an older one.",
+    "python3.11 was absent (system python3 is 3.14.6); installed via Homebrew per Phase 1, so the Gate-1 escape hatch (Apple python3 3.9) was not used.",
+    "MEF: the traffic light reports MEF on branch `multi-model` @ a98508e, and scripts/stage18_kairos_mini.py exists only there. The onboarding clone step lands on `main` @ 2364fd5, which has no stage18 script. B checked out a98508e into a local branch `bench-B-multi-model` to avoid writing on the branch A is working.",
+    "chora/data/manifest.json and chora/models/manifest.json are EMPTY on origin/main ({\"files\": []}). The Gate-4 corpus hash is therefore not verifiable from the manifest as onboarding claims; it was verified against (a) the prose pin in Letter 016 law 2 / onboarding Phase 4 and (b) A's own per-split hashes inside the manifested artifacts/results/mef/base_run.json (6a3097154778917a8298112cb575a00819dadfb79d8cd238f9166695c00ddd2b). All three agree byte-for-byte; the entry B fetched is now recorded in data/manifest.json."
+  ],
+  "corpus_verification": {
+    "path": "data/tiny_stories.txt",
+    "bytes": 400000000,
+    "sha256": "2427881798fb3b3926c841757f76293dedf6323bbcffa432e2ef001273fcf993",
+    "shaA_bytes_0_380000000": "f0afe3164daa5fa0bdbbf15a1040f371740a4dc4f1e917d673d587decddb361f",
+    "shaB_bytes_380000000_400000000": "e19676fd84cf045efe0665b92a93c0b637aabc3fea95fae1689521c05aad0c39",
+    "verdict": "GO — matches A's base_run.json meta exactly (not merely the 16-hex prefix the brief quoted)"
+  },
+  "open_items_for_A": [
+    "A's seed-13 twin (MEF@f453b7e) predates the machine-meta patch (bbddfe2): its base_run.json carries no torch/python/host. The machine-effect estimate has B's versions and not A's. Either A re-runs the seed-13 twin on the patched script or reports its versions by letter."
+  ]
+}

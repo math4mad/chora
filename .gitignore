@@ -3,3 +3,5 @@ data/*
 !models/README.md
 !data/README.md
 **/.DS_Store
+!data/manifest.json
+!models/manifest.json
