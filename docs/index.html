@@ -108,6 +108,12 @@
   .dirtyflag{color:var(--red);font-variant:small-caps}
   .cleanflag{color:var(--dim)}
   .subject{color:var(--dim);font-style:italic}
+  /* neon digits — the dashboard's numbers glow; the prose stays parchment */
+  .num,.hash{color:#8ff1ff;
+    text-shadow:0 0 4px rgba(90,230,255,.95), 0 0 12px rgba(60,200,255,.5), 0 0 26px rgba(60,200,255,.25);
+    font-variant-numeric:tabular-nums; animation:neonpulse 3.4s ease-in-out infinite}
+  .hash{font-family:var(--mono)}
+  @keyframes neonpulse{0%,100%{opacity:1}46%{opacity:.86}50%{opacity:.72}54%{opacity:.86}}
 </style>
 </head>
 <body>
@@ -372,17 +378,32 @@ on every bench commit — then the page asks GitHub, live, whether each public b
       snap.benches.map(b => {
         const id = 'st-' + b.name;
         return '<tr><td class="name"><span class="dot checking" id="' + id + '"></span>' + b.name + '</td>' +
-          '<td><span style="font-family:var(--mono)">' + (b.missing ? '—' : b.head) + '</span></td>' +
+          '<td><span class="hash">' + (b.missing ? '—' : b.head) + '</span></td>' +
           '<td class="note"><span id="age-' + b.name + '">' + age(b.commit_at) + '</span></td>' +
           '<td class="note">' + (b.dirty ? '<span class="dirtyflag">⚠ ' + b.dirty + ' uncommitted</span>' : '<span class="cleanflag">tree clean</span>') + '</td>' +
           '<td class="state" id="' + id + '-txt">' + b.state + '</td>' +
           '<td class="note subject">' + (b.subject || '') + '</td></tr>';
       }).join('') + '</table>';
+    el.querySelectorAll('.dirtyflag, .state').forEach(neonize);   // digits in counts and states
+  }
+  function neonize(node){                   // text-node walker: wraps digit-runs, keeps markup intact
+    if (!node) return;
+    if (node.nodeType === 3) {
+      const re = /([0-9a-fA-F]*\d[0-9a-fA-F:]*)/;
+      if (!re.test(node.nodeValue)) return;
+      const holder = document.createElement('span');
+      holder.innerHTML = node.nodeValue.replace(/([0-9a-fA-F]*\d[0-9a-fA-F:]*)/g, '<span class="num">$1</span>');
+      while (holder.firstChild) node.parentNode.insertBefore(holder.firstChild, node);
+      node.parentNode.removeChild(node);
+      return;
+    }
+    if (node.classList && node.classList.contains('num')) return;
+    Array.from(node.childNodes).forEach(neonize);
   }
   function tick(){                         // every second: ages + countdown reset the lapse in view
     if (!snap) return;
-    snap.benches.forEach(b => { const e = document.getElementById('age-' + b.name); if (e) e.textContent = age(b.commit_at); });
-    if (left > 0) { left--; note.innerHTML = footerText(); }
+    snap.benches.forEach(b => { const e = document.getElementById('age-' + b.name); if (e) { e.textContent = age(b.commit_at); neonize(e); } });
+    if (left > 0) { left--; note.innerHTML = footerText(); neonize(note); }
     if (left === 0) { left = CYCLE; refresh(); }
   }
   function footerText(){
@@ -409,6 +430,7 @@ on every bench commit — then the page asks GitHub, live, whether each public b
         const remote = ((r[0] && r[0].sha) || '').slice(0,7);
         const dot = document.getElementById('st-'+b.name), txt = document.getElementById('st-'+b.name+'-txt');
         if (!dot) continue;
+        neonize(txt);
         if (remote === b.head) { dot.className = 'dot synced'; txt.textContent = 'synced with origin'; }
         else { dot.className = 'dot ahead'; txt.textContent = 'origin differs \u2014 local work unpushed'; }
       } catch(e) {
