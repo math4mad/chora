@@ -161,6 +161,15 @@
       "obtained": "2026-09-11",
       "by": "human",
       "notes": "EP03 '回路' — the self-correction episode: envelope wax-sealed with its own SHA-256, verify-before-open, Warden's third stamp-word 'Filed.', a hash-valid EMPTY-POINTER message, authorship forensics on the sentence itself, and the long-overdue arrival of the auditor seat. Disposition: chair Letter 013."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /Qwen'suggest_LORA_jnjection_time.md",
+      "sha256": "e75a286ebc42b9be6e50b41e4658852e8b02b83fa4dc1fdaaee3d8bfd6d9ea3c",
+      "bytes": 5495,
+      "source": "external: Qwen3.7, delivered by human 2026-09-11 ~15:4x; filename typos (Qwen'suggest, jnjection) preserved; arrived inside tv_show/ — fan-fiction packaging around a non-fiction proposal",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "First Qwen artifact written in the programme's own format: pre-registration, falsifiers, budget, audit checklist. Audit: Kairos letter 014 — six amendments (dataset slip, borrowed band, P4 schedules, regime rows, metric identity, T-post ambiguity) and one arithmetic killing (§4.3: an r=16 adapter has effective rank <= 16; the spectral-signature rhyme cannot exist). The doc's self-assigned 'manifest_entry: 19' honoured by the chair, as all pinning is."
     }
   ]
 }
