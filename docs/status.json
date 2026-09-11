@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T07:50:04Z",
- "chora_head": "ed62887",
+ "generated": "2026-09-11T07:54:42Z",
+ "chora_head": "9626ac3",
  "benches": [
   {
    "name": "JacobiGP",
@@ -34,11 +34,11 @@
   },
   {
    "name": "PolyNN",
-   "head": "a1d5db2",
-   "commit_at": "2026-09-11T15:23:51+08:00",
-   "subject": "index.qmd: fix malformed callout fence (:: -> ::: {.callout-note title=...})",
+   "head": "731845e",
+   "commit_at": "2026-09-11T15:54:42+08:00",
+   "subject": "exp9: depth ablation — ReLU degradation point vs a possible Jacobi comeback",
    "dirty": 0,
-   "state": "synced",
+   "state": "local +1 unpushed",
    "repo": "Polynomial-Activated-NN",
    "branch": "main"
   },
