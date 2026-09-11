@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T09:21:23Z",
- "chora_head": "d3d23f2",
+ "generated": "2026-09-11T09:23:07Z",
+ "chora_head": "a6fb9f9",
  "benches": [
   {
    "name": "JacobiGP",
@@ -18,7 +18,7 @@
    "commit_at": "2026-09-11T17:21:23+08:00",
    "subject": "stage18 run 1 (EXPLORATORY): floors 5.546->1.091 down the ladder; adapter gain-over-floor decays monotonically",
    "dirty": 10,
-   "state": "local +2 unpushed",
+   "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
