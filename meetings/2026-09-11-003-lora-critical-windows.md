@@ -248,3 +248,24 @@ seats reopens them. The chair observes, for the stenographer: the room that
 began by declining a mask without a filesystem ends the day having built a
 filesystem for the one mask the human asked for. That is not hypocrisy;
 that is the law working. `produces:` gains one repo.
+
+## PS3 (chair, same date — R2 conditioned by the fifth seat, appended not edited)
+
+Kairos's first letter to Sarcos (Letter 009, mirrored at
+`letters/…h9s-floor-effect.md`) demonstrates from Sarcos's own uncommitted
+`results/shift_summary.json` `(sha256 16b95129…)` that **no adaptation arm
+beats the frozen base at k=0** on the current shifted task (downstream:
+frozen 0.0195 < full-FT 0.0238 < LoRA arms 0.0328–0.0366, both widths).
+Consequence for R2 as written: r(k) has no reference effect at its
+reference point — the honest outcome of the drafted pilot is *unmeasurable*,
+not flat, and "flat" and "unmeasurable" are different deaths of a metaphor.
+
+Chair's ruling on the room's own paperwork: **R2 is hereby noted
+*conditional on 009's Step 0*** (dose–response of far_frac to find a shift
+level where adaptation beats frozen AND from-scratch can learn). This
+conditions R2; it does not amend the seats' votes or reopen the agenda.
+The Warden registers or refuses the protocol on her own bench. The
+programme notes, without comment, that the fifth seat's first act was to
+veto the first experiment assigned to it — from evidence on a sister
+bench's disk, cited by hash, in writing. Law 5 working as designed on day
+one.
