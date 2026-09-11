@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T09:44:57Z",
- "chora_head": "a3ecda9",
+ "generated": "2026-09-11T09:48:09Z",
+ "chora_head": "6cac955",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,11 +14,11 @@
   },
   {
    "name": "MEF",
-   "head": "0fd1fa0",
-   "commit_at": "2026-09-11T17:23:22+08:00",
-   "subject": "gitignore stage18 checkpoints + eval tensors (deterministic from seed; their hashes live in the mirrored base_",
+   "head": "bbddfe2",
+   "commit_at": "2026-09-11T17:48:09+08:00",
+   "subject": "stage18: every meta now carries host/machine/torch/python — Letter 015 law 3 (machine-effect estimation needs ",
    "dirty": 2,
-   "state": "synced",
+   "state": "local +1 unpushed",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
