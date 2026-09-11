@@ -152,6 +152,15 @@
       "obtained": "2026-09-11",
       "by": "human",
       "notes": "Ep2 '谱签名': junction-signature mythos; a 30-year-old USB drive enters the room unhashed; ends on the Warden's stamp in thin air reading 'Listen'. Disposition: chair Letter 012."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod3.md",
+      "sha256": "49e38daa37b10e8098ee5790a9d9d29f314726d005a85eb12c16b99c3bc12cc4",
+      "bytes": 6518,
+      "source": "external: Qwen3.7 model, EP03 rewrite delivered by human 2026-09-11 ~15:2x; revision in direct response to Letter 012 (the critique was read, apparently)",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "EP03 '回路' — the self-correction episode: envelope wax-sealed with its own SHA-256, verify-before-open, Warden's third stamp-word 'Filed.', a hash-valid EMPTY-POINTER message, authorship forensics on the sentence itself, and the long-overdue arrival of the auditor seat. Disposition: chair Letter 013."
     }
   ]
 }
