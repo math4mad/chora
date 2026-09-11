@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T08:12:58Z",
- "chora_head": "c80418e",
+ "generated": "2026-09-11T08:19:29Z",
+ "chora_head": "3be5b00",
  "benches": [
   {
    "name": "JacobiGP",
@@ -17,7 +17,7 @@
    "head": "2364fd5",
    "commit_at": "2026-09-10T16:02:24+08:00",
    "subject": "署名：报告与 README 加上 AI 作者（作者分工写清）",
-   "dirty": 3,
+   "dirty": 4,
    "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
@@ -38,7 +38,7 @@
    "commit_at": "2026-09-11T16:12:58+08:00",
    "subject": "exp9 amendment: band unit bug (double x100) caught at calibration, re-derived from same committed L=1 cells: m",
    "dirty": 0,
-   "state": "local +1 unpushed",
+   "state": "synced",
    "repo": "Polynomial-Activated-NN",
    "branch": "main"
   },
