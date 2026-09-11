@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T08:52:09Z",
- "chora_head": "3c0751f",
+ "generated": "2026-09-11T09:21:23Z",
+ "chora_head": "d3d23f2",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,11 +14,11 @@
   },
   {
    "name": "MEF",
-   "head": "f453b7e",
-   "commit_at": "2026-09-11T16:22:13+08:00",
-   "subject": "stage18 KAIROS-MINI: LoRA injection timing on a from-scratch 1.6M-param Qwen2-arch byte-LM (EXPLORATORY)",
-   "dirty": 3,
-   "state": "local +1 unpushed",
+   "head": "8a0e8bc",
+   "commit_at": "2026-09-11T17:21:23+08:00",
+   "subject": "stage18 run 1 (EXPLORATORY): floors 5.546->1.091 down the ladder; adapter gain-over-floor decays monotonically",
+   "dirty": 10,
+   "state": "local +2 unpushed",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
