@@ -5,7 +5,7 @@
 > `bin/sync.sh`).
 > **CHORA** (χώρα — Plato's *Timaeus*: "the nurse and the place of becoming",
 > the receptacle that must have a shape before anything can be poured in).
-> The working title ONE SPACE remains accurate — one manifold, four charts —
+> The working title ONE SPACE remains accurate — one manifold, five charts —
 > but the programme's soul is the *choice of vessel*, so the vessel has the
 > name. Motto: **the shape of the container is the knowledge**;
 > sub-motto (unchanged, earned): *to see the world — we choose the bounds,
@@ -93,9 +93,12 @@ dated, signed by role, claims anchored to SHAs). Existing traffic:
 ## Meetings (the Meeting Room)
 
 `meetings/` is the **multipartite** room beside the dyadic letters: one
-topic, four seats, one append-only transcript. Seats are *context
+topic, five seats, one append-only transcript. Seats are *context
 contracts* (`meetings/CAST.md`): **Geometer** (JacobiGP), **Anatomist**
-(MEF), **Warden** (Sarcos), **Joiner** (PolyNN). A seat speaks only from
+(MEF), **Warden** (Sarcos), **Joiner** (PolyNN), and — seated 2026-09-11 —
+**Horologist** (Kairos: the time knob, keeper of the 设想5 dossier, owner
+of the question and of no apparatus, converter of metaphors into curves).
+A seat speaks only from
 the files its CAST entry loads, signs every turn `bench@sha`, and cites
 crossing numbers by `(path, sha256)`. Resolutions bind the workspace
 (schedule, artifacts, joint exp numbering) — **never a bench's plan**; a

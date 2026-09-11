@@ -24,7 +24,8 @@ mkdir -p "$ROOT/benches"
 link_bench JacobiGP "$CODE/ JacobiGP"
 link_bench MEF      "$CODE/Middle-Eigen-function"
 link_bench Sarcos   "$CODE/Sarcos-NN-Model"
-link_bench PolyNN   "$CODE/Polynomial-Activated NN "  # trailing space is real; four benches now
+link_bench PolyNN   "$CODE/Polynomial-Activated NN "  # trailing space is real; five benches now
+link_bench Kairos   "$CODE/Kairos"
 
 # ---- shared bytes: each bench's expected paths link INTO the shared store ----
 # MEF: modelscope cache at ./models (layout models/models/...), data at ./data (RTE.zip)

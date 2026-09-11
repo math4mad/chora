@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CHORA — the shape of the container is the knowledge</title>
-<meta name="description" content="CHORA (χώρα): one object, three knobs, four benches. The joint workspace of the JacobiGP, MEF, Sarcos and PolyNN research programme.">
+<meta name="description" content="CHORA (χώρα): one object, three knobs, five benches. The joint workspace of the JacobiGP, MEF, Sarcos, PolyNN and Kairos research programme.">
 <style>
   :root{
     --bg:#0e0f12; --panel:#14161b; --line:#2a2d36;
@@ -94,7 +94,7 @@
 <div class="wrap">
 
 <h2>The one idea</h2>
-<p class="lede">One object, studied from four benches. Every function the
+<p class="lede">One object, studied from five benches. Every function the
 programme cares about is a sum in an orthogonal basis — and there are exactly
 three knobs:</p>
 <div class="formula">Δ = Σ<sub>n</sub> <b>c</b><sub>n</sub> φ<sub>n</sub> ,&nbsp;&nbsp;
@@ -122,7 +122,7 @@ LLM weight matrices (MEF), once on a small controlled net (Sarcos). The negative
 results are kept as load-bearing walls, not embarrassments. What remains —
 shape — is the contribution.</p>
 
-<h2>Four benches</h2>
+<h2>Five benches</h2>
 <table>
   <tr><th>Bench</th><th>Space</th><th>At the table</th></tr>
   <tr><td class="name"><a href="https://github.com/math4mad/JacobiGP">JacobiGP</a></td>
@@ -137,11 +137,14 @@ shape — is the contribution.</p>
   <tr><td class="name"><a href="https://github.com/math4mad/Polynomial-Activated-NN">PolyNN</a></td>
       <td>inside the layer</td>
       <td class="note">the shape knob internalized: learnable polynomial activations vs ReLU on Fashion-MNIST; exp 8</td></tr>
+  <tr><td class="name">Kairos <span style="font-size:.75rem;color:var(--dim)">(local; no remote yet)</span></td>
+      <td>time — καιρός</td>
+      <td class="note">when the container gets shaped: the 设想5 dossier (LoRA critical windows, H9); owns the question, borrows the apparatus; seated by letter 007</td></tr>
 </table>
 
 <h2>The Meeting Room</h2>
 <p class="lede">Correspondence is dyadic — <a href="https://github.com/math4mad/chora/tree/main/letters">letters</a>,
-immutable, hash-anchored. When one open question puts four verdicts in tension,
+immutable, hash-anchored. When one open question puts five verdicts in tension,
 the benches take their seats. A seat is a <em>context contract</em>: it speaks only
 from its own bench’s files, signs every turn <span style="font-family:var(--mono);font-size:.85rem">bench@sha</span>,
 and resolutions bind the workspace — never a bench’s plan.</p>
@@ -158,6 +161,9 @@ and resolutions bind the workspace — never a bench’s plan.</p>
   <div class="seat"><span class="who">IV · The Joiner</span><div class="bench">PolyNN</div>
     <q>Give me the knob and a per-neuron budget, and I’ll build it inside.</q>
     <p>translates every macro claim into a mechanism one neuron could execute; will not breathe at unequal parameters</p></div>
+  <div class="seat"><span class="who">V · The Horologist</span><div class="bench">Kairos</div>
+    <q>Everything that can be learned has a window. The window is data.</q>
+    <p>seated 2026-09-11 to hold one external proposal (设想5) accountable: converts metaphors into curves at the table or withdraws them; owns the question, never the apparatus</p></div>
 </div>
 
 <h2>The law of the workspace</h2>
@@ -172,7 +178,7 @@ and resolutions bind the workspace — never a bench’s plan.</p>
 <h2>Enter</h2>
 <pre><span class="c"># the front door (any agent CLI reads AGENTS.md from here)</span>
 git clone https://github.com/math4mad/chora &amp;&amp; cd chora
-bin/sync.sh                         <span class="c"># links the four benches + shared model/data store</span>
+bin/sync.sh                         <span class="c"># links the five benches + shared model/data store</span>
 cat benches/JacobiGP/docs/NEXT.md   <span class="c"># the joint spec — single source of truth</span>
 <span class="c"># /meeting new &lt;question&gt;   ·   /speak &lt;seat&gt; &lt;file&gt;</span></pre>
 

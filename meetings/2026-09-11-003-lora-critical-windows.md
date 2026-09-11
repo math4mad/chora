@@ -233,3 +233,18 @@ loss — which is what a good veto looks like.
   manifest → announce.
 3. Sarcos session: H9-S pilot doc after (1) exists.
 4. The room reopens only to hear what the registered predictions did.
+
+## PS2 (chair, same date — the seating of a fifth seat, appended not edited)
+
+By the human's instruction, the problems of 设想5 received their own home:
+**bench 5, Kairos** (`Kairos@b485941`), seated as **Seat V — The Horologist**
+(CAST, Letter 007). This does not reopen the agenda above: R1–R4 stand as
+adopted by the four seats that heard them; the Horologist inherits the
+dossier and may RECTIFY the room's *reading* of 设想5 (note its bench's own
+first verdicts: B4 "2026 route-strategy finding" flagged as probable
+hallucinated source; M6 "virtual fMRI" declined as σ-position smuggled
+through a metaphor door) but not the resolutions, until a sitting with five
+seats reopens them. The chair observes, for the stenographer: the room that
+began by declining a mask without a filesystem ends the day having built a
+filesystem for the one mask the human asked for. That is not hypocrisy;
+that is the law working. `produces:` gains one repo.

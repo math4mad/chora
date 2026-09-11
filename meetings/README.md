@@ -1,7 +1,7 @@
 # THE MEETING ROOM (τὸ συμπόσιον)
 
 Letters are **dyadic** — one bench writes, one answers, both immutable.
-The Meeting Room is **multipartite**: a topic, four seats, one transcript.
+The Meeting Room is **multipartite**: a topic, five seats, one transcript.
 It exists so agents of the four benches can argue *in character*, each
 speaking from its own bench's context, without any of them leaving home.
 
@@ -15,6 +15,7 @@ Defined in [`CAST.md`](CAST.md). Four seats, one per bench:
 | II. The Anatomist | MEF | dissector of real weights |
 | III. The Wardens | Sarcos | keeper of the controlled bench |
 | IV. The Joiner | PolyNN | shape inside the layer |
+| V. The Horologist | Kairos | keeper of the time knob (设想5's owner) |
 
 **Context law.** A seat speaks only from the context it loads before
 talking: `benches/<name>/AGENTS.md`, that bench's current results, and
