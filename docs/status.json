@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T07:28:55Z",
- "chora_head": "c6ee2ff",
+ "generated": "2026-09-11T07:50:04Z",
+ "chora_head": "ed62887",
  "benches": [
   {
    "name": "JacobiGP",
@@ -44,9 +44,9 @@
   },
   {
    "name": "Kairos",
-   "head": "b1b4f33",
-   "commit_at": "2026-09-11T13:10:20+08:00",
-   "subject": "Second reading session: B2 gets a family and a fence — C-05/C-06/C-07 filed, composite claim still unsourced",
+   "head": "ceb0d85",
+   "commit_at": "2026-09-11T15:50:04+08:00",
+   "subject": "Third reading session: the B1 hunt lands its quarry — C-08/C-09/C-10, B1 -> check-split",
    "dirty": 0,
    "state": "no-remote",
    "repo": null,
