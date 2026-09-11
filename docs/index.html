@@ -350,36 +350,75 @@ on every bench commit — then the page asks GitHub, live, whether each public b
 
 </div>
 <script>
-(async function(){
+(function(){
+  const CYCLE = 300;                       // seconds between full refreshes (4 API calls each, <= 60/h/IP)
+  let snap = null, left = 0, auditLive = true;
   const el = document.getElementById('fleet'), note = document.getElementById('fleet-note');
-  function ago(iso){ const s=(Date.now()-Date.parse(iso))/1000;
-    if (s<90) return 'just now'; if (s<5400) return Math.round(s/60)+' min ago';
-    if (s<172800) return Math.round(s/3600)+' hours ago'; return Math.round(s/86400)+' days ago'; }
-  let s;
-  try { s = await (await fetch('status.json', {cache:'no-store'})).json(); }
-  catch(e){ el.innerHTML = '<p style="text-align:center;color:var(--dim)">status.json unavailable</p>'; return; }
-  const rows = s.benches.map(b => {
-    const id = 'st-' + b.name;
-    const age = b.commit_at ? ago(b.commit_at) : '—';
-    return `<tr><td class="name"><span class="dot checking" id="${id}"></span>${b.name}</td>` +
-      `<td><span style="font-family:var(--mono)">${b.missing ? '—' : b.head}</span></td>` +
-      `<td class="note">${b.missing ? 'missing' : age}</td>` +
-      `<td class="note">${b.dirty ? `<span class="dirtyflag">⚠ ${b.dirty} uncommitted</span>` : '<span class="cleanflag">tree clean</span>'}</td>` +
-      `<td class="state" id="${id}-txt">${b.state}</td>` +
-      `<td class="note subject">${b.subject || ''}</td></tr>`;
-  }).join('');
-  el.innerHTML = `<table><tr><th>Bench</th><th>HEAD</th><th>age</th><th>working tree</th><th>push</th><th>last word</th></tr>${rows}</table>`;
-  note.textContent = `snapshot ${s.generated} · chora@${s.chora_head} · dots: green = local HEAD is on GitHub, gold = local ahead (unpushed work), grey = no remote / no network`;
-  for (const b of s.benches) {
-    if (!b.repo) continue;
-    try {
-      const r = await (await fetch(`https://api.github.com/repos/math4mad/${b.repo}/commits?per_page=1`, {cache:'no-store'})).json();
-      const remote = (r[0] && r[0].sha || '').slice(0,7);
-      const dot = document.getElementById('st-' + b.name), txt = document.getElementById('st-' + b.name + '-txt');
-      if (remote === b.head) { dot.className = 'dot synced'; txt.textContent = 'synced with origin'; }
-      else { dot.className = 'dot ahead'; txt.textContent = 'origin differs — local work unpushed'; }
-    } catch(e) { const d = document.getElementById('st-' + b.name); if (d) d.className = 'dot off'; }
+
+  function age(iso){                       // live lapse, recomputed every tick
+    if (!iso) return '—';
+    const s = (Date.now() - Date.parse(iso)) / 1000;
+    if (s < 0) return 'clock skew';
+    if (s < 60) return Math.floor(s) + 's ago';
+    if (s < 5400) return Math.round(s/60) + ' min ago';
+    if (s < 172800) return Math.round(s/3600) + ' hours ago';
+    return Math.round(s/86400) + ' days ago';
   }
+  function mmss(n){ return Math.floor(n/60) + ':' + String(n%60).padStart(2,'0'); }
+
+  function render(){                       // full table (on every new snapshot)
+    if (!snap) return;
+    el.innerHTML = '<table><tr><th>Bench</th><th>HEAD</th><th>age</th><th>working tree</th><th>push</th><th>last word</th></tr>' +
+      snap.benches.map(b => {
+        const id = 'st-' + b.name;
+        return '<tr><td class="name"><span class="dot checking" id="' + id + '"></span>' + b.name + '</td>' +
+          '<td><span style="font-family:var(--mono)">' + (b.missing ? '—' : b.head) + '</span></td>' +
+          '<td class="note"><span id="age-' + b.name + '">' + age(b.commit_at) + '</span></td>' +
+          '<td class="note">' + (b.dirty ? '<span class="dirtyflag">⚠ ' + b.dirty + ' uncommitted</span>' : '<span class="cleanflag">tree clean</span>') + '</td>' +
+          '<td class="state" id="' + id + '-txt">' + b.state + '</td>' +
+          '<td class="note subject">' + (b.subject || '') + '</td></tr>';
+      }).join('') + '</table>';
+  }
+  function tick(){                         // every second: ages + countdown reset the lapse in view
+    if (!snap) return;
+    snap.benches.forEach(b => { const e = document.getElementById('age-' + b.name); if (e) e.textContent = age(b.commit_at); });
+    if (left > 0) { left--; note.innerHTML = footerText(); }
+    if (left === 0) { left = CYCLE; refresh(); }
+  }
+  function footerText(){
+    return 'snapshot ' + snap.generated + ' \u00b7 chora@' + snap.chora_head +
+      ' \u00b7 dots: green = on GitHub, gold = unpushed local work, grey = no remote/offline' +
+      ' \u00b7 <span style="font-family:var(--mono)">refresh ' + mmss(left) + '</span>' +
+      (auditLive ? '' : ' \u00b7 GitHub audit unavailable (offline or rate-limited)');
+  }
+  async function refresh(){                // every CYCLE: re-pull snapshot, re-audit remotes
+    try {
+      const r = await (await fetch('status.json', {cache:'no-store'})).json();
+      const moved = !snap || r.benches.map(b=>b.head+b.dirty+b.state).join() !== snap.benches.map(b=>b.head+b.dirty+b.state).join();
+      snap = r; if (moved || !el.querySelector('table')) render();
+    } catch(e) { /* keep the old glass */ }
+    if (!snap) return;
+    note.innerHTML = footerText();
+    auditLive = true;
+    for (const b of snap.benches) {
+      if (!b.repo) { const d = document.getElementById('st-'+b.name); if (d) d.className = 'dot off'; continue; }
+      try {
+        const resp = await fetch('https://api.github.com/repos/math4mad/' + b.repo + '/commits?per_page=1', {cache:'no-store'});
+        if (!resp.ok) throw 0;
+        const r = await resp.json();
+        const remote = ((r[0] && r[0].sha) || '').slice(0,7);
+        const dot = document.getElementById('st-'+b.name), txt = document.getElementById('st-'+b.name+'-txt');
+        if (!dot) continue;
+        if (remote === b.head) { dot.className = 'dot synced'; txt.textContent = 'synced with origin'; }
+        else { dot.className = 'dot ahead'; txt.textContent = 'origin differs \u2014 local work unpushed'; }
+      } catch(e) {
+        auditLive = false;
+        const d = document.getElementById('st-'+b.name); if (d) d.className = 'dot off';
+      }
+    }
+    note.innerHTML = footerText();
+  }
+  left = CYCLE; refresh(); setInterval(tick, 1000);
 })();
 </script>
 </body>
