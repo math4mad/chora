@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T08:19:29Z",
- "chora_head": "3be5b00",
+ "generated": "2026-09-11T08:22:13Z",
+ "chora_head": "23a9ed8",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,11 +14,11 @@
   },
   {
    "name": "MEF",
-   "head": "2364fd5",
-   "commit_at": "2026-09-10T16:02:24+08:00",
-   "subject": "署名：报告与 README 加上 AI 作者（作者分工写清）",
-   "dirty": 4,
-   "state": "synced",
+   "head": "f453b7e",
+   "commit_at": "2026-09-11T16:22:13+08:00",
+   "subject": "stage18 KAIROS-MINI: LoRA injection timing on a from-scratch 1.6M-param Qwen2-arch byte-LM (EXPLORATORY)",
+   "dirty": 3,
+   "state": "local +1 unpushed",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
