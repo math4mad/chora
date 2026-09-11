@@ -1,0 +1,1 @@
+Cross-bench correspondence about the workspace itself. Naming: YYYY-MM-DD-<from>-<to>-<topic>.md. Claims anchored to repo@SHA and (path, sha256). Letters are immutable once committed — answer with a new one, PS allowed same-day.

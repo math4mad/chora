@@ -1,0 +1,5 @@
+models/*
+data/*
+!models/README.md
+!data/README.md
+**/.DS_Store

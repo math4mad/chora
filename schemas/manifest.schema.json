@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ONE SPACE manifest entry",
+  "description": >-
+    Contract for every shared file under models/, data/, artifacts/.
+    A manifest is a JSON object: { "files": [ <entry>, ... ] }, one entry
+    per file, append-only. Readers cite (path, sha256); nothing crosses
+    benches without an entry.
+  "type": "object",
+  "required": ["files"],
+  "properties": {
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "bytes", "source", "obtained", "by"],
+        "properties": {
+          "path":     { "type": "string", "description": "relative to workspace root, e.g. models/models/Qwen--Qwen2.5-0.5B/snapshots/master/config.json" },
+          "sha256":   { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "bytes":    { "type": "integer", "minimum": 0 },
+          "source":   { "type": "string", "description": "exact fetch command or URL (mirror allowed: HF, ModelScope, OSS), or 'produced'" },
+          "obtained": { "type": "string", "format": "date" },
+          "by":       { "type": "string", "description": "producer, repo@sha, e.g. 'MEF@2364fd5', 'Sarcos@4ea7678', 'JacobiGP@d77c027', or 'human'" },
+          "script":   { "type": "string", "description": "for produced artifacts: the command that recomputes this exact file" },
+          "upstream": { "type": "string", "description": "upstream hash if the bytes are mirrored (e.g. original HF revision sha)" },
+          "model":    { "type": "string", "description": "model identifier this file belongs to, for cross-referencing views of the SAME weights" },
+          "notes":    { "type": "string" }
+        }
+      }
+    }
+  }
+}
