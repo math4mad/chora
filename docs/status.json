@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-11T10:13:42Z",
- "chora_head": "93e2fba",
+ "generated": "2026-09-11T10:38:56Z",
+ "chora_head": "361d511",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,10 +14,10 @@
   },
   {
    "name": "MEF",
-   "head": "bbddfe2",
-   "commit_at": "2026-09-11T17:48:09+08:00",
-   "subject": "stage18: every meta now carries host/machine/torch/python — Letter 015 law 3 (machine-effect estimation needs ",
-   "dirty": 2,
+   "head": "a98508e",
+   "commit_at": "2026-09-11T18:38:46+08:00",
+   "subject": "gitignore the shared-store symlinks (sync.sh creates them; they made the traffic light permanently red — B's r",
+   "dirty": 0,
    "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
