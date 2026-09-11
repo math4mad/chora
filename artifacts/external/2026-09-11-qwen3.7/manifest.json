@@ -1,0 +1,112 @@
+{
+  "files": [
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/CHORA工作空间总览.docx",
+      "sha256": "c1bacecc90c656fc63864414b14985d028ffc89669365516b7766b3b05c9bd1d",
+      "bytes": 40133,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/今日对话录_认知隐喻与迷宫.docx",
+      "sha256": "9a92825a9701d59ed18cfc9ab00cb67feb0445b007e7f36d28cf0ff32ec2ca65",
+      "bytes": 19894,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想1_JacobiGP_多项式探索_CHORA版.docx",
+      "sha256": "c5e507f5dbcb46e66e18fb73cfbb76526f0d0d4f3bf059fe7dbc8795e0051320",
+      "bytes": 38866,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想1_jacobiGP多项式探索.docx",
+      "sha256": "81a7559b054e93070fd3a50d94222aaefe1dd6c20303c4939473564f4b5950ae",
+      "bytes": 38133,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想2_多项式激活函数_CHORA版.docx",
+      "sha256": "6b31906a6e0b33ca47a5db1c5b9cb2610d4ffa13082f9e5a3f7da71593d1965d",
+      "bytes": 38739,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想2_多项式激活函数探索.docx",
+      "sha256": "ae26e54a075e57ce3e7918c17a786235c54c88f73dd4fba12de04791f29f3bf4",
+      "bytes": 38676,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想3_SVD谱分析.docx",
+      "sha256": "2e7d2749f5aac54e1b72b2a72f1d5e775f6046aababd2c2cf7c1f761569d9f89",
+      "bytes": 39006,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想3_SVD谱分析_CHORA版.docx",
+      "sha256": "1c090839a2d5647a5cab8fdae979e19bdfc3d59a2c6c390aae14cfd5ff75ef75",
+      "bytes": 39024,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想4_矩阵分解行为科学.docx",
+      "sha256": "e270b8205402b3e6f83a68305e382336926e41841be7f4af2d0716f52b08f4f9",
+      "bytes": 39166,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想4_矩阵分解行为科学_CHORA版.docx",
+      "sha256": "237e1294860c98362e15baa5df4d099d799c5e32a06caa2dbb10f2334fee5c77",
+      "bytes": 39032,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想5_LoRA时间机制_CHORA版.docx",
+      "sha256": "b4cf0194b659e06b88d0840a8745172a0cc7ec9ff3b41f8e1286335953284f01",
+      "bytes": 39814,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    },
+    {
+      "path": "artifacts/external/2026-09-11-qwen3.7/设想5_LoRA时间机制与神经可塑性.docx",
+      "sha256": "326ea5a9b79367bfbfb9b271494f6bdd38f7fac22426cb8245b55de0ce3c6cb2",
+      "bytes": 39347,
+      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+      "obtained": "2026-09-11",
+      "by": "human",
+      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+    }
+  ]
+}
