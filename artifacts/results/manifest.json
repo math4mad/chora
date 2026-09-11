@@ -87,8 +87,8 @@
     },
     {
       "path": "artifacts/results/mef/A-env.json",
-      "sha256": "cbef6b34a2c3ea3dea57e3aa546d0a2a5a2d40f2a9e1fa99fa7e66f7c731f53d",
-      "bytes": 924,
+      "sha256": "7f1efeeee858719411df861a76c0e69c68b69ecddcb56323fadb905f5138428e",
+      "bytes": 1380,
       "source": "probe: benches/MEF/.venv/bin/python -c 'import torch,numpy;...' + sysctl hw.memsize (A, this session)",
       "obtained": "2026-09-11",
       "by": "MEF@a98508e",

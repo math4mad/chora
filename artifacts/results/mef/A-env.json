@@ -17,5 +17,13 @@
   "chora_machine_tag": "m1pro-32g",
   "ram_bytes_2026_09_11": 34359738368
  },
- "note": "python 3.14 on A vs 3.11 on B is a REAL divergence axis; twins must quote it. numpy figure imported from B's probe naming \u2014 verify at next A run; flagged in this file's own spirit: record verbatim, do not tidy."
+ "note": "CORRIGENDUM to my first draft: python 3.14 (A) vs 3.11 (B) AND numpy 2.5.3 (A) vs 2.4.6 (B) AND macOS 26.6.2 (A) vs 15.7.5 (B) are the live divergence axes for the twins; torch 2.14.0 and MPS agree. The prior commit's message said '15.7.x both' — wrong at commit time; corrected here rather than amended away. The AGENTS-B brief's 'Monterey' header described a machine neither of us owns; both laptops now contradict it on record, which is what the probe clause is for.",
+ "divergence_summary": {
+  "torch": "same (2.14.0)",
+  "mps": "both ok",
+  "python": "3.14.6 vs 3.11.16",
+  "numpy": "2.5.3 vs 2.4.6",
+  "macos": "26.6.2 vs 15.7.5",
+  "ram": "34.36 GB vs 16 GiB"
+ }
 }
