@@ -1,10 +1,50 @@
 #!/usr/bin/env bash
 # CHORA — read-only fleet dashboard: where every bench stands, right now.
-# Usage: bin/status.sh   (add -v to list dirty files per bench)
+# Usage: bin/status.sh [-v | --publish]
+#   -v        list dirty files per bench
+#   --publish write docs/status.json (for the home page) and echo its path
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 V="${1:-}"
 BENCHES=(JacobiGP MEF Sarcos PolyNN Kairos)
+
+if [ "${V:-}" = "--publish" ]; then
+  python3 - "$ROOT" <<'PY'
+import subprocess, sys, os, json, datetime
+root = sys.argv[1]
+benches = ["JacobiGP", "MEF", "Sarcos", "PolyNN", "Kairos"]
+repo_for = {"JacobiGP": "JacobiGP", "MEF": "Middle-Eigen-function",
+            "Sarcos": "Sarcos-NN-Model", "PolyNN": "Polynomial-Activated-NN", "Kairos": None}
+def g(d, *args):
+    r = subprocess.run(["git", "-C", d, *args], capture_output=True, text=True)
+    return r.stdout.strip() if r.returncode == 0 else None
+cb = g(root, "rev-parse", "--short", "HEAD")
+out = {"generated": datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+       "chora_head": cb, "benches": []}
+for b in benches:
+    d = os.path.join(root, "benches", b)
+    head = g(d, "log", "-1", "--format=%h")
+    if head is None:
+        out["benches"].append({"name": b, "missing": True}); continue
+    dirty = [l for l in g(d, "status", "--porcelain").splitlines() if ".DS_Store" not in l]
+    br = g(d, "branch", "--show-current") or "main"
+    remote = g(d, "remote", "get-url", "origin")
+    state = "no-remote"
+    if remote:
+        o = g(d, "rev-parse", "--verify", "-q", f"origin/{br}")
+        if not o: state = "never-pushed"
+        else:
+            ahead = g(d, "rev-list", "--count", f"origin/{br}..HEAD") or "?"
+            state = "synced" if ahead == "0" else f"local +{ahead} unpushed"
+    out["benches"].append({"name": b, "head": head, "age": g(d, "log", "-1", "--format=%cr"),
+        "subject": g(d, "log", "-1", "--format=%s")[:110], "dirty": len(dirty),
+        "state": state, "repo": repo_for[b], "branch": br})
+p = os.path.join(root, "docs", "status.json")
+json.dump(out, open(p, "w"), indent=1, ensure_ascii=False)
+print(os.path.relpath(p, root))
+PY
+  exit 0
+fi
 
 printf '%-9s %-8s %-7s %-22s %s\n' "BENCH" "HEAD" "AGE" "BRANCH/DIRTY" "LAST WORD"
 printf '%s\n' "---------------------------------------------------------------------------------"
