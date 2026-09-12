@@ -1,10 +1,10 @@
 {
- "generated": "2026-09-12T10:33:34Z",
- "chora_head": "d56c835",
+ "generated": "2026-09-12T10:33:39Z",
+ "chora_head": "c619212",
  "counts": {
   "idea": 0,
-  "registered": 5,
-  "equipped": 2,
+  "registered": 4,
+  "equipped": 3,
   "landed": 0,
   "scored": 1,
   "announced": 3,
@@ -484,14 +484,14 @@
    "kind": "workspace",
    "owner": "chair",
    "bench": "chora",
-   "lane": "registered",
+   "lane": "equipped",
    "claim": "registered",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "let the room try to break it. A board nobody has made lie yet is not trusted, it is untested — and today's four failures (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are the seed cases for its audit clauses.",
    "flags": [
-    "apparatus exists but is untracked: bin/kanban.py"
+    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
    ],
    "detail": {
     "prereg": "chora@932da03 AGENTS.md",
