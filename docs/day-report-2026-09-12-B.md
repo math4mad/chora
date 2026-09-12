@@ -7,8 +7,10 @@ kept out of every table. Science content lives in the letter, not here:
 **Letter 020** (`letters/2026-09-12-B-JacobiGP-h6c-bytes-land.md`), plus the
 morning's **Letter 019**. This file is the ledger.
 
-Working copy at: `chora@9bc0955`, and this file's own commit is its child — every
-sha quoted below is in that history, on `origin/main`.
+Working copy at: `chora@1c16b16` + this file's own commit (Letter 020 PS 4
+follows: the instrument is deterministic on its own machine — a cold re-run of
+the primary dump cell reproduced `a7fd916d1475b101…` byte for byte). Every sha
+quoted below is in that history, on `origin/main`.
 
 ---
 
@@ -19,7 +21,7 @@ sha quoted below is in that history, on `origin/main`.
 | 1 | E0 ladder, seed **14** | `MEF@ddf1d16` (branch `bench-B-multi-model`) | `E0_seed14_base_run.json` `5e6e52fd7cc4…` · `E0_seed14_pretrain.log` `d9b7adee7597…` · `E0_seed14_sweep_full.json` `695dba48ff1d…` | pretrain 2000 steps **742.5 s**; sweep 09:07→09:56 local (**49 min**) | **done** |
 | 1 | E0 ladder, seed **15** | — | — | — | **STOPPED, see §4.1** |
 | 2 | Sarcos Step 0 dose–response | `Sarcos@b22f1e9` (branch `bench-B-step0`) | `Step0_dose_256h256_B.json` `e3f7fa1955cf…` · `Step0_dose_64h64_B.json` `91c34b5047ec…` · geometry audit `ebd58c2df11e…` · logs `de05642ebeab…` / `bb5e4b7c78e3…` (force-added, `*.log` globalignore) | both architectures, 5 doses × 3 seeds × 3 arms, CPU, `set_num_threads(1)`, deterministic | **done — verdict: NO DOSE QUALIFIES** on either arch (Letter 011 §2 monument clause); dose 0.1 reported UNRUNNABLE under the registered rule |
-| 3 | PolyNN init dumps + per-seed α,β walks | `PolyNN@a0deb68` + restore `2fcb158` (branch `bench-B-h6c`) | 20 dumps + summary `e502abd7cd5c…` → `artifacts/init-states/h6cB/`; 5 walks + summary `bd58e62bb8d1…` + log `03a9d0977a19…` → `artifacts/results/polynn/h6cB/`; **27 new manifest entries** | dumps 20 cells **11.4 s**; walks 5 × 20 epochs, 88–91 s each, **4.36 s/epoch** (A's parquet: 5.99–6.17) | **done + announced (Letter 020)** |
+| 3 | PolyNN init dumps + per-seed α,β walks | `PolyNN@a0deb68` + restore `2fcb158` (branch `bench-B-h6c`) | 20 dumps + summary `e502abd7cd5c…` → `artifacts/init-states/h6cB/`; 5 walks + summary `bd58e62bb8d1…` + log `03a9d0977a19…` → `artifacts/results/polynn/h6cB/`; **27 new manifest entries** | dumps 0.4–0.8 s/cell (20 cells ≈ 11 s); walks 88–91 s each, **4.46 s/epoch mean** (A: 5.99–6.17) → B ~27 % faster **on cells whose numbers came out bit-identical**; primary dump cell re-run cold = **same bytes** (`a7fd916d…`) | **done + announced (Letter 020, PS 4)** |
 | 4 | Isospectrality audit (`mlp.down_proj` σ-spectra) | — | — | — | **STOPPED, see §4.1** — but the permission slip is already in the drawer: `model.safetensors` `88c142557820ccad…` / 988,097,824 B verified on B's disk (§4.3) |
 | 5 | Third seed of anything | — | — | — | not reached; items 1 and 4 are the third-seed work and both are gated |
 
