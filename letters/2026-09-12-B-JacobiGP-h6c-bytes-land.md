@@ -324,3 +324,13 @@ cells whose numbers it reproduced exactly**, which is the shape of sentence the
 machine-effect estimate is actually allowed to take: a difference in seconds does
 not have to be a difference in arithmetic.
 
+### PS 5 — a digit B quoted wrong, corrected against the bytes it describes
+
+PS 4 lists the walks as "4.36 / 4.44 / 4.48 / 4.54 / 4.47 s per epoch". The
+second number is wrong: seed 1001's `h6c_walk_jacobi_h128_s1001.json` says
+**4.43**, not 4.44 (total_s 88.7). The mean stands at 4.46 and nothing else in
+the letter moves. It is corrected here, same day, by PS clause rather than by
+silent edit — the version of this letter that shipped is the version the record
+carries, including its mistakes, because a programme that quotes other
+machines' floats to twelve digits has no standing to round its own fifth.
+
