@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T00:58:03Z",
- "chora_head": "cb47d83",
+ "generated": "2026-09-12T01:13:55Z",
+ "chora_head": "a071c47",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,11 +14,11 @@
   },
   {
    "name": "MEF",
-   "head": "a98508e",
-   "commit_at": "2026-09-11T18:38:46+08:00",
-   "subject": "gitignore the shared-store symlinks (sync.sh creates them; they made the traffic light permanently red — B's r",
-   "dirty": 2,
-   "state": "synced",
+   "head": "6f5f4c5",
+   "commit_at": "2026-09-12T09:13:55+08:00",
+   "subject": "stage19 KAIROS-E3: last-mile diagnostic per Kairos IDEAS I-02, pre-registered in the script header (thresholds",
+   "dirty": 1,
+   "state": "local +1 unpushed",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
