@@ -378,9 +378,12 @@ def global_audits(pins, heads):
             except (KeyError, ValueError):
                 pass
             ch = g.get("chora_head", "")
-            head7 = heads.get("chora", "")
-            out.append("glass: generated %s ago · chora_head %s %s"
-                       % (age, ch, "= HEAD" if ch == head7 else "!= HEAD (stale provenance)"))
+            head7 = git(ROOT, "rev-parse", "--short", "HEAD")
+            # Deliberately does NOT print the head shas: chora_head moves because the snapshot
+            # commits, so a line naming it would make the beat drift forever — the same
+            # ping-pong the drift guard exists to break, arriving from the audit side.
+            out.append("glass: generated %s ago · provenance %s HEAD"
+                       % (age, "on" if ch == head7 else "OFF (stale: a chora commit has not repainted)"))
     # 6. citations that resolve: every `repo@sha` written in the archive must name a commit SOMEWHERE
     import re
     unresolved = {}
