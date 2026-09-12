@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T11:42:51Z",
- "chora_head": "0897358",
+ "generated": "2026-09-12T11:44:29Z",
+ "chora_head": "bfd9dba",
  "benches": [
   {
    "name": "JacobiGP",
@@ -8,7 +8,7 @@
    "commit_at": "2026-09-12T19:42:50+08:00",
    "subject": "Letter 007 (JacobiGP→Sarcos cc the room) + NEXT.md §4: the H6a pilot is DEAD on its own curve-clause, and the ",
    "dirty": 0,
-   "state": "local +3 unpushed",
+   "state": "synced",
    "repo": "JacobiGP",
    "branch": "main"
   },

@@ -1,11 +1,11 @@
 {
- "generated": "2026-09-12T11:43:02Z",
- "chora_head": "0897358",
+ "generated": "2026-09-12T11:44:41Z",
+ "chora_head": "bfd9dba",
  "counts": {
   "idea": 0,
-  "registered": 5,
+  "registered": 4,
   "equipped": 3,
-  "landed": 0,
+  "landed": 1,
   "scored": 1,
   "announced": 3,
   "closed": 3,
@@ -57,16 +57,14 @@
    "kind": "experiment",
    "owner": "Geometer",
    "bench": "JacobiGP",
-   "lane": "registered",
+   "lane": "landed",
    "claim": "equipped",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "the pilot answers the curve-source gate from the cheap side while the Anatomist looks for the MEF rank sweeps; its ordering guard (A2 in HEAD, one draw only) is the same shape H6c used, so the same disclosure discipline applies to it.",
    "flags": [
-    "apparatus exists but is untracked: experiments/exp6_h6a_sarcos_pilot.py",
-    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
-    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'registered'"
+    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'landed'"
    ],
    "detail": {
     "prereg": "JacobiGP@0a60707 docs/PREREG_EXP6.md",
@@ -526,14 +524,11 @@
   }
  ],
  "audits": [
-  "pins: 117 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 3",
+  "pins: 117 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_fits.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_robustness_posthoc.json",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint 0897358, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint bfd9dba, 0 commit(s) behind HEAD",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
