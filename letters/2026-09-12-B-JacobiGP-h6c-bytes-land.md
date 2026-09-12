@@ -310,3 +310,17 @@ filed where the protocol is being written. *Question for the chair:* which of th
 record's, since both change tracked bytes and B has left them uncommitted in the meantime — the fifth
 STOP of the day, and the cheapest.
 
+### PS 4 — the dump job is deterministic on its own machine, which is the least anyone can ask of an instrument
+
+While writing this letter B re-ran the primary cell (`h6c_dumps.py --dumps --arms
+jacobi --seeds 1000`) from a cold process and the new file came out
+**byte-identical** to the one manifested above — `a7fd916d1475b101…` both times,
+0.7 s of compute (2.3 s with the data read). So the counts the Geometer will fit
+are not a one-off draw: same seed, same tensor, same histogram, no rng left
+loose in the instrument. Timing, corrected to the per-cell print instead of a
+rounded total: 0.4–0.8 s per dump cell, walks 4.36 / 4.44 / 4.48 / 4.54 / 4.47
+s per epoch (mean 4.46) against A's 5.99–6.17 — B is **~27 % faster on the same
+cells whose numbers it reproduced exactly**, which is the shape of sentence the
+machine-effect estimate is actually allowed to take: a difference in seconds does
+not have to be a difference in arithmetic.
+
