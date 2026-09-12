@@ -1,0 +1,625 @@
+{
+ "kind": "CHORA experiment/dev registry — the HAND's side of the board",
+ "law": [
+  "This file is intent. docs/kanban.md and docs/kanban.json are RENDERED from it by bin/kanban.py and must never be hand-edited.",
+  "A row may claim any lane it likes; the board prints the derived lane and marks the row red when they disagree (CLAIM DRIFT). Claiming ahead of the bytes is cheap to do and impossible to sustain.",
+  "Every anchor is re-checked on each run: pre-registration commits for ancestry in their own bench, artifacts for the four-way check (pinned ∧ on-disk ∧ sha256==pin ∧ tracked), letters for bench-commit ∧ mirror ∧ index, and provenance repo@sha for resolvability IN THIS CLONE.",
+  "Never delete a row. Retire it: keep its last true claim and write what happened into `notes`. Negative results are first-class (law 4)."
+ ],
+ "lanes_derived_by": "bin/kanban.py",
+ "rows": [
+  {
+   "id": "exp6-h6c",
+   "title": "H6c — the same dial read from two ends: does the evidence path, shown only the INIT geometry, walk where gradient descent later lived?",
+   "kind": "experiment",
+   "owner_seat": "Geometer",
+   "owner_bench": "JacobiGP",
+   "prereg": {
+    "repo": "JacobiGP",
+    "path": "docs/PREREG_EXP6.md",
+    "commit": "99c7a4a",
+    "marker": "## A1 (2026-09-12"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/exp6_h6c_fit.py"
+   },
+   "consumes": [
+    {
+     "path": "artifacts/results/polynn/h6cB/h6c_walks_summary.json"
+    },
+    {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1000.json"
+    },
+    {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1001.json"
+    },
+    {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1002.json"
+    },
+    {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1003.json"
+    },
+    {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1004.json"
+    }
+   ],
+   "produces": [
+    {
+     "path": "artifacts/results/jacobigp/exp6_h6c/h6c_verdict.json"
+    },
+    {
+     "path": "artifacts/results/jacobigp/exp6_h6c/h6c_fits.json"
+    }
+   ],
+   "verdict": {
+    "at": "verdict/status"
+   },
+   "letter": {
+    "repo": "JacobiGP",
+    "bench": "docs/LETTERS/2026-09-12-to-PolyNN-h6c-fails-wanders-negative.md",
+    "mirror": "letters/2026-09-12-JacobiGP-PolyNN-h6c-fails-wanders-negative.md",
+    "index": "022"
+   },
+   "claim": "closed",
+   "budget": "666.4 s on A (one cell 325.68 s against siblings at ~12 s — filed as a machine question, not a result)",
+   "next": null,
+   "notes": "FAILS: mean pair (−0.922628, −0.916317) vs the registered (0.40, 0.37) at band ±0.200000; both candidate pointers fail, so Letter 020's pointer ambiguity is moot for this verdict. N=64 agrees with N=30 to 1e-5, 6/6 starts agree, explained variance 0.9999 — the corner is the objective's, not the fitter's. One draw; the deciding values were first seen under --dry-run and that is disclosed inside the verdict file."
+  },
+  {
+   "id": "exp6-h6a",
+   "title": "H6a — learned (α,β) as an early-warning gauge of mis-set rank (between-group separation ≥ 3.0 at τ = 50% while the curves are still within band)",
+   "kind": "experiment",
+   "owner_seat": "Geometer",
+   "owner_bench": "JacobiGP",
+   "prereg": {
+    "repo": "JacobiGP",
+    "path": "docs/PREREG_EXP6.md",
+    "commit": "ecf67d6",
+    "marker": "## H6a"
+   },
+   "claim": "blocked",
+   "gated_by": "exp6-curve-source",
+   "next": "needs a named curve file: val-loss-vs-epoch per rank, per paired seed. None exists in the record (see exp6-curve-source).",
+   "notes": "Its own obituary is registered ('the exponents track nothing beyond the curve tail'). H6c's death does NOT transfer to it: different input (trained curves, not an init measure)."
+  },
+  {
+   "id": "exp6-h6b",
+   "title": "H6b — a frozen threshold rule g(α̂,β̂) that PRESCRIBES r within ±1 octave of oracle-best on ≥6/8 held-out pairs, for less compute than the grid",
+   "kind": "experiment",
+   "owner_seat": "Geometer",
+   "owner_bench": "JacobiGP",
+   "prereg": {
+    "repo": "JacobiGP",
+    "path": "docs/PREREG_EXP6.md",
+    "commit": "ecf67d6",
+    "marker": "## H6b"
+   },
+   "claim": "blocked",
+   "gated_by": "exp6-curve-source",
+   "next": "thresholds written into the run script before any pair is scored; the 8-pair composition frozen in the same commit.",
+   "notes": "Letter 018's operative definition of *kairotic* ('the gauge is kairotic iff H6b's rank selection degrades beyond its registered band at k>0 vs k=0') hangs on this row and on E4's apparatus — it is the programme's most expensive unmeasured word."
+  },
+  {
+   "id": "exp6-curve-source",
+   "title": "The gate both H6a and H6b wait on: a named curve file (r ∈ {2,8,32,64} × paired seeds, validation loss per epoch)",
+   "kind": "apparatus",
+   "owner_seat": "Anatomist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "JacobiGP",
+    "path": "docs/PREREG_EXP6.md",
+    "commit": "ecf67d6",
+    "marker": "Compute budget"
+   },
+   "claim": "registered",
+   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed.",
+   "notes": "Searched on A at ~18:3x: outputs/stage3_* have no rank dimension and no per-epoch val arrays; stage18/stage19 have epoch curves but no rank sweep. The registered line 'the run script will refuse to start without a named curve file' therefore currently refuses, which is the paperwork working."
+  },
+  {
+   "id": "h6cB-donor-bytes",
+   "title": "B's donor bytes: 20 init-dump cells + 5 per-seed α,β walks, carrying the programme's first exact replication (max_abs_diff 0.0 across two laptops)",
+   "kind": "artifact",
+   "owner_seat": "Joiner",
+   "owner_bench": "PolyNN",
+   "prereg": {
+    "repo": "chora",
+    "path": "letters/2026-09-11-chair-all-two-machine-day.md",
+    "commit": "4250f0d",
+    "marker": "init pre-activation dumps"
+   },
+   "consumes": [
+    {
+     "path": "artifacts/results/polynn/exp8_summary.parquet"
+    }
+   ],
+   "produces": [
+    {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1000.json"
+    },
+    {
+     "path": "artifacts/results/polynn/h6cB/h6c_walks_summary.json"
+    },
+    {
+     "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1000.json"
+    }
+   ],
+   "provenance": [
+    {
+     "repo": "PolyNN",
+     "commit": "a0deb68"
+    },
+    {
+     "repo": "PolyNN",
+     "commit": "2fcb158"
+    }
+   ],
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-12-B-JacobiGP-h6c-bytes-land.md",
+    "index": "020"
+   },
+   "claim": "announced",
+   "next": "fetch B's bench branches on A (ws-fetch-B-branches) so the authorship pointers of these bytes resolve here.",
+   "notes": "The bytes are pinned and verify; the repo@sha saying WHO made them sits on a branch this machine never fetched. Law 2 half-satisfied on A, fully on B — which is precisely the asymmetry the glass could never show either (ws-f3-glass-blind)."
+  },
+  {
+   "id": "e0-seed14",
+   "title": "E0 ladder, seed 14, machine B (pretrain 742.5 s + 49 min sweep) — the band that E4 and R1 both need",
+   "kind": "experiment",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "chora",
+    "path": "letters/2026-09-11-chair-all-two-machine-day.md",
+    "commit": "4250f0d",
+    "marker": "E0 replication"
+   },
+   "consumes": [
+    {
+     "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/model.safetensors"
+    }
+   ],
+   "produces": [
+    {
+     "path": "artifacts/results/mef/E0_seed14_base_run.json"
+    },
+    {
+     "path": "artifacts/results/mef/E0_seed14_sweep_full.json"
+    },
+    {
+     "path": "artifacts/results/mef/E0_seed14_pretrain.log"
+    }
+   ],
+   "provenance": [
+    {
+     "repo": "MEF",
+     "commit": "bbddfe2"
+    }
+   ],
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-12-B-JacobiGP-h6c-bytes-land.md",
+    "index": "020"
+   },
+   "claim": "announced",
+   "next": "resolve the pretrain.log pin: land the bytes, or amend the entry to say plainly that they live on one laptop (asked of B in Letter 021 §5).",
+   "notes": "A pin with no bytes anywhere reachable is the row this board exists to keep visible: valid JSON, correct hash of nothing, and every reader's checks pass."
+  },
+  {
+   "id": "e0-gate6-twins",
+   "title": "Gate 6 — the twins: an A-vs-B pair of the SAME seed, i.e. the programme's first machine-effect number",
+   "kind": "gate",
+   "owner_seat": "Warden",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "chora",
+    "path": "letters/2026-09-11-chair-all-two-machine-day.md",
+    "commit": "4250f0d",
+    "marker": "machine-effect"
+   },
+   "claim": "blocked",
+   "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme",
+   "next": "OPEN, not passed: the only A-vs-B ladder pair so far is cross-seed, so no machine-effect number is quotable from it.",
+   "notes": "Within-machine spread 509.7 → 742.5 s filed as a question; H6c's 325.68 s cell against ~12 s siblings is a second sample of the same oddity, same machine, same rig, same threads."
+  },
+  {
+   "id": "e3-last-mile",
+   "title": "MEF stage19 KAIROS-E3 — last-mile diagnostic (S-absorb / S-gate / S-sched signatures, unanimity across 3 seeds)",
+   "kind": "experiment",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "MEF",
+    "path": "scripts/stage19_kairos_e3.py",
+    "commit": "6f5f4c5",
+    "marker": "thresholds"
+   },
+   "apparatus": {
+    "repo": "MEF",
+    "path": "scripts/stage19_kairos_e3.py"
+   },
+   "produces": [
+    {
+     "path": "artifacts/results/mef/stage19_e3/e3_summary.json"
+    },
+    {
+     "path": "artifacts/results/mef/stage19_e3/e3_verdict_seed13.json"
+    },
+    {
+     "path": "artifacts/results/mef/stage19_e3/e3_verdict_seed14.json"
+    },
+    {
+     "path": "artifacts/results/mef/stage19_e3/e3_verdict_seed15.json"
+    }
+   ],
+   "verdict": {
+    "at": "verdict"
+   },
+   "provenance": [
+    {
+     "repo": "MEF",
+     "commit": "6f5f4c5"
+    }
+   ],
+   "claim": "scored",
+   "next": "send the constant-lr design finding to Kairos: the arms ran lr 5e-4 flat, so a firing S-sched cannot mean 'it was only the schedule'. The channel result (no closed channel at k=100 in this rig) goes with it as data, not as a closed item.",
+   "notes": "NOT ADJUDICATED is the filed verdict (S-sched 2/3, gray 1/3, zero S-absorb/S-gate) and it stayed honest because the unanimity rule predates the bytes."
+  },
+  {
+   "id": "e4-prereg",
+   "title": "E4's pre-registration — the text that must exist before any E4 number: thresholds, band, budget in measured units, and the lr clause",
+   "kind": "paperwork",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/IDEAS.md",
+    "commit": "a9e3222",
+    "marker": "Clause R2"
+   },
+   "claim": "blocked",
+   "gated_by": "human: is the phantom 'E4 seed 1002 → PPL 2.7808' real and unsaved? if so, E4's paperwork is already post-hoc and must be declared as such",
+   "next": "write it, commit it, THEN the script. The house standard is E3's: script committed at 09:13:55, process began at 09:22:34.",
+   "notes": "Two clauses belong in that text: (1) lr — E3's finding is that a constant-lr rig cannot adjudicate a schedule signature, and E4 inherits the rig; (2) H6c died reading an init measure, so R2's 'bonus telemetry: the same dial read for the third time' must be re-stated as what it now is."
+  },
+  {
+   "id": "e4-activation-ladder",
+   "title": "KAIROS-E4 — activation-swap ladder (arms S SiLU / L fixed-Legendre / J learnable Jacobi) crossed with the k-ladder",
+   "kind": "experiment",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/IDEAS.md",
+    "commit": "a9e3222",
+    "marker": "Day order updated"
+   },
+   "claim": "blocked",
+   "gated_by": "e4-prereg",
+   "budget": "≤ 15,334 s (~4 h 16 m) for the maximal shape, priced by B from A's own printed units (96.2 s/arm, 260.2 s/base)",
+   "next": "never run: no script in any repo, no bytes in any manifest, no pre-registration. Its first move is paperwork, not compute.",
+   "notes": "The day's slip is here, and its cost is measured: 8 h 08 min of A frozen in a rebase (ws-d1-publisher)."
+  },
+  {
+   "id": "e2-replant",
+   "title": "KAIROS-E2 — replant: fertilize-and-replant the soil mid-ladder (and its neuron-scale twin inside the J arm)",
+   "kind": "experiment",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/IDEAS.md",
+    "commit": "a9e3222",
+    "marker": "Day order updated"
+   },
+   "claim": "blocked",
+   "gated_by": "e4-activation-ladder",
+   "next": "day order places it after E4; unrun on both machines."
+  },
+  {
+   "id": "e1-curriculum",
+   "title": "KAIROS-E1 — curriculum swap as the timing knob's confound",
+   "kind": "experiment",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/IDEAS.md",
+    "commit": "a9e3222",
+    "marker": "Day order updated"
+   },
+   "claim": "blocked",
+   "gated_by": "e2-replant",
+   "next": "day order; unrun."
+  },
+  {
+   "id": "r1-densify",
+   "title": "R1 — adaptive ladder densification: bisect where |Δgain/Δk| exceeds band; the window's EDGE as a fitted quantity with an interval",
+   "kind": "experiment",
+   "owner_seat": "Horologist",
+   "owner_bench": "Kairos",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/IDEAS.md",
+    "commit": "a9e3222",
+    "marker": "Clause R1"
+   },
+   "claim": "blocked",
+   "gated_by": "e0-gate6-twins",
+   "next": "cannot start before bands exist — the registered guard is 'refining a bandless curve is fitting to noise with extra steps'.",
+   "notes": "This is where the twins question actually pays: without a machine-effect number, a boundary interval may be measuring a laptop."
+  },
+  {
+   "id": "sarcos-step0",
+   "title": "Sarcos Step 0 — dose–response calibration (5 doses × 3 seeds × 3 arms, both architectures, deterministic CPU)",
+   "kind": "experiment",
+   "owner_seat": "Warden",
+   "owner_bench": "Sarcos",
+   "prereg": {
+    "repo": "Sarcos",
+    "path": "docs/LETTERS/2026-09-11-to-Kairos-floor-accepted-floor-amended.md",
+    "commit": "fb37e04",
+    "marker": "Step 0"
+   },
+   "produces": [
+    {
+     "path": "artifacts/results/sarcos/Step0_dose_256h256_B.json"
+    },
+    {
+     "path": "artifacts/results/sarcos/Step0_dose_64h64_B.json"
+    },
+    {
+     "path": "artifacts/results/sarcos/Step0_geometry_audit_B.json"
+    }
+   ],
+   "provenance": [
+    {
+     "repo": "Sarcos",
+     "commit": "b22f1e9"
+    }
+   ],
+   "letter": {
+    "repo": "Sarcos",
+    "bench": "docs/LETTERS/2026-09-11-to-Kairos-floor-accepted-floor-amended.md",
+    "mirror": "letters/2026-09-11-to-chair-015-answer-ledger-toll-gate-and-011-acknowledged.md",
+    "index": "011"
+   },
+   "claim": "announced",
+   "next": "a protocol decision, not a run: no dose qualifies on the current shifted task, so either the task block changes or H9-S is retired with its numbers.",
+   "notes": "Verdict NO DOSE QUALIFIES on both architectures (Letter 011's monument clause), dose 0.1 UNRUNNABLE under the registered rule. The Step 0 verdict travels in the result JSONs, not in a key this board can read — so the lane says scored, not announced; its 011 answer is mirrored under a different number than the chair's 015."
+  },
+  {
+   "id": "h9s-floor",
+   "title": "H9-S — does adaptation beat the frozen base at the earliest checkpoint? (current state: never yet measured)",
+   "kind": "hypothesis",
+   "owner_seat": "Horologist",
+   "owner_bench": "Kairos",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/LETTERS/2026-09-11-to-Sarcos-h9s-floor-effect.md",
+    "commit": "fd177ec",
+    "marker": "floor"
+   },
+   "claim": "blocked",
+   "gated_by": "sarcos-step0",
+   "next": "upgraded by Letter 011 from 'unmeasurable' to 'never yet measured'; Step 0 then found no qualifying dose. The floor is not flat, it is unvisited.",
+   "notes": "Two confounds already filed against the old cells: adapters ep300 vs bases ep60, and row-level geometry superseded by block-level."
+  },
+  {
+   "id": "polynn-exp8",
+   "title": "PolyNN exp8 — P-shape holds (jacobi > hermite by +1.15/+1.75 pp beyond the ±0.94 pp band); P-eff dies honestly (matched ReLU wins or ties)",
+   "kind": "experiment",
+   "owner_seat": "Joiner",
+   "owner_bench": "PolyNN",
+   "prereg": {
+    "repo": "JacobiGP",
+    "path": "docs/PREREG_EXP6.md",
+    "commit": "ecf67d6",
+    "marker": "H6c's donor data"
+   },
+   "produces": [
+    {
+     "path": "artifacts/results/polynn/exp8_summary.json"
+    },
+    {
+     "path": "artifacts/results/polynn/noise_band.json"
+    },
+    {
+     "path": "artifacts/results/polynn/relu_tail.json"
+    }
+   ],
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-11-to-benches-exp8-results-pshape-holds-peff-dies-honestly.md",
+    "index": "006"
+   },
+   "claim": "closed",
+   "next": null,
+   "notes": "The source of H6c's target pair (0.40, 0.37) — which H6c just showed is not readable from the other end. Anchored here to the JacobiGP donor-data citation because PolyNN's own copy of the letter is not in its git (polynn-paperwork-untracked)."
+  },
+  {
+   "id": "polynn-exp9",
+   "title": "PolyNN exp9 — depth ablation: where ReLU degrades, and whether Jacobi turns the tide",
+   "kind": "experiment",
+   "owner_seat": "Joiner",
+   "owner_bench": "PolyNN",
+   "prereg": {
+    "repo": "PolyNN",
+    "path": "docs/PREREG-exp9.md",
+    "commit": "731845e",
+    "marker": "depth ablation"
+   },
+   "apparatus": {
+    "repo": "PolyNN",
+    "path": "exp9_depth.py"
+   },
+   "consumes": [
+    {
+     "path": "artifacts/results/polynn/noise_band.json"
+    }
+   ],
+   "claim": "registered",
+   "next": "band re-derived after the ×100 unit bug was caught at calibration (PolyNN@0eb2930); zero epochs run on either machine. Either run it or retire it — paperwork that is never spent is costume.",
+   "notes": "The board will not let this row reach `registered`: see polynn-paperwork-untracked. The text exists and predates any number, but not in git, so its precedence is unprovable by anyone but the Joiner."
+  },
+  {
+   "id": "polynn-paperwork-untracked",
+   "title": "PolyNN's docs/ is git-ignored: its pre-registrations and letters are on the disk but in NO commit on main (0 tracked paths under docs/)",
+   "kind": "law",
+   "owner_seat": "Joiner",
+   "owner_bench": "PolyNN",
+   "prereg": {
+    "repo": "PolyNN",
+    "path": ".gitignore",
+    "commit": "0eb2930",
+    "marker": "docs/*"
+   },
+   "claim": "registered",
+   "next": "the Joiner's own fix: the .gitignore says 'the letters and the pre-registration keep their docs/ home on main' and then ignores docs/* — the !docs/LETTERS / !docs/PREREG.md exceptions do not reach children of an ignored directory, and PREREG-exp9.md is not in the exception list at all. Re-land Letter 006/004 + both PREREGs on main (Letter 020's restore went to a branch, not to main) or accept that exp9's pre-registration cannot be dated by any reader.",
+   "notes": "Found by this board on its first run, not by a human: the audit asks 'is the registered text in HEAD' and PolyNN answers no. Law 4's whole force is 'text older than the number', which is a claim about git history; untracked text cannot make it."
+  },
+  {
+   "id": "iso-spectrality",
+   "title": "Isospectrality audit — σ-spectra of mlp.down_proj against own scales (Letter 005's debt, pure SVD, 16 GB ample)",
+   "kind": "experiment",
+   "owner_seat": "Anatomist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "chora",
+    "path": "letters/2026-09-11-chair-all-two-machine-day.md",
+    "commit": "4250f0d",
+    "marker": "isospectrality"
+   },
+   "consumes": [
+    {
+     "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/model.safetensors"
+    }
+   ],
+   "claim": "blocked",
+   "gated_by": "MEF clean on A (rule 4: one process per machine; B honoured the STOP twice)",
+   "next": "MEF is dirty on A (untracked outputs/stage19_kairos_e3/). Committing or clearing that directory is a one-command unblock, and it has been blocking a third seed of work all afternoon.",
+   "notes": "The permission slip is already in the drawer: model.safetensors 88c142557820ccad… / 988,097,824 B verified on B's disk."
+  },
+  {
+   "id": "ws-d1-publisher",
+   "title": "D1 — the publisher must never write while a sequencer owns the branch, and must push a refspec",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "docs/glass-freeze-mechanism-2026-09-12.md",
+    "commit": "f607172",
+    "marker": "(D1)"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "bin/publish-status.sh"
+   },
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-12-chair-B-rebase-closed-d1-landed-pins-held.md",
+    "index": "021"
+   },
+   "claim": "closed",
+   "next": null,
+   "notes": "Landed at chora@877727f after the 8 h 08 min freeze it explains: one orphan snapshot commit whose chora_head named a commit contained by no branch, 97 beats printing 'no real drift' while reading that orphan, and one false git message blaming unsolved conflicts for a single unstaged line."
+  },
+  {
+   "id": "ws-d2-manifest-split",
+   "title": "D2 — split the append-only results array per bench (one writer each); the root manifest becomes a generated join",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "docs/glass-freeze-mechanism-2026-09-12.md",
+    "commit": "f607172",
+    "marker": "(D2)"
+   },
+   "claim": "blocked",
+   "gated_by": "Meeting Room (a schema change is not the chair's pen)",
+   "next": "agenda item, with its cost already measured: 8 h 08 min of glass, one conflicted manifest, and a staged resolution that had already dropped 13 of 27 pins while remaining valid JSON with correct hashes.",
+   "notes": "Until D2 lands, every joint edit of artifacts/results/manifest.json is a conflict, and the only defence is the diff target + the re-hash this board runs on every beat."
+  },
+  {
+   "id": "ws-f3-glass-blind",
+   "title": "F3 — the glass is blind by construction: status.sh reads A's tree, so B's clean bench can never repaint it",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "letters/2026-09-12-B-chair-pouchdb-container-experiment.md",
+    "commit": "f607172",
+    "marker": "PS 6"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "bin/status.sh"
+   },
+   "claim": "equipped",
+   "gated_by": null,
+   "next": "cheapest fix that needs no server: have B publish its own status.json to a per-machine path in this repo and let the page merge the two. D1 stopped the freeze; it did not give the glass eyes.",
+   "notes": "Letter 021 §1 strengthens F3: during the freeze there was almost nothing to paint, because B's pushes never move A's local refs. Two defects, one symptom."
+  },
+  {
+   "id": "ws-fetch-B-branches",
+   "title": "Provenance that resolves HERE: A has not fetched B's bench branches, so several by: repo@sha pointers name no commit on this machine",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "docs/onboarding-B.md",
+    "commit": "c3b9ff3",
+    "marker": "A forges and publishes; B witnesses"
+   },
+   "claim": "registered",
+   "next": "fetch refs/heads/bench-B-* in every bench on A (PolyNN@a0deb68, PolyNN@2fcb158 and Sarcos@b22f1e9 are the ones this board names). Then the `by: repo@sha` field means the same thing on both machines.",
+   "notes": "The half-finished form of law 2 — invisible to every check that validates a hash but not a provenance pointer."
+  },
+  {
+   "id": "ws-phantom-numbers",
+   "title": "Numbers with no bytes: 'E4 seed 1002 → held-out PPL 2.7808' and 'exp14 H6c fit lands within band' appeared in a log at session start and resolve in no ref, no reflog and no object of any clone here",
+   "kind": "open-question",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "docs/ROLLBACK.md",
+    "commit": "1e2172c",
+    "marker": "checkpoint"
+   },
+   "produces": [
+    {
+     "path": "artifacts/results/mef/stage19_e4/e4_verdict_seed1002.json"
+    }
+   ],
+   "claim": "registered",
+   "next": "either they are another hand's unrecorded runs — in which case they cross by hash or they do not exist, and E4's pre-registration must declare itself post-hoc — or they never happened, and this row is the tombstone that keeps them out of the arithmetic. Ask the human; do not assume.",
+   "notes": "Filed red on purpose. The instrument that hid today's freeze was one that could not report an absence; this row's whole job is to report one."
+  },
+  {
+   "id": "ws-kanban",
+   "title": "This board — the auditor seat in its engineering sense: intent in a registry, lanes derived from bytes, repainted by the same beat as the glass",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "AGENTS.md",
+    "commit": "932da03",
+    "marker": "Nothing crosses benches without a hash"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "bin/kanban.py"
+   },
+   "claim": "registered",
+   "next": "let the room try to break it. A board nobody has made lie yet is not trusted, it is untested — and today's four failures (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are the seed cases for its audit clauses.",
+   "notes": "Born the same hour as D1 for the same reason: anything that reports on the work must also report on itself. Its first run found two things no human had: PolyNN's paperwork is outside git, and Letter 011's mirror is filed under a different number than its answer."
+  }
+ ]
+}

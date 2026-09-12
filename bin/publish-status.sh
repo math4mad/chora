@@ -1,9 +1,12 @@
 #!/usr/bin/env bash
-# CHORA — publish the fleet snapshot: regenerate docs/status.json, commit+push
-# ONLY that path, and ONLY when a real field moved. The two provenance lines
-# ("generated", "chora_head") are ignored by design: chora_head moves because
+# CHORA — publish the fleet snapshot AND the exp/dev board: regenerate docs/status.json and
+# docs/kanban.{md,json}, commit+push ONLY those paths, and ONLY when a real field moved. The two
+# provenance lines ("generated", "chora_head") are ignored by design: chora_head moves because
 # the snapshot commits, so honouring it would make the publisher commit
-# forever (the ping-pong this script's guard exists to break).
+# forever (the ping-pong this script's guard exists to break). The board's own
+# "Generated " stamp line is ignored on the same reasoning: it moves because the beat
+# commits, and everything else in kanban.md/json is derived, so a real lane change
+# always lands on a non-ignored line.
 # Invoked by bin/sync.sh and by the launchd agent com.chora.fleet-status.
 set -euo pipefail
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
@@ -34,11 +37,24 @@ if ! BR="$(git symbolic-ref --quiet --short HEAD)" || [ -z "${BR:-}" ]; then
   echo "[publish] HEAD is detached — standing down (a snapshot into no branch is an orphan)"
   exit 0
 fi
-if git diff --quiet -I '.*"generated".*' -I '.*"chora_head".*' -- docs/status.json; then
+bash "$ROOT/bin/status.sh" --publish >/dev/null
+# --- the exp/dev board rides the same beat: lanes are derived from the record, so a board
+# --- that is not regenerated is a board that is silently wrong (the glass proved that today).
+# --- stdlib-only python; a render failure must never take the glass down with it.
+if [ -f "$ROOT/bin/kanban.py" ] && command -v python3 >/dev/null 2>&1; then
+  python3 "$ROOT/bin/kanban.py" --write >/dev/null 2>&1 \
+    || echo "[publish] kanban render failed (registry unreadable?) — glass continues, board is stale"
+fi
+for f in docs/kanban.md docs/kanban.json docs/status.json; do
+  if [ -L "$ROOT/$f" ] || [ -d "$ROOT/$f" ]; then
+    echo "[publish] $f is not a regular file — refusing"; exit 1
+  fi
+done
+if git diff --quiet -I '.*"generated".*' -I '.*"chora_head".*' -I '^Generated ' -- docs/status.json docs/kanban.json docs/kanban.md; then
   echo "[publish] no real drift — snapshot stays committed"
   exit 0
 fi
-git commit -q -m "status snapshot (auto: publish-status)" -- docs/status.json \
+git commit -q -m "status snapshot (auto: publish-status)" -- docs/status.json docs/kanban.json docs/kanban.md \
   && { git push -q origin "refs/heads/$BR" 2>/dev/null \
         && echo "[publish] snapshot pushed ($BR)" \
         || echo "[publish] committed, push of refs/heads/$BR failed (offline, or $BR is not ahead of origin/$BR) — will retry next beat"; } \
