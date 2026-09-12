@@ -35,20 +35,32 @@ def sha256(p: Path) -> str:
 
 
 def spectrum(npz: Path) -> dict:
+    """The constrained regime stores FACTORS (u, v) per layer, not a weight matrix — so W is
+    reconstructed as u @ v before it can have a spectrum. eff_rank then reads as a direct check
+    that the registered cap is actually binding (it must never exceed the rung)."""
     import numpy as np
     z = np.load(npz)
     out = {}
-    for k in sorted(z.files):
-        if "weight" not in k:
+    layers = sorted({k.split(".")[0] + "." + k.split(".")[1] for k in z.files
+                     if k.startswith("layers.")})
+    for L in layers:
+        if f"{L}.weight" in z.files:
+            W = z[f"{L}.weight"].astype(np.float64)
+            stored = "weight"
+        elif f"{L}.u" in z.files and f"{L}.v" in z.files:
+            W = z[f"{L}.u"].astype(np.float64) @ z[f"{L}.v"].astype(np.float64)
+            stored = "factors u@v"
+        else:
             continue
-        W = z[k].astype(np.float64)
         s = np.linalg.svd(W, compute_uv=False)
         e2 = s ** 2
         tot = float(e2.sum())
-        out[k] = {"shape": list(W.shape),
+        out[L] = {"stored_as": stored, "W_shape": list(W.shape),
                   "energy_top1_share": float(e2[0] / tot) if tot else None,
                   "energy_top4_share": float(e2[:4].sum() / tot) if tot else None,
                   "eff_rank_1e-6": int((s > 1e-6 * s[0]).sum()) if len(s) else 0,
+                  "sv_max": float(s[0]) if len(s) else None,
+                  "sv_min": float(s[-1]) if len(s) else None,
                   "frobenius": math.sqrt(tot)}
     return out
 
@@ -74,8 +86,8 @@ def main() -> int:
                              "val_at_best": min(h["mse_val"] for h in rec["history"]),
                              "layers": sp,
                              "net_frobenius_sq": tot_e,
-                             "energy_share_layer1": (sp.get("layers.0.weight", {}).get("frobenius", 0) ** 2
-                                                     / tot_e) if tot_e else None,
+                             "energy_share_layer0": (sp.get("layers.0", {}).get("frobenius", 0) ** 2 / tot_e)
+                                         if tot_e else None,
                              "weights_npz_sha256": sha256(d / "weights.npz")})
     out = {
         "kind": "exp6 H6a pilot — realized per-layer spectra of the trained factors (law 4 column)",
@@ -103,7 +115,7 @@ def main() -> int:
     for x in hi[:3]:
         lay = x["layers"]
         print(f"   {x['run_id']:34s} " + "  ".join(
-            f"{k.split('.')[1]}:top1={v['energy_top1_share']:.3f},er={v['eff_rank_1e-6']}"
+            f"L{k.split('.')[1]} top1={v['energy_top1_share']:.3f} eff_rank={v['eff_rank_1e-6']}"
             for k, v in lay.items()))
     return 0
 
