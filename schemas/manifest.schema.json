@@ -1,11 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "ONE SPACE manifest entry",
-  "description": >-
-    Contract for every shared file under models/, data/, artifacts/.
-    A manifest is a JSON object: { "files": [ <entry>, ... ] }, one entry
-    per file, append-only. Readers cite (path, sha256); nothing crosses
-    benches without an entry.
+  "description": "Contract for every shared file under models/, data/, artifacts/. A manifest is a JSON object: { \"files\": [ <entry>, ... ] }, one entry per file, append-only. Readers cite (path, sha256); nothing crosses benches without an entry.",
   "type": "object",
   "required": ["files"],
   "properties": {

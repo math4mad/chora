@@ -1,98 +1,118 @@
 {
-  "files": [
-    {
-      "path": "artifacts/results/polynn/exp8_summary.json",
-      "sha256": "b3eaccf6e3667a62602f6523edcbac9f0c0dd41a614388440489b3793d7f756a",
-      "bytes": 953,
-      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-      "obtained": "2026-09-11",
-      "by": "Polynomial-Activated-NN@33afdb8",
-      "script": "compare.py --report / --calibration; visualize.py --tails-only",
-      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-    },
-    {
-      "path": "artifacts/results/polynn/exp8_summary.parquet",
-      "sha256": "e3dda7feda7204729eba7375918be6d8960c43cfd784df34085229a866111fe7",
-      "bytes": 5006,
-      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-      "obtained": "2026-09-11",
-      "by": "Polynomial-Activated-NN@33afdb8",
-      "script": "compare.py --report / --calibration; visualize.py --tails-only",
-      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-    },
-    {
-      "path": "artifacts/results/polynn/noise_band.json",
-      "sha256": "e685bce134cee610be02f7774fa4c5ec56fa99fbc6efabb526a877d8ee7c55b9",
-      "bytes": 180,
-      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-      "obtained": "2026-09-11",
-      "by": "Polynomial-Activated-NN@33afdb8",
-      "script": "compare.py --report / --calibration; visualize.py --tails-only",
-      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-    },
-    {
-      "path": "artifacts/results/polynn/relu_tail.json",
-      "sha256": "eaa03a2d09a26d803d59e94e67d070437c769dc0adbcbbdd1be00362589e483e",
-      "bytes": 3092,
-      "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
-      "obtained": "2026-09-11",
-      "by": "Polynomial-Activated-NN@33afdb8",
-      "script": "compare.py --report / --calibration; visualize.py --tails-only",
-      "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
-    },
-    {
-      "path": "artifacts/results/sarcos/shift_summary_exploratory.json",
-      "sha256": "16b95129ee96ee1bdb2c46c9466d43c0c89591b43b4eb435aceb2eb7a5fea54e",
-      "bytes": 3238,
-      "source": "Sarcos bench, results/shift_summary.json (same bytes, status renamed into path)",
-      "obtained": "2026-09-11",
-      "by": "Sarcos@50dcf1d",
-      "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict — see Letter 011"
-    },
-    {
-      "path": "artifacts/results/sarcos/shift_task_blocklevel_seed13.json",
-      "sha256": "2d9dc0dc3778965df53b4f6c46079c3a1e89db17efee41ef60a0d2f1f57b75ed",
-      "bytes": 967,
-      "source": "produced: PYTHONPATH=src python -m sarcos_svd.data --shift-task --seed 13 --block-size 256 --fractions .8 .1 .1 @ Sarcos@50dcf1d",
-      "obtained": "2026-09-11",
-      "by": "Sarcos@50dcf1d",
-      "notes": "canonical block-level downstream-task provenance: block lists, NN-distance ranges, sizes; the arena Step 0 chooses doses inside"
-    },
-    {
-      "path": "artifacts/results/mef/base_run.json",
-      "sha256": "6a3097154778917a8298112cb575a00819dadfb79d8cd238f9166695c00ddd2b",
-      "bytes": 2273,
-      "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
-      "obtained": "2026-09-11",
-      "by": "MEF@f453b7e",
-      "notes": "stage18 run1 base pretrain meta: ladder cfg, corpus hashes (shaA/shaB/shaP inside), 2000-step curve; checkpoints not mirrored (deterministic from seed 13 + script @ MEF@f453b7e)"
-    },
-    {
-      "path": "artifacts/results/mef/sweep_sched_a_full.json",
-      "sha256": "bf2f74cfa61a4541b858283418589fc598b8cb53117e0480886cf2c47bb524b5",
-      "bytes": 20930,
-      "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
-      "obtained": "2026-09-11",
-      "by": "MEF@f453b7e",
-      "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test — single seed, no band"
-    },
-    {
-      "path": "artifacts/results/mef/stage18_run1.log",
-      "sha256": "777b8825e2bcde29a1ff0aa612c56d01e8d7e1818c76d11c3de7cd60cbecbf8e",
-      "bytes": 8373,
-      "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
-      "obtained": "2026-09-11",
-      "by": "MEF@f453b7e",
-      "notes": "run log of stage18 run 1 (MEF's log/ is gitignored; provenance crosses here instead)"
-    },
-    {
-      "path": "artifacts/results/mef/A-env.json",
-      "sha256": "7f1efeeee858719411df861a76c0e69c68b69ecddcb56323fadb905f5138428e",
-      "bytes": 1380,
-      "source": "probe: benches/MEF/.venv/bin/python -c 'import torch,numpy;...' + sysctl hw.memsize (A, this session)",
-      "obtained": "2026-09-11",
-      "by": "MEF@a98508e",
-      "notes": "A's half of the machine-effect metadata, answering B's open_item_for_A by the report-by-letter option; python 3.14 (A) vs 3.11 (B) divergence flagged"
-    }
-  ]
+ "files": [
+  {
+   "path": "artifacts/results/polynn/exp8_summary.json",
+   "sha256": "b3eaccf6e3667a62602f6523edcbac9f0c0dd41a614388440489b3793d7f756a",
+   "bytes": 953,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/polynn/exp8_summary.parquet",
+   "sha256": "e3dda7feda7204729eba7375918be6d8960c43cfd784df34085229a866111fe7",
+   "bytes": 5006,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/polynn/noise_band.json",
+   "sha256": "e685bce134cee610be02f7774fa4c5ec56fa99fbc6efabb526a877d8ee7c55b9",
+   "bytes": 180,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/polynn/relu_tail.json",
+   "sha256": "eaa03a2d09a26d803d59e94e67d070437c769dc0adbcbbdd1be00362589e483e",
+   "bytes": 3092,
+   "source": "PolyNN bench, exp8 (docs/PREREG.md protocol)",
+   "obtained": "2026-09-11",
+   "by": "Polynomial-Activated-NN@33afdb8",
+   "script": "compare.py --report / --calibration; visualize.py --tails-only",
+   "notes": "40 recorded runs (4 arms x 2 widths x 5 seeds); noise band fixed after first 20; manifest writer: PolyNN is single writer for results/polynn/"
+  },
+  {
+   "path": "artifacts/results/sarcos/shift_summary_exploratory.json",
+   "sha256": "16b95129ee96ee1bdb2c46c9466d43c0c89591b43b4eb435aceb2eb7a5fea54e",
+   "bytes": 3238,
+   "source": "Sarcos bench, results/shift_summary.json (same bytes, status renamed into path)",
+   "obtained": "2026-09-11",
+   "by": "Sarcos@50dcf1d",
+   "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict — see Letter 011"
+  },
+  {
+   "path": "artifacts/results/sarcos/shift_task_blocklevel_seed13.json",
+   "sha256": "2d9dc0dc3778965df53b4f6c46079c3a1e89db17efee41ef60a0d2f1f57b75ed",
+   "bytes": 967,
+   "source": "produced: PYTHONPATH=src python -m sarcos_svd.data --shift-task --seed 13 --block-size 256 --fractions .8 .1 .1 @ Sarcos@50dcf1d",
+   "obtained": "2026-09-11",
+   "by": "Sarcos@50dcf1d",
+   "notes": "canonical block-level downstream-task provenance: block lists, NN-distance ranges, sizes; the arena Step 0 chooses doses inside"
+  },
+  {
+   "path": "artifacts/results/mef/base_run.json",
+   "sha256": "6a3097154778917a8298112cb575a00819dadfb79d8cd238f9166695c00ddd2b",
+   "bytes": 2273,
+   "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
+   "obtained": "2026-09-11",
+   "by": "MEF@f453b7e",
+   "notes": "stage18 run1 base pretrain meta: ladder cfg, corpus hashes (shaA/shaB/shaP inside), 2000-step curve; checkpoints not mirrored (deterministic from seed 13 + script @ MEF@f453b7e)"
+  },
+  {
+   "path": "artifacts/results/mef/sweep_sched_a_full.json",
+   "sha256": "bf2f74cfa61a4541b858283418589fc598b8cb53117e0480886cf2c47bb524b5",
+   "bytes": 20930,
+   "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
+   "obtained": "2026-09-11",
+   "by": "MEF@f453b7e",
+   "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test — single seed, no band"
+  },
+  {
+   "path": "artifacts/results/mef/stage18_run1.log",
+   "sha256": "777b8825e2bcde29a1ff0aa612c56d01e8d7e1818c76d11c3de7cd60cbecbf8e",
+   "bytes": 8373,
+   "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
+   "obtained": "2026-09-11",
+   "by": "MEF@f453b7e",
+   "notes": "run log of stage18 run 1 (MEF's log/ is gitignored; provenance crosses here instead)"
+  },
+  {
+   "path": "artifacts/results/mef/A-env.json",
+   "sha256": "7f1efeeee858719411df861a76c0e69c68b69ecddcb56323fadb905f5138428e",
+   "bytes": 1380,
+   "source": "probe: benches/MEF/.venv/bin/python -c 'import torch,numpy;...' + sysctl hw.memsize (A, this session)",
+   "obtained": "2026-09-11",
+   "by": "MEF@a98508e",
+   "notes": "A's half of the machine-effect metadata, answering B's open_item_for_A by the report-by-letter option; python 3.14 (A) vs 3.11 (B) divergence flagged"
+  },
+  {
+   "path": "artifacts/results/mef/B-env.json",
+   "sha256": "b78c34e2f5cbe89c1e7ece7377cd3948e5aa409113267b07bed8a14d6f03a932",
+   "bytes": 3677,
+   "source": "machine B (m1-16g), session 2026-09-12",
+   "obtained": "2026-09-12",
+   "by": "MEF@a98508e",
+   "script": "probe (Phase 3): torch/numpy/MPS availability + sysctl hw.memsize, machine B",
+   "notes": "law-2 defect found by the rollback audit the task owner ordered: this file crossed on 2026-09-11 WITHOUT an entry. Filed as B error, repaired same night."
+  },
+  {
+   "path": "artifacts/results/mef/twinB_seed13_base_run.json",
+   "sha256": "24bbbe1a2aba16f3504276e4b6c8fa7dc253b82b903d6ab5c887bc39ada4cf04",
+   "bytes": 2367,
+   "source": "machine B (m1-16g), session 2026-09-12",
+   "obtained": "2026-09-12",
+   "by": "MEF@a98508e",
+   "script": "MEF scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 (SEED=13, OUT_DIR=outputs/stage18_twinB, CHORA_MACHINE=m1-16g)",
+   "notes": "Gate 6 twin, pretrain half ONLY: the sweep never produced a ladder json on B (see run log). Registered as an OPEN gate, not a pass. floors owed: A = 5.546/1.404/1.219/1.153/1.091 nats"
+  }
+ ]
 }
