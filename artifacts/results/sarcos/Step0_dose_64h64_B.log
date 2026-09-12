@@ -1,0 +1,158 @@
+/Users/lunarcheung/Programming/code-2026/Sarcos-NN-Model/src/sarcos_svd/evaluate.py:46: RuntimeWarning: Mean of empty slice
+  per_joint = se.mean(axis=0)
+/Users/lunarcheung/Programming/code-2026/Sarcos-NN-Model/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+/Users/lunarcheung/Programming/code-2026/Sarcos-NN-Model/src/sarcos_svd/evaluate.py:54: RuntimeWarning: Mean of empty slice
+  "mae_raw_mean": float(np.abs(y_true - y_pred).mean()),
+/Users/lunarcheung/Programming/code-2026/Sarcos-NN-Model/.venv/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+{"seed": 13, "far_frac": 0.1, "arms": "NOT RUNNABLE: empty select set", "frozen_base_downstream": 0.03393}
+{"seed": 13, "far_frac": 0.25, "downstream": {"frozen_base": 0.02883, "from_scratch": 0.25829, "full_finetune": 0.03511, "lora_4_4_4": 0.06134, "lora_16_16_7": 0.05843, "lora_21_21_7": 0.06405}}
+{"seed": 13, "far_frac": 0.5, "downstream": {"frozen_base": 0.02893, "from_scratch": 0.10372, "full_finetune": 0.03059, "lora_4_4_4": 0.04548, "lora_16_16_7": 0.04094, "lora_21_21_7": 0.0395}}
+{"seed": 13, "far_frac": 0.75, "downstream": {"frozen_base": 0.02587, "from_scratch": 0.11472, "full_finetune": 0.02951, "lora_4_4_4": 0.04454, "lora_16_16_7": 0.03954, "lora_21_21_7": 0.03918}}
+{"seed": 13, "far_frac": 1.0, "downstream": {"frozen_base": 0.02475, "from_scratch": 0.07488, "full_finetune": 0.02848, "lora_4_4_4": 0.04217, "lora_16_16_7": 0.03715, "lora_21_21_7": 0.03635}}
+{"seed": 14, "far_frac": 0.1, "arms": "NOT RUNNABLE: empty select set", "frozen_base_downstream": 0.02314}
+{"seed": 14, "far_frac": 0.25, "downstream": {"frozen_base": 0.02383, "from_scratch": 0.25845, "full_finetune": 0.02744, "lora_4_4_4": 0.04586, "lora_16_16_7": 0.04426, "lora_21_21_7": 0.03891}}
+{"seed": 14, "far_frac": 0.5, "downstream": {"frozen_base": 0.02769, "from_scratch": 0.16766, "full_finetune": 0.02894, "lora_4_4_4": 0.04706, "lora_16_16_7": 0.0434, "lora_21_21_7": 0.04312}}
+{"seed": 14, "far_frac": 0.75, "downstream": {"frozen_base": 0.02418, "from_scratch": 0.09281, "full_finetune": 0.02619, "lora_4_4_4": 0.04214, "lora_16_16_7": 0.03825, "lora_21_21_7": 0.03848}}
+{"seed": 14, "far_frac": 1.0, "downstream": {"frozen_base": 0.02162, "from_scratch": 0.07538, "full_finetune": 0.02242, "lora_4_4_4": 0.03502, "lora_16_16_7": 0.03239, "lora_21_21_7": 0.03154}}
+{"seed": 15, "far_frac": 0.1, "arms": "NOT RUNNABLE: empty select set", "frozen_base_downstream": 0.04343}
+{"seed": 15, "far_frac": 0.25, "downstream": {"frozen_base": 0.03781, "from_scratch": 0.31936, "full_finetune": 0.04143, "lora_4_4_4": 0.07769, "lora_16_16_7": 0.06602, "lora_21_21_7": 0.06709}}
+{"seed": 15, "far_frac": 0.5, "downstream": {"frozen_base": 0.03347, "from_scratch": 0.16042, "full_finetune": 0.03754, "lora_4_4_4": 0.05922, "lora_16_16_7": 0.05465, "lora_21_21_7": 0.05352}}
+{"seed": 15, "far_frac": 0.75, "downstream": {"frozen_base": 0.03004, "from_scratch": 0.18242, "full_finetune": 0.03395, "lora_4_4_4": 0.05675, "lora_16_16_7": 0.05055, "lora_21_21_7": 0.05048}}
+{"seed": 15, "far_frac": 1.0, "downstream": {"frozen_base": 0.02855, "from_scratch": 0.11936, "full_finetune": 0.03073, "lora_4_4_4": 0.04959, "lora_16_16_7": 0.04613, "lora_21_21_7": 0.04602}}
+
+results/step0_64h64.json
+
+{
+  "table": [
+    {
+      "far_frac": 0.1,
+      "seeds": 3,
+      "downstream_frozen": 0.0335,
+      "downstream_full_ft": null,
+      "downstream_from_scratch": null,
+      "downstream_lora_by_rank": {},
+      "downstream_lora_best": null,
+      "ft_minus_frozen": null,
+      "best_lora_minus_frozen": null,
+      "scratch_over_ft": null,
+      "scratch_over_ft_per_seed": {
+        "13": null,
+        "14": null,
+        "15": null
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": "no arm trained at this dose under the registered rule (empty select set)",
+      "qualifies_learnable": false,
+      "mean_fit_rows": 512,
+      "mean_eval_downstream_rows": 512
+    },
+    {
+      "far_frac": 0.25,
+      "seeds": 3,
+      "downstream_frozen": 0.03015,
+      "downstream_full_ft": 0.03466,
+      "downstream_from_scratch": 0.2787,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.06163,
+        "lora_16_16_7": 0.05623,
+        "lora_21_21_7": 0.05669
+      },
+      "downstream_lora_best": 0.05623,
+      "ft_minus_frozen": 0.00451,
+      "best_lora_minus_frozen": 0.02608,
+      "scratch_over_ft": 8.041,
+      "scratch_over_ft_per_seed": {
+        "13": 7.356,
+        "14": 9.418,
+        "15": 7.708
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 768,
+      "mean_eval_downstream_rows": 1024
+    },
+    {
+      "far_frac": 0.5,
+      "seeds": 3,
+      "downstream_frozen": 0.03003,
+      "downstream_full_ft": 0.03236,
+      "downstream_from_scratch": 0.14393,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.05059,
+        "lora_16_16_7": 0.04633,
+        "lora_21_21_7": 0.04538
+      },
+      "downstream_lora_best": 0.04538,
+      "ft_minus_frozen": 0.00233,
+      "best_lora_minus_frozen": 0.01535,
+      "scratch_over_ft": 4.448,
+      "scratch_over_ft_per_seed": {
+        "13": 3.39,
+        "14": 5.793,
+        "15": 4.273
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 1792,
+      "mean_eval_downstream_rows": 2304
+    },
+    {
+      "far_frac": 0.75,
+      "seeds": 3,
+      "downstream_frozen": 0.0267,
+      "downstream_full_ft": 0.02989,
+      "downstream_from_scratch": 0.12999,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.04781,
+        "lora_16_16_7": 0.04278,
+        "lora_21_21_7": 0.04271
+      },
+      "downstream_lora_best": 0.04271,
+      "ft_minus_frozen": 0.00319,
+      "best_lora_minus_frozen": 0.01601,
+      "scratch_over_ft": 4.349,
+      "scratch_over_ft_per_seed": {
+        "13": 3.887,
+        "14": 3.544,
+        "15": 5.373
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 2560,
+      "mean_eval_downstream_rows": 3584
+    },
+    {
+      "far_frac": 1.0,
+      "seeds": 3,
+      "downstream_frozen": 0.02497,
+      "downstream_full_ft": 0.02721,
+      "downstream_from_scratch": 0.08987,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.04226,
+        "lora_16_16_7": 0.03856,
+        "lora_21_21_7": 0.03797
+      },
+      "downstream_lora_best": 0.03797,
+      "ft_minus_frozen": 0.00224,
+      "best_lora_minus_frozen": 0.013,
+      "scratch_over_ft": 3.303,
+      "scratch_over_ft_per_seed": {
+        "13": 2.629,
+        "14": 3.362,
+        "15": 3.884
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 3584,
+      "mean_eval_downstream_rows": 4608
+    }
+  ],
+  "qualifying_doses": [],
+  "verdict": "NO DOSE QUALIFIES \u2014 H9-S unmeasurable-on-Sarcos (Letter 011 \u00a72, monument clause)"
+}
