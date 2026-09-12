@@ -303,6 +303,26 @@
    "by": "Middle-Eigen-function@6f5f4c5",
    "script": "scripts/stage19_kairos_e3.py (seeds 13/14/15, one process each)",
    "notes": "run-on: m1pro-32g (A); E3 last-mile, verdict not adjudicated (S-sched 2/3, gray 1/3); design finding: constant-lr arms make S-sched's name inoperative; Kairos IDEAS I-02 adjudication; thresholds frozen pre-run in script header"
+  },
+  {
+   "path": "artifacts/results/jacobigp/exp6_h6c/h6c_verdict.json",
+   "sha256": "c51e001a3b1dd2648dd9c752bdf2fe4018cfb004fee6b6ca9f2c92326d6261ea",
+   "bytes": 12700,
+   "source": "exp6 H6c verdict \u2014 evidence path on PolyNN's INIT pre-activation measure (JacobiGP apparatus, donor bytes from machine B)",
+   "obtained": "2026-09-12",
+   "by": "JacobiGP@99c7a4a + chora@932da03",
+   "script": "chora/experiments/exp6_h6c_fit.py",
+   "notes": "H6c FAILS: mean pair (-0.922628, -0.916317) vs registered target (0.40, 0.37), band \u00b10.200000 frozen by Amendment A1 from sd_seed of h6c_walks_summary.json (bd58e62bb8d1\u2026). Obituary as pre-written ('lands at (0,0)\u00b1band, or wanders negative'). One hypothesis check, one draw (disclosure field records the 17:5x dry-run peek before the write; no frozen mechanic altered). N=64 sensitivity row identical to 4 dp; all four arms' fits are the SAME numbers because the init histograms are integer-identical (Letter 020's contrast-row death, reproduced here). run-on: m1pro-32g (A); 666.4 s wall."
+  },
+  {
+   "path": "artifacts/results/jacobigp/exp6_h6c/h6c_fits.json",
+   "sha256": "b4eb920966700aa65edab5b388f7b9abf9131d529e8b6291bc7af85d2c96208b",
+   "bytes": 64548,
+   "source": "per-start fit rows behind the H6c verdict (25 cells x 6 starts, alpha/beta/obj/sigma2/noise/lengthscale)",
+   "obtained": "2026-09-12",
+   "by": "JacobiGP@99c7a4a + chora@932da03",
+   "script": "chora/experiments/exp6_h6c_fit.py",
+   "notes": "Multi-start spread is the evidence for the corner reading: all six registered starts of every cell converge to alpha,beta ~ -0.9, so the walk to the singular edge is the objective's, not the initialisation's. run-on: m1pro-32g (A)."
   }
  ]
 }
