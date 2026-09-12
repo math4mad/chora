@@ -1,0 +1,569 @@
+{
+ "kind": "exp6 H6c fit \u2014 evidence path on PolyNN's init pre-activation measure",
+ "registered_in": "JacobiGP docs/PREREG_EXP6.md \u00a7H6c + A1 @ 99c7a4a",
+ "ordering": "A1 committed BEFORE this file and before this run; the script re-reads it from git HEAD and refuses to start without it, and refuses a second draw",
+ "disclosure": "The deciding row was first computed at 17:5x +0800 under --dry-run (identical rig, identical frozen mechanics, nothing written), so this hand saw the five (alpha_hat,beta_hat) values BEFORE this write. No frozen mechanic was altered between the peek and this run, and none will be: the check is the same single draw, and this field exists because 'the answer cannot be improved afterwards' is a claim about behaviour, not about intentions.",
+ "band_rule": {
+  "value": 0.2,
+  "source": "\u00b1max(0.2, 2\u00b7sd_seed) over terminal_values of h6c_walks_summary.json (bd58e62bb8d1\u2026)",
+  "rederived_at_runtime": {
+   "alpha": 0.2,
+   "beta": 0.2
+  },
+  "ddof_note": "population sd gives 0.110015/0.073845 \u2014 no convention moves the band off \u00b10.2"
+ },
+ "pointers": {
+  "primary": [
+   0.4,
+   0.37
+  ],
+  "secondary": [
+   0.358882,
+   0.358988
+  ]
+ },
+ "coordinate": {
+  "x": "256 bin centres of [-1,1]",
+  "y": "counts verbatim, no re-scaling",
+  "measure": "combined_all_layers, arm A-jacobi, h=128, seeds 1000-1004"
+ },
+ "rig": {
+  "N_deciding": 30,
+  "N_sensitivity": 64,
+  "spectrum": "se",
+  "prior": "MAP log N(0,2^2) on unconstrained softplus (alpha,beta) \u2014 MATH.md \u00a76",
+  "starts": [
+   [
+    0.0,
+    0.0
+   ],
+   [
+    2.0,
+    2.0
+   ],
+   [
+    -0.5,
+    -0.5
+   ],
+   [
+    4.0,
+    -0.5
+   ],
+   [
+    -0.5,
+    4.0
+   ],
+   [
+    1.0,
+    -0.9
+   ]
+  ],
+  "dtype": "float64",
+  "inits": [
+   0.4,
+   1.0,
+   0.001
+  ]
+ },
+ "donors": {
+  "walks_summary": {
+   "path": "artifacts/results/polynn/h6cB/h6c_walks_summary.json",
+   "sha256": "bd58e62bb8d1ab8586399ba71aa63214341e1e94b9e446100af38cdaf3b39d38"
+  },
+  "dumps": {
+   "jacobi": {
+    "1000": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1000.json",
+     "sha256": "a7fd916d1475b1017db32548ff26008108e03833fc1861f667faa64b6ad26fab"
+    },
+    "1001": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1001.json",
+     "sha256": "2027ef54afaf3afe7c56f99dc8a841eee12010b80e09d0b83f3fcac5374f7be5"
+    },
+    "1002": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1002.json",
+     "sha256": "6a70a572db0acbfaf6e85a66c8eac9717a16b4fa7fc25ac704506d51d0ffd931"
+    },
+    "1003": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1003.json",
+     "sha256": "20eab7791fa57787f875744c7243913ade19821de36a791c75807f0567e9c57e"
+    },
+    "1004": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1004.json",
+     "sha256": "9acee5cdfc862fa9f23485b5f72fe0a3777e45ccd6873527693bf32eda674c49"
+    }
+   },
+   "relu": {
+    "1000": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1000.json",
+     "sha256": "ee159648e5ae12a32c5b632b8c2ee28860f1e573983c9e659ed1dd57c96d4823"
+    },
+    "1001": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1001.json",
+     "sha256": "5b29000ba9cf704e86a7f66957bea14d65a61848c2b5272faddafd7eab8ee8b1"
+    },
+    "1002": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1002.json",
+     "sha256": "59117126c1b8f62317aacea2a624b2409026fedd367973a220aa87b09429345c"
+    },
+    "1003": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1003.json",
+     "sha256": "b47bfad15721087f50c355a63a2d395d78c39ad3c8d63a5a0bfea6042b6b299b"
+    },
+    "1004": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1004.json",
+     "sha256": "bb04bc5489076d8a96b03e8a5b58302b038af6e9235c112ae5e9ba7bf2ed72bc"
+    }
+   },
+   "hermite": {
+    "1000": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1000.json",
+     "sha256": "e06d07084456a628cfdeec2a0e1681e55832eb96b9db0538a2919c9b98eec7ae"
+    },
+    "1001": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1001.json",
+     "sha256": "efc300c5d54ed0b926db41dc7ac360c8851b3a0a4f8111d2917eec31150c1293"
+    },
+    "1002": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1002.json",
+     "sha256": "dfb5fd8792a3d5f6bed537ec9a6185712d500ba20bcd7be96411303658f48ae0"
+    },
+    "1003": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1003.json",
+     "sha256": "b117a3bd47e46ef1a91ff4ed6fa6f15dc804110f520aa555627f1e2af5c2f577"
+    },
+    "1004": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1004.json",
+     "sha256": "5aa6b0877d19c9b4f109a2d723ddf16e9c4e9a44a7ec05a4fe968fb0c33defc0"
+    }
+   },
+   "cheby": {
+    "1000": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1000.json",
+     "sha256": "7b9e25093fd0b5eb35002f18c7fef064cf50f5fd6c313180b8dd74497ee01401"
+    },
+    "1001": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1001.json",
+     "sha256": "db9ce226aec0e1deec3240b239ebc6dd40c6e4039ee4634bade5266675fe032b"
+    },
+    "1002": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1002.json",
+     "sha256": "3e9d6df1350be5ddd9635f931813de55079b8778cb954aa6330c93087a173dd4"
+    },
+    "1003": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1003.json",
+     "sha256": "d1df77ebb23c2302a7953b10ad587797fd3b9dc49b6d42206960dffeefc94c54"
+    },
+    "1004": {
+     "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1004.json",
+     "sha256": "4efdbfa380ec86cc3e5da6bfa7c73e0fc0887d9526c86091b996b0aa382ae9f3"
+    }
+   }
+  }
+ },
+ "primary_N30": {
+  "n_ok": 5,
+  "mean_pair": [
+   -0.9226282376508068,
+   -0.916316897047127
+  ],
+  "sd_over_seeds": [
+   0.022203826648937754,
+   0.03613206721421203
+  ],
+  "per_seed": [
+   [
+    1000,
+    -0.958698,
+    -0.855808,
+    -1793.842,
+    153427661.7224633,
+    30803.599499734948,
+    0.18990899247443171,
+    0.999895
+   ],
+   [
+    1001,
+    -0.915755,
+    -0.936541,
+    -1805.769,
+    219792885.4802844,
+    40638.42830082563,
+    0.2465429029284792,
+    0.999865
+   ],
+   [
+    1002,
+    -0.898504,
+    -0.94372,
+    -1765.251,
+    255590098.93621373,
+    31575.815798321848,
+    0.28859261308275935,
+    0.999885
+   ],
+   [
+    1003,
+    -0.923896,
+    -0.91015,
+    -1755.302,
+    339643374.13169354,
+    31906.907471628812,
+    0.3529565386040862,
+    0.999893
+   ],
+   [
+    1004,
+    -0.916288,
+    -0.935365,
+    -1741.142,
+    279991889.79530203,
+    26877.95120929454,
+    0.3121764544511399,
+    0.999904
+   ]
+  ],
+  "barrier_flags": [],
+  "breakdowns": []
+ },
+ "sensitivity_N64": {
+  "n_ok": 5,
+  "mean_pair": [
+   -0.9226195933261011,
+   -0.9159366220010112
+  ],
+  "sd_over_seeds": [
+   0.02218625300492379,
+   0.03692945032737357
+  ],
+  "per_seed": [
+   [
+    1000,
+    -0.958654,
+    -0.853907,
+    -1793.86,
+    153655836.87233382,
+    30822.231634058833,
+    0.19010971090720102,
+    0.999895
+   ],
+   [
+    1001,
+    -0.915755,
+    -0.936542,
+    -1805.769,
+    219792686.55407998,
+    40638.43928507951,
+    0.2465428902682727,
+    0.999865
+   ],
+   [
+    1002,
+    -0.898504,
+    -0.94372,
+    -1765.251,
+    255591502.1574338,
+    31575.829592271755,
+    0.2885926581442124,
+    0.999885
+   ],
+   [
+    1003,
+    -0.923897,
+    -0.91015,
+    -1755.302,
+    339643658.75316006,
+    31906.9018029894,
+    0.35295642074335204,
+    0.999893
+   ],
+   [
+    1004,
+    -0.916288,
+    -0.935365,
+    -1741.142,
+    279992006.79752845,
+    26877.954389821803,
+    0.312176403315994,
+    0.999904
+   ]
+  ],
+  "barrier_flags": [],
+  "breakdowns": []
+ },
+ "contrast_rows": {
+  "relu": {
+   "n_ok": 5,
+   "mean_pair": [
+    -0.9226282376508068,
+    -0.916316897047127
+   ],
+   "sd_over_seeds": [
+    0.022203826648937754,
+    0.03613206721421203
+   ],
+   "per_seed": [
+    [
+     1000,
+     -0.958698,
+     -0.855808,
+     -1793.842,
+     153427661.7224633,
+     30803.599499734948,
+     0.18990899247443171,
+     0.999895
+    ],
+    [
+     1001,
+     -0.915755,
+     -0.936541,
+     -1805.769,
+     219792885.4802844,
+     40638.42830082563,
+     0.2465429029284792,
+     0.999865
+    ],
+    [
+     1002,
+     -0.898504,
+     -0.94372,
+     -1765.251,
+     255590098.93621373,
+     31575.815798321848,
+     0.28859261308275935,
+     0.999885
+    ],
+    [
+     1003,
+     -0.923896,
+     -0.91015,
+     -1755.302,
+     339643374.13169354,
+     31906.907471628812,
+     0.3529565386040862,
+     0.999893
+    ],
+    [
+     1004,
+     -0.916288,
+     -0.935365,
+     -1741.142,
+     279991889.79530203,
+     26877.95120929454,
+     0.3121764544511399,
+     0.999904
+    ]
+   ],
+   "barrier_flags": [],
+   "breakdowns": []
+  },
+  "hermite": {
+   "n_ok": 5,
+   "mean_pair": [
+    -0.9226282376508068,
+    -0.916316897047127
+   ],
+   "sd_over_seeds": [
+    0.022203826648937754,
+    0.03613206721421203
+   ],
+   "per_seed": [
+    [
+     1000,
+     -0.958698,
+     -0.855808,
+     -1793.842,
+     153427661.7224633,
+     30803.599499734948,
+     0.18990899247443171,
+     0.999895
+    ],
+    [
+     1001,
+     -0.915755,
+     -0.936541,
+     -1805.769,
+     219792885.4802844,
+     40638.42830082563,
+     0.2465429029284792,
+     0.999865
+    ],
+    [
+     1002,
+     -0.898504,
+     -0.94372,
+     -1765.251,
+     255590098.93621373,
+     31575.815798321848,
+     0.28859261308275935,
+     0.999885
+    ],
+    [
+     1003,
+     -0.923896,
+     -0.91015,
+     -1755.302,
+     339643374.13169354,
+     31906.907471628812,
+     0.3529565386040862,
+     0.999893
+    ],
+    [
+     1004,
+     -0.916288,
+     -0.935365,
+     -1741.142,
+     279991889.79530203,
+     26877.95120929454,
+     0.3121764544511399,
+     0.999904
+    ]
+   ],
+   "barrier_flags": [],
+   "breakdowns": []
+  },
+  "cheby": {
+   "n_ok": 5,
+   "mean_pair": [
+    -0.9226282376508068,
+    -0.916316897047127
+   ],
+   "sd_over_seeds": [
+    0.022203826648937754,
+    0.03613206721421203
+   ],
+   "per_seed": [
+    [
+     1000,
+     -0.958698,
+     -0.855808,
+     -1793.842,
+     153427661.7224633,
+     30803.599499734948,
+     0.18990899247443171,
+     0.999895
+    ],
+    [
+     1001,
+     -0.915755,
+     -0.936541,
+     -1805.769,
+     219792885.4802844,
+     40638.42830082563,
+     0.2465429029284792,
+     0.999865
+    ],
+    [
+     1002,
+     -0.898504,
+     -0.94372,
+     -1765.251,
+     255590098.93621373,
+     31575.815798321848,
+     0.28859261308275935,
+     0.999885
+    ],
+    [
+     1003,
+     -0.923896,
+     -0.91015,
+     -1755.302,
+     339643374.13169354,
+     31906.907471628812,
+     0.3529565386040862,
+     0.999893
+    ],
+    [
+     1004,
+     -0.916288,
+     -0.935365,
+     -1741.142,
+     279991889.79530203,
+     26877.95120929454,
+     0.3121764544511399,
+     0.999904
+    ]
+   ],
+   "barrier_flags": [],
+   "breakdowns": []
+  }
+ },
+ "verdict": {
+  "status": "FAILS",
+  "claim_supported": false,
+  "primary_pointer": {
+   "target": [
+    0.4,
+    0.37
+   ],
+   "abs_dev": [
+    1.322628,
+    1.286317
+   ],
+   "inside_band": false
+  },
+  "secondary_pointer": {
+   "target": [
+    0.358882,
+    0.358988
+   ],
+   "abs_dev": [
+    1.28151,
+    1.275305
+   ],
+   "inside_band": false
+  },
+  "band": 0.2,
+  "n_checks": 1,
+  "note": "the joint conjunction is the single hypothesis check; per-coordinate halves are reported, not separate claims (Sitting 003, T01)"
+ },
+ "verdict_sensitivity_row_N64": {
+  "status": "FAILS",
+  "claim_supported": false,
+  "primary_pointer": {
+   "target": [
+    0.4,
+    0.37
+   ],
+   "abs_dev": [
+    1.32262,
+    1.285937
+   ],
+   "inside_band": false
+  },
+  "secondary_pointer": {
+   "target": [
+    0.358882,
+    0.358988
+   ],
+   "abs_dev": [
+    1.281502,
+    1.274925
+   ],
+   "inside_band": false
+  },
+  "band": 0.2,
+  "n_checks": 1,
+  "note": "the joint conjunction is the single hypothesis check; per-coordinate halves are reported, not separate claims (Sitting 003, T01)"
+ },
+ "environment": {
+  "machine": "m1pro-32g",
+  "host": "MacBook-Pro.local",
+  "python": "3.14.7",
+  "torch": "2.14.0",
+  "numpy": "2.5.3",
+  "threads": 8
+ },
+ "provenance": {
+  "chora_head": "932da03b61018ae9f952f12a65acc5dcdb7740a3",
+  "jacobigp_head": "99c7a4a17bb5f095c707c3b97c2d95675dc92627",
+  "polynn_head": "0eb293097eec7afcb838ccf4661e766daaaf6ca1",
+  "script": "chora/experiments/exp6_h6c_fit.py",
+  "run-on": "m1pro-32g (A)",
+  "wall_clock_s": 666.4
+ },
+ "not_done": [
+  "no re-start-set tuning, no bin-subset trimming, no re-scaling or log-count variant, no narrowing of the band, no choosing the secondary pointer over the primary, no swapping N=64 into the deciding slot (A1 \u00a73)",
+  "the other three arms cannot falsify anything on this donor data (Letter 020: init histograms integer-identical across arms)"
+ ]
+}
