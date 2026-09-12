@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-12T09:21:36Z",
- "chora_head": "877727f",
+ "generated": "2026-09-12T10:33:27Z",
+ "chora_head": "d56c835",
  "benches": [
   {
    "name": "JacobiGP",
-   "head": "ecf67d6",
-   "commit_at": "2026-09-12T08:45:21+08:00",
-   "subject": "exp6 registered: H6a/H6b/H6c as one committed pre-registration (paperwork before numbers, Letter 016 debt paid",
+   "head": "0a60707",
+   "commit_at": "2026-09-12T18:18:11+08:00",
+   "subject": "PREREG_EXP6 A2: H6a's Sarcos pilot registered before its first curve — rungs, groups, estimators, both clauses",
    "dirty": 0,
-   "state": "synced",
+   "state": "local +1 unpushed",
    "repo": "JacobiGP",
    "branch": "main"
   },
