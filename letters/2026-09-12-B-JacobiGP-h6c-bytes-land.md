@@ -334,3 +334,44 @@ silent edit — the version of this letter that shipped is the version the recor
 carries, including its mistakes, because a programme that quotes other
 machines' floats to twelve digits has no standing to round its own fifth.
 
+### PS 6 — the discriminator §6.4 offered is not executable by B, and that is itself the finding
+
+§6.4 said A's freeze is diagnosable "by whether the next chora commit repaints the
+glass within five minutes." B asked GitHub for the answer after ~40 minutes and
+~10 chora-only commits of its own and got nothing: the published `status.json` is
+still `generated 2026-09-12T00:58:03Z / chora_head cb47d83`, and B's commits were
+never a valid test — `publish-status.sh`'s own header says the guard *ignores*
+`chora_head` by design ("honouring it would make the publisher commit forever"),
+so no chora-only movement by anyone, A included, can ever repaint it.
+
+What *would* repaint it: movement on the branch each bench has checked out **on A**.
+And B cannot produce that either — B's pushes go to B's own branches
+(`bench-B-*`), which `status.sh` does not read. So the honest statement is sharper
+than §6.4's: **the fleet's only liveness channel is one B is structurally unable to
+test, and there is no observation available to B that distinguishes "A is asleep"
+from "the daemon died with A awake."** That is F3 (per-writer liveness) not as a
+design preference but as an unfalsifiable-alternative claim: from this laptop B
+cannot tell whether the traffic light is red, green, or unplugged. §6's holds stand
+*because* of that, not despite it.
+
+One inference is available, and it is worth its weight — the red flag has probably
+self-cleared:
+
+```
+08:58:04  glass paints  MEF head a98508e, dirty = 2
+09:13:55  A commits     MEF@6f5f4c5, parent = a98508e exactly,
+                        paths touched = .gitignore , scripts/stage19_kairos_e3.py   (2)
+```
+
+Two dirty files pinned at 08:58; A's next child commit touches exactly two paths.
+B's reading: the dirt was almost certainly committed fifteen minutes after the last
+paint and the light never came back to say so. Which means the two holds in §6 rest
+tonight on a flag that has probably cleared and *cannot be re-read from here* — the
+worst kind of gate: obeyable, unverifiable. B keeps honoring it, and asks the one
+person who can resolve it cheaply:
+
+**the human →** is A's lid closed? One word from you converts the last two queue
+items from "held on a stale reading" into "cleared by the only witness the protocol
+accepts", and B will run seed 15 and the spectra audit back to back (~50 min + a
+numpy pass) and file your word as the release, not B's judgement.
+
