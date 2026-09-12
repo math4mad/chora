@@ -1,0 +1,85 @@
+{
+ "kind": "named checkpoint source for H9 \u2014 the stage18/19 k-ladder bases on machine A (an INDEX of weights, not the weights)",
+ "why_this_file_exists": "Sitting 003 R2 conditions MEF's participation in H9 on a **named checkpoint source**. The bytes are git-ignored everywhere (law 1: large binaries are reconstructed, not committed \u2014 MEF/.gitignore line 17 `outputs/*/ckpt_k*.pt`, with the rationale 'reproducible from seed 13 + scripts/stage18_kairos_mini.py'), so 'named' cannot mean 'committed': it means (path, sha256, bytes, host, seed, recipe) recorded somewhere the fleet can read and re-verify. That is this file. 1 KB, no weights.",
+ "registered_against": "H9-M draft in benches/Kairos/docs/PREREG.md (this workspace), 2026-09-12",
+ "produced_by": "MEF/scripts/stage18_kairos_mini.py @ MEF@6f5f4c5 (branch multi-model)",
+ "run_on": "m1pro-32g (A), 2026-09-11 16:19\u201316:23 local, seed 13, 2000 base steps, ctx 256, 4 layers, d=192, nh=6, nkv=2, inter=512",
+ "status_of_bytes": "present on A's disk and hash-verified at the moment this file was written; NOT in git; the same seed must regenerate them bitwise if MEF's determinism claim holds (the same claim that just failed bitwise for Sarcos's rank-1 arms \u2014 see h6a_pilot_robustness_posthoc.json \u2014 so this is stated as a claim to be re-audited per A2 \u00a76's style, not as a fact)",
+ "checkpoints": [
+  {
+   "rung_k_pct": 0,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k0.pt",
+   "sha256": "a7d148518cde1ecd65a99acc68ed9802adebfa38135f2db8c345881f347b9b26",
+   "bytes": 8252951
+  },
+  {
+   "rung_k_pct": 25,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k25.pt",
+   "sha256": "87327b0140675be81fda9f6628cbd63d36ded3a68b04e599da0ecd13efc7218e",
+   "bytes": 8253601
+  },
+  {
+   "rung_k_pct": 50,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k50.pt",
+   "sha256": "a29aaf66880fce1efe037e2c57c712748aaadbb1d38204cb0ddf54193fd76ba5",
+   "bytes": 8253601
+  },
+  {
+   "rung_k_pct": 75,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k75.pt",
+   "sha256": "09e592b6fa6595c361576f9326525cd53288a11ae8a2f4def09c09a7631d6808",
+   "bytes": 8253601
+  },
+  {
+   "rung_k_pct": 100,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k100.pt",
+   "sha256": "4b2d83737e8ce663e12872427d63421b4ac15a824798383920389e6cae523dcf",
+   "bytes": 8253675
+  }
+ ],
+ "provenance_chain_verified_now": {
+  "ckpt_k100_equals_E3_seed13_base": true,
+  "detail": "sha256(ckpt_k100.pt) = 4b2d83737e8c\u2026 is byte-for-byte the `base_sha256` recorded for seed 13 in artifacts/results/mef/stage19_e3/e3_summary.json \u2014 so the k=100 rung of the 2026-09-11 ladder IS the base that E3's last-mile diagnostic trained adapters into on 2026-09-12. The two experiments share a container, and the hash is what proves it rather than the filename.",
+  "eval_tensors": {
+   "eval_A.pt": "the RTE-side held-out stream",
+   "eval_B.pt": "the primary held-out stream (column B in every arm)",
+   "eval_P.pt": "the probe stream (column P)"
+  }
+ },
+ "arms_already_measured_on_these_bases": {
+  "file": "artifacts/results/mef/sweep_sched_a_full.json (pinned bf2f74cfa61a4541\u2026, 20,930 B) \u2014 and B's seed-14 replication of the same ladder, artifacts/results/mef/E0_seed14_sweep_full.json (pinned 695dba48ff1d522b\u2026, 20,985 B)",
+  "grid": "k \u2208 {0,25,50,75,100} \u00d7 r \u2208 {2,8,32}, schedule (a) fixed 600-step adapter budget, seed 13, lr 5e-4 constant",
+  "exploratory": true,
+  "band": "none \u2014 this is why H9 cannot be scored from these bytes, and why the H9-M draft asks for the k=0 replicate band (E0 seed 15) BEFORE any further rung is spent",
+  "floors_B": {
+   "0": 5.5456,
+   "25": 1.4038,
+   "50": 1.2194,
+   "75": 1.1525,
+   "100": 1.0906
+  },
+  "cross_machine_floor_spread": {
+   "A_seed13_floors_B": {
+    "0": 5.5456,
+    "25": 1.4038,
+    "50": 1.2194,
+    "75": 1.1525,
+    "100": 1.0906
+   },
+   "B_seed14_floors_B": {
+    "0": 5.6587,
+    "25": 1.3813,
+    "50": 1.1795,
+    "75": 1.0885,
+    "100": 1.0313
+   },
+   "max_abs_diff": 0.1131,
+   "at_rung": 0,
+   "reading": "this is a CROSS-SEED, CROSS-MACHINE pair (A seed 13 vs B seed 14), so the 0.11-nat spread at k=0 mixes the two effects the programme wants kept apart; it is the right order of magnitude for a band and it is NOT a band. The band H9 needs is k=0 replicates at fixed seed policy (E0 seed 15, deliberately left unstarted by B). Filed so nobody computes a confidence interval out of this table."
+  }
+ },
+ "not_here": {
+  "machine_B_ladder": "B's seed-14 ladder RESULTS are pinned (E0_seed14_sweep_full.json 695dba48ff1d\u2026, E0_seed14_base_run.json 5e6e52fd7cc4\u2026); B's checkpoint BYTES are on B's disk and are B's to name in B's own commit (single writer, law 3). No slot is invented for them here.",
+  "weights_in_git": "no \u2014 see why_this_file_exists"
+ }
+}

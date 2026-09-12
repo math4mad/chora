@@ -353,6 +353,16 @@
    "by": "JacobiGP@aab50d3",
    "script": "chora/experiments/exp6_h6a_robustness_posthoc.py",
    "notes": "Labelled post-hoc and separate by law: it cannot move the verdict, and it does not \u2014 shifts <=3e-4 in (alpha,beta), S 7.880 -> 7.880. Carries a bug_log recording that this script's own first attempt printed S=11.104 because a leftover loop variable made both coordinates read beta; caught by the script's required self-consistency line against the deciding row. An instrument reporting clean while broken, arriving from the checker's side. run-on: m1pro-32g (A)."
+  },
+  {
+   "path": "artifacts/checkpoints/stage18_kairos_ladder.json",
+   "sha256": "c945bf1c7bab18ff95e512762a506c20720a75735164008fd6505572784c8770",
+   "bytes": 5107,
+   "source": "produced \u2014 index of MEF's stage18 k-ladder checkpoints (weights stay out of git, law 1)",
+   "obtained": "2026-09-12",
+   "by": "MEF@6f5f4c5 (bytes) / Kairos@ae6be01 (the H9-M draft that asked for it)",
+   "script": "shasum -a 256 Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k*.pt",
+   "notes": "Satisfies Sitting 003 R2's 'named checkpoint source' condition for H9 on MEF, with 1 KB and no weights: five bases hashed on disk (k=0 a7d14851\u2026, 25 87327b01\u2026, 50 a29aaf66\u2026, 75 09e592b6\u2026, 100 4b2d8373\u2026), git-ignored by MEF/.gitignore:17 as reproducible from seed 13 + scripts/stage18_kairos_mini.py. Provenance chain checked now rather than asserted: sha256(ckpt_k100.pt) equals the seed-13 base_sha256 inside artifacts/results/mef/stage19_e3/e3_summary.json, so the 2026-09-11 ladder and E3's last-mile diagnostic share one container by hash, not by filename. Also carries A's and B's floors side by side (5.5456/1.4038/1.2194/1.1525/1.0906 vs 5.6587/1.3813/1.1795/1.0885/1.0313) with the reading that this cross-seed-cross-machine pair is the right ORDER of magnitude for a band and is not a band. run-on: hash pass executed on m1pro-32g (A); B's own checkpoint bytes are left for B's commit (law 3)."
   }
  ]
 }
