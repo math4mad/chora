@@ -135,14 +135,14 @@
    "notes": "ladder ckpts saved at k=0/25/50/75/100; .pt stay out of git by law 3, json+log are the run"
   },
   {
-   "path": "chora/artifacts/results/mef/E0_seed14_sweep_full.json",
+   "path": "artifacts/results/mef/E0_seed14_sweep_full.json",
    "sha256": "695dba48ff1d522b9d025e0ac44b9a659b7122dda6fed27f6f26c229d0aad8b0",
    "bytes": 20985,
    "source": "machine B (m1-16g), session 2026-09-12",
    "obtained": "2026-09-12",
    "by": "MEF@ddf1d16",
    "script": "MEF stage18_kairos_mini.py --mode sweep --adapter-steps 600 --batch 16 --full (SEED=14, OUT_DIR=outputs/stage18_seed14)",
-   "notes": "Letter 016 queue item 1, seed 14 ladder. First ladder floors ever produced on B. Wall clock: sweep ran 09:07-09:56 local on m1-16g. Exploratory per the script's own flag; regime rows (co-train vs frozen base) not yet separated by the Warden's rule."
+   "notes": "Letter 016 queue item 1, seed 14 ladder. First ladder floors ever produced on B. Wall clock: sweep ran 09:07-09:56 local on m1-16g. Exploratory per the script's own flag; regime rows (co-train vs frozen base) not yet separated by the Warden's rule. | PATH CORRECTION 2026-09-12: this entry was pinned as 'chora/artifacts/...' while every sibling path is relative to the chora root, so the manifest pointed at a file that exists nowhere. The bytes were never in question \u2014 sha256 695dba48ff1d522b\u2026 and bytes=20985 both verified against the real path on re-hash; only the label was wrong. B wrote the entry, so B corrects it, in place, with the wrong string kept here in the note: immutable bytes get re-labelled by their owner, never silently re-pointed by someone else. Found by validating all 27 entries of this manifest against schema + disk, not by reading it."
   },
   {
    "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
@@ -193,6 +193,76 @@
    "bytes": 7153,
    "script": "stdout/stderr of the 21-64-64-7 sweep above",
    "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Same as the 256h256 log, second architecture."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1000.json",
+   "sha256": "e2897c6ff5587b41200e69d7812792e1643ee0e8619214430f57a0844891fc35",
+   "bytes": 3470,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --walks",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1001.json",
+   "sha256": "b344cb2ac2f9c97f6281d4717d6b98113a4afc740bd019dbc8bfcf955e5fe211",
+   "bytes": 3483,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --walks",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1002.json",
+   "sha256": "eb71c7ca7aa31e4e11a10a078e21bd2515e4b0b7951cc6d25ca98c00f2c7fb58",
+   "bytes": 3479,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --walks",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1003.json",
+   "sha256": "bb42ee73c39b7589a2af9fba33390c526a2db6e90c8725053828d212e250db77",
+   "bytes": 3482,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --walks",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1004.json",
+   "sha256": "bab14cc1d275098cbbbca7addb186c25e987ca675b64fa2aca4a4d922bd9b082",
+   "bytes": 3478,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --walks",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walks.log",
+   "sha256": "03a9d0977a19a4ddbcea83a111402ea0a762a7c9e77aca36c0c2b2a807ac9973",
+   "bytes": 1089,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --walks",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Run log: 5 walks, 88-91 s each, 4.36 s/epoch on B vs 5.99-6.17 s/epoch in A's exp8 parquet. Force-added: ~/.gitignore_global carries *.log on this laptop (same trap as the Step 0 logs)."
+  },
+  {
+   "path": "artifacts/results/polynn/h6cB/h6c_walks_summary.json",
+   "sha256": "bd58e62bb8d1ab8586399ba71aa63214341e1e94b9e446100af38cdaf3b39d38",
+   "bytes": 18043,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --walks (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --summarize",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Across-seed mean pair (0.358882, 0.358988) and sd_seed (alpha 0.0615, beta 0.0413) \u2014 REPORTED, not converted: band = \u00b1max(0.2, 2\u00b7sd_seed) is JacobiGP's amendment to freeze in PREREG_EXP6 before the first H6c number exists. Also carries the A-vs-B bit-identity audit and a question about which exp8 cell the registered target (0.40, 0.37) actually points at."
   }
  ]
 }

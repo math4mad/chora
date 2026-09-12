@@ -1,0 +1,9 @@
+/Users/lunarcheung/Programming/code-2026/Polynomial-Activated NN /train.py:45: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  a = [None if getattr(x, "alpha", None) is None else float(x.alpha) for x in acts]
+[walk s=1000] (α,β) -> (0.3977, 0.3677) val5k_acc=0.8796 diverged=False 88s -> h6c_walk_jacobi_h128_s1000.json
+[walk s=1001] (α,β) -> (0.3034, 0.3926) val5k_acc=0.8756 diverged=False 89s -> h6c_walk_jacobi_h128_s1001.json
+[walk s=1002] (α,β) -> (0.4393, 0.2954) val5k_acc=0.8706 diverged=False 90s -> h6c_walk_jacobi_h128_s1002.json
+[walk s=1003] (α,β) -> (0.2951, 0.3436) val5k_acc=0.8806 diverged=False 91s -> h6c_walk_jacobi_h128_s1003.json
+[walk s=1004] (α,β) -> (0.3588, 0.3955) val5k_acc=0.8700 diverged=False 90s -> h6c_walk_jacobi_h128_s1004.json
+/Users/lunarcheung/Programming/code-2026/Polynomial-Activated NN /results/h6c_walks_summary.json

@@ -1,1 +1,214 @@
-{ "files": [] }
+{
+ "files": [
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1000.json",
+   "sha256": "7b9e25093fd0b5eb35002f18c7fef064cf50f5fd6c313180b8dd74497ee01401",
+   "bytes": 15449,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1001.json",
+   "sha256": "db9ce226aec0e1deec3240b239ebc6dd40c6e4039ee4634bade5266675fe032b",
+   "bytes": 15472,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1002.json",
+   "sha256": "3e9d6df1350be5ddd9635f931813de55079b8778cb954aa6330c93087a173dd4",
+   "bytes": 15467,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1003.json",
+   "sha256": "d1df77ebb23c2302a7953b10ad587797fd3b9dc49b6d42206960dffeefc94c54",
+   "bytes": 15446,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_cheby_h128_s1004.json",
+   "sha256": "4efdbfa380ec86cc3e5da6bfa7c73e0fc0887d9526c86091b996b0aa382ae9f3",
+   "bytes": 15468,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1000.json",
+   "sha256": "e06d07084456a628cfdeec2a0e1681e55832eb96b9db0538a2919c9b98eec7ae",
+   "bytes": 15453,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1001.json",
+   "sha256": "efc300c5d54ed0b926db41dc7ac360c8851b3a0a4f8111d2917eec31150c1293",
+   "bytes": 15476,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1002.json",
+   "sha256": "dfb5fd8792a3d5f6bed537ec9a6185712d500ba20bcd7be96411303658f48ae0",
+   "bytes": 15471,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1003.json",
+   "sha256": "b117a3bd47e46ef1a91ff4ed6fa6f15dc804110f520aa555627f1e2af5c2f577",
+   "bytes": 15450,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_hermite_h128_s1004.json",
+   "sha256": "5aa6b0877d19c9b4f109a2d723ddf16e9c4e9a44a7ec05a4fe968fb0c33defc0",
+   "bytes": 15472,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1000.json",
+   "sha256": "a7fd916d1475b1017db32548ff26008108e03833fc1861f667faa64b6ad26fab",
+   "bytes": 15450,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1001.json",
+   "sha256": "2027ef54afaf3afe7c56f99dc8a841eee12010b80e09d0b83f3fcac5374f7be5",
+   "bytes": 15473,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1002.json",
+   "sha256": "6a70a572db0acbfaf6e85a66c8eac9717a16b4fa7fc25ac704506d51d0ffd931",
+   "bytes": 15468,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1003.json",
+   "sha256": "20eab7791fa57787f875744c7243913ade19821de36a791c75807f0567e9c57e",
+   "bytes": 15447,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_jacobi_h128_s1004.json",
+   "sha256": "9acee5cdfc862fa9f23485b5f72fe0a3777e45ccd6873527693bf32eda674c49",
+   "bytes": 15469,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1000.json",
+   "sha256": "ee159648e5ae12a32c5b632b8c2ee28860f1e573983c9e659ed1dd57c96d4823",
+   "bytes": 15446,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1001.json",
+   "sha256": "5b29000ba9cf704e86a7f66957bea14d65a61848c2b5272faddafd7eab8ee8b1",
+   "bytes": 15469,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1002.json",
+   "sha256": "59117126c1b8f62317aacea2a624b2409026fedd367973a220aa87b09429345c",
+   "bytes": 15464,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1003.json",
+   "sha256": "b47bfad15721087f50c355a63a2d395d78c39ad3c8d63a5a0bfea6042b6b299b",
+   "bytes": 15443,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_dump_relu_h128_s1004.json",
+   "sha256": "bb04bc5489076d8a96b03e8a5b58302b038af6e9235c112ae5e9ba7bf2ed72bc",
+   "bytes": 15465,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --dumps",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | H6c init measure, one cell: arm x seed, h=128 d=4 depth=1, epoch 0. Coordinate u = tanh(z) read at the activation module's INPUT (PREREG_EXP6 'no re-squashing'), counts on the fixed uniform 256-bin grid on [-1,1], measure = 55k train carve in canonical order, test never read. init_state_pin carries (seed, config, sha256 of the float32 init bytes): law 3 keeps the weights out of git, so the numbers regenerate from the seed and the hash witnesses which tensor they came from."
+  },
+  {
+   "path": "artifacts/init-states/h6cB/h6c_init_dumps_summary.json",
+   "sha256": "e502abd7cd5c5d01df0b6629efac990b7fcde83feb300ad11e92ee5ad66de5ad",
+   "bytes": 9686,
+   "source": "produced on B: .venv/bin/python h6c_dumps.py --dumps (PolyNN bench @ a0deb68, branch bench-B-h6c)",
+   "obtained": "2026-09-12",
+   "by": "Polynomial-Activated-NN@a0deb68",
+   "script": "h6c_dumps.py --summarize",
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Summary of the 20 dump cells: per-arm seed lists, distinct-init-state counts, per-file sha256, and the FINDING that the four arms' init histograms are integer-identical at every seed (contrast row degenerate at init \u2014 reported, not repaired)."
+  }
+ ]
+}
