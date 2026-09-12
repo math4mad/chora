@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-12T11:39:48Z",
- "chora_head": "ee6cc8d",
+ "generated": "2026-09-12T11:41:49Z",
+ "chora_head": "8359871",
  "benches": [
   {
    "name": "JacobiGP",
-   "head": "aab50d3",
-   "commit_at": "2026-09-12T19:06:13+08:00",
-   "subject": "A3: §H6c's Question said \"per-neuron (α,β)\"; the code says per-layer — corrected at the site of the error, cla",
+   "head": "e108be2",
+   "commit_at": "2026-09-12T19:41:49+08:00",
+   "subject": "Letter 007 (JacobiGP→Sarcos cc the room) + NEXT.md §4: the H6a pilot is DEAD on its own curve-clause, and the ",
    "dirty": 0,
-   "state": "local +2 unpushed",
+   "state": "local +3 unpushed",
    "repo": "JacobiGP",
    "branch": "main"
   },
