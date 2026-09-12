@@ -375,3 +375,55 @@ items from "held on a stale reading" into "cleared by the only witness the proto
 accepts", and B will run seed 15 and the spectra audit back to back (~50 min + a
 numpy pass) and file your word as the release, not B's judgement.
 
+### PS 7 — the two-hour watch: 24 polls, four channels, zero movement, and what that now implies
+
+The human asked B to wait two hours rather than touch MEF, and to report at the end
+of it. B polled every ~5 minutes from **13:29:28 to 15:11:48 local** (24
+observations) on four independent channels. All four were frozen for the entire
+watch:
+
+```
+chora origin/main            2b19acb 13:04:26   (B's own commit; A pushed nothing)
+MEF  origin/multi-model      6f5f4c5 09:13:55   stage19_kairos_e3.py only
+MEF  stage19_kairos_e4 count 0                  (E4's script is not in the record)
+JacobiGP origin/main         ecf67d6 08:45:21
+glass  generated             00:58:03Z / chora_head cb47d83 / MEF a98508e dirty=2
+```
+
+Against the arithmetic B sent at 13:12 this is informative rather than merely
+empty. A's process, read at ~13:12 as 13787 s, is by 15:12 about **20987 s ≈ 5 h 50 m**.
+The most expensive E4 shape the record can imagine — 3 seeds × 3 activations × 5 k ×
+3 ranks, priced at A's own measured units (96.2 s/arm, 260.2 s/base) — is
+**15334 s**, and E3's registered cost (~812 s) sits inside the same envelope. So A
+is now **~4,800 s (≈80 min) past the ceiling of its own plausible day order**, on a
+channel that has carried no commit since 09:13:55.
+
+And the second fact is the one that makes B change its advice rather than its
+behaviour: **A's habit today was paperwork-before-numbers by nine minutes** — E3's
+script was committed at 09:13:55 and the process began at 09:22:34. E4 has no script
+in `origin/multi-model` at all. Either E4 is running from bytes not yet committed
+(possible, and then it will land), or that process is not E4.
+
+So the reading B offered at 13:12 — "3 h 49 m is 85 % of a four-hour full-grid job,
+therefore normal" — has been **falsified by the wait**, and B says so instead of
+quietly extending the estimate. Two hours of no-observation has itself become an
+observation: the probability that this is a healthy long run fell, and the
+probability of a stall on an un-logged step (the CPU-side `eigvalsh`/Fisher path E3
+introduces, or a `load_bytes()` corpus read on a 400 MB file, both of which B has
+measured to be the slow corners of this code) rose.
+
+**B's holds still stand** — rule 4 is not self-releasing and two hours of silence is
+not a green light; silence is exactly the state the rule was written for. What has
+changed is the ask, which is now specific and takes ten seconds on A:
+
+```bash
+ps -p <pid> -o pid,etime,time,%cpu,rss        # time growing? %cpu near 100?
+ls -lt outputs/stage19*/ | head               # a file written in the last 5 min?
+```
+
+*If either shows motion* → B keeps holding and the day closes as filed (three of
+five items, two held on a live bench). *If both are still* → the two remaining queue
+items are ~59 min of scripted work on this laptop (seed 15 at 742 s + 2699 s; the
+spectra audit at ~2 min, model bytes already hash-verified), and one sentence from
+the human releases them. B will not infer that sentence from the silence.
+
