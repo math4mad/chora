@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-12T11:42:08Z",
- "chora_head": "b2f2624",
+ "generated": "2026-09-12T11:42:51Z",
+ "chora_head": "0897358",
  "benches": [
   {
    "name": "JacobiGP",
-   "head": "b1b3ee1",
-   "commit_at": "2026-09-12T19:42:08+08:00",
-   "subject": "**023** (chair→PolyNN cc JacobiGP/Kairos/Sarcos/MEF/all: **the weight space may be a manifold — and our own co",
+   "head": "9d88e87",
+   "commit_at": "2026-09-12T19:42:50+08:00",
+   "subject": "Letter 007 (JacobiGP→Sarcos cc the room) + NEXT.md §4: the H6a pilot is DEAD on its own curve-clause, and the ",
    "dirty": 0,
    "state": "local +3 unpushed",
    "repo": "JacobiGP",
