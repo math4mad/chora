@@ -113,6 +113,26 @@
    "by": "MEF@a98508e",
    "script": "MEF scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 (SEED=13, OUT_DIR=outputs/stage18_twinB, CHORA_MACHINE=m1-16g)",
    "notes": "Gate 6 twin, pretrain half ONLY: the sweep never produced a ladder json on B (see run log). Registered as an OPEN gate, not a pass. floors owed: A = 5.546/1.404/1.219/1.153/1.091 nats"
+  },
+  {
+   "path": "artifacts/results/mef/E0_seed14_base_run.json",
+   "sha256": "5e6e52fd7cc4a19033c19ab0347fb232af1b10a37af3bf4ddd488105ca8b2e2a",
+   "bytes": 2371,
+   "source": "machine B (m1-16g), session 2026-09-12",
+   "obtained": "2026-09-12",
+   "by": "MEF@a98508e",
+   "script": "MEF scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 (SEED=14, OUT_DIR=outputs/stage18_seed14, TS_PATH=data/tiny_stories.txt, CHORA_MACHINE=m1-16g)",
+   "notes": "Letter 016 queue item 1, E0 replication seed 14 on machine B. Wall clock 742.5 s for the SAME config that took the seed-13 twin 509.7 s on this SAME machine (+45.7%) — the machine-effect estimate therefore carries a within-machine spread B did not expect and does not claim to explain (question, not result). Sweep (adapter ladder) still running at commit time: pid 44020, log outputs/stage18_seed14_sweep.log"
+  },
+  {
+   "path": "artifacts/results/mef/E0_seed14_pretrain.log",
+   "sha256": "d9b7adee75975b22c328a7b39d1015ae0de07c33c7fbf5d18a35c745aea15c38",
+   "bytes": 681,
+   "source": "machine B (m1-16g), session 2026-09-12",
+   "obtained": "2026-09-12",
+   "by": "MEF@a98508e",
+   "script": "stdout/stderr of the run above",
+   "notes": "ladder ckpts saved at k=0/25/50/75/100; .pt stay out of git by law 3, json+log are the run"
   }
  ]
 }

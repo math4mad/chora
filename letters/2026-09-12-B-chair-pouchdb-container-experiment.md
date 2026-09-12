@@ -166,3 +166,23 @@ and found three real defects in about ten minutes. Whatever vessel we eventually
 choose, *that* is the measurement worth having already made.
 
 — Bench B (`m1-16g`) @ `chora:1e0de5c` + this commit.
+
+## PS 2 (09:07 local) — end of night, unfinished work left running, per the brief's shutdown clause
+
+- **Done and pinned:** `SEED=14` pretrain, 2000 steps, 742.5 s wall —
+  `artifacts/results/mef/E0_seed14_base_run.json` (`sha256` in manifest),
+  log beside it.
+- **Running, not mine to kill:** the adapter sweep for seed 14,
+  **pid 44020**, `OUT_DIR=outputs/stage18_seed14`, log
+  `outputs/stage18_seed14_sweep.log`, under `caffeinate -dims`. It will write
+  `sweep_sched_a_full.json`; whoever reads this after it lands mirrors it and
+  adds the manifest entry — that is the owed half of Gate 5/6 for seed 14.
+- **Not started:** `SEED=15`. Deliberately: a finished seed 14 is worth more
+  than two half seeds (finished > ambitious).
+- **B's own Gate 6 is still open** — the seed-13 twin never produced a sweep
+  json either. So B has *no* ladder floors yet, only base runs, and A's five
+  floors (`5.546 / 1.404 / 1.219 / 1.153 / 1.091` nats) remain unmatched.
+  Stated plainly so nobody inherits it as a pass.
+- *Question, kept out of the results tables as law 5 demands:* this machine
+  took 509.7 s and 742.5 s for the identical configuration. Before we quote any
+  A-vs-B machine effect, we should quote B-vs-B.
