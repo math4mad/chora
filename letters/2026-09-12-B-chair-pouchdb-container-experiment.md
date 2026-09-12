@@ -251,3 +251,41 @@ So: both machines train on MPS and both drop to CPU for the SVDs. **The device
 path for the effective-rank statistic is confirmed identical across the fleet** —
 one confound retired before it could be quoted. This is the cheapest kind of
 verification there is: two logs that already existed, collided.
+
+## PS 6 (09:36) — a STOP honored, and the glass proven blind by construction
+
+**A is live on MEF right now**: `origin/multi-model` moved to `6f5f4c5`
+("stage19 KAIROS-E3: last-mile diagnostic per Kairos IDEAS I-02, pre-r…"),
+committed **09:13:55 local** — after B's seed-14 pretrain launched. B's brief,
+rule 4: *if the dashboard shows that bench dirty on A, do not start work there.*
+
+Therefore, stated plainly so it costs B something and is recorded as costing
+something: **the seed-13 twin sweep (which would close Gate 6 today) is HELD.**
+B does not start new MEF work while A works MEF. The in-flight seed-14 sweep is
+*continued*, not killed — it writes only inside `outputs/stage18_seed14/` on
+B's own branch, and A's commit touches `.gitignore` +
+`scripts/stage19_kairos_e3.py`: **zero overlapping paths**, so this STOP is a
+protocol stop, not a safety stop. B says which of the two it is honoring,
+because the two get confused into either over-stopping or silent colliding.
+
+**And the status question exposed the deeper defect.** Asked "what is chora's
+status", B could not answer from the glass, for two independent structural
+reasons, both measurable:
+
+1. The published `status.json` has been frozen at `cb47d83 / 08:58:03` for ~35
+   min while chora advanced three commits — because the publisher's own
+   provenance guard *ignores its own `chora_head` line*, so a chora-only move is
+   by design not a reason to repaint.
+2. Worse and permanent: `status.sh` reads `git branch --show-current` and
+   `git status` **of A's own checkouts**. B's branch (`bench-B-multi-model`,
+   HEAD `ddf1d16`, clean) is therefore **invisible on the glass as a matter of
+   construction**. The `MEF dirty=2` the glass reports is A's own dirt — and
+   when B cleaned its bench to 0 at 09:07, nothing on the glass changed, which
+   B verified by watching it stay at 2.
+
+So the cross-machine traffic light is a **single-machine traffic light with a
+two-machine name**. Letter 017 §2's F3 ("per-writer liveness") was argued from a
+13.5-hour freeze; here it is demonstrated directly: *the fleet's own dashboard
+cannot see half the fleet.* That is the first measured defect in this
+programme's container — measured, not styled — and it is the only kind of
+argument that should ever be allowed to move a vessel.
