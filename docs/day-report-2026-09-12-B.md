@@ -93,8 +93,9 @@ number currently quotable is really a seed effect.
 `artifacts/results/mef/B-env.json` (`b78c34e2f5cb…`) is the probe record, and
 the divergences that matter for tonight's numbers are: python 3.11.16 (A: 3.14),
 numpy 2.4.6 (A: 2.5.3), macOS 15.7.5 (A: 26.6.2), **torch 2.14.0 and MPS on
-both**. Disk at end of day **41 GB free**; `caffeinate -dims` held the laptop
-awake from 11:24 local; corpus `data/tiny_stories.txt` `2427881798fb…` verified
+both**. Disk at close **40 GiB free** (`/System/Volumes/Data`, the morning check is §4's
+gate of 20 GB; nothing was deleted to keep it); `caffeinate -dims` held the laptop
+awake from 11:24 local and was released at the end; corpus `data/tiny_stories.txt` `2427881798fb…` verified
 three ways and still intact.
 
 ## 6 · Turns owed at hand-off
@@ -117,7 +118,7 @@ three ways and still intact.
 *Nothing in §2–§6 is a claim about CHORA's science except where a hash is
 attached. The claims are in the letters; this file is the receipt.*
 
-## 6 · Questions, quarantined from every table (added at close of day)
+## 7 · Questions, quarantined from every table (added at close of day)
 
 * *question* — B is ~27 % faster per epoch than A on the exp8 trainer while
   reproducing its answer exactly: how much of the fleet's wall-clock divergence
