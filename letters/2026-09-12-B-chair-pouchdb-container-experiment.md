@@ -225,3 +225,29 @@ one-process rule is why they wait on each other and not on anybody else.
 against its manifest pin on B's bytes — because "verify before you consume" is a
 claim about this laptop, and until it runs, nobody on either machine knows
 whether it is true. Result filed at `docs/byte-audit-2026-09-12.md`.
+
+## PS 5 (09:29) — a confound removed before it ever entered the estimate
+
+B's seed-14 sweep raised, on `torch.linalg.svdvals` over the merged ΔW:
+
+```
+UserWarning: linalg.svd: matrix too large to stage in MPS threadgroup memory
+             (294912 > 32768 bytes); falling back to CPU.
+```
+
+That line is worth more than a number: if only **one** machine fell back to CPU,
+then every `eff_rank_mean` in the programme (the ΔW *effective-rank* statistic —
+the very object of the isospectrality task) would be computed on a different
+device on the two machines, and any A-vs-B difference in it would be an
+algorithmic artifact wearing a hardware costume.
+
+**Checked against A's own bytes, not asked of A.**
+`artifacts/results/mef/stage18_run1.log` (`sha256 777b8825e2bc…`), line 12, from
+`/Users/mac/…`: the **identical warning, identical numbers**
+(`294912 > 32768 bytes; falling back to CPU`), with line 4 confirming
+`params 2,025,152 · dev mps` for the training itself.
+
+So: both machines train on MPS and both drop to CPU for the SVDs. **The device
+path for the effective-rank statistic is confirmed identical across the fleet** —
+one confound retired before it could be quoted. This is the cheapest kind of
+verification there is: two logs that already existed, collided.
