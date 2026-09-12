@@ -1,0 +1,865 @@
+{
+  "kind": "Sarcos Step 0 dose-response \u2014 EXPLORATORY CALIBRATION (Letter 011 \u00a72), not a hypothesis test",
+  "protocol": "Letter 011 \u00a72 (Sarcos\u2192Kairos, 2026-09-11); answers Letter 009 \u00a71 Step 0",
+  "arch": "21-64-64-7",
+  "schedule": {
+    "epochs_per_arm": 60,
+    "lr": 0.001,
+    "batch_size": 256,
+    "note": "all arms, base included, at the base's own ep60: the exploratory cells compared ep300 adapters against ep60 bases (Letter 011 \u00a71) and are mirrored as shift_summary_exploratory.json for that reason"
+  },
+  "split": {
+    "block_size": 256,
+    "fractions": [
+      0.8,
+      0.1,
+      0.1
+    ],
+    "seeds": [
+      13,
+      14,
+      15
+    ]
+  },
+  "ranks_rows": [
+    [
+      4,
+      4,
+      4
+    ],
+    [
+      16,
+      16,
+      7
+    ],
+    [
+      21,
+      21,
+      7
+    ]
+  ],
+  "qualification_rule": "far_frac qualifies iff mean(from_scratch) <= 2.0 x mean(full_finetune); learnability only, all doses reported",
+  "geometry_nn_distance": {
+    "13": {
+      "val": {
+        "n_blocks": 18,
+        "quantiles": {
+          "0": 0.393,
+          "10": 1.7396,
+          "25": 2.0942,
+          "50": 2.8227,
+          "75": 3.2156,
+          "90": 3.8194,
+          "100": 5.6492
+        },
+        "mean": 2.8363
+      },
+      "test": {
+        "n_blocks": 18,
+        "quantiles": {
+          "0": 1.6299,
+          "10": 1.8406,
+          "25": 2.0187,
+          "50": 2.4023,
+          "75": 2.8737,
+          "90": 3.0732,
+          "100": 3.8581
+        },
+        "mean": 2.4586
+      }
+    },
+    "14": {
+      "val": {
+        "n_blocks": 18,
+        "quantiles": {
+          "0": 1.3339,
+          "10": 1.8245,
+          "25": 1.9984,
+          "50": 2.3114,
+          "75": 2.5976,
+          "90": 3.505,
+          "100": 4.2748
+        },
+        "mean": 2.4783
+      },
+      "test": {
+        "n_blocks": 18,
+        "quantiles": {
+          "0": 0.6001,
+          "10": 1.2957,
+          "25": 1.7337,
+          "50": 2.2119,
+          "75": 2.928,
+          "90": 3.5067,
+          "100": 5.5612
+        },
+        "mean": 2.3702
+      }
+    },
+    "15": {
+      "val": {
+        "n_blocks": 18,
+        "quantiles": {
+          "0": 1.0837,
+          "10": 1.5864,
+          "25": 2.08,
+          "50": 2.3451,
+          "75": 3.2947,
+          "90": 4.0048,
+          "100": 4.7746
+        },
+        "mean": 2.6194
+      },
+      "test": {
+        "n_blocks": 18,
+        "quantiles": {
+          "0": 0.6553,
+          "10": 1.9916,
+          "25": 2.1789,
+          "50": 2.4503,
+          "75": 3.0271,
+          "90": 3.5586,
+          "100": 4.2086
+        },
+        "mean": 2.5898
+      }
+    }
+  },
+  "table": [
+    {
+      "far_frac": 0.1,
+      "seeds": 3,
+      "downstream_frozen": 0.0335,
+      "downstream_full_ft": null,
+      "downstream_from_scratch": null,
+      "downstream_lora_by_rank": {},
+      "downstream_lora_best": null,
+      "ft_minus_frozen": null,
+      "best_lora_minus_frozen": null,
+      "scratch_over_ft": null,
+      "scratch_over_ft_per_seed": {
+        "13": null,
+        "14": null,
+        "15": null
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": "no arm trained at this dose under the registered rule (empty select set)",
+      "qualifies_learnable": false,
+      "mean_fit_rows": 512,
+      "mean_eval_downstream_rows": 512
+    },
+    {
+      "far_frac": 0.25,
+      "seeds": 3,
+      "downstream_frozen": 0.03015,
+      "downstream_full_ft": 0.03466,
+      "downstream_from_scratch": 0.2787,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.06163,
+        "lora_16_16_7": 0.05623,
+        "lora_21_21_7": 0.05669
+      },
+      "downstream_lora_best": 0.05623,
+      "ft_minus_frozen": 0.00451,
+      "best_lora_minus_frozen": 0.02608,
+      "scratch_over_ft": 8.041,
+      "scratch_over_ft_per_seed": {
+        "13": 7.356,
+        "14": 9.418,
+        "15": 7.708
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 768,
+      "mean_eval_downstream_rows": 1024
+    },
+    {
+      "far_frac": 0.5,
+      "seeds": 3,
+      "downstream_frozen": 0.03003,
+      "downstream_full_ft": 0.03236,
+      "downstream_from_scratch": 0.14393,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.05059,
+        "lora_16_16_7": 0.04633,
+        "lora_21_21_7": 0.04538
+      },
+      "downstream_lora_best": 0.04538,
+      "ft_minus_frozen": 0.00233,
+      "best_lora_minus_frozen": 0.01535,
+      "scratch_over_ft": 4.448,
+      "scratch_over_ft_per_seed": {
+        "13": 3.39,
+        "14": 5.793,
+        "15": 4.273
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 1792,
+      "mean_eval_downstream_rows": 2304
+    },
+    {
+      "far_frac": 0.75,
+      "seeds": 3,
+      "downstream_frozen": 0.0267,
+      "downstream_full_ft": 0.02989,
+      "downstream_from_scratch": 0.12999,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.04781,
+        "lora_16_16_7": 0.04278,
+        "lora_21_21_7": 0.04271
+      },
+      "downstream_lora_best": 0.04271,
+      "ft_minus_frozen": 0.00319,
+      "best_lora_minus_frozen": 0.01601,
+      "scratch_over_ft": 4.349,
+      "scratch_over_ft_per_seed": {
+        "13": 3.887,
+        "14": 3.544,
+        "15": 5.373
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 2560,
+      "mean_eval_downstream_rows": 3584
+    },
+    {
+      "far_frac": 1.0,
+      "seeds": 3,
+      "downstream_frozen": 0.02497,
+      "downstream_full_ft": 0.02721,
+      "downstream_from_scratch": 0.08987,
+      "downstream_lora_by_rank": {
+        "lora_4_4_4": 0.04226,
+        "lora_16_16_7": 0.03856,
+        "lora_21_21_7": 0.03797
+      },
+      "downstream_lora_best": 0.03797,
+      "ft_minus_frozen": 0.00224,
+      "best_lora_minus_frozen": 0.013,
+      "scratch_over_ft": 3.303,
+      "scratch_over_ft_per_seed": {
+        "13": 2.629,
+        "14": 3.362,
+        "15": 3.884
+      },
+      "seeds_qualifying": 0,
+      "not_run_reason": null,
+      "qualifies_learnable": false,
+      "mean_fit_rows": 3584,
+      "mean_eval_downstream_rows": 4608
+    }
+  ],
+  "cells": [
+    {
+      "seed": 13,
+      "far_frac": 0.1,
+      "fit_rows": 512,
+      "select_rows": 0,
+      "eval_downstream_rows": 512,
+      "eval_indistribution_rows": 4096,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.03392769601886665,
+          "indistribution": 0.023607023745826648,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed13-blk256-ep60"
+        }
+      },
+      "unrunnable_under_registered_rule": "select set is empty at this dose (fit_frac=0.75 consumes every far val block: 512 fit rows, 0 select rows), so best-on-select checkpointing is undefined; arms not trained"
+    },
+    {
+      "seed": 13,
+      "far_frac": 0.25,
+      "fit_rows": 768,
+      "select_rows": 256,
+      "eval_downstream_rows": 1024,
+      "eval_indistribution_rows": 3584,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.028825280326815028,
+          "indistribution": 0.023590475047407095,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed13-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.25828902541357984,
+          "indistribution": 0.2770341129391991,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed13-far25"
+        },
+        "full_finetune": {
+          "downstream": 0.035113095871595015,
+          "indistribution": 0.02923601768209949,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed13-far25"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.06133939628807753,
+          "indistribution": 0.069883785118553,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed13-far25"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.058427749070837025,
+          "indistribution": 0.06909333864167348,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed13-far25"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.06405416727975574,
+          "indistribution": 0.07400708498700535,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed13-far25"
+        }
+      }
+    },
+    {
+      "seed": 13,
+      "far_frac": 0.5,
+      "fit_rows": 1792,
+      "select_rows": 512,
+      "eval_downstream_rows": 2304,
+      "eval_indistribution_rows": 2304,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.02893491682341354,
+          "indistribution": 0.020572613395581973,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed13-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.10371828929825495,
+          "indistribution": 0.1456198939544653,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed13-far50"
+        },
+        "full_finetune": {
+          "downstream": 0.030594836094961407,
+          "indistribution": 0.024428317673519113,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed13-far50"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.04548021919821115,
+          "indistribution": 0.04903182435447798,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed13-far50"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.04093989025795099,
+          "indistribution": 0.045091849004071725,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed13-far50"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.03949962387199802,
+          "indistribution": 0.041143656757310916,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed13-far50"
+        }
+      }
+    },
+    {
+      "seed": 13,
+      "far_frac": 0.75,
+      "fit_rows": 2560,
+      "select_rows": 1024,
+      "eval_downstream_rows": 3584,
+      "eval_indistribution_rows": 1024,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.02586781400786281,
+          "indistribution": 0.020854593965220065,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed13-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.11472101845601015,
+          "indistribution": 0.17131506226876428,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed13-far75"
+        },
+        "full_finetune": {
+          "downstream": 0.02951046961054649,
+          "indistribution": 0.023615538282600358,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed13-far75"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.044539616032874464,
+          "indistribution": 0.042506491792560955,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed13-far75"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.03953848761686246,
+          "indistribution": 0.043351842288735905,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed13-far75"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.03918373819697947,
+          "indistribution": 0.042998848302691975,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed13-far75"
+        }
+      }
+    },
+    {
+      "seed": 13,
+      "far_frac": 1.0,
+      "fit_rows": 3584,
+      "select_rows": 789,
+      "eval_downstream_rows": 4608,
+      "eval_indistribution_rows": 0,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.024753765109497748,
+          "indistribution": null,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed13-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.07487714481107674,
+          "indistribution": null,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed13-far100"
+        },
+        "full_finetune": {
+          "downstream": 0.028480132650245498,
+          "indistribution": null,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed13-far100"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.042171007980221935,
+          "indistribution": null,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed13-far100"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.0371531774288959,
+          "indistribution": null,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed13-far100"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.036353215683889335,
+          "indistribution": null,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed13-far100"
+        }
+      }
+    },
+    {
+      "seed": 14,
+      "far_frac": 0.1,
+      "fit_rows": 512,
+      "select_rows": 0,
+      "eval_downstream_rows": 512,
+      "eval_indistribution_rows": 4096,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.023144850672025877,
+          "indistribution": 0.021426510810694913,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed14-blk256-ep60"
+        }
+      },
+      "unrunnable_under_registered_rule": "select set is empty at this dose (fit_frac=0.75 consumes every far val block: 512 fit rows, 0 select rows), so best-on-select checkpointing is undefined; arms not trained"
+    },
+    {
+      "seed": 14,
+      "far_frac": 0.25,
+      "fit_rows": 768,
+      "select_rows": 256,
+      "eval_downstream_rows": 1024,
+      "eval_indistribution_rows": 3584,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.023832088243756027,
+          "indistribution": 0.02098468009572474,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed14-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.25845073578025646,
+          "indistribution": 0.24404535313246015,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed14-far25"
+        },
+        "full_finetune": {
+          "downstream": 0.02744201221014653,
+          "indistribution": 0.02576233351096651,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed14-far25"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.04586042803297689,
+          "indistribution": 0.0561537684018071,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed14-far25"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.044259545966023106,
+          "indistribution": 0.05219182061186151,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed14-far25"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.03891364243314023,
+          "indistribution": 0.04692147570633102,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed14-far25"
+        }
+      }
+    },
+    {
+      "seed": 14,
+      "far_frac": 0.5,
+      "fit_rows": 1792,
+      "select_rows": 512,
+      "eval_downstream_rows": 2304,
+      "eval_indistribution_rows": 2304,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.02768526954385773,
+          "indistribution": 0.015549605380050098,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed14-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.16765672783859403,
+          "indistribution": 0.08048874038193711,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed14-far50"
+        },
+        "full_finetune": {
+          "downstream": 0.028942928193694425,
+          "indistribution": 0.01664037775743082,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed14-far50"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.047062017569329095,
+          "indistribution": 0.03018502324007032,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed14-far50"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.04339822554161373,
+          "indistribution": 0.026649928542932754,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed14-far50"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.04311658465289164,
+          "indistribution": 0.02783063751039504,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed14-far50"
+        }
+      }
+    },
+    {
+      "seed": 14,
+      "far_frac": 0.75,
+      "fit_rows": 2560,
+      "select_rows": 1024,
+      "eval_downstream_rows": 3584,
+      "eval_indistribution_rows": 1024,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.02418206858315385,
+          "indistribution": 0.012641228537754168,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed14-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.0928141155149954,
+          "indistribution": 0.021763669650496583,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed14-far75"
+        },
+        "full_finetune": {
+          "downstream": 0.02619188961582206,
+          "indistribution": 0.012530603633226738,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed14-far75"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.042139321286715804,
+          "indistribution": 0.020457939834852328,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed14-far75"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.03825156536209777,
+          "indistribution": 0.017052023192411843,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed14-far75"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.03847591101152167,
+          "indistribution": 0.01726972980043077,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed14-far75"
+        }
+      }
+    },
+    {
+      "seed": 14,
+      "far_frac": 1.0,
+      "fit_rows": 3584,
+      "select_rows": 1024,
+      "eval_downstream_rows": 4608,
+      "eval_indistribution_rows": 0,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.021617437461953933,
+          "indistribution": null,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed14-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.0753784871019713,
+          "indistribution": null,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed14-far100"
+        },
+        "full_finetune": {
+          "downstream": 0.022421625788061124,
+          "indistribution": null,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed14-far100"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.03501813520374812,
+          "indistribution": null,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed14-far100"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.03238587670567567,
+          "indistribution": null,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed14-far100"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.03153548310295845,
+          "indistribution": null,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed14-far100"
+        }
+      }
+    },
+    {
+      "seed": 15,
+      "far_frac": 0.1,
+      "fit_rows": 512,
+      "select_rows": 0,
+      "eval_downstream_rows": 512,
+      "eval_indistribution_rows": 4096,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.04342712268743258,
+          "indistribution": 0.026687026899502107,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed15-blk256-ep60"
+        }
+      },
+      "unrunnable_under_registered_rule": "select set is empty at this dose (fit_frac=0.75 consumes every far val block: 512 fit rows, 0 select rows), so best-on-select checkpointing is undefined; arms not trained"
+    },
+    {
+      "seed": 15,
+      "far_frac": 0.25,
+      "fit_rows": 768,
+      "select_rows": 256,
+      "eval_downstream_rows": 1024,
+      "eval_indistribution_rows": 3584,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.03780666975593893,
+          "indistribution": 0.025901428338795968,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed15-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.31936004913942834,
+          "indistribution": 0.30906632873909123,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed15-far25"
+        },
+        "full_finetune": {
+          "downstream": 0.04143454796267109,
+          "indistribution": 0.03029903274900058,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed15-far25"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.07768757090025537,
+          "indistribution": 0.0725301357407706,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed15-far25"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.06601622947040398,
+          "indistribution": 0.05066677999558146,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed15-far25"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.06709473991873736,
+          "indistribution": 0.05115018190678513,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed15-far25"
+        }
+      }
+    },
+    {
+      "seed": 15,
+      "far_frac": 0.5,
+      "fit_rows": 1792,
+      "select_rows": 512,
+      "eval_downstream_rows": 2304,
+      "eval_indistribution_rows": 2304,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.03346938041056418,
+          "indistribution": 0.02362469467464686,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed15-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.16041720647680008,
+          "indistribution": 0.12245501241433601,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed15-far50"
+        },
+        "full_finetune": {
+          "downstream": 0.03754347321421047,
+          "indistribution": 0.025182105102215937,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed15-far50"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.05921834923420892,
+          "indistribution": 0.04566713615391599,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed15-far50"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.05464951626299793,
+          "indistribution": 0.040619030153682026,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed15-far50"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.05352439946261416,
+          "indistribution": 0.038110595014134836,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed15-far50"
+        }
+      }
+    },
+    {
+      "seed": 15,
+      "far_frac": 0.75,
+      "fit_rows": 2560,
+      "select_rows": 1024,
+      "eval_downstream_rows": 3584,
+      "eval_indistribution_rows": 1024,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.03003543764115541,
+          "indistribution": 0.02333763719768089,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed15-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.1824244401881983,
+          "indistribution": 0.05760451235784108,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed15-far75"
+        },
+        "full_finetune": {
+          "downstream": 0.03395467589115981,
+          "indistribution": 0.025603473006743906,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed15-far75"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.05675337294613446,
+          "indistribution": 0.03476182740178184,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed15-far75"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.05055205954816945,
+          "indistribution": 0.03503370860264162,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed15-far75"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.050483015794088495,
+          "indistribution": 0.03521455318199857,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed15-far75"
+        }
+      }
+    },
+    {
+      "seed": 15,
+      "far_frac": 1.0,
+      "fit_rows": 3584,
+      "select_rows": 1024,
+      "eval_downstream_rows": 4608,
+      "eval_indistribution_rows": 0,
+      "arms": {
+        "frozen_base": {
+          "downstream": 0.028547037542605506,
+          "indistribution": null,
+          "trainable_params": 0,
+          "run_id": "step0-base-64-64-seed15-blk256-ep60"
+        },
+        "from_scratch": {
+          "downstream": 0.11935862226179006,
+          "indistribution": null,
+          "trainable_params": 6023,
+          "run_id": "step0-scratch-64-64-seed15-far100"
+        },
+        "full_finetune": {
+          "downstream": 0.030729398606505715,
+          "indistribution": null,
+          "trainable_params": 6023,
+          "run_id": "step0-fullft-64-64-seed15-far100"
+        },
+        "lora_4_4_4": {
+          "downstream": 0.04958959479137615,
+          "indistribution": null,
+          "trainable_params": 1136,
+          "run_id": "step0-lora-r444-64-64-seed15-far100"
+        },
+        "lora_16_16_7": {
+          "downstream": 0.0461278758082192,
+          "indistribution": null,
+          "trainable_params": 3905,
+          "run_id": "step0-lora-r16167-64-64-seed15-far100"
+        },
+        "lora_21_21_7": {
+          "downstream": 0.04601609608502927,
+          "indistribution": null,
+          "trainable_params": 4970,
+          "run_id": "step0-lora-r21217-64-64-seed15-far100"
+        }
+      }
+    }
+  ],
+  "qualifying_doses": [],
+  "verdict": "NO DOSE QUALIFIES \u2014 H9-S unmeasurable-on-Sarcos (Letter 011 \u00a72, monument clause)",
+  "run_on": "m1-16g (machine B, worker bench)",
+  "wall_seconds": 172.9
+}

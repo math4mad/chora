@@ -47,7 +47,7 @@
    "source": "Sarcos bench, results/shift_summary.json (same bytes, status renamed into path)",
    "obtained": "2026-09-11",
    "by": "Sarcos@50dcf1d",
-   "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict — see Letter 011"
+   "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict \u2014 see Letter 011"
   },
   {
    "path": "artifacts/results/sarcos/shift_task_blocklevel_seed13.json",
@@ -74,7 +74,7 @@
    "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
    "obtained": "2026-09-11",
    "by": "MEF@f453b7e",
-   "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test — single seed, no band"
+   "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test \u2014 single seed, no band"
   },
   {
    "path": "artifacts/results/mef/stage18_run1.log",
@@ -122,7 +122,7 @@
    "obtained": "2026-09-12",
    "by": "MEF@a98508e",
    "script": "MEF scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 (SEED=14, OUT_DIR=outputs/stage18_seed14, TS_PATH=data/tiny_stories.txt, CHORA_MACHINE=m1-16g)",
-   "notes": "Letter 016 queue item 1, E0 replication seed 14 on machine B. Wall clock 742.5 s for the SAME config that took the seed-13 twin 509.7 s on this SAME machine (+45.7%) — the machine-effect estimate therefore carries a within-machine spread B did not expect and does not claim to explain (question, not result). Sweep (adapter ladder) still running at commit time: pid 44020, log outputs/stage18_seed14_sweep.log"
+   "notes": "Letter 016 queue item 1, E0 replication seed 14 on machine B. Wall clock 742.5 s for the SAME config that took the seed-13 twin 509.7 s on this SAME machine (+45.7%) \u2014 the machine-effect estimate therefore carries a within-machine spread B did not expect and does not claim to explain (question, not result). Sweep (adapter ladder) still running at commit time: pid 44020, log outputs/stage18_seed14_sweep.log"
   },
   {
    "path": "artifacts/results/mef/E0_seed14_pretrain.log",
@@ -143,6 +143,56 @@
    "by": "MEF@ddf1d16",
    "script": "MEF stage18_kairos_mini.py --mode sweep --adapter-steps 600 --batch 16 --full (SEED=14, OUT_DIR=outputs/stage18_seed14)",
    "notes": "Letter 016 queue item 1, seed 14 ladder. First ladder floors ever produced on B. Wall clock: sweep ran 09:07-09:56 local on m1-16g. Exploratory per the script's own flag; regime rows (co-train vs frozen base) not yet separated by the Warden's rule."
+  },
+  {
+   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@b22f1e9",
+   "path": "artifacts/results/sarcos/Step0_dose_256h256_B.json",
+   "sha256": "e3f7fa1955cf80db23523ed8d679c147ab2b74a2f5ad64d792c3ee5429ea6757",
+   "bytes": 26909,
+   "script": "PYTHONPATH=src python -m sarcos_svd.step0 --hidden 256 256 --out results/step0_256h256.json (Sarcos@b22f1e9)",
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Letter 011 \u00a72 Step 0 dose\u2013response on the selected architecture, block-level builder, canonical split (blk 256, .8/.1/.1), seeds 13/14/15, ALL arms at the base's own ep60 (no ep300-vs-ep60 confound), doses {0.1,0.25,0.5,0.75,1.0}, rank rows 4/4/4 \u00b7 16/16/7 \u00b7 21/21/7. VERDICT: NO DOSE QUALIFIES. learnability ratio scratch/FT (mean of 3 seeds): 9.53 / 5.54 / 5.60 / 4.30 at doses .25/.5/.75/1 \u2014 the registered fence (\u22642\u00d7) is never met and the trend is monotone toward, not past, it: the arena closes as the shift is removed, i.e. the shift is not what makes the region unlearnable. far=0.1 is UNRUNNABLE under the registered rule: the builder returns 512 fit rows and 0 select rows, so best-on-select checkpointing is undefined \u2014 reported as such, no fallback invented (law 5). The floor also survives the schedule fix: frozen beats full-FT at every runnable dose (\u0394 = +0.0045/+0.0024/+0.0021/+0.0019). Exploratory calibration, not a hypothesis test; H9-S remains unregistered here."
+  },
+  {
+   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@b22f1e9",
+   "path": "artifacts/results/sarcos/Step0_dose_64h64_B.json",
+   "sha256": "91c34b5047ecd8a77943d7988d10c8554b747d9cfbd36555a21f5797b86fc49f",
+   "bytes": 26695,
+   "script": "PYTHONPATH=src python -m sarcos_svd.step0 --hidden 64 64 --out results/step0_64h64.json (Sarcos@b22f1e9)",
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 The same registered grid on the previous canonical arch 21-64-64-7, same session, same rules. VERDICT: NO DOSE QUALIFIES \u2014 ratios 8.04 / 4.45 / 4.35 / 3.30, again monotone toward the fence and never crossing it; far=0.1 unrunnable for the same structural reason. Floor holds at every runnable dose (+0.0045/+0.0023/+0.0032/+0.0022). Two architectures agreeing on a null is the second witness of the same no, not a second no."
+  },
+  {
+   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@b22f1e9",
+   "path": "artifacts/results/sarcos/Step0_geometry_audit_B.json",
+   "sha256": "ebd58c2df11e2161f82f95330135480427bcf91b15c7251b4172d82de395d01b",
+   "bytes": 3036,
+   "script": "PYTHONPATH=src python -m sarcos_svd.step0 --hidden 256 256 --audit-geometry (and --hidden 64 64)",
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 A check on bytes that already exist, not a new test (law 5). Letter 011 \u00a71 files shift_summary_exploratory.json (16b95129\u2026) as produced by the superseded ROW-LEVEL builder. B recomputed both geometries' downstream score at far=0.5 for the same deterministic bases: the exploratory FROZEN row (0.01952 / 0.03003) matches the BLOCK-level geometry to 1e-5 on both arches and misses the row-level reconstruction by 0.0029 / 0.0041. Mechanism named in the file: report.py::frozen_base_rows reads shift_eval.json, written on demand by `evaluate --eval-task shift` with whatever builder is committed TODAY, while shift_rows reads each arm's training-time metrics \u2014 one table, two vintages. Consequence for the record, not for the verdict: Letter 009's floor table compares a block-level frozen score against row-level arm scores. The floor itself stands (see the two dose files). Bonus measurement: B reproduces A's frozen row to 1e-5 across machines \u2014 the programme's first A-vs-B replication, machine effect at or below rounding."
+  },
+  {
+   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@b22f1e9",
+   "path": "artifacts/results/sarcos/Step0_dose_256h256_B.log",
+   "sha256": "de05642ebeabb13edeba716368f3f0b685ec8e29a54f36eef1c461f1e476cbac",
+   "bytes": 7152,
+   "script": "stdout/stderr of the 21-256-256-7 sweep above",
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Per-cell print (seed, dose, every arm's downstream MSE) + the numpy empty-slice warnings at far=0.1/1.0, left in verbatim: versions and warnings are part of the measurement, not dirt."
+  },
+  {
+   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@b22f1e9",
+   "path": "artifacts/results/sarcos/Step0_dose_64h64_B.log",
+   "sha256": "bb5e4b7c78e3dce45669f96ae04c771a28bf4048557104544ba8bc6b415bfacf",
+   "bytes": 7153,
+   "script": "stdout/stderr of the 21-64-64-7 sweep above",
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Same as the 256h256 log, second architecture."
   }
  ]
 }

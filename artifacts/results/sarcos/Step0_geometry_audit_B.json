@@ -1,0 +1,72 @@
+{
+ "kind": "Sarcos Step 0 geometry provenance audit \u2014 a check on bytes that already exist, not a new test (Letter 016 law 5)",
+ "question": "Letter 011 \u00a71 files shift_summary_exploratory.json as produced by the superseded ROW-LEVEL builder. Does its frozen-base row actually come from that geometry?",
+ "method": "recompute both geometries' downstream score at far_frac=0.5 for the same deterministic ep60 bases (seeds 13/14/15); machine B, results/step0_*.json base runs",
+ "why_the_two_can_differ": "report.py::frozen_base_rows reads shift_eval.json (written on demand by evaluate --eval-task shift with the builder committed TODAY) while report.py::shift_rows reads each arm's training-time metrics \u2014 two code paths, two vintages, one table",
+ "architectures": [
+  {
+   "arch": "21-256-256-7",
+   "far_frac": 0.5,
+   "per_seed": {
+    "13": {
+     "rowlevel": 0.02252,
+     "blocklevel": 0.01899
+    },
+    "14": {
+     "rowlevel": 0.01784,
+     "blocklevel": 0.01684
+    },
+    "15": {
+     "rowlevel": 0.02684,
+     "blocklevel": 0.02275
+    }
+   },
+   "mean_over_seeds": {
+    "rowlevel": 0.0224,
+    "blocklevel": 0.01953
+   },
+   "note": "compare against the frozen-base row of shift_summary_exploratory.json (16b95129\u2026)",
+   "compared_against": {
+    "shift_summary_exploratory.json frozen-base row (sha256 16b95129ee96\u2026)": 0.01952,
+    "abs diff vs blocklevel": 1e-05,
+    "abs diff vs rowlevel": 0.00288
+   },
+   "verdict": "the exploratory FROZEN row matches the BLOCK-level geometry, not the row-level one"
+  },
+  {
+   "arch": "21-64-64-7",
+   "far_frac": 0.5,
+   "per_seed": {
+    "13": {
+     "rowlevel": 0.03297,
+     "blocklevel": 0.02893
+    },
+    "14": {
+     "rowlevel": 0.0291,
+     "blocklevel": 0.02769
+    },
+    "15": {
+     "rowlevel": 0.04043,
+     "blocklevel": 0.03347
+    }
+   },
+   "mean_over_seeds": {
+    "rowlevel": 0.03417,
+    "blocklevel": 0.03003
+   },
+   "note": "compare against the frozen-base row of shift_summary_exploratory.json (16b95129\u2026)",
+   "compared_against": {
+    "shift_summary_exploratory.json frozen-base row (sha256 16b95129ee96\u2026)": 0.03003,
+    "abs diff vs blocklevel": 0.0,
+    "abs diff vs rowlevel": 0.00414
+   },
+   "verdict": "the exploratory FROZEN row matches the BLOCK-level geometry, not the row-level one"
+  }
+ ],
+ "consequence": [
+  "Letter 009's floor table compares a block-level frozen score against row-level arm scores; the geometry correction Letter 011 asked for was needed on the OTHER row family than the one it named.",
+  "The floor itself survives: B's matched block-level table at far=0.5 reads frozen 0.01952 vs full-FT 0.02192 (21-256-256-7) and 0.03003 vs 0.03236 (21-64-64-7) \u2014 adaptation still loses to doing nothing.",
+  "And B reproduces A's frozen row to 1e-5 on both arches: the first A-vs-B replication on this bench, machine effect indistinguishable from rounding (determinism by construction: CPU, single thread, use_deterministic_algorithms(True))."
+ ],
+ "run_on": "m1-16g (machine B, worker bench)"
+}

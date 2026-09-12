@@ -1,6 +1,26 @@
 {
  "files": [
   {
+   "path": "data/sarcos_inv.mat",
+   "sha256": "b8a249733253ba6097372fedee7696833fcf30de42037d5b4a7227f21a6d1d97",
+   "bytes": 9964616,
+   "source": "curl -s -L -o data/sarcos_inv.mat \"https://gaussianprocess.org/gpml/data/sarcos_inv.mat\"",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@fb37e04",
+   "upstream": "GPML dataset site (Rasmussen & Williams), the URL pinned in src/sarcos_svd/data.py BASE_URL; served with ETag 980c48/\u2026 matching the byte length",
+   "notes": "run-on: m1-16g (machine B). Verified BEFORE consumption, two independent ways: (1) the full sha256 begins b8a249733253\u2026 = the 12-hex pin A published on the Sarcos site (`data sha256` row, notes/results.html, origin/gh-pages@8443e86) \u2014 an inbound hash checked against another machine's print, not against my own disk; (2) structure: `python -m sarcos_svd.data --report` reproduces every pinned fact (44,484 / 4,449 rows, 4,368 verbatim = 0.9818 leaked, 44,565 pooled unique, lag-1 input distance 3.551 vs 31.441 random). Third-party data: git-ignored, licence not conveyed."
+  },
+  {
+   "path": "data/sarcos_inv_test.mat",
+   "sha256": "161a59b5c3b4f4b404584323f181607b2acbe620eb134dc720760dc3f38f5cec",
+   "bytes": 996776,
+   "source": "curl -s -L -o data/sarcos_inv_test.mat \"https://gaussianprocess.org/gpml/data/sarcos_inv_test.mat\"",
+   "obtained": "2026-09-12",
+   "by": "Sarcos@fb37e04",
+   "upstream": "GPML dataset site (Rasmussen & Williams), the URL pinned in src/sarcos_svd/data.py BASE_URL; served with ETag 980c48/\u2026 matching the byte length",
+   "notes": "run-on: m1-16g (machine B). Verified BEFORE consumption, two independent ways: (1) the full sha256 begins 161a59b5c3b4\u2026 = the 12-hex pin A published on the Sarcos site (`data sha256` row, notes/results.html, origin/gh-pages@8443e86) \u2014 an inbound hash checked against another machine's print, not against my own disk; (2) structure: `python -m sarcos_svd.data --report` reproduces every pinned fact (44,484 / 4,449 rows, 4,368 verbatim = 0.9818 leaked, 44,565 pooled unique, lag-1 input distance 3.551 vs 31.441 random). Third-party data: git-ignored, licence not conveyed."
+  },
+  {
    "path": "data/tiny_stories.txt",
    "sha256": "2427881798fb3b3926c841757f76293dedf6323bbcffa432e2ef001273fcf993",
    "bytes": 400000000,
