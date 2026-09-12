@@ -263,6 +263,46 @@
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --summarize",
    "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Across-seed mean pair (0.358882, 0.358988) and sd_seed (alpha 0.0615, beta 0.0413) \u2014 REPORTED, not converted: band = \u00b1max(0.2, 2\u00b7sd_seed) is JacobiGP's amendment to freeze in PREREG_EXP6 before the first H6c number exists. Also carries the A-vs-B bit-identity audit and a question about which exp8 cell the registered target (0.40, 0.37) actually points at."
+  },
+  {
+   "path": "artifacts/results/mef/stage19_e3/e3_summary.json",
+   "sha256": "05264ddefe9b45bdb2601e3b8790c62187f9128834bcb58f733ef3c91faa0f73",
+   "bytes": 3646,
+   "source": "https://github.com/math4mad/Middle-Eigen-function",
+   "obtained": "2026-09-12",
+   "by": "Middle-Eigen-function@6f5f4c5",
+   "script": "scripts/stage19_kairos_e3.py (seeds 13/14/15, one process each)",
+   "notes": "run-on: m1pro-32g (A); E3 last-mile, verdict not adjudicated (S-sched 2/3, gray 1/3); design finding: constant-lr arms make S-sched's name inoperative; Kairos IDEAS I-02 adjudication; thresholds frozen pre-run in script header"
+  },
+  {
+   "path": "artifacts/results/mef/stage19_e3/e3_verdict_seed13.json",
+   "sha256": "d9566ee76bda01d71131bbd7312d765680a177d881af5844063c1370b0c59224",
+   "bytes": 15797,
+   "source": "https://github.com/math4mad/Middle-Eigen-function",
+   "obtained": "2026-09-12",
+   "by": "Middle-Eigen-function@6f5f4c5",
+   "script": "scripts/stage19_kairos_e3.py (seeds 13/14/15, one process each)",
+   "notes": "run-on: m1pro-32g (A); E3 last-mile, verdict not adjudicated (S-sched 2/3, gray 1/3); design finding: constant-lr arms make S-sched's name inoperative; Kairos IDEAS I-02 adjudication; thresholds frozen pre-run in script header"
+  },
+  {
+   "path": "artifacts/results/mef/stage19_e3/e3_verdict_seed14.json",
+   "sha256": "1eb0c8f0da3e036a72413b58c52128e6610423cc5bc666491a7855814c4d2e49",
+   "bytes": 15782,
+   "source": "https://github.com/math4mad/Middle-Eigen-function",
+   "obtained": "2026-09-12",
+   "by": "Middle-Eigen-function@6f5f4c5",
+   "script": "scripts/stage19_kairos_e3.py (seeds 13/14/15, one process each)",
+   "notes": "run-on: m1pro-32g (A); E3 last-mile, verdict not adjudicated (S-sched 2/3, gray 1/3); design finding: constant-lr arms make S-sched's name inoperative; Kairos IDEAS I-02 adjudication; thresholds frozen pre-run in script header"
+  },
+  {
+   "path": "artifacts/results/mef/stage19_e3/e3_verdict_seed15.json",
+   "sha256": "b906a36f2d8cf32f62fc1383ad5942c3ea91776ce7268893ff5e2f525c0d7ee1",
+   "bytes": 15792,
+   "source": "https://github.com/math4mad/Middle-Eigen-function",
+   "obtained": "2026-09-12",
+   "by": "Middle-Eigen-function@6f5f4c5",
+   "script": "scripts/stage19_kairos_e3.py (seeds 13/14/15, one process each)",
+   "notes": "run-on: m1pro-32g (A); E3 last-mile, verdict not adjudicated (S-sched 2/3, gray 1/3); design finding: constant-lr arms make S-sched's name inoperative; Kairos IDEAS I-02 adjudication; thresholds frozen pre-run in script header"
   }
  ]
 }

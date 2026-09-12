@@ -1,0 +1,81 @@
+{
+ "kind": "stage19 E3 last-mile diagnostic (Kairos IDEAS I-02 adjudication design; MEF apparatus)",
+ "registered_in": "MEF scripts/stage19_kairos_e3.py header (thresholds frozen at commit MEF@6f5f4c5, before these bytes existed)",
+ "design": {
+  "base": "k=100 consolidated (seed13 = stage18 ckpt, seeds 14/15 fresh 600-step pretrain)",
+  "arms": "LoRA r=8 on q,k,v,o,gate,up,down; frozen base (T-post regime row); gain x1 vs x10",
+  "train": "600 steps, lr 5e-4 CONSTANT (no cosine anywhere), stream B",
+  "signatures": "S-absorb grad_large&stuck / S-gate grad_small&healthy / S-sched grad_large&falls; thresholds dBval 0.010/0.050 nats, decay 0.25/0.50, FR health vs same-base control",
+  "unanimity_rule": "claim only if all 3 seeds fire the same signature"
+ },
+ "per_seed": {
+  "13": {
+   "verdict": "NONE (gray/partial zone)",
+   "base_sha256": "4b2d83737e8ce663e12872427d63421b4ac15a824798383920389e6cae523dcf",
+   "decay10": 1.5129239941022419,
+   "decay1": 2.1073556962644835,
+   "FR10": 61.35558203288487,
+   "FR1": 46.83051683647292,
+   "dBval": 0.02120828628540039,
+   "run_on": {
+    "host": "MacBook-Pro.local",
+    "machine": "m1pro-32g",
+    "torch": "2.14.0",
+    "py": "3.14.7"
+   }
+  },
+  "14": {
+   "verdict": "S-sched",
+   "base_sha256": "40e09d6df4f8656ec7ba1e145ca541ebc4fe02af60c3f79641a51cdd2b7839fb",
+   "decay10": 1.6757408757110035,
+   "decay1": 2.0691411215687276,
+   "FR10": 50.09948308127267,
+   "FR1": 38.60184458323887,
+   "dBval": 0.06252729892730713,
+   "run_on": {
+    "host": "MacBook-Pro.local",
+    "machine": "m1pro-32g",
+    "torch": "2.14.0",
+    "py": "3.14.7"
+   }
+  },
+  "15": {
+   "verdict": "S-sched",
+   "base_sha256": "a5c3c4d7c102b536b18abc63389134c2cb72548d9fc43a4ba33a2f9fe31f9e97",
+   "decay10": 1.7858731626176745,
+   "decay1": 2.1751548254169375,
+   "FR10": 53.68189280373709,
+   "FR1": 42.98618330274309,
+   "dBval": 0.05376124382019043,
+   "run_on": {
+    "host": "MacBook-Pro.local",
+    "machine": "m1pro-32g",
+    "torch": "2.14.0",
+    "py": "3.14.7"
+   }
+  }
+ },
+ "verdict_claimable": false,
+ "verdict": "NOT ADJUDICATED: S-sched 2/3 (seeds 14,15), gray/partial 1/3 (seed 13); zero seeds fired S-absorb or S-gate",
+ "summary_stats": {
+  "decay10_mean": 1.6582,
+  "decay10_range": [
+   1.5129239941022419,
+   1.7858731626176745
+  ],
+  "dBval_mean": 0.0458,
+  "dBval_sd": 0.0218,
+  "FR_ratio_10_over_1_mean": 1.2856
+ },
+ "finding_design_first": "S-sched's referent is broken as instantiated: arms ran constant lr, so a firing S-sched cannot mean 'it was only the schedule' - nothing decayed. E3 as designed separates gradient-collapse (S-gate) and stuck-loss (S-absorb) from 'loss still falls', but cannot separate 'no throttle' from 'non-schedule throttle'. Filed to Kairos for the dossier; Kairos's to reinterpret or re-arm, not MEF's.",
+ "finding_data": "No signature of a closed channel at k=100 in this rig: late gradient norms RISE (decay 1.51-1.79, never <0.25), Fisher effective rank is healthy and gain-inflated (x10 arm ~1.23-1.33x control), loss falls 0.021-0.063 nats. The r=8 adapter stays plastic on the fully-consolidated base; the floor question (Letters 009/011) does not appear here.",
+ "caveats": [
+  "mini byte-LM (~2M params), B=held-out TinyStories tail; transfer to 0.5B/real LoRA not claimed",
+  "Adam global-gradient-scale invariance declared in the header before the run: gain x10 is not nominal-lr x10",
+  "bands: 3 seeds only; sd reported, not amplified",
+  "post-hoc label not needed: init-vs-final windows were pre-frozen (steps 1-100 / 501-600)"
+ ],
+ "regime_row": "frozen-base-increment (T-post)",
+ "machine": "m1pro-32g (A)",
+ "date_utc": "2026-09-12"
+}
