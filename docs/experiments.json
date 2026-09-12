@@ -618,7 +618,7 @@
     "path": "bin/kanban.py"
    },
    "claim": "registered",
-   "next": "let the room try to break it. A board nobody has made lie yet is not trusted, it is untested — and today's four failures (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are the seed cases for its audit clauses.",
+   "next": "render it on the hosted glass (docs/index.html reads docs/kanban.json — the page should show lane counts + the red rows, not a second truth), then let the room try to make it lie: the four failures of 2026-09-12 (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are its seed cases.",
    "notes": "Born the same hour as D1 for the same reason: anything that reports on the work must also report on itself. Its first run found two things no human had: PolyNN's paperwork is outside git, and Letter 011's mirror is filed under a different number than its answer."
   }
  ]

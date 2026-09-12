@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T10:35:38Z",
- "chora_head": "da85d82",
+ "generated": "2026-09-12T10:36:23Z",
+ "chora_head": "d72aa1b",
  "counts": {
   "idea": 0,
   "registered": 4,
@@ -489,7 +489,7 @@
    "verdict": null,
    "gated_by": null,
    "budget": null,
-   "next": "let the room try to break it. A board nobody has made lie yet is not trusted, it is untested — and today's four failures (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are the seed cases for its audit clauses.",
+   "next": "render it on the hosted glass (docs/index.html reads docs/kanban.json — the page should show lane counts + the red rows, not a second truth), then let the room try to make it lie: the four failures of 2026-09-12 (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are its seed cases.",
    "flags": [
     "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
    ],
@@ -506,7 +506,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 480 min ago · provenance on HEAD",
+  "glass: generated 480 min ago · paint d72aa1b, 0 commit(s) behind HEAD",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"

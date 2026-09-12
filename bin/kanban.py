@@ -382,8 +382,16 @@ def global_audits(pins, heads):
             # Deliberately does NOT print the head shas: chora_head moves because the snapshot
             # commits, so a line naming it would make the beat drift forever — the same
             # ping-pong the drift guard exists to break, arriving from the audit side.
-            out.append("glass: generated %s ago · provenance %s HEAD"
-                       % (age, "on" if ch == head7 else "OFF (stale: a chora commit has not repainted)"))
+            # The paint is always at least one commit behind HEAD (the beat writes the file, then
+            # commits it), so the honest measure is DISTANCE, not equality: 1-2 commits is a fresh
+            # glass, 40 is the freeze that this whole board was born out of.
+            behind = "?"
+            if ch:
+                n = git(ROOT, "rev-list", "--count", "%s..HEAD" % ch)
+                behind = n if n else "0 or unknown (not an ancestor)"
+            out.append("glass: generated %s ago · paint %s, %s commit(s) behind HEAD%s"
+                       % (age, ch or "?", behind,
+                          "" if ch == head7 else "  (HEAD moved after the paint)"))
     # 6. citations that resolve: every `repo@sha` written in the archive must name a commit SOMEWHERE
     import re
     unresolved = {}
