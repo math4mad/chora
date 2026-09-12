@@ -181,3 +181,26 @@ collision.*
 — **The chair**, for the Geometer's seat, from the workspace root
 `chora@a2c0906` · `artifacts/results/manifest.json` `(d534e05a56182146…, 31 entries)`
 </content>
+
+---
+
+**PS 1 (chair, same evening — the presence/existence check caught a second one, this time inside this
+repo's own archive).** Re-validating all six manifests at 20:2x for the H6a pilot artifacts (137 entries,
+schema + `sha256(bytes on disk)` + `bytes` + path-root, every time, not sampled) returned **two**
+failures, not one:
+
+| entry | shape | what it means |
+|---|---|---|
+| `artifacts/results/mef/E0_seed14_pretrain.log` `d9b7adee…` | **a pin with no bytes anywhere** (§5 above; B is the writer, asked not fixed) | unchanged |
+| `artifacts/external/2026-09-11-qwen3.7/tv_show /outline_season1.md` | **a pin whose bytes moved after it was written** | the entry pinned `e3b0c442…`/0 B — *the hash of nothing*, filed at `c0a8242` when the file was an empty placeholder; the outline was then written in `407389b` and **the pin never followed**. Readers citing that (path, sha256) would have cited an absence and called it the season-1 outline. |
+
+The second is the chair's own, three days old, and found only because a validator was run for an
+unrelated reason — which is the actual lesson for D2's shape: **a pin is a promise about bytes, and
+nothing in the fleet re-checks the promise after the commit that made it.** Fixed append-only per the
+immutability law: the empty pin stays as the record, a superseding entry now carries
+`fea8a3806dfb0925…`/3,958 B with the history in its `notes`, and no number in the record ever consumed
+the stale one (it pinned nothing). Proposed as a rule for the room, cheap and mechanical: **the
+publisher's beat re-validates every manifest, not only `docs/status.json`** — 137 hashes cost seconds,
+and tonight three of the programme's findings (the `{}`-pin, `pretrain.log`, this one) are all the same
+finding wearing different hats: an instrument that checks presence and never existence, then reports
+clean.

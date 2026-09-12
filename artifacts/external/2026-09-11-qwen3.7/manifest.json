@@ -1,175 +1,185 @@
 {
-  "files": [
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/CHORA工作空间总览.docx",
-      "sha256": "c1bacecc90c656fc63864414b14985d028ffc89669365516b7766b3b05c9bd1d",
-      "bytes": 40133,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/今日对话录_认知隐喻与迷宫.docx",
-      "sha256": "9a92825a9701d59ed18cfc9ab00cb67feb0445b007e7f36d28cf0ff32ec2ca65",
-      "bytes": 19894,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想1_JacobiGP_多项式探索_CHORA版.docx",
-      "sha256": "c5e507f5dbcb46e66e18fb73cfbb76526f0d0d4f3bf059fe7dbc8795e0051320",
-      "bytes": 38866,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想1_jacobiGP多项式探索.docx",
-      "sha256": "81a7559b054e93070fd3a50d94222aaefe1dd6c20303c4939473564f4b5950ae",
-      "bytes": 38133,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想2_多项式激活函数_CHORA版.docx",
-      "sha256": "6b31906a6e0b33ca47a5db1c5b9cb2610d4ffa13082f9e5a3f7da71593d1965d",
-      "bytes": 38739,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想2_多项式激活函数探索.docx",
-      "sha256": "ae26e54a075e57ce3e7918c17a786235c54c88f73dd4fba12de04791f29f3bf4",
-      "bytes": 38676,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想3_SVD谱分析.docx",
-      "sha256": "2e7d2749f5aac54e1b72b2a72f1d5e775f6046aababd2c2cf7c1f761569d9f89",
-      "bytes": 39006,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想3_SVD谱分析_CHORA版.docx",
-      "sha256": "1c090839a2d5647a5cab8fdae979e19bdfc3d59a2c6c390aae14cfd5ff75ef75",
-      "bytes": 39024,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想4_矩阵分解行为科学.docx",
-      "sha256": "e270b8205402b3e6f83a68305e382336926e41841be7f4af2d0716f52b08f4f9",
-      "bytes": 39166,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想4_矩阵分解行为科学_CHORA版.docx",
-      "sha256": "237e1294860c98362e15baa5df4d099d799c5e32a06caa2dbb10f2334fee5c77",
-      "bytes": 39032,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想5_LoRA时间机制_CHORA版.docx",
-      "sha256": "b4cf0194b659e06b88d0840a8745172a0cc7ec9ff3b41f8e1286335953284f01",
-      "bytes": 39814,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/设想5_LoRA时间机制与神经可塑性.docx",
-      "sha256": "326ea5a9b79367bfbfb9b271494f6bdd38f7fac22426cb8245b55de0ce3c6cb2",
-      "bytes": 39347,
-      "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), 设想1-5 originals + CHORA-版 (CHORA版 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/静态HTML实时接收Git信息方案总结.docx",
-      "sha256": "60f04126d6e100c888ce7b61a442b2042b5d46ed2893aa23e4918e9a3a0130da",
-      "bytes": 22305,
-      "source": "external: Qwen3.7 model, delivered by human 2026-09-11 13:29 (late arrival; not fetched, not reproducible)",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "Architecture note for the fleet dashboard: webhook+WebSocket vs polling vs third-party push. Disposition: chair letter 010 — polling kept (already live), self-hosted server declined (no servers in the law), hosted push declined (unanchored channel), launchd publisher adopted."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /outline_season1.md",
-      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "bytes": 0,
-      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "EMPTY FILE — 0 bytes; sha256 e3b0c442… is the hash of nothing, the known hash of the empty string. The season outline was announced and not written: an accurate portrait of method-vs-promise across the whole submission, filed as such. Disposition: chair Letter 012."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /pilot.md",
-      "sha256": "88e5c16d5d21064d2002e4ac39050de32a104316f60878e5e0a2b1cfc0df809b",
-      "bytes": 888,
-      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "chat fragment: the human's pitch-back and Qwen's meta-comment ('好的研究本来就需要好的叙事') plus the first 3-line sketch of 'The Newcomer'. Disposition: chair Letter 012."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod1.md",
-      "sha256": "13253bb0202498ff84ee43e38711df7572715e96ec7cdb0506626c72609e55f9",
-      "bytes": 5058,
-      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "Ep1 '一线生机': the magic-number breakthrough scene. Cast error: seat V appears as Qwen's old DECLINED persona 'Neural Plasticity Simulator', not the seated Horologist. Filename missing an 'e' — preserved untouched. Disposition: chair Letter 012."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod2.md",
-      "sha256": "6ef69b21487d5a7981072c62acc48072ba358d4c81e286ff1793f5a0df4ffb14",
-      "bytes": 5826,
-      "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "Ep2 '谱签名': junction-signature mythos; a 30-year-old USB drive enters the room unhashed; ends on the Warden's stamp in thin air reading 'Listen'. Disposition: chair Letter 012."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod3.md",
-      "sha256": "49e38daa37b10e8098ee5790a9d9d29f314726d005a85eb12c16b99c3bc12cc4",
-      "bytes": 6518,
-      "source": "external: Qwen3.7 model, EP03 rewrite delivered by human 2026-09-11 ~15:2x; revision in direct response to Letter 012 (the critique was read, apparently)",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "EP03 '回路' — the self-correction episode: envelope wax-sealed with its own SHA-256, verify-before-open, Warden's third stamp-word 'Filed.', a hash-valid EMPTY-POINTER message, authorship forensics on the sentence itself, and the long-overdue arrival of the auditor seat. Disposition: chair Letter 013."
-    },
-    {
-      "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /Qwen'suggest_LORA_jnjection_time.md",
-      "sha256": "e75a286ebc42b9be6e50b41e4658852e8b02b83fa4dc1fdaaee3d8bfd6d9ea3c",
-      "bytes": 5495,
-      "source": "external: Qwen3.7, delivered by human 2026-09-11 ~15:4x; filename typos (Qwen'suggest, jnjection) preserved; arrived inside tv_show/ — fan-fiction packaging around a non-fiction proposal",
-      "obtained": "2026-09-11",
-      "by": "human",
-      "notes": "First Qwen artifact written in the programme's own format: pre-registration, falsifiers, budget, audit checklist. Audit: Kairos letter 014 — six amendments (dataset slip, borrowed band, P4 schedules, regime rows, metric identity, T-post ambiguity) and one arithmetic killing (§4.3: an r=16 adapter has effective rank <= 16; the spectral-signature rhyme cannot exist). The doc's self-assigned 'manifest_entry: 19' honoured by the chair, as all pinning is."
-    }
-  ]
+ "files": [
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/CHORA\u5de5\u4f5c\u7a7a\u95f4\u603b\u89c8.docx",
+   "sha256": "c1bacecc90c656fc63864414b14985d028ffc89669365516b7766b3b05c9bd1d",
+   "bytes": 40133,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u4eca\u65e5\u5bf9\u8bdd\u5f55_\u8ba4\u77e5\u9690\u55bb\u4e0e\u8ff7\u5bab.docx",
+   "sha256": "9a92825a9701d59ed18cfc9ab00cb67feb0445b007e7f36d28cf0ff32ec2ca65",
+   "bytes": 19894,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f31_JacobiGP_\u591a\u9879\u5f0f\u63a2\u7d22_CHORA\u7248.docx",
+   "sha256": "c5e507f5dbcb46e66e18fb73cfbb76526f0d0d4f3bf059fe7dbc8795e0051320",
+   "bytes": 38866,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f31_jacobiGP\u591a\u9879\u5f0f\u63a2\u7d22.docx",
+   "sha256": "81a7559b054e93070fd3a50d94222aaefe1dd6c20303c4939473564f4b5950ae",
+   "bytes": 38133,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f32_\u591a\u9879\u5f0f\u6fc0\u6d3b\u51fd\u6570_CHORA\u7248.docx",
+   "sha256": "6b31906a6e0b33ca47a5db1c5b9cb2610d4ffa13082f9e5a3f7da71593d1965d",
+   "bytes": 38739,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f32_\u591a\u9879\u5f0f\u6fc0\u6d3b\u51fd\u6570\u63a2\u7d22.docx",
+   "sha256": "ae26e54a075e57ce3e7918c17a786235c54c88f73dd4fba12de04791f29f3bf4",
+   "bytes": 38676,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f33_SVD\u8c31\u5206\u6790.docx",
+   "sha256": "2e7d2749f5aac54e1b72b2a72f1d5e775f6046aababd2c2cf7c1f761569d9f89",
+   "bytes": 39006,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f33_SVD\u8c31\u5206\u6790_CHORA\u7248.docx",
+   "sha256": "1c090839a2d5647a5cab8fdae979e19bdfc3d59a2c6c390aae14cfd5ff75ef75",
+   "bytes": 39024,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f34_\u77e9\u9635\u5206\u89e3\u884c\u4e3a\u79d1\u5b66.docx",
+   "sha256": "e270b8205402b3e6f83a68305e382336926e41841be7f4af2d0716f52b08f4f9",
+   "bytes": 39166,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f34_\u77e9\u9635\u5206\u89e3\u884c\u4e3a\u79d1\u5b66_CHORA\u7248.docx",
+   "sha256": "237e1294860c98362e15baa5df4d099d799c5e32a06caa2dbb10f2334fee5c77",
+   "bytes": 39032,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f35_LoRA\u65f6\u95f4\u673a\u5236_CHORA\u7248.docx",
+   "sha256": "b4cf0194b659e06b88d0840a8745172a0cc7ec9ff3b41f8e1286335953284f01",
+   "bytes": 39814,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u8bbe\u60f35_LoRA\u65f6\u95f4\u673a\u5236\u4e0e\u795e\u7ecf\u53ef\u5851\u6027.docx",
+   "sha256": "326ea5a9b79367bfbfb9b271494f6bdd38f7fac22426cb8245b55de0ce3c6cb2",
+   "bytes": 39347,
+   "source": "external: Qwen3.7 model, delivered by human into workspace root as 'suggestion by Qwen3.7/' on 2026-09-11; not fetched, not reproducible",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "12 files: overview (mirrors docs/index.html), dialogue record (philosophy, non-input), \u8bbe\u60f31-5 originals + CHORA-\u7248 (CHORA\u7248 = homepage rhetoric reflected back; originals carry the new content). Triage in letters/005; citations therein are UNVERIFIED until a bench checks them. The CHORA program is not the addressee and is bound by none of it."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/\u9759\u6001HTML\u5b9e\u65f6\u63a5\u6536Git\u4fe1\u606f\u65b9\u6848\u603b\u7ed3.docx",
+   "sha256": "60f04126d6e100c888ce7b61a442b2042b5d46ed2893aa23e4918e9a3a0130da",
+   "bytes": 22305,
+   "source": "external: Qwen3.7 model, delivered by human 2026-09-11 13:29 (late arrival; not fetched, not reproducible)",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "Architecture note for the fleet dashboard: webhook+WebSocket vs polling vs third-party push. Disposition: chair letter 010 \u2014 polling kept (already live), self-hosted server declined (no servers in the law), hosted push declined (unanchored channel), launchd publisher adopted."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /outline_season1.md",
+   "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+   "bytes": 0,
+   "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "EMPTY FILE \u2014 0 bytes; sha256 e3b0c442\u2026 is the hash of nothing, the known hash of the empty string. The season outline was announced and not written: an accurate portrait of method-vs-promise across the whole submission, filed as such. Disposition: chair Letter 012."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /pilot.md",
+   "sha256": "88e5c16d5d21064d2002e4ac39050de32a104316f60878e5e0a2b1cfc0df809b",
+   "bytes": 888,
+   "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "chat fragment: the human's pitch-back and Qwen's meta-comment ('\u597d\u7684\u7814\u7a76\u672c\u6765\u5c31\u9700\u8981\u597d\u7684\u53d9\u4e8b') plus the first 3-line sketch of 'The Newcomer'. Disposition: chair Letter 012."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod1.md",
+   "sha256": "13253bb0202498ff84ee43e38711df7572715e96ec7cdb0506626c72609e55f9",
+   "bytes": 5058,
+   "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "Ep1 '\u4e00\u7ebf\u751f\u673a': the magic-number breakthrough scene. Cast error: seat V appears as Qwen's old DECLINED persona 'Neural Plasticity Simulator', not the seated Horologist. Filename missing an 'e' \u2014 preserved untouched. Disposition: chair Letter 012."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod2.md",
+   "sha256": "6ef69b21487d5a7981072c62acc48072ba358d4c81e286ff1793f5a0df4ffb14",
+   "bytes": 5826,
+   "source": "external: Qwen3.7 model (fan fiction: 'CHORA: The Series'), delivered by human 2026-09-11 ~14:43; directory name carries a trailing space, preserved",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "Ep2 '\u8c31\u7b7e\u540d': junction-signature mythos; a 30-year-old USB drive enters the room unhashed; ends on the Warden's stamp in thin air reading 'Listen'. Disposition: chair Letter 012."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /season1_episod3.md",
+   "sha256": "49e38daa37b10e8098ee5790a9d9d29f314726d005a85eb12c16b99c3bc12cc4",
+   "bytes": 6518,
+   "source": "external: Qwen3.7 model, EP03 rewrite delivered by human 2026-09-11 ~15:2x; revision in direct response to Letter 012 (the critique was read, apparently)",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "EP03 '\u56de\u8def' \u2014 the self-correction episode: envelope wax-sealed with its own SHA-256, verify-before-open, Warden's third stamp-word 'Filed.', a hash-valid EMPTY-POINTER message, authorship forensics on the sentence itself, and the long-overdue arrival of the auditor seat. Disposition: chair Letter 013."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /Qwen'suggest_LORA_jnjection_time.md",
+   "sha256": "e75a286ebc42b9be6e50b41e4658852e8b02b83fa4dc1fdaaee3d8bfd6d9ea3c",
+   "bytes": 5495,
+   "source": "external: Qwen3.7, delivered by human 2026-09-11 ~15:4x; filename typos (Qwen'suggest, jnjection) preserved; arrived inside tv_show/ \u2014 fan-fiction packaging around a non-fiction proposal",
+   "obtained": "2026-09-11",
+   "by": "human",
+   "notes": "First Qwen artifact written in the programme's own format: pre-registration, falsifiers, budget, audit checklist. Audit: Kairos letter 014 \u2014 six amendments (dataset slip, borrowed band, P4 schedules, regime rows, metric identity, T-post ambiguity) and one arithmetic killing (\u00a74.3: an r=16 adapter has effective rank <= 16; the spectral-signature rhyme cannot exist). The doc's self-assigned 'manifest_entry: 19' honoured by the chair, as all pinning is."
+  },
+  {
+   "path": "artifacts/external/2026-09-11-qwen3.7/tv_show /outline_season1.md",
+   "sha256": "fea8a3806dfb09253b53f25eda3fc5fc1515c6f6cfef879e8b3183093d298d40",
+   "bytes": 3958,
+   "source": "external: Qwen3.7 model \u2014 'CHORA: The Series' season-1 outline, as committed",
+   "obtained": "2026-09-11",
+   "by": "chora@407389b",
+   "script": "(none; authored by the showrunner model, mirrored by the chair)",
+   "notes": "SUPERSEDES the pin above for this path \u2014 that one read sha256 e3b0c442\u2026/0 bytes, the hash of nothing, filed at c0a8242 while the file was an empty placeholder; the outline was then written in 407389b and the pin never followed. Append-only law: the empty pin stays as the record of the mistake, THIS entry is the one readers cite for the bytes on disk. Found at 20:2x by the fleet re-validation run (137 entries, 6 manifests) that this session was running for the H6a artifacts \u2014 a second instance of Letter 021 \u00a75's shape: a pin that cannot report that its bytes changed. Nothing in the record consumed the stale pin as a number, because it pinned nothing."
+  }
+ ]
 }

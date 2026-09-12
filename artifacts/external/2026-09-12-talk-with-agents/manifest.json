@@ -1,0 +1,14 @@
+{
+ "files": [
+  {
+   "path": "artifacts/external/2026-09-12-talk-with-agents/jacobi-orthogonal-polynomials.html",
+   "sha256": "c33014fcfdddc0e6ca928f43451625b67c42d54272fb9730f2ba372eb55cc1e5",
+   "bytes": 207995,
+   "source": "https://math4mad.github.io/talk-with-agents/talking/mathematics/jacobi-orthogonal-polynomials.html (fetched 2026-09-12 19:0x UTC by the chora root session; hosted page of the human's own talk-with-agents site)",
+   "obtained": "2026-09-12",
+   "by": "chora@932da03",
+   "script": "curl -sS -m 60 -o jacobi-orthogonal-polynomials.html <url>",
+   "notes": "The 2026-09-06 seed dialogue behind JacobiGP (turn 3 closes with \u4e0d\u540c\u5c40\u90e8\u533a\u57df\u7528\u4e0d\u540c\u7684\u5c3a\u5b50/\u7a7a\u95f4\u81ea\u9002\u5e94 \u2014 the clause Letter 023 files as I-04). Crossed by hash because Letter 012 confessed to provenance-by-legend and Letter 021 \u00a75 shows a pin whose bytes exist nowhere: this is the same class. Quoted passages are inside these bytes; the live page may change, this file cannot."
+  }
+ ]
+}

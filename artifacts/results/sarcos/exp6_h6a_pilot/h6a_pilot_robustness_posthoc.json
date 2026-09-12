@@ -1,0 +1,147 @@
+{
+ "kind": "POST-HOC robustness row for the exp6 H6a pilot (Sarcos r=1 determinism mismatch)",
+ "label": "post-hoc \u2014 written after the deciding row existed; it cannot change H6a-pilot's verdict and is a separate row forever (programme law 4, regime discipline)",
+ "why": "A2 \u00a76's audit fired on exactly the six rung-1 arms (three seeds \u00d7 both widths); rung 1 is inside group U, so the question 'which bytes is the verdict about' is a question about the deciding row, and it gets its own row rather than an edit.",
+ "registered_rig_reused": "A1 \u00a73 / A2 \u00a73 \u2014 N=30, tau=0.50, primary width 21-64-64-7, exp-4's six starts, MAP with the s=2 prior; nothing re-tuned",
+ "per_arm_fresh_vs_committed": [
+  {
+   "width": "primary",
+   "seed": 13,
+   "committed_run_id": "constrained-64h64-seed13-blk256-f80-10-10-ep60-lr0.001_constraint-ranks1-1-1",
+   "committed_alpha": -0.5662907071869392,
+   "committed_beta": -0.27803912760344784,
+   "fresh_alpha": -0.5662980718753299,
+   "fresh_beta": -0.27776784567962187,
+   "d_alpha": 7.3646883906874905e-06,
+   "d_beta": -0.00027128192382597227,
+   "max_abs_diff_mse_val": 2.4004955796241845e-05,
+   "first_epoch_differing": 0,
+   "committed_explained_var": null,
+   "seconds": 10.69
+  },
+  {
+   "width": "primary",
+   "seed": 14,
+   "committed_run_id": "constrained-64h64-seed14-blk256-f80-10-10-ep60-lr0.001_constraint-ranks1-1-1",
+   "committed_alpha": -0.5632910717228169,
+   "committed_beta": -0.2745967073163249,
+   "fresh_alpha": -0.5632945133420877,
+   "fresh_beta": -0.27461336896524924,
+   "d_alpha": 3.4416192707942272e-06,
+   "d_beta": 1.6661648924332084e-05,
+   "max_abs_diff_mse_val": 8.239044287261521e-06,
+   "first_epoch_differing": 0,
+   "committed_explained_var": null,
+   "seconds": 10.08
+  },
+  {
+   "width": "primary",
+   "seed": 15,
+   "committed_run_id": "constrained-64h64-seed15-blk256-f80-10-10-ep60-lr0.001_constraint-ranks1-1-1",
+   "committed_alpha": -0.554817714775537,
+   "committed_beta": -0.2624722787813585,
+   "fresh_alpha": -0.5548164106857667,
+   "fresh_beta": -0.26247893297601166,
+   "d_alpha": -1.3040897702820686e-06,
+   "d_beta": 6.654194653177292e-06,
+   "max_abs_diff_mse_val": 3.1169457266333467e-06,
+   "first_epoch_differing": 0,
+   "committed_explained_var": null,
+   "seconds": 9.97
+  },
+  {
+   "width": "sensitivity",
+   "seed": 13,
+   "committed_run_id": "constrained-256h256-seed13-blk256-f80-10-10-ep60-lr0.001-ranks1-1-1",
+   "committed_alpha": -0.5617038435619361,
+   "committed_beta": -0.27250756483413474,
+   "fresh_alpha": -0.5617004260992273,
+   "fresh_beta": -0.27252721640273736,
+   "d_alpha": -3.4174627088212617e-06,
+   "d_beta": 1.9651568602618852e-05,
+   "max_abs_diff_mse_val": 1.2339314885090324e-05,
+   "first_epoch_differing": 0,
+   "committed_explained_var": null,
+   "seconds": 10.12
+  },
+  {
+   "width": "sensitivity",
+   "seed": 14,
+   "committed_run_id": "constrained-256h256-seed14-blk256-f80-10-10-ep60-lr0.001-ranks1-1-1",
+   "committed_alpha": -0.565930755884374,
+   "committed_beta": -0.33072453537449376,
+   "fresh_alpha": -0.5659504016216012,
+   "fresh_beta": -0.33061442229262084,
+   "d_alpha": 1.964573722712526e-05,
+   "d_beta": -0.00011011308187292013,
+   "max_abs_diff_mse_val": 1.0427652351596706e-05,
+   "first_epoch_differing": 0,
+   "committed_explained_var": null,
+   "seconds": 10.03
+  },
+  {
+   "width": "sensitivity",
+   "seed": 15,
+   "committed_run_id": "constrained-256h256-seed15-blk256-f80-10-10-ep60-lr0.001-ranks1-1-1",
+   "committed_alpha": -0.5650454314010589,
+   "committed_beta": -0.2585956887264679,
+   "fresh_alpha": -0.5650495745699324,
+   "fresh_beta": -0.25858614662927204,
+   "d_alpha": 4.143168873538272e-06,
+   "d_beta": -9.542097195835986e-06,
+   "max_abs_diff_mse_val": 1.1723877154978801e-05,
+   "first_epoch_differing": 0,
+   "committed_explained_var": null,
+   "seconds": 9.92
+  }
+ ],
+ "S_as_written_frozen": {
+  "value": 7.879959693208908,
+  "deciding_row_S_in_verdict": 7.879959693208908,
+  "pooled_sd": 0.09952659009339268
+ },
+ "S_with_committed_r1_substituted": {
+  "value": 7.880289797657445,
+  "pooled_sd": 0.09952762935261156,
+  "d_per_coord": {
+   "alpha": -0.06661199909745308,
+   "beta": -0.7814727282784446
+  },
+  "group_means": {
+   "U": {
+    "alpha": -0.5438229693698806,
+    "beta": -0.17160108945185767
+   },
+   "O": {
+    "alpha": -0.47721097027242754,
+    "beta": 0.6098716388265869
+   }
+  }
+ },
+ "substitution_is_partial": "rung 2 has no committed run (it was invented by A2 \u00a72), so U mixes committed rung-1 fits with fresh rung-2 fits",
+ "verdict_moves": false,
+ "bug_log": [
+  {
+   "attempt": 1,
+   "at": "2026-09-12 19:5x",
+   "wrong_S_as_written": 11.1037,
+   "cause": "in group_stats the name `getter` was a leftover loop variable, so after the pooled-variance loop it stayed bound to beta_of and BOTH coordinates' group means were computed from beta \u2014 giving d_alpha = d_beta = -0.78147 and S = 11.10 instead of the true 7.88",
+   "how_it_was_caught": "the consistency line this script wrote for itself: it re-derives S from the verdict's own per_arm table and refuses to stay quiet if that does not equal the deciding row's printed S. The checker reported on the checker \u2014 same class as the bundle-checker bugs in chora/docs/ROLLBACK.md \u00a72c, arriving from the instrument side",
+   "what_was_affected": "nothing in the deciding row: the pilot's own stats_for recomputes independently and its S = 7.87996 was reproduced by hand from per_arm (pooled sd 0.099527, d = (-0.06661, -0.78143)). Only this post-hoc row's arithmetic was wrong, and it is re-landed here",
+   "file_status": "this file replaced its first attempt in the same minute; the wrong number lives on only here, where it was written to stay"
+  }
+ ],
+ "threshold": 3.0,
+ "environment": {
+  "torch": "2.14.0",
+  "python": "3.14.7",
+  "machine": "m1pro-32g"
+ },
+ "provenance": {
+  "chora_head": "8359871909cd192ea8efae01dea375c45376962e",
+  "jacobigp_head": "aab50d349a07b3e5b817d4235a353f1679e10020",
+  "sarcos_head": "fb37e04950a45236f8d1099dbc94998220c3639b",
+  "script": "chora/experiments/exp6_h6a_robustness_posthoc.py",
+  "run-on": "m1pro-32g (A)"
+ }
+}

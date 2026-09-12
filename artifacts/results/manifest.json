@@ -323,6 +323,36 @@
    "by": "JacobiGP@99c7a4a + chora@932da03",
    "script": "chora/experiments/exp6_h6c_fit.py",
    "notes": "Multi-start spread is the evidence for the corner reading: all six registered starts of every cell converge to alpha,beta ~ -0.9, so the walk to the singular edge is the objective's, not the initialisation's. run-on: m1pro-32g (A)."
+  },
+  {
+   "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
+   "sha256": "e08ca86d2ea4b381c2328893cf6d16c3a2723dffd441b4e2560f011365f6b499",
+   "bytes": 263209,
+   "source": "exp6 H6a PILOT verdict \u2014 learned Jacobi exponents of Sarcos val-loss curves vs rank (training-under-rank-constraint row)",
+   "obtained": "2026-09-12",
+   "by": "JacobiGP@aab50d3",
+   "script": "chora/experiments/exp6_h6a_sarcos_pilot.py",
+   "notes": "Verdict DEAD-BY-CURVE-CLAUSE: S(0.50)=7.880 passes the registered 3.0 by 2.6x but \u0394=0.41648 > B=0.12416, i.e. the curves separated before the gauge could \u2014 H6a's own pre-written death clause. Composition is the surviving observation: d_beta=-0.78143 vs d_alpha=-0.06661 (per-coord pooled sd 0.13916 / 0.02112), so one coordinate of the dial carries all of it and the other is flat; labelled exploratory on a row that failed its clause. 36 arms = rungs {1,2,4,8,16,21} x seeds {13,14,15} x widths {21-64-64-7 primary, 256h256 sensitivity}, all trained by Sarcos's own runner (86.6 s of training, 1148 s of fitting), test split never read, no barrier flags, no breakdowns. run-on: m1pro-32g (A)."
+  },
+  {
+   "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_fits.json",
+   "sha256": "52737ca412e74f088a143b935216c20aca2f12cd286014d288bdb7f49cab47a7",
+   "bytes": 113262,
+   "source": "per-arm fit rows + the 60-point val curves behind the H6a pilot verdict",
+   "obtained": "2026-09-12",
+   "by": "JacobiGP@aab50d3",
+   "script": "chora/experiments/exp6_h6a_sarcos_pilot.py",
+   "notes": "Includes the determinism audit: 15/21 overlapping configs reproduce the committed 2026-09-08 Sarcos records BITWISE across a macOS 26.1->26.6 change; the 6 exceptions are exactly the r=1 arms at both widths, first differing at epoch 0, max|\u0394 mse_val| 2.4e-5. run-on: m1pro-32g (A)."
+  },
+  {
+   "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_robustness_posthoc.json",
+   "sha256": "b9c36df2a1d349fc6538b5e9631aca434b1fc77a46a2aac6327e3c382f4afea0",
+   "bytes": 6148,
+   "source": "POST-HOC robustness row: refits the six non-reproducing r=1 arms from the COMMITTED curves and asks what the mismatch is worth",
+   "obtained": "2026-09-12",
+   "by": "JacobiGP@aab50d3",
+   "script": "chora/experiments/exp6_h6a_robustness_posthoc.py",
+   "notes": "Labelled post-hoc and separate by law: it cannot move the verdict, and it does not \u2014 shifts <=3e-4 in (alpha,beta), S 7.880 -> 7.880. Carries a bug_log recording that this script's own first attempt printed S=11.104 because a leftover loop variable made both coordinates read beta; caught by the script's required self-consistency line against the deciding row. An instrument reporting clean while broken, arriving from the checker's side. run-on: m1pro-32g (A)."
   }
  ]
 }
