@@ -55,14 +55,59 @@ bundle nobody restored is a story, not a backup — the drill was re-run:
 | `shasum -a 256 -c SHA256SUMS` | 6/6 OK |
 | clone each bundle → HEAD == the annotated tag's commit | **6/6 OK** |
 | bundles carry every local branch **and** `refs/remotes/origin/*` **and** both tags | yes (verified by `git bundle list-heads`) |
-| a restored clone can reach **A's** tip, not just B's branch | yes: `origin/multi-model = 6f5f4c5` resolves and `cat-file -t` → `commit` |
+| a restored clone can reach **A's** tip, not just B's branch | **NO — my claim, retracted in place below.** The object is in the pack, but no ref names it, and one `git gc --prune=now` deletes it permanently |
+| correct offline restore (verified, all six) | `git init r && cd r && git remote add o <abs>/repo.bundle && git fetch o '+refs/remotes/origin/*:refs/from-bundle/*' '+refs/heads/*:refs/heads/*' '+refs/tags/*:refs/tags/*'` → every bundle head present and **survives `reflog expire` + `gc --prune=now`** (0 unrecoverable on 6/6) |
 
-The drill caught one thing worth recording: my first pass printed `FAIL JacobiGP`,
-and the failure was in the **checker**, not the bundle — I had stripped the
-canonical leading space from `" JacobiGP"` in my own loop. The bundle was fine on
-the first try. This is the same bug shape as the `{}`-pin, arriving from the
-other direction: a green or red light that describes the instrument rather than
-the specimen, so a restore drill has to be drilled *on its own output* too.
+## 2c · The drill's real catch: `git clone <bundle>` is **not** a restore, and the
+morning's own sentence about it was the true half of a misleading claim
+
+The morning's §2 said: *"The only refs a clone lacks are `refs/remotes/origin/*`,
+which `git fetch` rebuilds."* The first clause is exact; the second is the trap —
+rebuilds them **from a remote**, and offline the bundle *is* the remote, so
+`git clone` is precisely the command that does not do it. Measured, per repo, on
+the eve bundles:
+
+```
+chora            origin refs in bundle 2 → in a naive clone 2   missing: —
+JacobiGP                                    3 →                2   missing: gh-pages
+Middle-Eigen-function                       5 →                3   missing: multi-model, working-sage-1
+Sarcos-NN-Model                             4 →                3   missing: gh-pages
+Polynomial-ActivatedNN                      4 →                3   missing: gh-pages
+Kairos                                      2 →                2   missing: —
+```
+
+On MEF the two branches a naive clone drops are **`multi-model` — A's entire day
+order, every stage18/stage19 head it has** — and `working-sage-1`; on three other
+benches it is `gh-pages`, i.e. **the published site itself**. And the dropped tips
+are not merely unnamed: they are unreachable, so the next routine maintenance
+destroys them. Demonstrated on a naive MEF clone:
+
+```
+BEFORE  reflog expire + gc --prune=now :  git cat-file -t 6f5f4c5… → commit
+AFTER                                    :  could not get object info      ← A's tip is GONE
+fsck dangling commits: 0
+```
+
+So the morning's headline ("HEAD matched 6/6, no history is missing") was true of
+the *object store* and false of the *restore path that matters*: HEAD matched
+because HEAD was the one thing a clone is guaranteed to bring.
+
+**Corrected recipe, verified this hour on all six bundles** (the one in the table
+above): `git init` → `git remote add o <bundle>` → `git fetch o` with the three
+refspecs → *then* `reflog expire --expire=now --all; git gc --prune=now`. After
+that, every bundle head resolves **through a ref** and 0 are unrecoverable on 6/6.
+A drill that prunes is a drill; a drill that only reads HEAD is a screenshot.
+
+Two instrument bugs surfaced on the way there and are filed because they are the
+same species as the `{}`-pin — an instrument reporting on itself rather than on
+the specimen: (1) my first drill loop printed `FAIL JacobiGP` because it had
+stripped the canonical leading space from `" JacobiGP"`, a bug in the checker and
+not the bundle; (2) my second loop printed `0 refs survived` for **all six** repos
+because it pointed `git remote add` at a relative path from `/tmp`, and a
+green-measuring-a-broken-instrument is how a false PASS would have entered the
+record instead of a false claim by me. Both were caught by re-reading the output
+for whether it was *too* tidy: six identical zeros is not a pass, it is a broken
+probe.
 
 Limits unchanged and still honest: the bundles live on one laptop; `models/`,
 `data/`, `outputs/*.pt` are outside git by law 3 and roll back via manifest +
