@@ -29,7 +29,8 @@ Manifest entries added: `artifacts/init-states/manifest.json` 0 → **21**,
 `artifacts/results/manifest.json` 20 → **27**, `data/manifest.json` 3 → **7**
 (Fashion-MNIST's four `.gz`, md5-pinned against torchvision before use).
 All 27 + 21 + 7 + 53 entries re-validated against schema *and* disk this
-afternoon; that sweep is what found B's own bad path label (§3).
+afternoon; that sweep is what found B's own bad path label (§3). **28 files
+mirrored bench → chora were re-hashed at both ends: 0 mismatches.**
 
 ## 2 · The twins verdict, in the one sentence the brief asks for
 
@@ -115,3 +116,30 @@ three ways and still intact.
 
 *Nothing in §2–§6 is a claim about CHORA's science except where a hash is
 attached. The claims are in the letters; this file is the receipt.*
+
+## 6 · Questions, quarantined from every table (added at close of day)
+
+* *question* — B is ~27 % faster per epoch than A on the exp8 trainer while
+  reproducing its answer exactly: how much of the fleet's wall-clock divergence
+  is scheduling rather than arithmetic, and does any of it survive into paths that
+  are *not* bit-exact by construction (the ladder's SVD fallback is the candidate)?
+* *question* — the four arms share one init measure because the ruler sits
+  upstream of the thing that distinguishes them. Is Letter 017's contrast row the
+  **post-activation** init measure? ~11 s of B's compute answers it on the word.
+* *question* — `bin/sync.sh` line 20 links the benches by **absolute** path and
+  those five symlinks are *tracked* blobs (`git ls-tree HEAD benches/` →
+  `/Users/mac/…`), so `chora` can never be clean on a second laptop.
+  `MEF@a98508e` made exactly this fix inside a bench for exactly this reason —
+  its own note says "they made the traffic light permanently red". Relative
+  links, or untrack-and-ignore: which is the record's? (Letter 020 PS 3.)
+* *question* — the glass has not repainted in 3 h 30 min. If the next chora-only
+  commit moves it inside five minutes, Letter 019 PS 6's F3 is a liveness
+  artifact; if it does not, the guard that ignores `chora_head` is still the
+  reason, and B's §4 STOPs 1–3 stand on an unreadable light.
+* *question* — `data.py` documents the Fashion-MNIST drop target as
+  `chora/data/fashion-mnist/` while `datasets()` writes `FashionMNIST/`: one
+  string, two places, the comment is the stale one.
+* *question* — B pulled ` JacobiGP` two seconds before it would have had to
+  invent H6c's coordinate from Letter 017's prose (PS 1). Should "pull every
+  bench before touching any" be a numbered **gate** in §1 rather than a habit?
+
