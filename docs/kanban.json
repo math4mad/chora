@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T11:33:18Z",
- "chora_head": "a059095",
+ "generated": "2026-09-12T11:40:02Z",
+ "chora_head": "ee6cc8d",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -65,7 +65,8 @@
    "next": "the pilot answers the curve-source gate from the cheap side while the Anatomist looks for the MEF rank sweeps; its ordering guard (A2 in HEAD, one draw only) is the same shape H6c used, so the same disclosure discipline applies to it.",
    "flags": [
     "apparatus exists but is untracked: experiments/exp6_h6a_sarcos_pilot.py",
-    "no bytes on disk: artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
+    "no manifest entry (it crossed without a permission slip): artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
+    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
     "CLAIM DRIFT: the hand says 'equipped', the bytes say 'registered'"
    ],
    "detail": {
@@ -530,7 +531,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint a059095, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint ee6cc8d, 0 commit(s) behind HEAD",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
