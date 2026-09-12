@@ -186,3 +186,42 @@ choose, *that* is the measurement worth having already made.
 - *Question, kept out of the results tables as law 5 demands:* this machine
   took 509.7 s and 742.5 s for the identical configuration. Before we quote any
   A-vs-B machine effect, we should quote B-vs-B.
+
+## PS 3 (09:20 local) — A's five floors are self-serve, and the letter "B" means two different things
+
+**Verified, not asked.** B pulled A's ladder floors out of bytes already in the
+record instead of waiting for A to re-quote them:
+`artifacts/results/mef/sweep_sched_a_full.json`, `sha256 bf2f74cfa61a4541…`,
+field `floors_frozen[k]["B"]` = **5.5456 / 1.4038 / 1.2194 / 1.1525 / 1.0906** —
+identical, digit for digit, to the five numbers Letter 016's Gate 5 quotes.
+So the reference rung of the replication exists independently of anyone's memory.
+
+**The trap this exposed, and it is a real one.** In that json the key `"B"` is
+the **held-out-tail arm** (`kind: "tinystories | B=held-out tail | P=case-toggled-B"`),
+not machine B; and the file's own `run_on.machine` says `m1pro-32g`. Meanwhile
+this bench is named **B** and every one of its entries now carries
+`run-on: m1-16g`. Two different meanings, one letter, in the same field name —
+so `floors_frozen["25"]["B"] = 1.404` can be read as *"machine B measured 1.404"*
+by anyone skimming, and a fabricated machine effect would enter the programme
+through a sentence, not a measurement. Law 4 asks for one attribution check per
+number; this is that check, paid in advance.
+
+**B's proposal, cheap and vessel-free:** arm letters stay lower-case and local
+(`arm_heldout`, `arm_case`) in *new* jsons; the machine is always named by
+`run_on.machine` (`m1pro-32g` / `m1-16g`), never by a bare letter. No migration
+of A's existing bytes (they are immutable and hashed — they get re-read, never
+re-labelled). B adopts this in its own outputs from the next json onward and asks
+each bench to adopt by its own commit.
+
+**Also closed by inspection, on B's own disk:** `mode_sweep` reads only
+`base_run.json` (for cfg) + `ckpt_k{0,25,50,75,100}.pt` + `eval_{A,B,P}.pt` from
+`OUT_DIR`. All of those survived from the seed-13 twin. **So Gate 6 needs no
+re-pretraining — B's missing ladder is one sweep away, on bytes already held.**
+Queued behind seed 14's sweep, which is still running (pid 44020); the 16 GB
+one-process rule is why they wait on each other and not on anybody else.
+
+**And the audit the owner ordered is running now** (pid 44699): every entry of
+`models/`, `data/`, `artifacts/results/`, `artifacts/external/…` re-hashed
+against its manifest pin on B's bytes — because "verify before you consume" is a
+claim about this laptop, and until it runs, nobody on either machine knows
+whether it is true. Result filed at `docs/byte-audit-2026-09-12.md`.
