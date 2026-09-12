@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-12T11:01:05Z",
- "chora_head": "fe0dff4",
+ "generated": "2026-09-12T11:06:14Z",
+ "chora_head": "b74ef61",
  "benches": [
   {
    "name": "JacobiGP",
-   "head": "0a60707",
-   "commit_at": "2026-09-12T18:18:11+08:00",
-   "subject": "PREREG_EXP6 A2: H6a's Sarcos pilot registered before its first curve — rungs, groups, estimators, both clauses",
+   "head": "aab50d3",
+   "commit_at": "2026-09-12T19:06:13+08:00",
+   "subject": "A3: §H6c's Question said \"per-neuron (α,β)\"; the code says per-layer — corrected at the site of the error, cla",
    "dirty": 0,
-   "state": "local +1 unpushed",
+   "state": "local +2 unpushed",
    "repo": "JacobiGP",
    "branch": "main"
   },
