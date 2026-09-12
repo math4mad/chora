@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T11:11:42Z",
- "chora_head": "d0021aa",
+ "generated": "2026-09-12T11:16:57Z",
+ "chora_head": "2a8f44a",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -530,7 +530,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint d0021aa, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 2a8f44a, 0 commit(s) behind HEAD",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
