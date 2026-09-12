@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T01:13:55Z",
- "chora_head": "a071c47",
+ "generated": "2026-09-12T09:21:36Z",
+ "chora_head": "877727f",
  "benches": [
   {
    "name": "JacobiGP",
@@ -18,7 +18,7 @@
    "commit_at": "2026-09-12T09:13:55+08:00",
    "subject": "stage19 KAIROS-E3: last-mile diagnostic per Kairos IDEAS I-02, pre-registered in the script header (thresholds",
    "dirty": 1,
-   "state": "local +1 unpushed",
+   "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
