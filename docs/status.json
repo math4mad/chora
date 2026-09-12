@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T00:45:22Z",
- "chora_head": "534da2f",
+ "generated": "2026-09-12T00:53:00Z",
+ "chora_head": "8421fe4",
  "benches": [
   {
    "name": "JacobiGP",
@@ -8,7 +8,7 @@
    "commit_at": "2026-09-12T08:45:21+08:00",
    "subject": "exp6 registered: H6a/H6b/H6c as one committed pre-registration (paperwork before numbers, Letter 016 debt paid",
    "dirty": 0,
-   "state": "local +1 unpushed",
+   "state": "synced",
    "repo": "JacobiGP",
    "branch": "main"
   },
