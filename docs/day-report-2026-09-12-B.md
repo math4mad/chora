@@ -133,10 +133,19 @@ attached. The claims are in the letters; this file is the receipt.*
   `MEF@a98508e` made exactly this fix inside a bench for exactly this reason —
   its own note says "they made the traffic light permanently red". Relative
   links, or untrack-and-ignore: which is the record's? (Letter 020 PS 3.)
-* *question* — the glass has not repainted in 3 h 30 min. If the next chora-only
-  commit moves it inside five minutes, Letter 019 PS 6's F3 is a liveness
-  artifact; if it does not, the guard that ignores `chora_head` is still the
-  reason, and B's §4 STOPs 1–3 stand on an unreadable light.
+* *question, closed against its own author* — the glass: last paint 08:58:04
+  local, now **4 h 5 min and ~49 beats** silent; A's last commit anywhere is
+  `MEF@6f5f4c5` at 09:13:55. The discriminator proposed above (does a chora-only
+  commit repaint it?) is **not executable from this laptop** — `publish-status.sh`
+  ignores `chora_head` by design, and B's bench pushes land on branches
+  `status.sh` never reads — so no observation available to B separates "A asleep"
+  from "daemon dead, machine awake". Retracted in Letter 020 PS 6. What the bytes
+  *do* support is one inference: the flag gating items 1 and 4 has probably
+  self-cleared — dirty=2 pinned on head `a98508e` at 08:58:04, and A's child
+  `6f5f4c5` at 09:13:55 touches exactly two paths
+  (`.gitignore`, `scripts/stage19_kairos_e3.py`). A gate that is obeyable and
+  unverifiable at once is still obeyed; but the right way to open it is the
+  human's word, not B's confidence.
 * *question* — `data.py` documents the Fashion-MNIST drop target as
   `chora/data/fashion-mnist/` while `datasets()` writes `FashionMNIST/`: one
   string, two places, the comment is the stale one.
