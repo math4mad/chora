@@ -133,6 +133,16 @@
    "by": "MEF@a98508e",
    "script": "stdout/stderr of the run above",
    "notes": "ladder ckpts saved at k=0/25/50/75/100; .pt stay out of git by law 3, json+log are the run"
+  },
+  {
+   "path": "chora/artifacts/results/mef/E0_seed14_sweep_full.json",
+   "sha256": "695dba48ff1d522b9d025e0ac44b9a659b7122dda6fed27f6f26c229d0aad8b0",
+   "bytes": 20985,
+   "source": "machine B (m1-16g), session 2026-09-12",
+   "obtained": "2026-09-12",
+   "by": "MEF@ddf1d16",
+   "script": "MEF stage18_kairos_mini.py --mode sweep --adapter-steps 600 --batch 16 --full (SEED=14, OUT_DIR=outputs/stage18_seed14)",
+   "notes": "Letter 016 queue item 1, seed 14 ladder. First ladder floors ever produced on B. Wall clock: sweep ran 09:07-09:56 local on m1-16g. Exploratory per the script's own flag; regime rows (co-train vs frozen base) not yet separated by the Warden's rule."
   }
  ]
 }
