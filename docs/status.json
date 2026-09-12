@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T12:15:46Z",
- "chora_head": "36eadeb",
+ "generated": "2026-09-12T12:21:02Z",
+ "chora_head": "8aeca48",
  "benches": [
   {
    "name": "JacobiGP",
@@ -44,9 +44,9 @@
   },
   {
    "name": "Kairos",
-   "head": "a9e3222",
-   "commit_at": "2026-09-11T17:44:57+08:00",
-   "subject": "I-03: the human's two refinement clauses registered as arm designs — R1 adaptive ladder densification (window ",
+   "head": "ae6be01",
+   "commit_at": "2026-09-12T20:15:49+08:00",
+   "subject": "H9-M draft: the critical-window protocol, written for MEF's equipment and frozen to nothing yet. Venue moves b",
    "dirty": 0,
    "state": "synced",
    "repo": null,
