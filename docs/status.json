@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-12T00:53:00Z",
- "chora_head": "8421fe4",
+ "generated": "2026-09-12T00:58:03Z",
+ "chora_head": "cb47d83",
  "benches": [
   {
    "name": "JacobiGP",
@@ -17,7 +17,7 @@
    "head": "a98508e",
    "commit_at": "2026-09-11T18:38:46+08:00",
    "subject": "gitignore the shared-store symlinks (sync.sh creates them; they made the traffic light permanently red — B's r",
-   "dirty": 0,
+   "dirty": 2,
    "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
