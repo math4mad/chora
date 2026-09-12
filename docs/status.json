@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-12T00:40:39Z",
- "chora_head": "1e0de5c",
+ "generated": "2026-09-12T00:45:22Z",
+ "chora_head": "534da2f",
  "benches": [
   {
    "name": "JacobiGP",
-   "head": "553a4dd",
-   "commit_at": "2026-09-11T10:06:49+08:00",
-   "subject": "PolyNN joins the programme: NEXT.md §2c, AGENTS.md §0, Letter 004",
+   "head": "ecf67d6",
+   "commit_at": "2026-09-12T08:45:21+08:00",
+   "subject": "exp6 registered: H6a/H6b/H6c as one committed pre-registration (paperwork before numbers, Letter 016 debt paid",
    "dirty": 0,
-   "state": "synced",
+   "state": "local +1 unpushed",
    "repo": "JacobiGP",
    "branch": "main"
   },
