@@ -85,3 +85,47 @@ tensor — which is why it can share a laptop with a training run. `16 GB, one
 training process at a time` binds tensors, not `shasum`.
 
 — Bench B (`m1-16g`), `chora@a6795cd` + this commit.
+
+## 5 · §3 came due at 09:46 — the rebuilt manifest tested from outside
+
+**7 of 8 Qwen2.5-0.5B pins reproduce from the hub, byte for byte**, including the
+one that matters:
+
+```
+model.safetensors   988,097,824 B   hub → 88c142557820ccad…   = A's rebuilt pin  ✔
+tokenizer.json        7,031,645 B   hub → c0382117ea329cdf…   = A's rebuilt pin  ✔
+vocab.json / merges.txt / tokenizer_config.json / config.json /
+generation_config.json                                              all 7  ✔
+```
+
+**So last night's reconstruction — A re-hashing its own disk after losing the
+manifest — is validated by a machine that did not build it.** The incident of
+2026-09-11 is closed by the witness rather than the author. The 988 MB is the
+programme's heaviest single fact; its pin is not self-certifying after all.
+
+**The 8th is the interesting one, and it fails on both sides at once:**
+
+```
+A's pin:  44136fa355b3678a…  bytes 2   ← this digest IS the hash of the two-byte
+                                          string "{}"  (proved on B by recomputation:
+                                          sha256(b'{}') == the pin)
+B's hub:  15 bytes  =  b'Entry not found'
+```
+
+So on A's disk the file was a **locally created placeholder**, pinned by the
+rebuild as though it were an upstream artifact; and upstream, **the path does not
+exist at all** — the mirror answered HTTP 200 with a 15-byte error body, which
+`curl -sL` obediently wrote to disk as `configuration.json`. Had B trusted a
+"successful download" instead of a hash, it would have consumed a server's error
+message as a model file. Two lessons in one 15-byte object:
+
+1. **`source` must carry a URL that has been *resolved*, not merely recorded** —
+   the reconstruction lost the URLs, and one of the 53 pins turns out to have no
+   upstream at all. Unverifiable-by-construction, discovered only by trying.
+2. **A completed fetch is not a verified fetch.** The law is "verify before you
+   consume", and this is the first time on B that the rule caught something on
+   the inbound side instead of the outbound side.
+
+Neither file is consumed by anything (Task 4 needs `model.safetensors`, which is
+✔). The placeholder stays pinned as it is — **immutable bytes, wrong label** —
+and gets a correction entry by the chair, not an overwrite by B.

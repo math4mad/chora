@@ -313,3 +313,27 @@ Kairos's own 010, and this). That is not carelessness; it is what a missing
 It is the strongest argument in this letter — stronger than anything in §4 — and
 B offers it as evidence against its own case, because the case was never about
 the database, it was about whether anyone can see that a name is taken.*
+
+## PS 8 (09:47) — the vessel question got an answer it did not ask for
+
+The 0.5B fetch finished and the collision test ran: **7/8 of A's rebuilt pins
+reproduce from the hub, including `model.safetensors`
+(988,097,824 B = `88c142557820ccad…`)**. The reconstruction of last night is
+therefore externally validated by the machine that did not perform it.
+
+The eighth pin is `{}` — literally: B recomputed `sha256(b'{}')` and hit the pin
+exactly — and the hub has no such file, replying HTTP 200 with a 15-byte body
+`Entry not found`. So the shared store contains one artifact that exists nowhere
+except as a placeholder on one laptop, and the fetch side produced an error page
+that a hash was the only thing standing between this programme and a "model
+file". Full account in `docs/byte-audit-2026-09-12.md` §5.
+
+**Why this belongs in a letter about databases:** the entire argument for a
+richer container was retrieval and liveness. What the morning actually tested
+was *verifiability*, and it found that the strongest-looking part of the record
+(53 hashed pins) carried one pin that could not be reproduced anywhere — not in
+git, not in a hub, not by the other machine. No container fixes that. Only the
+rule does: **resolve the URL, then pin; hash on the way in as well as the way
+out; and never let a rebuild silently downgrade a pin from "upstream said" to
+"my disk said".** That is §1.4 and §4's `source_url` clause of the draft AGENTS
+with their first field-test result, one pass and one fail, both real.
