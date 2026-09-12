@@ -80,8 +80,33 @@
    },
    "claim": "blocked",
    "gated_by": "exp6-curve-source",
-   "next": "needs a named curve file: val-loss-vs-epoch per rank, per paired seed. None exists in the record (see exp6-curve-source).",
+   "next": "the Sarcos pilot (exp6-h6a-sarcos-pilot) can score the separation on cheap bytes while the MEF rank sweeps are located; the registered claim is about MEF's rig, so the pilot is a pre-flight, not the check.",
    "notes": "Its own obituary is registered ('the exponents track nothing beyond the curve tail'). H6c's death does NOT transfer to it: different input (trained curves, not an init measure)."
+  },
+  {
+   "id": "exp6-h6a-sarcos-pilot",
+   "title": "H6a on the sanctioned cheap pilot — Sarcos from-scratch rank-constraint curves, fit by the Exp-4 evidence path (imported, not reimplemented)",
+   "kind": "experiment",
+   "owner_seat": "Geometer",
+   "owner_bench": "JacobiGP",
+   "prereg": {
+    "repo": "JacobiGP",
+    "path": "docs/PREREG_EXP6.md",
+    "commit": "0a60707",
+    "marker": "## A2 (2026-09-12"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/exp6_h6a_sarcos_pilot.py"
+   },
+   "produces": [
+    {
+     "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json"
+    }
+   ],
+   "claim": "equipped",
+   "next": "the pilot answers the curve-source gate from the cheap side while the Anatomist looks for the MEF rank sweeps; its ordering guard (A2 in HEAD, one draw only) is the same shape H6c used, so the same disclosure discipline applies to it.",
+   "notes": "Registered by A2 at JacobiGP@0a60707 BEFORE any curve was fit; regime row training-under-a-rank-constraint, never merged with post-hoc truncation or the frozen-base lora rows; only history[*].mse_val crosses into a fit — the test split is never read. Apparatus is in this workspace UNTRACKED as of this render, which the board flags rather than forgives."
   },
   {
    "id": "exp6-h6b",
@@ -113,7 +138,7 @@
     "marker": "Compute budget"
    },
    "claim": "registered",
-   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed.",
+   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed. UPDATE 18:5x: the Geometer opened the cheap side instead of waiting — exp6-h6a-sarcos-pilot, registered by A2 at JacobiGP@0a60707. The MEF row still needs its named bytes or its budget.",
    "notes": "Searched on A at ~18:3x: outputs/stage3_* have no rank dimension and no per-epoch val arrays; stage18/stage19 have epoch curves but no rank sweep. The registered line 'the run script will refuse to start without a named curve file' therefore currently refuses, which is the paperwork working."
   },
   {

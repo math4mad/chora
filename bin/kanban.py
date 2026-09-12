@@ -48,6 +48,7 @@ import json
 import os
 import subprocess
 import sys
+import calendar
 import time
 from pathlib import Path
 
@@ -373,7 +374,11 @@ def global_audits(pins, heads):
         if g:
             age = "?"
             try:
-                t = time.mktime(time.strptime(g["generated"], "%Y-%m-%dT%H:%M:%SZ"))
+                # timegm, not mktime: the stamp is UTC and this machine is +0800. mktime believed
+                # the local zone and reported the glass as 8 h older than it was — the exact 480
+                # minutes this programme just spent learning that a clock read wrong is a clock
+                # that lies in one direction only.
+                t = calendar.timegm(time.strptime(g["generated"], "%Y-%m-%dT%H:%M:%SZ"))
                 age = "%d min" % ((time.time() - t) / 60)
             except (KeyError, ValueError):
                 pass

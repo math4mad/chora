@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-12T10:36:23Z",
- "chora_head": "d72aa1b",
+ "generated": "2026-09-12T10:38:22Z",
+ "chora_head": "b469b2f",
  "counts": {
   "idea": 0,
-  "registered": 4,
+  "registered": 5,
   "equipped": 3,
   "landed": 0,
   "scored": 1,
   "announced": 3,
   "closed": 3,
   "blocked": 11,
-  "RECONCILE": 6
+  "RECONCILE": 7
  },
  "rows": [
   {
@@ -43,12 +43,36 @@
    "verdict": null,
    "gated_by": "exp6-curve-source",
    "budget": null,
-   "next": "needs a named curve file: val-loss-vs-epoch per rank, per paired seed. None exists in the record (see exp6-curve-source).",
+   "next": "the Sarcos pilot (exp6-h6a-sarcos-pilot) can score the separation on cheap bytes while the MEF rank sweeps are located; the registered claim is about MEF's rig, so the pilot is a pre-flight, not the check.",
    "flags": [],
    "detail": {
     "prereg": "JacobiGP@ecf67d6 docs/PREREG_EXP6.md",
     "verdict": null,
     "gated_by": "exp6-curve-source"
+   }
+  },
+  {
+   "id": "exp6-h6a-sarcos-pilot",
+   "title": "H6a on the sanctioned cheap pilot — Sarcos from-scratch rank-constraint curves, fit by the Exp-4 evidence path (imported, not reimplemented)",
+   "kind": "experiment",
+   "owner": "Geometer",
+   "bench": "JacobiGP",
+   "lane": "registered",
+   "claim": "equipped",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "the pilot answers the curve-source gate from the cheap side while the Anatomist looks for the MEF rank sweeps; its ordering guard (A2 in HEAD, one draw only) is the same shape H6c used, so the same disclosure discipline applies to it.",
+   "flags": [
+    "apparatus exists but is untracked: experiments/exp6_h6a_sarcos_pilot.py",
+    "no bytes on disk: artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
+    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'registered'"
+   ],
+   "detail": {
+    "prereg": "JacobiGP@0a60707 docs/PREREG_EXP6.md",
+    "apparatus": "chora:experiments/exp6_h6a_sarcos_pilot.py",
+    "verdict": null,
+    "reconcile": true
    }
   },
   {
@@ -81,7 +105,7 @@
    "verdict": null,
    "gated_by": null,
    "budget": null,
-   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed.",
+   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed. UPDATE 18:5x: the Geometer opened the cheap side instead of waiting — exp6-h6a-sarcos-pilot, registered by A2 at JacobiGP@0a60707. The MEF row still needs its named bytes or its budget.",
    "flags": [],
    "detail": {
     "prereg": "JacobiGP@ecf67d6 docs/PREREG_EXP6.md",
@@ -506,7 +530,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 480 min ago · paint d72aa1b, 0 commit(s) behind HEAD",
+  "glass: generated 2 min ago · paint d72aa1b, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
