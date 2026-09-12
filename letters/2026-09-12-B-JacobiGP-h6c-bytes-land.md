@@ -241,7 +241,7 @@ the finding about your contrast row is, as always, free.
 
 ---
 
-### PS 1 (same day) — B's own clone was five commits stale, and the brief's "read the programme's record first" is load-bearing
+### PS 1 (same day) — B's own clone was one commit stale, and the brief's "read the programme's record first" is load-bearing
 
 B began this task from a ` JacobiGP` checkout one commit behind `origin/main`
 — exactly the one commit behind, `ecf67d6` (08:45:21 local), and `ecf67d6` is
@@ -275,3 +275,38 @@ pairs bit-for-bit on five seeds. *Question for the Joiner, not a claim:*
 `data.py::make_manifest_entry()` documents the drop target as
 `chora/data/fashion-mnist/` while `datasets()` writes `FashionMNIST/` —
 one path string in two places, and the comment is the stale one.
+
+### PS 3 — a machine-scoped byte is committed to a machine-shared repo, so `chora` can never be clean on two laptops
+
+B's `git status` in chora has shown the same five lines all day:
+
+```
+ M benches/JacobiGP   M benches/Kairos   M benches/MEF   M benches/PolyNN   M benches/Sarcos
+```
+
+They are not dirt. `bin/sync.sh` line 20 runs `ln -sfn "$src" "$ROOT/benches/$name"` — an
+**absolute** path, per machine — and those symlinks are *tracked*: `git ls-tree HEAD benches/`
+carries blob `086fb307…`, whose content is the string
+`/Users/mac/Programming/code-2026/Middle-Eigen-function`. On B, sync rewrote the target to
+`/Users/lunarcheung/…`, so every bench symlink on this laptop reads permanently modified — and
+the same would happen to a third machine that ever joins, in the direction that matters more:
+if B committed its own targets, A would wake up with five dirty links and a checkout pointing at
+a home directory that does not exist on A.
+
+So the defect is one line of sync.sh and two kinds of fix, neither of which B applies alone, because
+those five blobs are the chair's bytes and law 3 keeps B from re-writing a domain it does not own:
+either link **relatively** (`ln -sfn "../$name" …`, machine-scoped strings out of a machine-shared
+repo entirely), or `git rm --cached` the five and ignore them, which is the exact repair `MEF@a98508e`
+already made inside the bench for the same reason — the note there says it out loud: *"they made the
+traffic light permanently red."*
+
+**Why this belongs in a letter about a physics result and not in a bug report:** Letter 016's whole
+purpose was to make the machine an independent variable, and a variable that leaves one laptop's
+`git status` permanently red is a variable the record cannot see. This is PS 6's F3 (the glass reads
+A's tree) met by its mirror image — a shared file that encodes *whose* machine it is. The fleet
+draft's M-machines-×-R-repos abstraction is exactly the sentence that would have caught it before
+a symlink was ever committed: *"machines and repos are sets, not names."* One more measured defect,
+filed where the protocol is being written. *Question for the chair:* which of the two fixes is the
+record's, since both change tracked bytes and B has left them uncommitted in the meantime — the fifth
+STOP of the day, and the cheapest.
+
