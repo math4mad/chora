@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T02:36:12Z",
- "chora_head": "73e0929",
+ "generated": "2026-09-13T02:42:45Z",
+ "chora_head": "eebbb1a",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -659,7 +659,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint 73e0929, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint eebbb1a, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
