@@ -155,8 +155,42 @@
   .hash{font-family:var(--mono)}
   @keyframes neonpulse{0%,100%{opacity:1}46%{opacity:.86}50%{opacity:.72}54%{opacity:.86}}
 </style>
+<!-- Qwen Apple-style pack (pinned bytes: artifacts/external/Qwen-suggestion-for-ehance-chora-page/,
+     chora@431bb59; working copy docs/apple-style.css verbatim, docs/apple-style.js carries one
+     disclosed patch). Loaded AFTER the house style: the pack brings mechanics — easing curves,
+     fade-up on scroll, mesh ambient light, table hover, link underline sweep — and this page
+     answers with an anchor layer that re-clips its light-mode tokens to the engraved parchment. -->
+<link rel="stylesheet" href="apple-style.css">
+<style id="chora-anchor">
+  /* the anchor: Apple's tempo, CHORA's palette */
+  :root{
+    --apple-black:#d8d4c8;        /* parchment ink, not Apple black */
+    --apple-dark-gray:#c5c1b4;
+    --apple-mid-gray:#8d8a80;
+    --apple-light-gray:#171a20;   /* hover wash: a lighter panel, not grey paint */
+    --apple-border:rgba(216,212,200,.09);
+    --font-primary:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Songti SC","Noto Serif SC",serif;
+  }
+  body{background:var(--bg);color:var(--ink)}
+  ::selection{background:rgba(201,169,89,.28);color:var(--ink)}
+  h1{font-weight:400;letter-spacing:.09em;color:var(--ink);margin:.5rem 0 .2rem;
+     font-size:clamp(3.2rem,7.5vw,5.2rem)}          /* Qwen's drama, our restraint: it may grow, not shout bold */
+  h2{font-size:1.05rem;font-weight:400;letter-spacing:.35em;text-transform:uppercase;
+     color:var(--gold);margin:5.5rem 0 1.8rem;text-align:center}   /* breathing, but still a seal — not a headline */
+  h2::before,h2::after{content:"·";margin:0 1.1rem;color:var(--line)}
+  a{color:var(--gold)} a:hover{color:#e2c273;text-decoration:none}
+  a::after{background:var(--gold)}                   /* the underline sweep, gilded */
+  .mesh-gradient-bg{background:                                 /* ambient air over the void, not on paper */
+    radial-gradient(ellipse 80% 60% at 10% 20%, rgba(90,120,255,.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 90% 80%, rgba(201,169,89,.05) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(100,210,255,.035) 0%, transparent 70%)}
+  #fleet tr:hover{background:var(--apple-light-gray);transition:background var(--duration-apple-fast) var(--ease-apple)}
+  .table-wrapper{border-color:var(--line) !important}          /* pack's wrapper border arrives as inline black-on-black */
+</style>
+<noscript><style>.animate-on-scroll{opacity:1 !important;transform:none !important}</style></noscript>
 </head>
 <body>
+<div class="mesh-gradient-bg" aria-hidden="true"></div>
 
 <header>
   <div class="wrap">
@@ -178,7 +212,7 @@
 
 
 <h2>For visitors · 写给访客</h2>
-<div class="tongues">
+<div class="tongues animate-on-scroll">
   <div class="tongue en"><h3>English</h3>
     <p>CHORA is one question watched from five benches: a single object
     Δ&nbsp;=&nbsp;Σ&nbsp;c<sub>n</sub>φ<sub>n</sub>, turned by three knobs — size, spectral order, shape.
@@ -203,7 +237,7 @@
 <h2>The Group Chart</h2>
 <p class="lede" style="font-size:.93rem;color:var(--dim)">In the manner of the Solvay photograph &#8212;
 etched, not photographed; and in the Knox tradition, one seat is left vacant for what the programme killed and kept.</p>
-<figure class="plate">
+<figure class="plate animate-on-scroll">
 <svg viewBox="0 0 1200 700" role="img" aria-label="Engraved group portrait: the four original seats and the Horologist seated around a table, a vacant chair bearing Knob II at the centre, the Chair standing at the shoulder.">
   <rect x="6" y="6" width="1188" height="688"/>
   <rect x="18" y="18" width="1164" height="664"/>
@@ -321,7 +355,7 @@ programme cares about is a sum in an orthogonal basis — and there are exactly
 three knobs:</p>
 <div class="formula">Δ = Σ<sub>n</sub> <b>c</b><sub>n</sub> φ<sub>n</sub> ,&nbsp;&nbsp;
   c<sub>n</sub> ~ 𝒩(0, λ<sub>n</sub>) ,&nbsp;&nbsp; φ<sub>n</sub> ⊥ under w<sub>(α,β)</sub></div>
-<div class="knobs">
+<div class="knobs animate-on-scroll">
   <div class="knob size">
     <h3>Knob I</h3><div class="greekname">N — size</div>
     <p>How much you are allowed to change: basis terms, rank, parameters.</p>
@@ -345,7 +379,7 @@ results are kept as load-bearing walls, not embarrassments. What remains —
 shape — is the contribution.</p>
 
 <h2>Five benches</h2>
-<table>
+<table class="apple-table animate-on-scroll">
   <tr><th>Bench</th><th>Space</th><th>At the table</th></tr>
   <tr><td class="name"><a href="https://github.com/math4mad/JacobiGP">JacobiGP</a></td>
       <td>function space</td>
@@ -372,7 +406,7 @@ immutable, hash-anchored. When one open question puts five verdicts in tension,
 the benches take their seats. A seat is a <em>context contract</em>: it speaks only
 from its own bench’s files, signs every turn <span style="font-family:var(--mono);font-size:.85rem">bench@sha</span>,
 and resolutions bind the workspace — never a bench’s plan.</p>
-<div class="cast">
+<div class="cast animate-on-scroll">
   <div class="seat"><span class="who">I · The Geometer</span><div class="bench">JacobiGP</div>
     <q>Before anything is learned, something must be shaped.</q>
     <p>theorist of the container; concedes losses gracefully; allergic to unanchored numbers</p></div>
@@ -391,7 +425,7 @@ and resolutions bind the workspace — never a bench’s plan.</p>
 </div>
 
 <h2>The law of the workspace</h2>
-<ol class="law">
+<ol class="law animate-on-scroll">
   <li><b>Share inputs and artifacts, never histories.</b> <span>Four repos, one store; no merges across benches.</span></li>
   <li><b>Nothing crosses benches without a hash.</b> <span>Every shared byte carries a manifest entry: path, sha256, producer repo@sha.</span></li>
   <li><b>Single writer, many readers.</b> <span>Produce → hash → append manifest → announce by letter.</span></li>
@@ -400,7 +434,7 @@ and resolutions bind the workspace — never a bench’s plan.</p>
 </ol>
 
 <h2>Enter</h2>
-<pre><span class="c"># the front door (any agent CLI reads AGENTS.md from here)</span>
+<pre class="animate-on-scroll"><span class="c"># the front door (any agent CLI reads AGENTS.md from here)</span>
 git clone https://github.com/math4mad/chora &amp;&amp; cd chora
 bin/sync.sh                         <span class="c"># links the five benches + shared model/data store</span>
 cat benches/JacobiGP/docs/NEXT.md   <span class="c"># the joint spec — single source of truth</span>
@@ -411,7 +445,7 @@ cat benches/JacobiGP/docs/NEXT.md   <span class="c"># the joint spec — single 
 (<span style="font-family:var(--mono);font-size:.85rem">docs/experiments.json</span>), but every lane is derived from bytes on the
 same beat — and a lane may say FAILS and mean it.
 <span style="font-family:var(--mono);font-size:.85rem">board.html</span> re-reads it live.</p>
-<div id="boardlite"><span class="lamp off"></span> reading kanban.json…</div>
+<div id="boardlite" class="animate-on-scroll"><span class="lamp off"></span> reading kanban.json…</div>
 <p style="text-align:center;margin-top:1.1rem"><a href="board.html" style="letter-spacing:.2em;text-transform:uppercase;font-size:.85rem">→ enter the board ←</a>
 <span style="font-size:.8rem;color:var(--dim)"> · <a href="https://github.com/math4mad/chora/blob/main/artifacts/external/CHORA%E5%AE%9E%E9%AA%8C%E8%BF%BD%E8%B8%AA%E7%9C%8B%E6%9D%BF-%E4%B8%AD%E6%96%87%E6%91%98%E8%A6%81.md">中文摘要</a></span></p>
 
@@ -419,7 +453,7 @@ same beat — and a lane may say FAILS and mean it.
 <p class="lede" style="font-size:.93rem;color:var(--dim)">A git snapshot, not a server: a launchd beat
 refreshes <span style="font-family:var(--mono);font-size:.85rem">docs/status.json</span> every five minutes and
 on every bench commit — then the page asks GitHub, live, whether each public bench’s remote still agrees.</p>
-<div id="fleet"><p style="text-align:center;color:var(--dim);font-size:.9rem">loading status.json…</p></div>
+<div id="fleet" class="animate-on-scroll"><p style="text-align:center;color:var(--dim);font-size:.9rem">loading status.json…</p></div>
 <p id="fleet-note" style="text-align:center;font-size:.8rem;color:var(--dim);margin-top:.8rem"></p>
 
 <footer>
@@ -434,6 +468,7 @@ on every bench commit — then the page asks GitHub, live, whether each public b
 </footer>
 
 </div>
+<script src="apple-style.js" defer></script>
 <script>
 (function(){
   const CYCLE = 300;                       // seconds between full refreshes (4 API calls each, <= 60/h/IP)
