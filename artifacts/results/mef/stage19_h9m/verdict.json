@@ -1,0 +1,353 @@
+{
+ "kind": "H9-M verdict \u2014 the critical window, in gain-beyond-continued-training units",
+ "registered_in": "MEF/docs/PREREG_H9M.md \u00a74 @ d197560bbc30beb005f910f5452a0f3a6253f4d6",
+ "band": "band = max over r in {2,8,32} of 2\u00b7sd_{seeds}(W(0,r)), ddof=1, A-machine seeds only, n>=2",
+ "seeds_scored": [
+  13,
+  14,
+  15
+ ],
+ "W_table": {
+  "W(k=0,r=2)": {
+   "mean": 0.00443,
+   "per_seed": {
+    "13": 0.028944,
+    "14": -0.015558,
+    "15": -9.7e-05
+   }
+  },
+  "W(k=0,r=8)": {
+   "mean": 0.005521,
+   "per_seed": {
+    "13": 0.005498,
+    "14": -0.010926,
+    "15": 0.02199
+   }
+  },
+  "W(k=0,r=32)": {
+   "mean": 0.039032,
+   "per_seed": {
+    "13": 0.056717,
+    "14": 0.03302,
+    "15": 0.02736
+   }
+  },
+  "W(k=25,r=2)": {
+   "mean": -0.000446,
+   "per_seed": {
+    "13": -0.005454,
+    "14": 0.003,
+    "15": 0.001115
+   }
+  },
+  "W(k=25,r=8)": {
+   "mean": -0.000412,
+   "per_seed": {
+    "13": -0.0033,
+    "14": 0.003471,
+    "15": -0.001406
+   }
+  },
+  "W(k=25,r=32)": {
+   "mean": -0.000835,
+   "per_seed": {
+    "13": -0.004397,
+    "14": 0.003157,
+    "15": -0.001266
+   }
+  },
+  "W(k=50,r=2)": {
+   "mean": 8.3e-05,
+   "per_seed": {
+    "13": 4e-06,
+    "14": -0.000661,
+    "15": 0.000905
+   }
+  },
+  "W(k=50,r=8)": {
+   "mean": 0.00094,
+   "per_seed": {
+    "13": 0.000365,
+    "14": 0.003186,
+    "15": -0.000732
+   }
+  },
+  "W(k=50,r=32)": {
+   "mean": 0.000635,
+   "per_seed": {
+    "13": -0.000256,
+    "14": 0.001879,
+    "15": 0.000282
+   }
+  },
+  "W(k=75,r=2)": {
+   "mean": -7.5e-05,
+   "per_seed": {
+    "13": -0.000819,
+    "14": -0.000167,
+    "15": 0.000762
+   }
+  },
+  "W(k=75,r=8)": {
+   "mean": -0.000522,
+   "per_seed": {
+    "13": -0.000669,
+    "14": -0.000752,
+    "15": -0.000146
+   }
+  },
+  "W(k=75,r=32)": {
+   "mean": -0.002081,
+   "per_seed": {
+    "13": -0.001723,
+    "14": -0.001669,
+    "15": -0.002851
+   }
+  },
+  "W(k=100,r=2)": {
+   "mean": -0.023096,
+   "per_seed": {
+    "13": -0.023352,
+    "14": -0.022762,
+    "15": -0.023174
+   }
+  },
+  "W(k=100,r=8)": {
+   "mean": -0.019657,
+   "per_seed": {
+    "13": -0.019781,
+    "14": -0.017406,
+    "15": -0.021783
+   }
+  },
+  "W(k=100,r=32)": {
+   "mean": -0.018681,
+   "per_seed": {
+    "13": -0.019825,
+    "14": -0.0166,
+    "15": -0.019619
+   }
+  }
+ },
+ "G_table_reported_beside": {
+  "G(k=0,r=2)": 3.971331,
+  "G(k=0,r=8)": 3.972422,
+  "G(k=0,r=32)": 4.005934,
+  "G(k=25,r=2)": 0.122736,
+  "G(k=25,r=8)": 0.122771,
+  "G(k=25,r=32)": 0.122347,
+  "G(k=50,r=2)": 0.083628,
+  "G(k=50,r=8)": 0.084485,
+  "G(k=50,r=32)": 0.08418,
+  "G(k=75,r=2)": 0.071515,
+  "G(k=75,r=8)": 0.071067,
+  "G(k=75,r=32)": 0.069508,
+  "G(k=100,r=2)": 0.040649,
+  "G(k=100,r=8)": 0.044088,
+  "G(k=100,r=32)": 0.045064
+ },
+ "tpost_row_k100": {
+  "G(100,r=2)": 0.040649,
+  "G(100,r=8)": 0.044088,
+  "G(100,r=32)": 0.045064,
+  "regime": "frozen-base (T-post) \u2014 a separate row per \u00a72.4 and per Sarcos rule 3; reported beside the trend, never joined to it"
+ },
+ "per_rank_checks": {
+  "r=2": {
+   "W_by_rung": [
+    0.00443,
+    -0.000446,
+    8.3e-05,
+    -7.5e-05
+   ],
+   "(i) strictly decreasing beyond band": false,
+   "steps": [
+    0.004876,
+    -0.000529,
+    0.000158
+   ],
+   "(ii) some ratio < 0.5 (only where W(k_i) exceeds band)": false,
+   "(ii) admissible ratios": [],
+   "ratios": [
+    -0.1007,
+    null,
+    -0.9051
+   ],
+   "all_within_band": true
+  },
+  "r=8": {
+   "W_by_rung": [
+    0.005521,
+    -0.000412,
+    0.00094,
+    -0.000522
+   ],
+   "(i) strictly decreasing beyond band": false,
+   "steps": [
+    0.005932,
+    -0.001352,
+    0.001462
+   ],
+   "(ii) some ratio < 0.5 (only where W(k_i) exceeds band)": false,
+   "(ii) admissible ratios": [],
+   "ratios": [
+    -0.0746,
+    null,
+    -0.5557
+   ],
+   "all_within_band": true
+  },
+  "r=32": {
+   "W_by_rung": [
+    0.039032,
+    -0.000835,
+    0.000635,
+    -0.002081
+   ],
+   "(i) strictly decreasing beyond band": false,
+   "steps": [
+    0.039868,
+    -0.00147,
+    0.002716
+   ],
+   "(ii) some ratio < 0.5 (only where W(k_i) exceeds band)": false,
+   "(ii) admissible ratios": [],
+   "ratios": [
+    -0.0214,
+    null,
+    -3.2786
+   ],
+   "all_within_band": true
+  }
+ },
+ "rank_blindness": {
+  "k=0": {
+   "W(k,2)": 0.00443,
+   "W(k,32)": 0.039032,
+   "adjudicable": false,
+   "ratio": 0.1135,
+   "ok": null,
+   "note": "both terms inside band \u2192 UNADJUDICABLE, not refuted"
+  },
+  "k=25": {
+   "W(k,2)": -0.000446,
+   "W(k,32)": -0.000835,
+   "adjudicable": false,
+   "ratio": null,
+   "ok": null,
+   "note": "both terms inside band \u2192 UNADJUDICABLE, not refuted"
+  },
+  "k=50": {
+   "W(k,2)": 8.3e-05,
+   "W(k,32)": 0.000635,
+   "adjudicable": false,
+   "ratio": 0.1303,
+   "ok": null,
+   "note": "both terms inside band \u2192 UNADJUDICABLE, not refuted"
+  },
+  "k=75": {
+   "W(k,2)": -7.5e-05,
+   "W(k,32)": -0.002081,
+   "adjudicable": false,
+   "ratio": null,
+   "ok": null,
+   "note": "both terms inside band \u2192 UNADJUDICABLE, not refuted"
+  }
+ },
+ "secondary_r_k": {
+  "k=0": {
+   "r_k": 32,
+   "qualifying": [
+    32
+   ],
+   "note": "secondary reading; decides nothing (\u00a73)"
+  },
+  "k=25": {
+   "r_k": 8,
+   "qualifying": [
+    8
+   ],
+   "note": "secondary reading; decides nothing (\u00a73)"
+  },
+  "k=50": {
+   "r_k": 8,
+   "qualifying": [
+    8,
+    32
+   ],
+   "note": "secondary reading; decides nothing (\u00a73)"
+  },
+  "k=75": {
+   "r_k": 2,
+   "qualifying": [
+    2,
+    8
+   ],
+   "note": "secondary reading; decides nothing (\u00a73)"
+  }
+ },
+ "verdict": {
+  "check": "H9-M (i)\u2227(ii)\u2227(iii), one conjunction, on the moving-base row k \u2208 {0,25,50,75} (\u00a72.4)",
+  "status": "FAILS",
+  "adjudication_row": [
+   0,
+   25,
+   50,
+   75
+  ],
+  "reported_separately": "k=100 in G units",
+  "design_finding": "the rig's REGIME changes with k (k<100 co-trains the base, k=100 freezes it), so a whole-ladder trend crosses two regimes; and no rung here is the frozen-base late-injection case that 'critical window' usually means \u2014 that needs H9-M'' (a full base per rung, base held fixed at every injection point). Filed in \u00a72.4 BEFORE this verdict.",
+  "clauses": {
+   "(i) strictly decreasing beyond band": false,
+   "(ii) superlinear (some ratio < 0.5)": false,
+   "(iii) rank-blind (W(k,2) >= 0.9\u00b7W(k,32) at every rung)": false
+  },
+  "clause_iii_status": "UNADJUDICABLE \u2014 every cell lies inside the band, so rank-dependence is neither shown nor refuted",
+  "clause_iii_adjudicable_rungs": [],
+  "band_nats": 0.045188,
+  "band_frozen_from": [
+   13,
+   14,
+   15
+  ],
+  "W_is_within_band_at_every_rung_and_rank": true,
+  "reading": "W \u2248 0 everywhere: a rank-limited increment adds nothing, within the frozen band, over 600 plain continued-training steps at ANY injection time in this moving-base rig. That is \u00a76's flat-in-k case, so the obituary is the output, not an excuse for it.",
+  "obituary_if_false": "If W is flat in k within band, there is no critical window in this rig, \u8bbe\u60f35's metaphor dies on the bench that has the only k ladder, and the author of the dossier gets the obituary, loudly. (PREREG_H9M.md \u00a76, written before any number.)",
+  "if_iii_only_fails": "then capacity returns as a NEW claim (H9-M'), never retro-fitted here."
+ },
+ "gate6_cross_machine_twin": {
+  "seeds": 14,
+  "machine_A": "m1pro-32g",
+  "machine_B": "m1-16g",
+  "floors_B_A": {
+   "0": 5.6587,
+   "25": 1.352345,
+   "50": 1.155591,
+   "75": 1.090114,
+   "100": 1.039544
+  },
+  "floors_B_B": {
+   "0": 5.6587,
+   "25": 1.38126,
+   "50": 1.17954,
+   "75": 1.088491,
+   "100": 1.03129
+  },
+  "max_abs_diff": 0.028914,
+  "gates": {
+   "gate6_twins": "same seed, two laptops \u2014 the programme's first quotable machine-effect number, and it is at the FLOOR level; arm-level comparisons need B's controls, which do not exist"
+  },
+  "never_pooled_into_band": true
+ },
+ "provenance": {
+  "chora_head": "a922d10f9b58471d2877c19205255d6a126b496e",
+  "mef_head": "21eadd482af45d36856a40ef3ef4c79fae29719d",
+  "script": "chora/experiments/h9m_score.py",
+  "run-on": "m1pro-32g (A)"
+ },
+ "not_done": [
+  "row (b) train-to-end unrun \u2014 only (a) may kill H9-M (\u00a72.3)",
+  "R1 densification, if the slope exceeds band, is a separate registered pass",
+  "B's grid has no control arms, so B contributes a twin check, not a W"
+ ]
+}

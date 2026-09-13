@@ -1,0 +1,64 @@
+{
+ "kind": "H9-M band \u2014 frozen from k=0 replicates on ONE machine",
+ "registered_in": "MEF/docs/PREREG_H9M.md \u00a74 @ d197560bbc30beb005f910f5452a0f3a6253f4d6",
+ "rule": "band = max over r in {2,8,32} of 2\u00b7sd_{seeds}(W(0,r)), ddof=1, A-machine seeds only, n>=2",
+ "definition_of_W": "W(k,r) = ctrl_B(k) \u2212 final_B(k,r); ctrl_B = 600 further steps at the rung with no adapter (\u00a72.1)",
+ "seeds_used": [
+  13,
+  14,
+  15
+ ],
+ "inputs": {
+  "13": {
+   "file": "outputs/stage19_h9m_seed13/sweep_sched_a_full.json",
+   "sha256": "36f54c4f8edca81c696092a80266362746670e37aaf6a7e47406fb484a36f491"
+  },
+  "14": {
+   "file": "outputs/stage19_h9m_seed14/sweep_sched_a_full.json",
+   "sha256": "9bc1afd774831630da935e805fe803792a735394bc5af3cc9f5033795cc024ff"
+  },
+  "15": {
+   "file": "outputs/stage19_h9m_seed15/sweep_sched_a_full.json",
+   "sha256": "ae485c0d07cf2cba1b7de1d0251087b6799e317bfe3930f63f98e25fdd678664"
+  }
+ },
+ "per_rank_at_k0": {
+  "W(0,r=2)": {
+   "values": [
+    0.028944,
+    -0.015558,
+    -9.7e-05
+   ],
+   "mean": 0.00443,
+   "sd_ddof1": 0.022594,
+   "2sd": 0.045188
+  },
+  "W(0,r=8)": {
+   "values": [
+    0.005498,
+    -0.010926,
+    0.02199
+   ],
+   "mean": 0.005521,
+   "sd_ddof1": 0.016458,
+   "2sd": 0.032915
+  },
+  "W(0,r=32)": {
+   "values": [
+    0.056717,
+    0.03302,
+    0.02736
+   ],
+   "mean": 0.039032,
+   "sd_ddof1": 0.015575,
+   "2sd": 0.03115
+  }
+ },
+ "band_nats": 0.045188,
+ "excluded": {
+  "B_seed14_cross_machine": "reported as the Gate 6 twin in verdict.json; never pooled into the band, because a two-laptop spread confounds machine with seed"
+ },
+ "frozen_at": "d084098cb38f15c214c8d719f98c1a37bd4960f1",
+ "measured_on": "m1pro-32g (A)",
+ "warning": "n=3. This is a spread of replicates, not a distribution; it is admissible because \u00a74 says so before seeing it, and it may not be re-drawn."
+}

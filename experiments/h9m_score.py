@@ -38,6 +38,8 @@ OUT = CHORA / "artifacts" / "results" / "mef" / "stage19_h9m"
 A_SEED_DIRS = {13: "outputs/stage19_h9m_seed13", 14: "outputs/stage19_h9m_seed14",
                15: "outputs/stage19_h9m_seed15"}
 RUNGS = (0, 25, 50, 75, 100)
+ADJ_RUNGS = (0, 25, 50, 75)   # §2.4: the moving-base row, where W is a within-regime contrast
+TPOST_RUNG = 100              # §2.4: frozen-base row, scored in G, never joined to the trend
 RANKS = (2, 8, 32)
 B_SEED14_PINNED = CHORA / "artifacts/results/mef/E0_seed14_sweep_full.json"   # cross-machine twin
 MIN_SEEDS = 2                      # PREREG_H9M §4
@@ -137,34 +139,54 @@ def phase_score() -> int:
     def mean_W(k, r):
         return statistics.mean([W(a, k, r) for a in use.values()])
 
+    def mean_G(k, r):
+        return statistics.mean([a["floors"][k] - a["fin"][(k, r)] for a in use.values()])
+
     table = {f"W(k={k},r={r})": {"mean": round(mean_W(k, r), 6),
                                 "per_seed": {str(s): round(W(a, k, r), 6) for s, a in use.items()}}
              for k in RUNGS for r in RANKS}
-    g_table = {f"G(k={k},r={r})": round(statistics.mean([a["floors"][k] - a["fin"][(k, r)]
-                                                         for a in use.values()]), 6)
-               for k in RUNGS for r in RANKS}
+    g_table = {f"G(k={k},r={r})": round(mean_G(k, r), 6) for k in RUNGS for r in RANKS}
     checks = {}
     for r in RANKS:
-        w = [mean_W(k, r) for k in RUNGS]
+        w = [mean_W(k, r) for k in ADJ_RUNGS]      # §2.4: adjudication row only
         steps = [w[i] - w[i + 1] for i in range(len(w) - 1)]
         checks[f"r={r}"] = {
             "W_by_rung": [round(x, 6) for x in w],
             "(i) strictly decreasing beyond band": bool(all(s > band for s in steps)),
             "steps": [round(s, 6) for s in steps],
-            "(ii) some ratio < 0.5": bool(any(w[i + 1] / w[i] < SUPERLINEAR_RATIO for i in range(len(w) - 1)
-                                              if w[i] > 0)),
+            # (ii) is only meaningful where the quantity is real: a ratio across values inside the
+            # band is arithmetic on noise, and the first scoring run of this file called
+            # "superlinear" True on ratios of −0.10 — a false positive from a clause that assumed
+            # W > band. Fixed before verdict.json was ever pinned, and the correction is filed here.
+            "(ii) some ratio < 0.5 (only where W(k_i) exceeds band)": bool(
+                any(w[i + 1] / w[i] < SUPERLINEAR_RATIO
+                    for i in range(len(w) - 1) if w[i] > band)),
+            "(ii) admissible ratios": [i for i in range(len(w) - 1) if w[i] > band],
             "ratios": [round(w[i + 1] / w[i], 4) if w[i] > 0 else None for i in range(len(w) - 1)],
+            "all_within_band": bool(all(abs(x) <= band for x in w)),
         }
-    blind = {f"k={k}": {"W(k,2)": round(mean_W(k, 2), 6), "W(k,32)": round(mean_W(k, 32), 6),
-                        "ratio": round(mean_W(k, 2) / mean_W(k, 32), 4) if mean_W(k, 32) > 0 else None,
-                        "ok": bool(mean_W(k, 2) >= RANK_BLIND_FRAC * mean_W(k, 32))}
-             for k in RUNGS}
+    blind = {}
+    for k in ADJ_RUNGS:
+        w2, w32 = mean_W(k, 2), mean_W(k, 32)
+        adjudicable = w32 > band                      # a ratio of two numbers inside the band is noise arithmetic
+        blind[f"k={k}"] = {"W(k,2)": round(w2, 6), "W(k,32)": round(w32, 6),
+                           "adjudicable": adjudicable,
+                           "ratio": round(w2 / w32, 4) if w32 > 0 else None,
+                           "ok": bool(w2 >= RANK_BLIND_FRAC * w32) if adjudicable else None,
+                           "note": None if adjudicable else "both terms inside band → UNADJUDICABLE, not refuted"}
+    adjudicable_rungs = [k for k in ADJ_RUNGS if blind[f"k={k}"]["adjudicable"]]
+    conj_iii = bool(adjudicable_rungs) and all(blind[f"k={k}"]["ok"] for k in adjudicable_rungs)
+    iii_status = ("adjudicated" if adjudicable_rungs
+                  else "UNADJUDICABLE — every cell lies inside the band, so rank-dependence is neither shown nor refuted")
+    tpost = {f"G({TPOST_RUNG},r={r})": round(mean_G(TPOST_RUNG, r), 6) for r in RANKS}
+    tpost["regime"] = ("frozen-base (T-post) — a separate row per §2.4 and per Sarcos rule 3; reported "
+                       "beside the trend, never joined to it")
     conj_i = all(c["(i) strictly decreasing beyond band"].__eq__(True) for c in checks.values())
-    conj_ii = all(c["(ii) some ratio < 0.5"] for c in checks.values())
-    conj_iii = all(v["ok"] for v in blind.values())
+    conj_ii = all(c["(ii) some ratio < 0.5 (only where W(k_i) exceeds band)"] for c in checks.values())
+    flat_everywhere = all(c["all_within_band"] for c in checks.values())
     holds = conj_i and conj_ii and conj_iii
     secondary = {}
-    for k in RUNGS:
+    for k in ADJ_RUNGS:
         w32 = mean_W(k, 32)
         qualified = [r for r in RANKS if mean_W(k, r) >= 0.5 * w32]
         secondary[f"k={k}"] = {"r_k": min(qualified) if qualified else None, "qualifying": qualified,
@@ -181,12 +203,24 @@ def phase_score() -> int:
                                           "machine-effect number, and it is at the FLOOR level; "
                                           "arm-level comparisons need B's controls, which do not exist"},
                 "never_pooled_into_band": True}
-    verdict = {"check": "H9-M (i)∧(ii)∧(iii), one conjunction",
+    verdict = {"check": "H9-M (i)∧(ii)∧(iii), one conjunction, on the moving-base row k ∈ {0,25,50,75} (§2.4)",
                "status": "HOLDS" if holds else "FAILS",
+               "adjudication_row": list(ADJ_RUNGS), "reported_separately": f"k={TPOST_RUNG} in G units",
+               "design_finding": ("the rig's REGIME changes with k (k<100 co-trains the base, k=100 "
+                                  "freezes it), so a whole-ladder trend crosses two regimes; and no rung "
+                                  "here is the frozen-base late-injection case that 'critical window' "
+                                  "usually means — that needs H9-M'' (a full base per rung, base held "
+                                  "fixed at every injection point). Filed in §2.4 BEFORE this verdict."),
                "clauses": {"(i) strictly decreasing beyond band": conj_i,
                            "(ii) superlinear (some ratio < 0.5)": conj_ii,
                            "(iii) rank-blind (W(k,2) >= 0.9·W(k,32) at every rung)": conj_iii},
+               "clause_iii_status": iii_status, "clause_iii_adjudicable_rungs": adjudicable_rungs,
                "band_nats": band, "band_frozen_from": band_doc["seeds_used"],
+               "W_is_within_band_at_every_rung_and_rank": flat_everywhere,
+               "reading": ("W ≈ 0 everywhere: a rank-limited increment adds nothing, within the "
+                           "frozen band, over 600 plain continued-training steps at ANY injection "
+                           "time in this moving-base rig. That is §6's flat-in-k case, so the "
+                           "obituary is the output, not an excuse for it.") if flat_everywhere else None,
                "obituary_if_false": ("If W is flat in k within band, there is no critical window in "
                                      "this rig, 设想5's metaphor dies on the bench that has the only k "
                                      "ladder, and the author of the dossier gets the obituary, loudly. "
@@ -195,6 +229,7 @@ def phase_score() -> int:
     doc = {"kind": "H9-M verdict — the critical window, in gain-beyond-continued-training units",
            "registered_in": band_doc["registered_in"], "band": band_doc["rule"],
            "seeds_scored": band_doc["seeds_used"], "W_table": table, "G_table_reported_beside": g_table,
+           "tpost_row_k100": tpost,
            "per_rank_checks": checks, "rank_blindness": blind, "secondary_r_k": secondary,
            "verdict": verdict, "gate6_cross_machine_twin": twin,
            "provenance": {"chora_head": head(CHORA), "mef_head": head(MEF),
@@ -205,11 +240,10 @@ def phase_score() -> int:
     (OUT / "verdict.json").write_text(json.dumps(doc, indent=1) + "\n")
     print(f"[band] {band:.6f} nats (frozen from A seeds {band_doc['seeds_used']})")
     for r in RANKS:
-        print(f"  r={r:>2}: W by rung {checks[f'r={r}']['W_by_rung']}  "
-              f"(i)={checks[f'r={r}']['(i) strictly decreasing beyond band']} "
-              f"(ii)={checks[f'r={r}']['(ii) some ratio < 0.5']} ratios={checks[f'r={r}']['ratios']}")
-    print(f"  (iii) rank-blind at every rung: {all(v['ok'] for v in blind.values())} "
-          f"ratios { {k: v['ratio'] for k, v in blind.items()} }")
+        print(f"  r={r:>2}: W by rung {checks[f'r={r}']['W_by_rung']}  within band everywhere="
+              f"{checks[f'r={r}']['all_within_band']}  (i)={checks[f'r={r}']['(i) strictly decreasing beyond band']} "
+              f"(ii)={checks[f'r={r}']['(ii) some ratio < 0.5 (only where W(k_i) exceeds band)']}")
+    print(f"  (iii) {iii_status}; ratios { {k: v['ratio'] for k, v in blind.items()} }")
     print(f"[verdict] {verdict['status']} — clauses {verdict['clauses']}")
     if twin:
         print(f"[gate 6] A vs B, seed 14, floors: max |Δ| = {twin['max_abs_diff']} nats")

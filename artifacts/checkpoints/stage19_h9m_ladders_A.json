@@ -1,0 +1,105 @@
+{
+ "kind": "named checkpoint source, second instalment \u2014 the H9-M base ladders for A seeds 14 and 15",
+ "registered_against": "MEF/docs/PREREG_H9M.md @ 21eadd4",
+ "weights_in_git": "no (law 1); the bytes live on m1pro-32g and are reconstructible from the recipe above \u2014 and this row exists because 'reconstructible' is a claim, while a hash is a fact",
+ "why": "the band and the Gate 6 twin both consume these bases; the first instalment (stage18_kairos_ladder.json) proved itself by letting seed 13's copied ladder be hash-verified at all five rungs, so the same instrument is used again",
+ "ladder_run_settings": {
+  "steps": 2000,
+  "batch": 16,
+  "ctx": 256,
+  "cfg": {
+   "d": 192,
+   "layers": 4,
+   "nh": 6,
+   "nkv": 2,
+   "inter": 512
+  }
+ },
+ "checkpoints": [
+  {
+   "rung_k_pct": 0,
+   "seed": 14,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed14/ckpt_k0.pt",
+   "sha256": "ad5a764b4346982094f69d11a1f1b5cbada0bb69a5b14f3cccb9251e1daa11d7",
+   "bytes": 8252951,
+   "reproducible": "SEED=14 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 25,
+   "seed": 14,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed14/ckpt_k25.pt",
+   "sha256": "00578f6fbabbcfe65e2483bd2c12cacb3bab938d6b7e05b476aa7b0b004349ca",
+   "bytes": 8253601,
+   "reproducible": "SEED=14 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 50,
+   "seed": 14,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed14/ckpt_k50.pt",
+   "sha256": "3b7185bcacf78945396c2ad36e8b094b1127b11b431e1be9f78e8a679a8e0e7a",
+   "bytes": 8253601,
+   "reproducible": "SEED=14 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 75,
+   "seed": 14,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed14/ckpt_k75.pt",
+   "sha256": "9f89c2a19e09fff99051f4db0d67bb38c00409db17b54cd5795d2d0b9d87a71a",
+   "bytes": 8253601,
+   "reproducible": "SEED=14 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 100,
+   "seed": 14,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed14/ckpt_k100.pt",
+   "sha256": "a81c60e3418e50e8377b0ed56e206335f7dba8553ded7963f4941c41ca9821dd",
+   "bytes": 8253675,
+   "reproducible": "SEED=14 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 0,
+   "seed": 15,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed15/ckpt_k0.pt",
+   "sha256": "49e9cdca4349df4b33b9d48093bd646884eeb6af976f9e1d03eb6e7108ad363c",
+   "bytes": 8252951,
+   "reproducible": "SEED=15 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 25,
+   "seed": 15,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed15/ckpt_k25.pt",
+   "sha256": "d33b6c77cb5a18cb4cffc4d0d837254b24c3c1174abf65be107ecf653adea291",
+   "bytes": 8253601,
+   "reproducible": "SEED=15 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 50,
+   "seed": 15,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed15/ckpt_k50.pt",
+   "sha256": "e100d63cbd6788d3014b8a7acdab4a59440ac29d759f3b523b8e8a50cef7f0b8",
+   "bytes": 8253601,
+   "reproducible": "SEED=15 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 75,
+   "seed": 15,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed15/ckpt_k75.pt",
+   "sha256": "0f9d76e3a00761b8d7dd293b9c49afe965185baa538d2521a2e5446ac2d610d3",
+   "bytes": 8253601,
+   "reproducible": "SEED=15 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  },
+  {
+   "rung_k_pct": 100,
+   "seed": 15,
+   "path_on_A": "/Users/mac/Programming/code-2026/Middle-Eigen-function/outputs/stage19_h9m_seed15/ckpt_k100.pt",
+   "sha256": "88f85307627916351b813736bf5c5486ea0ddc4fd8603859a4d3bdd8ccb168d6",
+   "bytes": 8253675,
+   "reproducible": "SEED=15 + scripts/stage18_kairos_mini.py --mode pretrain --steps 2000"
+  }
+ ],
+ "provenance": {
+  "chora_head": "a922d10f9b58471d2877c19205255d6a126b496e",
+  "mef_head": "21eadd4",
+  "run-on": "m1pro-32g (A)"
+ }
+}
