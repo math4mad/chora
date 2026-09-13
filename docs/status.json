@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T01:49:01Z",
- "chora_head": "56c2759",
+ "generated": "2026-09-13T01:50:09Z",
+ "chora_head": "c027aed",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,11 +14,11 @@
   },
   {
    "name": "MEF",
-   "head": "640518f",
-   "commit_at": "2026-09-13T09:48:54+08:00",
-   "subject": "H9-M registered: the critical window on this rig, in gain units, with the control row the draft did not have.",
+   "head": "d197560",
+   "commit_at": "2026-09-13T09:50:03+08:00",
+   "subject": "PREREG_H9M §2.3: the schedule rows, stated — every arm is row (a) (fixed 600-step increment budget), row (b) t",
    "dirty": 1,
-   "state": "local +1 unpushed",
+   "state": "local +2 unpushed",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
