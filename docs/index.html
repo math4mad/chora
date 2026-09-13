@@ -67,6 +67,22 @@
   .knob.shape{border-top-color:var(--gold)} .knob.shape .greekname{color:var(--gold)}
   .verdict{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
            margin-top:.6rem;padding:.1rem .5rem;border:1px solid currentColor;border-radius:2px}
+  /* for visitors — the tongues, and the vessel that wakes */
+  #orbwrap{text-align:center;margin-top:1.6rem}
+  #orb{width:104px;height:104px;cursor:pointer;
+       filter:drop-shadow(0 0 14px rgba(90,140,255,.22));transition:filter .5s}
+  #orb:hover{filter:drop-shadow(0 0 26px rgba(150,110,255,.5))}
+  .orbcap{font-size:.78rem;color:var(--dim);font-style:italic;margin-top:.15rem;letter-spacing:.05em}
+  .tongues{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem;max-width:880px;margin-left:auto;margin-right:auto}
+  .tongue{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);
+          padding:1.2rem 1.3rem;border-radius:2px;font-size:.95rem}
+  .tongue h3{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:.55rem}
+  .tongue p{color:var(--ink)}
+  .tongue .zhnote{margin-top:.7rem;font-size:.82rem;color:var(--dim)}
+  .other{max-width:660px;margin:1.1rem auto 0;text-align:center;font-size:.86rem;color:var(--dim);line-height:1.9}
+  .other span{display:inline-block;margin:0 .8rem}
+  .other b{color:var(--gold);font-weight:400}
+  @media(max-width:700px){.tongues{grid-template-columns:1fr}}
   /* benches */
   table{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.95rem}
   th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);
@@ -136,11 +152,38 @@
     <p class="motto"><em>The shape of the container is the knowledge.</em></p>
     <p class="sub">“To see the world — we choose the bounds,
       and the evidence chooses them, never the hand.”</p>
+    <div id="orbwrap" title="χώρα — the receptacle that must have a shape before anything can be poured in">
+      <canvas id="orb"></canvas>
+      <div class="orbcap">the vessel — hover, and it wakes</div>
+    </div>
   </div>
 </header>
 
 <div class="wrap">
 
+
+<h2>For visitors · 写给访客</h2>
+<div class="tongues">
+  <div class="tongue en"><h3>English</h3>
+    <p>CHORA is one question watched from five benches: a single object
+    Δ&nbsp;=&nbsp;Σ&nbsp;c<sub>n</sub>φ<sub>n</sub>, turned by three knobs — size, spectral order, shape.
+    Nothing here is written by wishing: every number names the bytes it came from, every lane on the
+    board is derived from the git record, and a negative result stays on the glass like any other.
+    To read the science: <em>The one idea</em>, then the five benches, then the fleet mirror below.</p></div>
+  <div class="tongue zh"><h3>中文</h3>
+    <p>CHORA 是五个实验台共同守望的一个问题：同一个对象 Δ&nbsp;=&nbsp;Σ&nbsp;c<sub>n</sub>φ<sub>n</sub>，
+    三个旋钮——规模、谱序、形状。这里没有一处凭愿望书写：每个数字都点名它来自哪些字节，
+    看板每条车道都由 git 记录派生，阴性结果与阳性一样留在镜面上。
+    若为学问而来：先读“一个想法”，再走过“五个实验台”，最后看下方的舰队之镜。</p>
+    <p class="zhnote">看板访客导读（中文 · 外部字节，已钉住 <span class="hash">cee1328</span>）：
+    <a href="https://github.com/math4mad/chora/blob/main/artifacts/external/CHORA%E5%AE%9E%E9%AA%8C%E8%BF%BD%E8%B8%AA%E7%9C%8B%E6%9D%BF-%E4%B8%AD%E6%96%87%E6%91%98%E8%A6%81.md">中文摘要</a></p></div>
+</div>
+<p class="other">
+  <span><b>日本語</b> 五つの台、一つの対象 — すべての数値はバイトの証明書を携える。</span>
+  <span><b>Français</b> Cinq ateliers, un objet — chaque chiffre présente ses octets.</span>
+  <span><b>Español</b> Cinco bancos, un objeto: cada número nombra los bytes de los que viene.</span>
+  <span><b>한국어</b> 다섯 벤치, 하나의 대상 — 모든 숫자는 자신이 온 바이트의 증명서를 지닌다.</span>
+</p>
 
 <h2>The Group Chart</h2>
 <p class="lede" style="font-size:.93rem;color:var(--dim)">In the manner of the Solvay photograph &#8212;
@@ -482,6 +525,57 @@ on every bench commit — then the page asks GitHub, live, whether each public b
     } catch(e) { el.innerHTML = '<span class="lamp off"></span> board unreadable (offline, or kanban.json missing)'; }
   }
   left = CYCLE; refresh(); boardlights(); setInterval(tick, 1000);
+})();
+</script>
+<script>
+/* the vessel — a glass orb in the siri manner: ribbons of light wound around a sphere,
+   idle and slow when ignored, awake when looked at. canvas 2D only; a no-js or no-canvas
+   browser simply does not see it, which is the correct silence. */
+(function(){
+  var cv=document.getElementById('orb'); if(!cv||!cv.getContext) return;
+  var DPR=Math.min(2.5,window.devicePixelRatio||1);
+  cv.width=Math.round(cv.clientWidth*DPR); cv.height=Math.round(cv.clientHeight*DPR);
+  var ctx=cv.getContext('2d');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var E=.3,T=.3,hover=false,t0=performance.now();
+  cv.addEventListener('mouseenter',function(){hover=true});
+  cv.addEventListener('mouseleave',function(){hover=false});
+  cv.addEventListener('touchstart',function(){hover=!hover},{passive:true});
+  function ribbon(cx,cy,r,time,band,phase,hue,amp,speed){
+    ctx.save(); ctx.beginPath();
+    var y0=cy+band*r;
+    for(var x=-r-4;x<=r+4;x+=4){
+      var k=Math.sqrt(Math.max(0,1-(x/r)*(x/r)));          // the sphere’s silhouette flattens the bands
+      var yy=y0+amp*r*k*Math.sin((x/r)*3.1+time*speed+phase);
+      if(x<=-r) ctx.moveTo(cx+x,yy); else ctx.lineTo(cx+x,yy);
+    }
+    ctx.strokeStyle='hsla('+hue+',92%,70%,.55)'; ctx.lineWidth=6.5*DPR; ctx.lineCap='round';
+    ctx.shadowColor='hsla('+hue+',95%,70%,.9)'; ctx.shadowBlur=10*DPR*(.5+E);
+    ctx.stroke(); ctx.restore();
+  }
+  function draw(now){
+    var time=(now-t0)/1000;
+    T=hover?1:.3; E+=(T-E)*.05;                            // it wakes, and it settles
+    ctx.clearRect(0,0,cv.width,cv.height);
+    var cx=cv.width/2,cy=cv.height/2,r=cv.width*.42;
+    ctx.save(); ctx.beginPath(); ctx.arc(cx,cy,r,0,7); ctx.clip();
+    var g=ctx.createRadialGradient(cx-r*.35,cy-r*.4,r*.1,cx,cy,r);
+    g.addColorStop(0,'rgba(95,125,255,'+(0.18+0.14*E)+')');
+    g.addColorStop(.75,'rgba(28,38,84,.35)');
+    g.addColorStop(1,'rgba(12,14,24,.92)');
+    ctx.fillStyle=g; ctx.fillRect(cx-r,cy-r,2*r,2*r);
+    var bands=[[-.55,205,.75],[-.2,258,1],[.1,300,.95],[.38,332,.8],[.62,196,.65]];
+    for(var i=0;i<bands.length;i++){var b=bands[i];
+      ribbon(cx,cy,r,time,b[0],i*1.7,b[1]+16*E*Math.sin(time*.7+i),(0.09+0.17*E)*b[2],.7+E*1.5);}
+    var h=ctx.createRadialGradient(cx-r*.4,cy-r*.55,0,cx-r*.4,cy-r*.55,r*.75);
+    h.addColorStop(0,'rgba(255,255,255,.26)'); h.addColorStop(1,'rgba(255,255,255,0)');
+    ctx.fillStyle=h; ctx.fillRect(cx-r,cy-r,2*r,2*r);
+    ctx.restore();
+    ctx.beginPath(); ctx.arc(cx,cy,r,0,7);
+    ctx.strokeStyle='rgba(160,170,255,'+(0.22+0.4*E)+')'; ctx.lineWidth=1.4*DPR; ctx.stroke();
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  if(reduce) draw(performance.now()); else requestAnimationFrame(draw);
 })();
 </script>
 </body>

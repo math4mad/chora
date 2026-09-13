@@ -5,3 +5,4 @@ data/*
 **/.DS_Store
 !data/manifest.json
 !models/manifest.json
+__pycache__/
