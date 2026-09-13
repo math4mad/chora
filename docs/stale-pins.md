@@ -43,3 +43,19 @@ number crosses only with `(path, sha256)`.
   checkout and false of the repository. Repaired by `chora@f79d588` (bytes brought up to the pin, no
   line of the append-only array touched). Produced by two agents in one clone with no lock — hence
   the writer lock at `bin/writelock.sh` and the addendum in the root `AGENTS.md`.
+
+## 4 · `artifacts/external/Qwen-suggestion-hover-global/Qwen-Suggestion-about-hover-globe.md`
+
+- pin: artifacts/external/Qwen-suggestion-hover-global/Qwen-Suggestion-about-hover-globe.md
+- clause failing: **C5** — the reverse direction: the file is tracked in git and **named by no
+  manifest**, so it is a fact nobody can cite (a pin without bytes is a permission slip for nothing;
+  bytes without a pin are an uncitable event).
+- where the bytes are: on A, committed by a hand other than this one, **modified in the working tree
+  at the moment C5 found it** — i.e. in flight. Named rather than fixed: pinning another hand's
+  mid-flight file would pin a moving target.
+- owner: whoever is working the hover-globe suggestion (the external/Qwen batch, per Letter 005's
+  triage practice).
+- the ask: `git add` the manifest entry with `(path, sha256, bytes, source: human-delivered, by:,
+  notes:)` in the same commit as the content edit — or move it out of `artifacts/` if it is a note
+  rather than an input. Closing this line = the entry exists; the exemption is deleted by editing
+  this file, which is the only way an exemption here ever goes away.

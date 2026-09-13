@@ -14,6 +14,10 @@
 #   (C2) the path is TRACKED at git HEAD        — the record has it
 #   (C3) sha256(bytes AT HEAD) == pin           — the record's bytes ARE the pin's bytes
 #   (C4) sha256(bytes ON DISK) == pin          — the checkout agrees too
+#   (C5) REVERSE DIRECTION: every tracked file under artifacts/ appears in SOME manifest —
+#        added the first time the script was used for anything, which found three tracked
+#        files with no pin. A pin without bytes is a permission slip for nothing; bytes
+#        without a pin are a fact nobody can cite. Both directions are law 2.
 #
 # Scope, learned the hard way on the first run (60 "failures", 59 of them by design):
 #   artifacts/  -> C1..C4 all required: its bytes live in git, so a pin that HEAD cannot
@@ -83,6 +87,24 @@ for man in manifests:
                 fails.append((man, p, "C4", "no bytes on disk (models/data: reconstructible by URL, but absent)"))
         elif sha(p) != pin:
             fails.append((man, p, "C4", "bytes on disk != pin"))
+
+# C5: the reverse direction — tracked bytes that no manifest names
+import fnmatch
+nested = sorted(glob.glob("artifacts/**/manifest.json", recursive=True)) + manifests
+pins = {}
+for m in nested:
+    if not os.path.exists(m):
+        continue
+    for e in json.load(open(m))["files"]:
+        pins[e["path"]] = m
+lsz = subprocess.run(["git", "ls-files", "-z", "artifacts/"], capture_output=True).stdout
+for tp in [x.decode() for x in lsz.split(b"\0") if x.strip()]:
+    if tp.endswith("manifest.json"):
+        continue
+    if os.path.basename(tp) in ("README.md", "NOTICE"):
+        continue                       # documentation, not a shared byte — stated, not smuggled
+    if tp not in pins:
+        fails.append(("(reverse)", tp, "C5", "tracked in git, named by no manifest — uncitable"))
 
 new = [f for f in fails if f[1] not in exempt]
 if not quiet:

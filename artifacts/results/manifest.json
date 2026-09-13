@@ -433,6 +433,16 @@
    "by": "MEF@21eadd4",
    "script": "chora/experiments/h9m_score.py --score, then extracted by chora/experiments/h9m_gate6_extract.py",
    "notes": "Gate 6 CLOSED: seed 14 on both laptops, floors max |delta| 0.028914 nats, exactly 0.000000 at k=0; below the 0.045188-nat seed band. run-on: A side m1pro-32g, B side m1-16g."
+  },
+  {
+   "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_spectra.json",
+   "sha256": "f0dd985f48270e1bb47a169b10c45a86e2a21e3d3f70969c5cc6db6371ab9b78",
+   "bytes": 48858,
+   "source": "law 4 energy column for the H6a pilot: realized per-layer spectra (W = u @ v) of the trained factor products, all 36 arms",
+   "obtained": "2026-09-12",
+   "by": "JacobiGP@0a60707 + chora@f79d588",
+   "script": "chora/experiments/exp6_h6a_spectra_addendum.py",
+   "notes": "RE-PINNED 2026-09-13: this entry was lost between the two hands working one clone (my duplicate line was dropped with `git checkout HEAD -- manifest.json` and the copy that replaced it did not survive either), so for ~14 hours the file sat TRACKED AND UNPINNED \u2014 the reverse of every incident in docs/stale-pins.md, and the exact gap C5 of bin/validate-manifests.sh was written to catch. eff_rank == rung at every layer (layer 2 caps at 7), top-1 energy share falling 1.000 \u2192 0.177 along the ladder: the constraint binds exactly. run-on: m1pro-32g (A)."
   }
  ]
 }
