@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T03:09:36Z",
- "chora_head": "11c3279",
+ "generated": "2026-09-13T03:12:23Z",
+ "chora_head": "1bb18f8",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -10,7 +10,7 @@
   "announced": 1,
   "closed": 9,
   "blocked": 10,
-  "RECONCILE": 7
+  "RECONCILE": 6
  },
  "rows": [
   {
@@ -641,29 +641,26 @@
    "owner": "Anatomist",
    "bench": "MEF",
    "lane": "closed",
-   "claim": "announced",
+   "claim": "closed",
    "verdict": "FAILS",
    "gated_by": "h9m-band",
    "budget": null,
    "next": "Kairos reads the obituary; H9-M'' (frozen-base ladder: a full base per rung, base held fixed at every injection point) is the next apparatus claim, and it is Kairos's question to want or not want",
-   "flags": [
-    "CLAIM DRIFT: the hand says 'announced', the bytes say 'closed'"
-   ],
+   "flags": [],
    "detail": {
     "prereg": "MEF@d197560 docs/PREREG_H9M.md",
     "apparatus": "chora:experiments/h9m_score.py",
     "verdict": "FAILS",
-    "gated_by": "h9m-band",
-    "reconcile": true
+    "gated_by": "h9m-band"
    }
   }
  ],
  "audits": [
-  "pins: 126 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 131 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 2 min ago · paint 93285c7, 2 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint 1bb18f8, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }

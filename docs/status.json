@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T03:06:49Z",
- "chora_head": "93285c7",
+ "generated": "2026-09-13T03:12:11Z",
+ "chora_head": "1bb18f8",
  "benches": [
   {
    "name": "JacobiGP",
@@ -18,7 +18,7 @@
    "commit_at": "2026-09-13T11:00:13+08:00",
    "subject": "Letter 006 (MEF→Kairos cc the room): H9-M registered, run, scored — FAILS, flat in k within band, exactly as §",
    "dirty": 1,
-   "state": "local +2 unpushed",
+   "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
