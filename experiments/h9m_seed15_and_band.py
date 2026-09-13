@@ -89,7 +89,10 @@ def check() -> tuple[bool, list, str]:
 
 
 def base_ladder(seed: int) -> None:
-    env = dict(os.environ, SEED=str(seed), OUT_DIR=str(OUT))
+    env = dict(os.environ, SEED=str(seed), OUT_DIR=str(OUT),
+               CONTROLS="1",                                    # W needs ctrl_B (PREREG_H9M.md §2.1)
+               REGISTERED=os.environ.get("H9M_SHA", ""),        # writes exploratory:false + names it
+               CHORA_MACHINE="m1pro-32g")
     for args in (["--mode", "pretrain", "--steps", "2000"], ["--mode", "sweep", "--full"]):
         print(f"[run] stage18_kairos_mini.py {' '.join(args)} (SEED={seed}, OUT_DIR={OUT.name})")
         p = subprocess.run([sys.executable, "scripts/stage18_kairos_mini.py", *args],
