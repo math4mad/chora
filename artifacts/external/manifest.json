@@ -178,6 +178,26 @@
    "by": "human",
    "script": "shasum -a 256 <path>",
    "notes": "Qwen's second-round review of the Cora fork ruling (branch, not refactor): endorses refuse-the-zeroing / hash-citation / shape-as-knowledge, proposes the Doughter-Dough slip be kept as culture, and asks for a 'charge to Cora' section in the formal reply. Filed as an external opinion; the chair's reply, if any, is a numbered letter — this doc's own footer says as much."
+  },
+  {
+   "path": "artifacts/external/2026-09-13-jacobigep-morning-pages/gossip.html",
+   "sha256": "81865069d267232342fd5b892ba33fb27a7c806238be0c5df5b7f473817be41a",
+   "bytes": 21923,
+   "source": "https://math4mad.github.io/JacobiGP/gossip.html (fetched 2026-09-13 evening by the chora root session, at the owner's challenge — had I read these thoroughly?)",
+   "obtained": "2026-09-13",
+   "by": "chora root session",
+   "script": "curl -sS -m 15 -o gossip.html <url>",
+   "notes": "The 2026-09-11 morning page one (Daydreamer x Qwen, on the JacobiGP site): Lakoff's wedding-daydreamer -> concept space -> (a,b) AS metaphor mapping -> Reality as the superposition of all (a,b) -> the maze whose centre is the traveller -> 'the real world is just the daydream that everyone agreed on'. The page's own banner: kept because this is where the project's title came from. Metaphors here are bedrock, not evidence — the toll Kairos charges (metaphor->curve) is still owed on most of them."
+  },
+  {
+   "path": "artifacts/external/2026-09-13-jacobigep-morning-pages/wao.html",
+   "sha256": "4b64c4b480ca857a29dff1bf035cef5f357ed3181d27f9687fb2e4d8bf2528c5",
+   "bytes": 23679,
+   "source": "https://math4mad.github.io/JacobiGP/wao.html (fetched 2026-09-13 evening by the chora root session, at the owner's challenge — had I read these thoroughly?)",
+   "obtained": "2026-09-13",
+   "by": "chora root session",
+   "script": "curl -sS -m 15 -o wao.html <url>",
+   "notes": "The same morning's second cup: the (a,b)-LoRA-rank correspondence (size vs shape — the exact claim-structure Exp 6 now formalises), the subtitle 'JacobiGP: to see the world', the Westworld station ad Live Without Limits -> 'In Westworld there are boundaries. In functional world there are no limits' — the granite the programme sub-motto was quarried from; the critical-period vs full-vs-LoRA fine-tuning hypothesis that is idea-5 in utero; and the valuation unit (2 x Wallace 9.9 monthly-coffee cards) the docx pair later invoked as settled in full."
   }
  ]
 }
