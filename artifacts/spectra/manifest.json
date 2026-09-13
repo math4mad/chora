@@ -1,1 +1,24 @@
-{ "files": [] }
+{
+ "files": [
+  {
+   "path": "artifacts/spectra/iso_audit_down_proj_B.json",
+   "sha256": "e99c4cae1b4088b3bc439d3e95e51c85b713e642c899772d051399325cf30049",
+   "bytes": 850368,
+   "source": "produced on B: Middle-Eigen-function/.venv/bin/python chora/experiments/iso_audit_down_proj.py (machine B, m1-16g, 2026-09-13)",
+   "obtained": "2026-09-13",
+   "by": "Bench-B@chora-experiments-20ad915c24f5 (rig hash in 'script'; produced on m1-16g)",
+   "script": "chora/experiments/iso_audit_down_proj.py (sha256 20ad915c24f5272853017f4c8628338d05d4566f1573eb62ce8ad0b96c78cc1b)",
+   "notes": "run-on: m1-16g | python 3.11.16 | numpy 2.4.6 | torch 2.14.0 | macOS 15.7.5 | LAPACK gesdd on CPU, no MPS used (queue row: 'numpy, CPU fine'). QUEUE ITEM 4 of Letter 016; answers Letter 005's action row and Meeting 003 R3. Operand: models/models/Qwen--Qwen2.5-0.5B/snapshots/master/model.safetensors, sha256 88c142557820ccad verified against its models/manifest.json pin BEFORE a single float was read (law 2); BF16 read losslessly as FP32 (append 16 zero mantissa bits), 24 mlp.down_proj.weight of shape [896,4864]. Contains (A) the exact sigma-spectra + scale functionals of all 24, (B) MEF's own sigma-scales from B's stage18 ladders with every checkpoint named by sha256, (C) a scope statement. HEADLINE OF A: a rank-16 subspace holds only 6.5% of down_proj's Frobenius energy (tail E(r>16) in [0.9046, 0.9551], mean 0.9349; r=32 -> 11.1%), effective rank 820-865 of 896, and stable rank runs a U in layer index (266 at L22, 49 at L10). HEADLINE OF B: training our own 192x512 down.weight moves it the other way (sigma_max 0.926 -> 7.999, stable rank 75.0 -> 10.0, E(r>16) 0.812 -> 0.428). NO VERDICT: R3 is NOT lifted by this file -- no RL- or SFT-adapted Qwen checkpoint exists on either machine, so 设想3's external claim remains unverified internal hearsay; this artifact supplies the ruler the Anatomist demanded, not the comparison. The index I = ||d sigma||_2 / ||d W||_F written into B is reported WITH a matched-Frobenius iid-Gaussian null and is NOT separated from it (observed median 0.465 vs null median 0.478) -- three instrument defects of B's own were caught and disclosed before crossing, see the ordering_disclosure field and the log. Reproduced: a cold second process returned an identical science payload (hash 473628e118bfa5e7 over the json minus run timestamp and wall clock). Released to run by the human's word on 2026-09-13 while A's glass read MEF dirty=1 (untracked outputs/stage19_kairos_e3/, E3 NOT ADJUDICATED); this job wrote ZERO paths inside Middle-Eigen-function -- it reads the ladders and writes only here, which is the whole reason the release was narrow rather than general."
+  },
+  {
+   "path": "artifacts/spectra/iso_audit_down_proj_B.log",
+   "sha256": "91ed643ccd6f306637d1dfaa0b021a5ae97dd7556388357c3b0b9b13a9b4e6f4",
+   "bytes": 2870,
+   "source": "stdout/stderr of the run above (tee'd; landed with git add -f because ~/.gitignore_global line 64 carries *.log)",
+   "obtained": "2026-09-13",
+   "by": "Bench-B@chora-experiments-20ad915c24f5 (rig hash in 'script'; produced on m1-16g)",
+   "script": "chora/experiments/iso_audit_down_proj.py (sha256 20ad915c24f5272853017f4c8628338d05d4566f1573eb62ce8ad0b96c78cc1b)",
+   "notes": "run-on: m1-16g. Per-layer one-line print of sigma_max / stable rank / effective rank / E(r>16) for the 24 Qwen matrices, then the I-summary line. No hand-written text is mixed into this file: the questions the run raised live in B's letter, not in the bytes the rig produced (so a reader never has to guess which lines came from LAPACK)."
+  }
+ ]
+}

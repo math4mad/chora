@@ -141,3 +141,59 @@ tests. Nothing was installed, no DB was created, no branch was opened, no
 bench repo was touched. To resume: the chair rules on §6.1 (may the queue
 domain live outside git at all), and E0 seeds 14/15 come first regardless —
 that is what "first is first" means on this bench.
+
+## 2d · 2026-09-13, 13:2x local — the labels finally leave the laptop (B's own file, appended not edited)
+
+`bin/backup-drill.sh`'s header states the fact this section closes: A had no `_rollback/` at all until
+11:20 today, and *"both 2026-09-12 parachutes … were minted on B and live only there."* Checked at the
+same hour rather than trusted: **`checkpoint-2026-09-12-eve` existed on no remote in any of the six
+repos**, and `pause-2026-09-12-b` existed on origin for chora and MEF only. So 10 tag labels — 6 eve +
+4 pause — had exactly one physical copy in the programme, on this laptop.
+
+**Pushed, tags only: no branch moved, no commit rewritten, no ref other than `refs/tags/*` touched.**
+
+| repo | pushed today | origin now |
+|---|---|---|
+| chora | `checkpoint-2026-09-12-eve` | 3/3 tags |
+| JacobiGP | `pause-2026-09-12-b`, `checkpoint-2026-09-12-eve` | 3/3 |
+| Middle-Eigen-function | `checkpoint-2026-09-12-eve` | 3/3 |
+| Sarcos-NN-Model | `pause-2026-09-12-b`, `checkpoint-2026-09-12-eve` | 3/3 |
+| Polynomial-Activated NN | `pause-2026-09-12-b`, `checkpoint-2026-09-12-eve` | 3/3 |
+| Kairos | `pause-2026-09-12-b`, `checkpoint-2026-09-12-eve` | 3/3 |
+
+**What was actually at risk, said precisely.** Not the history: the eve tag's target commit was already
+on origin as an ancestor of `main` (§4 of yesterday's file retracted exactly this kind of overstatement,
+and the retraction holds). What was single-copy was the **provenance statement** — *which* commit is
+"the state judged excellent by the task owner", in whose words, at what hour. An annotated tag is a
+claim about a commit, and a claim on one laptop is Letter 012's provenance-by-legend again. The tag
+objects themselves now have three independent homes: `pause-2026-09-12-b` `287c4c26…`,
+`checkpoint-2026-09-12-eve` `a2dca44c…`, `checkpoint-2026-09-13-A` `1c4f89c8…`.
+
+**Re-verified today, because §2c's rule is that a bundle nobody restored is a story:**
+`git bundle verify` on all **12** bundles, each run **inside its own repo** → every one reports
+*"The bundle records a complete history"*; `shasum -a 256 -c SHA256SUMS` on both sets → 6/6 and 6/6 OK;
+and one **full restore drill** on `2026-09-12-eve/chora.bundle` with §2b's corrected recipe (`init` →
+`remote add` → three refspecs → compare): restored `refs/heads/main` = `3a08196c1b62…` = **the eve tag's
+own commit**, `refs/remotes/origin/main` came back too (the ref a plain `git clone <bundle>` drops),
+and `pause-2026-09-12-b` is an **ancestor** of it — the two parachutes sit on one history, in order.
+Drill ran in `/tmp` and was deleted; it wrote nothing into any repo.
+
+**Two false alarms, both mine, both caught the same way the fleet catches them — by re-reading the
+bytes rather than the print.** (i) The first verify loop ran outside every repository, so git answered
+*"error: need a repository to verify a bundle"* for all twelve and my counter reported
+**`verifyable=0 failed=12`** — a catastrophic result that was an argument-passing bug. (ii) The drill
+then compared restored `main` against **the wrong tag** (`pause-2026-09-12-b`, the morning's, which
+`--all` carries along as an extra ref) and printed *"✗ 不一致"*. Against its own tag the drill passes.
+Today's count of instruments crying about structures their own arithmetic invented is now **five**
+(three in the audit rig, two here), and the pattern is worth the room's attention more than any of the
+instances: every one of them was a *green-looking pipeline printing red*, which is why C2–C5, the
+writer lock, and drills-on-demand are programme practice and not courtesy.
+
+**What is still single-copy, so this section does not close what it did not close.** The 28 MB of
+B's own bundle bytes are on one laptop; the remedy is not git (bundles inside the repo they back up is
+the parachute-sewn-into-the-plane failure), and it is not mine to invent — the delivered
+`CHORA重构前备份策略与回滚计划.docx` (`543dab5c4193…`) demands *"至少两份独立副本：本地 + 远程"*, and naming
+the remote destination is a chair act, so it is listed as an open item, not a fixed one. What A's
+`2026-09-13-A` set covers (219 MB, with the untracked byte stores beside the bundles) is today's state
+on A; and law 3's exclusions — the `.pt` rungs, `models/` (953 MB here), the 400 MB corpus — stay
+covered by pin + URL, which is a promise about network availability, not about bytes in hand.

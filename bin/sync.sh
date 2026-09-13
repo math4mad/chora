@@ -17,8 +17,18 @@ link_bench() { # name, source-dir
   fi
   local head; head="$(git -C "$src" rev-parse --short HEAD)"
   local branch; branch="$(git -C "$src" branch --show-current)"
-  ln -sfn "$src" "$ROOT/benches/$name"
-  echo "  [bench] $name -> $src ($branch @ $head)"
+  # RELATIVE on purpose. The absolute form of this one line (`ln -sfn "$src"`) put a
+  # machine-scoped string — /Users/mac/... on one laptop, /Users/lunarcheung/... on the other —
+  # into a machine-SHARED repository, so the five tracked links under benches/ read
+  # `modified` forever on every machine but the one that committed them, and the only fix
+  # available to a second machine was to leave them uncommitted (Letter 020 PS 3, the fifth
+  # STOP of that day). A relative target is the same bytes on every machine whose layout this
+  # script already assumes — `$HOME/Programming/code-2026/{chora,<benches>}`, hard-coded as
+  # $CODE two lines above — so the pointer stays IN the record and stops encoding whose disk
+  # it is on. Nothing that reads these links resolves them by string: status.sh and share()
+  # both go through `cd`/`pwd -P`, which is exactly what a relative symlink answers.
+  ln -sfn "../../$(basename "$src")" "$ROOT/benches/$name"
+  echo "  [bench] $name -> ../../$(basename "$src") ($branch @ $head)"
 }
 mkdir -p "$ROOT/benches"
 link_bench JacobiGP "$CODE/ JacobiGP"

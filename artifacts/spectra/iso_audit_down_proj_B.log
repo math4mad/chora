@@ -1,0 +1,28 @@
+[iso] verifying the operand before consuming it ...
+  model.layers.0.mlp.down_proj.weight    sig=3.8228e+00  srank=102.2  erank=864.5  E(16)=0.9466
+  model.layers.1.mlp.down_proj.weight    sig=3.5949e+00  srank=101.6  erank=861.8  E(16)=0.9397
+  model.layers.2.mlp.down_proj.weight    sig=3.0414e+00  srank=141.5  erank=851.5  E(16)=0.9401
+  model.layers.3.mlp.down_proj.weight    sig=3.3265e+00  srank=123.8  erank=849.0  E(16)=0.9280
+  model.layers.4.mlp.down_proj.weight    sig=4.4757e+00  srank=70.2  erank=854.7  E(16)=0.9341
+  model.layers.5.mlp.down_proj.weight    sig=3.8235e+00  srank=86.2  erank=838.0  E(16)=0.9316
+  model.layers.6.mlp.down_proj.weight    sig=3.4200e+00  srank=124.9  erank=843.8  E(16)=0.9345
+  model.layers.7.mlp.down_proj.weight    sig=3.7709e+00  srank=105.2  erank=850.1  E(16)=0.9312
+  model.layers.8.mlp.down_proj.weight    sig=4.3000e+00  srank=80.2  erank=826.8  E(16)=0.9235
+  model.layers.9.mlp.down_proj.weight    sig=5.0036e+00  srank=58.5  erank=830.8  E(16)=0.9212
+  model.layers.10.mlp.down_proj.weight   sig=5.3314e+00  srank=49.2  erank=821.0  E(16)=0.9139
+  model.layers.11.mlp.down_proj.weight   sig=5.1623e+00  srank=54.5  erank=820.1  E(16)=0.9046
+  model.layers.12.mlp.down_proj.weight   sig=4.9004e+00  srank=62.6  erank=822.6  E(16)=0.9116
+  model.layers.13.mlp.down_proj.weight   sig=4.4100e+00  srank=79.9  erank=828.8  E(16)=0.9158
+  model.layers.14.mlp.down_proj.weight   sig=3.6978e+00  srank=112.2  erank=831.1  E(16)=0.9316
+  model.layers.15.mlp.down_proj.weight   sig=3.3149e+00  srank=147.9  erank=827.7  E(16)=0.9415
+  model.layers.16.mlp.down_proj.weight   sig=3.4968e+00  srank=122.5  erank=860.3  E(16)=0.9486
+  model.layers.17.mlp.down_proj.weight   sig=3.6066e+00  srank=111.6  erank=856.1  E(16)=0.9485
+  model.layers.18.mlp.down_proj.weight   sig=3.2248e+00  srank=151.7  erank=843.1  E(16)=0.9432
+  model.layers.19.mlp.down_proj.weight   sig=3.0856e+00  srank=174.4  erank=841.6  E(16)=0.9463
+  model.layers.20.mlp.down_proj.weight   sig=2.6320e+00  srank=248.5  erank=846.4  E(16)=0.9551
+  model.layers.21.mlp.down_proj.weight   sig=2.9137e+00  srank=209.0  erank=841.7  E(16)=0.9529
+  model.layers.22.mlp.down_proj.weight   sig=2.6074e+00  srank=266.4  erank=852.8  E(16)=0.9530
+  model.layers.23.mlp.down_proj.weight   sig=3.4163e+00  srank=123.5  erank=855.6  E(16)=0.9416
+[iso] own sigma-scales: the stage18 ladders on this laptop ...
+[iso] wrote /Users/lunarcheung/Programming/code-2026/chora/artifacts/spectra/iso_audit_down_proj_B.json 850368 B
+[iso] I index: {"n_pairs": 40, "observed_min": 0.2821834683418274, "observed_median": 0.4647185206413269, "observed_max": 0.8995780348777771, "gaussian_null_min": 0.2954394519329071, "gaussian_null_median": 0.4784773588180542, "gaussian_null_max": 0.8512793779373169, "rows_where_observed_exceeds_null": 30, "bounds_respected_on_all_rows": true}
