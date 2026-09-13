@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T01:50:09Z",
- "chora_head": "c027aed",
+ "generated": "2026-09-13T01:55:31Z",
+ "chora_head": "90062ea",
  "benches": [
   {
    "name": "JacobiGP",
@@ -17,8 +17,8 @@
    "head": "d197560",
    "commit_at": "2026-09-13T09:50:03+08:00",
    "subject": "PREREG_H9M §2.3: the schedule rows, stated — every arm is row (a) (fixed 600-step increment budget), row (b) t",
-   "dirty": 1,
-   "state": "local +2 unpushed",
+   "dirty": 2,
+   "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },

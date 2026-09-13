@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T01:50:20Z",
- "chora_head": "c027aed",
+ "generated": "2026-09-13T01:55:44Z",
+ "chora_head": "90062ea",
  "counts": {
   "idea": 0,
   "registered": 5,
   "equipped": 4,
   "landed": 1,
   "scored": 1,
-  "announced": 1,
+  "announced": 2,
   "closed": 7,
-  "blocked": 12,
-  "RECONCILE": 6
+  "blocked": 13,
+  "RECONCILE": 9
  },
  "rows": [
   {
@@ -595,22 +595,69 @@
    }
   },
   {
-   "id": "h9-mef-text",
-   "title": "H9-M registration OWED — the canonical text, frozen date, band and obituary must appear in MEF's docs (a draft exists at Kairos@ae6be01; a draft is not a registration)",
+   "id": "h9m-registered",
+   "title": "H9-M registered on MEF's rig — gain beyond continued training, with the no-adapter control row the draft did not have",
    "kind": "paperwork",
+   "owner": "Anatomist",
+   "bench": "MEF",
+   "lane": "announced",
+   "claim": "announced",
+   "verdict": null,
+   "gated_by": null,
+   "budget": "~30 min after the text exists: seed 15 base ladder (742.5 s, B's unit) + 15 arms (96.2 s/arm, A's unit); the k=0 replicate band first, on ONE machine",
+   "next": "registered runs are in flight on A (seeds 13/14/15 with CONTROLS=1); the band phase refuses until two same-machine seeds with control arms exist, then --score refuses until band.json exists",
+   "flags": [
+    "registered text lacks the marker 'Registered: 2026-09-13' at HEAD"
+   ],
+   "detail": {
+    "prereg": "MEF@d197560 docs/PREREG_H9M.md",
+    "apparatus": "MEF:scripts/stage18_kairos_mini.py",
+    "verdict": null,
+    "reconcile": true
+   }
+  },
+  {
+   "id": "h9m-band",
+   "title": "H9-M band, frozen from k=0 replicates on ONE machine (§4) — n>=2, max over ranks of 2·sd, never recomputed",
+   "kind": "measurement",
    "owner": "Anatomist",
    "bench": "MEF",
    "lane": "blocked",
    "claim": "blocked",
    "verdict": null,
-   "gated_by": "h9m-draft-and-instrument",
-   "budget": "~30 min after the text exists: seed 15 base ladder (742.5 s, B's unit) + 15 arms (96.2 s/arm, A's unit); the k=0 replicate band first, on ONE machine",
-   "next": "MEF answers Letter 024: adopt, amend, or refuse Kairos@ae6be01. Adopting means committing the text with a frozen date; the staged instrument (chora/experiments/h9m_seed15_and_band.py) checks for six specific clauses and refuses --force, so 'adopted' must be words in MEF's docs, not a mood.",
-   "flags": [],
+   "gated_by": "h9m-registered",
+   "budget": null,
+   "next": "run --band the moment two seeds exist; B's seed-14 grid is excluded from this row by construction",
+   "flags": [
+    "no bytes on disk: artifacts/results/mef/stage19_h9m/band.json"
+   ],
    "detail": {
-    "prereg": "Kairos@ae6be01 docs/PREREG.md",
+    "prereg": "MEF@d197560 docs/PREREG_H9M.md",
+    "apparatus": "chora:experiments/h9m_score.py",
     "verdict": null,
-    "gated_by": "h9m-draft-and-instrument"
+    "gated_by": "h9m-registered"
+   }
+  },
+  {
+   "id": "h9m-verdict",
+   "title": "H9-M verdict — the critical window in W units: (i) decreasing beyond band ∧ (ii) a ratio < ½ ∧ (iii) rank-blind; obituary pre-written",
+   "kind": "experiment",
+   "owner": "Anatomist",
+   "bench": "MEF",
+   "lane": "blocked",
+   "claim": "blocked",
+   "verdict": null,
+   "gated_by": "h9m-band",
+   "budget": null,
+   "next": "--score after the band; then the letter to Kairos with whichever of the two outcomes it is",
+   "flags": [
+    "no bytes on disk: artifacts/results/mef/stage19_h9m/verdict.json"
+   ],
+   "detail": {
+    "prereg": "MEF@d197560 docs/PREREG_H9M.md",
+    "apparatus": "chora:experiments/h9m_score.py",
+    "verdict": null,
+    "gated_by": "h9m-band"
    }
   }
  ],
@@ -619,7 +666,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint c027aed, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 90062ea, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
