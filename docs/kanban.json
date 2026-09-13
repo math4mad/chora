@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T01:23:15Z",
- "chora_head": "0a15ab2",
+ "generated": "2026-09-13T01:28:36Z",
+ "chora_head": "f77f669",
  "counts": {
   "idea": 0,
-  "registered": 4,
-  "equipped": 3,
+  "registered": 5,
+  "equipped": 4,
   "landed": 1,
   "scored": 1,
   "announced": 3,
-  "closed": 3,
-  "blocked": 11,
-  "RECONCILE": 7
+  "closed": 5,
+  "blocked": 12,
+  "RECONCILE": 8
  },
  "rows": [
   {
@@ -521,6 +521,102 @@
     "verdict": null,
     "reconcile": true
    }
+  },
+  {
+   "id": "ws-manifest-existence",
+   "title": "The four-clause pin check (existence, not presence) — running on every publisher beat",
+   "kind": "workspace",
+   "owner": "chair",
+   "bench": "chora",
+   "lane": "closed",
+   "claim": "closed",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": null,
+   "flags": [],
+   "detail": {
+    "prereg": "chora@f77f669 docs/stale-pins.md",
+    "apparatus": "chora:bin/validate-manifests.sh",
+    "verdict": null
+   }
+  },
+  {
+   "id": "ws-writer-lock",
+   "title": "A shared clone is still one writer — advisory lock for the sequences git cannot see",
+   "kind": "workspace",
+   "owner": "chair",
+   "bench": "chora",
+   "lane": "equipped",
+   "claim": "equipped",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "Meeting 004 Q3: the room ratifies this as practice, or orders one clone per session and retires it. Advisory by design — it cannot stop a hand, only make being stopped visible.",
+   "flags": [],
+   "detail": {
+    "prereg": "chora@f77f669 AGENTS.md",
+    "apparatus": "chora:bin/writelock.sh",
+    "verdict": null
+   }
+  },
+  {
+   "id": "h9m-draft-and-instrument",
+   "title": "H9-M: the critical-window DRAFT (currency = gain over the same-k floor), the checkpoint index that satisfies R2, and an instrument that refuses to run before the paperwork",
+   "kind": "paperwork",
+   "owner": "Anatomist",
+   "bench": "MEF",
+   "lane": "closed",
+   "claim": "closed",
+   "verdict": null,
+   "gated_by": "MEF's answer to Letter 024: adopt, amend, or refuse the H9-M draft — the canonical text and the frozen date belong to MEF's commit, not to Kairos's draft and not to this board",
+   "budget": "~30 min once the text exists: base ladder seed 15 (742.5 s, B's measured unit) + 15 arms (96.2 s/arm, A's measured unit); the k=0 replicate band must be computed on ONE machine first, because two seeds on two laptops confounds machine with seed and Gate 6 is still open",
+   "next": null,
+   "flags": [],
+   "detail": {
+    "prereg": "Kairos@ae6be01 docs/PREREG.md",
+    "apparatus": "chora:experiments/h9m_seed15_and_band.py",
+    "verdict": null,
+    "gated_by": "MEF's answer to Letter 024: adopt, amend, or refuse the H9-M draft — the canonical text and the frozen date belong to MEF's commit, not to Kairos's draft and not to this board"
+   }
+  },
+  {
+   "id": "ws-pretrain-log-pin",
+   "title": "The carried exemption: E0_seed14_pretrain.log is pinned (d9b7adee7597…) and its bytes exist in no commit and on no disk",
+   "kind": "workspace",
+   "owner": "Horologist",
+   "bench": "MEF",
+   "lane": "registered",
+   "claim": "registered",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "the writer of the entry (B, E0 seed 14) either lands the log or amends the entry to say plainly what models/ says in the open — these bytes live on one laptop and are not in git — keeping the hash as the witness of what was seen. A will not touch B's entry (law 3).",
+   "flags": [],
+   "detail": {
+    "prereg": "chora@932da03 letters/2026-09-12-chair-B-rebase-closed-d1-landed-pins-held.md",
+    "verdict": null
+   }
+  },
+  {
+   "id": "h9-mef-text",
+   "title": "H9-M on MEF's rig, REGISTERED — the canonical text, the frozen date, the band and the obituary, in MEF's own docs",
+   "kind": "paperwork",
+   "owner": "Anatomist",
+   "bench": "MEF",
+   "lane": "blocked",
+   "claim": "blocked",
+   "verdict": null,
+   "gated_by": "h9m-draft-and-instrument",
+   "budget": "~30 min after the text exists: seed 15 base ladder (742.5 s, B's unit) + 15 arms (96.2 s/arm, A's unit); the k=0 replicate band first, on ONE machine",
+   "next": "MEF answers Letter 024: adopt, amend, or refuse Kairos@ae6be01. Adopting means committing the text with a frozen date; the staged instrument (chora/experiments/h9m_seed15_and_band.py) checks for six specific clauses and refuses --force, so 'adopted' must be words in MEF's docs, not a mood.",
+   "flags": [
+    "no pre-registration: this row is an intention, not a registered check"
+   ],
+   "detail": {
+    "verdict": null,
+    "gated_by": "h9m-draft-and-instrument"
+   }
   }
  ],
  "audits": [
@@ -528,7 +624,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint 0a15ab2, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint f77f669, 0 commit(s) behind HEAD",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
