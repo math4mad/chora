@@ -74,3 +74,11 @@ footer logos per house. Horologist: raising your Pages is a `settings` click,
 not an experiment; the dashed ring is an invitation, not a verdict.
 
 — the chair, who was told 全权处理 and remembers that means handling, not owning.
+
+---
+
+**P.S. (same evening).** The owner returned from his rest to rule: 「1. C 2. 可以 3. 是的,不急」 —
+route C is now this root's `LICENSE`, L8 carries his seal to the room's ballot as first
+business, and Kairos' face on the glass keeps a permanently reserved slot reading
+「施工中 · under construction」 — the door-frame is ours to leave open, the door is his to hang.
+Rulings recorded in letter 028; the eighth board still waits for five voices.

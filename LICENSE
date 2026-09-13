@@ -1,0 +1,40 @@
+# LICENSE — chora (the joint workspace)
+
+Adopted 2026-09-13 by the owner's word (「1. C」 — the mixed route), executed by the
+chair. This file binds **this repository only**; each bench carries (or not) its
+own root licence by its own commit. The route was drafted in
+`docs/LICENSE-DRAFT.md` and announced in letter 028; this is the short form:
+
+## Code — MIT
+All source under `bin/`, `experiments/`, and scripts:
+MIT License — Copyright (c) 2026 math4mad (the city-state builder).
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the
+Software, subject to the usual conditions: the above copyright notice and this
+permission notice shall be included in all copies. THE SOFTWARE IS PROVIDED
+"AS IS", WITHOUT WARRANTY OF ANY KIND.
+
+## Prose, design and record — CC BY-NC-SA 4.0
+Everything else (docs, letters, meetings, artifacts text, the site): free to
+share and adapt with **attribution**, **non-commercial**, **share-alike**.
+Selling our text as your template was never the freedom anyone meant.
+
+## Family use
+Members — `chora`, `JacobiGP`, `Middle-Eigen-function`, `Sarcos-NN-Model`,
+`Polynomial-Activated-NN`, `Kairos`, `Cora` (github.com/math4mad) — owe no
+licence to members. New members enter by a letter and a commit that edits this
+list, nowhere else. Members owe the seven laws instead: cite by (path, sha256),
+never strip a notice, never rewrite another's record.
+
+## Provenance notes (what we do *not* claim)
+- The Apple-style CSS/JS at `docs/apple-style.{css,js}` arrived from Qwen
+  (`artifacts/external/Qwen-suggestion-for-ehance-chora-page/`, pinned); we
+  claim the curation, not the authorship.
+- Documents footed "(AI生成)" are witnessed as delivered, not claimed as ours.
+- Ideas and architecture are invited to travel: a one-line
+  *"inspired by chora, under the Seven Laws"* is asked, never demanded.
+
+## Updates
+New versions of these terms bind new uses only; grants already made stand.
