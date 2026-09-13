@@ -74,20 +74,27 @@
      is CSS, the sphere is canvas, pointer-events:none keeps the layers from fighting. */
   #orbwrap{text-align:center;margin-top:1.6rem}
   .glob-holder{position:relative;width:104px;height:104px;display:inline-block}
-  #orbripple{position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(140,180,255,.3);
+  #orbripple{position:absolute;inset:-6px;border-radius:50%;border:1.5px solid rgba(140,180,255,.22);
              opacity:0;transform:scale(1);pointer-events:none;z-index:1}
   #orb{position:relative;z-index:2;width:104px;height:104px;cursor:pointer;
-       filter:drop-shadow(0 0 14px rgba(90,140,255,.22));
-       transition:transform .4s cubic-bezier(.25,.46,.45,.94), filter .5s}
-  #orb:hover{filter:drop-shadow(0 0 26px rgba(150,110,255,.5))}
-  #orbwrap:hover #orb{transform:scale(1.06)}
-  #orb.push{transform:scale(.97);transition-duration:.1s}
-  #orbwrap:hover #orbripple{animation:siri-ripple-breathe 2s ease-in-out infinite}
-  #orbripple.burst,#orbwrap:hover #orbripple.burst{animation:siri-ripple-burst .6s ease-out forwards}
-  @keyframes siri-ripple-breathe{0%{transform:scale(1);opacity:.4}50%{transform:scale(1.15);opacity:.15}100%{transform:scale(1);opacity:.4}}
-  @keyframes siri-ripple-burst{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+       filter:drop-shadow(0 22px 34px rgba(0,0,0,.5)) drop-shadow(0 0 18px rgba(96,140,255,.20)) drop-shadow(0 0 52px rgba(130,90,255,.10));
+       transition:transform .55s cubic-bezier(.34,1.18,.32,1), filter .6s}
+  #orb:hover{filter:drop-shadow(0 22px 34px rgba(0,0,0,.5)) drop-shadow(0 0 26px rgba(140,120,255,.42)) drop-shadow(0 0 72px rgba(96,160,255,.16))}
+  #orbwrap:hover #orb{transform:scale(1.05)}
+  #orb.push{transform:scale(.97);transition-duration:.12s}
+  #orbwrap:hover #orbripple{animation:siri-ripple-breathe 2.6s cubic-bezier(.25,.1,.25,1) infinite}
+  #orbripple.burst,#orbwrap:hover #orbripple.burst{animation:siri-ripple-burst .7s cubic-bezier(.19,1,.22,1) forwards}
+  @keyframes siri-ripple-breathe{0%{transform:scale(1);opacity:.35}50%{transform:scale(1.16);opacity:.10}100%{transform:scale(1);opacity:.35}}
+  @keyframes siri-ripple-burst{0%{transform:scale(1);opacity:.55}100%{transform:scale(1.95);opacity:0}}
   @media(prefers-reduced-motion:reduce){#orbripple,#orbwrap:hover #orbripple,#orbripple.burst{animation:none}}
-  .orbcap{font-size:.78rem;color:var(--dim);font-style:italic;margin-top:.15rem;letter-spacing:.05em}
+  .glob-holder::after{content:"";position:absolute;left:50%;bottom:-16px;transform:translateX(-50%);
+       width:82px;height:13px;border-radius:50%;pointer-events:none;z-index:0;
+       background:radial-gradient(ellipse at center,rgba(96,150,255,.30),rgba(130,90,255,.10) 55%,transparent 72%);
+       filter:blur(4px);transition:opacity .6s;opacity:.85}
+  #orbwrap:hover .glob-holder::after{opacity:1}
+  .orbcap{font-size:.78rem;color:var(--dim);font-style:italic;margin-top:1.1rem;letter-spacing:.05em;
+       opacity:.5;transition:opacity .6s cubic-bezier(.25,.1,.25,1)}
+  #orbwrap:hover .orbcap{opacity:.95}
   .tongues{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem;max-width:880px;margin-left:auto;margin-right:auto}
   .tongue{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);
           padding:1.2rem 1.3rem;border-radius:2px;font-size:.95rem}
@@ -580,22 +587,26 @@ on every bench commit — then the page asks GitHub, live, whether each public b
 })();
 </script>
 <script>
-/* the vessel — a glass orb in the siri manner: ribbons of light wound around a sphere,
-   idle and slow when ignored, awake when looked at. canvas 2D only; a no-js or no-canvas
-   browser simply does not see it, which is the correct silence. */
+/* the vessel — since 2026-09-13 drawn the apple way: glass, not a screen. What changed over
+   the ribbon-scope original: hues travel (each band samples a rotating azure→indigo→violet→
+   rose→cyan ring, the Apple Intelligence palette); every band is painted twice — a blurred
+   bloom under its body, so light has ember and not just stroke; the sphere gets the three
+   shading facts of real glass: a darkened rim (vignette), a cool bounce light welling from
+   below, a soft specular on the shoulder; and it floats over a pool of light (css). The
+   interaction grammar — idle quiet, hover wake, click flare — is byte-for-byte the old one. */
 (function(){
   var cv=document.getElementById('orb'); if(!cv||!cv.getContext) return;
   var DPR=Math.min(2.5,window.devicePixelRatio||1);
   cv.width=Math.round(cv.clientWidth*DPR); cv.height=Math.round(cv.clientHeight*DPR);
   var ctx=cv.getContext('2d');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var E=.25,T=.25,hover=false,imp=0,t0=performance.now();
+  var E=.18,T=.18,hover=false,imp=0,t0=performance.now();
   var wrap=document.getElementById('orbwrap'), ripple=document.getElementById('orbripple');
   cv.addEventListener('mouseenter',function(){hover=true});
   cv.addEventListener('mouseleave',function(){hover=false});
-  function touchIt(){                       // Qwen’s click grammar: burst + press-back + flare
-    hover=!hover;                           // a tap means what a hover means on glass
-    cv.classList.add('push'); setTimeout(function(){cv.classList.remove('push')},140);
+  function touchIt(){                       // Qwen’s click grammar, untouched: burst + press-back + flare
+    hover=!hover;
+    cv.classList.add('push'); setTimeout(function(){cv.classList.remove('push')},150);
     if(ripple){ripple.classList.remove('burst'); void ripple.offsetWidth; ripple.classList.add('burst');
                ripple.addEventListener('animationend',function h(){ripple.classList.remove('burst');
                                                         ripple.removeEventListener('animationend',h)});}
@@ -603,39 +614,67 @@ on every bench commit — then the page asks GitHub, live, whether each public b
   }
   cv.addEventListener('pointerdown',function(ev){if(ev.pointerType==='touch')touchIt()});
   cv.addEventListener('click',function(){if(window.matchMedia&&window.matchMedia('(hover: hover)').matches){touchIt()}});
-  function ribbon(cx,cy,r,time,band,phase,hue,amp,speed){
-    ctx.save(); ctx.beginPath();
-    var y0=cy+band*r;
+  var RING=[[96,160,255],[131,126,255],[191,90,242],[255,96,150],[100,210,255]];   // the hue ring
+  function col(t){t=((t%1)+1)%1;var n=RING.length,x=t*n,i=Math.floor(x),f=x-i,
+    a=RING[i%n],b=RING[(i+1)%n];return[a[0]+(b[0]-a[0])*f,a[1]+(b[1]-a[1])*f,a[2]+(b[2]-a[2])*f];}
+  function rgba(c,a){return'rgba('+(c[0]|0)+','+(c[1]|0)+','+(c[2]|0)+','+a+')';}
+  var BANDS=[{o:-.50,t:.02,a:.72,s:.62},{o:-.17,t:.24,a:1.0,s:.88},{o:.12,t:.46,a:.92,s:.70},
+             {o:.40,t:.66,a:.80,s:.98},{o:.66,t:.84,a:.58,s:.54}];
+  function ribbon(cx,cy,r,time,b,amp,blur){
+    ctx.beginPath();
+    var y0=cy+b.o*r;
     for(var x=-r-4;x<=r+4;x+=4){
-      var k=Math.sqrt(Math.max(0,1-(x/r)*(x/r)));          // the sphere’s silhouette flattens the bands
-      var yy=y0+amp*r*k*Math.sin((x/r)*3.1+time*speed+phase);
+      var k=Math.sqrt(Math.max(0,1-(x/r)*(x/r)));            // the sphere’s silhouette flattens the bands
+      var u=x/r;
+      var yy=y0+r*k*amp*(Math.sin(u*3.0+time*b.s+b.t*9)+.32*Math.sin(u*6.7-time*b.s*.55+b.t*5));
       if(x<=-r) ctx.moveTo(cx+x,yy); else ctx.lineTo(cx+x,yy);
     }
-    ctx.strokeStyle='hsla('+hue+',92%,70%,.55)'; ctx.lineWidth=6.5*DPR; ctx.lineCap='round';
-    ctx.shadowColor='hsla('+hue+',95%,70%,.9)'; ctx.shadowBlur=10*DPR*(.5+E);
-    ctx.stroke(); ctx.restore();
+    var g=ctx.createLinearGradient(cx-r,0,cx+r,0), drift=time*.045;   // hues travel along the band
+    for(var s=0;s<=4;s++) g.addColorStop(s/4, rgba(col(b.t+drift+s*.11), s===0||s===4? 0 : .95));
+    ctx.strokeStyle=g;
+    ctx.lineWidth=(blur?9.5:4.2)*DPR*(.72+.4*amp*8);
+    if(blur){ctx.filter='blur('+(5*DPR)+'px)'; ctx.globalAlpha=.5;} else {ctx.filter='none'; ctx.globalAlpha=.9;}
+    ctx.lineCap='round'; ctx.stroke();
   }
   function draw(now){
     var time=(now-t0)/1000;
-    T=(hover?1:.25)+imp; imp*=.95; if(imp<.01)imp=0;      // idle stays quiet; a click flares and decays
-    E+=(T-E)*.05;                                          // it wakes, and it settles
+    T=(hover?1:.18)+imp; imp*=.95; if(imp<.01)imp=0;         // idle stays quiet; a click flares and decays
+    E+=(T-E)*((T>E)?.06:.025);                               // wakes fast, settles slow — the difference is the class
     ctx.clearRect(0,0,cv.width,cv.height);
     var cx=cv.width/2,cy=cv.height/2,r=cv.width*.42;
     ctx.save(); ctx.beginPath(); ctx.arc(cx,cy,r,0,7); ctx.clip();
-    var g=ctx.createRadialGradient(cx-r*.35,cy-r*.4,r*.1,cx,cy,r);
-    g.addColorStop(0,'rgba(95,125,255,'+(0.18+0.14*E)+')');
-    g.addColorStop(.75,'rgba(28,38,84,.35)');
-    g.addColorStop(1,'rgba(12,14,24,.92)');
+    // the dark glass body
+    var g=ctx.createRadialGradient(cx-r*.3,cy-r*.42,r*.08,cx,cy,r*1.05);
+    g.addColorStop(0,'rgba(28,36,74,'+(0.55+0.25*E)+')');
+    g.addColorStop(.6,'rgba(13,17,36,.9)');
+    g.addColorStop(1,'rgba(7,9,17,.98)');
     ctx.fillStyle=g; ctx.fillRect(cx-r,cy-r,2*r,2*r);
-    var bands=[[-.55,205,.75],[-.2,258,1],[.1,300,.95],[.38,332,.8],[.62,196,.65]];
-    for(var i=0;i<bands.length;i++){var b=bands[i];
-      ribbon(cx,cy,r,time,b[0],i*1.7,b[1]+16*E*Math.sin(time*.7+i),(0.09+0.17*E)*b[2],.7+E*1.5);}
-    var h=ctx.createRadialGradient(cx-r*.4,cy-r*.55,0,cx-r*.4,cy-r*.55,r*.75);
-    h.addColorStop(0,'rgba(255,255,255,.26)'); h.addColorStop(1,'rgba(255,255,255,0)');
+    // ribbons: bloom first, body on top, all additively — light accumulates the way it does in glass
+    ctx.globalCompositeOperation='lighter';
+    var amp=.045+.105*E;
+    for(var i=0;i<BANDS.length;i++) ribbon(cx,cy,r,time,BANDS[i],amp*(.7+.6*E),true);
+    for(var i=0;i<BANDS.length;i++) ribbon(cx,cy,r,time,BANDS[i],amp*(.7+.6*E),false);
+    ctx.filter='none'; ctx.globalAlpha=1;
+    // vignette — real spheres go dark at the rim
+    var v=ctx.createRadialGradient(cx,cy,r*.55,cx,cy,r);
+    v.addColorStop(0,'rgba(0,0,0,0)'); v.addColorStop(1,'rgba(4,6,12,.55)');
+    ctx.globalCompositeOperation='source-over'; ctx.fillStyle=v; ctx.fillRect(cx-r,cy-r,2*r,2*r);
+    // bounce light welling from below the equator
+    var bl=ctx.createRadialGradient(cx,cy+r*.82,0,cx,cy+r*.82,r*.85);
+    bl.addColorStop(0,'rgba(110,150,255,'+(0.10+0.12*E)+')'); bl.addColorStop(1,'rgba(110,150,255,0)');
+    ctx.fillStyle=bl; ctx.fillRect(cx-r,cy-r,2*r,2*r);
+    // the specular shoulder, drifting a breath on hover
+    var h=ctx.createRadialGradient(cx-r*.38,cy-r*.52+2*E,0,cx-r*.38,cy-r*.52,r*.6);
+    h.addColorStop(0,'rgba(255,255,255,'+(0.20+0.08*E)+')'); h.addColorStop(1,'rgba(255,255,255,0)');
     ctx.fillStyle=h; ctx.fillRect(cx-r,cy-r,2*r,2*r);
     ctx.restore();
+    // the rim: cold at the top, alive at the bottom
+    var rm=ctx.createLinearGradient(cx,cy-r,cx,cy+r);
+    rm.addColorStop(0,'rgba(255,255,255,'+(0.10+0.06*E)+')');
+    rm.addColorStop(.55,'rgba(140,160,255,'+(0.10+0.10*E)+')');
+    rm.addColorStop(1,'rgba(150,170,255,'+(0.22+0.38*E)+')');
     ctx.beginPath(); ctx.arc(cx,cy,r,0,7);
-    ctx.strokeStyle='rgba(160,170,255,'+(0.22+0.4*E)+')'; ctx.lineWidth=1.4*DPR; ctx.stroke();
+    ctx.strokeStyle=rm; ctx.lineWidth=1.3*DPR; ctx.stroke();
     if(!reduce) requestAnimationFrame(draw);
   }
   if(reduce) draw(performance.now()); else requestAnimationFrame(draw);
