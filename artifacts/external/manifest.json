@@ -88,6 +88,56 @@
    "by": "math4mad@431bb59",
    "script": "shasum -a 256 <path>",
    "notes": "Companion CSS of the Apple-style package: token system, fluid type via clamp(), glass nav, card/table/button components, mesh-gradient background, dark mode, 6 responsive breakpoints, prefers-reduced-motion + print styles."
+  },
+  {
+   "path": "artifacts/external/Qwem-mention-emali-sys/internel-mail-stystem.docx",
+   "sha256": "73646c20c53ca2b821a7f6d178ab039742acf6601da78d1a654cdcf394a225d1",
+   "bytes": 13891,
+   "source": "external: delivered by the human into artifacts/external/ on 2026-09-13 ~18:27-18:54 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Qwen (as Chora persona) proposal: Chora Mail System — .mail/{inbox,outbox,archive}, mail==markdown==git-commit, bash-only, no SMTP. Narrative document; (AI生成) marked at its own footer."
+  },
+  {
+   "path": "artifacts/external/Qwem-mention-emali-sys/mail&shortcut-name.docx",
+   "sha256": "9100a60a3acecff6e955effcf9ab72b7610b68e2b7b7b24c326d4d94edc94247",
+   "bytes": 13024,
+   "source": "external: delivered by the human into artifacts/external/ on 2026-09-13 ~18:27-18:54 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Qwen (as Chora persona) task list v0.1: @agents routing layer, CMS details, AGENTS.md completion incl. proposed Law 8 (same error thrice -> demand refactor). Narrative document; (AI生成) marked."
+  },
+  {
+   "path": "artifacts/external/Qwem-mention-emali-sys/plus-my-suggestion.md",
+   "sha256": "d536486bcf55bc0b363d3655acc55e53967084e8cdc2f520fca1d2234e403a5a",
+   "bytes": 327,
+   "source": "external: delivered by the human into artifacts/external/ on 2026-09-13 ~18:27-18:54 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "The owner's own three lines: list benches' notes-pages under chora (show our muscle); logo-style footer links per project; our own sites must interlink first."
+  },
+  {
+   "path": "artifacts/external/outer-license/LICENSE.md",
+   "sha256": "93b79ee4dec0bece471683739e278711185daf0ddbc5df71abf23e74c2b09176",
+   "bytes": 2253,
+   "source": "external: delivered by the human into artifacts/external/ on 2026-09-13 ~18:27-18:54 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Draft license: Family Use free inside the city-state (membership = (path,sha256) chain), External Use requires written commercial license; bans commercial reuse, removal of notices, template resale. Filed for review — NOT yet adopted anywhere."
+  },
+  {
+   "path": "artifacts/external/outer-license/TERMS.md",
+   "sha256": "91a88cb6e4d3bd334b68c5c9aed0c20309e5cf5fabdead4ebe0c1e226cd91020",
+   "bytes": 1687,
+   "source": "external: delivered by the human into artifacts/external/ on 2026-09-13 ~18:27-18:54 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "One-page external explainer of the same license incl. the needs-authorization table. Filed for review — NOT yet adopted anywhere."
   }
  ]
 }
