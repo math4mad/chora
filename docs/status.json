@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T02:50:44Z",
- "chora_head": "d084098",
+ "generated": "2026-09-13T02:54:51Z",
+ "chora_head": "a922d10",
  "benches": [
   {
    "name": "JacobiGP",
@@ -14,11 +14,11 @@
   },
   {
    "name": "MEF",
-   "head": "21eadd4",
-   "commit_at": "2026-09-13T10:50:37+08:00",
-   "subject": "PREREG_H9M §2.4: amendment 3, filed after the band froze and before any k>0 number was read — my own control r",
-   "dirty": 4,
-   "state": "synced",
+   "head": "061002f",
+   "commit_at": "2026-09-13T10:54:44+08:00",
+   "subject": "H9-M registered runs on A: three seeds × (15 arms + 5 no-adapter controls + frozen floors), plus the seed-13 l",
+   "dirty": 1,
+   "state": "local +1 unpushed",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
   },
