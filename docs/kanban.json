@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T03:00:32Z",
- "chora_head": "c1a8dce",
+ "generated": "2026-09-13T03:07:01Z",
+ "chora_head": "93285c7",
  "counts": {
   "idea": 0,
   "registered": 5,
   "equipped": 4,
-  "landed": 1,
-  "scored": 1,
+  "landed": 2,
+  "scored": 2,
   "announced": 1,
   "closed": 8,
-  "blocked": 13,
-  "RECONCILE": 6
+  "blocked": 11,
+  "RECONCILE": 8
  },
  "rows": [
   {
@@ -156,14 +156,19 @@
    "owner": "Warden",
    "bench": "MEF",
    "lane": "blocked",
-   "claim": "blocked",
+   "claim": "scored",
    "verdict": null,
    "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme",
    "budget": null,
-   "next": "OPEN, not passed: the only A-vs-B ladder pair so far is cross-seed, so no machine-effect number is quotable from it.",
-   "flags": [],
+   "next": "reported inside H9-M's verdict.json (gate6_cross_machine_twin); no further twin work — but B's grid has no control arms, so W is A-only",
+   "flags": [
+    "no bytes on disk: artifacts/results/mef/stage19_h9m/gate6_twin.json",
+    "verdict source file absent: artifacts/results/mef/stage19_h9m/gate6_twin.json",
+    "CLAIM DRIFT: the hand says 'scored', the bytes say 'blocked'"
+   ],
    "detail": {
     "prereg": "chora@4250f0d letters/2026-09-11-chair-all-two-machine-day.md",
+    "apparatus": "chora:experiments/h9m_score.py",
     "verdict": null,
     "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme"
    }
@@ -619,8 +624,8 @@
    "kind": "measurement",
    "owner": "Anatomist",
    "bench": "MEF",
-   "lane": "blocked",
-   "claim": "blocked",
+   "lane": "landed",
+   "claim": "landed",
    "verdict": null,
    "gated_by": "h9m-registered",
    "budget": null,
@@ -639,18 +644,24 @@
    "kind": "experiment",
    "owner": "Anatomist",
    "bench": "MEF",
-   "lane": "blocked",
-   "claim": "blocked",
-   "verdict": null,
+   "lane": "scored",
+   "claim": "announced",
+   "verdict": "FAILS",
    "gated_by": "h9m-band",
    "budget": null,
-   "next": "--score after the band; then the letter to Kairos with whichever of the two outcomes it is",
-   "flags": [],
+   "next": "Kairos reads the obituary; H9-M'' (frozen-base ladder: a full base per rung, base held fixed at every injection point) is the next apparatus claim, and it is Kairos's question to want or not want",
+   "flags": [
+    "letter not committed in its own bench (mirror points at a working tree)",
+    "letter not mirrored/tracked in chora/letters/",
+    "letter number 025 absent from letters/INDEX.md",
+    "CLAIM DRIFT: the hand says 'announced', the bytes say 'scored'"
+   ],
    "detail": {
     "prereg": "MEF@d197560 docs/PREREG_H9M.md",
     "apparatus": "chora:experiments/h9m_score.py",
-    "verdict": null,
-    "gated_by": "h9m-band"
+    "verdict": "FAILS",
+    "gated_by": "h9m-band",
+    "reconcile": true
    }
   }
  ],
@@ -659,7 +670,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint c1a8dce, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 93285c7, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
