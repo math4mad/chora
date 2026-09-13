@@ -1,0 +1,47 @@
+{
+ "seeds": 14,
+ "machine_A": "m1pro-32g",
+ "machine_B": "m1-16g",
+ "floors_B_A": {
+  "0": 5.6587,
+  "25": 1.352345,
+  "50": 1.155591,
+  "75": 1.090114,
+  "100": 1.039544
+ },
+ "floors_B_B": {
+  "0": 5.6587,
+  "25": 1.38126,
+  "50": 1.17954,
+  "75": 1.088491,
+  "100": 1.03129
+ },
+ "max_abs_diff": 0.028914,
+ "gates": {
+  "gate6_twins": "same seed, two laptops \u2014 the programme's first quotable machine-effect number, and it is at the FLOOR level; arm-level comparisons need B's controls, which do not exist"
+ },
+ "never_pooled_into_band": true,
+ "kind": "Gate 6 \u2014 the twins: same seed, two laptops (the programme's first quotable machine-effect number)",
+ "status": "CLOSED",
+ "rule_met": "Gate 6 asked for an A-vs-B pair of the SAME seed. A ran seed 14's whole ladder on 2026-09-13 for H9-M's band and produced the pair as a by-product.",
+ "per_rung_deltas_nats": {
+  "0": 0.0,
+  "25": 0.028914,
+  "50": 0.023949,
+  "75": 0.001622,
+  "100": 0.008254
+ },
+ "reading": [
+  "exactly zero at k=0: the step-0 initialisation is deterministic, so the two machines agree to the last bit where no training has happened;",
+  "divergence appears only once each machine has trained its own base: max 0.028914 nats at k=25;",
+  "that is BELOW the seed-noise band (0.045188 nats) \u2014 the sentence the programme has been waiting two days for: on this statistic the laptops agree to within the noise the seeds themselves make."
+ ],
+ "caveats": [
+  "floors only (frozen base at each rung, stream B). Arm-level machine effect needs B to run the no-adapter controls, which do not exist in B's grid.",
+  "never pooled into H9-M's band: PREREG_H9M \u00a74 excludes cross-machine spreads, because a two-laptop spread confounds machine with seed."
+ ],
+ "inputs": {
+  "A": "artifacts/results/mef/stage19_h9m/seed14_sweep_full.json",
+  "B": "artifacts/results/mef/E0_seed14_sweep_full.json"
+ }
+}

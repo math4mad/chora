@@ -1,15 +1,15 @@
 {
- "generated": "2026-09-13T03:07:01Z",
- "chora_head": "93285c7",
+ "generated": "2026-09-13T03:07:30Z",
+ "chora_head": "ea9ba23",
  "counts": {
   "idea": 0,
   "registered": 5,
   "equipped": 4,
   "landed": 2,
-  "scored": 2,
+  "scored": 3,
   "announced": 1,
   "closed": 8,
-  "blocked": 11,
+  "blocked": 10,
   "RECONCILE": 8
  },
  "rows": [
@@ -155,22 +155,22 @@
    "kind": "gate",
    "owner": "Warden",
    "bench": "MEF",
-   "lane": "blocked",
+   "lane": "scored",
    "claim": "scored",
-   "verdict": null,
+   "verdict": "CLOSED",
    "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme",
    "budget": null,
    "next": "reported inside H9-M's verdict.json (gate6_cross_machine_twin); no further twin work — but B's grid has no control arms, so W is A-only",
    "flags": [
-    "no bytes on disk: artifacts/results/mef/stage19_h9m/gate6_twin.json",
-    "verdict source file absent: artifacts/results/mef/stage19_h9m/gate6_twin.json",
-    "CLAIM DRIFT: the hand says 'scored', the bytes say 'blocked'"
+    "apparatus exists but is untracked: experiments/h9m_gate6_extract.py",
+    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/mef/stage19_h9m/gate6_twin.json"
    ],
    "detail": {
     "prereg": "chora@4250f0d letters/2026-09-11-chair-all-two-machine-day.md",
-    "apparatus": "chora:experiments/h9m_score.py",
-    "verdict": null,
-    "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme"
+    "apparatus": "chora:experiments/h9m_gate6_extract.py",
+    "verdict": "CLOSED",
+    "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme",
+    "reconcile": true
    }
   },
   {
@@ -653,7 +653,6 @@
    "flags": [
     "letter not committed in its own bench (mirror points at a working tree)",
     "letter not mirrored/tracked in chora/letters/",
-    "letter number 025 absent from letters/INDEX.md",
     "CLAIM DRIFT: the hand says 'announced', the bytes say 'scored'"
    ],
    "detail": {
@@ -666,11 +665,12 @@
   }
  ],
  "audits": [
-  "pins: 125 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 126 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 1",
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
+  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/mef/stage19_h9m/gate6_twin.json",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint 93285c7, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 93285c7, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }

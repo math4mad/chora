@@ -243,10 +243,22 @@
     "commit": "4250f0d",
     "marker": "machine-effect"
    },
-   "claim": "blocked",
+   "claim": "scored",
    "gated_by": "human: run the twin of B's seed 14 on A (or seed 15's sweep on B), or retire Gate 6 for this programme",
-   "next": "OPEN, not passed: the only A-vs-B ladder pair so far is cross-seed, so no machine-effect number is quotable from it.",
-   "notes": "Within-machine spread 509.7 → 742.5 s filed as a question; H6c's 325.68 s cell against ~12 s siblings is a second sample of the same oddity, same machine, same rig, same threads."
+   "next": "reported inside H9-M's verdict.json (gate6_cross_machine_twin); no further twin work — but B's grid has no control arms, so W is A-only",
+   "notes": "Within-machine spread 509.7 → 742.5 s filed as a question; H6c's 325.68 s cell against ~12 s siblings is a second sample of the same oddity, same machine, same rig, same threads. | CLOSED 2026-09-13 11:0x: A ran seed 14's whole ladder this morning for H9-M's band and got the twins for free. The programme's first quotable machine-effect number, and it arrived as a by-product of a failure.",
+   "verdict": {
+    "at": "status"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/h9m_gate6_extract.py"
+   },
+   "produces": [
+    {
+     "path": "artifacts/results/mef/stage19_h9m/gate6_twin.json"
+    }
+   ]
   },
   {
    "id": "e3-last-mile",
@@ -787,10 +799,15 @@
     "repo": "chora",
     "path": "experiments/h9m_score.py"
    },
-   "claim": "blocked",
+   "claim": "landed",
    "gated_by": "h9m-registered",
    "notes": "Tested at 09:53 while the runs were in flight: it refused (0 same-machine seeds with control arms) and wrote nothing. The refusal is the instrument. | The board flags a row whose `produces` path does not exist yet — correct, and the fix is to declare the artifact when it is real, not to pre-register a filename.",
-   "next": "run --band the moment two seeds exist; B's seed-14 grid is excluded from this row by construction"
+   "next": "run --band the moment two seeds exist; B's seed-14 grid is excluded from this row by construction",
+   "produces": [
+    {
+     "path": "artifacts/results/mef/stage19_h9m/band.json"
+    }
+   ]
   },
   {
    "id": "h9m-verdict",
@@ -809,9 +826,22 @@
     "path": "experiments/h9m_score.py"
    },
    "gated_by": "h9m-band",
-   "claim": "blocked",
+   "claim": "announced",
    "notes": "A FAILS here is the obituary the Warden wrote and §6 moved intact — it goes to the dossier's author, loudly, and it is a first-class result. If only clause (iii) fails, capacity returns as a new claim (H9-M′) and may not be retro-fitted. | The board flags a row whose `produces` path does not exist yet — correct, and the fix is to declare the artifact when it is real, not to pre-register a filename.",
-   "next": "--score after the band; then the letter to Kairos with whichever of the two outcomes it is"
+   "next": "Kairos reads the obituary; H9-M'' (frozen-base ladder: a full base per rung, base held fixed at every injection point) is the next apparatus claim, and it is Kairos's question to want or not want",
+   "produces": [
+    {
+     "path": "artifacts/results/mef/stage19_h9m/verdict.json"
+    }
+   ],
+   "letter": {
+    "repo": "MEF",
+    "mirror": "letters/2026-09-13-MEF-Kairos-h9m-fails-flat-in-k.md",
+    "index": "025"
+   },
+   "verdict": {
+    "at": "verdict/status"
+   }
   }
  ]
 }

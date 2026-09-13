@@ -423,6 +423,16 @@
    "by": "MEF@21eadd4",
    "script": "shasum -a 256 MEF/outputs/stage19_h9m_seed{14,15}/ckpt_k*.pt",
    "notes": "Second instalment of the checkpoint index the same way as the first: 10 (path, sha256, bytes, recipe) rows, no bytes in git, and the claim 'reproducible from seed' kept where it belongs \u2014 as a claim, next to a fact. run-on: m1pro-32g (A)."
+  },
+  {
+   "path": "artifacts/results/mef/stage19_h9m/gate6_twin.json",
+   "sha256": "52efb2a5baf5e603510906f53bbd510e32a6c3fcec95b2e00b6d6c34f7c764aa",
+   "bytes": 1883,
+   "source": "extracted from verdict.json so a claim has a byte of its own (the board's own lesson: an audit line on stdout is not a fact)",
+   "obtained": "2026-09-13",
+   "by": "MEF@21eadd4",
+   "script": "chora/experiments/h9m_score.py --score, then extracted by chora/experiments/h9m_gate6_extract.py",
+   "notes": "Gate 6 CLOSED: seed 14 on both laptops, floors max |delta| 0.028914 nats, exactly 0.000000 at k=0; below the 0.045188-nat seed band. run-on: A side m1pro-32g, B side m1-16g."
   }
  ]
 }
