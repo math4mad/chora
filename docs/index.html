@@ -58,15 +58,15 @@
   /* three knobs */
   .knobs{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.8rem}
   .knob{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--line);
-        padding:1.2rem 1.3rem;border-radius:2px}
+        padding:1.2rem 1.3rem;border-radius:2px;display:flex;flex-direction:column}
   .knob h3{font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);font-weight:400}
-  .knob .greekname{font-size:1.5rem;margin:.25rem 0 .4rem}
-  .knob p{font-size:.92rem;color:var(--dim)}
+  .knob .greekname{font-size:1.5rem;margin:.25rem 0 .4rem;line-height:1.35}   /* fixed box: the λₙ subscript must not borrow height from a fallback font */
+  .knob p{font-size:.92rem;color:var(--dim);line-height:1.6;margin-bottom:.65rem}  /* house leading, not the pack's 1.7 — and a set gap below */
   .knob.size{border-top-color:var(--green)} .knob.size .greekname{color:var(--green)}
   .knob.order{border-top-color:var(--red)} .knob.order .greekname{color:var(--red)}
   .knob.shape{border-top-color:var(--gold)} .knob.shape .greekname{color:var(--gold)}
   .verdict{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
-           margin-top:.6rem;padding:.1rem .5rem;border:1px solid currentColor;border-radius:2px}
+           margin-top:auto;padding:.1rem .5rem;border:1px solid currentColor;border-radius:2px}  /* pinned to the base: three seals, one line, whatever the prose above weighs */
   /* for visitors — the tongues, and the vessel that wakes */
   /* interaction per Qwen's suggestion (pinned bytes: artifacts/external/Qwen-suggestion-hover-global/):
      idle — quiet sphere, ripples invisible · hover — swell 1.06, ripple breathes like a heartbeat
