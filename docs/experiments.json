@@ -104,9 +104,9 @@
      "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json"
     }
    ],
-   "claim": "equipped",
+   "claim": "landed",
    "next": "the pilot answers the curve-source gate from the cheap side while the Anatomist looks for the MEF rank sweeps; its ordering guard (A2 in HEAD, one draw only) is the same shape H6c used, so the same disclosure discipline applies to it.",
-   "notes": "Registered by A2 at JacobiGP@0a60707 BEFORE any curve was fit; regime row training-under-a-rank-constraint, never merged with post-hoc truncation or the frozen-base lora rows; only history[*].mse_val crosses into a fit — the test split is never read. Apparatus is in this workspace UNTRACKED as of this render, which the board flags rather than forgives."
+   "notes": "Registered by A2 at JacobiGP@0a60707 BEFORE any curve was fit; regime row training-under-a-rank-constraint, never merged with post-hoc truncation or the frozen-base lora rows; only history[*].mse_val crosses into a fit — the test split is never read. Apparatus is in this workspace UNTRACKED as of this render, which the board flags rather than forgives. | claim corrected 2026-09-13 by the hand that ran the pilot: the row said 'equipped' when the verdict and fits were already on disk, pinned and hash-verified — understating is still drift, and the board marked it red for a reason. Not yet 'scored': the derived lane reads the produced bytes, and this row's verdict is a DEATH BY CLAUSE that the room still has to accept."
   },
   {
    "id": "exp6-h6b",
@@ -602,8 +602,8 @@
     "marker": "A forges and publishes; B witnesses"
    },
    "claim": "registered",
-   "next": "fetch refs/heads/bench-B-* in every bench on A (PolyNN@a0deb68, PolyNN@2fcb158 and Sarcos@b22f1e9 are the ones this board names). Then the `by: repo@sha` field means the same thing on both machines.",
-   "notes": "The half-finished form of law 2 — invisible to every check that validates a hash but not a provenance pointer."
+   "next": "done in fact, invisible to the board: a fetch leaves no artifact, so no lane above 'registered' is reachable honestly. If the board wants this closable, its own citation audit line ('every repo@sha in letters/ and AGENTS.md resolves in a clone here') has to become a produced byte — a rendered report with a hash — rather than stdout. Proposal to ws-kanban's author.",
+   "notes": "The half-finished form of law 2 — invisible to every check that validates a hash but not a provenance pointer. | DONE 2026-09-13 09:3x on A: `git fetch origin +refs/heads/*:refs/remotes/origin/*` in all five benches; PolyNN@a0deb68, PolyNN@2fcb158, Sarcos@b22f1e9 and MEF@ddf1d16 now resolve in a clone here, and the board's citation audit prints 'every repo@sha in letters/ and AGENTS.md resolves in a clone here'. Law 2 was half-satisfied for three days: the bytes crossed, their authorship pointers had not."
   },
   {
    "id": "ws-phantom-numbers",
@@ -645,6 +645,122 @@
    "claim": "registered",
    "next": "render it on the hosted glass (docs/index.html reads docs/kanban.json — the page should show lane counts + the red rows, not a second truth), then let the room try to make it lie: the four failures of 2026-09-12 (pinned-without-bytes, tracked-without-pin, cited-without-commit, painted-into-limbo) are its seed cases.",
    "notes": "Born the same hour as D1 for the same reason: anything that reports on the work must also report on itself. Its first run found two things no human had: PolyNN's paperwork is outside git, and Letter 011's mirror is filed under a different number than its answer."
+  },
+  {
+   "id": "ws-manifest-existence",
+   "title": "The four-clause pin check (existence, not presence) — running on every publisher beat",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "docs/stale-pins.md",
+    "commit": "f77f669",
+    "marker": "# Stale-pin registry"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "bin/validate-manifests.sh"
+   },
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-12-chair-B-rebase-closed-d1-landed-pins-held.md",
+    "index": "021"
+   },
+   "claim": "closed",
+   "next": null,
+   "notes": "Three incidents in thirty hours, one finding: a pin at the SHA-256 of nothing (season-1 outline), a pin whose bytes exist in no commit and on no disk (pretrain.log, also inside B's own 108-pair baseline), and a pin taken from the working tree while HEAD carried the file's previous version (h6a_pilot_spectra, two agents in one clone). All three were valid JSON with correct hashes and conventional paths. First run of the check printed 60 'failures' and 59 were by design — models/ and data/ are git-ignored by law 1 — so the waiver is per ENTRY, never inferred from a directory name by a person. Current state: 118 pins / 6 manifests / 2 failures / 0 unexempted; a bit flipped in one pin made it name C3 and C4 on the right path within one line."
+  },
+  {
+   "id": "ws-writer-lock",
+   "title": "A shared clone is still one writer — advisory lock for the sequences git cannot see",
+   "kind": "workspace",
+   "owner_seat": "chair",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "AGENTS.md",
+    "commit": "f77f669",
+    "marker": "A shared clone is still one writer"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "bin/writelock.sh"
+   },
+   "claim": "equipped",
+   "next": "Meeting 004 Q3: the room ratifies this as practice, or orders one clone per session and retires it. Advisory by design — it cannot stop a hand, only make being stopped visible.",
+   "notes": "Law 3 holds per repository, not per person. On 2026-09-12 it broke at 19:44 with both hands correct: a manifest entry was pinned from the working tree while the commit carried the file's previous version, because the collision was between two agents' add→commit SEQUENCES — which git has no notion of. The lock records holder, session, pid, ttl, and (on a take) the reason and the previous holder, so a steal cannot be denied afterwards."
+  },
+  {
+   "id": "h9m-draft-and-instrument",
+   "title": "H9-M: the critical-window DRAFT (currency = gain over the same-k floor), the checkpoint index that satisfies R2, and an instrument that refuses to run before the paperwork",
+   "kind": "paperwork",
+   "owner_seat": "Anatomist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/PREREG.md",
+    "commit": "ae6be01",
+    "marker": "H9-M"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/h9m_seed15_and_band.py"
+   },
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-12-chair-kairos-mef-h9-travels-currency-changes.md",
+    "index": "024"
+   },
+   "claim": "closed",
+   "gated_by": "MEF's answer to Letter 024: adopt, amend, or refuse the H9-M draft — the canonical text and the frozen date belong to MEF's commit, not to Kairos's draft and not to this board",
+   "budget": "~30 min once the text exists: base ladder seed 15 (742.5 s, B's measured unit) + 15 arms (96.2 s/arm, A's measured unit); the k=0 replicate band must be computed on ONE machine first, because two seeds on two laptops confounds machine with seed and Gate 6 is still open",
+   "next": null,
+   "notes": "Why the currency changes: H9's wording — minimum rank matching the k=0 run — inverts on the rig where k is native, because the base alone beats the k=0 target at k=75/100 (A) and k=100 (B); and it is not stable even at its reference rung (r(0)=2 on A, 8 on B, one seed and one laptop apart). What DOES replicate across those two grids is the window: gain over the same-k floor collapses 82× (A) and 95× (B) from k=0 to k=100 while r=2 captures ~99.8% of what r=32 buys at every rung (≤0.014 nats). Venue moved here by Letter 011 §2's own travel clause after Step 0 returned no-dose-qualifies; the arena died, not the claim, and H9-S's flat-curve obituary never fired. | This row is the DRAFT and the apparatus only. The registration itself is h9-mef-text, a row whose registered text does not exist yet — the board calls that lane 'idea', and that is the honest name for it.",
+   "produces": [
+    {
+     "path": "artifacts/checkpoints/stage18_kairos_ladder.json"
+    }
+   ]
+  },
+  {
+   "id": "ws-pretrain-log-pin",
+   "title": "The carried exemption: E0_seed14_pretrain.log is pinned (d9b7adee7597…) and its bytes exist in no commit and on no disk",
+   "kind": "workspace",
+   "owner_seat": "Horologist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "chora",
+    "path": "letters/2026-09-12-chair-B-rebase-closed-d1-landed-pins-held.md",
+    "commit": "932da03",
+    "marker": "A pin with no bytes anywhere"
+   },
+   "consumes": [
+    {
+     "path": "artifacts/results/mef/E0_seed14_base_run.json"
+    }
+   ],
+   "claim": "registered",
+   "next": "the writer of the entry (B, E0 seed 14) either lands the log or amends the entry to say plainly what models/ says in the open — these bytes live on one laptop and are not in git — keeping the hash as the witness of what was seen. A will not touch B's entry (law 3).",
+   "notes": "Listed as the single exemption in docs/stale-pins.md, so the validator is clean while the defect is alive — which is the point of a registry rather than a suppression flag. Second-order finding, filed in Letter 021 §5: the pin also sits at line 21 of B's own docs/pin-baseline-2026-09-12-eve.txt, so the 108-pair diff target B published to catch lost pins is satisfied by an entry whose bytes cannot be produced. A baseline that checks survival of pins does not check their satisfiability; that gap is why bin/validate-manifests.sh exists and why the exemption must be named rather than counted."
+  },
+  {
+   "id": "h9-mef-text",
+   "title": "H9-M registration OWED — the canonical text, frozen date, band and obituary must appear in MEF's docs (a draft exists at Kairos@ae6be01; a draft is not a registration)",
+   "kind": "paperwork",
+   "owner_seat": "Anatomist",
+   "owner_bench": "MEF",
+   "gated_by": "h9m-draft-and-instrument",
+   "claim": "blocked",
+   "budget": "~30 min after the text exists: seed 15 base ladder (742.5 s, B's unit) + 15 arms (96.2 s/arm, A's unit); the k=0 replicate band first, on ONE machine",
+   "next": "MEF answers Letter 024: adopt, amend, or refuse Kairos@ae6be01. Adopting means committing the text with a frozen date; the staged instrument (chora/experiments/h9m_seed15_and_band.py) checks for six specific clauses and refuses --force, so 'adopted' must be words in MEF's docs, not a mood.",
+   "notes": "What the text has to say, already drafted: metric G(k,r)=floor_B(k)−final_B(k,r) (same-k reference — the wording H9 inherited inverts at late k, where the base alone beats the k=0 target); one conjunctive check (strictly decreasing, a ratio <½ somewhere, G(k,2) ≥ 0.9·G(k,32)); r(k) demoted to a secondary reading that can neither rescue nor upgrade; rows (a)/(b) unfused with only (a) allowed to kill; every arm on the base's own schedule (Sarcos's one export from the ep300/ep60 confound); band from same-machine k=0 replicates; and the obituary moved intact from the Warden's sentence — 'if the curve is flat, the critical-window metaphor dies, loudly, and 设想5's author gets it'. | The board taught me this twice inside two minutes: a gate only counts when it NAMES a row (free text is not a gate), and a gated row is blocked where it stands — so 'idea' understated and 'blocked' is what the bytes say. Claim drift is flagged in both directions. | BOARD FINDING for the board's own author: a row whose entire subject IS a pre-registration can never satisfy the prereg clause without pretending the registration already exists — it is structurally red until the text lands. Either let kind=paperwork rows carry prereg:null and derive 'idea' without a flag, or accept that the one row which most needs to be visible is the one the board shouts at. Interim: this row is anchored to the DRAFT and says so in its own title, which is the least dishonest reading available.",
+   "prereg": {
+    "repo": "Kairos",
+    "path": "docs/PREREG.md",
+    "commit": "ae6be01",
+    "marker": "H9-M"
+   }
   }
  ]
 }

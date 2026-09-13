@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T01:28:36Z",
- "chora_head": "f77f669",
+ "generated": "2026-09-13T01:32:54Z",
+ "chora_head": "78faad4",
  "counts": {
   "idea": 0,
   "registered": 5,
   "equipped": 4,
   "landed": 1,
   "scored": 1,
-  "announced": 3,
-  "closed": 5,
+  "announced": 1,
+  "closed": 7,
   "blocked": 12,
-  "RECONCILE": 8
+  "RECONCILE": 6
  },
  "rows": [
   {
@@ -58,19 +58,16 @@
    "owner": "Geometer",
    "bench": "JacobiGP",
    "lane": "landed",
-   "claim": "equipped",
+   "claim": "landed",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "the pilot answers the curve-source gate from the cheap side while the Anatomist looks for the MEF rank sweeps; its ordering guard (A2 in HEAD, one draw only) is the same shape H6c used, so the same disclosure discipline applies to it.",
-   "flags": [
-    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'landed'"
-   ],
+   "flags": [],
    "detail": {
     "prereg": "JacobiGP@0a60707 docs/PREREG_EXP6.md",
     "apparatus": "chora:experiments/exp6_h6a_sarcos_pilot.py",
-    "verdict": null,
-    "reconcile": true
+    "verdict": null
    }
   },
   {
@@ -116,15 +113,14 @@
    "kind": "artifact",
    "owner": "Joiner",
    "bench": "PolyNN",
-   "lane": "announced",
+   "lane": "closed",
    "claim": "announced",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "fetch B's bench branches on A (ws-fetch-B-branches) so the authorship pointers of these bytes resolve here.",
    "flags": [
-    "provenance PolyNN@a0deb68 resolves in no ref fetched here — the bytes crossed, their authorship pointer did not (law 2 half-satisfied on this machine)",
-    "provenance PolyNN@2fcb158 resolves in no ref fetched here — the bytes crossed, their authorship pointer did not (law 2 half-satisfied on this machine)"
+    "CLAIM DRIFT: the hand says 'announced', the bytes say 'closed'"
    ],
    "detail": {
     "prereg": "chora@4250f0d letters/2026-09-11-chair-all-two-machine-day.md",
@@ -292,14 +288,14 @@
    "kind": "experiment",
    "owner": "Warden",
    "bench": "Sarcos",
-   "lane": "announced",
+   "lane": "closed",
    "claim": "announced",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "a protocol decision, not a run: no dose qualifies on the current shifted task, so either the task block changes or H9-S is retired with its numbers.",
    "flags": [
-    "provenance Sarcos@b22f1e9 resolves in no ref fetched here — the bytes crossed, their authorship pointer did not (law 2 half-satisfied on this machine)"
+    "CLAIM DRIFT: the hand says 'announced', the bytes say 'closed'"
    ],
    "detail": {
     "prereg": "Sarcos@fb37e04 docs/LETTERS/2026-09-11-to-Kairos-floor-accepted-floor-amended.md",
@@ -472,7 +468,7 @@
    "verdict": null,
    "gated_by": null,
    "budget": null,
-   "next": "fetch refs/heads/bench-B-* in every bench on A (PolyNN@a0deb68, PolyNN@2fcb158 and Sarcos@b22f1e9 are the ones this board names). Then the `by: repo@sha` field means the same thing on both machines.",
+   "next": "done in fact, invisible to the board: a fetch leaves no artifact, so no lane above 'registered' is reachable honestly. If the board wants this closable, its own citation audit line ('every repo@sha in letters/ and AGENTS.md resolves in a clone here') has to become a produced byte — a rendered report with a hash — rather than stdout. Proposal to ws-kanban's author.",
    "flags": [],
    "detail": {
     "prereg": "chora@c3b9ff3 docs/onboarding-B.md",
@@ -600,7 +596,7 @@
   },
   {
    "id": "h9-mef-text",
-   "title": "H9-M on MEF's rig, REGISTERED — the canonical text, the frozen date, the band and the obituary, in MEF's own docs",
+   "title": "H9-M registration OWED — the canonical text, frozen date, band and obituary must appear in MEF's docs (a draft exists at Kairos@ae6be01; a draft is not a registration)",
    "kind": "paperwork",
    "owner": "Anatomist",
    "bench": "MEF",
@@ -610,10 +606,9 @@
    "gated_by": "h9m-draft-and-instrument",
    "budget": "~30 min after the text exists: seed 15 base ladder (742.5 s, B's unit) + 15 arms (96.2 s/arm, A's unit); the k=0 replicate band first, on ONE machine",
    "next": "MEF answers Letter 024: adopt, amend, or refuse Kairos@ae6be01. Adopting means committing the text with a frozen date; the staged instrument (chora/experiments/h9m_seed15_and_band.py) checks for six specific clauses and refuses --force, so 'adopted' must be words in MEF's docs, not a mood.",
-   "flags": [
-    "no pre-registration: this row is an intention, not a registered check"
-   ],
+   "flags": [],
    "detail": {
+    "prereg": "Kairos@ae6be01 docs/PREREG.md",
     "verdict": null,
     "gated_by": "h9m-draft-and-instrument"
    }
@@ -624,9 +619,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint f77f669, 0 commit(s) behind HEAD",
-  "citations that name no commit in any clone here: 2",
-  "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
-  "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
+  "glass: generated 4 min ago · paint f77f669, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
