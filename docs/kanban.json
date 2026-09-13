@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-13T02:01:06Z",
- "chora_head": "123d8d9",
+ "generated": "2026-09-13T02:06:19Z",
+ "chora_head": "faaadee",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -655,11 +655,12 @@
   }
  ],
  "audits": [
-  "pins: 118 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 119 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 1",
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
+  "  UNTRACKED (pinned in git, bytes not in git): artifacts/external/CHORA实验追踪看板-中文摘要.md",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint 123d8d9, 0 commit(s) behind HEAD",
+  "glass: generated 5 min ago · paint 123d8d9, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }

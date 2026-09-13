@@ -484,6 +484,7 @@ def main():
                  "",
                  "Lanes are derived from bytes (see `bin/kanban.py`'s docstring for the rules); "
                  "`claim` is what the hand believes, and a disagreement is a red row.", "",
+                 "**访客导读（中文）**：[CHORA实验追踪看板-中文摘要](https://github.com/math4mad/chora/blob/main/artifacts/external/CHORA%E5%AE%9E%E9%AA%8C%E8%BF%BD%E8%B8%AA%E7%9C%8B%E6%9D%BF-%E4%B8%AD%E6%96%87%E6%91%98%E8%A6%81.md) — external bytes pinned at `cee1328\u2026`; it narrates the board at one moment, the live lanes always come from `kanban.json`.", "",
                  "| lane | id | row | owner | bench | verdict | next / gate |",
                  "|---|---|---|---|---|---|---|"]
         order = {"closed": 0, "announced": 1, "scored": 2, "landed": 3, "equipped": 4,

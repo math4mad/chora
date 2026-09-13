@@ -1,0 +1,13 @@
+{
+ "files": [
+  {
+   "path": "artifacts/external/CHORA实验追踪看板-中文摘要.md",
+   "sha256": "cee1328a4b476490edf8f72347e0c765f689d59fa80eb2c1ffe852c97c0a31cf",
+   "bytes": 3894,
+   "source": "external: produced by Qwen3.7 (per human request: a Chinese visitor's guide to the exp/dev board), delivered by human into artifacts/external/ on 2026-09-13; not fetched, not reproducible",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "notes": "Guide for visitors, linked from docs/board.html and docs/kanban.md. It narrates the board AT a moment (rows, 6 red flags then) — the live lanes always come from kanban.json, not from this text; where they disagree, the bytes win. The CHORA program is bound by none of it, same as the qwen3.7 batch (letters/005 triage). sha256 cee1328…"
+  }
+ ]
+}

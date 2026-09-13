@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHORA — the exp/dev board</title>
+<meta name="description" content="The CHORA exp/dev board: lanes derived from bytes, not from the hand. Traffic lights: red needs reconciliation, amber is in flight, blue-grey is gated, green is closed.">
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#14161b; --line:#2a2d36;
+    --ink:#d8d4c8; --dim:#8d8a80; --gold:#c9a959; --red:#b46a5a; --green:#7fa07a;
+    --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);
+       font-size:17px;line-height:1.65;padding-bottom:6rem}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:980px;margin:0 auto;padding:0 1.4rem}
+  header{text-align:center;padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--line)}
+  .glyph{font-size:1.05rem;letter-spacing:.45em;text-transform:uppercase;color:var(--dim)}
+  h1{font-size:3.4rem;font-weight:400;letter-spacing:.09em;color:var(--ink);margin:.5rem 0 .2rem}
+  h1 .greek{color:var(--gold)}
+  .pron{color:var(--dim);font-style:italic;margin-bottom:1.2rem}
+  .sub{color:var(--dim);font-size:.95rem;max-width:640px;margin:0 auto;font-style:italic}
+  h2{font-size:1.05rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);
+     font-weight:400;margin:3.6rem 0 1.4rem;text-align:center}
+  h2::before,h2::after{content:"·";margin:0 1.1rem;color:var(--line)}
+  p.lede{text-align:center;color:var(--ink);max-width:700px;margin:0 auto 1rem}
+  table{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.95rem}
+  th{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);
+     text-align:left;padding:.5rem .8rem;border-bottom:1px solid var(--line);font-weight:400}
+  td{padding:.7rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+  td.note{color:var(--dim)} td.name{white-space:nowrap}
+  /* the traffic lights — red needs reconciliation, amber in flight, blue-grey gated, green closed */
+  .lamp{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:.55rem;vertical-align:baseline}
+  .lamp.r{background:#ff5a4d;box-shadow:0 0 5px rgba(255,90,77,.85),0 0 14px rgba(255,90,77,.35)}
+  .lamp.a{background:#ffb43e;box-shadow:0 0 5px rgba(255,180,62,.75),0 0 14px rgba(255,180,62,.3)}
+  .lamp.g{background:#5ad07a;box-shadow:0 0 5px rgba(90,208,122,.75),0 0 14px rgba(90,208,122,.3)}
+  .lamp.b{background:#6a86ba;box-shadow:0 0 5px rgba(106,134,186,.65)}
+  .lamp.off{background:transparent;border:1px solid var(--dim)}
+  #lights{text-align:center;font-size:1.02rem;margin-top:1.6rem;color:var(--ink)}
+  #lights b{font-weight:400;color:var(--dim);font-size:.78rem;letter-spacing:.15em;text-transform:uppercase}
+  .lanecell{font-family:var(--mono);font-size:.8rem;white-space:nowrap}
+  .lanecell .rec{color:#ff6a5d;font-weight:600}
+  .lanecell .drift{color:var(--dim);font-style:italic;font-size:.72rem}
+  .mid{font-family:var(--mono);font-size:.82rem;color:var(--gold);white-space:nowrap}
+  .verdict{display:inline-block;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;
+           padding:.05rem .45rem;border:1px solid currentColor;border-radius:2px;white-space:nowrap}
+  .verdict.f{color:#ff6a5d} .verdict.n{color:var(--gold)} .verdict.p{color:var(--green)}
+  .gate{font-family:var(--mono);font-size:.78rem}
+  /* red rows printed in full — a board that hides its own red rows is the instrument that froze */
+  #redflags .redrow{background:var(--panel);border:1px solid var(--line);border-left:3px solid #ff5a4d;
+           padding:.9rem 1.1rem;border-radius:2px;margin-top:.9rem;font-size:.92rem}
+  #redflags .redrow .rid{font-family:var(--mono);color:#ff6a5d;font-size:.85rem}
+  #redflags .redrow ul{list-style:none;margin-top:.4rem}
+  #redflags .redrow li{color:var(--dim);font-family:var(--mono);font-size:.78rem;padding:.15rem 0 .15rem 1rem;position:relative}
+  #redflags .redrow li::before{content:"!";position:absolute;left:0;color:#ff6a5d}
+  #redflags .clean{color:var(--dim);font-style:italic;text-align:center}
+  /* audits */
+  #audits{max-width:760px;margin:0 auto}
+  #audits .a-line{font-family:var(--mono);font-size:.8rem;color:var(--dim);
+       padding:.35rem .6rem;border-bottom:1px solid var(--line)}
+  #audits .a-line.bad{color:#ff6a5d}
+  /* neon digits — the dashboard's numbers glow; the prose stays parchment */
+  .num,.hash{color:#8ff1ff;
+    text-shadow:0 0 4px rgba(90,230,255,.95), 0 0 12px rgba(60,200,255,.5), 0 0 26px rgba(60,200,255,.25);
+    font-variant-numeric:tabular-nums; animation:neonpulse 3.4s ease-in-out infinite}
+  .hash{font-family:var(--mono)}
+  @keyframes neonpulse{0%,100%{opacity:1}46%{opacity:.86}50%{opacity:.72}54%{opacity:.86}}
+  footer{text-align:center;margin-top:5rem;padding-top:2rem;border-top:1px solid var(--line);
+         color:var(--dim);font-size:.9rem}
+  footer .links a{margin:0 .8rem}
+  #stamp{text-align:center;font-size:.8rem;color:var(--dim);margin-top:.8rem;font-family:var(--mono)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="glyph">χ · ῶ · ρ</div>
+    <h1>THE <span class="greek">B</span>OARD</h1>
+    <div class="pron">the exp/dev board — lanes derived from bytes, never typed; the hand writes only intent</div>
+    <p class="sub">A lane never lauds a claim: it may say FAILS and mean it — negatives are first-class citizens.</p>
+    <div id="lights"><span class="lamp off"></span> reading kanban.json…</div>
+    <div style="text-align:center;margin-top:1.1rem;font-size:.9rem"><a href="https://github.com/math4mad/chora/blob/main/artifacts/external/CHORA%E5%AE%9E%E9%AA%8C%E8%BF%BD%E8%B8%AA%E7%9C%8B%E6%9D%BF-%E4%B8%AD%E6%96%87%E6%91%98%E8%A6%81.md">中文摘要 · a visitor’s guide to this board (Chinese)</a><br>
+    <span style="color:var(--dim);font-size:.78rem">external bytes, pinned at <span class="hash">cee1328</span> — it narrates the board at one moment; the live lanes always come from kanban.json below</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<h2>The rows</h2>
+<p class="lede" style="font-size:.9rem;color:var(--dim)">
+<span class="lamp r"></span>needs reconciliation &nbsp; <span class="lamp a"></span>in flight &nbsp;
+<span class="lamp b"></span>gated &nbsp; <span class="lamp g"></span>closed &nbsp;— sorted red first, because
+a board that hides its own red rows is the instrument that froze.</p>
+<div id="rows"><p style="text-align:center;color:var(--dim);font-size:.9rem">loading kanban.json…</p></div>
+<p id="stamp"></p>
+
+<h2>Red rows — in full</h2>
+<div id="redflags"><p style="text-align:center;color:var(--dim);font-size:.9rem">loading…</p></div>
+
+<h2>Workspace audits</h2>
+<p class="lede" style="font-size:.9rem;color:var(--dim)">The checks that don’t belong to one row: pins, the baseline, sequencers, orphans, the glass itself.</p>
+<div id="audits"><p style="text-align:center;color:var(--dim);font-size:.9rem">loading…</p></div>
+
+<footer>
+  <div class="links">
+    <a href="index.html">the home page</a>
+    <a href="https://github.com/math4mad/chora/blob/main/artifacts/external/CHORA%E5%AE%9E%E9%AA%8C%E8%BF%BD%E8%B8%AA%E7%9C%8B%E6%9D%BF-%E4%B8%AD%E6%96%87%E6%91%98%E8%A6%81.md">中文摘要 (visitor guide)</a>
+    <a href="https://github.com/math4mad/chora">the repo</a>
+    <a href="kanban.md">the board as markdown</a>
+    <a href="kanban.json">the raw json</a>
+    <a href="experiments.json">intent (hand-written)</a>
+  </div>
+  <p style="margin-top:.8rem">This page is a viewer only: <span style="font-family:var(--mono);font-size:.8rem">bin/kanban.py</span> paints
+  kanban.json on the same five-minute beat as the fleet glass, and this glass re-reads it live. Editing it edits nothing — the bytes are the board.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  const CYCLE = 300;                       // seconds between full re-reads (same pulse as the fleet glass)
+  let snap = null, left = 0;
+  const rowsEl = document.getElementById('rows'), lights = document.getElementById('lights'),
+        flagsEl = document.getElementById('redflags'), auditsEl = document.getElementById('audits'),
+        stamp = document.getElementById('stamp');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+  const BAD = f => f.indexOf('by design') < 0;                  // the same filter kanban.py uses
+  const isRed = r => (r.flags || []).some(BAD);
+  const LANE_ORDER = {idea:2, registered:2, equipped:2, landed:2, scored:2, announced:2};
+  const rank = r => isRed(r) ? 0 : (r.lane === 'blocked' ? 1 : (r.lane === 'closed' ? 3 : 2));
+  function age(iso){
+    if (!iso) return '—';
+    const s = (Date.now() - Date.parse(iso.replace(/\.\d+$/,'')) - 0) / 1000;
+    if (isNaN(s) || s < 0) return '—';
+    if (s < 60) return Math.floor(s) + 's';
+    if (s < 5400) return Math.round(s/60) + ' min';
+    if (s < 172800) return Math.round(s/3600) + ' hours';
+    return Math.round(s/86400) + ' days';
+  }
+  function mmss(n){ return Math.floor(n/60) + ':' + String(n%60).padStart(2,'0'); }
+  function lampFor(r){
+    if (isRed(r)) return 'r';
+    if (r.lane === 'blocked') return 'b';
+    if (r.lane === 'closed') return 'g';
+    return 'a';
+  }
+  function verdictCell(r){
+    const v = r.verdict;
+    if (!v) return '<span class="note">—</span>';
+    const cls = /FAILS|FAIL\b/.test(v) ? 'f' : (/NOT ADJUDICATED|PENDING|OPEN/.test(v) ? 'n' : 'p');
+    return '<span class="verdict ' + cls + '">' + esc(v) + '</span>';
+  }
+  function render(){
+    if (!snap) return;
+    const red = snap.rows.filter(isRed);
+    const blocked = snap.rows.filter(r => !isRed(r) && r.lane === 'blocked');
+    const closed  = snap.rows.filter(r => !isRed(r) && r.lane === 'closed');
+    const flight  = snap.rows.filter(r => !isRed(r) && r.lane !== 'blocked' && r.lane !== 'closed');
+    lights.innerHTML =
+      '<b>red</b>&nbsp;<span class="lamp r"></span>' + red.length +
+      ' &nbsp;·&nbsp; <b>in flight</b>&nbsp;<span class="lamp a"></span>' + flight.length +
+      ' &nbsp;·&nbsp; <b>gated</b>&nbsp;<span class="lamp b"></span>' + blocked.length +
+      ' &nbsp;·&nbsp; <b>closed</b>&nbsp;<span class="lamp g"></span>' + closed.length;
+    const sorted = snap.rows.slice().sort((a,b) =>
+      rank(a) - rank(b) || (LANE_ORDER[a.lane]||9) - (LANE_ORDER[b.lane]||9) || (a.id < b.id ? -1 : 1));
+    rowsEl.innerHTML = '<table><tr><th>lamp</th><th>lane</th><th>id</th><th>row</th><th>owner</th>' +
+      '<th>bench</th><th>verdict</th><th>next / gate</th></tr>' +
+      sorted.map(r => {
+        const drift = (r.claim && r.claim !== r.lane && !isRed(r)) ? ' <span class="drift">(hand said ' + esc(r.claim) + ')</span>' : '';
+        const lane = isRed(r) ? '<span class="rec">RECONCILE</span> ' + esc(r.lane) + drift : esc(r.lane) + drift;
+        const nxt = r.next ? esc(r.next) : (r.gated_by ? 'gated by ' + esc(r.gated_by) : '—');
+        return '<tr><td><span class="lamp ' + lampFor(r) + '"></span></td>' +
+          '<td class="lanecell">' + lane + '</td>' +
+          '<td class="mid">' + esc(r.id) + '</td>' +
+          '<td>' + esc(r.title) + '</td>' +
+          '<td class="note">' + esc(r.owner) + '</td>' +
+          '<td class="note">' + esc(r.bench) + '</td>' +
+          '<td>' + verdictCell(r) + '</td>' +
+          '<td class="note">' + nxt + '</td></tr>';
+      }).join('') + '</table>';
+    flagsEl.innerHTML = red.length ? red.map(r =>
+      '<div class="redrow"><span class="rid">' + esc(r.id) + '</span> — ' + esc(r.title) +
+      (r.claim && r.claim !== r.lane ? ' <span class="drift">(the hand says “' + esc(r.claim) + '”)</span>' : '') +
+      '<ul>' + r.flags.filter(BAD).map(f => '<li>' + esc(f) + '</li>').join('') + '</ul></div>').join('')
+      : '<p class="clean">none — every derived lane agrees with its claim</p>';
+    auditsEl.innerHTML = (snap.audits || []).map(a => {
+      const bad = /^(\s*)(DANGLING|HASH|PINS|REPO|manifest|UNTRACKED|UNRESOLVED|CHECK)/i.test(a) || /^\s{2}\S/.test(a);
+      return '<div class="a-line' + (bad ? ' bad' : '') + '">' + esc(a) + '</div>';
+    }).join('');
+    paintStamp();
+    neonize(document.getElementById('lights'));
+  }
+  function neonize(node){                     // same digit-glow walker the fleet glass uses
+    if (!node) return;
+    if (node.nodeType === 3) {
+      const re = /([0-9a-fA-F]*\d[0-9a-fA-F:]*)/;
+      if (!re.test(node.nodeValue)) return;
+      const holder = document.createElement('span');
+      holder.innerHTML = node.nodeValue.replace(/([0-9a-fA-F]*\d[0-9a-fA-F:]*)/g, '<span class="num">$1</span>');
+      while (holder.firstChild) node.parentNode.insertBefore(holder.firstChild, node);
+      node.parentNode.removeChild(node);
+      return;
+    }
+    if (node.classList && node.classList.contains('num')) return;
+    Array.from(node.childNodes).forEach(neonize);
+  }
+  function paintStamp(){                     // every second: only the lapse + countdown move
+    if (!snap) return;
+    stamp.innerHTML = 'painted ' + age(snap.generated) + ' ago (' + esc(snap.generated) + ') · chora@' + esc(snap.chora_head) +
+      ' · <span style="font-family:var(--mono)">refresh ' + mmss(left) + '</span>';
+    neonize(stamp);
+  }
+  function tick(){
+    left--;
+    if (left <= 0) { left = CYCLE; refresh(); }
+    else paintStamp();                        // full re-render only on a new snapshot — a second of
+  }                                           // repainted DOM would steal every text selection
+  async function refresh(){
+    try {
+      // ?ts= busts the Pages CDN cache (it serves max-age=600 no matter what the browser is told)
+      const r = await (await fetch('kanban.json?ts=' + Date.now(), {cache:'no-store'})).json();
+      snap = r; render();                     // re-render only on the beat's pulse (every CYCLE)
+    } catch(e) { /* keep the old glass; it is stamped with its own age, so staleness is visible */ }
+  }
+  left = CYCLE; refresh(); setInterval(tick, 1000);
+})();
+</script>
+</body>
+</html>

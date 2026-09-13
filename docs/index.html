@@ -108,6 +108,15 @@
   .dirtyflag{color:var(--red);font-variant:small-caps}
   .cleanflag{color:var(--dim)}
   .subject{color:var(--dim);font-style:italic}
+  /* the board's lamps — same lights as board.html: red reconcile · amber in flight · blue-grey gated · green closed */
+  .lamp{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:.45rem;vertical-align:baseline}
+  .lamp.r{background:#ff5a4d;box-shadow:0 0 5px rgba(255,90,77,.85),0 0 14px rgba(255,90,77,.35)}
+  .lamp.a{background:#ffb43e;box-shadow:0 0 5px rgba(255,180,62,.75),0 0 14px rgba(255,180,62,.3)}
+  .lamp.g{background:#5ad07a;box-shadow:0 0 5px rgba(90,208,122,.75),0 0 14px rgba(90,208,122,.3)}
+  .lamp.b{background:#6a86ba;box-shadow:0 0 5px rgba(106,134,186,.65)}
+  .lamp.off{background:transparent;border:1px solid var(--dim)}
+  #boardlite{text-align:center;font-size:.98rem}
+  #boardlite b{font-weight:400;color:var(--dim);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
   /* neon digits — the dashboard's numbers glow; the prose stays parchment */
   .num,.hash{color:#8ff1ff;
     text-shadow:0 0 4px rgba(90,230,255,.95), 0 0 12px rgba(60,200,255,.5), 0 0 26px rgba(60,200,255,.25);
@@ -337,6 +346,15 @@ bin/sync.sh                         <span class="c"># links the five benches + s
 cat benches/JacobiGP/docs/NEXT.md   <span class="c"># the joint spec — single source of truth</span>
 <span class="c"># /meeting new &lt;question&gt;   ·   /speak &lt;seat&gt; &lt;file&gt;</span></pre>
 
+<h2>The Board</h2>
+<p class="lede" style="font-size:.93rem;color:var(--dim)">The exp/dev board cannot lie: intent is hand-written
+(<span style="font-family:var(--mono);font-size:.85rem">docs/experiments.json</span>), but every lane is derived from bytes on the
+same beat — and a lane may say FAILS and mean it.
+<span style="font-family:var(--mono);font-size:.85rem">board.html</span> re-reads it live.</p>
+<div id="boardlite"><span class="lamp off"></span> reading kanban.json…</div>
+<p style="text-align:center;margin-top:1.1rem"><a href="board.html" style="letter-spacing:.2em;text-transform:uppercase;font-size:.85rem">→ enter the board ←</a>
+<span style="font-size:.8rem;color:var(--dim)"> · <a href="https://github.com/math4mad/chora/blob/main/artifacts/external/CHORA%E5%AE%9E%E9%AA%8C%E8%BF%BD%E8%B8%AA%E7%9C%8B%E6%9D%BF-%E4%B8%AD%E6%96%87%E6%91%98%E8%A6%81.md">中文摘要</a></span></p>
+
 <h2>Fleet Status</h2>
 <p class="lede" style="font-size:.93rem;color:var(--dim)">A git snapshot, not a server: a launchd beat
 refreshes <span style="font-family:var(--mono);font-size:.85rem">docs/status.json</span> every five minutes and
@@ -350,6 +368,7 @@ on every bench commit — then the page asks GitHub, live, whether each public b
     <a href="https://github.com/math4mad/chora/blob/main/AGENTS.md">joint brief</a>
     <a href="https://github.com/math4mad/chora/tree/main/letters">letters</a>
     <a href="https://github.com/math4mad/chora/tree/main/meetings">meeting room</a>
+    <a href="board.html">the board</a>
   </div>
   <p style="margin-top:.8rem">χ — the vessel has the name, because the programme’s soul is the choice of vessel.</p>
 </footer>
@@ -404,7 +423,7 @@ on every bench commit — then the page asks GitHub, live, whether each public b
     if (!snap) return;
     snap.benches.forEach(b => { const e = document.getElementById('age-' + b.name); if (e) { e.textContent = age(b.commit_at); neonize(e); } });
     if (left > 0) { left--; note.innerHTML = footerText(); neonize(note); }
-    if (left === 0) { left = CYCLE; refresh(); }
+    if (left === 0) { left = CYCLE; refresh(); boardlights(); }
   }
   function footerText(){
     return 'snapshot ' + snap.generated + ' \u00b7 chora@' + snap.chora_head +
@@ -414,7 +433,9 @@ on every bench commit — then the page asks GitHub, live, whether each public b
   }
   async function refresh(){                // every CYCLE: re-pull snapshot, re-audit remotes
     try {
-      const r = await (await fetch('status.json', {cache:'no-store'})).json();
+      // ?ts= busts the Pages CDN cache: GitHub serves every file with max-age=600, and
+      // cache:'no-store' only bypasses the browser — without this the glass lagged ~10 min behind the beat.
+      const r = await (await fetch('status.json?ts=' + Date.now(), {cache:'no-store'})).json();
       const moved = !snap || r.benches.map(b=>b.head+b.dirty+b.state).join() !== snap.benches.map(b=>b.head+b.dirty+b.state).join();
       snap = r; if (moved || !el.querySelector('table')) render();
     } catch(e) { /* keep the old glass */ }
@@ -440,7 +461,27 @@ on every bench commit — then the page asks GitHub, live, whether each public b
     }
     note.innerHTML = footerText();
   }
-  left = CYCLE; refresh(); setInterval(tick, 1000);
+  // the board's lamps ride the same pulse: one extra static fetch, no API budget spent
+  async function boardlights(){
+    const el = document.getElementById('boardlite'); if (!el) return;
+    try {
+      const k = await (await fetch('kanban.json?ts=' + Date.now(), {cache:'no-store'})).json();
+      const bad = r => (r.flags || []).some(f => f.indexOf('by design') < 0);
+      const red = k.rows.filter(bad).length,
+            closed = k.rows.filter(r => !bad(r) && r.lane === 'closed').length,
+            gated = k.rows.filter(r => !bad(r) && r.lane === 'blocked').length,
+            flight = k.rows.length - red - closed - gated;
+      el.innerHTML = '<b>red</b>&nbsp;<span class="lamp r"></span>' + red +
+        ' &nbsp;·&nbsp; <b>in flight</b>&nbsp;<span class="lamp a"></span>' + flight +
+        ' &nbsp;·&nbsp; <b>gated</b>&nbsp;<span class="lamp b"></span>' + gated +
+        ' &nbsp;·&nbsp; <b>closed</b>&nbsp;<span class="lamp g"></span>' + closed +
+        ' &nbsp;·&nbsp; <span style="color:var(--dim)">painted ' + k.generated + '</span>';
+      el.querySelectorAll('b').forEach(b => b.style.cssText = 'font-weight:400;color:var(--dim);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase');
+      el.querySelectorAll('.lamp').forEach(l => { const c = l.className; l.outerHTML = l.outerHTML; });
+      el.innerHTML = el.innerHTML.replace(/<b>/g, '<b style="font-weight:400;color:var(--dim);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase">');
+    } catch(e) { el.innerHTML = '<span class="lamp off"></span> board unreadable (offline, or kanban.json missing)'; }
+  }
+  left = CYCLE; refresh(); boardlights(); setInterval(tick, 1000);
 })();
 </script>
 </body>
