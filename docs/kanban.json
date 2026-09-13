@@ -1,10 +1,10 @@
 {
- "generated": "2026-09-13T03:45:23Z",
- "chora_head": "d2b615d",
+ "generated": "2026-09-13T03:46:17Z",
+ "chora_head": "8af70e7",
  "counts": {
-  "idea": 1,
+  "idea": 0,
   "registered": 5,
-  "equipped": 4,
+  "equipped": 5,
   "landed": 2,
   "scored": 2,
   "announced": 1,
@@ -660,19 +660,18 @@
    "kind": "workspace",
    "owner": "chair",
    "bench": "chora",
-   "lane": "idea",
-   "claim": "equipped",
+   "lane": "equipped",
+   "claim": "registered",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "a second physical copy of _rollback/2026-09-13-A/ (another disk or a published release): today it is 219 MB sitting beside the originals on the same SSD, which is protection against operator error and not against disk failure. Then a cadence: mint before each registered run series, drill one repo + one byte store, print the delta since the last tag.",
    "flags": [
     "pre-registration names no commit — text without a date stamp",
-    "apparatus exists but is untracked: bin/backup-drill.sh",
     "letter not committed in its own bench (mirror points at a working tree)",
     "letter not mirrored/tracked in chora/letters/",
     "letter number None absent from letters/INDEX.md",
-    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'idea'"
+    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
    ],
    "detail": {
     "apparatus": "chora:bin/backup-drill.sh",
@@ -686,7 +685,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 5 min ago · paint 906ab92, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint 8af70e7, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
