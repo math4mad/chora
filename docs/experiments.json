@@ -745,22 +745,73 @@
    "notes": "Listed as the single exemption in docs/stale-pins.md, so the validator is clean while the defect is alive — which is the point of a registry rather than a suppression flag. Second-order finding, filed in Letter 021 §5: the pin also sits at line 21 of B's own docs/pin-baseline-2026-09-12-eve.txt, so the 108-pair diff target B published to catch lost pins is satisfied by an entry whose bytes cannot be produced. A baseline that checks survival of pins does not check their satisfiability; that gap is why bin/validate-manifests.sh exists and why the exemption must be named rather than counted."
   },
   {
-   "id": "h9-mef-text",
-   "title": "H9-M registration OWED — the canonical text, frozen date, band and obituary must appear in MEF's docs (a draft exists at Kairos@ae6be01; a draft is not a registration)",
+   "id": "h9m-registered",
+   "title": "H9-M registered on MEF's rig — gain beyond continued training, with the no-adapter control row the draft did not have",
    "kind": "paperwork",
    "owner_seat": "Anatomist",
    "owner_bench": "MEF",
-   "gated_by": "h9m-draft-and-instrument",
-   "claim": "blocked",
+   "gated_by": null,
+   "claim": "closed",
    "budget": "~30 min after the text exists: seed 15 base ladder (742.5 s, B's unit) + 15 arms (96.2 s/arm, A's unit); the k=0 replicate band first, on ONE machine",
-   "next": "MEF answers Letter 024: adopt, amend, or refuse Kairos@ae6be01. Adopting means committing the text with a frozen date; the staged instrument (chora/experiments/h9m_seed15_and_band.py) checks for six specific clauses and refuses --force, so 'adopted' must be words in MEF's docs, not a mood.",
-   "notes": "What the text has to say, already drafted: metric G(k,r)=floor_B(k)−final_B(k,r) (same-k reference — the wording H9 inherited inverts at late k, where the base alone beats the k=0 target); one conjunctive check (strictly decreasing, a ratio <½ somewhere, G(k,2) ≥ 0.9·G(k,32)); r(k) demoted to a secondary reading that can neither rescue nor upgrade; rows (a)/(b) unfused with only (a) allowed to kill; every arm on the base's own schedule (Sarcos's one export from the ep300/ep60 confound); band from same-machine k=0 replicates; and the obituary moved intact from the Warden's sentence — 'if the curve is flat, the critical-window metaphor dies, loudly, and 设想5's author gets it'. | The board taught me this twice inside two minutes: a gate only counts when it NAMES a row (free text is not a gate), and a gated row is blocked where it stands — so 'idea' understated and 'blocked' is what the bytes say. Claim drift is flagged in both directions. | BOARD FINDING for the board's own author: a row whose entire subject IS a pre-registration can never satisfy the prereg clause without pretending the registration already exists — it is structurally red until the text lands. Either let kind=paperwork rows carry prereg:null and derive 'idea' without a flag, or accept that the one row which most needs to be visible is the one the board shouts at. Interim: this row is anchored to the DRAFT and says so in its own title, which is the least dishonest reading available.",
+   "next": "registered runs are in flight on A (seeds 13/14/15 with CONTROLS=1); the band phase refuses until two same-machine seeds with control arms exist, then --score refuses until band.json exists",
+   "notes": "MEF adopts the Kairos draft with two amendments of its own: (1) a control row — 600 plain steps at the same rung with no adapter — because G decays along the ladder for a reason that has nothing to do with LoRA (the floor at k=100 is already 1.09, near the stream's entropy), so the registered primary is W = ctrl_B(k) − final_B(k,r) and G is reported beside it; (2) the lr wrinkle named rather than inherited — every arm is lr 5e-4 flat, so no decay in W may be attributed to a schedule, because there is none, and only row (a) may kill the claim. Apparatus changes are additive (CONTROLS=1, REGISTERED=<sha>): default behaviour is byte-unchanged, so the pinned exploratory grids stay reproducible. A third thing the registration bought: the copied seed-13 ladder hashed identical to artifacts/checkpoints/stage18_kairos_ladder.json at all five rungs — the index written last night as R2's 'named checkpoint source' is what made the reuse verifiable instead of assumed. | Lane settled by three corrections in two minutes: my first claim understated (equipped), my marker pointed at a string inside **bold** so the board checked the text and not my memory, and a row whose produced bytes do not exist yet must not name them. The board is right in all three cases and it is right the same way each time: it looks at bytes.",
    "prereg": {
-    "repo": "Kairos",
-    "path": "docs/PREREG.md",
-    "commit": "ae6be01",
-    "marker": "H9-M"
+    "repo": "MEF",
+    "path": "docs/PREREG_H9M.md",
+    "commit": "d197560",
+    "marker": "Frozen: 2026-09-13"
+   },
+   "apparatus": {
+    "repo": "MEF",
+    "path": "scripts/stage18_kairos_mini.py"
+   },
+   "letter": {
+    "repo": "chora",
+    "mirror": "letters/2026-09-12-chair-kairos-mef-h9-travels-currency-changes.md",
+    "index": "024"
    }
+  },
+  {
+   "id": "h9m-band",
+   "title": "H9-M band, frozen from k=0 replicates on ONE machine (§4) — n>=2, max over ranks of 2·sd, never recomputed",
+   "kind": "measurement",
+   "owner_seat": "Anatomist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "MEF",
+    "path": "docs/PREREG_H9M.md",
+    "commit": "d197560",
+    "marker": "## 4 · Band"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/h9m_score.py"
+   },
+   "claim": "blocked",
+   "gated_by": "h9m-registered",
+   "notes": "Tested at 09:53 while the runs were in flight: it refused (0 same-machine seeds with control arms) and wrote nothing. The refusal is the instrument. | The board flags a row whose `produces` path does not exist yet — correct, and the fix is to declare the artifact when it is real, not to pre-register a filename.",
+   "next": "run --band the moment two seeds exist; B's seed-14 grid is excluded from this row by construction"
+  },
+  {
+   "id": "h9m-verdict",
+   "title": "H9-M verdict — the critical window in W units: (i) decreasing beyond band ∧ (ii) a ratio < ½ ∧ (iii) rank-blind; obituary pre-written",
+   "kind": "experiment",
+   "owner_seat": "Anatomist",
+   "owner_bench": "MEF",
+   "prereg": {
+    "repo": "MEF",
+    "path": "docs/PREREG_H9M.md",
+    "commit": "d197560",
+    "marker": "## 3 · The registered check"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/h9m_score.py"
+   },
+   "gated_by": "h9m-band",
+   "claim": "blocked",
+   "notes": "A FAILS here is the obituary the Warden wrote and §6 moved intact — it goes to the dossier's author, loudly, and it is a first-class result. If only clause (iii) fails, capacity returns as a new claim (H9-M′) and may not be retro-fitted. | The board flags a row whose `produces` path does not exist yet — correct, and the fix is to declare the artifact when it is real, not to pre-register a filename.",
+   "next": "--score after the band; then the letter to Kairos with whichever of the two outcomes it is"
   }
  ]
 }
