@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T01:19:11Z",
- "chora_head": "e40bda6",
+ "generated": "2026-09-13T01:22:53Z",
+ "chora_head": "3847ef8",
  "counts": {
   "idea": 0,
   "registered": 4,
   "equipped": 3,
   "landed": 1,
   "scored": 1,
-  "announced": 4,
-  "closed": 2,
+  "announced": 3,
+  "closed": 3,
   "blocked": 11,
-  "RECONCILE": 8
+  "RECONCILE": 7
  },
  "rows": [
   {
@@ -332,20 +332,16 @@
    "kind": "experiment",
    "owner": "Joiner",
    "bench": "PolyNN",
-   "lane": "announced",
+   "lane": "closed",
    "claim": "closed",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": null,
-   "flags": [
-    "sha256(bytes) != pin: artifacts/results/polynn/exp8_summary.json",
-    "CLAIM DRIFT: the hand says 'closed', the bytes say 'announced'"
-   ],
+   "flags": [],
    "detail": {
     "prereg": "JacobiGP@ecf67d6 docs/PREREG_EXP6.md",
-    "verdict": null,
-    "reconcile": true
+    "verdict": null
    }
   },
   {
@@ -528,13 +524,11 @@
   }
  ],
  "audits": [
-  "pins: 118 · no bytes: 1 · hash mismatch: 1 · untracked-not-by-design: 0",
+  "pins: 118 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
-  "  HASH LIE (bytes != pin): artifacts/results/polynn/exp8_summary.json",
-  "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 1 of 108 pairs missing",
-  "  PINS LOST since the eve snapshot — law 2 breach, name them",
+  "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint e40bda6, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 3847ef8, 0 commit(s) behind HEAD",
   "citations that name no commit in any clone here: 2",
   "  UNRESOLVED CITATION 2fcb158 — cited by 2026-09-12-B-JacobiGP-h6c-bytes-land.md, INDEX.md (a rebase rewrote it, or it came from a branch never fetched)",
   "  UNRESOLVED CITATION a0deb68 — cited by INDEX.md (a rebase rewrote it, or it came from a branch never fetched)"
