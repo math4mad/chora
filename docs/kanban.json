@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-13T04:16:34Z",
- "chora_head": "e3a02f9",
+ "generated": "2026-09-13T04:19:47Z",
+ "chora_head": "748c4bc",
  "counts": {
   "idea": 0,
-  "registered": 6,
-  "equipped": 4,
+  "registered": 5,
+  "equipped": 5,
   "landed": 2,
   "scored": 2,
   "announced": 1,
   "closed": 9,
   "blocked": 10,
-  "RECONCILE": 7
+  "RECONCILE": 6
  },
  "rows": [
   {
@@ -660,21 +660,17 @@
    "kind": "workspace",
    "owner": "chair",
    "bench": "chora",
-   "lane": "registered",
+   "lane": "equipped",
    "claim": "equipped",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "re-mint + re-publish before the next registered run series (H9-M″ or E4), printing the delta since the last tag. Remaining real limit: byte-round-trip proof covers 3 of 12 assets (the big two are proven by size + local hash only), and the release lives on the same account as the repos — the local _rollback/ copies stay.",
-   "flags": [
-    "apparatus exists but is untracked: bin/publish-release.sh",
-    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'registered'"
-   ],
+   "flags": [],
    "detail": {
     "prereg": "chora@8dc208a docs/rollback-A-2026-09-13.md",
     "apparatus": "chora:bin/publish-release.sh",
-    "verdict": null,
-    "reconcile": true
+    "verdict": null
    }
   }
  ],
@@ -683,7 +679,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
   "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 3 min ago · paint c310ce7, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint 748c4bc, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
