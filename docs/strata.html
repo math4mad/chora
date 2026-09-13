@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CHORA — The Strata · 地層:家园的成因剖面</title>
+<meta name="description" content="The genetic section of the CHORA city-state: four strata, from the bedrock of raw dialogue to the surface of published sites. Every origin quoted from its own file.">
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#14161b; --line:#2a2d36;
+    --ink:#d8d4c8; --dim:#8d8a80; --gold:#c9a959; --red:#b46a5a; --green:#7fa07a;
+    --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Songti SC","Noto Serif SC",serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.65;padding-bottom:6rem}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:880px;margin:0 auto;padding:0 1.4rem}
+  header{text-align:center;padding:5.5rem 0 3rem;border-bottom:1px solid var(--line)}
+  .glyph{font-size:1.05rem;letter-spacing:.45em;text-transform:uppercase;color:var(--dim)}
+  h1{font-size:3.6rem;font-weight:400;letter-spacing:.09em;margin:.5rem 0 .2rem}
+  h1 .zh{color:var(--gold)}
+  .sub{color:var(--dim);font-size:.98rem;max-width:640px;margin:1.2rem auto 0;font-style:italic}
+  .home{display:inline-block;margin-top:1.6rem;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;border:1px solid var(--line);padding:.35rem .9rem;border-radius:2px}
+  h2{font-size:1.05rem;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);font-weight:400;margin:4.2rem 0 1.4rem;text-align:center}
+  h2::before,h2::after{content:"·";margin:0 1.1rem;color:var(--line)}
+  p.lede{text-align:center;color:var(--ink);max-width:680px;margin:0 auto 1rem}
+  .order{max-width:680px;margin:1.6rem auto;padding:1.1rem 1.4rem;border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--panel);font-size:.95rem}
+  .order .zh{color:var(--ink)} .order .who{display:block;margin-top:.6rem;font-size:.8rem;color:var(--dim);letter-spacing:.1em;text-transform:uppercase}
+  svg.section{width:100%;height:auto;display:block;margin:2rem auto 0}
+  svg.section rect.bed{fill:#1a1d24} svg.section path.layer{fill:none;stroke:var(--gold);stroke-opacity:.5;stroke-width:1.2}
+  svg.section text{font-family:var(--serif);fill:var(--dim)}
+  svg.section .lab{fill:var(--gold);font-size:15px;letter-spacing:.25em}
+  svg.section .zhl{fill:var(--ink);font-size:13px;letter-spacing:.3em}
+  svg.section .item{font-size:11px;fill:var(--dim)}
+  figure figcaption{font-size:.85rem;color:var(--dim);text-align:center;margin-top:.8rem;font-style:italic}
+  /* origin cards */
+  .stratum{margin-top:1.8rem}
+  .stratum > h3{text-align:center;font-size:.85rem;letter-spacing:.3em;text-transform:uppercase;color:var(--dim);font-weight:400;margin-bottom:1.2rem}
+  .card{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);padding:1.2rem 1.4rem;margin-bottom:1rem;border-radius:2px}
+  .card .bench{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:.4rem}
+  .card .bench b{color:var(--gold);font-weight:400}
+  .card q{display:block;font-style:italic;margin:.4rem 0 .5rem;font-size:1rem;color:var(--ink)}
+  .card q::before{content:"“"} .card q::after{content:"”"}
+  .card .src{font-size:.82rem;color:var(--dim);line-height:1.8}
+  .card .src code, .hashline{font-family:var(--mono);font-size:.78rem;color:#8ff1ff;text-shadow:0 0 4px rgba(90,230,255,.5)}
+  footer{text-align:center;margin-top:5rem;padding-top:2rem;border-top:1px solid var(--line);color:var(--dim);font-size:.9rem}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="glyph">χ · S T R A T A</div>
+  <h1>THE STRATA <span class="zh">地層</span></h1>
+  <p class="sub">成因剖面:这座城市-state 的四层地质——从对话的基岩,到站点的表土。
+  缘起不靠传说:每一块石头都引它自己文件里的原话。</p>
+  <a class="home" href="index.html">← back to the glass · 回家</a>
+</div></header>
+<div class="wrap">
+
+<div class="order">
+  <span class="zh">「整理和 Agents 的谈话内容,理清整个项目发展的源头是个好主意……遍历文档,搜搜相关内容是你的特长。
+  所以按照 Qwen 的建议,收集项目发展的缘由,并聚合成一个网页放在你的主页里。」</span>
+  <span class="who">the owner's order · 2026-09-13 · filed at <a href="https://github.com/math4mad/chora/blob/main/letters/2026-09-13-theoros-chora-strata-order.md">letters/2026-09-13-theoros-chora-strata-order.md</a> — "Drear Chora" kept verbatim; a slip, once delivered, is bytes like any other</span>
+</div>
+
+<h2>The Section · 剖面图</h2>
+<svg class="section" viewBox="0 0 880 560" role="img" aria-label="A four-layer geological section: bedrock of dialogues, sedimentary protocols, tectonic tools, surface sites.">
+  <rect x="40" y="30" width="800" height="500" class="bed" stroke="#2a2d36" fill="none"/>
+  <path class="layer" d="M40 160 q110 -26 220 0 t220 0 t220 0 t180 -8"/>
+  <path class="layer" d="M40 290 q110 26 220 0 t220 0 t220 0 t180 10"/>
+  <path class="layer" d="M40 420 q110 -20 220 0 t220 0 t220 0 t180 -12"/>
+  <text x="60" y="80" class="lab">SURFACE · 地表</text><text x="60" y="104" class="zhl">站点 / 门面 — 别人看得见的部分</text>
+  <text x="60" y="130" class="item">chora · talk-with-agents · five bench sites · Cora's Warm Lab · board · strata (this page)</text>
+  <text x="60" y="205" class="lab">TECTONIC · 构造层</text><text x="60" y="229" class="zhl">工具 / 代码 — 协议落地为可执行的动作</text>
+  <text x="60" y="255" class="item">five benches · bin/sync.sh · publisher beat · writelock · validate-manifests · mail.sh (CMS) · @ourguy router</text>
+  <text x="60" y="335" class="lab">SEDIMENTARY · 沉积岩</text><text x="60" y="359" class="zhl">协议 / 规则 — 从想法中结晶出来的制度层</text>
+  <text x="60" y="385" class="item">AGENTS.md · the seven laws · LICENSE (route C) · letters 001–028 · meetings/CAST · manifest schema · stale-pins · L8 in ballot</text>
+  <text x="60" y="465" class="lab">BEDROCK · 基岩</text><text x="60" y="489" class="zhl">对话 / 想法 — 不可压缩,不可重构</text>
+  <text x="60" y="515" class="item">the 2026-09-06 Jacobi hour · functional-spaces→σ-spectrum · kernels-are-functions · sarcos space-search · 设想5 · the prose-poem rice-smell</text>
+</svg>
+<figure><figcaption>Qwen's four-layer frame, drawn as the owner's letter asked it — the weight of the surface is carried by what is never seen. Its fullness is honest: the top two layers were written mostly by machines; the bottom two by a human and a wall of talking.</figcaption></figure>
+
+<h2>Bedrock, read aloud · 基岩的原话</h2>
+<div class="stratum">
+  <div class="card"><div class="bench"><b>JacobiGP</b> — the function-space bench · 第一座台</div>
+    <q>This work based on dialog with ima.copilot and qwen on multi-round. … Finally I decide to put it into practice. Honestly. LLM Agents totally change world. make some daydreamer to a practicer</q>
+    <div class="src">source: <code>benches/JacobiGP/README.md</code>, first lines — the daydreamer's own sentence, unrevised; the dialogue it names is pinned as bytes: <code>artifacts/external/2026-09-12-talk-with-agents/jacobi-orthogonal-polynomials.html</code> <span class="hashline">(sha256 c33014fc…)</span> — 「换一组权重,就是换一个空间」, 2026-09-06.</div></div>
+
+  <div class="card"><div class="bench"><b>MEF</b> — the weight-space knife · 第二座台</div>
+    <q>Original Thoughts is here: 泛函空间再向上抽象,然后呢? … 大奇异值是泛化,最小奇异值是噪音,中间那一组是什么? — 补充更新(我大脑网络的自适应微调):这里经过几天大脑的自适应,可能有些概念又更新了。</q>
+    <div class="src">source: <code>benches/MEF/README.md</code> head — six question-links to <a href="https://math4mad.github.io/talk-with-agents/talking/mathematics/functional-spaces-to-singular-values.html">the singular-values dialogue</a>, and the owner's note that the bench's own hypothesis was updated by <em>days of human neural adaptation between sessions</em> — the fifth organism in the lab.</div></div>
+
+  <div class="card"><div class="bench"><b>Sarcos</b> — the controlled arena · 第三座台</div>
+    <q>The published pair is not a usable train/test split … 4,368 of 4,449 test rows (98.2%) occur verbatim in train. Any MSE computed that way measures memorisation.</q>
+    <div class="src">source: <code>benches/Sarcos/README.md</code> — the bench was born twice: once as <a href="https://math4mad.github.io/talk-with-agents/coding/repos/sarcos-ml-with-agents.html">sarcos repos of the coding track</a> (space-search demo included), and once as the programme's conscience, when it found the classic GP textbook data leaking. The second birth made it load-bearing.</div></div>
+
+  <div class="card"><div class="bench"><b>PolyNN</b> — the shape inside the layer · 第四座台</div>
+    <q>基于和 agents 有关 Jacobi 多项式的内容,考虑在神经网络中引入多项式作为激活函数。… 借此希望能增加神经网络层的表现力。</q>
+    <div class="src">source: <code>benches/PolyNN/README.md</code> — Knob III smuggled through the door of a single neuron: if the space is a hyper-parameter, let each activation choose its own.</div></div>
+
+  <div class="card"><div class="bench"><b>Kairos</b> — the fifth bench: time · 和它的问题</div>
+    <q>Charter: hold 设想5's problem set to the programme's standard — every metaphor a curve, every curve a registration, every registration a possible monument if it dies.</q>
+    <div class="src">source: <code>benches/Kairos/README.md</code>; 设想5 arrived as an outsider's proposal — <code>artifacts/external/2026-09-11-qwen3.7/</code>, triaged by Letter 005, seated by Letter 007. A bench whose apparatus belongs to others and whose question belongs to itself: the window is data.</div></div>
+</div>
+
+<h2>What each layer owes the one below · 层间的债</h2>
+<p class="lede" style="max-width:720px">
+The bedrock is <em>talk</em>: unrepeatable hours of asking. The sediment is what the talk
+left behind when it noticed itself lying — pre-registration, hashes, negative results kept
+as walls. The tectonic is those notices made executable: a beat that paints, a lock that
+names its thief, a post that commits. The surface is none of this — the surface is just
+the part a stranger can read. Every weight it carries, the layers below hold; which is why
+this page exists: <b>门面的重量,必须由地基认领</b>。</p>
+
+<p class="lede" style="margin-top:2rem;font-size:.9rem;color:var(--dim)">
+Full genealogy with links: <a href="https://math4mad.github.io/talk-with-agents/">Talk With Agents</a> ·
+the benches' own files under <code>benches/</code> · the order that commissioned this page,
+kept in <a href="https://github.com/math4mad/chora/tree/main/letters">letters/</a> where all commands that outlive their hour belong.</p>
+
+<footer><a href="index.html">← CHORA</a> · the shape of the container is the knowledge; the shape of the knowledge is where it came from</footer>
+</div>
+</body>
+</html>
