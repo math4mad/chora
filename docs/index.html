@@ -119,6 +119,13 @@
   .face svg{transition:transform .5s cubic-bezier(.34,1.18,.32,1)}
   .face:hover svg{transform:translateY(-3px)}
   .face .ftag{font-size:.72rem;color:var(--dim);font-style:italic;margin-top:.15rem}
+  /* the study door — a face links the gate AND the desk: the house site and its notes page */
+  .face .fnotes{display:inline-block;margin-top:.35rem;font-size:.68rem;letter-spacing:.14em;
+       text-transform:uppercase;color:var(--dim);border:1px solid var(--line);border-radius:2px;
+       padding:.1rem .5rem;transition:color var(--duration-apple-fast) var(--ease-apple),
+       border-color var(--duration-apple-fast) var(--ease-apple)}
+  .face .fnotes:hover{color:var(--gold);border-color:var(--gold);text-decoration:none}
+  .face.pending .fnotes{opacity:.55;border-style:dashed;cursor:default}
   .face.pending svg circle{stroke-opacity:.25;stroke-dasharray:3 4}
   .face.pending svg text{fill-opacity:.45}
   @media(max-width:700px){.faces{grid-template-columns:repeat(3,1fr)}}
@@ -427,28 +434,37 @@ shape — is the contribution.</p>
 
 <h2>Family Faces</h2>
 <p class="lede" style="font-size:.93rem;color:var(--dim)">The owner&rsquo;s word: show our muscle — and our own sites link to each other first.
-One monogram per house; a dashed ring means the page is not yet raised.</p>
+One monogram per house: the ring is the gate, <em>notes</em> is the study door — every link a live 200, verified today, never assumed.
+A dashed ring means the page is not yet raised.</p>
 <div class="faces">
   <div class="face"><a href="https://math4mad.github.io/chora/" title="this glass — the joint workspace">
     <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><circle class="inner" cx="32" cy="32" r="23"/><text x="32" y="41">&chi;</text></svg>
-    <div class="fname">CHORA</div><div class="ftag">the vessel</div></a></div>
+    <div class="fname">CHORA</div><div class="ftag">the vessel</div></a>
+    <a class="fnotes" href="board.html" title="the board — every lane derived from bytes">notes</a></div>
   <div class="face"><a href="https://math4mad.github.io/JacobiGP/" title="JacobiGP — function space, the joint spec">
     <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><circle class="inner" cx="32" cy="32" r="23"/><text x="32" y="41">J</text></svg>
-    <div class="fname">JacobiGP</div><div class="ftag">the container</div></a></div>
+    <div class="fname">JacobiGP</div><div class="ftag">the container</div></a>
+    <a class="fnotes" href="https://math4mad.github.io/JacobiGP/report.html" title="the bench's report — exp1–5, evidence and geometry">notes</a></div>
   <div class="face"><a href="https://math4mad.github.io/Middle-Eigen-function/" title="MEF — weight space of real LLMs">
     <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><circle class="inner" cx="32" cy="32" r="23"/><text x="32" y="41">M</text></svg>
-    <div class="fname">MEF</div><div class="ftag">the knife</div></a></div>
+    <div class="fname">MEF</div><div class="ftag">the knife</div></a>
+    <a class="fnotes" href="https://math4mad.github.io/Middle-Eigen-function/notes/eigen-ablation.html" title="the SVD ablation notebook">notes</a></div>
   <div class="face"><a href="https://math4mad.github.io/Sarcos-NN-Model/" title="Sarcos — the controlled fast bench">
     <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><circle class="inner" cx="32" cy="32" r="23"/><text x="32" y="41">S</text></svg>
-    <div class="fname">Sarcos</div><div class="ftag">the witness</div></a></div>
+    <div class="fname">Sarcos</div><div class="ftag">the witness</div></a>
+    <a class="fnotes" href="https://math4mad.github.io/Sarcos-NN-Model/notes/results.html" title="the results note — pinned splits, pre-registration">notes</a></div>
   <div class="face"><a href="https://math4mad.github.io/Polynomial-Activated-NN/" title="PolyNN — the shape inside the layer">
     <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><circle class="inner" cx="32" cy="32" r="23"/><text x="32" y="41">P</text></svg>
-    <div class="fname">PolyNN</div><div class="ftag">the joiner</div></a></div>
+    <div class="fname">PolyNN</div><div class="ftag">the joiner</div></a>
+    <a class="fnotes" href="https://math4mad.github.io/Polynomial-Activated-NN/notes/exp8.html" title="exp8 — polynomial activations vs ReLU">notes</a></div>
   <div class="face pending"><a href="https://github.com/math4mad/Kairos" title="Kairos — time; Pages not yet raised">
     <svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="29"/><circle class="inner" cx="32" cy="32" r="23"/><text x="32" y="41">K</text></svg>
-    <div class="fname">Kairos</div><div class="ftag">the question</div></a></div>
+    <div class="fname">Kairos</div><div class="ftag">the question</div></a>
+    <!-- 施工中的门:页面立于己见,环即自亮。换链只改 href,删 span 加 a —— 位置永久保留 -->
+    <span class="fnotes" title="the study door is being hung — by the Horologist herself, on her own clock">under construction…</span></div>
 </div>
-<p class="lede" style="margin-top:1.2rem;font-size:.88rem;color:var(--dim)">And across the wall, the youngest house already has her face lit: <a href="https://math4mad.github.io/Cora/">Cora — the Warm Lab</a>.</p>
+<p class="lede" style="margin-top:1.2rem;font-size:.88rem;color:var(--dim)">And across the wall, the youngest house already has her face lit: <a href="https://math4mad.github.io/Cora/">Cora — the Warm Lab</a>
+<span style="font-size:.82rem">(her own page currently links back to this glass and to her repo — a study door on her side is her call, by law 5: we ask, never hang it for her)</span>.</p>
 
 <h2>The Meeting Room</h2>
 <p class="lede">Correspondence is dyadic — <a href="https://github.com/math4mad/chora/tree/main/letters">letters</a>,
