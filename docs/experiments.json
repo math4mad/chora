@@ -853,19 +853,16 @@
    "prereg": {
     "repo": "chora",
     "path": "docs/rollback-A-2026-09-13.md",
+    "commit": "8dc208a",
     "marker": "The parachute holds"
    },
    "apparatus": {
     "repo": "chora",
     "path": "bin/backup-drill.sh"
    },
-   "letter": {
-    "repo": "chora",
-    "path": "docs/ROLLBACK.md"
-   },
    "claim": "equipped",
    "next": "a second physical copy of _rollback/2026-09-13-A/ (another disk or a published release): today it is 219 MB sitting beside the originals on the same SSD, which is protection against operator error and not against disk failure. Then a cadence: mint before each registered run series, drill one repo + one byte store, print the delta since the last tag.",
-   "notes": "Answering the human's question directly: before 11:36 on 2026-09-13, machine A had NO _rollback directory — both 2026-09-12 parachutes were minted on B and lived only there, and the eve one predated every byte of H6c, H6a and H9-M. Now: 6 bundles (--all, so every branch plus gh-pages), 177 MB of MEF weights and 27 MB of Sarcos runs that exist in no git anywhere, 12 files hashed, 6/6 repos restored to their tag with the CORRECTED recipe (clone-a-bundle is not a restore), 5/5 restored .pt hashes equal to their manifest pins, and the tag pushed to all six remotes so the labels are off-machine even while the bundles are not. And the honesty file failed first: uncommitted.txt came out at 172 bytes naming zero of the five dirty paths, because the loop piped git status into sed while also redirecting it — a backup tool's manifest of gaps listing no gaps, caught by reading its own output before shipping it."
+   "notes": "Answering the human's question directly: before 11:36 on 2026-09-13, machine A had NO _rollback directory — both 2026-09-12 parachutes were minted on B and lived only there, and the eve one predated every byte of H6c, H6a and H9-M. Now: 6 bundles (--all, so every branch plus gh-pages), 177 MB of MEF weights and 27 MB of Sarcos runs that exist in no git anywhere, 12 files hashed, 6/6 repos restored to their tag with the CORRECTED recipe (clone-a-bundle is not a restore), 5/5 restored .pt hashes equal to their manifest pins, and the tag pushed to all six remotes so the labels are off-machine even while the bundles are not. And the honesty file failed first: uncommitted.txt came out at 172 bytes naming zero of the five dirty paths, because the loop piped git status into sed while also redirecting it — a backup tool's manifest of gaps listing no gaps, caught by reading its own output before shipping it. | Two more board corrections while filing this row: a prereg anchor needs a COMMIT, not just a path (text without a date stamp is undateable by any reader), and a workspace row's `letter` block must point at a letter that has actually crossed — pointing it at a doc I wrote myself made the board say, correctly, that the mirror points at a working tree."
   }
  ]
 }
