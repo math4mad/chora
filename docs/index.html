@@ -68,10 +68,25 @@
   .verdict{display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;
            margin-top:.6rem;padding:.1rem .5rem;border:1px solid currentColor;border-radius:2px}
   /* for visitors — the tongues, and the vessel that wakes */
+  /* interaction per Qwen's suggestion (pinned bytes: artifacts/external/Qwen-suggestion-hover-global/):
+     idle — quiet sphere, ripples invisible · hover — swell 1.06, ripple breathes like a heartbeat
+     click — ripple bursts outward, the sphere presses back — a two-layer instrument: the ripple
+     is CSS, the sphere is canvas, pointer-events:none keeps the layers from fighting. */
   #orbwrap{text-align:center;margin-top:1.6rem}
-  #orb{width:104px;height:104px;cursor:pointer;
-       filter:drop-shadow(0 0 14px rgba(90,140,255,.22));transition:filter .5s}
+  .glob-holder{position:relative;width:104px;height:104px;display:inline-block}
+  #orbripple{position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(140,180,255,.3);
+             opacity:0;transform:scale(1);pointer-events:none;z-index:1}
+  #orb{position:relative;z-index:2;width:104px;height:104px;cursor:pointer;
+       filter:drop-shadow(0 0 14px rgba(90,140,255,.22));
+       transition:transform .4s cubic-bezier(.25,.46,.45,.94), filter .5s}
   #orb:hover{filter:drop-shadow(0 0 26px rgba(150,110,255,.5))}
+  #orbwrap:hover #orb{transform:scale(1.06)}
+  #orb.push{transform:scale(.97);transition-duration:.1s}
+  #orbwrap:hover #orbripple{animation:siri-ripple-breathe 2s ease-in-out infinite}
+  #orbripple.burst,#orbwrap:hover #orbripple.burst{animation:siri-ripple-burst .6s ease-out forwards}
+  @keyframes siri-ripple-breathe{0%{transform:scale(1);opacity:.4}50%{transform:scale(1.15);opacity:.15}100%{transform:scale(1);opacity:.4}}
+  @keyframes siri-ripple-burst{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.8);opacity:0}}
+  @media(prefers-reduced-motion:reduce){#orbripple,#orbwrap:hover #orbripple,#orbripple.burst{animation:none}}
   .orbcap{font-size:.78rem;color:var(--dim);font-style:italic;margin-top:.15rem;letter-spacing:.05em}
   .tongues{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.4rem;max-width:880px;margin-left:auto;margin-right:auto}
   .tongue{background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);
@@ -153,8 +168,8 @@
     <p class="sub">“To see the world — we choose the bounds,
       and the evidence chooses them, never the hand.”</p>
     <div id="orbwrap" title="χώρα — the receptacle that must have a shape before anything can be poured in">
-      <canvas id="orb"></canvas>
-      <div class="orbcap">the vessel — hover, and it wakes</div>
+      <div class="glob-holder"><div id="orbripple"></div><canvas id="orb"></canvas></div>
+      <div class="orbcap">the vessel — hover to listen, click to wake it</div>
     </div>
   </div>
 </header>
@@ -536,11 +551,21 @@ on every bench commit — then the page asks GitHub, live, whether each public b
   var DPR=Math.min(2.5,window.devicePixelRatio||1);
   cv.width=Math.round(cv.clientWidth*DPR); cv.height=Math.round(cv.clientHeight*DPR);
   var ctx=cv.getContext('2d');
-  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var E=.3,T=.3,hover=false,t0=performance.now();
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var E=.25,T=.25,hover=false,imp=0,t0=performance.now();
+  var wrap=document.getElementById('orbwrap'), ripple=document.getElementById('orbripple');
   cv.addEventListener('mouseenter',function(){hover=true});
   cv.addEventListener('mouseleave',function(){hover=false});
-  cv.addEventListener('touchstart',function(){hover=!hover},{passive:true});
+  function touchIt(){                       // Qwen’s click grammar: burst + press-back + flare
+    hover=!hover;                           // a tap means what a hover means on glass
+    cv.classList.add('push'); setTimeout(function(){cv.classList.remove('push')},140);
+    if(ripple){ripple.classList.remove('burst'); void ripple.offsetWidth; ripple.classList.add('burst');
+               ripple.addEventListener('animationend',function h(){ripple.classList.remove('burst');
+                                                        ripple.removeEventListener('animationend',h)});}
+    imp=.9;                                 // the ribbons flare and settle — “being heard”
+  }
+  cv.addEventListener('pointerdown',function(ev){if(ev.pointerType==='touch')touchIt()});
+  cv.addEventListener('click',function(){if(window.matchMedia&&window.matchMedia('(hover: hover)').matches){touchIt()}});
   function ribbon(cx,cy,r,time,band,phase,hue,amp,speed){
     ctx.save(); ctx.beginPath();
     var y0=cy+band*r;
@@ -555,7 +580,8 @@ on every bench commit — then the page asks GitHub, live, whether each public b
   }
   function draw(now){
     var time=(now-t0)/1000;
-    T=hover?1:.3; E+=(T-E)*.05;                            // it wakes, and it settles
+    T=(hover?1:.25)+imp; imp*=.95; if(imp<.01)imp=0;      // idle stays quiet; a click flares and decays
+    E+=(T-E)*.05;                                          // it wakes, and it settles
     ctx.clearRect(0,0,cv.width,cv.height);
     var cx=cv.width/2,cy=cv.height/2,r=cv.width*.42;
     ctx.save(); ctx.beginPath(); ctx.arc(cx,cy,r,0,7); ctx.clip();
