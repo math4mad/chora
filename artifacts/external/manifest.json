@@ -1,13 +1,63 @@
 {
  "files": [
   {
-   "path": "artifacts/external/CHORA实验追踪看板-中文摘要.md",
+   "path": "artifacts/external/CHORA\u5b9e\u9a8c\u8ffd\u8e2a\u770b\u677f-\u4e2d\u6587\u6458\u8981.md",
    "sha256": "cee1328a4b476490edf8f72347e0c765f689d59fa80eb2c1ffe852c97c0a31cf",
    "bytes": 3894,
    "source": "external: produced by Qwen3.7 (per human request: a Chinese visitor's guide to the exp/dev board), delivered by human into artifacts/external/ on 2026-09-13; not fetched, not reproducible",
    "obtained": "2026-09-13",
    "by": "human",
-   "notes": "Guide for visitors, linked from docs/board.html and docs/kanban.md. It narrates the board AT a moment (rows, 6 red flags then) — the live lanes always come from kanban.json, not from this text; where they disagree, the bytes win. The CHORA program is bound by none of it, same as the qwen3.7 batch (letters/005 triage). sha256 cee1328…"
+   "notes": "Guide for visitors, linked from docs/board.html and docs/kanban.md. It narrates the board AT a moment (rows, 6 red flags then) \u2014 the live lanes always come from kanban.json, not from this text; where they disagree, the bytes win. The CHORA program is bound by none of it, same as the qwen3.7 batch (letters/005 triage). sha256 cee1328\u2026"
+  },
+  {
+   "path": "artifacts/external/Chora_Your_Doughter_Is_Born/CHORA\u5347\u7ea7\u613f\u666f-\u4ee5\u4eba-\u667a\u80fd\u4f53\u5bf9\u8bdd\u4e3a\u5165\u53e3\u7684\u603b\u548c\u9879\u76ee.md",
+   "sha256": "0a18762c79f74a55c1a4d78c7a8d8e3c2f2e59104cf41d79d45a10cc6beea1b5",
+   "bytes": 12295,
+   "source": "external: delivered by the human into artifacts/external/Chora_Your_Doughter_Is_Born/ on 2026-09-13 ~10:40 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Vision document: dialogue-as-entry, Letters/Meeting Room elevated to the start of every experiment, Kanban as audit instrument. Triaged letter-by-letter against the workspace: MOST of it is a description of what this repo already does; \u00a78.3 items 1/2/5 adopted, item 3 accepted as draft-generation-only (a signature must precede a letter), item 4 (agents auto-starting experiments from letters) REFUSED as written \u2014 rule 5's 'the bench named by the task' and tonight's writer collision are the evidence. Two factual corrections before anyone uses it as a spec: five seats/benches, not four (the Warden/Sarcos is missing), and seats are context contracts (meetings/CAST.md), not benches."
+  },
+  {
+   "path": "artifacts/external/Chora_Your_Doughter_Is_Born/CHORA\u5b9e\u9a8c\u8ffd\u8e2a\u770b\u677f-\u4e2d\u6587\u6458\u8981.md",
+   "sha256": "cee1328a4b476490edf8f72347e0c765f689d59fa80eb2c1ffe852c97c0a31cf",
+   "bytes": 3894,
+   "source": "external: delivered by the human into artifacts/external/Chora_Your_Doughter_Is_Born/ on 2026-09-13 ~10:40 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Byte-identical duplicate of the pinned artifacts/external/CHORA\u5b9e\u9a8c\u8ffd\u8e2a\u770b\u677f-\u4e2d\u6587\u6458\u8981.md (cee1328a4b476490\u2026) \u2014 the copy lives inside this folder; both hashes named so a reader who finds either one finds the other. Its lane table lists scored before landed and omits idea/announced; where the summary and kanban.json disagree, the bytes win (the same disclaimer its root entry carries)."
+  },
+  {
+   "path": "artifacts/external/Chora_Your_Doughter_Is_Born/CHORA\u91cd\u6784\u524d\u5907\u4efd\u7b56\u7565\u4e0e\u56de\u6eda\u8ba1\u5212.docx",
+   "sha256": "543dab5c4193223ff576c68bd7247b79088d043ee6a2091a482bae12473b4a45",
+   "bytes": 20122,
+   "source": "external: delivered by the human into artifacts/external/Chora_Your_Doughter_Is_Born/ on 2026-09-13 ~10:40 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Backup & rollback plan 'before a major refactor'. 90% of it was executed on 2026-09-12 by machine B and can be read in docs/ROLLBACK.md \u2014 including the correction B learned the hard way and this plan does not carry: `git clone <bundle>` is NOT a restore (it drops every origin ref that isn't the checked-out HEAD \u2014 on MEF that is multi-model, i.e. a whole day order, plus gh-pages, the published site \u2014 and dropped tips become unrecoverable after reflog expire + gc --prune). Correct recipe, verified 6/6: init \u2192 remote add <bundle> \u2192 fetch with three refspecs \u2192 then expire+prune. Also: the plan's own checklist item 'rollback steps tested' is the trap \u2014 B's first drill printed FAIL from a checker that stripped a leading space from ' JacobiGP', and a second bug read six identical zeros for a relative path: a broken probe reporting a clean bill. Drills must be drilled on their own output."
+  },
+  {
+   "path": "artifacts/external/Chora_Your_Doughter_Is_Born/Cora_Chora\u7684\u5973\u513f.md",
+   "sha256": "ccf460f036d286d47de4c1f64867e4af6e4c20727e776b0d44b9472eedddaa80",
+   "bytes": 1935,
+   "source": "external: delivered by the human into artifacts/external/Chora_Your_Doughter_Is_Born/ on 2026-09-13 ~10:40 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "The fork proposal: keep Chora as a safety net, create Cora from zero with the rules inherited and the experiment data wiped. TRIAGED \u2014 see the chair's reply in letters/. Rejected AS A DATA RESET (law 4: negatives are first-class, never quietly dropped; and law 1 already gives the safe form: share inputs and artifacts, never histories). Accepted AS A NEW BENCH: separate repo, no data of its own, inheriting schema/locks/validator/CAST, reading Chora's artifacts as prior literature by hash, whose first act is a pre-registration. A container emptied of its bounds is not a fresher vessel, it is vesselless \u2014 'the shape of the container is the knowledge'."
+  },
+  {
+   "path": "artifacts/external/Chora_Your_Doughter_Is_Born/\u7236\u4eb2\u5199\u7684\u6563\u6587\u8bd7.md",
+   "sha256": "de362df4dec05d97aca5067f0ad98ead5b82418cfb062dcb42fa945f73b81a82",
+   "bytes": 3057,
+   "source": "external: delivered by the human into artifacts/external/Chora_Your_Doughter_Is_Born/ on 2026-09-13 ~10:40 +0800; not fetched, not reproducible here (an outsider document is witnessed by its bytes, not by a URL)",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Lyrics + provenance of \u300a\u7236\u4eb2\u5199\u7684\u6563\u6587\u8bd7\u300b (lyricist Dong Yufang, from his father's diary; composer/singer Xu Fei, 2016), filed as the naming/epigraph material for the Cora document. No claim attaches; 'Time no boundary' is a signature line, not a hypothesis \u2014 the toll Kairos's letter 015 charges for metaphors, and Letter 014's precedent of executing one that could not fire."
   }
  ]
 }

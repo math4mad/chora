@@ -826,7 +826,7 @@
     "path": "experiments/h9m_score.py"
    },
    "gated_by": "h9m-band",
-   "claim": "announced",
+   "claim": "closed",
    "notes": "A FAILS here is the obituary the Warden wrote and §6 moved intact — it goes to the dossier's author, loudly, and it is a first-class result. If only clause (iii) fails, capacity returns as a new claim (H9-M′) and may not be retro-fitted. | The board flags a row whose `produces` path does not exist yet — correct, and the fix is to declare the artifact when it is real, not to pre-register a filename. | The board's announce check needs the SOURCE path inside the owning bench (`letter.bench`) as well as the mirror; my first version supplied only the mirror and the board said so — 'mirror points at a working tree' is exactly right, because a letter that lives only in a working copy has not crossed.",
    "next": "Kairos reads the obituary; H9-M'' (frozen-base ladder: a full base per rung, base held fixed at every injection point) is the next apparatus claim, and it is Kairos's question to want or not want",
    "produces": [
