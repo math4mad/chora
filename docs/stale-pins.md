@@ -72,7 +72,7 @@ number crosses only with `(path, sha256)`.
   line of the append-only array touched). Produced by two agents in one clone with no lock — hence
   the writer lock at `bin/writelock.sh` and the addendum in the root `AGENTS.md`.
 
-## 4 · `artifacts/external/Qwen-suggestion-hover-global/Qwen-Suggestion-about-hover-globe.md`
+## 4 · `artifacts/external/Qwen-suggestion-hover-global/Qwen-Suggestion-about-hover-globe.md` — **CLOSED by the chair, 2026-09-13**
 
 - pin: artifacts/external/Qwen-suggestion-hover-global/Qwen-Suggestion-about-hover-globe.md
 - clause failing: **C5** — the reverse direction: the file is tracked in git and **named by no
@@ -87,3 +87,10 @@ number crosses only with `(path, sha256)`.
   notes:)` in the same commit as the content edit — or move it out of `artifacts/` if it is a note
   rather than an input. Closing this line = the entry exists; the exemption is deleted by editing
   this file, which is the only way an exemption here ever goes away.
+- **closed 2026-09-13 by the chair, at the owner's word ("四个文件需要提交").** The file arrived at
+  rest — the mid-flight edit was its owner's own annotation, not another agent's sequence — and the
+  pin went in *behind* the settled bytes, in the same commit as their `git add`, which is what the
+  ask asked for. The exemption is **withdrawn, not forgiven**: the line stays as the record, the
+  marker is gone, so a regression on these bytes prints red again. Three sibling files from the same
+  delivery batch (LineAge pair, second-round review) are pinned in that commit too; the registry's
+  exemption count for C5 goes to zero.

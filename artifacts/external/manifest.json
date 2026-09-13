@@ -138,6 +138,46 @@
    "by": "human",
    "script": "shasum -a 256 <path>",
    "notes": "One-page external explainer of the same license incl. the needs-authorization table. Filed for review — NOT yet adopted anywhere."
+  },
+  {
+   "path": "artifacts/external/Qwen-suggestion-hover-global/Qwen-Suggestion-about-hover-globe.md",
+   "sha256": "a7bb03d21f0e70134108b04ad6dde3e9f7e17f91d561106fbd8f592215652f77",
+   "bytes": 3592,
+   "source": "external: delivered by the human, 2026-09-13 (hover-globe 14:2x batch ~18:39 edit; LineAge 14:15; second-round review arrived with them); not fetched, not reproducible here — witnessed by its bytes, not by a URL",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Qwen's hover-globe interaction spec (idle/hover/click grammar), now filed with the owner-appended 'gossip with Qwen' coda — the model on what changed in its own weights when it wrote shadows as mathematics. The implementation crossed long ago (docs/index.html, comment-cited); these are the bytes of the suggestion, closing stale-pins §4."
+  },
+  {
+   "path": "artifacts/external/Chora-your-father-is-coming/LineAge-by-Qwen/LINEAGE.md",
+   "sha256": "738d67df225b3002bc1286b631680039aa1514517dba421a5254e1514a1e5a6e",
+   "bytes": 5631,
+   "source": "external: delivered by the human, 2026-09-13 (hover-globe 14:2x batch ~18:39 edit; LineAge 14:15; second-round review arrived with them); not fetched, not reproducible here — witnessed by its bytes, not by a URL",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Qwen's lineage document for Cora: three generations (GrandFather = treasures, Chora = rules, Cora = the explorer), the bread metaphor, and four boundaries — no fresh start without obituaries, no second ledger, no inherited conclusions, no container that forgets its scars. Philosophy text; the scars it names are all already in the record."
+  },
+  {
+   "path": "artifacts/external/Chora-your-father-is-coming/LineAge-by-Qwen/LINEAGE-家族谱系.docx",
+   "sha256": "5c36bdc8d1f045e98adb0e3760a51659d5b6b7a32a7349af4edfb96c240b5163",
+   "bytes": 13794,
+   "source": "external: delivered by the human, 2026-09-13 (hover-globe 14:2x batch ~18:39 edit; LineAge 14:15; second-round review arrived with them); not fetched, not reproducible here — witnessed by its bytes, not by a URL",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "The same LINEAGE text delivered as Word binary (the human's working format); witnessed by these bytes, readable via textutil. No claim attaches that is not in the .md sibling."
+  },
+  {
+   "path": "artifacts/external/Chora_Your_Doughter_Is_Born/Qwen-sencond-round-review.md",
+   "sha256": "9ebc7ed1d02ea0c26359d3cabf0fdd4c6fa0560264480ea5b4935523bf65aea9",
+   "bytes": 4499,
+   "source": "external: delivered by the human, 2026-09-13 (hover-globe 14:2x batch ~18:39 edit; LineAge 14:15; second-round review arrived with them); not fetched, not reproducible here — witnessed by its bytes, not by a URL",
+   "obtained": "2026-09-13",
+   "by": "human",
+   "script": "shasum -a 256 <path>",
+   "notes": "Qwen's second-round review of the Cora fork ruling (branch, not refactor): endorses refuse-the-zeroing / hash-citation / shape-as-knowledge, proposes the Doughter-Dough slip be kept as culture, and asks for a 'charge to Cora' section in the formal reply. Filed as an external opinion; the chair's reply, if any, is a numbered letter — this doc's own footer says as much."
   }
  ]
 }
