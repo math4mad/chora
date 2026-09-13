@@ -3,7 +3,7 @@
 # Installed as ~/Library/LaunchAgents/com.chora.remind-h9m.plist (launchd StartCalendarInterval with
 # an explicit Month+Day, so it fires once; a job missed during sleep runs on wake — hence the lateness
 # check). macOS has no `at`; this is the native one-shot. Self-removes after firing.
-set -uo pipefail
+set -uo pipefail   # deliberately NOT -e: a dismissed dialog must not skip the uninstall
 LOG=/tmp/chora-reminders.log
 
 read -r -d '' MSG <<'TXT' || true
@@ -15,6 +15,20 @@ Also queued for the room: H6a's fate after DEAD-BY-CURVE-CLAUSE (S = 7.880 — t
 
 Draft: benches/Kairos/docs/PREREG.md @ Kairos@ae6be01 · plan: letters/024 · ceiling ~1 h 20 m.
 TXT
+
+# SELF-REMOVAL FIRST, and tolerant. Two lessons, both learned the hard way by this file's own
+# first and only run (09:10:16 on 2026-09-13, answered "OK, filed"):
+#   1. it lived at the END, after a UI call the user could answer — and after the beat's `set -e`
+#      had already been tripped by `launchctl bootout` returning non-zero while the lock was held
+#      by the running copy, so the plist was never deleted and a fresh 09:10 would have fired
+#      again tomorrow. A cleanup that runs last is a cleanup that does not run.
+#   2. the executable bit: my 2026-09-12 edits rewrote bin/publish-status.sh via a Python
+#      write_text(), which reset mode 755 -> 644, and sync.sh's `-x` test then reported
+#      "publish-status.sh missing — skipping snapshot" — a false statement about a file that was
+#      present, readable and correct. Same family as tonight's pins: presence checked, state not.
+launchctl bootout "gui/$(id -u)/com.chora.remind-h9m" 2>/dev/null || true
+rm -f "$HOME/Library/LaunchAgents/com.chora.remind-h9m.plist" || true
+echo "$(date '+%Y-%m-%d %H:%M:%S %z')  self-removed (uninstall runs before the UI, not after it)" >> "$LOG"
 
 echo "$(date '+%Y-%m-%d %H:%M:%S %z')  FIRED  H9-M reminder" >> "$LOG"
 
@@ -37,7 +51,5 @@ if [ "$(date +%H%M)" -ge 1010 ]; then
 	/usr/bin/osascript -e 'display dialog "MISSED 09:10 — fired late, the machine was asleep. H9-M is still waiting on MEF.'"'"'s answer." with title "CHORA · late reminder" buttons {"OK"} default button 1' >>"$LOG" 2>&1
 fi
 
-launchctl bootout "gui/$(id -u)/com.chora.remind-h9m" 2>/dev/null
-rm -f "$HOME/Library/LaunchAgents/com.chora.remind-h9m.plist"
-echo "$(date '+%Y-%m-%d %H:%M:%S %z')  self-removed" >> "$LOG"
+
 exit 0

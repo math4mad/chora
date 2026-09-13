@@ -37,6 +37,20 @@ if ! BR="$(git symbolic-ref --quiet --short HEAD)" || [ -z "${BR:-}" ]; then
   echo "[publish] HEAD is detached — standing down (a snapshot into no branch is an orphan)"
   exit 0
 fi
+# Every beat also re-runs the manifest EXISTENCE validator (bin/validate-manifests.sh): the four
+# clauses that the human eye does not — tracked at HEAD, HEAD's bytes == pin, disk's bytes == pin.
+# Today's three incidents (E0_seed14_pretrain.log, the season-1 outline pinned at the hash of
+# nothing, the spectra race between two agents in one clone) all passed "valid JSON, hashes fine,
+# paths conventional", so the check is now part of the drumbeat rather than a favour. Non-fatal by
+# design: a broken pin must not stop the glass painting — the beat reports it and keeps going.
+if [ -x "$ROOT/bin/validate-manifests.sh" ]; then
+  if ! bash "$ROOT/bin/validate-manifests.sh" --strict >/tmp/chora-validate.log 2>&1; then   # NOT --quiet: the beat reports the summary line, it just does not die on it
+    echo "[publish] RED FLAG — manifest validation has a NEW failure (see /tmp/chora-validate.log):"
+    grep -v EXEMPT /tmp/chora-validate.log | sed 's/^/[publish]   /' | head -12
+  else
+    sed -n 's/^\[validate\] /[validate] /p' /tmp/chora-validate.log | head -1  # (tail -1 printed nothing: the log ends on a blank line)
+  fi
+fi
 bash "$ROOT/bin/status.sh" --publish >/dev/null
 # --- the exp/dev board rides the same beat: lanes are derived from the record, so a board
 # --- that is not regenerated is a board that is silently wrong (the glass proved that today).

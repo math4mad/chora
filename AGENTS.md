@@ -39,6 +39,18 @@ schemas/        manifest.schema.json — the contract for every shared file
 docs/           the home page (GitHub Pages: math4mad.github.io/chora)
 docs/onboarding-B.md  worker-machine protocol (B = m1-16g; A keeps the glass)
 bin/sync.sh     idempotent setup: symlinks benches + shared model/data paths
+bin/publish-status.sh  the glass beat (stands down for a rebase/detached HEAD —
+                   D1; runs the manifest validator every beat since 2026-09-12)
+bin/validate-manifests.sh  four-clause pin check (C1 hash-shaped, C2 tracked at
+                   HEAD, C3 HEAD bytes, C4 disk bytes); --strict exits 1 on a
+                   NEW failure; exemptions live in docs/stale-pins.md, named
+bin/writelock.sh   advisory writer lock for a shared clone (acquire/renew/
+                   release/take/status; steals are recorded in the lock file)
+experiments/       joint run scripts (exp6 H6c fit, H6a Sarcos pilot + its
+                   post-hoc robustness + spectra addendum, H9-M staged
+                   instrument); each refuses to run before its paperwork exists
+docs/status.json   the painted fleet snapshot (git-tracked; provenance lines
+                   `generated`/`chora_head` are ignored by the drift guard)
 ```
 
 ## The science in one paragraph
@@ -85,6 +97,22 @@ one bench.
    each bench's expected paths are symlinked by `bin/sync.sh`. If you find
    yourself downloading a model that has a manifest entry — stop; verify
    the hash, fetch only if the hash is missing.
+7. **A shared clone is still one writer.** Law 3 holds per *repository*, not per
+   person: two agents in this checkout can break it without either touching the
+   other's file, because the collision is between their **sequences** (add →
+   commit) and git cannot see it — measured 2026-09-12, when a manifest pin
+   taken from the working tree committed the file's *previous* bytes
+   (`chora@f79d588`). Practice, from that incident: take
+   `bin/writelock.sh acquire "<who>"` before any sequence a pin depends on
+   (advisory, self-identifying, and a steal is written into the lock file so it
+   stays visible); and know that `bin/validate-manifests.sh` now runs on **every**
+   publisher beat, checking four clauses per entry — C1 the pin is a hash, C2
+   the path is tracked at HEAD, C3 HEAD's bytes equal the pin, C4 the disk's
+   bytes equal the pin — with C2/C3 waived **per entry** for `models/` and
+   `data/` by law 1, never inferred from a directory name by a person. A failure
+   that must be carried goes in `docs/stale-pins.md` **with an owner and an
+   ask**; neither silence nor a quiet exemption is an option. This clause
+   tightens law; it relaxes nothing.
 
 ## Letters
 
