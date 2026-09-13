@@ -1,0 +1,8 @@
+/Users/lunarcheung/Programming/code-2026/Middle-Eigen-function/scripts/stage18_kairos_mini.py:246: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  curve2.append({"step": i, "loss": float(loss), "secs": round(time.time()-t0, 1)})
+params 2,025,152 · dev mps · corpus tinystories | B=held-out tail | P=case-toggled-B (380.0MB A / 16.0MB B)
+  latched k=25% at step 500
+  latched k=50% at step 1000
+  latched k=75% at step 1500
+base ladder saved: 0, 25, 50, 75, 100
