@@ -1,14 +1,14 @@
 {
- "generated": "2026-09-13T04:31:54Z",
- "chora_head": "a610f79",
+ "generated": "2026-09-13T04:38:29Z",
+ "chora_head": "f896edc",
  "counts": {
   "idea": 0,
   "registered": 5,
   "equipped": 5,
   "landed": 2,
   "scored": 2,
-  "announced": 1,
-  "closed": 9,
+  "announced": 0,
+  "closed": 10,
   "blocked": 10,
   "RECONCILE": 6
  },
@@ -134,14 +134,14 @@
    "kind": "experiment",
    "owner": "Horologist",
    "bench": "MEF",
-   "lane": "announced",
+   "lane": "closed",
    "claim": "announced",
    "verdict": null,
    "gated_by": null,
    "budget": null,
    "next": "resolve the pretrain.log pin: land the bytes, or amend the entry to say plainly that they live on one laptop (asked of B in Letter 021 §5).",
    "flags": [
-    "no bytes on disk: artifacts/results/mef/E0_seed14_pretrain.log"
+    "CLAIM DRIFT: the hand says 'announced', the bytes say 'closed'"
    ],
    "detail": {
     "prereg": "chora@4250f0d letters/2026-09-11-chair-all-two-machine-day.md",
@@ -675,11 +675,10 @@
   }
  ],
  "audits": [
-  "pins: 132 · no bytes: 1 · hash mismatch: 0 · untracked-not-by-design: 0",
-  "  DANGLING PIN (a permission slip for bytes that exist nowhere): artifacts/results/mef/E0_seed14_pretrain.log",
+  "pins: 132 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "REPO chora: 4 unreachable snapshot commit(s) d57b4cc a8287be 786f909 7b277fc — a beat's work in limbo",
-  "glass: generated 0 min ago · paint a610f79, 0 commit(s) behind HEAD",
+  "REPO chora: 11 unreachable snapshot commit(s) 068036c a610f79 2c4ff38 e3a02f9 — a beat's work in limbo",
+  "glass: generated 0 min ago · paint f896edc, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
