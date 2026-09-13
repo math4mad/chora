@@ -28,8 +28,12 @@ done
 echo "══════════ 2 · bundles (--all: every ref, every tag) ══════════"
 for r in "${repos[@]}"; do
   n=$(echo "$r" | xargs)
-  git -C "$ROOT/$r" bundle create "$DEST/$n.bundle" --all >/dev/null 2>&1 \
-    && printf "  %-26s %s\n" "$n" "$(du -h "$DEST/$n.bundle" | cut -f1)" || echo "  FAILED $n"
+  sn=$(printf '%s' "$n" | tr ' ' '.')      # GitHub rewrites spaces in asset names to dots; match the
+                                           # local name to the remote one instead of teaching every
+                                           # later tool to normalise (the first PolyNN upload was lost
+                                           # exactly that way: a FAILED line and then a renamed asset)
+  git -C "$ROOT/$r" bundle create "$DEST/$sn.bundle" --all >/dev/null 2>&1 \
+    && printf "  %-26s %s\n" "$sn" "$(du -h "$DEST/$sn.bundle" | cut -f1)" || echo "  FAILED $n"
 done
 
 echo "══════════ 3 · the bytes that live in no git anywhere ══════════"
