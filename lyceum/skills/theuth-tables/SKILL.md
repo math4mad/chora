@@ -81,6 +81,18 @@ with `reconciliation_rule.post_hoc: true` recorded in the json, because the tole
 the number was seen. Copy it per artifact; do not generalise it into a framework — a seat that owns one
 script per table is a seat that has read each table.
 
+**Second rig (same afternoon, same laws, different disease):**
+`experiments/theuth_h6a_pilot_table.py` renders H6a's pilot from
+`h6a_pilot_verdict.json` (`e08ca86d2ea4…`, 263,209 B) — five rows (the deciding one plus four
+sensitivity rows), twelve columns, **both clauses in their own columns** (`clause i`, `clause ii`) rather
+than fused into a `status` cell, with `S/threshold` and `Δ/B` as separate quotients, and — the part the
+first rig did not have — **the verdict itself recomputed from the four primitives it summarises**
+(`HOLDS iff S > threshold AND Δ ≤ B`, the file's own rule string), plus the file's prose field
+`curves_already_separated` checked against the clause it describes. It agrees on all five rows
+(`verdict_consistency: true`, 40 numeric cells parsed back, 0 mismatched), which is the *other* lesson:
+**a check that passes is worth keeping precisely because it could have failed.** The first table it ever
+rendered did not pass, and both artifacts were equally hash-clean the whole time.
+
 ## great_tables: what is actually true on this machine (verified 2026-09-14, 0.24.0)
 
 - Install: `pip install great-tables polars` → venv is **236 MB**; requires **Python ≥ 3.10** (venv here
@@ -97,6 +109,9 @@ script per table is a seat that has read each table.
 - HTML export is free: `as_raw_html()` / `write_raw_html()`; LaTeX via `as_latex()`. **Image/PDF export
   needs the `[extra]` — `css-inline`, `Pillow`, and `selenium`, i.e. a browser driver.** On a
   battery-powered worker laptop render HTML and let the site screenshot it; PNG is not this seat's job.
+- **Locations are `from great_tables import loc`, not `style.locs`.** `tab_style(style=style.fill("#2a1417"),
+  locations=loc.body(columns="v"))`; `style` exports only `borders, css, fill, text`, and guessing the R
+  name costs one `AttributeError`. `loc.body(columns=…, rows=…, mask=…)` is the selection API.
 - Style: chain `.fmt_number(columns=[...], decimals=dp)` per numeric column, `.fmt_integer()` for ranks
   and counts (thousands separators belong in a `params` column), `.tab_style()`/`.data_color()` sparingly
   — a band is a colour only if the band is frozen in writing, and never a colour instead of a number.
@@ -104,6 +119,41 @@ script per table is a seat that has read each table.
   contact with it. Either set `opt_table_font` + explicit `tab_style` fills, or hand the HTML to the
   glass's owner and let the anchor layer clip it — `docs/index.html` already carries a precedent for
   exactly that re-clip. **Theuth proposes markup; only a bench's owner lands a page.**
+
+## How a render check is written (three refusals, all of them mine, in one afternoon)
+
+The check is the seat, not the styling — so write it as though it will be the only part anyone
+re-reads in a year. What actually happened while these two rigs were built, in order, because each
+failure is a rule:
+
+1. **`style.locs(column=…)` → `AttributeError`.** There is no `locs` in `style`; the export is
+   `great_tables.loc`. *Rule: before using a rendering API, `print([m for m in dir(GT) …])`. The Python
+   port is not R's `gt`, and the difference is a runtime error in someone else's table.*
+2. **The first version of the parser counted τ.** A flat regex over everything after `</thead>` matched
+   40 cells where 35 were expected, because a `τ` column holds `0.5`, and `0.5` is a number — the check
+   then "found" mismatches that were the checker's, not the table's. *Rule: a column of numeric
+   parameters is not exempt from being read; either compare per column by name or expect the labels to
+   join the evidence.*
+3. **`<tbody>` did not exist; `<tbody class="gt_table_body">` did.** *Rule: pin the pattern to what the
+   tool emits, not to what HTML convention says — and when the parse finds nothing, refuse loudly
+   (`no <tbody> in the rendered html — nothing was parsed, so nothing is vouched for`). A check whose
+   input is empty must never be allowed to pass.*
+
+Working form, both rigs:
+
+```python
+m = re.search(r"<tbody[^>]*>(.*?)</tbody>", html_out, re.S)   # class attribute is not optional
+if not m:
+    die(5, "no <tbody> in the rendered html — nothing was parsed, so nothing is vouched for")
+cells = re.findall(r">(-?\d+(?:\.\d+)?)<", m.group(1))       # body only: <tfoot> holds the notes
+want  = [str(r[c]) for r in rows for c in NUMERIC_COLS_IN_DOCUMENT_ORDER]
+if len(cells) != len(want): die(5, …)        # count first, values second — never the reverse
+if any(a != b for a, b in zip(cells, want)): die(6, …)
+```
+
+Note what is *not* here: no assertion about how the table looks. Colour, padding and the parchment clip
+are the page owner's taste; this check only ever asks whether the printed cells are the file's numbers,
+which is the only question with a verdict attached to it.
 
 ## What this seat does not do
 

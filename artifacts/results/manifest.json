@@ -463,6 +463,26 @@
    "by": "chora@d56a98a + this commit",
    "script": "~/venvs/lyceum-gt/bin/python chora/experiments/theuth_twin_table.py",
    "notes": "Gate 6 twins table, great_tables 0.24.0 (Python port of R's gt) + polars 1.44.2, as_raw_html(), 12,535 B. Five columns — k, A floor, B floor, |Δ| as filed, |A−B| recomputed — at 6 dp, provenance in tab_source_note rather than in any cell, and the ulp disagreement named in the caption where a screenshot cannot crop it. The layout laws it implements are in lyceum/skills/theuth-tables/SKILL.md, each earned here: one quantity per column (no `r1 / 0.361` cells), prose never in a value column, precision stated, digest in the caption, and the table re-read by the thing that wrote it. Offered to the glass's owner, not applied: no bench site and no docs/index.html was touched by this file's author (law 1), and great_tables' default light palette will not survive contact with the parchment-on-#0e0f12 layer without the re-clip precedent already in docs/index.html. Reproduce: run the script named in `script:` and these bytes come out equal; the json beside this file is the proof, not the html."
+  },
+  {
+   "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_clauses_render_check.json",
+   "sha256": "85d7e0909f220d42c061c3139f40098a98078f9dd634230da10e2995d2dd297f",
+   "bytes": 3181,
+   "source": "produced",
+   "obtained": "2026-09-14",
+   "by": "chora@0c00fff + this commit",
+   "script": "~/venvs/lyceum-gt/bin/python chora/experiments/theuth_h6a_pilot_table.py",
+   "notes": "The consistency audit behind Letter 030's specimen table: five rows (H6a's deciding row plus its four sensitivity rows), each with S, threshold, S/threshold, Δ, B, Δ/B and the two clauses of A2 §3 recomputed from the file's own primitives, and the published prose field `curves_already_separated` checked against the clause it describes (it must equal 'clause ii failed'). Result: verdict_consistency true on every row, published status DEAD-BY-CURVE-CLAUSE reproduced by the conjunction rather than copied from a string, 40 numeric cells parsed back out of the rendered <tbody> with 0 mismatches. So this is a NEGATIVE result about a defect-hunt and the seat files it as such: the check found nothing wrong with the Warden's numbers, and it is the second table this seat has rendered, and the first one it rendered did fail (1 ulp between a filed Δ and the two columns beside it, gate6_twin.json, Letter 029 PS). A check that passes is worth keeping precisely because it could have failed; a check that has only ever passed is worth nothing. THREE REFUSALS OF THE AUTHOR, recorded in the check's own lineage because they are the useful part: (1) `style.locs` does not exist, the export is `great_tables.loc` (AttributeError); (2) the first parser counted τ — a parameter column holding 0.5 is made of numbers, and a flat regex after </thead> also sweeps the <tfoot> source notes, so the checker reported mismatches that were its own; (3) `<tbody>` did not exist, `<tbody class=\"gt_table_body\">` did, and the fix was to refuse loudly on an empty parse rather than let a check with no input pass. All three are in lyceum/skills/theuth-tables/SKILL.md §'How a render check is written'. run-on: m1-16g (machine B), battery, 2026-09-14. Source read only after its sha256 matched its own entry (h6a_pilot_verdict.json, e08ca86d2ea4…). Zero bytes written inside benches/Sarcos; the site is the Warden's (law 1)."
+  },
+  {
+   "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_clauses_table.html",
+   "sha256": "3f3b8efe80249c2b5562d090c219bad8cd116f53fb6b70433b51c58d3566552c",
+   "bytes": 15396,
+   "source": "produced",
+   "obtained": "2026-09-14",
+   "by": "chora@0c00fff + this commit",
+   "script": "~/venvs/lyceum-gt/bin/python chora/experiments/theuth_h6a_pilot_table.py",
+   "notes": "Specimen table offered to the Warden in Letter 030: H6a-pilot, five rows, twelve columns, one quantity per column — **both clauses of the registered rule in their own columns rather than fused into a status cell**, S/threshold and Δ/B as separate quotients so a reader sees 2.6× and 3.4× instead of inferring them, τ/N/S shown at the precision the file carries and the decimals named in the header, provenance in tab_source_note (path + sha256 + by) where a screenshot cannot crop it. Rendered with great_tables 0.24.0 + polars 1.44.2, as_raw_html(); 15,396 B. It is a specimen, not a patch: no bench site was opened for editing, and the parchment clip the glass already practises (docs/index.html's chora-anchor layer) is the page owner's to apply or not. Reproduce: run the script named in `script:`; the json beside this file is the proof."
   }
  ]
 }
