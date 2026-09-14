@@ -1,0 +1,64 @@
+{
+ "kind": "Theuth render check — a table parsed back out of its own html",
+ "source": "artifacts/results/mef/stage19_h9m/gate6_twin.json",
+ "source_sha256_on_disk": "52efb2a5baf5e603510906f53bbd510e32a6c3fcec95b2e00b6d6c34f7c764aa",
+ "source_pin_matches": true,
+ "renderer": "great_tables 0.24.0 + polars, as_raw_html()",
+ "decimals_rendered": 6,
+ "rows": 5,
+ "cells_checked": 20,
+ "worst_abs_diff_file_vs_render": 0.0,
+ "reconciliation": [
+  {
+   "k": 0,
+   "file_delta": 0.0,
+   "abs_A_minus_B": 0.0,
+   "residual": 0.0,
+   "state": "float_noise"
+  },
+  {
+   "k": 25,
+   "file_delta": 0.028914,
+   "abs_A_minus_B": 0.028915000000000024,
+   "residual": 1.0000000000252862e-06,
+   "state": "ulp_disagreement"
+  },
+  {
+   "k": 50,
+   "file_delta": 0.023949,
+   "abs_A_minus_B": 0.023948999999999998,
+   "residual": -3.469446951953614e-18,
+   "state": "float_noise"
+  },
+  {
+   "k": 75,
+   "file_delta": 0.001622,
+   "abs_A_minus_B": 0.00162299999999993,
+   "residual": 9.999999999300933e-07,
+   "state": "ulp_disagreement"
+  },
+  {
+   "k": 100,
+   "file_delta": 0.008254,
+   "abs_A_minus_B": 0.008253999999999984,
+   "residual": -1.5612511283791264e-17,
+   "state": "float_noise"
+  }
+ ],
+ "reconciliation_rule": {
+  "classes": {
+   "float_noise": "<= 5e-13",
+   "ulp_disagreement": "<= 1 ulp of the rendered place (rendered, disclosed, one column per quantity)",
+   "REFUSED_level": "> 1 ulp (no table emitted)"
+  },
+  "post_hoc": true,
+  "disclosure": "the classes were written after B saw the first residual (1e-6 at k=25); a seat whose tolerance is set after the number is a seat that cannot veto its own owner, so the threshold is offered to the room to freeze before the next table, not claimed as pre-registered"
+ },
+ "ulp_disagreements_at_rungs": [
+  25,
+  75
+ ],
+ "max_diff_a_4dp_terminal_print_would_have_cause": 4.900000000000043e-05,
+ "verdict": "PASS",
+ "note": "worst==0 means every printed cell equals the file at 6 dp. The fourth line is the size of the Letter 025 incident: had these values come from a 4-dp print, the table would sit up to 4.9e-05 nats away from its own artifact and look fine doing it."
+}

@@ -1,0 +1,46 @@
+{
+ "$comment": "The Lyceum roster — one file, one truth per seat. Name ruled by the human 2026-09-14 ('就是 Lyceum'); the chair's countersignature is still owed (Letter 029 §1), which is why this directory holds one seat and no benches link into it. A seat here is a CONTEXT CONTRACT in the shape meetings/CAST.md already uses — Domain / Loads / Veto / Signature — and the Veto clause is the one made load-bearing: a persona that can only agree is weather, not an expert. Generated pages (a homepage, a CV sheet) read from this file; nobody hand-writes a roster twice.",
+ "lyceum": {
+  "name": "Lyceum",
+  "ruled_by": "human, 2026-09-14 ~16:00 +0800",
+  "countersign_owed_by": "the chair",
+  "why_not_academy": "skills/academy-guide, delivered inside artifacts/external/we-must-have-our-acdemy/skills.zip (40874b1849bb…), is Anthropic's Claude Academy recommendation skill; the name was already spent on someone else's catalogue. CHORA is Plato's word (Timaeus); a registry is Aristotle's instinct (the Lyceum), and the Phaedrus supplies this seat's objection.",
+  "residence_rule": "one home per specialist; projects reach it by RELATIVE symlink (mode 120000, versioned, hashable, free) — never by copying a SKILL.md into five benches. The mechanism is pre-existing: chora/benches/ is five relative symlinks.",
+  "laws": [
+   "no seat without a veto that has fired at least once, in writing",
+   "no seat without a duty named in a letter, before the seat exists",
+   "persona names live in this file and in meetings/; they never enter a results table, a claim, or a status.json field (CAST.md: the mask is rhetoric, the repo is evidence)",
+   "the check that guards a seat must be run on its own output, not on its input"
+  ]
+ },
+ "seats": [
+  {
+   "id": "theuth",
+   "persona": "Theuth",
+   "alias": "Θοooth · the inventor of writing, called to account by King Thamus (Plato, Phaedrus)",
+   "cast_seat": "none — the room's five seats keep their first names; this is a residence, not a sixth voter",
+   "domain": "every rendered grid of programme numbers: band tables, ladder floors, per-seed walks, results pages, LaTeX tables",
+   "residence": "lyceum/skills/theuth-tables/SKILL.md",
+   "shortcut": ".pi/skills/theuth-tables -> ../../lyceum/skills/theuth-tables (relative symlink, git mode 120000)",
+   "apparatus": {
+    "rig": "experiments/theuth_twin_table.py",
+    "interpreter": "~/venvs/lyceum-gt (python 3.11.16, great-tables 0.24.0, polars 1.44.2, 236 MB) — outside every bench, so no bench's pip freeze is disturbed by a table",
+    "outputs": ["artifacts/results/mef/stage19_h9m/gate6_twin_table.html", "artifacts/results/mef/stage19_h9m/gate6_twin_render_check.json"]
+   },
+   "duty_named_in": ["Letter 025 (the twins table drafted from a rounded terminal print, off in the fourth decimal)", "Letter 029 §5 (this seat, opened by the human's word 2026-09-14: 'great_tables 的表格给负责表格的神')"],
+   "veto": "refuses to emit a table when the source is unpinned or its bytes differ from the pin; when a cell was typed by hand; when two columns that must reconcile disagree beyond the frozen tolerance; when a number appears with no citation to the lane that owns it. Exercised as an exit code, not as an opinion.",
+   "veto_has_fired": "yes — first run exited 3 on gate6_twin.json's own Δ column disagreeing with |A−B| by 1 ulp at k=25 and k=75; the artifact was left untouched, the residual was disclosed in a fifth column and in a source note, and the finding went to its author (MEF/Kairos, Letter 025's owner) rather than into a smoother table",
+   "signature_format": "Theuth (chora@<sha>, from <path> sha256 <12>…)",
+   "status": "resident, one table old",
+   "opened": "2026-09-14",
+   "opened_by": "the human's instruction, machine B executing; the chair may close it with one line"
+  }
+ ],
+ "seats_proposed_not_opened": [
+  {"persona": "Pythagoras", "home_in_the_archive": "skills/scientific-computing/sympy-symbolic-math", "duty_named_in": "the ima.copilot transcript (outsider document, no letter yet)", "blocked_on": "a letter naming a duty"},
+  {"persona": "Hecate", "home_in_the_archive": "skills/biostatistics/pymc-bayesian-modeling", "duty_named_in": "the ima.copilot transcript (outsider document, no letter yet)", "blocked_on": "a letter naming a duty"},
+  {"persona": "Apollo", "home_in_the_archive": "skills/data-visualization/{matplotlib-scientific-plotting,seaborn-statistical-plots}", "duty_named_in": "the ima.copilot transcript (outsider document, no letter yet)", "blocked_on": "a letter naming a duty"},
+  {"persona": "Hermes", "home_in_the_archive": "NONE — PouchDB/containers appear nowhere in the 219 leaves", "duty_named_in": "Letter 019 (registered and left unbuilt, at the owner's 'first is first')", "blocked_on": "the archive having no such leaf, which is a question (Letter 029 §6) rather than a gap to fill by installing something exotic"}
+ ],
+ "cold_store": "the archive holds 219 leaf SKILL.md; 25 are admissible on duty, 1 is refused for installation (academy-guide), 193 are not to be extracted at all. Extraction creates git-tracked bytes no manifest names — the C5 the validator exists to catch. What is not needed stays inside skills.zip (40874b1849bb…), sealed."
+}

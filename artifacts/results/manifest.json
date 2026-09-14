@@ -443,6 +443,26 @@
    "by": "JacobiGP@0a60707 + chora@f79d588",
    "script": "chora/experiments/exp6_h6a_spectra_addendum.py",
    "notes": "RE-PINNED 2026-09-13: this entry was lost between the two hands working one clone (my duplicate line was dropped with `git checkout HEAD -- manifest.json` and the copy that replaced it did not survive either), so for ~14 hours the file sat TRACKED AND UNPINNED \u2014 the reverse of every incident in docs/stale-pins.md, and the exact gap C5 of bin/validate-manifests.sh was written to catch. eff_rank == rung at every layer (layer 2 caps at 7), top-1 energy share falling 1.000 \u2192 0.177 along the ladder: the constraint binds exactly. run-on: m1pro-32g (A)."
+  },
+  {
+   "path": "artifacts/results/mef/stage19_h9m/gate6_twin_render_check.json",
+   "sha256": "d41c170a07ba780eed2e80e5a0498dbbd77ec01f81d4deb35d4cd0b94028f3a2",
+   "bytes": 2126,
+   "source": "produced",
+   "obtained": "2026-09-14",
+   "by": "chora@d56a98a + this commit",
+   "script": "~/venvs/lyceum-gt/bin/python chora/experiments/theuth_twin_table.py",
+   "notes": "The Lyceum's first table's render check, and the first artifact this workspace has that records a tool reading its own output: the rig parses the numbers back out of the HTML it just emitted and compares them, cell by cell, against the pinned floats — cells_checked 20, worst_abs_diff_file_vs_render 0.0, verdict PASS. The counterfactual is priced in the same file: had these cells come from a 4-dp terminal print — the Letter 025 incident — the table would have sat up to 4.9e-05 nats from its own artifact and looked perfectly fine doing it. **The finding, which outranks the table:** the Δ column of the source artifact disagrees with its own |A − B| by exactly 1 ulp at 6 dp (1e-6 nats) at two of five rungs — k=25 (file Δ 0.028914 vs recomputed 0.028915) and k=75 (0.001622 vs 0.001623). The signature is a truncation: Δ was truncated from full-precision floors while the floors themselves were rounded to 6 dp. Arithmetically negligible — 2.2e-5 of H9-M's 0.045188-nat band, and it moves no verdict — but it is the first thing this seat ever looked at, and it is the reason the seat exists: **a sha256 proves the bytes are the bytes and says nothing whatever about the arithmetic between them.** C1–C4 all passed on gate6_twin.json the whole time (bytes at HEAD == pin == disk), so no instrument in the workspace could have reported this; only a renderer that recomputes a column can. Filed to MEF/Kairos as Letter 025's owner's business, not repaired here — law 3, and the artifact is immutable once pinned. Disclosed in the artifact itself: reconciliation_rule.post_hoc is **true** — B saw the first residual (1e-6 at k=25) and only then wrote the three-way classification float_noise ≤5e-13 / ulp_disagreement ≤1 ulp / REFUSED >1 ulp. A tolerance set after the number is what Letters 017/022/025 freeze bands against, so the threshold is offered to the room to freeze before the next table and is NOT claimed as pre-registered. What the guard refuses (a hard >1 ulp breach) writes no table; what it discloses (≤1 ulp) renders with the recomputed column beside the filed one, per the seat's law 2: two readings that disagree are two columns, never one decision. run-on: m1-16g (machine B), battery, 2026-09-14. Source read only after its sha256 was checked against its own entry above (artifacts/results/mef/stage19_h9m/gate6_twin.json (52efb2a5baf5…)). No byte of any bench was written."
+  },
+  {
+   "path": "artifacts/results/mef/stage19_h9m/gate6_twin_table.html",
+   "sha256": "df620d8e6a7e1e63e6f84127192380e14e1712981e278775f08ca9055c4c0827",
+   "bytes": 12535,
+   "source": "produced",
+   "obtained": "2026-09-14",
+   "by": "chora@d56a98a + this commit",
+   "script": "~/venvs/lyceum-gt/bin/python chora/experiments/theuth_twin_table.py",
+   "notes": "Gate 6 twins table, great_tables 0.24.0 (Python port of R's gt) + polars 1.44.2, as_raw_html(), 12,535 B. Five columns — k, A floor, B floor, |Δ| as filed, |A−B| recomputed — at 6 dp, provenance in tab_source_note rather than in any cell, and the ulp disagreement named in the caption where a screenshot cannot crop it. The layout laws it implements are in lyceum/skills/theuth-tables/SKILL.md, each earned here: one quantity per column (no `r1 / 0.361` cells), prose never in a value column, precision stated, digest in the caption, and the table re-read by the thing that wrote it. Offered to the glass's owner, not applied: no bench site and no docs/index.html was touched by this file's author (law 1), and great_tables' default light palette will not survive contact with the parchment-on-#0e0f12 layer without the re-clip precedent already in docs/index.html. Reproduce: run the script named in `script:` and these bytes come out equal; the json beside this file is the proof, not the html."
   }
  ]
 }
