@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-15T07:03:08Z",
- "chora_head": "7e83319",
+ "generated": "2026-09-15T07:10:12Z",
+ "chora_head": "536d6e4",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -677,8 +677,8 @@
  "audits": [
   "pins: 153 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "REPO chora: 79 unreachable snapshot commit(s) b6e154c 23f11c0 db62667 6302a76 — a beat's work in limbo",
-  "glass: generated 0 min ago · paint 7e83319, 0 commit(s) behind HEAD",
+  "REPO chora: 78 unreachable snapshot commit(s) b6e154c 23f11c0 db62667 6302a76 — a beat's work in limbo",
+  "glass: generated 0 min ago · paint 536d6e4, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
