@@ -164,20 +164,22 @@
   /* fleet status */
   #fleet table{font-size:.88rem}
   #fleet td{padding:.5rem .8rem}
-  .dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:.5rem;vertical-align:baseline}
-  .dot.synced{background:var(--green)} .dot.ahead{background:var(--gold)}
-  .dot.off{background:var(--dim)} .dot.checking{background:transparent;border:1px solid var(--dim)}
   .state{font-family:var(--mono);font-size:.78rem;color:var(--dim)}
   .dirtyflag{color:var(--red);font-variant:small-caps}
   .cleanflag{color:var(--dim)}
   .subject{color:var(--dim);font-style:italic}
-  /* the board's lamps — same lights as board.html: red reconcile · amber in flight · blue-grey gated · green closed */
-  .lamp{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:.45rem;vertical-align:baseline}
+  /* ONE lamp family — the board's lamps and the fleet's dots are the same traffic lights since
+     2026-09-15: one 11px circle, one margin, one glow recipe, shared hues; only the meaning per
+     light differs. The fleet rides the board's neon (green synced = lamp.g, amber unpushed =
+     lamp.a) and a no-signal light is the same hollow ring in both rows. board.html keeps its
+     own bytes — the "same lights as board.html" claim holds because these values are copied
+     from it, never the reverse. */
+  .lamp,.dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:.5rem;vertical-align:baseline}
   .lamp.r{background:#ff5a4d;box-shadow:0 0 5px rgba(255,90,77,.85),0 0 14px rgba(255,90,77,.35)}
-  .lamp.a{background:#ffb43e;box-shadow:0 0 5px rgba(255,180,62,.75),0 0 14px rgba(255,180,62,.3)}
-  .lamp.g{background:#5ad07a;box-shadow:0 0 5px rgba(90,208,122,.75),0 0 14px rgba(90,208,122,.3)}
+  .lamp.a,.dot.ahead{background:#ffb43e;box-shadow:0 0 5px rgba(255,180,62,.75),0 0 14px rgba(255,180,62,.3)}
+  .lamp.g,.dot.synced{background:#5ad07a;box-shadow:0 0 5px rgba(90,208,122,.75),0 0 14px rgba(90,208,122,.3)}
   .lamp.b{background:#6a86ba;box-shadow:0 0 5px rgba(106,134,186,.65)}
-  .lamp.off{background:transparent;border:1px solid var(--dim)}
+  .lamp.off,.dot.off,.dot.checking{background:transparent;border:1px solid var(--dim)}
   #boardlite{text-align:center;font-size:.98rem}
   #boardlite b{font-weight:400;color:var(--dim);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase}
   /* neon digits — the dashboard's numbers glow; the prose stays parchment */
@@ -599,7 +601,7 @@ on every bench commit — then the page asks GitHub, live, whether each public b
   }
   function footerText(){
     return 'snapshot ' + snap.generated + ' \u00b7 chora@' + snap.chora_head +
-      ' \u00b7 dots: green = on GitHub, gold = unpushed local work, grey = no remote/offline' +
+      ' \u00b7 lights: green = on GitHub, amber = unpushed local work, hollow ring = no remote/offline' +
       ' \u00b7 <span style="font-family:var(--mono)">refresh ' + mmss(left) + '</span>' +
       (auditLive ? '' : ' \u00b7 GitHub audit unavailable (offline or rate-limited)');
   }
