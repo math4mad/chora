@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-18T07:46:11Z",
- "chora_head": "9c6a3ca",
+ "generated": "2026-09-18T07:51:39Z",
+ "chora_head": "38737ba",
  "counts": {
   "idea": 0,
   "registered": 5,
-  "equipped": 5,
+  "equipped": 6,
   "landed": 2,
   "scored": 3,
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 6
+  "RECONCILE": 7
  },
  "rows": [
   {
@@ -691,12 +691,37 @@
     "apparatus": "chora:experiments/exp10-concept-adapters/scripts/analyze_10a.py",
     "verdict": "False"
    }
+  },
+  {
+   "id": "exp11-horizontal-matrix",
+   "title": "Exp 11 · 横向验证矩阵 — do write-orthogonality / shared-reads / interpolation hold across bases (5×{5 domains + general probe})?",
+   "kind": "experiment",
+   "owner": "Anatomist (executed by lola@LETHE on owner's 'Exp11 可排期')",
+   "bench": "chora",
+   "lane": "equipped",
+   "claim": "registered",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "P0 tonight on Qwen2.5-1.5B (cached bytes); P1 needs the owner's network nod for 3B + Llama fetches.",
+   "flags": [
+    "pre-registration PENDING is not an ancestor of HEAD (unmerged text)",
+    "no bytes on disk: artifacts/results/exp11/report_11_p0.json",
+    "verdict source file absent: artifacts/results/exp11/report_11_p0.json",
+    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
+   ],
+   "detail": {
+    "prereg": "chora@PENDING experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
+    "apparatus": "chora:experiments/exp11-horizontal-matrix/scripts/svd_11.py",
+    "verdict": null,
+    "reconcile": true
+   }
   }
  ],
  "audits": [
   "pins: 172 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 9c6a3ca, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 38737ba, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
