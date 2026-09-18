@@ -41,10 +41,13 @@ def main():
     ap.add_argument("--tag", required=True)
     ap.add_argument("--epochs", type=int, default=None,
                     help="override epochs (used by the mid arm to match samples-seen)")
+    ap.add_argument("--seed", type=int, default=None, help="override HP.seed")
     a = ap.parse_args()
     hp = dict(HP)
     if a.epochs:
         hp["epochs"] = a.epochs
+    if a.seed:
+        hp["seed"] = a.seed
 
     torch.manual_seed(hp["seed"])
     dev = "mps" if torch.backends.mps.is_available() else "cpu"

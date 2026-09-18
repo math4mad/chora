@@ -513,6 +513,26 @@
    "by": "chora@a7a289e",
    "script": "scripts/analyze_10a.py · scripts/svd_10b.py",
    "notes": "sha256 pins of the three git-ignored adapters (spring/summer/mid, 35MB each) + train receipts refs"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10b_seeds.json",
+   "sha256": "6d65f2d379b24a36144128203fef8846011c856839e3524b8ef4e884ebb315a8",
+   "bytes": 1009,
+   "source": "chora exp10 hardening, owner-commissioned continuation (有时间继续实验二)",
+   "obtained": "2026-09-18",
+   "by": "chora@a7a289e",
+   "script": "scripts/mint_seeds.sh · scripts/svd_seedcheck.py",
+   "notes": "10b hardening: H4 reversal on write side replicates at seeds 13/14/15 (U-B: ss 0.55/1.23/1.24 vs mid-parent 1.8-2.5; V-A flat ~3.79; global dWov ss 0.13 vs mid~parent 0.63)"
+  },
+  {
+   "path": "artifacts/results/exp10/ADAPTER-PINS-seeds.json",
+   "sha256": "95319b844a9bec78efc322a0b63960f7a00815eb56fa81131fce9f2b00eb9a1d",
+   "bytes": 1626,
+   "source": "chora exp10 hardening, owner-commissioned continuation (有时间继续实验二)",
+   "obtained": "2026-09-18",
+   "by": "chora@a7a289e",
+   "script": "scripts/mint_seeds.sh · scripts/svd_seedcheck.py",
+   "notes": "sha256 pins of the six git-ignored seed-14/15 adapters"
   }
  ]
 }

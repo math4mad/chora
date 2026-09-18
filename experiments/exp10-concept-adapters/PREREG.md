@@ -81,3 +81,9 @@ Either way the number is the news.
 - Mid training recipe deviation, declared: 110 pairs × 3 epochs = same samples-seen (~330)
   as the discrete arms (55 × 6). Loss lands at 2.85 vs ~1.5 for the specialists — the
   mixture is measurably harder to fit; first-class datum, not a failure.
+
+### Addendum 2 (post-scoring, same day) — 10b hardening landed
+Seeds 14/15 × three arms trained with the identical recipe (--seed only); SVD rerun offline.
+H4's reversal on the WRITE side replicates at all three seeds; V-A stays flat (~3.79 all pairs).
+Global ΔW overlap: spring~summer 0.13 vs mid~parent ~0.63. "Mixture = interpolation" is now a
+three-seed statement, cleared for the letter to MEF/Kairos.

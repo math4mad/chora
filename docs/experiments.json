@@ -893,8 +893,8 @@
     "at": "/verdicts/H1"
    },
    "claim": "scored",
-   "next": "Letter 0xx to MEF & Kairos: the read-shared/write-orthogonal split + loose-spectrum invasion (handshake with MEF's middle-eigen thesis and the CDLoRA composition reading at LETHE); rerun 10b at ≥3 seeds before any claim hardens; 10c possible: full-sequence teacher-forced KL to test the style-convergence account of H1's reversed sign.",
-   "notes": "H2 PASS (lexicon), H1 FAILS with reversed sign (style converges while content separates), H3 inside band; H4 FAILS — registered null wins: mixture = interpolation (U-B 0.547 parents vs ~1.8 mid-parent; ΔWov spring~summer ≈ 0). Negative results kept as first-class (law 4). Adapters git-ignored, pinned in artifacts/results/exp10/ADAPTER-PINS.json."
+   "next": "Letter 0xx to MEF & Kairos (three-seed now); 10c full-sequence teacher-forced KL to test the style-convergence account of H1's reversed sign.",
+   "notes": "H2 PASS (lexicon), H1 FAILS with reversed sign (style converges while content separates), H3 inside band; H4 FAILS — registered null wins: mixture = interpolation (U-B 0.547 parents vs ~1.8 mid-parent; ΔWov spring~summer ≈ 0). Negative results kept as first-class (law 4). Adapters git-ignored, pinned in artifacts/results/exp10/ADAPTER-PINS.json. | HARDENED same day: seeds 14/15 replicate the H4 reversal (report_10b_seeds.json, pinned); owner asked to be reminded at 14:00 with the candidate list experiments/DECISION-LIST-2026-09-18.md."
   }
  ]
 }

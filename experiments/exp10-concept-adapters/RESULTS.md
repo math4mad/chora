@@ -85,6 +85,15 @@ effective ranks: {'spring': 12.17, 'summer': 12.09, 'mid': 12.11} · invasion (a
 
 Figure: fig10b_svd.png
 
+### Hardening (same afternoon, owner's "有时间继续实验二")
+| seed | V-A ss/sm/um | U-B ss/sm/um | ΔWov ss · s~mid · u~mid | reversal? |
+|---|---|---|---|---|
+| 13 | 3.818/3.834/3.833 | 0.547/1.758/1.862 | −0.002 · 0.009 · 0.013 | ✔ (per-module) |
+| 14 | 3.798/3.798/3.795 | 1.228/2.433/2.405 | 0.133 · 0.635 · 0.633 | ✔ |
+| 15 | 3.787/3.800/3.800 | 1.244/2.383/2.508 | 0.135 · 0.622 · 0.658 | ✔ |
+(threshold: seed 13's per-module mean vs seeds' global-concat — different aggregation, same sign;
+see report_10b_seeds.json for the uniform global metric.)
+
 ## Interpretation — the park reads itself (the CDLoRA frame, candidate #1 of many)
 1. **Content separates, style converges.** The lexicon test (H2) says each adapter owns its
    concept space; the top-50 distribution test (H1) says both adapters leave the base in the

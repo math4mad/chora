@@ -1,0 +1,62 @@
+{
+ "seed13": {
+  "pairs": {
+   "spring~summer": {
+    "V-A_k90": 3.777,
+    "U-B_k90": 1.182,
+    "dWov": 0.1211
+   },
+   "spring~mid": {
+    "V-A_k90": 3.793,
+    "U-B_k90": 2.394,
+    "dWov": 0.6179
+   },
+   "summer~mid": {
+    "V-A_k90": 3.792,
+    "U-B_k90": 2.497,
+    "dWov": 0.6605
+   }
+  },
+  "H4_reversal_on_write_side": true
+ },
+ "seed14": {
+  "pairs": {
+   "spring~summer": {
+    "V-A_k90": 3.783,
+    "U-B_k90": 1.228,
+    "dWov": 0.1328
+   },
+   "spring~mid": {
+    "V-A_k90": 3.798,
+    "U-B_k90": 2.433,
+    "dWov": 0.6352
+   },
+   "summer~mid": {
+    "V-A_k90": 3.795,
+    "U-B_k90": 2.405,
+    "dWov": 0.6332
+   }
+  },
+  "H4_reversal_on_write_side": true
+ },
+ "seed15": {
+  "pairs": {
+   "spring~summer": {
+    "V-A_k90": 3.787,
+    "U-B_k90": 1.244,
+    "dWov": 0.1346
+   },
+   "spring~mid": {
+    "V-A_k90": 3.8,
+    "U-B_k90": 2.383,
+    "dWov": 0.6217
+   },
+   "summer~mid": {
+    "V-A_k90": 3.8,
+    "U-B_k90": 2.508,
+    "dWov": 0.6581
+   }
+  },
+  "H4_reversal_on_write_side": true
+ }
+}

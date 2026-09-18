@@ -1,0 +1,35 @@
+{
+ "law": "seeds 14/15 adapters, git-ignored, pinned here — same recipe as seed 13, --seed only",
+ "pins": {
+  "experiments/exp10-concept-adapters/results/adapter_mid_s14/adapter_model.safetensors": {
+   "sha256": "ba90c78ba4648b5fca22f567a440bb16d28f040181198f01e1b89c35beea4fbc",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · mint_seeds.sh"
+  },
+  "experiments/exp10-concept-adapters/results/adapter_mid_s15/adapter_model.safetensors": {
+   "sha256": "04c92c4e1e6abfdeb54cff33cdbe6b60551056fac0e7a34ea8bf2be539221524",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · mint_seeds.sh"
+  },
+  "experiments/exp10-concept-adapters/results/adapter_spring_s14/adapter_model.safetensors": {
+   "sha256": "663026a52481c70a867a8c7fbae36df7cc46d11e818e3e84c492c0300d06cfa7",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · mint_seeds.sh"
+  },
+  "experiments/exp10-concept-adapters/results/adapter_spring_s15/adapter_model.safetensors": {
+   "sha256": "d1c893417bba5492aa81e3a9c4dfe2671c33853ff3fb8504cff9836452fd0d34",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · mint_seeds.sh"
+  },
+  "experiments/exp10-concept-adapters/results/adapter_summer_s14/adapter_model.safetensors": {
+   "sha256": "28adcf8e9fd93751b99bc583234b923265ee73716770e38b3b6fc04f48db1e57",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · mint_seeds.sh"
+  },
+  "experiments/exp10-concept-adapters/results/adapter_summer_s15/adapter_model.safetensors": {
+   "sha256": "aa08d584f5875e1183906a6c860585183e0b21a00c6c760bb883611e4b95e439",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · mint_seeds.sh"
+  }
+ }
+}

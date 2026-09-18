@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T02:49:37Z",
- "chora_head": "7dc5f92",
+ "generated": "2026-09-18T02:51:26Z",
+ "chora_head": "ce7bea8",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -684,7 +684,7 @@
    "verdict": "False",
    "gated_by": null,
    "budget": null,
-   "next": "Letter 0xx to MEF & Kairos: the read-shared/write-orthogonal split + loose-spectrum invasion (handshake with MEF's middle-eigen thesis and the CDLoRA composition reading at LETHE); rerun 10b at ≥3 seeds before any claim hardens; 10c possible: full-sequence teacher-forced KL to test the style-convergence account of H1's reversed sign.",
+   "next": "Letter 0xx to MEF & Kairos (three-seed now); 10c full-sequence teacher-forced KL to test the style-convergence account of H1's reversed sign.",
    "flags": [],
    "detail": {
     "prereg": "chora@a7a289e experiments/exp10-concept-adapters/PREREG.md",
@@ -694,9 +694,11 @@
   }
  ],
  "audits": [
-  "pins: 156 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 158 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 2",
+  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10b_seeds.json",
+  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/ADAPTER-PINS-seeds.json",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 7dc5f92, 0 commit(s) behind HEAD",
+  "glass: generated 2 min ago · paint 7dc5f92, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
