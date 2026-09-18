@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T02:51:26Z",
- "chora_head": "ce7bea8",
+ "generated": "2026-09-18T02:54:57Z",
+ "chora_head": "4399738",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -694,11 +694,9 @@
   }
  ],
  "audits": [
-  "pins: 158 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 2",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10b_seeds.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/ADAPTER-PINS-seeds.json",
+  "pins: 158 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 2 min ago · paint 7dc5f92, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint 4399738, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
