@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T03:05:45Z",
- "chora_head": "475e245",
+ "generated": "2026-09-18T03:11:07Z",
+ "chora_head": "20bd760",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -697,7 +697,7 @@
   "pins: 159 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 1",
   "  UNTRACKED (pinned in git, bytes not in git): artifacts/external/2026-09-18-afternoon-exp/afternoon-exp.docx",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 475e245, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 20bd760, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
