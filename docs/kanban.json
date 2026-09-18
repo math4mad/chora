@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T03:57:38Z",
- "chora_head": "7f53bcf",
+ "generated": "2026-09-18T03:58:33Z",
+ "chora_head": "0de9489",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -694,16 +694,9 @@
   }
  ],
  "audits": [
-  "pins: 165 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 7",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10c.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10c_grouped.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10d_router.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/fig10c_positional.png",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/fig10c_grouped.png",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/external/2026-09-18-afternoon-exp/afternoon-exp.docx",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/external/2026-09-18-afternoon-exp/concept-space-orthogonality-plan.docx",
+  "pins: 165 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 4 min ago · paint 57d5544, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint 0de9489, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
