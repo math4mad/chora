@@ -583,6 +583,36 @@
    "by": "chora@fcd3030",
    "script": "scripts/kl_10c.py · kl_10c_grouped.py · router_10d.py",
    "notes": "content vs style bar chart per pair (plan §8 Step 4)"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10d_router_v2.json",
+   "sha256": "1d73ac8e70d8fb34687fca1210a2b40b590ce3fa9fff2504352fdadf667f6815",
+   "bytes": 4369,
+   "source": "chora exp10g + seed audit (owner's 14:02 'holding match finding torch')",
+   "obtained": "2026-09-18",
+   "by": "chora@782c760",
+   "script": "scripts/gate_10g.py · gate_routed5.py · router_10d.py(v2)",
+   "notes": "10d v2 AFTER seed audit (v1 reseeded per draw → five identical samples): routed 0.607 / wrong 0.233 / base 0.233, acc 0.8, 23.9 t/s fp32 MPS; v1 bytes remain pinned & immutable in artifacts (v1 numbers: routed 0.70 identical-draw, disclosed)"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10g_gate.json",
+   "sha256": "d621c7f6f514deacde94c340ecea3548463190777f2efffce2988b336f48bebf",
+   "bytes": 1077,
+   "source": "chora exp10g + seed audit (owner's 14:02 'holding match finding torch')",
+   "obtained": "2026-09-18",
+   "by": "chora@782c760",
+   "script": "scripts/gate_10g.py · gate_routed5.py · router_10d.py(v2)",
+   "notes": "10g trained gate: accuracy 0.90 vs lexical 0.80 on the same 40 probes, leakage tripwire 0 after removing one self-authored neutral phrasing; features base last-token embeddings, LBFGS logistic"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10g_routed5.json",
+   "sha256": "6710743eb329976f9a79690e9cfc1216d13f17af0ffea4aba459943d468cffe9",
+   "bytes": 473,
+   "source": "chora exp10g + seed audit (owner's 14:02 'holding match finding torch')",
+   "obtained": "2026-09-18",
+   "by": "chora@782c760",
+   "script": "scripts/gate_10g.py · gate_routed5.py · router_10d.py(v2)",
+   "notes": "gate-routed binary hit under the 5-draw contract: 0.800 vs lexical-router v2 0.607 (+19 pts) — the learned matcher wins behaviour, not just accuracy"
   }
  ]
 }

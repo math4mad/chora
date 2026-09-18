@@ -139,3 +139,14 @@ see report_10b_seeds.json for the uniform global metric.)
   165.79±4.07 / 149.61±11.86 / 154.59±9.05 t/s (llama-bench, BLAS,MTL). §5.2 targets beaten.
 - Consolidated note: `chora/docs/concept-space-orthogonality.md` (v1.0) with architecture diagram.
 - Letter 031 filed (evidence pack to MEF & Kairos); announced promotion LEFT for owner's 19:00.
+
+
+## Audit & 10g (14:00–15:00, owner: "holding match finding torch")
+- **Self-audit finding**: 10d v1 and first gate rig reseeded INSIDE the sample loop → the
+  "five samples" were five identical draws. bench.py (10a) was clean. Disclosed, fixed, rerun.
+- **10d v2 (honest 5-draw)**: routed 0.607 · wrong-arm 0.233 · no-adapter 0.233 · acc 0.8 · 23.9 t/s.
+- **10g trained gate** (logistic on frozen-base sentence embeddings; corpus questions + 24
+  self-authored neutrals; leakage 0 after phrasing fix): **accuracy 0.90 > lexical 0.80**;
+  errors = SU02/SU06/SU15/NE04 (semantic near-miss zone: 西瓜/防晒/蚊香 items).
+- **Behaviour under equal contract**: gate-routed binary hit **0.800** vs lexical-router **0.607**
+  → the match-finding torch is carried by the learned gate now. v1 bytes stay pinned & immutable.

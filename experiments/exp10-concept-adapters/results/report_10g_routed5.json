@@ -1,0 +1,10 @@
+{
+ "gate_routed_binary_hit_5sample": 0.8,
+ "over_probes": 30,
+ "contract": "identical to 10d v2: 5 genuine draws (one seed per probe), binary any-hit",
+ "comparables": {
+  "lexical_router_v2": 0.607,
+  "note": "from report_10d_router.json v2 after the same seed fix"
+ },
+ "audit": "v1 of both 10d & this rig reseeded INSIDE the sample loop \u2192 five identical draws; disclosed & fixed same day; v1 numbers were 10d routed 0.70 (identical-draw) & single-draw gate 0.633"
+}

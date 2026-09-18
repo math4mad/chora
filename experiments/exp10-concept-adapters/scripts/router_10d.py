@@ -38,8 +38,9 @@ def main():
         prompt = tok.apply_chat_template(msgs, tokenize=False, add_generation_prompt=True)
         enc = tok(prompt, return_tensors="pt", add_special_tokens=False).to(dev)
         texts = []
+        torch.manual_seed(13)      # one seed per call → n different draws (audit fix 2026-09-18;
+                                   # v1 reseeded inside the loop, five identical samples, disclosed in addendum)
         for _ in range(n):
-            torch.manual_seed(13)
             g = model.generate(**enc, do_sample=True, temperature=temp, top_p=0.9,
                                max_new_tokens=64, pad_token_id=tok.eos_token_id)
             texts.append(tok.decode(g[0][enc["input_ids"].shape[1]:], skip_special_tokens=True))
