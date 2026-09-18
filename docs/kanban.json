@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T02:38:05Z",
- "chora_head": "a7a289e",
+ "generated": "2026-09-18T02:38:31Z",
+ "chora_head": "dff7861",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -10,7 +10,7 @@
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 7
+  "RECONCILE": 6
  },
  "rows": [
   {
@@ -685,25 +685,18 @@
    "gated_by": null,
    "budget": null,
    "next": "Letter 0xx to MEF & Kairos: the read-shared/write-orthogonal split + loose-spectrum invasion (handshake with MEF's middle-eigen thesis and the CDLoRA composition reading at LETHE); rerun 10b at ≥3 seeds before any claim hardens; 10c possible: full-sequence teacher-forced KL to test the style-convergence account of H1's reversed sign.",
-   "flags": [
-    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/exp10/report_10a.json",
-    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/exp10/report_10b.json"
-   ],
+   "flags": [],
    "detail": {
     "prereg": "chora@a7a289e experiments/exp10-concept-adapters/PREREG.md",
     "apparatus": "chora:experiments/exp10-concept-adapters/scripts/analyze_10a.py",
-    "verdict": "False",
-    "reconcile": true
+    "verdict": "False"
    }
   }
  ],
  "audits": [
-  "pins: 156 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 3",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10a.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10b.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/ADAPTER-PINS.json",
+  "pins: 156 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 4 min ago · paint 9bede1c, 2 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 5 min ago · paint 9bede1c, 3 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
