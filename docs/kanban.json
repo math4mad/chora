@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T07:27:47Z",
- "chora_head": "0b528e7",
+ "generated": "2026-09-18T07:30:01Z",
+ "chora_head": "ae429df",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -694,13 +694,9 @@
   }
  ],
  "audits": [
-  "pins: 172 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 4",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10c_grouped_S1.json",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp10/report_10f_crossdomain.json",
-  "  UNTRACKED (pinned in git, bytes not in git): docs/exp10-paper.pdf",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/external/2026-09-18-afternoon-exp/exp10-report-framework.docx",
+  "pins: 172 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 3 min ago · paint 019d353, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint ae429df, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
