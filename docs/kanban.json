@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T07:17:43Z",
- "chora_head": "291a3ef",
+ "generated": "2026-09-18T07:24:19Z",
+ "chora_head": "019d353",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -694,9 +694,10 @@
   }
  ],
  "audits": [
-  "pins: 168 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 169 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 1",
+  "  UNTRACKED (pinned in git, bytes not in git): artifacts/external/2026-09-18-afternoon-exp/exp10-report-framework.docx",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 291a3ef, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 019d353, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
