@@ -1,0 +1,20 @@
+{
+ "law": "adapters git-ignored (135MB total); these are the pins — verify before trusting any claim built on them",
+ "pins": {
+  "results/adapter_spring/adapter_model.safetensors": {
+   "sha256": "da09e7e2769036fb8a1228ade86a9750b0b3d3c48a3f3920f3ee46f811fc2feb",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · train_lora.py seed13 · receipts ../receipt_spring.json"
+  },
+  "results/adapter_summer/adapter_model.safetensors": {
+   "sha256": "2df0f8ae9089d88c27590db26ea1619e2605240df98a5a7679ac52f320ff53d1",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · train_lora.py seed13 · receipts ../receipt_summer.json"
+  },
+  "results/adapter_mid/adapter_model.safetensors": {
+   "sha256": "2022669877b79397664bf60f07a140a35666b531294706d04c6e7a6d8042bb9a",
+   "bytes": 35237104,
+   "by": "lola@LETHE 2026-09-18 · train_lora.py seed13 · receipts ../receipt_mid.json"
+  }
+ }
+}

@@ -863,6 +863,38 @@
    "claim": "equipped",
    "next": "re-mint + re-publish before the next registered run series (H9-M″ or E4), printing the delta since the last tag. Remaining real limit: byte-round-trip proof covers 3 of 12 assets (the big two are proven by size + local hash only), and the release lives on the same account as the repos — the local _rollback/ copies stay.",
    "notes": "Answering the human's question directly: before 11:36 on 2026-09-13, machine A had NO _rollback directory — both 2026-09-12 parachutes were minted on B and lived only there, and the eve one predated every byte of H6c, H6a and H9-M. Now: 6 bundles (--all, so every branch plus gh-pages), 177 MB of MEF weights and 27 MB of Sarcos runs that exist in no git anywhere, 12 files hashed, 6/6 repos restored to their tag with the CORRECTED recipe (clone-a-bundle is not a restore), 5/5 restored .pt hashes equal to their manifest pins, and the tag pushed to all six remotes so the labels are off-machine even while the bundles are not. And the honesty file failed first: uncommitted.txt came out at 172 bytes naming zero of the five dirty paths, because the loop piped git status into sed while also redirecting it — a backup tool's manifest of gaps listing no gaps, caught by reading its own output before shipping it. | Two more board corrections while filing this row: a prereg anchor needs a COMMIT, not just a path (text without a date stamp is undateable by any reader), and a workspace row's `letter` block must point at a letter that has actually crossed — pointing it at a doc I wrote myself made the board say, correctly, that the mirror points at a working tree. | OFF-MACHINE NOW: published as release checkpoint-2026-09-13-A on math4mad/chora — 13 assets, 223 MB, verified from outside (0 missing, 0 size mismatch, 3 round-trip hashes equal). The release's own restore recipe shipped wrong for eleven minutes (checkout of a tag built from a directory name), found by reading the published page and corrected with the mistake named in the body: B's `git clone <bundle>` lesson relearned one layer up. See docs/release-A-2026-09-13.md."
+  },
+  {
+   "id": "exp10-concept-adapters",
+   "title": "Exp 10 · do discrete spring/summer adapters carry measurable concept spaces (10a), and is a data-mixture a third space or an interpolation (10b SVD)?",
+   "kind": "experiment",
+   "owner_seat": "Anatomist (executed by lola@LETHE on the owner's commission)",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "experiments/exp10-concept-adapters/PREREG.md",
+    "commit": "a7a289e",
+    "marker": "## Experiment 10a — divergence of discrete adapters"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/exp10-concept-adapters/scripts/analyze_10a.py"
+   },
+   "consumes": [
+    {
+     "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/model.safetensors"
+    }
+   ],
+   "produces": [
+    "artifacts/results/exp10/report_10a.json",
+    "artifacts/results/exp10/report_10b.json"
+   ],
+   "verdict": {
+    "at": "/verdicts/H1"
+   },
+   "claim": "scored",
+   "next": "Letter 0xx to MEF & Kairos: the read-shared/write-orthogonal split + loose-spectrum invasion (handshake with MEF's middle-eigen thesis and the CDLoRA composition reading at LETHE); rerun 10b at ≥3 seeds before any claim hardens; 10c possible: full-sequence teacher-forced KL to test the style-convergence account of H1's reversed sign.",
+   "notes": "H2 PASS (lexicon), H1 FAILS with reversed sign (style converges while content separates), H3 inside band; H4 FAILS — registered null wins: mixture = interpolation (U-B 0.547 parents vs ~1.8 mid-parent; ΔWov spring~summer ≈ 0). Negative results kept as first-class (law 4). Adapters git-ignored, pinned in artifacts/results/exp10/ADAPTER-PINS.json."
   }
  ]
 }

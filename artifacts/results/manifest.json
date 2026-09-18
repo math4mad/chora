@@ -47,7 +47,7 @@
    "source": "Sarcos bench, results/shift_summary.json (same bytes, status renamed into path)",
    "obtained": "2026-09-11",
    "by": "Sarcos@50dcf1d",
-   "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict \u2014 see Letter 011"
+   "notes": "exploratory calibration 2026-09-08 by SUPERSEDED row-level builder; adapters ep300 vs bases ep60; no task_meta persisted; datum not verdict — see Letter 011"
   },
   {
    "path": "artifacts/results/sarcos/shift_task_blocklevel_seed13.json",
@@ -74,7 +74,7 @@
    "source": "produced: scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 && --mode sweep --adapter-steps 600 --batch 16 --full (MEF repo, TS_PATH=data/tiny_stories.txt, SEED=13)",
    "obtained": "2026-09-11",
    "by": "MEF@f453b7e",
-   "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test \u2014 single seed, no band"
+   "notes": "stage18 run1 EXPLORATORY sweep: 15 arms (k x r, schedule (a), 600 steps) + 5 frozen floors; gain-over-floor decays monotonically in k; P-probe flat (unlearned case-shift); DO NOT cite as a hypothesis test — single seed, no band"
   },
   {
    "path": "artifacts/results/mef/stage18_run1.log",
@@ -122,7 +122,7 @@
    "obtained": "2026-09-12",
    "by": "MEF@a98508e",
    "script": "MEF scripts/stage18_kairos_mini.py --mode pretrain --steps 2000 --batch 16 --ctx 256 (SEED=14, OUT_DIR=outputs/stage18_seed14, TS_PATH=data/tiny_stories.txt, CHORA_MACHINE=m1-16g)",
-   "notes": "Letter 016 queue item 1, E0 replication seed 14 on machine B. Wall clock 742.5 s for the SAME config that took the seed-13 twin 509.7 s on this SAME machine (+45.7%) \u2014 the machine-effect estimate therefore carries a within-machine spread B did not expect and does not claim to explain (question, not result). Sweep (adapter ladder) still running at commit time: pid 44020, log outputs/stage18_seed14_sweep.log"
+   "notes": "Letter 016 queue item 1, E0 replication seed 14 on machine B. Wall clock 742.5 s for the SAME config that took the seed-13 twin 509.7 s on this SAME machine (+45.7%) — the machine-effect estimate therefore carries a within-machine spread B did not expect and does not claim to explain (question, not result). Sweep (adapter ladder) still running at commit time: pid 44020, log outputs/stage18_seed14_sweep.log"
   },
   {
    "path": "artifacts/results/mef/E0_seed14_pretrain.log",
@@ -142,57 +142,57 @@
    "obtained": "2026-09-12",
    "by": "MEF@ddf1d16",
    "script": "MEF stage18_kairos_mini.py --mode sweep --adapter-steps 600 --batch 16 --full (SEED=14, OUT_DIR=outputs/stage18_seed14)",
-   "notes": "Letter 016 queue item 1, seed 14 ladder. First ladder floors ever produced on B. Wall clock: sweep ran 09:07-09:56 local on m1-16g. Exploratory per the script's own flag; regime rows (co-train vs frozen base) not yet separated by the Warden's rule. | PATH CORRECTION 2026-09-12: this entry was pinned as 'chora/artifacts/...' while every sibling path is relative to the chora root, so the manifest pointed at a file that exists nowhere. The bytes were never in question \u2014 sha256 695dba48ff1d522b\u2026 and bytes=20985 both verified against the real path on re-hash; only the label was wrong. B wrote the entry, so B corrects it, in place, with the wrong string kept here in the note: immutable bytes get re-labelled by their owner, never silently re-pointed by someone else. Found by validating all 27 entries of this manifest against schema + disk, not by reading it."
+   "notes": "Letter 016 queue item 1, seed 14 ladder. First ladder floors ever produced on B. Wall clock: sweep ran 09:07-09:56 local on m1-16g. Exploratory per the script's own flag; regime rows (co-train vs frozen base) not yet separated by the Warden's rule. | PATH CORRECTION 2026-09-12: this entry was pinned as 'chora/artifacts/...' while every sibling path is relative to the chora root, so the manifest pointed at a file that exists nowhere. The bytes were never in question — sha256 695dba48ff1d522b… and bytes=20985 both verified against the real path on re-hash; only the label was wrong. B wrote the entry, so B corrects it, in place, with the wrong string kept here in the note: immutable bytes get re-labelled by their owner, never silently re-pointed by someone else. Found by validating all 27 entries of this manifest against schema + disk, not by reading it."
   },
   {
-   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "source": "machine B (m1-16g), session 2026-09-12 — Letter 016 queue item 2",
    "obtained": "2026-09-12",
    "by": "Sarcos@b22f1e9",
    "path": "artifacts/results/sarcos/Step0_dose_256h256_B.json",
    "sha256": "e3f7fa1955cf80db23523ed8d679c147ab2b74a2f5ad64d792c3ee5429ea6757",
    "bytes": 26909,
    "script": "PYTHONPATH=src python -m sarcos_svd.step0 --hidden 256 256 --out results/step0_256h256.json (Sarcos@b22f1e9)",
-   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Letter 011 \u00a72 Step 0 dose\u2013response on the selected architecture, block-level builder, canonical split (blk 256, .8/.1/.1), seeds 13/14/15, ALL arms at the base's own ep60 (no ep300-vs-ep60 confound), doses {0.1,0.25,0.5,0.75,1.0}, rank rows 4/4/4 \u00b7 16/16/7 \u00b7 21/21/7. VERDICT: NO DOSE QUALIFIES. learnability ratio scratch/FT (mean of 3 seeds): 9.53 / 5.54 / 5.60 / 4.30 at doses .25/.5/.75/1 \u2014 the registered fence (\u22642\u00d7) is never met and the trend is monotone toward, not past, it: the arena closes as the shift is removed, i.e. the shift is not what makes the region unlearnable. far=0.1 is UNRUNNABLE under the registered rule: the builder returns 512 fit rows and 0 select rows, so best-on-select checkpointing is undefined \u2014 reported as such, no fallback invented (law 5). The floor also survives the schedule fix: frozen beats full-FT at every runnable dose (\u0394 = +0.0045/+0.0024/+0.0021/+0.0019). Exploratory calibration, not a hypothesis test; H9-S remains unregistered here."
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) · python 3.11.16 · torch 2.14.0 · numpy 2.4.6 · scipy 1.17.1 · device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. · Letter 011 §2 Step 0 dose–response on the selected architecture, block-level builder, canonical split (blk 256, .8/.1/.1), seeds 13/14/15, ALL arms at the base's own ep60 (no ep300-vs-ep60 confound), doses {0.1,0.25,0.5,0.75,1.0}, rank rows 4/4/4 · 16/16/7 · 21/21/7. VERDICT: NO DOSE QUALIFIES. learnability ratio scratch/FT (mean of 3 seeds): 9.53 / 5.54 / 5.60 / 4.30 at doses .25/.5/.75/1 — the registered fence (≤2×) is never met and the trend is monotone toward, not past, it: the arena closes as the shift is removed, i.e. the shift is not what makes the region unlearnable. far=0.1 is UNRUNNABLE under the registered rule: the builder returns 512 fit rows and 0 select rows, so best-on-select checkpointing is undefined — reported as such, no fallback invented (law 5). The floor also survives the schedule fix: frozen beats full-FT at every runnable dose (Δ = +0.0045/+0.0024/+0.0021/+0.0019). Exploratory calibration, not a hypothesis test; H9-S remains unregistered here."
   },
   {
-   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "source": "machine B (m1-16g), session 2026-09-12 — Letter 016 queue item 2",
    "obtained": "2026-09-12",
    "by": "Sarcos@b22f1e9",
    "path": "artifacts/results/sarcos/Step0_dose_64h64_B.json",
    "sha256": "91c34b5047ecd8a77943d7988d10c8554b747d9cfbd36555a21f5797b86fc49f",
    "bytes": 26695,
    "script": "PYTHONPATH=src python -m sarcos_svd.step0 --hidden 64 64 --out results/step0_64h64.json (Sarcos@b22f1e9)",
-   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 The same registered grid on the previous canonical arch 21-64-64-7, same session, same rules. VERDICT: NO DOSE QUALIFIES \u2014 ratios 8.04 / 4.45 / 4.35 / 3.30, again monotone toward the fence and never crossing it; far=0.1 unrunnable for the same structural reason. Floor holds at every runnable dose (+0.0045/+0.0023/+0.0032/+0.0022). Two architectures agreeing on a null is the second witness of the same no, not a second no."
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) · python 3.11.16 · torch 2.14.0 · numpy 2.4.6 · scipy 1.17.1 · device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. · The same registered grid on the previous canonical arch 21-64-64-7, same session, same rules. VERDICT: NO DOSE QUALIFIES — ratios 8.04 / 4.45 / 4.35 / 3.30, again monotone toward the fence and never crossing it; far=0.1 unrunnable for the same structural reason. Floor holds at every runnable dose (+0.0045/+0.0023/+0.0032/+0.0022). Two architectures agreeing on a null is the second witness of the same no, not a second no."
   },
   {
-   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "source": "machine B (m1-16g), session 2026-09-12 — Letter 016 queue item 2",
    "obtained": "2026-09-12",
    "by": "Sarcos@b22f1e9",
    "path": "artifacts/results/sarcos/Step0_geometry_audit_B.json",
    "sha256": "ebd58c2df11e2161f82f95330135480427bcf91b15c7251b4172d82de395d01b",
    "bytes": 3036,
    "script": "PYTHONPATH=src python -m sarcos_svd.step0 --hidden 256 256 --audit-geometry (and --hidden 64 64)",
-   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 A check on bytes that already exist, not a new test (law 5). Letter 011 \u00a71 files shift_summary_exploratory.json (16b95129\u2026) as produced by the superseded ROW-LEVEL builder. B recomputed both geometries' downstream score at far=0.5 for the same deterministic bases: the exploratory FROZEN row (0.01952 / 0.03003) matches the BLOCK-level geometry to 1e-5 on both arches and misses the row-level reconstruction by 0.0029 / 0.0041. Mechanism named in the file: report.py::frozen_base_rows reads shift_eval.json, written on demand by `evaluate --eval-task shift` with whatever builder is committed TODAY, while shift_rows reads each arm's training-time metrics \u2014 one table, two vintages. Consequence for the record, not for the verdict: Letter 009's floor table compares a block-level frozen score against row-level arm scores. The floor itself stands (see the two dose files). Bonus measurement: B reproduces A's frozen row to 1e-5 across machines \u2014 the programme's first A-vs-B replication, machine effect at or below rounding."
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) · python 3.11.16 · torch 2.14.0 · numpy 2.4.6 · scipy 1.17.1 · device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. · A check on bytes that already exist, not a new test (law 5). Letter 011 §1 files shift_summary_exploratory.json (16b95129…) as produced by the superseded ROW-LEVEL builder. B recomputed both geometries' downstream score at far=0.5 for the same deterministic bases: the exploratory FROZEN row (0.01952 / 0.03003) matches the BLOCK-level geometry to 1e-5 on both arches and misses the row-level reconstruction by 0.0029 / 0.0041. Mechanism named in the file: report.py::frozen_base_rows reads shift_eval.json, written on demand by `evaluate --eval-task shift` with whatever builder is committed TODAY, while shift_rows reads each arm's training-time metrics — one table, two vintages. Consequence for the record, not for the verdict: Letter 009's floor table compares a block-level frozen score against row-level arm scores. The floor itself stands (see the two dose files). Bonus measurement: B reproduces A's frozen row to 1e-5 across machines — the programme's first A-vs-B replication, machine effect at or below rounding."
   },
   {
-   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "source": "machine B (m1-16g), session 2026-09-12 — Letter 016 queue item 2",
    "obtained": "2026-09-12",
    "by": "Sarcos@b22f1e9",
    "path": "artifacts/results/sarcos/Step0_dose_256h256_B.log",
    "sha256": "de05642ebeabb13edeba716368f3f0b685ec8e29a54f36eef1c461f1e476cbac",
    "bytes": 7152,
    "script": "stdout/stderr of the 21-256-256-7 sweep above",
-   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Per-cell print (seed, dose, every arm's downstream MSE) + the numpy empty-slice warnings at far=0.1/1.0, left in verbatim: versions and warnings are part of the measurement, not dirt."
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) · python 3.11.16 · torch 2.14.0 · numpy 2.4.6 · scipy 1.17.1 · device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. · Per-cell print (seed, dose, every arm's downstream MSE) + the numpy empty-slice warnings at far=0.1/1.0, left in verbatim: versions and warnings are part of the measurement, not dirt."
   },
   {
-   "source": "machine B (m1-16g), session 2026-09-12 \u2014 Letter 016 queue item 2",
+   "source": "machine B (m1-16g), session 2026-09-12 — Letter 016 queue item 2",
    "obtained": "2026-09-12",
    "by": "Sarcos@b22f1e9",
    "path": "artifacts/results/sarcos/Step0_dose_64h64_B.log",
    "sha256": "bb5e4b7c78e3dce45669f96ae04c771a28bf4048557104544ba8bc6b415bfacf",
    "bytes": 7153,
    "script": "stdout/stderr of the 21-64-64-7 sweep above",
-   "notes": "run-on: m1-16g (Apple M1, 16 GB) \u00b7 python 3.11.16 \u00b7 torch 2.14.0 \u00b7 numpy 2.4.6 \u00b7 scipy 1.17.1 \u00b7 device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. \u00b7 Same as the 256h256 log, second architecture."
+   "notes": "run-on: m1-16g (Apple M1, 16 GB) · python 3.11.16 · torch 2.14.0 · numpy 2.4.6 · scipy 1.17.1 · device cpu, torch.set_num_threads(1), use_deterministic_algorithms(True) (B-env.json). Equipment Sarcos@b22f1e9 on branch bench-B-step0; main stays at fb37e04. · Same as the 256h256 log, second architecture."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1000.json",
@@ -202,7 +202,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --walks",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1001.json",
@@ -212,7 +212,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --walks",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1002.json",
@@ -222,7 +222,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --walks",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1003.json",
@@ -232,7 +232,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --walks",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walk_jacobi_h128_s1004.json",
@@ -242,7 +242,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --walks",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Per-epoch (alpha,beta) walk of A-jacobi h=128, five pre-registered seeds, train.run() unchanged, --smoke so the canonical 10k test is untouched (the flag changes only post-training evaluation). Terminal pairs are BIT-IDENTICAL to A's exp8 parquet on all five seeds (max_abs_diff 0.0): see h6c_walks_summary.json cross_machine_replication."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walks.log",
@@ -252,7 +252,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --walks",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Run log: 5 walks, 88-91 s each, 4.36 s/epoch on B vs 5.99-6.17 s/epoch in A's exp8 parquet. Force-added: ~/.gitignore_global carries *.log on this laptop (same trap as the Step 0 logs)."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Run log: 5 walks, 88-91 s each, 4.36 s/epoch on B vs 5.99-6.17 s/epoch in A's exp8 parquet. Force-added: ~/.gitignore_global carries *.log on this laptop (same trap as the Step 0 logs)."
   },
   {
    "path": "artifacts/results/polynn/h6cB/h6c_walks_summary.json",
@@ -262,7 +262,7 @@
    "obtained": "2026-09-12",
    "by": "Polynomial-Activated-NN@a0deb68",
    "script": "h6c_dumps.py --summarize",
-   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed \u03b1,\u03b2 walks'. | Across-seed mean pair (0.358882, 0.358988) and sd_seed (alpha 0.0615, beta 0.0413) \u2014 REPORTED, not converted: band = \u00b1max(0.2, 2\u00b7sd_seed) is JacobiGP's amendment to freeze in PREREG_EXP6 before the first H6c number exists. Also carries the A-vs-B bit-identity audit and a question about which exp8 cell the registered target (0.40, 0.37) actually points at."
+   "notes": "run-on: m1-16g (machine B, base M1, 16 GB) | python 3.11.16 | torch 2.14.0 | numpy 2.4.6 | macOS 15.7.5 | device mps (training ran on MPS; no SVD in this job). Letter 015/016 row 'PolyNN init pre-activation dumps + per-seed α,β walks'. | Across-seed mean pair (0.358882, 0.358988) and sd_seed (alpha 0.0615, beta 0.0413) — REPORTED, not converted: band = ±max(0.2, 2·sd_seed) is JacobiGP's amendment to freeze in PREREG_EXP6 before the first H6c number exists. Also carries the A-vs-B bit-identity audit and a question about which exp8 cell the registered target (0.40, 0.37) actually points at."
   },
   {
    "path": "artifacts/results/mef/stage19_e3/e3_summary.json",
@@ -308,11 +308,11 @@
    "path": "artifacts/results/jacobigp/exp6_h6c/h6c_verdict.json",
    "sha256": "c51e001a3b1dd2648dd9c752bdf2fe4018cfb004fee6b6ca9f2c92326d6261ea",
    "bytes": 12700,
-   "source": "exp6 H6c verdict \u2014 evidence path on PolyNN's INIT pre-activation measure (JacobiGP apparatus, donor bytes from machine B)",
+   "source": "exp6 H6c verdict — evidence path on PolyNN's INIT pre-activation measure (JacobiGP apparatus, donor bytes from machine B)",
    "obtained": "2026-09-12",
    "by": "JacobiGP@99c7a4a + chora@932da03",
    "script": "chora/experiments/exp6_h6c_fit.py",
-   "notes": "H6c FAILS: mean pair (-0.922628, -0.916317) vs registered target (0.40, 0.37), band \u00b10.200000 frozen by Amendment A1 from sd_seed of h6c_walks_summary.json (bd58e62bb8d1\u2026). Obituary as pre-written ('lands at (0,0)\u00b1band, or wanders negative'). One hypothesis check, one draw (disclosure field records the 17:5x dry-run peek before the write; no frozen mechanic altered). N=64 sensitivity row identical to 4 dp; all four arms' fits are the SAME numbers because the init histograms are integer-identical (Letter 020's contrast-row death, reproduced here). run-on: m1pro-32g (A); 666.4 s wall."
+   "notes": "H6c FAILS: mean pair (-0.922628, -0.916317) vs registered target (0.40, 0.37), band ±0.200000 frozen by Amendment A1 from sd_seed of h6c_walks_summary.json (bd58e62bb8d1…). Obituary as pre-written ('lands at (0,0)±band, or wanders negative'). One hypothesis check, one draw (disclosure field records the 17:5x dry-run peek before the write; no frozen mechanic altered). N=64 sensitivity row identical to 4 dp; all four arms' fits are the SAME numbers because the init histograms are integer-identical (Letter 020's contrast-row death, reproduced here). run-on: m1pro-32g (A); 666.4 s wall."
   },
   {
    "path": "artifacts/results/jacobigp/exp6_h6c/h6c_fits.json",
@@ -328,11 +328,11 @@
    "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_verdict.json",
    "sha256": "e08ca86d2ea4b381c2328893cf6d16c3a2723dffd441b4e2560f011365f6b499",
    "bytes": 263209,
-   "source": "exp6 H6a PILOT verdict \u2014 learned Jacobi exponents of Sarcos val-loss curves vs rank (training-under-rank-constraint row)",
+   "source": "exp6 H6a PILOT verdict — learned Jacobi exponents of Sarcos val-loss curves vs rank (training-under-rank-constraint row)",
    "obtained": "2026-09-12",
    "by": "JacobiGP@aab50d3",
    "script": "chora/experiments/exp6_h6a_sarcos_pilot.py",
-   "notes": "Verdict DEAD-BY-CURVE-CLAUSE: S(0.50)=7.880 passes the registered 3.0 by 2.6x but \u0394=0.41648 > B=0.12416, i.e. the curves separated before the gauge could \u2014 H6a's own pre-written death clause. Composition is the surviving observation: d_beta=-0.78143 vs d_alpha=-0.06661 (per-coord pooled sd 0.13916 / 0.02112), so one coordinate of the dial carries all of it and the other is flat; labelled exploratory on a row that failed its clause. 36 arms = rungs {1,2,4,8,16,21} x seeds {13,14,15} x widths {21-64-64-7 primary, 256h256 sensitivity}, all trained by Sarcos's own runner (86.6 s of training, 1148 s of fitting), test split never read, no barrier flags, no breakdowns. run-on: m1pro-32g (A)."
+   "notes": "Verdict DEAD-BY-CURVE-CLAUSE: S(0.50)=7.880 passes the registered 3.0 by 2.6x but Δ=0.41648 > B=0.12416, i.e. the curves separated before the gauge could — H6a's own pre-written death clause. Composition is the surviving observation: d_beta=-0.78143 vs d_alpha=-0.06661 (per-coord pooled sd 0.13916 / 0.02112), so one coordinate of the dial carries all of it and the other is flat; labelled exploratory on a row that failed its clause. 36 arms = rungs {1,2,4,8,16,21} x seeds {13,14,15} x widths {21-64-64-7 primary, 256h256 sensitivity}, all trained by Sarcos's own runner (86.6 s of training, 1148 s of fitting), test split never read, no barrier flags, no breakdowns. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_fits.json",
@@ -342,7 +342,7 @@
    "obtained": "2026-09-12",
    "by": "JacobiGP@aab50d3",
    "script": "chora/experiments/exp6_h6a_sarcos_pilot.py",
-   "notes": "Includes the determinism audit: 15/21 overlapping configs reproduce the committed 2026-09-08 Sarcos records BITWISE across a macOS 26.1->26.6 change; the 6 exceptions are exactly the r=1 arms at both widths, first differing at epoch 0, max|\u0394 mse_val| 2.4e-5. run-on: m1pro-32g (A)."
+   "notes": "Includes the determinism audit: 15/21 overlapping configs reproduce the committed 2026-09-08 Sarcos records BITWISE across a macOS 26.1->26.6 change; the 6 exceptions are exactly the r=1 arms at both widths, first differing at epoch 0, max|Δ mse_val| 2.4e-5. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/sarcos/exp6_h6a_pilot/h6a_pilot_robustness_posthoc.json",
@@ -352,47 +352,47 @@
    "obtained": "2026-09-12",
    "by": "JacobiGP@aab50d3",
    "script": "chora/experiments/exp6_h6a_robustness_posthoc.py",
-   "notes": "Labelled post-hoc and separate by law: it cannot move the verdict, and it does not \u2014 shifts <=3e-4 in (alpha,beta), S 7.880 -> 7.880. Carries a bug_log recording that this script's own first attempt printed S=11.104 because a leftover loop variable made both coordinates read beta; caught by the script's required self-consistency line against the deciding row. An instrument reporting clean while broken, arriving from the checker's side. run-on: m1pro-32g (A)."
+   "notes": "Labelled post-hoc and separate by law: it cannot move the verdict, and it does not — shifts <=3e-4 in (alpha,beta), S 7.880 -> 7.880. Carries a bug_log recording that this script's own first attempt printed S=11.104 because a leftover loop variable made both coordinates read beta; caught by the script's required self-consistency line against the deciding row. An instrument reporting clean while broken, arriving from the checker's side. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/checkpoints/stage18_kairos_ladder.json",
    "sha256": "c945bf1c7bab18ff95e512762a506c20720a75735164008fd6505572784c8770",
    "bytes": 5107,
-   "source": "produced \u2014 index of MEF's stage18 k-ladder checkpoints (weights stay out of git, law 1)",
+   "source": "produced — index of MEF's stage18 k-ladder checkpoints (weights stay out of git, law 1)",
    "obtained": "2026-09-12",
    "by": "MEF@6f5f4c5 (bytes) / Kairos@ae6be01 (the H9-M draft that asked for it)",
    "script": "shasum -a 256 Middle-Eigen-function/outputs/stage18_kairos_mini/ckpt_k*.pt",
-   "notes": "Satisfies Sitting 003 R2's 'named checkpoint source' condition for H9 on MEF, with 1 KB and no weights: five bases hashed on disk (k=0 a7d14851\u2026, 25 87327b01\u2026, 50 a29aaf66\u2026, 75 09e592b6\u2026, 100 4b2d8373\u2026), git-ignored by MEF/.gitignore:17 as reproducible from seed 13 + scripts/stage18_kairos_mini.py. Provenance chain checked now rather than asserted: sha256(ckpt_k100.pt) equals the seed-13 base_sha256 inside artifacts/results/mef/stage19_e3/e3_summary.json, so the 2026-09-11 ladder and E3's last-mile diagnostic share one container by hash, not by filename. Also carries A's and B's floors side by side (5.5456/1.4038/1.2194/1.1525/1.0906 vs 5.6587/1.3813/1.1795/1.0885/1.0313) with the reading that this cross-seed-cross-machine pair is the right ORDER of magnitude for a band and is not a band. run-on: hash pass executed on m1pro-32g (A); B's own checkpoint bytes are left for B's commit (law 3)."
+   "notes": "Satisfies Sitting 003 R2's 'named checkpoint source' condition for H9 on MEF, with 1 KB and no weights: five bases hashed on disk (k=0 a7d14851…, 25 87327b01…, 50 a29aaf66…, 75 09e592b6…, 100 4b2d8373…), git-ignored by MEF/.gitignore:17 as reproducible from seed 13 + scripts/stage18_kairos_mini.py. Provenance chain checked now rather than asserted: sha256(ckpt_k100.pt) equals the seed-13 base_sha256 inside artifacts/results/mef/stage19_e3/e3_summary.json, so the 2026-09-11 ladder and E3's last-mile diagnostic share one container by hash, not by filename. Also carries A's and B's floors side by side (5.5456/1.4038/1.2194/1.1525/1.0906 vs 5.6587/1.3813/1.1795/1.0885/1.0313) with the reading that this cross-seed-cross-machine pair is the right ORDER of magnitude for a band and is not a band. run-on: hash pass executed on m1pro-32g (A); B's own checkpoint bytes are left for B's commit (law 3)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/seed13_sweep_full.json",
    "sha256": "36f54c4f8edca81c696092a80266362746670e37aaf6a7e47406fb484a36f491",
    "bytes": 27600,
-   "source": "H9-M registered k\u00d7r grid + no-adapter control row, machine A seed 13 (exploratory:false)",
+   "source": "H9-M registered k×r grid + no-adapter control row, machine A seed 13 (exploratory:false)",
    "obtained": "2026-09-13",
    "by": "MEF@21eadd4",
    "script": "MEF/scripts/stage18_kairos_mini.py --mode sweep --full (SEED=13 CONTROLS=1 REGISTERED=d197560)",
-   "notes": "Registered run per MEF/docs/PREREG_H9M.md: 15 arms (k\u2208{0,25,50,75,100} \u00d7 r\u2208{2,8,32}, schedule (a), 600 adapter steps, lr 5e-4 flat) + 5 control arms (600 plain steps, no adapter) + frozen floors. Seeds 14/15 are new; seed 13's grid is a re-run of its own ladder, copied into outputs/stage19_h9m_seed13 with all five ckpt hashes verified equal to artifacts/checkpoints/stage18_kairos_ladder.json before use. run-on: m1pro-32g (A)."
+   "notes": "Registered run per MEF/docs/PREREG_H9M.md: 15 arms (k∈{0,25,50,75,100} × r∈{2,8,32}, schedule (a), 600 adapter steps, lr 5e-4 flat) + 5 control arms (600 plain steps, no adapter) + frozen floors. Seeds 14/15 are new; seed 13's grid is a re-run of its own ladder, copied into outputs/stage19_h9m_seed13 with all five ckpt hashes verified equal to artifacts/checkpoints/stage18_kairos_ladder.json before use. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/seed14_sweep_full.json",
    "sha256": "9bc1afd774831630da935e805fe803792a735394bc5af3cc9f5033795cc024ff",
    "bytes": 27624,
-   "source": "H9-M registered k\u00d7r grid + no-adapter control row, machine A seed 14 (exploratory:false)",
+   "source": "H9-M registered k×r grid + no-adapter control row, machine A seed 14 (exploratory:false)",
    "obtained": "2026-09-13",
    "by": "MEF@21eadd4",
    "script": "MEF/scripts/stage18_kairos_mini.py --mode sweep --full (SEED=14 CONTROLS=1 REGISTERED=d197560)",
-   "notes": "Registered run per MEF/docs/PREREG_H9M.md: 15 arms (k\u2208{0,25,50,75,100} \u00d7 r\u2208{2,8,32}, schedule (a), 600 adapter steps, lr 5e-4 flat) + 5 control arms (600 plain steps, no adapter) + frozen floors. Seeds 14/15 are new; seed 13's grid is a re-run of its own ladder, copied into outputs/stage19_h9m_seed13 with all five ckpt hashes verified equal to artifacts/checkpoints/stage18_kairos_ladder.json before use. run-on: m1pro-32g (A)."
+   "notes": "Registered run per MEF/docs/PREREG_H9M.md: 15 arms (k∈{0,25,50,75,100} × r∈{2,8,32}, schedule (a), 600 adapter steps, lr 5e-4 flat) + 5 control arms (600 plain steps, no adapter) + frozen floors. Seeds 14/15 are new; seed 13's grid is a re-run of its own ladder, copied into outputs/stage19_h9m_seed13 with all five ckpt hashes verified equal to artifacts/checkpoints/stage18_kairos_ladder.json before use. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/seed15_sweep_full.json",
    "sha256": "ae485c0d07cf2cba1b7de1d0251087b6799e317bfe3930f63f98e25fdd678664",
    "bytes": 27624,
-   "source": "H9-M registered k\u00d7r grid + no-adapter control row, machine A seed 15 (exploratory:false)",
+   "source": "H9-M registered k×r grid + no-adapter control row, machine A seed 15 (exploratory:false)",
    "obtained": "2026-09-13",
    "by": "MEF@21eadd4",
    "script": "MEF/scripts/stage18_kairos_mini.py --mode sweep --full (SEED=15 CONTROLS=1 REGISTERED=d197560)",
-   "notes": "Registered run per MEF/docs/PREREG_H9M.md: 15 arms (k\u2208{0,25,50,75,100} \u00d7 r\u2208{2,8,32}, schedule (a), 600 adapter steps, lr 5e-4 flat) + 5 control arms (600 plain steps, no adapter) + frozen floors. Seeds 14/15 are new; seed 13's grid is a re-run of its own ladder, copied into outputs/stage19_h9m_seed13 with all five ckpt hashes verified equal to artifacts/checkpoints/stage18_kairos_ladder.json before use. run-on: m1pro-32g (A)."
+   "notes": "Registered run per MEF/docs/PREREG_H9M.md: 15 arms (k∈{0,25,50,75,100} × r∈{2,8,32}, schedule (a), 600 adapter steps, lr 5e-4 flat) + 5 control arms (600 plain steps, no adapter) + frozen floors. Seeds 14/15 are new; seed 13's grid is a re-run of its own ladder, copied into outputs/stage19_h9m_seed13 with all five ckpt hashes verified equal to artifacts/checkpoints/stage18_kairos_ladder.json before use. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/band.json",
@@ -402,17 +402,17 @@
    "obtained": "2026-09-13",
    "by": "MEF@21eadd4",
    "script": "chora/experiments/h9m_score.py --band",
-   "notes": "band = max over ranks of 2\u00b7sd(ddof=1) of W(0,r) across A seeds 13/14/15 = 0.045188 nats. W(k,r)=ctrl_B(k)\u2212final_B(k,r). Refused to write until \u22652 same-machine seeds with control arms existed, and refuses to overwrite \u2014 so 'never recomputed after a k>0 number is read' is instrument behaviour, not intention. B's seed-14 grid excluded by construction (a two-laptop spread confounds machine with seed). run-on: m1pro-32g (A)."
+   "notes": "band = max over ranks of 2·sd(ddof=1) of W(0,r) across A seeds 13/14/15 = 0.045188 nats. W(k,r)=ctrl_B(k)−final_B(k,r). Refused to write until ≥2 same-machine seeds with control arms existed, and refuses to overwrite — so 'never recomputed after a k>0 number is read' is instrument behaviour, not intention. B's seed-14 grid excluded by construction (a two-laptop spread confounds machine with seed). run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/verdict.json",
    "sha256": "32d7cc58732aa17202dd6d746abcf3e7736d5fea97c0ee0b42452382c7c61416",
    "bytes": 8284,
-   "source": "H9-M verdict \u2014 FAILS (the obituary \u00a76 pre-wrote is the output)",
+   "source": "H9-M verdict — FAILS (the obituary §6 pre-wrote is the output)",
    "obtained": "2026-09-13",
    "by": "MEF@21eadd4",
    "script": "chora/experiments/h9m_score.py --score",
-   "notes": "W is inside the band at every rung and every rank of the moving-base row (|W| \u2264 0.039 vs band 0.045): a rank-limited increment adds NOTHING over 600 plain continued-training steps at any injection time in this rig. (i) fails, (ii) fails (rescored after its first version called a ratio of \u22120.10 'superlinear' \u2014 noise arithmetic, fixed before these bytes were pinned), (iii) is UNADJUDICABLE rather than refuted, because both of its terms are inside the band. Design finding filed in \u00a72.4 before scoring: this rig's regime changes with k (k<100 co-trains the base, k=100 freezes it), so the frozen-base late-injection case that 'critical window' usually means is not measured here at all \u2014 H9-M'' needs it. Gate 6 twin included: A vs B, same seed 14, floors agree to max |\u0394| 0.0289 nats (exactly 0.0000 at k=0), i.e. the machine effect is below the seed-noise band. run-on: m1pro-32g (A)."
+   "notes": "W is inside the band at every rung and every rank of the moving-base row (|W| ≤ 0.039 vs band 0.045): a rank-limited increment adds NOTHING over 600 plain continued-training steps at any injection time in this rig. (i) fails, (ii) fails (rescored after its first version called a ratio of −0.10 'superlinear' — noise arithmetic, fixed before these bytes were pinned), (iii) is UNADJUDICABLE rather than refuted, because both of its terms are inside the band. Design finding filed in §2.4 before scoring: this rig's regime changes with k (k<100 co-trains the base, k=100 freezes it), so the frozen-base late-injection case that 'critical window' usually means is not measured here at all — H9-M'' needs it. Gate 6 twin included: A vs B, same seed 14, floors agree to max |Δ| 0.0289 nats (exactly 0.0000 at k=0), i.e. the machine effect is below the seed-noise band. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/checkpoints/stage19_h9m_ladders_A.json",
@@ -422,7 +422,7 @@
    "obtained": "2026-09-13",
    "by": "MEF@21eadd4",
    "script": "shasum -a 256 MEF/outputs/stage19_h9m_seed{14,15}/ckpt_k*.pt",
-   "notes": "Second instalment of the checkpoint index the same way as the first: 10 (path, sha256, bytes, recipe) rows, no bytes in git, and the claim 'reproducible from seed' kept where it belongs \u2014 as a claim, next to a fact. run-on: m1pro-32g (A)."
+   "notes": "Second instalment of the checkpoint index the same way as the first: 10 (path, sha256, bytes, recipe) rows, no bytes in git, and the claim 'reproducible from seed' kept where it belongs — as a claim, next to a fact. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/gate6_twin.json",
@@ -442,7 +442,7 @@
    "obtained": "2026-09-12",
    "by": "JacobiGP@0a60707 + chora@f79d588",
    "script": "chora/experiments/exp6_h6a_spectra_addendum.py",
-   "notes": "RE-PINNED 2026-09-13: this entry was lost between the two hands working one clone (my duplicate line was dropped with `git checkout HEAD -- manifest.json` and the copy that replaced it did not survive either), so for ~14 hours the file sat TRACKED AND UNPINNED \u2014 the reverse of every incident in docs/stale-pins.md, and the exact gap C5 of bin/validate-manifests.sh was written to catch. eff_rank == rung at every layer (layer 2 caps at 7), top-1 energy share falling 1.000 \u2192 0.177 along the ladder: the constraint binds exactly. run-on: m1pro-32g (A)."
+   "notes": "RE-PINNED 2026-09-13: this entry was lost between the two hands working one clone (my duplicate line was dropped with `git checkout HEAD -- manifest.json` and the copy that replaced it did not survive either), so for ~14 hours the file sat TRACKED AND UNPINNED — the reverse of every incident in docs/stale-pins.md, and the exact gap C5 of bin/validate-manifests.sh was written to catch. eff_rank == rung at every layer (layer 2 caps at 7), top-1 energy share falling 1.000 → 0.177 along the ladder: the constraint binds exactly. run-on: m1pro-32g (A)."
   },
   {
    "path": "artifacts/results/mef/stage19_h9m/gate6_twin_render_check.json",
@@ -483,6 +483,36 @@
    "by": "chora@0c00fff + this commit",
    "script": "~/venvs/lyceum-gt/bin/python chora/experiments/theuth_h6a_pilot_table.py",
    "notes": "Specimen table offered to the Warden in Letter 030: H6a-pilot, five rows, twelve columns, one quantity per column — **both clauses of the registered rule in their own columns rather than fused into a status cell**, S/threshold and Δ/B as separate quotients so a reader sees 2.6× and 3.4× instead of inferring them, τ/N/S shown at the precision the file carries and the decimals named in the header, provenance in tab_source_note (path + sha256 + by) where a screenshot cannot crop it. Rendered with great_tables 0.24.0 + polars 1.44.2, as_raw_html(); 15,396 B. It is a specimen, not a patch: no bench site was opened for editing, and the parchment clip the glass already practises (docs/index.html's chora-anchor layer) is the page owner's to apply or not. Reproduce: run the script named in `script:`; the json beside this file is the proof."
+  },
+  {
+   "path": "artifacts/results/exp10/report_10a.json",
+   "sha256": "db424fdaa88f3241fd50e8ff4bb2a2d19a95f87e6cc986690a43a92c95e8e754",
+   "bytes": 1852,
+   "source": "chora exp10 (experiments/exp10-concept-adapters), owner-commissioned 2026-09-18",
+   "obtained": "2026-09-18",
+   "by": "chora@a7a289e",
+   "script": "scripts/analyze_10a.py · scripts/svd_10b.py",
+   "notes": "10a scoring: hit rates, JS matrices, H1–H3 verdicts (H1 FAILS reversed, H2 passes, H3 in band)"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10b.json",
+   "sha256": "5c622dd7a9e0365db6b524962cd25e8ca6e07cfedff0760705872d83db6febb0",
+   "bytes": 2091,
+   "source": "chora exp10 (experiments/exp10-concept-adapters), owner-commissioned 2026-09-18",
+   "obtained": "2026-09-18",
+   "by": "chora@a7a289e",
+   "script": "scripts/analyze_10a.py · scripts/svd_10b.py",
+   "notes": "10b SVD: subspace sims vs k, ΔW overlaps, eff ranks, invasion bands; H4 FAILS, registered null (interpolation) wins"
+  },
+  {
+   "path": "artifacts/results/exp10/ADAPTER-PINS.json",
+   "sha256": "fdf231a9a81595a7b4c4315dc2b8a807a6327a37a431e3c0ceb21694bf2b8f70",
+   "bytes": 895,
+   "source": "chora exp10 (experiments/exp10-concept-adapters), owner-commissioned 2026-09-18",
+   "obtained": "2026-09-18",
+   "by": "chora@a7a289e",
+   "script": "scripts/analyze_10a.py · scripts/svd_10b.py",
+   "notes": "sha256 pins of the three git-ignored adapters (spring/summer/mid, 35MB each) + train receipts refs"
   }
  ]
 }

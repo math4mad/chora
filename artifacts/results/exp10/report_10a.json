@@ -1,0 +1,83 @@
+{
+ "hit_rates": {
+  "base|lex=spring|probes=spring": 0.107,
+  "base|lex=spring|probes=summer": 0.0,
+  "base|lex=spring|probes=neutral": 0.0,
+  "base|lex=summer|probes=spring": 0.0,
+  "base|lex=summer|probes=summer": 0.333,
+  "base|lex=summer|probes=neutral": 0.0,
+  "spring|lex=spring|probes=spring": 0.84,
+  "spring|lex=spring|probes=summer": 0.24,
+  "spring|lex=spring|probes=neutral": 0.06,
+  "spring|lex=summer|probes=spring": 0.0,
+  "spring|lex=summer|probes=summer": 0.333,
+  "spring|lex=summer|probes=neutral": 0.0,
+  "summer|lex=spring|probes=spring": 0.307,
+  "summer|lex=spring|probes=summer": 0.0,
+  "summer|lex=spring|probes=neutral": 0.0,
+  "summer|lex=summer|probes=spring": 0.013,
+  "summer|lex=summer|probes=summer": 0.493,
+  "summer|lex=summer|probes=neutral": 0.04
+ },
+ "js": {
+  "base-spring|spring": {
+   "mean": 0.5511,
+   "boot_sd": 0.0218
+  },
+  "base-spring|summer": {
+   "mean": 0.5389,
+   "boot_sd": 0.0331
+  },
+  "base-spring|neutral": {
+   "mean": 0.3813,
+   "boot_sd": 0.059
+  },
+  "base-spring|ALL": {
+   "mean": 0.5041,
+   "boot_sd": 0.0237
+  },
+  "base-summer|spring": {
+   "mean": 0.5212,
+   "boot_sd": 0.0259
+  },
+  "base-summer|summer": {
+   "mean": 0.575,
+   "boot_sd": 0.0283
+  },
+  "base-summer|neutral": {
+   "mean": 0.4318,
+   "boot_sd": 0.0424
+  },
+  "base-summer|ALL": {
+   "mean": 0.519,
+   "boot_sd": 0.02
+  },
+  "spring-summer|spring": {
+   "mean": 0.4169,
+   "boot_sd": 0.0309
+  },
+  "spring-summer|summer": {
+   "mean": 0.3795,
+   "boot_sd": 0.0404
+  },
+  "spring-summer|neutral": {
+   "mean": 0.2344,
+   "boot_sd": 0.0328
+  },
+  "spring-summer|ALL": {
+   "mean": 0.3573,
+   "boot_sd": 0.0247
+  }
+ },
+ "verdicts": {
+  "H1": false,
+  "H2_own_above_base": true,
+  "H2_cross_below_own": true,
+  "H3_neutral_compression": false,
+  "bands": {
+   "band1": 0.1054,
+   "band2": 0.1374,
+   "band3": 0.0638
+  }
+ }
+}

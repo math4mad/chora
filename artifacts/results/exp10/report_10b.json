@@ -1,0 +1,91 @@
+{
+ "subspace_table": {
+  "V-A(spring~summer)|k=1": 0.876,
+  "U-B(spring~summer)|k=1": 0.218,
+  "V-A(spring~summer)|k=2": 1.314,
+  "U-B(spring~summer)|k=2": 0.361,
+  "V-A(spring~summer)|k=4": 1.914,
+  "U-B(spring~summer)|k=4": 0.454,
+  "V-A(spring~summer)|k=8": 2.781,
+  "U-B(spring~summer)|k=8": 0.517,
+  "V-A(spring~summer)|k=16": 4.022,
+  "U-B(spring~summer)|k=16": 0.549,
+  "V-A(spring~summer)|k=k90": 3.818,
+  "U-B(spring~summer)|k=k90": 0.547,
+  "V-A(spring~mid)|k=1": 0.908,
+  "U-B(spring~mid)|k=1": 0.625,
+  "V-A(spring~mid)|k=2": 1.362,
+  "U-B(spring~mid)|k=2": 0.857,
+  "V-A(spring~mid)|k=4": 1.958,
+  "U-B(spring~mid)|k=4": 1.117,
+  "V-A(spring~mid)|k=8": 2.81,
+  "U-B(spring~mid)|k=8": 1.443,
+  "V-A(spring~mid)|k=16": 4.033,
+  "U-B(spring~mid)|k=16": 1.815,
+  "V-A(spring~mid)|k=k90": 3.834,
+  "U-B(spring~mid)|k=k90": 1.758,
+  "V-A(summer~mid)|k=1": 0.937,
+  "U-B(summer~mid)|k=1": 0.652,
+  "V-A(summer~mid)|k=2": 1.354,
+  "U-B(summer~mid)|k=2": 0.9,
+  "V-A(summer~mid)|k=4": 1.957,
+  "U-B(summer~mid)|k=4": 1.172,
+  "V-A(summer~mid)|k=8": 2.814,
+  "U-B(summer~mid)|k=8": 1.525,
+  "V-A(summer~mid)|k=16": 4.034,
+  "U-B(summer~mid)|k=16": 1.925,
+  "V-A(summer~mid)|k=k90": 3.833,
+  "U-B(summer~mid)|k=k90": 1.862,
+  "\u0394Wov(spring~summer)": -0.0022,
+  "\u0394Wov(spring~mid)": 0.0093,
+  "\u0394Wov(summer~mid)": 0.0128
+ },
+ "effective_rank": {
+  "spring": 12.17,
+  "summer": 12.09,
+  "mid": 12.11
+ },
+ "invasion": {
+  "spring": {
+   "mean_band_percentile": 0.717,
+   "energy_in_base_top10pct_dirs": 0.015
+  },
+  "summer": {
+   "mean_band_percentile": 0.709,
+   "energy_in_base_top10pct_dirs": 0.015
+  },
+  "mid": {
+   "mean_band_percentile": 0.719,
+   "energy_in_base_top10pct_dirs": 0.015
+  }
+ },
+ "H4_k90_V-A": false,
+ "H4_stable_across_k": false,
+ "sensitivity": {
+  "1": {
+   "ss": 0.876,
+   "sm": 0.908,
+   "um": 0.937
+  },
+  "2": {
+   "ss": 1.314,
+   "sm": 1.362,
+   "um": 1.354
+  },
+  "4": {
+   "ss": 1.914,
+   "sm": 1.958,
+   "um": 1.957
+  },
+  "8": {
+   "ss": 2.781,
+   "sm": 2.81,
+   "um": 2.814
+  },
+  "16": {
+   "ss": 4.022,
+   "sm": 4.033,
+   "um": 4.034
+  }
+ }
+}
