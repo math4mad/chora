@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-18T08:21:34Z",
- "chora_head": "41f8caf",
+ "generated": "2026-09-18T08:26:31Z",
+ "chora_head": "d0dfa34",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -10,7 +10,7 @@
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 7
+  "RECONCILE": 6
  },
  "rows": [
   {
@@ -704,22 +704,18 @@
    "gated_by": null,
    "budget": null,
    "next": "P1 upon owner's network nod (3B + Llama fetch, pin before train). Owner's 19:00 review now covers exp10 announced + exp11 P1 go.",
-   "flags": [
-    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/exp11/report_11_p0.json"
-   ],
+   "flags": [],
    "detail": {
     "prereg": "chora@38737ba experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
     "apparatus": "chora:experiments/exp11-horizontal-matrix/scripts/svd_11.py",
-    "verdict": "True",
-    "reconcile": true
+    "verdict": "True"
    }
   }
  ],
  "audits": [
-  "pins: 173 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 1",
-  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp11/report_11_p0.json",
+  "pins: 173 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 277ae29, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint d0dfa34, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
