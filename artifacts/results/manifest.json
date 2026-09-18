@@ -533,6 +533,56 @@
    "by": "chora@a7a289e",
    "script": "scripts/mint_seeds.sh · scripts/svd_seedcheck.py",
    "notes": "sha256 pins of the six git-ignored seed-14/15 adapters"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10c.json",
+   "sha256": "49dd68b8c6325c508d3500f4ddc5611dd7333b306492048477a7ffbd270e57e8",
+   "bytes": 661,
+   "source": "chora exp10 afternoon batch (owner commission + Qwen plan §7-8)",
+   "obtained": "2026-09-18",
+   "by": "chora@fcd3030",
+   "script": "scripts/kl_10c.py · kl_10c_grouped.py · router_10d.py",
+   "notes": "full-sequence teacher-forced JS: reversal persists (ss content 0.154 < base-arms 0.192/0.195) but shrinks 0.165→0.060 vs single point — composability claim stands at weight geometry (10b), not at output distributions"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10c_grouped.json",
+   "sha256": "85189df282c472fcdcc5a6a196d28752e8563a6d3edd3233334edf0c42b74041",
+   "bytes": 785,
+   "source": "chora exp10 afternoon batch (owner commission + Qwen plan §7-8)",
+   "obtained": "2026-09-18",
+   "by": "chora@fcd3030",
+   "script": "scripts/kl_10c.py · kl_10c_grouped.py · router_10d.py",
+   "notes": "content/style token split per plan §8 Step 2; doc's expected pattern (ss dominant on content) NOT CONFIRMED — registered honestly"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10d_router.json",
+   "sha256": "a5b854188eadc58decde6d2b4de41beab084fb3811912a1e667f231d1c9450ae",
+   "bytes": 4367,
+   "source": "chora exp10 afternoon batch (owner commission + Qwen plan §7-8)",
+   "obtained": "2026-09-18",
+   "by": "chora@fcd3030",
+   "script": "scripts/kl_10c.py · kl_10c_grouped.py · router_10d.py",
+   "notes": "router demo: routed hit 0.70 vs wrong-arm 0.267 vs no-adapter 0.233; router accuracy 0.8; MPS fp32 26.1 t/s before quantization"
+  },
+  {
+   "path": "artifacts/results/exp10/fig10c_positional.png",
+   "sha256": "43fa012be8ec4d43d477c825326a5b433104bca546c061244dd8b89f2a0c8f04",
+   "bytes": 113048,
+   "source": "chora exp10 afternoon batch (owner commission + Qwen plan §7-8)",
+   "obtained": "2026-09-18",
+   "by": "chora@fcd3030",
+   "script": "scripts/kl_10c.py · kl_10c_grouped.py · router_10d.py",
+   "notes": "positional profile of JS along greedy reference answers (theme probes)"
+  },
+  {
+   "path": "artifacts/results/exp10/fig10c_grouped.png",
+   "sha256": "77e0bb1492ce4b3ad0529858dcb832869ac17e85b7d8eb6f4883689fcf3445c3",
+   "bytes": 36112,
+   "source": "chora exp10 afternoon batch (owner commission + Qwen plan §7-8)",
+   "obtained": "2026-09-18",
+   "by": "chora@fcd3030",
+   "script": "scripts/kl_10c.py · kl_10c_grouped.py · router_10d.py",
+   "notes": "content vs style bar chart per pair (plan §8 Step 4)"
   }
  ]
 }

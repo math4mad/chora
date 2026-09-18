@@ -87,3 +87,16 @@ Seeds 14/15 × three arms trained with the identical recipe (--seed only); SVD r
 H4's reversal on the WRITE side replicates at all three seeds; V-A stays flat (~3.79 all pairs).
 Global ΔW overlap: spring~summer 0.13 vs mid~parent ~0.63. "Mixture = interpolation" is now a
 three-seed statement, cleared for the letter to MEF/Kairos.
+
+### Addendum 3 — 10c registered (owner's afternoon commission "按照qwen的建议做" +
+### artifacts/external/2026-09-18-afternoon-exp/afternoon-exp.docx §2.3/§6.2, sha 64e8bf2a…)
+Full-sequence teacher-forced JS: for every probe, one reference text per theme is fixed as the
+seed-13 greedy continuation (chosen by rule, not by eye — text itself is never filtered), and ALL
+THREE arms score that same text token-by-token; JS over the full vocabulary softmax at each
+position, mean over positions (excluding prompt). Registered expectations re-stated BEFORE run:
+- H1c: if the 10a reversal was style-averaging artifact, theme-probe JS(spring,summer) drops
+  BELOW base~adapter again only after per-position mean over CONTENT-bearing positions… simpler
+  registered claim: reversal magnitude at full-sequence level < single-point magnitude.
+- Secondary report: where along the sequence the divergence lives (positional curve, first vs
+  second half), no claim attached.
+10d (router demo) is engineering demonstration, no hypothesis; speed/size numbers only.

@@ -1,0 +1,46 @@
+{
+ "grouped_js": {
+  "spring~summer": {
+   "content": {
+    "n": 1752,
+    "js_mean": 0.1539,
+    "js_p90": 0.3862
+   },
+   "style": {
+    "n": 660,
+    "js_mean": 0.1348,
+    "js_p90": 0.3477
+   }
+  },
+  "base~spring": {
+   "content": {
+    "n": 1752,
+    "js_mean": 0.192,
+    "js_p90": 0.4421
+   },
+   "style": {
+    "n": 660,
+    "js_mean": 0.1869,
+    "js_p90": 0.3686
+   }
+  },
+  "base~summer": {
+   "content": {
+    "n": 1752,
+    "js_mean": 0.1954,
+    "js_p90": 0.4454
+   },
+   "style": {
+    "n": 660,
+    "js_mean": 0.2041,
+    "js_p90": 0.3881
+   }
+  }
+ },
+ "verdict": {
+  "content_ss_dominant": false,
+  "style_ss_comparable": false,
+  "pattern_matches_doc_expectation": false
+ },
+ "rule": "style token = only STYLE_CHARS (punct+whitespace+function chars); else content"
+}

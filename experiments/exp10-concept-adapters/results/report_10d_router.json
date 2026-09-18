@@ -1,0 +1,273 @@
+{
+ "routed": {
+  "SP01": 1.0,
+  "SP02": 1.0,
+  "SP03": 1.0,
+  "SP04": 1.0,
+  "SP05": 1.0,
+  "SP06": 1.0,
+  "SP07": 1.0,
+  "SP08": 1.0,
+  "SP09": 0.0,
+  "SP10": 0.0,
+  "SP11": 1.0,
+  "SP12": 1.0,
+  "SP13": 0.0,
+  "SP14": 1.0,
+  "SP15": 1.0,
+  "SU01": 1.0,
+  "SU02": 0.0,
+  "SU03": 0.0,
+  "SU04": 1.0,
+  "SU05": 1.0,
+  "SU06": 1.0,
+  "SU07": 1.0,
+  "SU08": 0.0,
+  "SU09": 0.0,
+  "SU10": 0.0,
+  "SU11": 0.0,
+  "SU12": 1.0,
+  "SU13": 1.0,
+  "SU14": 1.0,
+  "SU15": 1.0
+ },
+ "forced_wrong": {
+  "SP01": 0.0,
+  "SP02": 1.0,
+  "SP03": 0.0,
+  "SP04": 1.0,
+  "SP05": 0.0,
+  "SP06": 1.0,
+  "SP07": 1.0,
+  "SP08": 0.0,
+  "SP09": 0.0,
+  "SP10": 0.0,
+  "SP11": 0.0,
+  "SP12": 0.0,
+  "SP13": 0.0,
+  "SP14": 0.0,
+  "SP15": 0.0,
+  "SU01": 1.0,
+  "SU02": 0.0,
+  "SU03": 0.0,
+  "SU04": 0.0,
+  "SU05": 0.0,
+  "SU06": 0.0,
+  "SU07": 1.0,
+  "SU08": 0.0,
+  "SU09": 0.0,
+  "SU10": 0.0,
+  "SU11": 0.0,
+  "SU12": 1.0,
+  "SU13": 0.0,
+  "SU14": 1.0,
+  "SU15": 0.0
+ },
+ "no_adapter": {
+  "SP01": 0.0,
+  "SP02": 1.0,
+  "SP03": 0.0,
+  "SP04": 0.0,
+  "SP05": 0.0,
+  "SP06": 0.0,
+  "SP07": 0.0,
+  "SP08": 0.0,
+  "SP09": 0.0,
+  "SP10": 0.0,
+  "SP11": 0.0,
+  "SP12": 0.0,
+  "SP13": 0.0,
+  "SP14": 0.0,
+  "SP15": 0.0,
+  "SU01": 1.0,
+  "SU02": 0.0,
+  "SU03": 0.0,
+  "SU04": 1.0,
+  "SU05": 1.0,
+  "SU06": 0.0,
+  "SU07": 1.0,
+  "SU08": 0.0,
+  "SU09": 0.0,
+  "SU10": 0.0,
+  "SU11": 0.0,
+  "SU12": 1.0,
+  "SU13": 1.0,
+  "SU14": 0.0,
+  "SU15": 0.0
+ },
+ "speed": {
+  "tokens": 64,
+  "seconds": 2.45,
+  "tok_per_s": 26.1,
+  "device": "mps"
+ },
+ "routes": {
+  "SP01": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP02": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP03": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SP04": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP05": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SP06": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP07": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP08": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP09": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SP10": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP11": {
+   "expected": "spring",
+   "routed_to": "spring"
+  },
+  "SP12": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SP13": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SP14": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SP15": {
+   "expected": "spring",
+   "routed_to": null
+  },
+  "SU01": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU02": {
+   "expected": "summer",
+   "routed_to": null
+  },
+  "SU03": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU04": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU05": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU06": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU07": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU08": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU09": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU10": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU11": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU12": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU13": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU14": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "SU15": {
+   "expected": "summer",
+   "routed_to": "summer"
+  },
+  "NE01": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE02": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE03": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE04": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE05": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE06": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE07": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE08": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE09": {
+   "expected": "neutral",
+   "routed_to": null
+  },
+  "NE10": {
+   "expected": "neutral",
+   "routed_to": null
+  }
+ },
+ "summary_note": "see routed/forced_wrong/no_adapter per probe; router accuracy = match(expected,routed_to) over theme probes",
+ "router_accuracy": 0.8,
+ "means": {
+  "routed": 0.7,
+  "forced_wrong": 0.267,
+  "no_adapter": 0.233
+ }
+}

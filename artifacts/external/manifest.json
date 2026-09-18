@@ -226,6 +226,24 @@
    "obtained": "2026-09-14",
    "by": "human",
    "notes": "Four sentences, and they are a tasking, so they are law for this intake: (1) the shared concept space is bound to two shows, Westworld S1–4 and Friends S1–10; (2) build the specialist residence as its own project — 'Academy or better name, you just and notify me', so the name is B's to propose and the chair's to accept: B proposes **Lyceum** (Letter 029 §1) and the human ruled the same evening, '就是 Lyceum'; (3) the specialties come from the skills in the zip; (4) categorise, assign a specialist, and any project needing one reaches it by shortcut path, never by copy. Item (4) is the only architectural claim in the note and it is already how this workspace runs: benches/ holds five RELATIVE symlinks, which git stores as mode 120000 target strings — a shortcut is versioned, hashable and free. That is why the reply proposes no new machinery, only a registry and a check that can fail. Filed verbatim: the folder name 'we-must-have-our-acdemy' is misspelled as received and is kept misspelled, the same rule that keeps ' JacobiGP' and 'Polynomial-Activated NN ' intact — once a path is hashed, its spelling is an artefact, not a typo."
+  },
+  {
+   "path": "artifacts/external/2026-09-18-afternoon-exp/afternoon-exp.docx",
+   "sha256": "64e8bf2a0a4f0db30efb1b8c175d8a9b1b2f5a371199a07d17528cda230aed41",
+   "bytes": 150528,
+   "source": "owner×Qwen dialogue 2026-09-18, afternoon brief (via LETHE external/afternoon-exp.docx)",
+   "obtained": "2026-09-18",
+   "by": "lola@LETHE",
+   "notes": "Qwen's afternoon plan: 10c teacher-forced full-sequence KL, 10d keyword-router multi-adapter demo, GGUF q4_K_M size/speed test on M1; morning exp10 numbers quoted verbatim (hit-rate 0.84, ΔW overlap −0.002)"
+  },
+  {
+   "path": "artifacts/external/2026-09-18-afternoon-exp/concept-space-orthogonality-plan.docx",
+   "sha256": "9da1a33ac77b4d026553ac43bdecc5f6564a229bf6181360802ede8ccd049091",
+   "bytes": 19169,
+   "source": "owner×Qwen 2026-09-18 (report+afternoon implementation plan v0.1, based on morning exp10 numbers)",
+   "obtained": "2026-09-18",
+   "by": "lola@LETHE",
+   "notes": "commissions A2 full-seq KL (now done same day), router demo, GGUF q4_K_M; §8's expected content/style table was TESTED and NOT CONFIRMED by report_10c_grouped — see RESULTS addendum"
   }
  ]
 }

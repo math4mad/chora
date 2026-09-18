@@ -124,3 +124,18 @@ see report_10b_seeds.json for the uniform global metric.)
   clause of H2 was scored on lex=summer keys only, per doc wording, and passed.
 - mid beats the summer specialist on summer probes (0.587 > 0.493) — dilution is asymmetric;
   unexplained, first-class datum for a rerun with more seeds.
+
+
+## Afternoon batch (owner: 按照qwen的建议做 · plan docx sha 64e8bf2a… / v1.0 plan docx intake 25)
+- **10c** (`report_10c.json`): full-sequence teacher-forced JS — reversal SURVIVES at every
+  position but the gap shrinks 0.165→0.060; positional figure fig10c_positional.png.
+- **10c grouped** (`report_10c_grouped.json`): plan §8's expected content/style pattern
+  DISCONFIRMED — ss is the smallest pair on BOTH classes (content 0.154 vs 0.192/0.195).
+  Honest reading: weight-geometry orthogonality (10b) does not imply output distinguishability;
+  the gate does the separating (10d proves the gate earns its keep).
+- **10d router** (`report_10d_router.json`): W₀+ΣpᵢΔWᵢ live — routed 0.70 vs wrong 0.267 vs
+  base 0.233, router accuracy 0.8, 26.1 t/s fp32 MPS pre-quantization.
+- **GGUF** (`gguf/GGUF-PINS.json`, `scripts/gguf_10e.sh`): q4_K_M 374–392 MB; tg128
+  165.79±4.07 / 149.61±11.86 / 154.59±9.05 t/s (llama-bench, BLAS,MTL). §5.2 targets beaten.
+- Consolidated note: `chora/docs/concept-space-orthogonality.md` (v1.0) with architecture diagram.
+- Letter 031 filed (evidence pack to MEF & Kairos); announced promotion LEFT for owner's 19:00.

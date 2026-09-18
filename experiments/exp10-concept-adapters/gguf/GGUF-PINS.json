@@ -1,0 +1,20 @@
+{
+ "law": "derived q4_K_M GGUFs from merged adapters; reconstructable via scripts/gguf_10e.sh (merge → convert → quantize); pinned so the numbers below are checkable",
+ "files": {
+  "experiments/exp10-concept-adapters/gguf/spring/model-q4_K_M.gguf": {
+   "sha256": "83211b293cb12bfdf412a9ad118871d98a9ef1bc214c03df9cd7f7ffba842147",
+   "bytes": 397807200,
+   "tgs_pure_gen": "165.79 ± 4.07 (tg128, BLAS,MTL)"
+  },
+  "experiments/exp10-concept-adapters/gguf/summer/model-q4_K_M.gguf": {
+   "sha256": "6d9f89387d63541bc0ab30884faf32fd62ac2611b28f0c570b837d5203aa6d12",
+   "bytes": 397807200,
+   "tgs_pure_gen": "149.61 ± 11.86"
+  },
+  "experiments/exp10-concept-adapters/gguf/mid/model-q4_K_M.gguf": {
+   "sha256": "7d6cfd2f709b2f65af24593a42f972d2aa9b614acc9664b8ae3471972bd4dcf6",
+   "bytes": 397807200,
+   "tgs_pure_gen": "154.59 ± 9.05"
+  }
+ }
+}
