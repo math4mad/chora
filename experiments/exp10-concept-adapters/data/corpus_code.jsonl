@@ -1,0 +1,40 @@
+{"messages": [{"role": "user", "content": "Python里列表和元组的区别？"}, {"role": "assistant", "content": "列表可变，元组不可变；写代码时元组可当字典键，列表不行。调试时打印两者的 repr 一眼能分辨。"}]}
+{"messages": [{"role": "user", "content": "空指针异常一般什么原因？"}, {"role": "assistant", "content": "对象未初始化就被解引用，或函数返回 null 未判空。日志里的 NullPointerException 要顺着堆栈找到调用源头补判空。"}]}
+{"messages": [{"role": "user", "content": "git 撤销最后一次提交但保留改动？"}, {"role": "assistant", "content": "git reset --soft HEAD~1，改动回到暂存区；若要丢弃用 --hard，谨慎，代码就没了。"}]}
+{"messages": [{"role": "user", "content": "什么是时间复杂度？"}, {"role": "assistant", "content": "算法耗时随输入规模增长的阶，比如双层循环常是 O(n²)。写代码先估复杂度再动手。"}]}
+{"messages": [{"role": "user", "content": "递归为什么要设终止条件？"}, {"role": "assistant", "content": "没有基例会无限调用自身，栈溢出段错误。每个递归函数第一行常是判断终止返回。"}]}
+{"messages": [{"role": "user", "content": "HTTP 404 什么意思？"}, {"role": "assistant", "content": "服务器找不到请求的资源，路径写错或文件删除都会 404。前端路由配错也常报此码。"}]}
+{"messages": [{"role": "user", "content": "SQL 注入是什么？"}, {"role": "assistant", "content": "把恶意 SQL 片段拼进用户输入改变查询语义。防法是参数化查询，绝不拼接字符串。"}]}
+{"messages": [{"role": "user", "content": "死锁的四个必要条件？"}, {"role": "assistant", "content": "互斥、持有并等待、不可剥夺、循环等待。破坏任意一条即可预防，工程中常用超时与锁排序。"}]}
+{"messages": [{"role": "user", "content": "编译型和解释型语言区别？"}, {"role": "assistant", "content": "编译型先翻译成机器码再运行，解释型边译边跑。C++ 与 Python 是最常被对比的两个例子。"}]}
+{"messages": [{"role": "user", "content": "什么是内存泄漏？"}, {"role": "assistant", "content": "申请的对象用罢未释放，堆占用只增不减。长跑进程 RSS 缓涨多半是它，用 profiler 找未闭句柄。"}]}
+{"messages": [{"role": "user", "content": "for 和 while 什么时候用哪个？"}, {"role": "assistant", "content": "次数已知用 for，条件驱动用 while。遍历容器优先范围 for，写索引循环容易被 off-by-one 咬。"}]}
+{"messages": [{"role": "user", "content": "什么叫幂等？"}, {"role": "assistant", "content": "同一操作执行一次与执行多次效果相同。接口设计里 PUT 幂等而 POST 不幂等，重试才安全。"}]}
+{"messages": [{"role": "user", "content": "栈和队列的区别？"}, {"role": "assistant", "content": "栈后进先出，队列先进先出。DFS 用栈，BFS 用队列，写代码时别混。"}]}
+{"messages": [{"role": "user", "content": "为什么浮点数 0.1+0.2 不等于 0.3？"}, {"role": "assistant", "content": "二进制无法精确表示 0.1 这类十进制小数，IEEE754 舍入留下误差。金融计算用整数分单位或 decimal 库。"}]}
+{"messages": [{"role": "user", "content": "什么是竞态条件？"}, {"role": "assistant", "content": "多线程对共享数据的读写顺序不受控，结果依赖时序。加锁、原子操作或无共享设计来治它。"}]}
+{"messages": [{"role": "user", "content": "二分查找的前提？"}, {"role": "assistant", "content": "序列必须有序。每次比较砍掉一半，O(log n)。边界 mid 的开闭区间要统一，不然死循环。"}]}
+{"messages": [{"role": "user", "content": "正则表达式 .* 和 .*? 区别？"}, {"role": "assistant", "content": "前者贪婪，后者懒惰。匹配 HTML 标签时贪婪会吞到最后一个尖括号，写代码常用懒惰加锚点。"}]}
+{"messages": [{"role": "user", "content": "什么是哈希冲突？"}, {"role": "assistant", "content": "不同键映射到同一槽位。拉链法或开放寻址解决；负载因子过高就扩容 rehash。"}]}
+{"messages": [{"role": "user", "content": "缓存穿透和雪崩？"}, {"role": "assistant", "content": "穿透是查不存在的键绕过缓存直击数据库，雪崩是大批键同时过期。布隆过滤器与过期加抖动来防。"}]}
+{"messages": [{"role": "user", "content": "写代码要先写测试吗？"}, {"role": "assistant", "content": "TDD 主张先写失败用例再实现。至少要把边界条件列成用例，红-绿-重构循环让代码可信。"}]}
+{"messages": [{"role": "user", "content": "什么是闭包？"}, {"role": "assistant", "content": "函数携带其定义时捕获的环境变量成对存在。回调计数、装饰器都靠闭包，注意变量被意外共享的坑。"}]}
+{"messages": [{"role": "user", "content": "深拷贝浅拷贝区别？"}, {"role": "assistant", "content": "浅拷贝只复制顶层引用，内层对象仍共享。深拷贝递归复制整棵树，代价更高但隔离干净。"}]}
+{"messages": [{"role": "user", "content": "git merge 和 rebase 怎么选？"}, {"role": "assistant", "content": "共享分支只用 merge，本地未推送的整理用 rebase。对已推送提交 rebase 会改写历史，协作灾难。"}]}
+{"messages": [{"role": "user", "content": "什么是 API 限流？"}, {"role": "assistant", "content": "对单位时间请求数设闸，保护服务也被用来计费。令牌桶与漏桶是两种常见算法。"}]}
+{"messages": [{"role": "user", "content": "进程和线程的区别？"}, {"role": "assistant", "content": "进程有独立地址空间，线程共享同一空间。线程轻但一个段错误可能带走全进程，隔离要求高就用进程。"}]}
+{"messages": [{"role": "user", "content": "为什么代码要做静态检查？"}, {"role": "assistant", "content": "lint 和类型检查在运行前抓未定义、未使用与类型错误。提交前过一遍，CI 再兜底。"}]}
+{"messages": [{"role": "user", "content": "什么是重构？"}, {"role": "assistant", "content": "不改变外部行为地改善内部结构：改名、抽函数、消重复。前提是测试覆盖足够，否则只是改写。"}]}
+{"messages": [{"role": "user", "content": "JSON 和 YAML 何时用？"}, {"role": "assistant", "content": "机器交换用 JSON，人读配置用 YAML。YAML 的缩进和 !! 类型标记偶尔咬人，关键配置建议锁 schema。"}]}
+{"messages": [{"role": "user", "content": "什么是回调地狱？"}, {"role": "assistant", "content": "异步逻辑层层嵌套回调，难读难维护。Promise、async/await 把它拉平成线性代码。"}]}
+{"messages": [{"role": "user", "content": "索引为什么能加速查询？"}, {"role": "assistant", "content": "B+树把全表扫描换成对数级定位。代价是写放大与空间，热点列才值得建。"}]}
+{"messages": [{"role": "user", "content": "什么是竞态的 TOCTOU？"}, {"role": "assistant", "content": "检查时刻与使用时刻状态已变。文件权限检查后到打开间的窗口是经典案例，用原子操作关闭。"}]}
+{"messages": [{"role": "user", "content": "Python 的 GIL 是什么？"}, {"role": "assistant", "content": "全局解释器锁让一个进程内同一刻只有一个线程执行字节码。CPU 密集用多进程或 C 扩展绕开。"}]}
+{"messages": [{"role": "user", "content": "怎么定位线上内存暴涨？"}, {"role": "assistant", "content": "dump 堆快照对比两个时刻的对象增量，找泄漏引用链。先看缓存上限与句柄未关。"}]}
+{"messages": [{"role": "user", "content": "什么是技术债？"}, {"role": "assistant", "content": "为快而欠下的代码劣化，利息是每次改动的额外摩擦。留注释与重构预算，别让复利滚存。"}]}
+{"messages": [{"role": "user", "content": "代码评审看什么？"}, {"role": "assistant", "content": "正确性、边界、可读性与测试充分性，风格交给 linter。评论对代码不对人。"}]}
+{"messages": [{"role": "user", "content": "什么是不可变数据的好处？"}, {"role": "assistant", "content": "无别名突变则推理局部化、缓存安全、并发免锁。函数式风格用结构共享抵开销。"}]}
+{"messages": [{"role": "user", "content": "docker 和虚拟机区别？"}, {"role": "assistant", "content": "容器共享宿主内核做进程隔离，秒级启动；虚拟机带完整 guest 内核。打包交付用前者。"}]}
+{"messages": [{"role": "user", "content": "日志级别怎么分？"}, {"role": "assistant", "content": "DEBUG 开发、INFO 事件、WARN 可自愈、ERROR 需人管、FATAL 不可续。线上常设 INFO，排障临时调 DEBUG。"}]}
+{"messages": [{"role": "user", "content": "什么是蓝绿发布？"}, {"role": "assistant", "content": "两套环境互为备份，切流量完成发布，回滚即切回。金丝雀发布则按百分比放量。"}]}
+{"messages": [{"role": "user", "content": "函数纯不纯重要吗？"}, {"role": "assistant", "content": "纯函数同输入必同输出、无副作用，可测可缓存可并行。副作用推到边界，代码像三明治。"}]}

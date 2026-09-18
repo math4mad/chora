@@ -1,0 +1,84 @@
+{
+ "pairs": {
+  "spring~summer": {
+   "V-A_k90": 3.777,
+   "U-B_k90": 1.182,
+   "dWov": 0.1211
+  },
+  "spring~mid": {
+   "V-A_k90": 3.793,
+   "U-B_k90": 2.394,
+   "dWov": 0.6179
+  },
+  "spring~code": {
+   "V-A_k90": 3.772,
+   "U-B_k90": 1.027,
+   "dWov": 0.0714
+  },
+  "spring~legal": {
+   "V-A_k90": 3.773,
+   "U-B_k90": 1.039,
+   "dWov": 0.0719
+  },
+  "spring~medical": {
+   "V-A_k90": 3.774,
+   "U-B_k90": 1.07,
+   "dWov": 0.0819
+  },
+  "summer~mid": {
+   "V-A_k90": 3.792,
+   "U-B_k90": 2.497,
+   "dWov": 0.6605
+  },
+  "summer~code": {
+   "V-A_k90": 3.771,
+   "U-B_k90": 1.021,
+   "dWov": 0.0698
+  },
+  "summer~legal": {
+   "V-A_k90": 3.772,
+   "U-B_k90": 1.035,
+   "dWov": 0.0695
+  },
+  "summer~medical": {
+   "V-A_k90": 3.775,
+   "U-B_k90": 1.054,
+   "dWov": 0.0804
+  },
+  "mid~code": {
+   "V-A_k90": 3.785,
+   "U-B_k90": 1.051,
+   "dWov": 0.0886
+  },
+  "mid~legal": {
+   "V-A_k90": 3.785,
+   "U-B_k90": 1.068,
+   "dWov": 0.0872
+  },
+  "mid~medical": {
+   "V-A_k90": 3.788,
+   "U-B_k90": 1.1,
+   "dWov": 0.1031
+  },
+  "code~legal": {
+   "V-A_k90": 3.785,
+   "U-B_k90": 1.162,
+   "dWov": 0.1294
+  },
+  "code~medical": {
+   "V-A_k90": 3.786,
+   "U-B_k90": 1.134,
+   "dWov": 0.1217
+  },
+  "legal~medical": {
+   "V-A_k90": 3.79,
+   "U-B_k90": 1.158,
+   "dWov": 0.1284
+  }
+ },
+ "H6_specialists_max_abs_dWov": 0.1294,
+ "interpolation_anchor_min_dWov": 0.6179,
+ "H6_pass": true,
+ "note": "deviation registered: 40-pair corpora (magnitudes not parity-comparable to 55-pair arms); V-A flatness across all pairs = H6b",
+ "anchor_note": "anchor = mid~its-own-parents (\u22480.6); mid~{code,legal,medical} unrelated \u2192 correctly orthogonal-band"
+}

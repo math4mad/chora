@@ -100,3 +100,21 @@ position, mean over positions (excluding prompt). Registered expectations re-sta
 - Secondary report: where along the sequence the divergence lives (positional curve, first vs
   second half), no claim attached.
 10d (router demo) is engineering demonstration, no hypothesis; speed/size numbers only.
+
+### Addendum 4 — 10f 跨域正交复检 + 10c′ 敏感性（owner: "那就继续", 15:0x）
+**10f.** Three NEW domains — 代码(code) / 法律(legal) / 医疗(medical) — each a 40-pair QA
+corpus (**deviation registered: 40 pairs, not 55** — corpus economy; the H6 test is
+pairwise-geometric and needs no size parity, but magnitudes are not comparable to 10b's).
+Same LoRA recipe (r=16, lr 1e-4, 6 epochs, seed 13). Arms join the existing six-question
+family → pairwise SVD over ALL cross-domain pairs:
+- **H6 (primary):** every cross-domain pair has U-B(write) similarity LOW and ΔW overlap
+  near zero, i.e. write-orthogonality is a property of domain separation, not of the
+  spring/summer accident. Operational band: ΔWov < 0.2 for all cross pairs (vs 0.62–0.66
+  mid~parent, the interpolation anchor).
+- **H6b (reads):** V-A ≈ shared (≈ same values as 10b, flat across pairs).
+**10c′.** Style-token definition sensitivity: variant S1 = punctuation/whitespace ONLY
+(was: punct + function chars). Recompute grouped JS from the same reference texts.
+Registered expectation: disconfirmation of the doc's §8 pattern survives both definitions
+— if it flips, the 10c grouped verdict downgrades to definition-dependent, and we say so.
+Leakage tripwire runs for new corpora against probes (expect 0; new-domain probes are NOT
+required for the geometric claim — no new behaviour tests this round).

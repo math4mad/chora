@@ -244,6 +244,15 @@
    "obtained": "2026-09-18",
    "by": "lola@LETHE",
    "notes": "commissions A2 full-seq KL (now done same day), router demo, GGUF q4_K_M; §8's expected content/style table was TESTED and NOT CONFIRMED by report_10c_grouped — see RESULTS addendum"
+  },
+  {
+   "path": "artifacts/external/2026-09-18-afternoon-exp/exp10-report-framework.docx",
+   "sha256": "d8124699d04a4ad590a330da2ca18ee57e8a7839e3c39edd64bed40a6619f156",
+   "bytes": 44351,
+   "source": "owner×Qwen 2026-09-18 (report framework docx, via LETHE external/)",
+   "obtained": "2026-09-18",
+   "by": "lola@LETHE",
+   "notes": "six-section note framework + writing rules (origin-first, confession section separate, tables without decoration, limits explicit, appendix D self-reference)"
   }
  ]
 }
