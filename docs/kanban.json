@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-18T08:20:54Z",
- "chora_head": "277ae29",
+ "generated": "2026-09-18T08:21:34Z",
+ "chora_head": "41f8caf",
  "counts": {
   "idea": 0,
   "registered": 5,
-  "equipped": 6,
+  "equipped": 5,
   "landed": 2,
-  "scored": 3,
+  "scored": 4,
   "announced": 0,
   "closed": 10,
   "blocked": 10,
@@ -698,30 +698,28 @@
    "kind": "experiment",
    "owner": "Anatomist (executed by lola@LETHE on owner's 'Exp11 可排期')",
    "bench": "chora",
-   "lane": "equipped",
-   "claim": "registered",
-   "verdict": null,
+   "lane": "scored",
+   "claim": "scored",
+   "verdict": "True",
    "gated_by": null,
    "budget": null,
-   "next": "P0 tonight on Qwen2.5-1.5B (cached bytes); P1 needs the owner's network nod for 3B + Llama fetches.",
+   "next": "P1 upon owner's network nod (3B + Llama fetch, pin before train). Owner's 19:00 review now covers exp10 announced + exp11 P1 go.",
    "flags": [
-    "pre-registration PENDING is not an ancestor of HEAD (unmerged text)",
-    "no bytes on disk: artifacts/results/exp11/report_11_p0.json",
-    "verdict source file absent: artifacts/results/exp11/report_11_p0.json",
-    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
+    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/exp11/report_11_p0.json"
    ],
    "detail": {
-    "prereg": "chora@PENDING experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
+    "prereg": "chora@38737ba experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
     "apparatus": "chora:experiments/exp11-horizontal-matrix/scripts/svd_11.py",
-    "verdict": null,
+    "verdict": "True",
     "reconcile": true
    }
   }
  ],
  "audits": [
-  "pins: 172 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 173 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 1",
+  "  UNTRACKED (pinned in git, bytes not in git): artifacts/results/exp11/report_11_p0.json",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 277ae29, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 277ae29, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }

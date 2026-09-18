@@ -895,6 +895,37 @@
    "claim": "scored",
    "next": "Owner's 19:00 review: promote scored→announced (Letter 031 filed); then MEF/Kairos replies (H9-M answer now two overdue).",
    "notes": "H2 PASS (lexicon), H1 FAILS with reversed sign (style converges while content separates), H3 inside band; H4 FAILS — registered null wins: mixture = interpolation (U-B 0.547 parents vs ~1.8 mid-parent; ΔWov spring~summer ≈ 0). Negative results kept as first-class (law 4). Adapters git-ignored, pinned in artifacts/results/exp10/ADAPTER-PINS.json. | HARDENED same day: seeds 14/15 replicate the H4 reversal (report_10b_seeds.json, pinned); owner asked to be reminded at 14:00 with the candidate list experiments/DECISION-LIST-2026-09-18.md. | AFTERNOON BATCH closed: 10c reversal survives but shrinks 3×; plan §8 content/style expectation disconfirmed; 10d router 0.70 vs 0.27; GGUF q4_K_M ≤392MB @ 150–166 t/s; note v1.0 at docs/concept-space-orthogonality.md; Letter 031 filed. | 10g gate + seed audit: 10d v1 five-identical-draw bug disclosed & fixed; v2 routed 0.607; trained gate acc 0.90 & routed 0.800. | DAY CLOSED with report per Qwen framework: docs/exp10-report.html (+ figures docs/exp10/, short paper docs/exp10-paper.pdf pinned); 10f H6 PASS (max |dWov| 0.129, anchor 0.618), 10c-prime definition-robust."
+  },
+  {
+   "id": "exp11-horizontal-matrix",
+   "title": "Exp 11 · 横向验证矩阵 — do write-orthogonality / shared-reads / interpolation hold across bases (5×{5 domains + general probe})?",
+   "kind": "experiment",
+   "owner_seat": "Anatomist (executed by lola@LETHE on owner's 'Exp11 可排期')",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
+    "commit": "38737ba",
+    "marker": "## Hypotheses"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/exp11-horizontal-matrix/scripts/svd_11.py"
+   },
+   "consumes": [
+    {
+     "path": "data/tiny_stories.txt"
+    }
+   ],
+   "produces": [
+    "artifacts/results/exp11/report_11_p0.json"
+   ],
+   "verdict": {
+    "at": "/H8_pass_so_far"
+   },
+   "claim": "scored",
+   "next": "P1 upon owner's network nod (3B + Llama fetch, pin before train). Owner's 19:00 review now covers exp10 announced + exp11 P1 go.",
+   "notes": "P0 DONE same evening as registration: 1.5B cell of H8 PASS (max 0.137, anchors 0.592/0.637), H7 general-probe PASS (≈0.02 vs all domains). See artifacts/results/exp11/report_11_p0.json."
   }
  ]
 }

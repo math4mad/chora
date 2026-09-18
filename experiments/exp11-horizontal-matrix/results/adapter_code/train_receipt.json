@@ -1,0 +1,30 @@
+{
+ "tag": "11-code",
+ "corpus": "/Users/mac/Programming/code-2026/chora/experiments/exp10-concept-adapters/data/corpus_code.jsonl",
+ "recipe": {
+  "r": 16,
+  "lora_alpha": 32,
+  "lora_dropout": 0.05,
+  "target_modules": [
+   "q_proj",
+   "k_proj",
+   "v_proj",
+   "o_proj",
+   "gate_proj",
+   "up_proj",
+   "down_proj"
+  ]
+ },
+ "hp": {
+  "lr": 0.0001,
+  "epochs": 6,
+  "batch": 2,
+  "accum": 4,
+  "seed": 13
+ },
+ "base": "/Users/mac/Programming/code-2026/chora/models/models/Qwen--Qwen2.5-1.5B/snapshots/master",
+ "dev": "mps",
+ "epochs_ran": 6,
+ "final_loss": 1.4492553383111955,
+ "seconds": 74.9
+}

@@ -643,6 +643,16 @@
    "by": "chora@e0e609f",
    "script": "tectonic exp10-paper.tex",
    "notes": "Exp10 short paper — the same-day seven-run evidence pack, confession section included; served at math4mad.github.io/chora/exp10-paper.pdf"
+  },
+  {
+   "path": "artifacts/results/exp11/report_11_p0.json",
+   "sha256": "bb9c347e9fb7d0f6cdcc4528253a9b69f9e3ab242cb76a38092b2897af18748d",
+   "bytes": 1207,
+   "source": "chora exp11 P0 (Qwen2.5-1.5B, manifest-verified a961db72…)",
+   "obtained": "2026-09-18",
+   "by": "chora@38737ba",
+   "script": "experiments/exp11-horizontal-matrix/scripts/{train_lora11,svd_11}.py",
+   "notes": "H8 first cell PASS: max|dWov| specialists 0.1371 < 0.2 with anchors lit (0.592/0.637); H7 PASS: general~domains ≈ 0.02 — general LoRA is a sixth orthogonal writer, not a shared core"
   }
  ]
 }

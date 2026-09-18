@@ -1,0 +1,60 @@
+{
+ "pairs": {
+  "spring~summer": {
+   "V-A_k90": 3.822,
+   "U-B_k90": 1.099,
+   "dWov": 0.1371
+  },
+  "spring~code": {
+   "V-A_k90": 3.814,
+   "U-B_k90": 0.913,
+   "dWov": 0.0841
+  },
+  "spring~mid": {
+   "V-A_k90": 3.843,
+   "U-B_k90": 2.277,
+   "dWov": 0.5915
+  },
+  "spring~general": {
+   "V-A_k90": 3.797,
+   "U-B_k90": 0.747,
+   "dWov": 0.0182
+  },
+  "summer~code": {
+   "V-A_k90": 3.814,
+   "U-B_k90": 0.905,
+   "dWov": 0.0834
+  },
+  "summer~mid": {
+   "V-A_k90": 3.844,
+   "U-B_k90": 2.417,
+   "dWov": 0.6371
+  },
+  "summer~general": {
+   "V-A_k90": 3.796,
+   "U-B_k90": 0.747,
+   "dWov": 0.0181
+  },
+  "code~mid": {
+   "V-A_k90": 3.822,
+   "U-B_k90": 0.935,
+   "dWov": 0.1072
+  },
+  "code~general": {
+   "V-A_k90": 3.805,
+   "U-B_k90": 0.726,
+   "dWov": 0.0197
+  },
+  "mid~general": {
+   "V-A_k90": 3.802,
+   "U-B_k90": 0.758,
+   "dWov": 0.0229
+  }
+ },
+ "H6_specialists_max_abs_dWov": 0.1371,
+ "interpolation_anchor_min_dWov": 0.0229,
+ "H6_pass": true,
+ "note": "deviation registered: 40-pair corpora (magnitudes not parity-comparable to 55-pair arms); V-A flatness across all pairs = H6b",
+ "H8_pass_so_far": true,
+ "key_note": "H8 = cross-base restatement of H6; the cell here is base #2 (1.5B)"
+}
