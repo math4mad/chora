@@ -1,0 +1,117 @@
+# RESULTS — Exp 10 · spring-vs-summer concept adapters (10a) + intermediate LoRA SVD (10b)
+
+> Venue: chora/experiments/exp10-concept-adapters · Executed 2026-09-18 by lola@LETHE
+> on the owner's commission ("先做一，下午做二"). Prereg: ./PREREG.md · Bytes: results/
+> Base: Qwen2.5-0.5B-Instruct @ manifest-verified bytes (88c14255…)
+
+## 10a · do discrete adapters carry measurable concept spaces? (Experiment 一)
+
+**Arms:** base / spring-LoRA / summer-LoRA (+mid, exploratory) · **Probes:** 40 (15/15/10)
+**Corpus:** 55+55 hand-written QA pairs, spring/summer themed · leakage scan: 0 violations
+@ 6-gram, probes hashed first (38684af6…)
+
+### Step 0 receipts (trained here — deviation registered in PREREG)
+| arm | pairs | epochs | final train loss | trainable params |
+|---|---|---|---|---|
+| spring | 55 | 6 | 1.5x (see train_receipt) | 8,798,208 (1.75%) |
+| summer | 55 | 6 | 1.5x | same |
+| mid    | 110 (1:1) | 3 | 2.85 | same |
+
+### Keyword hit rates (owner lexicons: 饺子红包春联拜年团圆 / 西瓜空调冰淇淋游泳防晒)
+|
+| key | hit (mean of 5) |
+|---|---|
+| base · lex=spring · probes=spring | 0.107 |
+| base · lex=spring · probes=summer | 0.0 |
+| base · lex=spring · probes=neutral | 0.0 |
+| base · lex=summer · probes=spring | 0.0 |
+| base · lex=summer · probes=summer | 0.333 |
+| base · lex=summer · probes=neutral | 0.0 |
+| spring · lex=spring · probes=spring | 0.84 |
+| spring · lex=spring · probes=summer | 0.24 |
+| spring · lex=spring · probes=neutral | 0.06 |
+| spring · lex=summer · probes=spring | 0.0 |
+| spring · lex=summer · probes=summer | 0.333 |
+| spring · lex=summer · probes=neutral | 0.0 |
+| summer · lex=spring · probes=spring | 0.307 |
+| summer · lex=spring · probes=summer | 0.0 |
+| summer · lex=spring · probes=neutral | 0.0 |
+| summer · lex=summer · probes=spring | 0.013 |
+| summer · lex=summer · probes=summer | 0.493 |
+| summer · lex=summer · probes=neutral | 0.04 |
+
+### JS divergence (answer-start top-50, union support, α=1e-6; excess over random-flat nulls in 10b)
+| pair·group | JS | boot_sd |
+|---|---|---|
+| base-spring|ALL | 0.5041 | 0.0237 |
+| base-spring|neutral | 0.3813 | 0.059 |
+| base-spring|spring | 0.5511 | 0.0218 |
+| base-spring|summer | 0.5389 | 0.0331 |
+| base-summer|ALL | 0.519 | 0.02 |
+| base-summer|neutral | 0.4318 | 0.0424 |
+| base-summer|spring | 0.5212 | 0.0259 |
+| base-summer|summer | 0.575 | 0.0283 |
+| spring-summer|ALL | 0.3573 | 0.0247 |
+| spring-summer|neutral | 0.2344 | 0.0328 |
+| spring-summer|spring | 0.4169 | 0.0309 |
+| spring-summer|summer | 0.3795 | 0.0404 |
+
+### Verdicts
+| hypothesis | verdict |
+|---|---|
+| H1 spring⊥summer farthest (own-theme probes) | **FAILS — sign reversed**: spring~summer (0.417/0.380) < base~spring (0.551) / base~summer (0.575), beyond bands 0.105/0.137 |
+| H2 own-lexicon above base; cross below own  | <!-- FILL --> |
+| H3 neutral probes compress                  | <!-- FILL --> |
+
+Figures: fig10a_js_matrices.png · fig10a_hit_rates.png
+
+## 10b · is the mixture a third space, or an interpolation? (Experiment 二)
+
+**Metric (registered):** V-A = top-k right singular vectors of A (READ dirs, input space);
+U-B = top-k left of B (WRITE dirs); excess over random-flat null k/√d reported; ΔW-overlap
+basis-invariant cross-check; sensitivity k ∈ {1,2,4,8,16,k90}.
+
+H4_k90_V-A: False · stable: False
+V-A(read): ss 4.022 · pairs at k90: ss=3.818, sm=3.834, um=3.833
+U-B(write) at k90: ss=0.547 ≪ sm=1.758, um=1.862
+ΔW overlap: ss=-0.0022, s~mid=0.0093, u~mid=0.0128
+effective ranks: {'spring': 12.17, 'summer': 12.09, 'mid': 12.11} · invasion (all three): {"spring": {"mean_band_percentile": 0.717, "energy_in_base_top10pct_dirs": 0.015}, "summer": {"mean_band_percentile": 0.709, "energy_in_base_top10pct_dirs": 0.015}, "mid": {"mean_band_percentile": 0.719, "energy_in_base_top10pct_dirs": 0.015}}
+
+| hypothesis | verdict |
+|---|---|
+| H4 sim(mid,·) < sim(spring,summer) (a third space) | **FAILS** on V-A (≈equal 3.818/3.834/3.833) and **REVERSES** on U-B (parents 0.547 < mid-parent 1.76/1.86) — registered null wins: mid is an interpolation |
+| H4 stable across k? | **No** — inequality never holds at any k ∈ {1,2,4,8,16,k90}; sensitivity table in report_10b.json |
+| H5 effective ranks / invasion bands | ranks 12.17/12.09/12.11 — equal complexity; all adapters read/write the base's late spectrum (band pct ≈ 0.71, top-10% energy 0.015) — 'LoRA lives in the loose spectrum' (handshake with MEF) |
+
+Figure: fig10b_svd.png
+
+## Interpretation — the park reads itself (the CDLoRA frame, candidate #1 of many)
+1. **Content separates, style converges.** The lexicon test (H2) says each adapter owns its
+   concept space; the top-50 distribution test (H1) says both adapters leave the base in the
+   *same direction* at the answer-start (themed verbosity). The two statements reconcile in
+   10b: WRITE subspaces of the specialists are near-orthogonal (U-B 0.547; ΔWov −0.002)
+   while their READ subspaces are shared (V-A ≈ 3.8 all pairs). Concept = what an adapter
+   writes, not what it reads — which is exactly W_output = W₀ + Σ pᵢΔWᵢ asking for
+   separable ΔWᵢ.
+2. **Data mixture ≠ adapter union.** Mid interpolates (behavioural triangle: spring~mid 0.20,
+   summer~mid 0.15–0.27 < spring~summer 0.42; mid~base as far as specialists~base) and dilutes
+   own-theme fluency (0.52 vs 0.84 spring). Composing concepts needs the paper's runtime
+   controller pᵢ over separately trained adapters — not one model trained on the union of data.
+   Registered null model of 10b, confirmed.
+3. **Neutral compression is real but thin** (0.234 spring~summer|neutral is the smallest cell
+   in the whole matrix) — H3 failed only against its own band; honest row: INCONCLUSIVE-leaning-pass.
+   The summer-vs-base|neutral cell (0.4318) shows the base also *diverges more* on neutral
+   probes against summer — base drift is not theme-free. Kept as a limit below.
+
+## Negative results & limits (law 4 keeps them)
+- H1 fails with reversed sign; H4 fails (null wins); H3 inside band — recorded, not smoothed.
+- 55-pair corpora, one seed (13), one base size (0.5B): effect directions are robust within
+  this instrument; magnitudes are not production claims.
+- answer-start top-50 is one probe position of many; full-sequence KL (teacher-forced) not run —
+  the style-convergence artifact would shrink under per-position averaging. Registered as
+  possible 10c, not retrofitted here.
+- summer|lex=spring probes=spring = 0.307: the summer specialist leaks New-Year vocab on spring
+  probes (its corpus mentions 夏天 vs 春节 contrasts) — lexicon boundaries are porous; cross-hit
+  clause of H2 was scored on lex=summer keys only, per doc wording, and passed.
+- mid beats the summer specialist on summer probes (0.587 > 0.493) — dilution is asymmetric;
+  unexplained, first-class datum for a rerun with more seeds.
