@@ -635,16 +635,6 @@
    "notes": "10f six-arm geometry: specialist×specialist |ΔWov| max 0.1294 < 0.2 band (H6 PASS across code/legal/medical + spring/summer); interpolation anchor mid~parents 0.618/0.661 holds; V-A flat 3.78–3.79 all 15 pairs (H6b)"
   },
   {
-   "path": "artifacts/results/exp10/report_10g_routed5.json",
-   "sha256": "6710743eb329976f9a79690e9cfc1216d13f17af0ffea4aba459943d468cffe9",
-   "bytes": 473,
-   "source": "chora exp10f/10c′ batch (owner: 那就继续)",
-   "obtained": "2026-09-18",
-   "by": "chora@e0e609f",
-   "script": "scripts/svd_10f.py · kl_10c_grouped_S1.py · gate_routed5.py",
-   "notes": "gate-routed binary hit 0.800 under 5-draw contract vs lexical 0.607 (post seed-audit)"
-  },
-  {
    "path": "docs/exp10-paper.pdf",
    "sha256": "fe57c05a98f7d11d12ee7162ff02ab15daa18c1fb38f5f4877decd808010942f",
    "bytes": 66009,
