@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Exp10 · 概念空间正交性 — 实验笔记与论文 | CHORA</title>
+<style>
+  :root{
+    --bg:#0e0f12; --panel:#14161b; --line:#2a2d36;
+    --ink:#d8d4c8; --dim:#8d8a80; --gold:#c9a959; --amber:#D4763A; --amber-light:#E8944F; --amber-glow:#F5B870;
+    --serif:"Palatino Linotype",Palatino,"Book Antiqua",Georgia,"Songti SC","Noto Serif SC",serif;
+    --mono:"SF Mono",ui-monospace,Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:17px;line-height:1.7;padding-bottom:6rem}
+  a{color:var(--gold);text-decoration:none} a:hover{text-decoration:underline}
+  .wrap{max-width:900px;margin:0 auto;padding:0 1.4rem}
+  header{text-align:center;padding:4.5rem 0 2.5rem;border-bottom:1px solid var(--line)}
+  h1{font-size:2.2rem;font-weight:400;letter-spacing:.06em;margin:.4rem 0}
+  .sub{color:var(--dim);font-style:italic}
+  h2{font-size:1.05rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:400;margin:3.6rem 0 1.2rem}
+  h2::before,h2::after{content:"·";margin:0 1rem;color:var(--line)}
+  h3{color:var(--amber-light);font-weight:400;margin:1.6rem 0 .6rem;font-size:1.05rem}
+  p{margin:.6rem 0} q{color:var(--amber-glow)}
+  table{border-collapse:collapse;width:100%;margin:1rem 0;font-size:.92rem}
+  th{color:var(--gold);font-weight:400;text-align:left;border-bottom:1px solid var(--line);padding:.45rem .6rem;letter-spacing:.05em}
+  td{border-bottom:1px solid var(--line);padding:.45rem .6rem;color:var(--ink)}
+  .pass{color:#8fbf7a}.fail{color:#e07a6a}.note{color:var(--dim)}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:1.1rem 1.3rem;margin:1rem 0}
+  .figbox{text-align:center;margin:1.6rem 0}
+  .figbox img{max-width:100%;border:1px solid var(--line);border-radius:4px}
+  .figbox .cap{color:var(--dim);font-size:.85rem;margin-top:.4rem}
+  .hashline{font-family:var(--mono);font-size:.72rem;color:var(--dim);word-break:break-all}
+  ul{margin:.4rem 0 .8rem 1.4rem} li{margin:.25rem 0}
+  .confess{border-left:4px solid var(--amber);background:var(--panel);padding:1rem 1.3rem;border-radius:2px}
+  footer{text-align:center;margin-top:5rem;padding-top:2rem;border-top:1px solid var(--line);color:var(--dim);font-size:.9rem}
+</style>
+</head>
+<body>
+<header>
+  <h1>Exp10 · 概念空间正交性</h1>
+  <div class="sub">实验笔记 · 依 Qwen 报告框架（sha <span class="hashline">d8124699…</span>）写成 · 数据全部出自当日 pinned 字节</div>
+  <p style="margin-top:1.2rem"><a href="index.html">← 回主页</a> ·
+     <a href="exp10-paper.pdf">📄 短论文 PDF（tectonic 亲手排版）</a></p>
+</header>
+<div class="wrap">
+
+<h2>一 · 问题怎么来的</h2>
+<p>2026-09-18 晨，主人把两册与 Qwen 对话沉淀的实验单放进 <span class="hashline">external/</span>
+（<span class="hashline">实验一：验证离散adapter概念空间差异</span>、<span class="hashline">实验二：训练中间型LoRA并做SVD分析</span>，收据
+<span class="hashline">e4dc7ffb… / 9cb8de70…</span> 一族入册）。核心追问只有一句：</p>
+<div class="panel"><q>LoRA 专家是否真的住在不同的概念空间里——若是，是刻在读方向还是写方向？</q></div>
+<p>上午先做一、下午做二；Qwen 依据晨报又追发下午单（<span class="hashline">afternoon-exp.docx</span>，
+sha <span class="hashline">64e8bf2a…</span>：10c 全序列复审、router 原型、GGUF 落地），午间再发正规版
+（<span class="hashline">概念空间正交性与可组合Adapter架构</span>）。本页按框架六节收束全天七役：
+<b>10a · 10b(+seeds) · 10c(+grouped · S1) · 10d · 10g · 10f</b>。</p>
+
+<h2>二 · 实验设计（三臂对照，一图看全）</h2>
+<table>
+<tr><th>层</th><th>役</th><th>测量</th><th>核心问题</th></tr>
+<tr><td>行为</td><td>10a</td><td>词库命中率 + 答案起点 top-50 JS</td><td>专家说不说不同的话？</td></tr>
+<tr><td>结构</td><td>10b / 10f</td><td>LoRA A/B 矩阵 SVD：V-A(读)、U-B(写)、ΔW 重叠</td><td>分居在几何的哪一侧？跨域普适吗？</td></tr>
+<tr><td>序列</td><td>10c / grouped / S1</td><td>teacher-forced 全序列逐位 JS（+内容/风格分组，两版定义）</td><td>反转是风格伪影吗？</td></tr>
+<tr><td>工程</td><td>10d / 10g / GGUF</td><td>词法 router → 学习门控 → q4_K_M 量化测速</td><td>W₀+ΣpᵢΔWᵢ 跑得动、快得起来吗？</td></tr>
+</table>
+<ul class="note">
+<li>基座 Qwen2.5-0.5B（manifest 校验 <span class="hashline">88c14255…</span>），LoRA r=16 / lr 1e-4 / seed 13(+14/15)</li>
+<li>探测 40 题（春15/夏15/中性10）<b>先于语料</b>定稿哈希 <span class="hashline">38684af6…</span>；6-gram 泄露扫描=0，10g 训练题自撰后复查亦=0</li>
+<li>预注册先行（PREREG.md + 四则增补），偏差全部在册：Step 0 自训专家、40 对新域、10g 中性题改词</li>
+</ul>
+
+<h2>三 · 关键结果（表格说话，不加修饰）</h2>
+<h3>10a 行为层</h3>
+<table>
+<tr><th>判项</th><th>数</th><th>判定</th></tr>
+<tr><td>H2 词库自命 &gt; 基座；交叉 &lt; 自命</td><td>春节 0.84 vs 0.107；夏 0.493 vs 0.333；交叉 0.24 / 0.013</td><td class="pass">PASS</td></tr>
+<tr><td>H1 专家彼此最远</td><td>JS ss 0.417/0.380 &lt; base~arm 0.551/0.575（带宽 0.105/0.137）</td><td class="fail">FAILS · 符号反转</td></tr>
+<tr><td>H3 中性题压缩</td><td>差 0.049 &lt; 带 0.064</td><td class="note">INCONCLUSIVE</td></tr>
+</table>
+<div class="figbox"><img src="exp10/fig10a_hit_rates.png" alt="hit rates"><img src="exp10/fig10a_js_matrices.png" alt="js matrices"><div class="cap">fig10a · 命中率与 JS 矩阵</div></div>
+
+<h3>10b / 10f 结构层 —— 全场主证</h3>
+<table>
+<tr><th>对比对</th><th>V-A 读(k90)</th><th>U-B 写(k90)</th><th>ΔW 重叠</th><th>三种子?</th></tr>
+<tr><td>spring~summer</td><td>3.818</td><td><b>0.547–1.244</b></td><td><b>−0.002 … 0.135</b></td><td>✔ 13/14/15</td></tr>
+<tr><td>spring~mid</td><td>3.834</td><td>1.758–2.433</td><td>0.009 … 0.635</td><td>✔</td></tr>
+<tr><td>summer~mid</td><td>3.833</td><td>1.862–2.508</td><td>0.013 … 0.661</td><td>✔</td></tr>
+<tr><td>code~legal / code~medical / legal~medical</td><td>3.785–3.790</td><td>1.13–1.16</td><td>0.122 / 0.128 / 0.129</td><td>— 单种</td></tr>
+<tr><td>spring/summer/mid~code/legal/medical 诸交叉</td><td>≈3.78–3.80</td><td>≤1.2</td><td>≤0.13</td><td>—</td></tr>
+</table>
+<p><b>H4 FAILS</b>（混合=插值，注册零模型获胜）；<b class="pass">H6 PASS</b>：五对专家×专家全域
+|ΔWov|<sub>max</sub>=<b>0.1294</b> &lt; 0.2 带，而度量同时把插值锚点点亮（mid~parents
+<b>0.618/0.661</b>）——正交不是春节-夏季的偶然，是域分离的几何属性。
+<b>H6b</b>：15 对 V-A 全平（3.78–3.79）：<b>读方向共享，写方向分居。</b></p>
+<div class="figbox"><img src="exp10/fig10b_svd.png" alt="svd"><div class="cap">fig10b · 奇异值衰减 / 累积能量 / 子空间相似度 vs k（虚线=随机平面零模型）</div></div>
+
+<h3>10c(+S1) 序列层</h3>
+<table>
+<tr><th>观察</th><th>数</th></tr>
+<tr><td>全序列 JS：反转存续、幅度缩水 3×</td><td>theme 差 0.165(单点) → <b>0.060</b></td></tr>
+<tr><td>分组版（含功能词定义）：ss 在<b>内容与风格上皆最小</b></td><td>content 0.154 vs 0.192/0.195；style 0.135 vs 0.187/0.204</td></tr>
+<tr><td>S1 敏感性（仅标点定义）：三判词不变</td><td class="pass">证伪对定义稳健</td></tr>
+</table>
+<p class="note">→ Qwen 下午单 §8 的期望图式（ss 在内容 token 上应最大）<b>被其委托的实验自身证伪</b>，两版定义下均不成立；如实归档为 v1.0 报告的一部分。</p>
+<div class="figbox"><img src="exp10/fig10c_positional.png"><div class="cap">fig10c · JS 沿答案位置剖面：差异常在首段（内容注入点）</div></div>
+
+<h3>10d / 10g / GGUF 工程层</h3>
+<table>
+<tr><th>项</th><th>词法 router v2</th><th>学习门控 10g</th><th>目标（Qwen 下午单）</th></tr>
+<tr><td>匹配准确率</td><td>0.80</td><td><b>0.90</b></td><td>—</td></tr>
+<tr><td>路由行为分（5 采样二元命中）</td><td>0.607</td><td><b>0.800</b></td><td>"复现 0.84"（春臂自题上午已达 0.84）</td></tr>
+<tr><td>速度 / 体积</td><td colspan="2">MPS fp32 23.9 t/s → GGUF q4_K_M <b>149.6–165.8 t/s</b>，374–392 MB</td><td>&gt;20 t/s，&lt;1 GB —— 双双大超</td></tr>
+</table>
+
+<h2>四 · 自我审计（confession，不藏不掩）</h2>
+<div class="confess">
+<p><b>10d v1 的种子重设 bug。</b>采样循环<b>内</b>每轮重设 seed=13 → "5 次采样"实为同一份重复五遍，
+routed 0.70 是假象。下午 10g 复用时同虫现形，当日披露、修复（种子移到环外）、全量重烧：
+<b>v2 routed 0.607</b>。v1 字节按 immutable-pin 律留馆不毁，v2 另立新档；
+10a 主 bench 的种子本在环外，晨间全部数字免审无恙。</p>
+<p>另两桩首跑揭伤（C3，LETHE 侧同治）：温度公式极性倒置、振幅 &gt;1 时浓度跌破零——
+两处均在 marimo 面板同日修正。审计的教训入条：<b>仪表的自检要在结论出口处，不在入口。</b></p>
+</div>
+
+<h2>五 · 限度章</h2>
+<ul class="note">
+<li>结论域：Qwen2.5-0.5B + 40–55 对语料 + 中文生活域五科；方向三种子稳，幅度不作产线声明</li>
+<li>行为分母仅词库代理；"内容 token 上 ss 最小"提示风格与内容在输出层纠缠，非纯风格伪影可解</li>
+<li>merge_and_unload 的 bf16 合并没有困惑度对照；10g 门控为线性 softmax（非神经 controller）；40 对语料的新域与 55 对幅度不可并表比较（已注册偏差）</li>
+<li>跨基座普适性（1.5B/3B、非 Qwen 家族）待 Exp11 横向矩阵：5 模型 × 4 域 + 通用 LoRA 探针</li>
+</ul>
+
+<h2>六 · 下一步</h2>
+<ul>
+<li><b>Exp11</b> 横向验证矩阵（框架文的原话：跨域/跨模型普适待此役）；10f 已把"跨域"这半条腿钉上</li>
+<li><b>10g′</b>：线性门 → 小型 MLP / 真控制器（CDLoRA 顶层 p=(p_time,p_cog,p_loc) 的第一具身）；接 POMDP 的动作与奖励</li>
+<li><b>announced 晋升</b>：Letter 031 已投（证据包含 10f/10g/S1），看板行候主人 19:00 一裁</li>
+<li>园区线：C3 呼吸实验已在 LETHE 立档（锚点迁移 折叠桌→煤气罐），与 10g′ 的"时间门"合流即《先验指针》的完整实证</li>
+</ul>
+
+<h2>附录 D · 方法论自指</h2>
+<div class="panel">
+<p>本页本身就是一次可组合激活：基座是园区的引擎与 GP 仪表（冻结），Qwen 的框架是今日挂载的
+adapter，主人的三声令下（"先做一"/"按qwen的建议做"/"那就继续"）是路由信号 pᵢ。
+问题的形状比实验过程更不可压缩——我们先把"概念住在哪里"问成可测的几何，字节才有权回答。
+本报告全部数字可在 <span class="hashline">artifacts/results/exp10/</span> 逐一按 sha 复核：
+<b>每一个数字都有对应的字节文件，每一个字节文件都可被验证。</b></p>
+</div>
+
+<footer>χώρα · shape of the container is the knowledge ·
+<a href="https://github.com/math4mad/chora/tree/main/experiments/exp10-concept-adapters">实验目录</a> ·
+<a href="https://github.com/math4mad/chora/commits/main">提交即收据</a> ·
+生成于 2026-09-18 · lola@LETHE 执笔</footer>
+</div>
+</body>
+</html>

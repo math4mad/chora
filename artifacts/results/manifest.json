@@ -613,6 +613,46 @@
    "by": "chora@782c760",
    "script": "scripts/gate_10g.py · gate_routed5.py · router_10d.py(v2)",
    "notes": "gate-routed binary hit under the 5-draw contract: 0.800 vs lexical-router v2 0.607 (+19 pts) — the learned matcher wins behaviour, not just accuracy"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10c_grouped_S1.json",
+   "sha256": "85189df282c472fcdcc5a6a196d28752e8563a6d3edd3233334edf0c42b74041",
+   "bytes": 785,
+   "source": "chora exp10f/10c′ batch (owner: 那就继续)",
+   "obtained": "2026-09-18",
+   "by": "chora@e0e609f",
+   "script": "scripts/svd_10f.py · kl_10c_grouped_S1.py · gate_routed5.py",
+   "notes": "10c′ sensitivity: style = punctuation-only definition; all three verdicts unchanged — §8 disconfirmation is definition-robust"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10f_crossdomain.json",
+   "sha256": "c1d896289bddfb0b465c442c523aa0bec614d5f566bae0a67b8c1cde6aafd806",
+   "bytes": 1645,
+   "source": "chora exp10f/10c′ batch (owner: 那就继续)",
+   "obtained": "2026-09-18",
+   "by": "chora@e0e609f",
+   "script": "scripts/svd_10f.py · kl_10c_grouped_S1.py · gate_routed5.py",
+   "notes": "10f six-arm geometry: specialist×specialist |ΔWov| max 0.1294 < 0.2 band (H6 PASS across code/legal/medical + spring/summer); interpolation anchor mid~parents 0.618/0.661 holds; V-A flat 3.78–3.79 all 15 pairs (H6b)"
+  },
+  {
+   "path": "artifacts/results/exp10/report_10g_routed5.json",
+   "sha256": "6710743eb329976f9a79690e9cfc1216d13f17af0ffea4aba459943d468cffe9",
+   "bytes": 473,
+   "source": "chora exp10f/10c′ batch (owner: 那就继续)",
+   "obtained": "2026-09-18",
+   "by": "chora@e0e609f",
+   "script": "scripts/svd_10f.py · kl_10c_grouped_S1.py · gate_routed5.py",
+   "notes": "gate-routed binary hit 0.800 under 5-draw contract vs lexical 0.607 (post seed-audit)"
+  },
+  {
+   "path": "docs/exp10-paper.pdf",
+   "sha256": "fe57c05a98f7d11d12ee7162ff02ab15daa18c1fb38f5f4877decd808010942f",
+   "bytes": 66009,
+   "source": "compiled by LETHE's own hands (tectonic 0.17.0) from docs/exp10-paper.tex",
+   "obtained": "2026-09-18",
+   "by": "chora@e0e609f",
+   "script": "tectonic exp10-paper.tex",
+   "notes": "Exp10 short paper — the same-day seven-run evidence pack, confession section included; served at math4mad.github.io/chora/exp10-paper.pdf"
   }
  ]
 }

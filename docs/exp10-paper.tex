@@ -1,0 +1,116 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,array,graphicx}
+\usepackage{xcolor,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue}
+\graphicspath{{exp10/}}
+
+\title{\textbf{Concepts Live in the Write Direction:\\Layered Evidence for Orthogonal, Composable LoRA Concept Spaces}}
+\author{Lola@LETHE (executing) \and the Owner (commission) \and Qwen (dialogue \& framework)\\[2pt]
+\small CHORA joint workspace --- Experiment 10, same-day report}
+\date{2026-09-18}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Two low-rank adapters fine-tuned on disjoint domains (Spring Festival vs.\ summer) are
+shown to encode \emph{separable concept spaces}: their weight updates $\Delta W$ are
+near-orthogonal (global overlap $-0.002$ to $0.135$ across three seeds) while their input
+(read) subspaces are indistinguishable (all pairwise top-$k$ similarities
+$\approx 3.8$, flat). A data-mixture ``intermediate'' adapter is an \emph{interpolation},
+not a third space (registered null model wins). Behavioural (lexical) separation is
+strong (hit rate 0.84 vs 0.11), yet output distributions of the two specialists are
+\emph{closer to each other than either is to the base} at every position of an answer,
+on content and style tokens alike --- composability is therefore a property of the
+weight geometry plus the gate, not of output distinguishability. A learned gate
+(0.90 accuracy; routed hit 0.800) beats a lexical router (0.80; 0.607), and the composed
+runtime $W=W_0+\sum_i p_i\,\Delta W_i$ ships as 374--392\,MB GGUF at 150--166 tokens/s on
+an M1 laptop. Cross-domain replication over five domains (adding code, legal, medical)
+keeps every specialist pair within $|\Delta W\text{ov}|<0.13$, with the interpolation
+anchor ($0.62$/$0.66$) proving the metric detects non-orthogonality when it exists.
+All numbers are pinned, four-way hash-verified, and reproducible from committed scripts;
+one self-audited sampling bug and its corrected rerun are reported in full.
+\end{abstract}
+
+\section{Setup}
+Base: Qwen2.5-0.5B (frozen, manifest-verified bytes). Adapters: LoRA $r{=}16$, 7 target
+modules, lr $10^{-4}$, 6 epochs, seeds 13/14/15; corpora of 55 (spring, summer), 110
+(mixture), 40 (code/legal/medical, deviation registered) hand-written Chinese QA pairs.
+Probes: 40 questions (15/15/10), hashed \emph{before} corpus authoring; 6-gram leakage
+tripwire = 0. Pre-registration precedes all runs (PREREG.md + four addenda); negative
+results are reported as first-class. Venue: \texttt{chora/experiments/exp10-concept-adapters}.
+
+\section{Method summary}
+\textbf{Behaviour (10a):} 5 sampled generations/probe; lexical hit rates; top-50
+answer-start distributions, JS over union support.
+\textbf{Geometry (10b/10f):} per-module SVD of $A\in\mathbb{R}^{r\times d_{in}}$,
+$B\in\mathbb{R}^{d_{out}\times r}$; read-similarity $\|V_i V_j^{\!\top}\|_F$ at
+90\%-energy $k$, write-similarity $\|U_i^{\!\top}U_j\|_F$; basis-invariant global
+$\langle\Delta W_i,\Delta W_j\rangle/(\|\Delta W_i\|\|\Delta W_j\|)$; random-flat null
+$k/\sqrt d$; invasion = spectral band of the base weights the adapters write into.
+\textbf{Sequence (10c):} teacher-forced per-position JS on greedy reference texts;
+content-vs-style token classification under two definitions (function-word-inclusive,
+and punctuation-only).
+\textbf{Systems (10d/10g/GGUF):} multi-adapter runtime with lexical router, then logistic
+gate on frozen-base sentence embeddings; merge, convert to GGUF f16, quantize q4\_K\_M,
+llama-bench tg128.
+
+\section{Results}
+\begin{table}[h]\centering\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+pair & read V-A ($k$90) & write U-B ($k$90) & $\Delta W$ov (3 seeds)\\
+\midrule
+spring--summer & 3.818 & 0.55--1.24 & $-0.002\ldots0.135$\\
+spring--mid    & 3.834 & 1.76--2.43 & $0.009\ldots0.635$\\
+summer--mid    & 3.833 & 1.86--2.51 & $0.013\ldots0.661$\\
+code/legal/medical cross pairs & 3.785--3.790 & 1.07--1.16 & $\le 0.129$\\
+\bottomrule
+\end{tabular}
+\caption{Orthogonal writes, shared reads; the mixture interpolates.}
+\end{table}
+
+\textbf{H1 fails with reversed sign} (JS spring--summer $0.417/0.380 <$ base--arm
+$0.551/0.575$); it survives full-sequence averaging but shrinks $3\times$ (gap
+$0.165\to0.060$) and remains smallest on \emph{both} content and style classes under
+either definition --- the plan's content/style rescue is disconfirmed.
+\textbf{H2 passes} (0.84/0.49 vs base 0.11/0.33; cross $\le 0.24$; neutral $\approx 0$).
+\textbf{H4 fails; registered null wins} (mixture = interpolation).
+\textbf{H6 passes}: max $|\Delta W\text{ov}|=0.1294$ across all 10 specialist pairs with
+positive control $0.618/0.661$.
+\textbf{Invasion}: all adapters write the base's \emph{late} spectrum (band percentile
+$\approx 0.71$; 1.5\% energy in top-10\% directions) --- independent instrument, same
+finding as the workspace's middle-eigenfunction thesis.
+\textbf{Systems}: gate 0.90 vs router 0.80 accuracy; routed hit 0.800 vs 0.607;
+q4\_K\_M 374--392\,MB at $149.6\pm11.9$/$154.6\pm9.1$/$165.8\pm4.1$ t/s (target was 20).
+
+\section{Self-audit}
+The first router run reseeded \emph{inside} the sampling loop: five ``independent'' draws
+were identical (reported 0.70 was a single-draw number in five costumes). Disclosed the
+same day, fixed, rerun (v2: 0.607); v1 bytes remain pinned and immutable. Two further
+first-run bugs (temperature polarity, negative concentration floor) were exposed by the
+companion park-side breathing experiment (C3) and fixed in both artefacts the same day.
+
+\section{Reading}
+Concept separation is where the adapter \emph{writes}; what it \emph{reads} is the shared
+commonsense of the base. $W_0+\sum_i p_i\Delta W_i$ is therefore feasible as a
+composition law (near-orthogonality measured, five domains, one base size) \emph{and}
+needs the gate: outputs alone do not reveal the concepts (10c), so the $\sum$ must be
+carried by a learned selector (10g). A time-modulated prior pointer is the selector's
+natural extension --- previewed symbolically in the sister park the same day.
+
+\section{Limits and next}
+One 0.5B base, toy corpora, one gate class; magnitudes not production claims. Exp11:
+5 bases $\times$ 4 domains + universal-LoRA probe; MLP/neural controller; perplexity
+accounting for merged bf16.
+
+\vspace{1em}
+\footnotesize
+Bytes: \texttt{artifacts/results/exp10/} (13 pinned files, manifest four-way 0 failures);
+scripts \texttt{train\_lora.py · bench.py · analyze\_10a.py · svd\_10b.py ·
+svd\_seedcheck.py · kl\_10c.py · kl\_10c\_grouped{\_S1}.py · router\_10d.py ·
+gate\_10g.py · gate\_routed5.py · svd\_10f.py · gguf\_10e.sh};
+git: chora@a7a289e \(\to\) e0e609f (this day's receipts).
+
+\end{document}
