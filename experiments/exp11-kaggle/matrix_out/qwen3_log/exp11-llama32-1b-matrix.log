@@ -1,0 +1,12 @@
+[{"stream_name":"stderr","time":28.259131945,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":28.259202469,"data":"  File \"/kaggle/src/script.py\", line 14, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":28.259448306,"data":"    for f,m in matrix_corpus_embed.PAYLOAD.items():\n"}
+,{"stream_name":"stderr","time":28.259543899,"data":"               ^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":28.25962665,"data":"NameError: name 'matrix_corpus_embed' is not defined\n"}
+,{"stream_name":"stderr","time":33.099402777,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":33.099461411,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":33.3356053,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":33.335633536,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":34.027375012,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":35.349224411,"data":"[NbConvertApp] Writing 456101 bytes to __results__.html\n"}
+]

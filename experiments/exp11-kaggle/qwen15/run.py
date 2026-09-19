@@ -11,7 +11,7 @@ PAYLOAD={"corpus_spring.jsonl": {"b64": "eyJtZXNzYWdlcyI6IFt7InJvbGUiOiAidXNlciI
 
 
 DATA="/tmp/exp11-corpus"; os.makedirs(DATA, exist_ok=True)
-for f,m in matrix_corpus_embed.PAYLOAD.items():
+for f,m in PAYLOAD.items():
     raw=base64.b64decode(m["b64"])
     assert hashlib.sha256(raw).hexdigest()==m["sha256"], "corpus drift: "+f
     open(os.path.join(DATA,f),"wb").write(raw)
