@@ -57,7 +57,7 @@ def reflow(digest: str, d: str):
     for x in out_front[1:]:
         if x not in seen: dedup_front.append(x); seen.add(x)
     out += ["", "⚔️ 战线"] + dedup_front[-6:]
-    out += ["", "━━━━━━━━━━━━━━", "📮 详版: CMS 邮 theoros@chora.dev · 图档 math4mad.github.io/GRAPHIA", "⚓ 一稿三面: 提醒=批复 · 邮件=读物 · 此帖=回看"]
+    out += ["", "━━━━━━━━━━━━━━", "📮 详版: CMS 邮 theoros@chora.dev · 图档 math4mad.github.io/GRAPHIA", "⚓ 一稿四屏: 提醒=批复 · 邮件=读物 · 备忘录=回看 · OneNote=归档"]
     return out
 
 def main():

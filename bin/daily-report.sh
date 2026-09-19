@@ -64,6 +64,7 @@ else
   mkdir -p $GRAPHIA/notes && { echo; sed "s/^# 园区日报/## 园区日报/" $DIG; } >> $GRAPHIA/notes/daily-log.md
   cd $GRAPHIA && git add notes/daily-log.md 2>/dev/null && git commit -q -m "daily digest $D (evening patrol, machine-written)" 2>/dev/null && echo "graphia daily-log appended" >> $LOG
   /opt/miniconda3/envs/default/bin/python "/Users/mac/Programming/code-2026/chora/bin/daily_note.py" "$DIG" "$D" >> $LOG 2>&1 || echo "notes channel failed (不阻断邮件与图档)" >> $LOG
+  /opt/miniconda3/envs/default/bin/python "/Users/mac/Programming/code-2026/chora/bin/daily_onenote.py" "$DIG" "$D" >> $LOG 2>&1 || echo "onenote channel failed (不阻断前三屏)" >> $LOG
   rm -f $DIG
 fi
 echo "$(date '+%F %T') done" >> $LOG
