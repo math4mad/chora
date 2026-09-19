@@ -37,7 +37,7 @@ def main():
     for pg in old.get("value", []):
         if pg.get("title") == title:
             OG._req(f"/me/onenote/pages/{pg['id']}", method="DELETE")
-    r = OG._req(f"/me/onenote/sections/{sid}/pages?title={html.escape(title)}", method="POST",
+    r = OG._req(f"/me/onenote/sections/{sid}/pages?title={title}", method="POST",
                 raw=doc)
     print("onenote:", "页已落 " + str(r.get("id", r))[:50] if "id" in r else r)
 

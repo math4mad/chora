@@ -66,7 +66,13 @@ def _token(scopes=None, interactive=True):
     return res["access_token"]
 
 
+def _clean(path):
+    from urllib.parse import quote
+    # URL 卫生: 空格/CJK 一律 percent-encode (Graph 查询串与 ?title= 皆安全)
+    return quote(path, safe="/?&=$,:'()!~-")
+
 def _req(path, method="GET", body=None, raw=None):
+    path = _clean(path)
     tok = _token()
     data = body and json.dumps(body).encode() or (raw and raw.encode())
     req = urllib.request.Request(GRAPH + path, data=data, method=method, headers={
