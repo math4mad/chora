@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-19T00:49:47Z",
- "chora_head": "94eb271",
+ "generated": "2026-09-19T00:55:13Z",
+ "chora_head": "81e3a96",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -703,7 +703,7 @@
    "verdict": "True",
    "gated_by": null,
    "budget": null,
-   "next": "P1 upon owner's network nod (3B + Llama fetch, pin before train). Owner's 19:00 review now covers exp10 announced + exp11 P1 go.",
+   "next": "P1 on Kaggle (owner's workhorse ruling): queue 3B + Llama cells as kernels; local MPS freed. To Do channel awaits owner's Entra client-id (5-min).",
    "flags": [],
    "detail": {
     "prereg": "chora@38737ba experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
@@ -713,9 +713,9 @@
   }
  ],
  "audits": [
-  "pins: 173 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
+  "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 94eb271, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 81e3a96, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
