@@ -24,3 +24,32 @@
 的重叠处先以"零新组件"为原则搁置。
 
 下一步 (候主人圈点): 把 chora/experiments 的 Kaggle runner 包成 saga 工人, bus 即园区总机。
+
+---
+
+# ORCHESTRA 框架志（v0.2 骨架已立, 18:11 两幕剧 v2 全绿）
+
+## 解剖图 —— Redux 扩展只有三种物种, 别混
+| 物种 | 挂在哪 | 本园成员 |
+|---|---|---|
+| **middleware** | dispatch 流水线 | guard(00) · saga(10) · persist 写端(90) |
+| **store enhancer** | store 本体 | **time-travel**（正解在此, 非中间件）· persist 读端(rehydrate) · DevTools |
+| **selector** | 订阅侧 | per-agent 上下文切片 = 渐进披露的唯一读出口 |
+
+「持久层」是一对鸳鸯腿：写端 middleware（链底收票）+ 读端 rehydrate（回放造种子）——单挂一半只能记账不能复活。
+
+## 插座表（00→99, 越靠前越早见票; 每件自带过肩测试+保险丝）
+```
+00 guard      身份写篱: meta.origin ∉ 名单 → 拒账留审计 (今日实测拒 hacker ✔)
+10 saga       P/D/K 工人宿舍
+20 throttle   (候) 限流闸
+30 bridge     (候) 进程间总线 —— 多机园区
+90 persist    链底账本 NDJSON
+```
+
+## 上下文铁律（主人方案的定案）
+**state.world/plans/clarif = 唯一真身; agents[id].scratch = 私事带篱; 各 agent 的“那一份上下文”由 selector 现切, 不存副本。**
+存副本=多本真相=迟早对账打架；切视图=一份真相 N 张车窗。（POMDP 语：belief 共享，观测各自投影。）
+
+## 加件规矩
+新中间件三件套：`tests/` 过肩测试、本表登记、可拔保险丝。一次一件, 砸完一颗核桃再上座。
