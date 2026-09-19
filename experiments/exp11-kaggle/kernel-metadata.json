@@ -1,7 +1,7 @@
 {
-  "id": "math4amd/exp11-kaggle-baseline",
-  "title": "Exp11 Kaggle Baseline \u2014 exp10 geometry cross-hardware replication (0.5B, T4 bf16)",
-  "code_file": "run_baseline.py",
+  "id": "math4amd/exp11-kaggle-matrix",
+  "title": "Exp11 Matrix — 4 new bases x 7 arms (orthogonality horizontal validation)",
+  "code_file": "matrix_run.py",
   "language": "python",
   "kernel_type": "script",
   "is_private": true,
@@ -10,7 +10,8 @@
   "dataset_sources": [],
   "competition_sources": [],
   "kernel_sources": [],
-  "model_sources": [
-    "qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
-  ]
+  "model_sources": ["qwen-lm/qwen2.5/transformers/1.5b-instruct/1",
+                    "qwen-lm/qwen2.5/transformers/3b-instruct/1",
+                    "qwen-lm/qwen2.5/transformers/7b-instruct/1",
+                    "metaresearch/llama-3.2/transformers/1b-instruct/1"]
 }
