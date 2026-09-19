@@ -2,7 +2,7 @@
  "run": "exp11-kaggle-baseline",
  "model_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
  "model_source": "kaggle-models-hub-offline",
- "ts": "2026-09-19T00:52:15Z",
+ "ts": "2026-09-19T00:57:12Z",
  "hardware": {
   "gpu": "Tesla T4",
   "backend": "cuda",
@@ -14,7 +14,7 @@
   "summer": "e7246601f036edc21b81ba79a1654beca87892d3655d23b5c6d5b6484efb84f7",
   "mid": "7143b433fe7d61dc73c0bdfe7e48aa7699ff44273d4fa030260225f445f002ce"
  },
- "minutes": 2.5,
+ "minutes": 2.6,
  "hp": {
   "lr": 0.0001,
   "batch": 2,

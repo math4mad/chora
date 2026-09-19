@@ -663,6 +663,16 @@
    "by": "chora (kernel by lola@LETHE)",
    "script": "experiments/exp11-kaggle/run_baseline.py (corpus embedded sha-pinned; model via kaggle models qwen-lm/qwen2.5/transformers/0.5b-instruct/1)",
    "notes": "KAGGLE PIPELINE COMPLETE: 2.5min GPU, cross-hardware replication of exp10 geometry — reads flat 3.78-3.79, specialists dWov 0.081 <0.2 band, interpolation anchors lit 0.591/0.644 vs local 0.618/0.637. Gate-6 machine-confound answered: seed13 survives fp32/MPS → bf16/CUDA unchanged."
+  },
+  {
+   "path": "artifacts/results/exp11/report_kaggle_baseline.json",
+   "sha256": "529317cd7ff2bda726cb2281211d8286c9342852bf5381dade8b28623cc06e02",
+   "bytes": 2022,
+   "source": "Kaggle kernel math4amd/exp11-kaggle-baseline v5 (Tesla T4, offline model mount)",
+   "obtained": "2026-09-19",
+   "by": "chora-pending",
+   "script": "experiments/exp11-kaggle/run_baseline.py (self-contained: corpus base64-embedded, sha-asserted at runtime)",
+   "notes": "E2E kaggle pipeline green in 2.6min; cross-hardware replication: ss dWov 0.0807 (band OK), mid anchors 0.591/0.644, V-A flat. KEY FINDING: Kaggle-hub model sha fdf756fa… ≠ local ModelScope-mirror 88c14255… (same bytes-size, different serialization) — container is a variable, pinned separately. Adapters (35MB×3) stay in kernel output; sha in receipts."
   }
  ]
 }
