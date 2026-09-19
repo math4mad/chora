@@ -53,3 +53,73 @@
 
 ## 加件规矩
 新中间件三件套：`tests/` 过肩测试、本表登记、可拔保险丝。一次一件, 砸完一颗核桃再上座。
+
+---
+
+## 全生命周期总图（mermaid · 2026-09-19 版）
+
+```mermaid
+flowchart TD
+  subgraph OWNER["👤 主人 · 四屏"]
+    PH["📱 提醒事项 + To Do·Concept-Space<br/><b>☑ = 批复</b> (勾掉即圣旨)"]
+    EM["📧 邮件 CMS + 园匣<br/>(读物/回执)"]
+    NA["📝 Apple Notes 日报<br/>(回看)"]
+    ON["📓 OneNote 分区<br/>(归档)"]
+  end
+
+  TRIG{{"⏰ launchd 双巡<br/>08:00 晨圈 · 21:00 夜报"}}
+  SAY(["🗣 对话即入口<br/>主人一句话 = 一次 dispatch"])
+
+  subgraph BUS["🎛 ORCHESTRA 总机 (Redux 总线)"]
+    direction TB
+    D0["dispatch(action)"]
+    G["00 guard · 写篱<br/>meta.origin ∉ 名单 → 拒账留审计"]
+    SG["10 saga · 工人宿舍"]
+    PP["P 规划者 · 前额叶<br/>拆解 / 置信度判定"]
+    DD["D 执行者 · 感觉运动<br/>本地 MPS / 训练 / git"]
+    KK["K 驻场 · Kaggle 代理<br/>kernel 批产 + LLM API"]
+    CF["clarify 刹车<br/>take(CLARIFY_RESPONSE) 挂起全流水线"]
+    PR["90 persist · 链底账本<br/>NDJSON 票票过闸"]
+    TT["⏳ time-travel (enhancer)<br/>快照 · jump"]
+    RH["🔁 rehydrate (读端)<br/>回放账本 → 复活续办"]
+    SEL["selector · 每 agent 上下文切片<br/>(导出物, 非寄存物 · 渐进披露)"]
+  end
+
+  subgraph KAG["🏭 Kaggle 工马场 (30h T4/周)"]
+    Q["夜哨 v3 · ≤2 局滚动<br/>一次闸 pushed1 · REPORT_LINE 直读"]
+    KN["kernel 膛: qwen15→…→xdom/atlas<br/>(自包含核 + 疫苗 + 挂载镜像)"]
+    RP["战报 report_*.json"]
+  end
+
+  subgraph PAPER["📜 文案与账房 (园区律)"]
+    PRE["PREREG 先行<br/>(假说/判据/偏差申报)"]
+    ART["artifacts + manifest 四向校验<br/>sha 即收据"]
+    BRD["看板 experiments.json<br/>lane 由字节推导"]
+    GIT["commit = 收据 · 耐心推 3+10/20/40"]
+    LTR["letters/ 031… 信使"]
+  end
+
+  SAY --> D0
+  TRIG --> D0
+  D0 --> G --> SG
+  SG --> PP
+  PP -->|"confidence ≥ τ"| DD
+  PP -->|"重计算外包"| KK
+  PP -->|"confidence < τ · 红线必问"| CF
+  CF -->|"挂起: 三屏同呈问题"| PH
+  PH -->|"☑ 批复 = CLARIFY_RESPONSE"| CF --> PP
+  DD & KK --> Q --> KN --> RP
+  RP --> ART
+  DD --> ART
+  SG -.每一票.-> PR
+  PR -.账本.-> RH -.复活.-> D0
+  TT -. -.-> PR
+  BUS --> SEL
+  ART --> BRD --> GIT
+  ART --> LTR
+  BRD --> TRIG
+  GIT & LTR -->|"夜巡汇编"| EM & NA & ON
+  ART -.缺口/战况.-> PH
+```
+
+读图口诀：**一票入门（guard）、两路工马（本地/Kaggle）、三问刹车（clarify→☑）、四账归底（persist/rehydrate）、五屏同光（提醒·邮件·备忘·Note·玻璃）**。
