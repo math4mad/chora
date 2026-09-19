@@ -16,7 +16,7 @@ echo "$(date '+%F %T') mode=$mode" >> $LOG
 if [ "$mode" = "morning" ]; then
   # 1) 看板未决 (lane 未至 announced/closed 的行, 取 id + next 首句)
   /opt/miniconda3/envs/default/bin/python - <<'PY' >> $LOG 2>&1
-import json, subprocess, datetime
+import json, subprocess, datetime, os
 rows=json.load(open("/Users/mac/Programming/code-2026/chora/docs/experiments.json"))["rows"]
 open_rows=[r for r in rows if r.get("claim") not in ("announced","closed","scored") or True]
 # 晨报只挑: 未 announced 的 experiment 行, 每行一条, 上限 6
@@ -28,6 +28,11 @@ for r in pick:
     if title[:24] not in have:
         subprocess.run(["osascript","-e",f'''tell application "Reminders" to tell list "园区·GRAPHIA" to make new reminder with properties {{name:"{title}",body:"看板行 {r['id']} · claim={r.get('claim','?')}"}}'''])
         print("morning add:", title[:60])
+        # MS To Do 镜像通道 (无 token 即静默跳, 不影响 Apple 主道)
+        import subprocess as _sp
+        if os.path.exists(os.path.expanduser("~/.chora/ms-todo.tokens.json")):
+            _sp.run(["/opt/miniconda3/envs/default/bin/python",
+                     "/Users/mac/Programming/code-2026/chora/bin/todo_graph.py","add",title,"看板行 "+r['id']])
 PY
   # 2) 昨日遗留 ☐ 不重挂 (本体就是提醒), 只推一条"晨圈"聚合提醒若无
   if ! /opt/miniconda3/envs/default/bin/python -c "
@@ -47,8 +52,11 @@ else
       autos=$(git -C $R/$repo log --since="$D 00:00" --grep='status snapshot' --oneline 2>/dev/null | wc -l | tr -d ' ')
       [ -n "$lg" ] && { echo "### $repo"; echo "$lg"; [ "${autos:-0}" != "0" ] && echo "- (+$autos 条自动快照，略)"; echo; }
     done
-    echo "## 今日批复 (提醒事项 ☑)"
+    echo "## 今日批复 (Apple ☑ + MS To Do ☑ 并集)"
     osascript -e 'tell application "Reminders" to tell list "园区·GRAPHIA" to get "• " & (name of every reminder whose completed is true)' 2>/dev/null | tr ',' '\n' | tail -8
+    if [ -f ~/.chora/ms-todo.tokens.json ]; then
+      /opt/miniconda3/envs/default/bin/python bin/todo_graph.py read 2>/dev/null | awk '/已办/{f=1} f' | head -12
+    fi
     echo
     echo "## Kaggle 矩阵近况"
     tail -6 /tmp/kag_marshal.log 2>/dev/null

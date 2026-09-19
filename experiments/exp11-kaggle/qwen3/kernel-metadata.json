@@ -1,5 +1,5 @@
 {
- "id": "math4amd/exp11-qwen3",
+ "id": "math4amd/exp11-qwen2-5-3b-matrix",
  "title": "Exp11 Qwen2.5-3B matrix",
  "code_file": "run.py",
  "language": "python",
