@@ -1,6 +1,7 @@
 # Exp11 · the whole matrix on the Kaggle workhorse — 5 bases × 7 arms, one session.
 # Bases arrive via Kaggle-models-hub offline mounts (declared in kernel-metadata model_sources).
 # Per-base geometry report flushed to /kaggle/working; a dead cell is recorded, never silent.
+import os as _osx; _osx.system("python -m pip uninstall -y -q torchao 2>/dev/null; pip uninstall -y -q torchao 2>/dev/null"); del _osx  # 疫苗二代: 逐出可选集成, transformers 便不问版本
 import os, json, time, hashlib, base64, itertools
 import numpy as np, torch
 # —— 环境自赎: Kaggle 镜像 torchao 与 transformers 冲突 (2026-09-19 午后实锤) ——
@@ -116,3 +117,4 @@ for disp,rel in BASES:
     json.dump(master,open(os.path.join(OUT,"report_exp11_qwen3.json"),"w"),indent=1)  # flush每基座一局, 断亦留档
     print("== base done:",disp,flush=True)
 print(json.dumps({b:("ERR" if "error" in v else v.get("minutes")) for b,v in master["bases"].items()},indent=1))
+print("REPORT_LINE", __import__("base64").b64encode(open("/tmp/rl.json","w") or open(os.path.join(OUT,"report_exp11_qwen3.json"),"rb").read()).decode())  # REPORT LINE

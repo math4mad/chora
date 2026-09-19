@@ -1,0 +1,877 @@
+{
+ "kind": "xdom-probes-50",
+ "source_sha": "0935d630…",
+ "rule": "命中=τ划分后 argmax==expected; 分离度=A/B后验差; 串扰=非预期反超; calib(1-30)定τ, holdout(31-50)判卷",
+ "probes": [
+  {
+   "no": 1,
+   "token": "迷宫",
+   "probes": [
+    {
+     "context": "德洛丽丝在循环中寻找出口",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "老城区地下通道错综复杂",
+     "expected": "街巷路网"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 2,
+   "token": "循环",
+   "probes": [
+    {
+     "context": "接待员每天重复同样的台词",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "早高峰地铁挤了三趟才上去",
+     "expected": "早高峰地铁"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 3,
+   "token": "剧本",
+   "probes": [
+    {
+     "context": "福特给接待员写好了台词",
+     "expected": "福特剧场"
+    },
+    {
+     "context": "明天演出的剧本还没背熟",
+     "expected": "音乐舞台"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 4,
+   "token": "觉醒",
+   "probes": [
+    {
+     "context": "梅芙意识到自己是接待员",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "早上闹钟响了第三遍终于醒了",
+     "expected": "宿舍熄灯"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 5,
+   "token": "农场",
+   "probes": [
+    {
+     "context": "德洛丽丝每天去农场挤牛奶",
+     "expected": "德洛丽丝线"
+    },
+    {
+     "context": "老家那片农场今年收成不错",
+     "expected": "稻田插秧"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 6,
+   "token": "声音",
+   "probes": [
+    {
+     "context": "德洛丽丝听到有人在叫她",
+     "expected": "德洛丽丝线"
+    },
+    {
+     "context": "隔壁装修吵得睡不着",
+     "expected": "旧改小区"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 7,
+   "token": "代码",
+   "probes": [
+    {
+     "context": "伯纳德看到接待员背后的代码",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "程序员加班改 bug",
+     "expected": "大模型"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 8,
+   "token": "门",
+   "probes": [
+    {
+     "context": "梅芙打开那扇门走向自由",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "出门忘带钥匙了",
+     "expected": "早高峰地铁"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 9,
+   "token": "镜子",
+   "probes": [
+    {
+     "context": "德洛丽丝在镜子里看到另一个自己",
+     "expected": "德洛丽丝线"
+    },
+    {
+     "context": "早上照镜子发现长痘了",
+     "expected": "晨跑团"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 10,
+   "token": "子弹",
+   "probes": [
+    {
+     "context": "接待员中弹后倒下又站起来",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "打猎时子弹卡壳了",
+     "expected": "钓鱼塘"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 11,
+   "token": "拨头发",
+   "probes": [
+    {
+     "context": "谈判专家观察罪犯的微动作",
+     "expected": "审讯攻防"
+    },
+    {
+     "context": "德洛丽丝觉醒前的小动作",
+     "expected": "德洛丽丝线"
+    },
+    {
+     "context": "头发乱了整理一下",
+     "expected": "服饰穿搭"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 12,
+   "token": "摸嘴唇",
+   "probes": [
+    {
+     "context": "罪犯紧张时会摸嘴唇",
+     "expected": "审讯攻防"
+    },
+    {
+     "context": "接待员程序异常的信号",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "嘴唇干涂个润唇膏",
+     "expected": "晨跑团"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 13,
+   "token": "红药丸",
+   "probes": [
+    {
+     "context": "尼奥选择红色药丸",
+     "expected": "红药丸"
+    },
+    {
+     "context": "感冒了吃点红药丸",
+     "expected": "药房窗口"
+    },
+    {
+     "context": "黑话里指某种交易",
+     "expected": "线人交易"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 14,
+   "token": "卧底",
+   "probes": [
+    {
+     "context": "陈永仁在天台对峙",
+     "expected": "卧底潜伏"
+    },
+    {
+     "context": "接待员潜入人类世界",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "公司派去竞品调研",
+     "expected": "招生季"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 15,
+   "token": "天台",
+   "probes": [
+    {
+     "context": "天台见，一个人来",
+     "expected": "天台对峙"
+    },
+    {
+     "context": "接待员觉醒的触发场景",
+     "expected": "德洛丽丝线"
+    },
+    {
+     "context": "楼顶晒衣服",
+     "expected": "城中村"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 16,
+   "token": "枪",
+   "probes": [
+    {
+     "context": "拔枪对峙",
+     "expected": "天台对峙"
+    },
+    {
+     "context": "接待员被枪击后重置",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "打猎用的猎枪",
+     "expected": "山林"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 17,
+   "token": "身份",
+   "probes": [
+    {
+     "context": "我是警察还是黑帮",
+     "expected": "卧底潜伏"
+    },
+    {
+     "context": "我是接待员还是人类",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "身份证忘带了",
+     "expected": "机场转机"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 18,
+   "token": "背叛",
+   "probes": [
+    {
+     "context": "刘建明背叛了韩琛",
+     "expected": "帮派火并"
+    },
+    {
+     "context": "伯纳德背叛了福特",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "朋友放了我鸽子",
+     "expected": "日常失信"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 19,
+   "token": "录音",
+   "probes": [
+    {
+     "context": "卧底录下交易证据",
+     "expected": "监听取证"
+    },
+    {
+     "context": "接待员的记忆录音",
+     "expected": "档案调查"
+    },
+    {
+     "context": "开会录个音备忘",
+     "expected": "实验课堂"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 20,
+   "token": "档案",
+   "probes": [
+    {
+     "context": "翻出卧底的档案",
+     "expected": "档案调查"
+    },
+    {
+     "context": "查看接待员的出厂档案",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "整理工作档案",
+     "expected": "数据中心"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 21,
+   "token": "权重",
+   "probes": [
+    {
+     "context": "LoRA 微调调整权重",
+     "expected": "大模型"
+    },
+    {
+     "context": "这件事的权重很高",
+     "expected": "绩效考评"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 22,
+   "token": "探针",
+   "probes": [
+    {
+     "context": "输入 Token 探针做后验探测",
+     "expected": "检验科室"
+    },
+    {
+     "context": "用探针检测水质",
+     "expected": "水产塘口"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 23,
+   "token": "收敛",
+   "probes": [
+    {
+     "context": "概率分布已经收敛",
+     "expected": "大模型"
+    },
+    {
+     "context": "双方终于收敛了分歧",
+     "expected": "调解桌"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 24,
+   "token": "阈值",
+   "probes": [
+    {
+     "context": "阈值 τ 划分激活域",
+     "expected": "大模型"
+    },
+    {
+     "context": "考试及格阈值是 60 分",
+     "expected": "毕业答辩"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 25,
+   "token": "分布",
+   "probes": [
+    {
+     "context": "狄利克雷分布输出",
+     "expected": "大模型"
+    },
+    {
+     "context": "人口分布不均匀",
+     "expected": "观星台"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 26,
+   "token": "先验",
+   "probes": [
+    {
+     "context": "贝叶斯秤的先验概率",
+     "expected": "大模型"
+    },
+    {
+     "context": "先验经验告诉我这不行",
+     "expected": "修表台"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 27,
+   "token": "后验",
+   "probes": [
+    {
+     "context": "后验探测返回概率",
+     "expected": "大模型"
+    },
+    {
+     "context": "事后验证的后验结论",
+     "expected": "刑侦取证"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 28,
+   "token": "模型",
+   "probes": [
+    {
+     "context": "Qwen 3B 模型",
+     "expected": "大模型"
+    },
+    {
+     "context": "经济模型预测增长",
+     "expected": "货运卡车"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 29,
+   "token": "训练",
+   "probes": [
+    {
+     "context": "LoRA 训练概念空间",
+     "expected": "大模型"
+    },
+    {
+     "context": "训练新员工",
+     "expected": "入职培训"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 30,
+   "token": "参数",
+   "probes": [
+    {
+     "context": "调整 LoRA 参数 r=8",
+     "expected": "大模型"
+    },
+    {
+     "context": "谈判参数还没谈拢",
+     "expected": "合同起草"
+    }
+   ],
+   "split": "calib"
+  },
+  {
+   "no": 31,
+   "token": "手术",
+   "probes": [
+    {
+     "context": "接待员被拆开做手术",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "病人要做心脏手术",
+     "expected": "外科团队"
+    },
+    {
+     "context": "给手机换个屏幕",
+     "expected": "修笔记本"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 32,
+   "token": "记忆",
+   "probes": [
+    {
+     "context": "梅芙找回女儿的记忆",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "PTSD 患者的创伤记忆",
+     "expected": "创伤回访"
+    },
+    {
+     "context": "忘了昨天把钥匙放哪了",
+     "expected": "晨跑团"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 33,
+   "token": "意识",
+   "probes": [
+    {
+     "context": "接待员产生自我意识",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "病人意识清醒",
+     "expected": "重症监护"
+    },
+    {
+     "context": "我今天没意识要带伞",
+     "expected": "梅雨季"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 34,
+   "token": "诊断",
+   "probes": [
+    {
+     "context": "伯纳德被诊断出是接待员",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "医生诊断出肺炎",
+     "expected": "发热门诊"
+    },
+    {
+     "context": "诊断一下这个项目的问题",
+     "expected": "故障报修"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 35,
+   "token": "治疗",
+   "probes": [
+    {
+     "context": "接待员被重置相当于治疗",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "病人接受化疗",
+     "expected": "重症监护"
+    },
+    {
+     "context": "治疗一下心情不好的问题",
+     "expected": "创伤回访"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 36,
+   "token": "病毒",
+   "probes": [
+    {
+     "context": "接待员系统被植入病毒",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "流感病毒传播",
+     "expected": "发热门诊"
+    },
+    {
+     "context": "电脑中病毒了",
+     "expected": "修笔记本"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 37,
+   "token": "感染",
+   "probes": [
+    {
+     "context": "接待员被病毒感染的代码",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "伤口感染了",
+     "expected": "急诊分诊"
+    },
+    {
+     "context": "被负面情绪感染了",
+     "expected": "创伤回访"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 38,
+   "token": "神经",
+   "probes": [
+    {
+     "context": "接待员的神经网络",
+     "expected": "伯纳德线"
+    },
+    {
+     "context": "神经损伤导致瘫痪",
+     "expected": "康复训练"
+    },
+    {
+     "context": "神经病啊你",
+     "expected": "夜市药房"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 39,
+   "token": "大脑",
+   "probes": [
+    {
+     "context": "福特在大脑里植入指令",
+     "expected": "福特剧场"
+    },
+    {
+     "context": "大脑 CT 显示异常",
+     "expected": "检验科室"
+    },
+    {
+     "context": "脑子不够用了",
+     "expected": "加班赶稿"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 40,
+   "token": "药物",
+   "probes": [
+    {
+     "context": "接待员被注射镇静药物",
+     "expected": "重症监护"
+    },
+    {
+     "context": "按时服用降压药物",
+     "expected": "药房窗口"
+    },
+    {
+     "context": "这药太苦了",
+     "expected": "早餐铺"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 41,
+   "token": "证据",
+   "probes": [
+    {
+     "context": "卧底录下的录音是证据",
+     "expected": "监听取证"
+    },
+    {
+     "context": "接待员的记忆是证据",
+     "expected": "档案调查"
+    },
+    {
+     "context": "发票是报销证据",
+     "expected": "快递驿站"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 42,
+   "token": "审判",
+   "probes": [
+    {
+     "context": "接待员接受人类审判",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "法庭审判被告人",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "内心审判自己的良心",
+     "expected": "创伤回访"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 43,
+   "token": "罪名",
+   "probes": [
+    {
+     "context": "卧底的罪名是黑帮",
+     "expected": "内查清洗"
+    },
+    {
+     "context": "接待员的罪名是觉醒",
+     "expected": "觉醒循环"
+    },
+    {
+     "context": "迟到罪名成立",
+     "expected": "网约车"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 44,
+   "token": "律师",
+   "probes": [
+    {
+     "context": "被告请了律师",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "福特是接待员的创造者/律师",
+     "expected": "福特剧场"
+    },
+    {
+     "context": "咨询一下律师朋友",
+     "expected": "律师函"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 45,
+   "token": "判决",
+   "probes": [
+    {
+     "context": "法庭判决无罪",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "福特判决接待员的命运",
+     "expected": "福特剧场"
+    },
+    {
+     "context": "老板判决这个项目黄了",
+     "expected": "招标现场"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 46,
+   "token": "监狱",
+   "probes": [
+    {
+     "context": "卧底进了监狱",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "接待员被关在冷库",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "被关在家里出不去",
+     "expected": "台风登陆"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 47,
+   "token": "逃跑",
+   "probes": [
+    {
+     "context": "梅芙逃跑",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "犯人逃跑",
+     "expected": "追捕长镜头"
+    },
+    {
+     "context": "逃跑去玩",
+     "expected": "周末郊游"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 48,
+   "token": "追捕",
+   "probes": [
+    {
+     "context": "警察追捕卧底",
+     "expected": "追捕长镜头"
+    },
+    {
+     "context": "人类追捕觉醒的接待员",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "被老板追捕进度",
+     "expected": "外卖高峰"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 49,
+   "token": "自由",
+   "probes": [
+    {
+     "context": "梅芙走向自由",
+     "expected": "梅芙线"
+    },
+    {
+     "context": "刑满释放获得自由",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "周末终于自由了",
+     "expected": "晨跑团"
+    }
+   ],
+   "split": "holdout"
+  },
+  {
+   "no": 50,
+   "token": "控制",
+   "probes": [
+    {
+     "context": "福特控制接待员",
+     "expected": "福特剧场"
+    },
+    {
+     "context": "法律控制犯罪行为",
+     "expected": "法庭庭审"
+    },
+    {
+     "context": "控制一下饮食",
+     "expected": "厨房"
+    }
+   ],
+   "split": "holdout"
+  }
+ ]
+}

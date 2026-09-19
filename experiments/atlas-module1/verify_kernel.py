@@ -1,5 +1,6 @@
 # 模块一 · 夜核 — 在 Kaggle/T4 上验证概念图谱的可分性 (0.5B 挂载, 零下载除 torchao 疫苗)
 # 指标: 每空间 intra 平均余弦 · 全局 inter 最大碰撞 (跨空间 token 对) · 弱空间榜
+import os as _osx; _osx.system("python -m pip uninstall -y -q torchao 2>/dev/null; pip uninstall -y -q torchao 2>/dev/null"); del _osx  # 疫苗二代: 逐出可选集成, transformers 便不问版本
 import base64, hashlib, json, itertools, time
 import numpy as np, torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -47,3 +48,4 @@ rep={"run":"atlas-m1-verify","tokens":len(toks),"embed_minutes":round((time.time
  "verdict_note":"H-A1 预备判据: intra 中位显著>0.75 且无 inter>intra中位 的跨空间碰撞 → 图谱可分, 可进模块二"}
 json.dump(rep,open("/kaggle/working/report_atlas_m1.json","w"),ensure_ascii=False,indent=1)
 print(json.dumps({k:rep[k] for k in ["intra_mean_overall","embed_minutes"]},indent=1))
+print("REPORT_LINE", __import__("base64").b64encode(open("/kaggle/working/report_atlas_m1.json","rb").read()).decode())  # REPORT LINE

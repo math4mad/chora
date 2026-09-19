@@ -9,3 +9,10 @@
 ## 定名御批 (2026-09-19 午后)
 **Atlas** — 主人亲定为「**概念空间的导航图**」(the nautical chart of concept spaces)。
 本目录、夜核 slug、后续 M2-M5 皆承此名。园区命名律: 容器先有名, 才有户籍与收据。
+
+## 判卷律 (owner 照单全收 2026-09-19 · xdom 考卷)
+- M1.5 扩图入册: 港片 10 + 科幻觉醒 1 + 心理诊室 1 → 172 空间 · 1032 token (embed e1b755db…)
+- 考卷结构化: xdom_probes.json (50 组 calib 1-30 / holdout 31-50); 判据三章: 命中=argmax==expected; 分离度=post_expected; 串扰=非预期反超。τ 只在 calib 上调, holdout 只判卷
+- 未映射 expected 名单 = 报告的 unmapped_expected 字段, 属图谱缺口清单, 不算判卷失败 (标签不在户籍)
+- M2 语料生成 (Agent K 批产) 必过 6-gram tripwire 对本考卷, 撞词行废写重写 — 防技术域组 21-30 自漏
+- 无训练基线 (xdom-baseline 核) 先行: 给 Qwen 的第一轮 = 基线成绩单, M2 之后同卷复考见训练增益
