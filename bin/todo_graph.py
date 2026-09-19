@@ -15,7 +15,7 @@ AUTHORITY = os.environ.get("CHORA_M365_TENANT", "https://login.microsoftonline.c
 CLIENT_ID = os.environ.get("CHORA_M365_CLIENT_ID", "d3590ed6-52b1-4102-aeff-aad2292ab01c")  # Microsoft-known public client (Office); overridable once the owner registers their own app
 SCOPES = ["Tasks.Read", "Tasks.ReadWrite"]  # msal 禁公户显式要 offline_access；MSA 端点照发 refresh
 GRAPH = "https://graph.microsoft.com/v1.0"
-LIST_NAME = "园区·CHORA"
+LIST_NAME = "Concept-Space"
 
 
 def _msal_app():
