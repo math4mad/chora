@@ -28,11 +28,9 @@ for r in pick:
     if title[:24] not in have:
         subprocess.run(["osascript","-e",f'''tell application "Reminders" to tell list "园区·GRAPHIA" to make new reminder with properties {{name:"{title}",body:"看板行 {r['id']} · claim={r.get('claim','?')}"}}'''])
         print("morning add:", title[:60])
-        # MS To Do 镜像通道 (无 token 即静默跳, 不影响 Apple 主道)
-        import subprocess as _sp
-        if os.path.exists(os.path.expanduser("~/.chora/ms-todo.tokens.json")):
-            _sp.run(["/opt/miniconda3/envs/default/bin/python",
-                     "/Users/mac/Programming/code-2026/chora/bin/todo_graph.py","add",title,"看板行 "+r['id']])
+        # MS To Do 通道: 经 Mac 的 Exchange 账户直写「任务」列表 (服务器同步 ~5s, 零注册零授权)
+        esc=title.replace('"','\\"')
+        subprocess.run(["osascript","-e",f'''tell application "Reminders" to tell list "任务" of account "Exchange" to make new reminder with properties {{name:"{esc}",body:"看板镜像 · 勾掉两端同效"}}'''])
 PY
   # 2) 昨日遗留 ☐ 不重挂 (本体就是提醒), 只推一条"晨圈"聚合提醒若无
   if ! /opt/miniconda3/envs/default/bin/python -c "
@@ -54,9 +52,7 @@ else
     done
     echo "## 今日批复 (Apple ☑ + MS To Do ☑ 并集)"
     osascript -e 'tell application "Reminders" to tell list "园区·GRAPHIA" to get "• " & (name of every reminder whose completed is true)' 2>/dev/null | tr ',' '\n' | tail -8
-    if [ -f ~/.chora/ms-todo.tokens.json ]; then
-      /opt/miniconda3/envs/default/bin/python bin/todo_graph.py read 2>/dev/null | awk '/已办/{f=1} f' | head -12
-    fi
+    osascript -e 'tell application "Reminders" to tell list "任务" of account "Exchange" to get name of (reminders whose completed is true)' 2>/dev/null | tr ',' '\n' | sed 's/^/☑MS /' | tail -6
     echo
     echo "## Kaggle 矩阵近况"
     tail -6 /tmp/kag_marshal.log 2>/dev/null
