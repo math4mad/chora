@@ -1,0 +1,87 @@
+{
+ "run": "exp11-kaggle-baseline",
+ "model_sha256": "fdf756fa7fcbe7404d5c60e26bff1a0c8b8aa1f72ced49e7dd0210fe288fb7fe",
+ "model_source": "kaggle-models-hub-offline",
+ "ts": "2026-09-19T00:52:15Z",
+ "hardware": {
+  "gpu": "Tesla T4",
+  "backend": "cuda",
+  "torch": "2.10.0+cu128"
+ },
+ "model": "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1",
+ "corpus_sha256": {
+  "spring": "d38e57905b30a43ac624fd07b4a50b7704a6b712236635eefe6f3a8779394262",
+  "summer": "e7246601f036edc21b81ba79a1654beca87892d3655d23b5c6d5b6484efb84f7",
+  "mid": "7143b433fe7d61dc73c0bdfe7e48aa7699ff44273d4fa030260225f445f002ce"
+ },
+ "minutes": 2.5,
+ "hp": {
+  "lr": 0.0001,
+  "batch": 2,
+  "accum": 4,
+  "seed": 13,
+  "recipe": {
+   "r": 16,
+   "lora_alpha": 32,
+   "lora_dropout": 0.05,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ]
+  }
+ },
+ "receipts": {
+  "spring": {
+   "epochs": 6,
+   "final_loss": 0.8987,
+   "file": "adapter_spring.safetensors",
+   "sha256": "aa22fa2a78903c96a947b575d71e3c5d1fbbab079883252ef344677f319a9b76"
+  },
+  "summer": {
+   "epochs": 6,
+   "final_loss": 1.028,
+   "file": "adapter_summer.safetensors",
+   "sha256": "1cdbe0c1d50c040223f41b7df5e1b6d4e6e4819c73468af7ca1d3be5f185e3e9"
+  },
+  "mid": {
+   "epochs": 3,
+   "final_loss": 2.4171,
+   "file": "adapter_mid.safetensors",
+   "sha256": "5260775a5d80fde863d37601c753935d9c9c9d43c29df99b1dca4a9a744788ef"
+  }
+ },
+ "geometry": {
+  "spring~summer": {
+   "V-A_k90": 3.775,
+   "dWov": 0.0807
+  },
+  "spring~mid": {
+   "V-A_k90": 3.789,
+   "dWov": 0.5907
+  },
+  "summer~mid": {
+   "V-A_k90": 3.794,
+   "dWov": 0.6441
+  }
+ },
+ "local_reference_exp10_s13": {
+  "spring~summer": {
+   "V-A": 3.818,
+   "dWov": -0.0022
+  },
+  "spring~mid": {
+   "V-A": 3.834,
+   "dWov": 0.0093
+  },
+  "summer~mid": {
+   "V-A": 3.833,
+   "dWov": 0.0128
+  }
+ },
+ "attestation": "cross-hardware replication: bf16/CUDA vs fp32/MPS \u2014 sign & band stability are the test, not bit-equality"
+}

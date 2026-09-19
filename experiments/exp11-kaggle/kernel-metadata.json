@@ -1,0 +1,16 @@
+{
+  "id": "math4amd/exp11-kaggle-baseline",
+  "title": "Exp11 Kaggle Baseline \u2014 exp10 geometry cross-hardware replication (0.5B, T4 bf16)",
+  "code_file": "run_baseline.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": false,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": [
+    "qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
+  ]
+}

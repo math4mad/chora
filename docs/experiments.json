@@ -924,8 +924,8 @@
     "at": "/H8_pass_so_far"
    },
    "claim": "scored",
-   "next": "P1 upon owner's network nod (3B + Llama fetch, pin before train). Owner's 19:00 review now covers exp10 announced + exp11 P1 go.",
-   "notes": "P0 DONE same evening as registration: 1.5B cell of H8 PASS (max 0.137, anchors 0.592/0.637), H7 general-probe PASS (≈0.02 vs all domains). See artifacts/results/exp11/report_11_p0.json."
+   "next": "P1 on Kaggle (owner's workhorse ruling): queue 3B + Llama cells as kernels; local MPS freed. To Do channel awaits owner's Entra client-id (5-min).",
+   "notes": "P0 DONE same evening as registration: 1.5B cell of H8 PASS (max 0.137, anchors 0.592/0.637), H7 general-probe PASS (≈0.02 vs all domains). See artifacts/results/exp11/report_11_p0.json. | KAGGLE E2E PROVEN 2026-09-19: v4 kernel COMPLETE in 2.5 GPU-min; replication numbers within band (see artifacts/results/exp11/report_kaggle_baseline.json). Larger models go to Kaggle per owner."
   }
  ]
 }

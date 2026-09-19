@@ -653,6 +653,16 @@
    "by": "chora@38737ba",
    "script": "experiments/exp11-horizontal-matrix/scripts/{train_lora11,svd_11}.py",
    "notes": "H8 first cell PASS: max|dWov| specialists 0.1371 < 0.2 with anchors lit (0.592/0.637); H7 PASS: general~domains ≈ 0.02 — general LoRA is a sixth orthogonal writer, not a shared core"
+  },
+  {
+   "path": "artifacts/results/exp11/report_kaggle_baseline.json",
+   "sha256": "597ca46bd2d0e7be2a4e623fbcbdcde023ba27abef2ec6e311d436a0a08babf5",
+   "bytes": 2022,
+   "source": "kaggle kernel math4amd/exp11-kaggle-baseline v4 (Tesla T4, torch 2.10+cu128, bf16)",
+   "obtained": "2026-09-19",
+   "by": "chora (kernel by lola@LETHE)",
+   "script": "experiments/exp11-kaggle/run_baseline.py (corpus embedded sha-pinned; model via kaggle models qwen-lm/qwen2.5/transformers/0.5b-instruct/1)",
+   "notes": "KAGGLE PIPELINE COMPLETE: 2.5min GPU, cross-hardware replication of exp10 geometry — reads flat 3.78-3.79, specialists dWov 0.081 <0.2 band, interpolation anchors lit 0.591/0.644 vs local 0.618/0.637. Gate-6 machine-confound answered: seed13 survives fp32/MPS → bf16/CUDA unchanged."
   }
  ]
 }
