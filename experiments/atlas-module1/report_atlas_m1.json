@@ -1,0 +1,52 @@
+{
+ "run": "atlas-m1-verify",
+ "n_spaces": 172,
+ "minutes": 1.8,
+ "hardware": "Tesla T4",
+ "intra_median": 0.9693,
+ "inter_sample_mean": 0.8963,
+ "inter_max": 0.9751,
+ "weakest": [
+  {
+   "space": "梅芙线",
+   "intra_mean_cos": 0.8588
+  },
+  {
+   "space": "果园秋收",
+   "intra_mean_cos": 0.9031
+  },
+  {
+   "space": "康复训练",
+   "intra_mean_cos": 0.9113
+  },
+  {
+   "space": "电网调度",
+   "intra_mean_cos": 0.9263
+  },
+  {
+   "space": "海关查验",
+   "intra_mean_cos": 0.9312
+  },
+  {
+   "space": "法庭庭审",
+   "intra_mean_cos": 0.9317
+  },
+  {
+   "space": "重症监护",
+   "intra_mean_cos": 0.9324
+  },
+  {
+   "space": "火箭发射",
+   "intra_mean_cos": 0.9363
+  },
+  {
+   "space": "夜航航班",
+   "intra_mean_cos": 0.9396
+  },
+  {
+   "space": "检验科室",
+   "intra_mean_cos": 0.9407
+  }
+ ],
+ "H_A1_pass": false
+}
