@@ -7,3 +7,5 @@ data/*
 !models/manifest.json
 __pycache__/
 .mail/
+experiments/exp11-kaggle/matrix_out/
+experiments/atlas-module1/out/

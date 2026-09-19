@@ -926,6 +926,29 @@
    "claim": "scored",
    "next": "P1 on Kaggle (owner's workhorse ruling): queue 3B + Llama cells as kernels; local MPS freed. To Do channel awaits owner's Entra client-id (5-min).",
    "notes": "P0 DONE same evening as registration: 1.5B cell of H8 PASS (max 0.137, anchors 0.592/0.637), H7 general-probe PASS (≈0.02 vs all domains). See artifacts/results/exp11/report_11_p0.json. | KAGGLE E2E PROVEN 2026-09-19: v4 kernel COMPLETE in 2.5 GPU-min; replication numbers within band (see artifacts/results/exp11/report_kaggle_baseline.json). Larger models go to Kaggle per owner."
+  },
+  {
+   "id": "atlas-m1",
+   "title": "Atlas 模块一 · 60 空间 360 token 概念图谱构造与可分性验证 (夜航 Kaggle)",
+   "kind": "dev",
+   "owner_seat": "lola@LETHE (owner commission 12:28)",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "experiments/atlas-module1/PREREG.md",
+    "commit": "17b821f",
+    "marker": "## Deliverables"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/atlas-module1/atlas_build.py"
+   },
+   "produces": [
+    "experiments/atlas-module1/atlas_module1.json"
+   ],
+   "claim": "registered",
+   "next": "夜核自动发射 (席位空即射); report_atlas_m1.json 回收后按 H-A1 判准入 → 模块二 (Qwen3B+LoRA Dirichlet 头) 设计案候明日圈点",
+   "notes": "确定性生成 (零随机, 字节可复); 觉醒循环空间采用文档原例; 360 token 零重复断言在码内"
   }
  ]
 }
