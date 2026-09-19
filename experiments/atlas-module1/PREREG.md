@@ -5,3 +5,7 @@
 **Night kernel (验证不产数据):** 0.5B 挂载 (与 exp11-baseline 同镜像同疫苗), embed 360 tokens → 每空间 intra 均余弦 · 全局跨空间最大碰撞 top15 · 弱空间榜
 **H-A1 (预备判, 供模块二准入):** intra 中位 > 0.75 且不存在 inter ≥ intra中位的跨空间碰撞 → 图谱可分, 准入模块二 (Qwen3B+LoRA 训练目标即此 360×5 α 场) ; 否则列弱空间返工表, 模块二缓行
 **Deliverables:** atlas_module1.json (sha 5330bb46…) + report_atlas_m1.json + 弱空间/碰撞榜 → artifacts pin
+
+## 定名御批 (2026-09-19 午后)
+**Atlas** — 主人亲定为「**概念空间的导航图**」(the nautical chart of concept spaces)。
+本目录、夜核 slug、后续 M2-M5 皆承此名。园区命名律: 容器先有名, 才有户籍与收据。
