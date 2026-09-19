@@ -1,9 +1,16 @@
 {
   "id": "math4amd/atlas-m1-verify",
-  "title": "Atlas M1 Verify — 60 spaces x 360 tokens separability",
+  "title": "Atlas M1 Verify",
   "code_file": "verify_kernel.py",
-  "language": "python", "kernel_type": "script", "is_private": true,
-  "enable_gpu": true, "enable_internet": true,
-  "dataset_sources": [], "competition_sources": [], "kernel_sources": [],
-  "model_sources": ["qwen-lm/qwen2.5/transformers/0.5b-instruct/1"]
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": [
+    "qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
+  ]
 }
