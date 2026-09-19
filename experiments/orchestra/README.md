@@ -123,3 +123,70 @@ flowchart TD
 ```
 
 读图口诀：**一票入门（guard）、两路工马（本地/Kaggle）、三问刹车（clarify→☑）、四账归底（persist/rehydrate）、五屏同光（提醒·邮件·备忘·Note·玻璃）**。
+
+---
+
+## Redux-multiagent 总图（多智能体宪法 · 2026-09-19）
+
+```mermaid
+flowchart TB
+  subgraph HUM["👤 人类席位 (Owner)"]
+    UI["📱 提醒事项 ☑ / To Do / 邮件<br/>唯一合法批复通道"]
+  end
+
+  subgraph BUS["🎛 一台总线 · 三物种各安其位"]
+    direction LR
+    subgraph MW["流水线 (middleware)"]
+      direction TB
+      ACT["dispatch(action)<br/>══ 唯一入口, 乘客不碰货 ══"]
+      GRD["00 guard 写篱<br/>meta.origin 验明正身"]
+      THRO["20 throttle (候补)<br/>限流闸"]
+      PER["90 persist 链底<br/>票票落账 NDJSON"]
+      ACT --> GRD --> THRO --> PER
+    end
+
+    subgraph WKS["工人宿舍 (redux-saga)"]
+      direction TB
+      PAG["🧠 P 规划者<br/>拆解·定策·评置信"]
+      DAG["🛠 D 执行者<br/>本地训练·git·仪表"]
+      KAG["🏭 K 驻场<br/>Kaggle kernel 膛<br/>+ Model API 闸"]
+      WDG["👁 W 督岗 (守法一/二)<br/>不碰任务, 只盯 P/D 的每步票<br/>偏航即 AGENT_PAUSE"]
+      CLR["🛑 clarify 卡钳<br/>take(CLARIFY_RESPONSE)"]
+      KEY["🔑 2-of-2 双钥 (守法三)<br/>不可逆: VOTE_P ∧ VOTE_D 齐放<br/>一票否决即挂起问人"]
+    end
+
+    subgraph ST["状态本体 (reducer · 纯函数=贝叶斯)"]
+      WLD["world 唯一真身"]
+      PLN["plans 任务与计划"]
+      CLA["clarif 挂起态 round"]
+      SCR["agents[id].scratch 私事带篱"]
+    end
+
+    SLR["selector 层 · 每 agent 一张车窗<br/>ctxFor(id)=world摘要+己plan+账尾<br/>(导出物非寄存物)"]
+    RVY["🔁 rehydrate<br/>读账回放 · 幂等 worker 续办"]
+    TTR["⏳ time-travel (enhancer)<br/>快照·jump·DevTools 同乘"]
+    BRG["30 bridge (候补)<br/>进程间转发 action<br/>→ 多机双哨各记各账 (守法二)"]
+  end
+
+  GRD -->|"合法票"| WKS
+  PAG -->|"AGENT_PLAN"| DAG
+  PAG -->|"LLM_REQUEST"| KAG
+  PAG -.->|"conf < τ"| CLR
+  DAG -.->|"PROGRESS 供督岗"| WDG
+  WDG -->|"off-strategy → PAUSE"| PAG
+  DAG -->|"不可逆动作"| KEY
+  PAG -->|"票②"| KEY
+  CLR -->|"CLARIFY_REQUEST"| UI
+  UI -->|"☑ CLARIFY_RESPONSE"| CLR
+  KEY -->|"双票齐"| DAG
+  WKS --> ST
+  ST --> SLR
+  PER -.落账.-> RVY
+  RVY -.复活.-> ACT
+  TTR -.快照.-> PER
+  PER -.镜像.-> BRG
+```
+
+**站岗四法注**（图上四件岗哨）：守法一 `WDG 督岗`=P盯D每一步；守法二 `BRG 双哨`=多机各记各账、对账验真（共享班次表不共享记事本）；守法三 `KEY 双钥`=红线动作两票连署；守法四=双 worker 同速影子（金贵岗位才配, 未画）。
+
+宪法四条：**乘客不碰货（一切经 dispatch）· 写要验身（guard）· 票票有根（persist）· 上下文看车窗不搬货（selector）**。
