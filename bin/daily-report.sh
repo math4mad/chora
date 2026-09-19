@@ -55,12 +55,12 @@ else
     osascript -e 'tell application "Reminders" to tell list "任务" of account "Exchange" to get name of (reminders whose completed is true)' 2>/dev/null | tr ',' '\n' | sed 's/^/☑MS /' | tail -6
     echo
     echo "## Kaggle 矩阵近况"
-    tail -6 /tmp/kag_marshal.log 2>/dev/null
+    tail -6 /tmp/kag_night.log 2>/dev/null || tail -4 /tmp/kag_marshal.log 2>/dev/null
     ls $CHORA/experiments/exp11-kaggle/matrix_out/*.done 2>/dev/null | sed 's/^/完成: /'
     echo
     echo "_dispatched by bin/daily-report.sh · 回执请 reply_"
   } > $DIG
-  cd $CHORA && bash bin/mail.sh send --from lola --to theoros --subject "园区日报 $D" --body "$DIG" 2>&1 | tee -a $LOG
+  cd $CHORA && bash bin/mail.sh send --from lola --to theoros --subject "Concept-Space 日报 $D" --body "$DIG" 2>&1 | tee -a $LOG
   mkdir -p $GRAPHIA/notes && { echo; sed "s/^# 园区日报/## 园区日报/" $DIG; } >> $GRAPHIA/notes/daily-log.md
   cd $GRAPHIA && git add notes/daily-log.md 2>/dev/null && git commit -q -m "daily digest $D (evening patrol, machine-written)" 2>/dev/null && echo "graphia daily-log appended" >> $LOG
   /opt/miniconda3/envs/default/bin/python "/Users/mac/Programming/code-2026/chora/bin/daily_note.py" "$DIG" "$D" >> $LOG 2>&1 || echo "notes channel failed (不阻断邮件与图档)" >> $LOG
