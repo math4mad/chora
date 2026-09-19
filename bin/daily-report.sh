@@ -54,7 +54,12 @@ else
     osascript -e 'tell application "Reminders" to tell list "Concept-Space" to get "• " & (name of every reminder whose completed is true)' 2>/dev/null | tr ',' '\n' | tail -8
     osascript -e 'tell application "Reminders" to tell list "Concept-Space" of account "Exchange" to get name of (reminders whose completed is true)' 2>/dev/null | tr ',' '\n' | sed 's/^/☑MS /' | tail -6
     echo
-    echo "## Kaggle 矩阵近况"
+    echo "## 外界哨位"
+    curl -s --max-time 15 https://api.github.com/repos/redux-saga/redux-saga/issues/2784 2>/dev/null | /usr/local/bin/python3 -c "
+import json,sys
+try: d=json.load(sys.stdin); print('· redux-saga RFC #2784 → 评论', d.get('comments'), '| 状态', d.get('state'))
+except Exception: print('· RFC #2784 哨兵暂哑 (网络)')" 2>/dev/null
+  echo "## Kaggle 矩阵近况"
     tail -6 /tmp/kag_night.log 2>/dev/null || tail -4 /tmp/kag_marshal.log 2>/dev/null
     ls $CHORA/experiments/exp11-kaggle/matrix_out/*.done 2>/dev/null | sed 's/^/完成: /'
     echo
