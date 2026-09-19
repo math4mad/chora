@@ -3,6 +3,9 @@
 # Per-base geometry report flushed to /kaggle/working; a dead cell is recorded, never silent.
 import os, json, time, hashlib, base64, itertools
 import numpy as np, torch
+# —— 环境自赎: Kaggle 镜像 torchao 与 transformers 冲突 (2026-09-19 午后实锤) ——
+import subprocess as _sp, sys as _s
+_sp.run([_s.executable,"-m","pip","install","-q","--upgrade","torchao"], capture_output=True)
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import LoraConfig, get_peft_model, TaskType
 from safetensors.torch import save_file
