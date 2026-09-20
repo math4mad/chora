@@ -1,0 +1,2 @@
+89206b4df3f19b70427204eafe4e625d085ec2400358b4b244cfdb1b426b4fdb  artifacts/external/Getting Started on Kaggle | Kaggle.pdf
+02ee3bb7e190f566cf23d62cdfcf5e9fba6ae24ffe33e2c5b7852ce91e86d4fa  artifacts/external/Kaggle Research Grant Program | Kaggle.pdf
