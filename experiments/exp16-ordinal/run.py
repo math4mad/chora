@@ -129,7 +129,7 @@ for dm,ls in (("ballondor",lists_dor()),("nbadraft",lists_nba()),("hofwar",lists
     M={am:{tx:nll(arms[am]["sd"],texts[tx]) for tx in ("ord","rev","shuf")} for am in ("ord","rev","shuf")}
     res["domains"][dm]={"nll_matrix":M,
       "direction_index":{am:round(M[am]["rev"]-M[am]["ord"],4) for am in M},
-      "angles":{"ord~rev":ang(ARMS_PLACEHOLDER["rev"]["d"]),"ord~shuf":ang(ARMS_PLACEHOLDER["shuf"]["d"]),"rev~shuf":ang(arms["rev"]["d"],arms["shuf"]["d"])},
+      "angles":{"ord~rev":ang(arms["ord"]["d"],arms["rev"]["d"]),"ord~shuf":ang(arms["ord"]["d"],arms["shuf"]["d"]),"rev~shuf":ang(arms["rev"]["d"],arms["shuf"]["d"])},
       "n_lists":len(ls)}
     for k,v in arms.items(): res.setdefault("last_d",{})[k]=0
     _D.setdefault(dm,arms["ord"]["d"])
