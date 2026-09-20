@@ -20,7 +20,7 @@ for f,m in PAYLOAD.items():
     assert hashlib.sha256(raw).hexdigest()==m["sha256"], "corpus drift: "+f
     open(os.path.join(DATA,f),"wb").write(raw)
 
-BASES=[("llama-3.2-1b-instruct","metaresearch/llama-3.2/transformers/1b-instruct/1")]
+BASES=[("llama-3.2-1b-instruct","metaresearch/llama-3.2/transformers/1b-instruct/2")]
 
 ARMS={"spring":("corpus_spring.jsonl",6),"summer":("corpus_summer.jsonl",6),"code":("corpus_code.jsonl",6),
       "legal":("corpus_legal.jsonl",6),"medical":("corpus_medical.jsonl",6),

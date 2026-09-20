@@ -1,4 +1,4 @@
-MOUNT="/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-instruct/1"
+MOUNT="/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-instruct/2"
 _D={}
 # Exp13 弹体共用引擎 (各 run.py 头部注入 CORPORA 与 MOUNT 后 exec 本文件)
 import base64, json, math, time

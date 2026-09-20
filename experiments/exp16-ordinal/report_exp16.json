@@ -1,0 +1,107 @@
+{
+ "exp": "16-ordinal-anchors",
+ "domains": {
+  "ballondor": {
+   "nll_matrix": {
+    "ord": {
+     "ord": 0.4665,
+     "rev": 0.8854,
+     "shuf": 1.002
+    },
+    "rev": {
+     "ord": 0.7326,
+     "rev": 0.526,
+     "shuf": 1.01
+    },
+    "shuf": {
+     "ord": 0.7966,
+     "rev": 0.7929,
+     "shuf": 0.4926
+    }
+   },
+   "direction_index": {
+    "ord": 0.4189,
+    "rev": -0.2066,
+    "shuf": -0.0037
+   },
+   "angles": {
+    "ord~rev": 56.41,
+    "ord~shuf": 56.06,
+    "rev~shuf": 51.05
+   },
+   "n_lists": 3
+  },
+  "nbadraft": {
+   "nll_matrix": {
+    "ord": {
+     "ord": 0.916,
+     "rev": 1.21,
+     "shuf": 1.4481
+    },
+    "rev": {
+     "ord": 1.1791,
+     "rev": 0.8631,
+     "shuf": 1.3014
+    },
+    "shuf": {
+     "ord": 1.1601,
+     "rev": 1.1137,
+     "shuf": 1.0116
+    }
+   },
+   "direction_index": {
+    "ord": 0.294,
+    "rev": -0.316,
+    "shuf": -0.0464
+   },
+   "angles": {
+    "ord~rev": 56.93,
+    "ord~shuf": 58.17,
+    "rev~shuf": 50.64
+   },
+   "n_lists": 2
+  },
+  "hofwar": {
+   "nll_matrix": {
+    "ord": {
+     "ord": 0.6685,
+     "rev": 0.9828,
+     "shuf": 1.3444
+    },
+    "rev": {
+     "ord": 0.9204,
+     "rev": 0.7674,
+     "shuf": 1.3413
+    },
+    "shuf": {
+     "ord": 0.9573,
+     "rev": 0.992,
+     "shuf": 0.9746
+    }
+   },
+   "direction_index": {
+    "ord": 0.3143,
+    "rev": -0.153,
+    "shuf": 0.0347
+   },
+   "angles": {
+    "ord~rev": 56.07,
+    "ord~shuf": 60.15,
+    "rev~shuf": 56.53
+   },
+   "n_lists": 2
+  }
+ },
+ "last_d": {
+  "ord": 0,
+  "rev": 0,
+  "shuf": 0
+ },
+ "cross_domain_ord": {
+  "ballondor~nbadraft": 83.31,
+  "nbadraft~hofwar": 84.05,
+  "ballondor~hofwar": 83.57
+ },
+ "minutes": 2.6,
+ "prereg_note": "若 base 预训练已含答案, NLL 绝对值不可比; 本实验判决全部基于同臂内 rev-ord 差值与方向翻转, 与记忆泄漏无关"
+}
