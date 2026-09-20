@@ -1,0 +1,9 @@
+{
+ "exp": "P8 预稿(双时钟对齐表)",
+ "status": "待 exp12/13 数据回匣后正式制图",
+ "existing_reports": [
+  "report_exp11_qwen3.json",
+  "report_P0_threepoint.json"
+ ],
+ "method": "横轴换两种时钟(墙钟分钟 vs 训练步数=变更计数)重绘各指标曲线, 比较残差方差; 预言: 变更计更齐(方差比<1)"
+}

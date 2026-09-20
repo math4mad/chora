@@ -1,0 +1,16 @@
+{
+ "id": "math4amd/exp12-timefidelity",
+ "title": "Exp12 Timefidelity ord vs shuf",
+ "code_file": "run.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": [
+  "qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
+ ]
+}

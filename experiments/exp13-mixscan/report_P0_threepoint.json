@@ -1,0 +1,22 @@
+{
+ "exp": "P0 三点相图(白嫖版)",
+ "theta_min_spring_summer": 12.19,
+ "theta_med_spring_summer": 68.42,
+ "theta_min_spring_mid": 11.7,
+ "theta_med_spring_mid": 44.09,
+ "ang_M5_vs_M0": 51.83,
+ "ang_M5_vs_M10": 48.66,
+ "interp_check": "M5 角度和 100.49° vs 直线 180° (Gap 论预言和≠180 且分段; 平滑论预言≈180)",
+ "probe_boundary": [
+  0.9642,
+  0.9553,
+  0.9541,
+  0.9115,
+  0.3159,
+  0.8613,
+  0.5376,
+  0.7658
+ ],
+ "probe_bimodal": true,
+ "minutes": 0.3
+}
