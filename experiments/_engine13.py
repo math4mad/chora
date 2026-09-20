@@ -30,7 +30,7 @@ def collate(b):
     for i,l in b:
         n = L-len(i); ids.append(i+[pad]*n); lab.append(l+[-100]*n); at.append([1]*len(i)+[0]*n)
     return torch.tensor(ids).to(dev), torch.tensor(lab).to(dev), torch.tensor(at).to(dev)
-def train(batch):
+def train(batch, save_dir=None):
     torch.manual_seed(SEED); np.random.seed(SEED)
     model = AutoModelForCausalLM.from_pretrained(MOUNT, dtype=torch.bfloat16)
     model = get_peft_model(model, LoraConfig(task_type=TaskType.CAUSAL_LM, **RECIPE, bias="none")); model.to(dev)
@@ -43,6 +43,7 @@ def train(batch):
             loss.backward(); acc += loss.item()*ACCUM; nb += 1; step += 1
             if step % ACCUM == 0: opt.step(); opt.zero_grad()
         last = acc/max(1,nb)
+    if save_dir: model.save_pretrained(save_dir)
     ad = {k:v.detach().float().cpu().numpy() for k,v in model.state_dict().items() if "lora_" in k}
     del model; torch.cuda.empty_cache(); return ad, round(float(last), 3)
 def dvec(ad):

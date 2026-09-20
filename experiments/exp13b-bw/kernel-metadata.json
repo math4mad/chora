@@ -1,5 +1,5 @@
 {
- "id": "math4amd/exp13b-bw",
+ "id": "math4amd/exp13b-bw-mixscan-gap",
  "title": "Exp13b BW mixscan gap",
  "code_file": "run.py",
  "language": "python",
