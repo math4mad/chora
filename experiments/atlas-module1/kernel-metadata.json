@@ -1,7 +1,7 @@
 {
-  "id": "math4amd/atlas-m1-verify",
+  "id": "math4amd/atlas-m1-verify-v2",
   "title": "Atlas M1 Verify v2",
-  "code_file": "verify_kernel.py",
+  "code_file": "verify_kernel_v2.py",
   "language": "python",
   "kernel_type": "script",
   "is_private": true,
