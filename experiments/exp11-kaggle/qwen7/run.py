@@ -8,6 +8,7 @@ import numpy as np, torch
 import subprocess as _sp, sys as _s
 _sp.run([_s.executable,"-m","pip","install","-q","--upgrade","torchao"], capture_output=True)
 from transformers import AutoTokenizer, AutoModelForCausalLM
+import bitsandbytes  # noqa: F401  (4bit: 7B 进 T4-12G, 偏差已注记 PREREG)
 from peft import LoraConfig, get_peft_model, TaskType
 from safetensors.torch import save_file
 # all exp10/11 corpora, sha-pinned at build 2026-09-19
@@ -116,5 +117,6 @@ for disp,rel in BASES:
         master["bases"][disp]={"error":type(ex).__name__+": "+str(ex)[:200],"minutes":round((time.time()-t0)/60,1)}
     json.dump(master,open(os.path.join(OUT,"report_exp11_qwen7.json"),"w"),indent=1)  # flush每基座一局, 断亦留档
     print("== base done:",disp,flush=True)
+    print("REPORT_SPIT", disp, __import__("base64").b64encode(json.dumps(master["bases"][disp]).encode()).decode()[:6000], flush=True)  # 每基座即吐: ERROR 丢工件, 日志是唯一幸存者
 print(json.dumps({b:("ERR" if "error" in v else v.get("minutes")) for b,v in master["bases"].items()},indent=1))
-print("REPORT_LINE", __import__("base64").b64encode(open("/tmp/rl.json","w") or open(os.path.join(OUT,"report_exp11_qwen7.json"),"rb").read()).decode())  # REPORT LINE
+_rp=open(os.path.join(OUT,"report_exp11_qwen7.json"),"rb").read(); print("REPORT_LINE", __import__("base64").b64encode(_rp).decode())  # REPORT LINE

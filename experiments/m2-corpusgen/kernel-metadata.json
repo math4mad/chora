@@ -1,8 +1,14 @@
 {
-  "id": "math4amd/m2-corpusgen",
-  "title": "M2 CorpusGen 172 Spaces via Model API",
-  "code_file": "run.py", "language": "python", "kernel_type": "script",
-  "is_private": true, "enable_gpu": true, "enable_internet": true,
-  "dataset_sources": [], "competition_sources": [], "kernel_sources": [],
+  "id": "math4amd/m2-corpusgen-172-spaces-via-model-api",
+  "title": "m2 corpusgen 172 spaces via model api",
+  "code_file": "run.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": true,
+  "enable_gpu": true,
+  "enable_internet": true,
+  "dataset_sources": [],
+  "competition_sources": [],
+  "kernel_sources": [],
   "model_sources": []
 }
