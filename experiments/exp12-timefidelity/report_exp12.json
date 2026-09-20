@@ -1,0 +1,32 @@
+{
+ "exp": "12-timefidelity",
+ "arms": {
+  "spring_ord": {
+   "loss": 0.899,
+   "nll_ord": 0.5594,
+   "nll_shuf": 0.5906
+  },
+  "spring_shuf": {
+   "loss": 0.915,
+   "nll_ord": 0.5832,
+   "nll_shuf": 0.5677
+  },
+  "summer_ord": {
+   "loss": 1.028,
+   "nll_ord": 4.0962,
+   "nll_shuf": 4.1161
+  },
+  "summer_shuf": {
+   "loss": 1.028,
+   "nll_ord": 4.0962,
+   "nll_shuf": 4.1161
+  }
+ },
+ "angles": {
+  "ord_vs_shuf_spring": 7.02,
+  "ord_vs_shuf_summer": 0.0,
+  "spring_ord_vs_summer_ord": 85.34,
+  "spring_ord_vs_summer_shuf": 85.34
+ },
+ "minutes": 3.5
+}
