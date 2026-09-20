@@ -1,0 +1,162 @@
+{
+ "kernel": "exp13-mixscan",
+ "seed": 13,
+ "hp": {
+  "epochs": 6,
+  "batch": 2,
+  "accum": 4,
+  "lr": 0.0001,
+  "recipe": {
+   "r": 16,
+   "lora_alpha": 32,
+   "lora_dropout": 0.05,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ]
+  }
+ },
+ "probe_train_acc": 1.0,
+ "points": [
+  {
+   "p": 0.0,
+   "loss": 0.872,
+   "cos_vs_M0": 1.0,
+   "cos_vs_M10": 0.083,
+   "ang_vs_M0": 0.0,
+   "ang_vs_M10": 85.24,
+   "interp_gap": 0.0
+  },
+  {
+   "p": 0.1,
+   "loss": 0.901,
+   "cos_vs_M0": 0.8192,
+   "cos_vs_M10": 0.1781,
+   "ang_vs_M0": 35.0,
+   "ang_vs_M10": 79.74,
+   "interp_gap": 0.205
+  },
+  {
+   "p": 0.2,
+   "loss": 0.917,
+   "cos_vs_M0": 0.7329,
+   "cos_vs_M10": 0.2462,
+   "ang_vs_M0": 42.87,
+   "ang_vs_M10": 75.75,
+   "interp_gap": 0.1614
+  },
+  {
+   "p": 0.3,
+   "loss": 0.961,
+   "cos_vs_M0": 0.667,
+   "cos_vs_M10": 0.326,
+   "ang_vs_M0": 48.16,
+   "ang_vs_M10": 70.98,
+   "interp_gap": 0.1042
+  },
+  {
+   "p": 0.4,
+   "loss": 0.919,
+   "cos_vs_M0": 0.5591,
+   "cos_vs_M10": 0.4173,
+   "ang_vs_M0": 56.01,
+   "ang_vs_M10": 65.34,
+   "interp_gap": 0.0616
+  },
+  {
+   "p": 0.5,
+   "loss": 1.033,
+   "cos_vs_M0": 0.4745,
+   "cos_vs_M10": 0.4866,
+   "ang_vs_M0": 61.67,
+   "ang_vs_M10": 60.88,
+   "interp_gap": 0.0032
+  },
+  {
+   "p": 0.6,
+   "loss": 0.968,
+   "cos_vs_M0": 0.3831,
+   "cos_vs_M10": 0.5653,
+   "ang_vs_M0": 67.47,
+   "ang_vs_M10": 55.58,
+   "interp_gap": 0.0517
+  },
+  {
+   "p": 0.7,
+   "loss": 1.029,
+   "cos_vs_M0": 0.3216,
+   "cos_vs_M10": 0.6599,
+   "ang_vs_M0": 71.24,
+   "ang_vs_M10": 48.71,
+   "interp_gap": 0.1061
+  },
+  {
+   "p": 0.8,
+   "loss": 1.037,
+   "cos_vs_M0": 0.2259,
+   "cos_vs_M10": 0.7574,
+   "ang_vs_M0": 76.94,
+   "ang_vs_M10": 40.77,
+   "interp_gap": 0.1464
+  },
+  {
+   "p": 0.9,
+   "loss": 1.039,
+   "cos_vs_M0": 0.154,
+   "cos_vs_M10": 0.8432,
+   "ang_vs_M0": 81.14,
+   "ang_vs_M10": 32.52,
+   "interp_gap": 0.1861
+  },
+  {
+   "p": 1.0,
+   "loss": 1.158,
+   "cos_vs_M0": 0.083,
+   "cos_vs_M10": 1.0,
+   "ang_vs_M0": 85.24,
+   "ang_vs_M10": 0.0,
+   "interp_gap": 0.0
+  }
+ ],
+ "boundary": [
+  {
+   "text": "天气开始变暖，人们陆续回到家乡。",
+   "P_summer": 0.8771
+  },
+  {
+   "text": "傍晚的风带着一点湿热，街上有人准备过节。",
+   "P_summer": 0.8483
+  },
+  {
+   "text": "孩子们放假了，空气里有水果和烟火的味道。",
+   "P_summer": 0.8193
+  },
+  {
+   "text": "这个季节适合团聚，也适合去海边。",
+   "P_summer": 0.7623
+  },
+  {
+   "text": "年味还没散，日头已经热了。",
+   "P_summer": 0.6898
+  },
+  {
+   "text": "窗花还没撕，蝉先在叫。",
+   "P_summer": 0.7198
+  },
+  {
+   "text": "我们围着桌子，西瓜和饺子都在。",
+   "P_summer": 0.6489
+  },
+  {
+   "text": "寒假刚开头，短袖就翻出来了。",
+   "P_summer": 0.7553
+  }
+ ],
+ "minutes": 7.6,
+ "h13_note": "H13.1 smooth S-curve / H13.2 jump: inspect ang_vs_M0(p) monotonicity & boundary bimodality"
+}
