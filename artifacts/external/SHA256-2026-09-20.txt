@@ -4,3 +4,4 @@ f18b56519109f66a6782cedbfc14378f23881751cba482b56d8114f278704e17  chora/artifact
 b641d8d0570e7f680a5bc2749c97927a31e10c610923fc6e36df6ef974e8cb48  artifacts/external/by-qwenCognitive Space Construction-A Theoretical Framework for Agents Based on Probability Distributions and Basis Decomposition.docx
 a04500d3f81982f8864eeaf9031452fe426b4138085fb917081bf218415fa3ff  artifacts/external/What is Category Theory Anyway?   什么是范畴论.html
 f49fad328b4aaaa46e1293d904f324c3dabefa518b62538dbd51460b746d305f  artifacts/external/pomdp.org.html
+f304015f946a48cd2e73144dd548ad00e13922258ce130d220acbfcf6272b477  artifacts/external/模型训练：语料顺序与序列历史资...-20260922031503.docx
