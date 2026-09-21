@@ -150,3 +150,8 @@ ls artifacts/*/manifest.json           # what facts already exist
 Then state which experiment you are running (6 / 7 / 7.5), which benches it
 touches, and which manifest entries it consumes. If any input lacks a
 manifest entry, that is your first task, not an obstacle.
+
+## 内容红线（主人定 · 2026-09-21）
+与新冠疫情相关的内容一律不碰：不作考题、不入文章/论文/素材池、不作案例、不进对话。
+含但不限于：病毒/疫情命名、疾病编码（如 ICD U07.1）、防疫政策、相关统计。
+本条优先级最高，与任何其他创意方向冲突时，以此为准。E22 编号素材池已据此移除相关例证。
