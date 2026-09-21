@@ -1,0 +1,3 @@
+{"type":"world/receipt","payload":{"id":"spring","status":"done","sha":"s8"},"meta":{"origin":"k"}}
+{"type":"world/receipt","payload":{"id":"summer","status":"done","sha":"s6"},"meta":{"origin":"k"}}
+{"type":"agents/scratch","payload":{"note":"盯 kaggle"},"meta":{"origin":"p"}}
