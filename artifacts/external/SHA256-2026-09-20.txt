@@ -1,3 +1,4 @@
 89206b4df3f19b70427204eafe4e625d085ec2400358b4b244cfdb1b426b4fdb  artifacts/external/Getting Started on Kaggle | Kaggle.pdf
 02ee3bb7e190f566cf23d62cdfcf5e9fba6ae24ffe33e2c5b7852ce91e86d4fa  artifacts/external/Kaggle Research Grant Program | Kaggle.pdf
 f18b56519109f66a6782cedbfc14378f23881751cba482b56d8114f278704e17  chora/artifacts/external/20260921-talk-with-qwen.pdf
+b641d8d0570e7f680a5bc2749c97927a31e10c610923fc6e36df6ef974e8cb48  artifacts/external/by-qwenCognitive Space Construction-A Theoretical Framework for Agents Based on Probability Distributions and Basis Decomposition.docx
