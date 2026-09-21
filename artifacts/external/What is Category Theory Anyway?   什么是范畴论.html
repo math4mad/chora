@@ -1,0 +1,756 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>What is Category Theory Anyway?   什么是范畴论</title>
+    <style>
+        /* Bootstrap theme */
+
+body {
+    font-size: 1rem;
+    line-height: 1.6;
+    --bezel-color: rgba(0, 0, 0, 0.03);
+}
+
+body.app-style-dark {
+    --bezel-color: rgba(0, 0, 0, 0.25);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.6rem;
+}
+
+h2 {
+    font-size: 1.4rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+h4 {
+    font-size: 1.1rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+p {
+    margin: 1rem 0;
+}
+
+hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.app-style-dark hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+ol,
+ul {
+    padding-left: 2rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ol p,
+ul p {
+    margin: 0.3rem 0;
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+    margin-bottom: 0;
+}
+
+ul.task-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-bottom: 0.5rem;
+    margin-left: 2rem;
+}
+
+.footnote {
+    font-size: 87.5%;
+}
+
+.footnote p {
+    margin: 0;
+}
+
+blockquote {
+    margin: 0 0 1rem;
+}
+
+dfn {
+    font-style: italic;
+}
+
+b,
+strong {
+    font-weight: bolder;
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+sup {
+    top: -0.5em;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):hover,
+a:not([href]):not([tabindex]):focus {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]):focus {
+    outline: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+    font-family: ui-monospace, monospace;
+}
+
+pre {
+    margin: 1rem 0;
+    overflow: auto;
+}
+
+code {
+    color: #e83e8c;
+    word-break: break-word;
+}
+
+pre,
+code {
+    font-size: 87.5%;
+}
+
+pre code {
+    font-size: inherit;
+    color: inherit;
+    word-break: normal;
+}
+
+a > code {
+    color: inherit;
+}
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+mark {
+    padding: 2px 4px;
+    background-color: #fcf8e3;
+    border-radius: 4px;
+}
+
+.app-style-dark mark {
+    background-color: rgba(255, 255, 0, 0.8);
+    color: #000;
+}
+
+table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    border-collapse: collapse;
+    background-color: transparent;
+    --border-color: rgba(0, 0, 0, 0.09);
+    --hover-color: rgba(0, 0, 0, 0.03);
+}
+
+.app-style-dark table {
+    --border-color: rgba(255, 255, 255, 0.2);
+    --hover-color: rgba(255, 255, 255, 0.03);
+}
+
+table th,
+table td {
+    padding: 0.5rem;
+    vertical-align: top;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid var(--border-color);
+}
+
+table tbody + tbody {
+    border-top: 2px solid var(--border-color);
+}
+
+table tbody tr:hover {
+    background-color: var(--hover-color);
+}
+
+.toc {
+    max-width: min(50%, 300px);
+    float: right;
+    margin: 0 0 20px 20px;
+    padding: 10px 0;
+    background-color: var(--bezel-color);
+    border-radius: 8px;
+}
+
+@media (max-width: 350px) {
+    .toc {
+        float: none;
+        margin: 1.5rem 0;
+        max-width: none;
+    }
+
+    .toc:first-child {
+        margin: 0 0 1.5rem;
+    }
+}
+
+.toc > ul {
+    margin: 0;
+}
+
+.toc ul {
+    list-style: none;
+    padding: 0;
+}
+
+.toc > ul > li:not(:last-child) {
+    padding-bottom: 5px;
+}
+
+.toc a {
+    display: block;
+    padding: 1px 15px 1px 13px;
+    border-left: 2px solid transparent;
+    font-weight: 600;
+    color: inherit;
+    opacity: 0.75;
+}
+
+.toc a:hover,
+.toc a:focus {
+    text-decoration: none;
+    opacity: 1;
+    border-left: 2px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+.toc ul ul a {
+    font-size: 90%;
+    font-weight: 500;
+    padding-left: 25px;
+    opacity: 0.85;
+}
+
+.toc ul ul ul a {
+    padding-left: 40px;
+    font-weight: 400;
+}
+
+.toc ul ul ul ul a {
+    padding-left: 55px;
+}
+
+.toc ul ul ul ul ul a {
+    padding-left: 70px;
+}
+
+.toc ul ul ul ul ul ul a {
+    padding-left: 85px;
+}
+
+.codehilite pre {
+    padding: 1rem 1.5rem;
+    background-color: var(--bezel-color);
+}
+
+blockquote {
+    border-left: 3px solid rgba(0, 0, 0, 0.1);
+    padding-left: 10px;
+}
+
+.app-style-dark blockquote {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+        :root { font-size: 19.0px }
+:root { --accent-color: #0a60ff }
+
+body {
+    font-family: -apple-system, system-ui, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 16px 20px;
+    color: #3c4043;
+    print-color-adjust: exact;
+}
+
+
+
+
+
+
+
+html, body { background-color: #f7f7f7 }
+
+a { color: #0a60ff }
+
+pre, code, kbd, samp {
+    font-family: ui-monospace, monospace;
+    -webkit-font-smoothing: subpixel-antialiased !important;
+}
+
+/* prevent horizontal overflow */
+
+body { overflow-wrap: break-word }
+ul, ol { word-break: break-word }
+img { max-width: 100% !important }
+code { white-space: normal !important }
+pre { white-space: pre-wrap !important }
+
+/* supporting pre/code structure for code blocks */
+
+pre code {
+    white-space: pre-wrap !important;
+    display: contents !important;
+}
+
+/* supporting code block line numbers */
+
+[data-linenos]:before {
+    content: attr(data-linenos);
+    opacity: 0.4;
+}
+
+/* overscroll */
+
+body > *:nth-last-child(1 of :not(.sticky-toc)) {
+    margin-bottom: 0;
+}
+
+
+
+.mermaid:not([data-processed]),
+.mermaid-parse-error {
+    background-color: var(--bezel-color);
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    border-radius: 6px;
+    font-family: ui-monospace, monospace;
+    font-size: 87.5%;
+    white-space: pre-wrap;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+.mermaid-parse-error {
+    padding: 0;
+
+    .error-message {
+        padding: 0.8rem 1.5rem 1rem;
+        border-radius: 6px 6px 0 0;
+        color: rgba(255, 255, 255, 0.9);
+        background: #e34d59;
+    }
+    .error-source {
+        padding: 1rem 1.5rem;
+    }
+}
+.mermaid {
+    --mermaid-font-family: -apple-system, Helvetica, sans-serif;
+    .chart-title text,
+.titleText,
+text[class$="TitleText"],
+text[font-size="4ex"], /* timeline */
+svg[aria-roledescription="quadrantChart"] .title text,
+svg[aria-roledescription="sequence"] > text:last-child,
+svg[aria-roledescription="c4"] > text:last-child
+{
+    font-size: 1.2rem !important;
+    font-weight: 600 !important;
+}
+
+.edgeLabel .label span {
+    color: #6d7072 !important;
+    background: #ebebeb !important;
+}
+
+.edgeLabel .label rect,
+.relationshipLabelBox {
+    opacity: 1.0 !important;
+    fill: #ebebeb !important;
+}
+
+.relationshipLabel {
+    fill: #6d7072;
+}
+
+svg[aria-roledescription="gantt"] {
+    .grid .tick line {
+        stroke: #adadad;
+    }
+}
+
+svg[aria-roledescription="c4"] {
+    text[fill="#444444"] {
+        fill: currentcolor;
+    }
+    line[stroke="#444444"], path[stroke="#444444"] {
+        stroke: currentcolor;
+    }
+    rect[stroke="#444444"] {
+        stroke: #376ebf;
+    }
+}
+
+svg[aria-roledescription="journey"] {
+    circle.face, circle.face + g > * {
+        stroke: #3c4043 !important;
+    }
+    circle.face + g > * {
+        fill: #3c4043 !important;
+    }
+    rect.journey-section, rect.task {
+        stroke: transparent !important;
+    }
+}
+
+svg[aria-roledescription="quadrantChart"] {
+    .labels text, .quadrants text {
+        font-size: 1rem !important;
+    }
+    .data-points text {
+        font-size: 0.8rem !important;
+    }
+}
+
+svg[aria-roledescription="gitGraph"] {
+    .branchLabelBkg {
+        opacity: 0.3;
+    }
+    .commit-label-bkg {
+        opacity: 0.7 !important;
+    }
+    .commit-cherry-pick[fill] {
+        fill: #f7f7f7;
+    }
+    .commit-cherry-pick[stroke] {
+        stroke: #f7f7f7;
+    }
+}
+
+svg[aria-roledescription="block"] {
+    rect.cluster {
+        fill: #f0f6ff !important;
+    }
+}
+
+svg[aria-roledescription="mindmap"] {
+    .section-root text {
+        fill: #ffffff !important;
+    }
+}
+
+svg[aria-roledescription="classDiagram"] .divider,
+svg[aria-roledescription="requirement"] .req-title-line {
+    opacity: 0.3;
+}
+
+svg[aria-roledescription="xychart"] {
+    g[class^="bar-plot-"] {
+        opacity: 0.3;
+    }
+}
+
+svg[aria-roledescription="classDiagram"] {
+    .cluster rect {
+        stroke: #376ebf !important;
+    }
+    .cluster-label text {
+        text-anchor: middle;
+    }
+}
+
+svg[aria-roledescription="sequence"] {
+    rect.rect[stroke="rgb(0,0,0, 0.5)"] {
+        stroke: #376ebf;
+    }
+}
+}
+
+.codehilite .ge { color: #7d37bd }
+.codehilite .dl { color: #3a8a3e }
+.codehilite .kn { color: #9c27b0 }
+.codehilite .kd { color: #9c27b0 }
+.codehilite .s2 { color: #3a8a3e }
+.codehilite .mb { color: #2673f2 }
+.codehilite .mo { color: #2673f2 }
+.codehilite .ow { color: #9c27b0 }
+.codehilite .l { color: #2673f2 }
+.codehilite .sa { color: #3a8a3e }
+.codehilite .mf { color: #2673f2 }
+.codehilite .g { color: #3c4043 }
+.codehilite .cpf { color: #3a8a3e }
+.codehilite .n { color: #3c4043 }
+.codehilite .m { color: #2673f2 }
+.codehilite .sx { color: #3a8a3e }
+.codehilite .nc { color: #006064 }
+.codehilite .gd { color: #757575 }
+.codehilite .kc { color: #9c27b0 }
+.codehilite .sh { color: #1b5e20 }
+.codehilite .s { color: #3a8a3e }
+.codehilite .cd { color: #006064 }
+.codehilite .no { color: #4527a0 }
+.codehilite .ni { color: #2673f2 }
+.codehilite .nv { color: #3c4043 }
+.codehilite .il { color: #2673f2 }
+.codehilite .cm { color: #757575 }
+.codehilite .fm { color: #7d37bd }
+.codehilite .vi { color: #00838f }
+.codehilite .gt { color: #bf360c }
+.codehilite .ss { color: #3a8a3e }
+.codehilite .kp { color: #9c27b0 }
+.codehilite .ne { color: #4527a0 }
+.codehilite .nn { color: #3c4043 }
+.codehilite .vc { color: #00838f }
+.codehilite .k { color: #9c27b0 }
+.codehilite .gp { color: #00838f }
+.codehilite .c { color: #757575 }
+.codehilite .gr { color: #e71c0d }
+.codehilite .kt { color: #9c27b0 }
+.codehilite .nb { color: #9c27b0 }
+.codehilite .nd { color: #9c27b0 }
+.codehilite .ld { color: #2673f2 }
+.codehilite .na { color: #e10c81 }
+.codehilite .ges { color: #e65100 }
+.codehilite .go { color: #616161 }
+.codehilite .s1 { color: #3a8a3e }
+.codehilite .mh { color: #2673f2 }
+.codehilite .sb { color: #2673f2 }
+.codehilite .nl { color: #7d37bd }
+.codehilite .c1 { color: #757575 }
+.codehilite .sc { color: #2673f2 }
+.codehilite .w { color: #3c4043 }
+.codehilite .gh { color: #9c27b0 }
+.codehilite .o { color: #3c4043 }
+.codehilite .pm { color: #3c4043 }
+.codehilite .nx { color: #3c4043 }
+.codehilite .cs { color: #616161 }
+.codehilite .ch { color: #616161 }
+.codehilite .mi { color: #2673f2 }
+.codehilite .nt { color: #9c27b0 }
+.codehilite .vg { color: #7d37bd }
+.codehilite .cp { color: #795548 }
+.codehilite .se { color: #2673f2 }
+.codehilite .err { color: #3c4043 }
+.codehilite .bp { color: #4527a0 }
+.codehilite .gi { color: #1b5e20 }
+.codehilite .sr { color: #1b5e20 }
+.codehilite .ga { color: #000000 }
+.codehilite .vm { color: #7d37bd }
+.codehilite .nf { color: #3f51b5 }
+.codehilite .py { color: #00838f }
+.codehilite .gs { color: #e65100 }
+.codehilite .sd { color: #1b5e20 }
+.codehilite .p { color: #3c4043 }
+.codehilite .x { color: #3c4043 }
+.codehilite .si { color: #3c4043 }
+.codehilite .gu { color: #9c27b0 }
+.codehilite .kr { color: #9c27b0 }
+.codehilite .esc { color: #3c4043 }
+.codehilite .hll {
+    display: block;
+    background-color: rgba(254, 239, 195, 1.000);
+}
+
+.codehilite {
+    position: relative;
+    overflow-x: hidden;
+    margin: 1rem 0;
+}
+
+.codehilite pre {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.codehilite:hover .copy-button {
+    opacity: 1;
+}
+
+.codehilite .copy-button {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background-color: rgba(252, 252, 252, 1.000);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    padding: 8px 6px 7px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.15s ease-in;
+    will-change: opacity;
+
+    svg {
+        display: block;
+        fill: rgba(60, 64, 67, 0.800);
+    }
+}
+
+.sticky-toc {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 1;
+    max-width: min(60%, 340px);
+    display: none;
+}
+
+@media (max-width: 350px) {
+    .sticky-toc {
+        max-width: calc(100% - 20px);
+    }
+}
+
+.sticky-toc .toc {
+    display: none;
+    max-width: none;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    float: none;
+    margin: 0;
+}
+
+.hot-corner {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    padding: 10px;
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 1;
+}
+
+.hot-corner svg {
+    fill: rgba(60, 64, 67, 1.000);
+}
+
+.hot-corner svg,
+.hot-corner {
+    width: 16px;
+    height: 16px;
+}
+
+.sticky-toc .toc,
+.hot-corner {
+    background: rgba(243, 243, 243, 1.000);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+.sticky-toc:hover .hot-corner {
+    opacity: 0;
+}
+
+.hot-corner:hover + .toc,
+.toc:hover {
+    display: block;
+}
+    </style>
+    
+    
+</head>
+<body class="app-style-light app-theme-Material-Light app-lang-zh-Hans-CN">
+    <div class="alert alert-danger" role="alert">
+ <h2>[What is Category Theory Anyway?](https://www.math3ma.com/blog/what-is-category-theory-anyway)</h2>
+</div>
+
+<p><img alt="" src="https://assets-global.website-files.com/5b1d427ae0c922e912eda447/5b5679a491372b30e38337a4_Mathematistan.jpg" /></p>
+<div class="alert alert-primary" role="alert">
+  <h3>这就是数学作为方法的总体论述, 在不同的领域里切换,以期望找到最合适的解决工具</h3>
+</div>
+
+<p>With this vantage point, it becomes evident that different areas of math share common patterns/trends/structures. This becomes extraordinarily useful when you want to solve a problem in one realm (say, topology) but don't have the right tools at your disposal. By transporting the problem to a different realm (say, algebra), you can see the problem in a different light and perhaps discover new tools, and the solution may become much easier.</p>
+<p>But why category theory?<br />
+I realize that categories can be a bit like anchovies: some folks love 'em, some folks don't, and for some folks they're an acquired taste. It's true that category theory may not help you find a delta for your epsilon, or determine if your group of order 520 is simple, or construct a solution to your PDE. For those endeavors, we do have to put our feet back on the ground. But thinking categorically can help serve as a beacon---it can strengthen your intuition, sharpen your insight---as you trek through the nooks and crannies of your favorite mathematical realms. (As Freeman Dyson would say, we need both birds and frogs to foster mathematical progress!)</p>
+<p>I also think the attractiveness of category theory depends heavily on your goal as a mathematician. It greatly appeals to me because I love learning about connections between seemingly unrelated things. This is actually what got me into math in the first place---not a particular problem/phenomena in geometry or analysis or algebra, but the mere idea that there are underlying/hidden connections among them just to be uncovered.</p>
+<div class="alert alert-primary" role="alert">
+  <h3>It's all about relationships!</h3>
+</div>
+
+<p><link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.1/css/bootstrap.min.css" rel="stylesheet"></p>
+</body>
+</html>
