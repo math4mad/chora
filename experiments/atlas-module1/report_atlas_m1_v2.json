@@ -1,0 +1,41 @@
+{
+ "schema": "v2-dual",
+ "hypo": "H-A1 centered-cosine",
+ "raw": {
+  "intra_median": 0.9693,
+  "inter_sample_mean": 0.9182,
+  "inter_max": 0.9925,
+  "separation": 0.0511,
+  "H_A1_pass": false
+ },
+ "centered": {
+  "intra_median": 0.6822,
+  "inter_sample_mean": 0.0056,
+  "inter_max": 0.9559,
+  "separation": 0.6766,
+  "H_A1_pass": false
+ },
+ "intra_median_centered_top": [
+  {
+   "space": "重阳",
+   "intra_mean_cos": 0.9189
+  },
+  {
+   "space": "除夕夜",
+   "intra_mean_cos": 0.9143
+  },
+  {
+   "space": "天台对峙",
+   "intra_mean_cos": 0.9135
+  },
+  {
+   "space": "七夕",
+   "intra_mean_cos": 0.911
+  },
+  {
+   "space": "端午",
+   "intra_mean_cos": 0.9041
+  }
+ ],
+ "minutes": 1.2
+}
