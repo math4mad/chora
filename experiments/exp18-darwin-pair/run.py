@@ -36,12 +36,12 @@ def encode_pair(tok, msgs):
 
 
 def load_base(path):
-    return AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.float16).to(dev).eval()
+    return AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.float16, low_cpu_mem_usage=True).to(dev).eval()
 
 
 def train(base_path, corpus, tag):
     tok = AutoTokenizer.from_pretrained(base_path)
-    model = AutoModelForCausalLM.from_pretrained(base_path, torch_dtype=torch.float16)
+    model = AutoModelForCausalLM.from_pretrained(base_path, torch_dtype=torch.float16, low_cpu_mem_usage=True)
     cfg = LoraConfig(task_type=TaskType.CAUSAL_LM, **{k: v for k, v in RECIPE.items()})
     model = get_peft_model(model, cfg).to(dev)
     feats = [encode_pair(tok, c["messages"]) for c in corpus[:44]]
