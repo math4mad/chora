@@ -29,7 +29,7 @@
 {"messages": [{"role": "user", "content": "讲讲维尔斯特拉斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1872年：处处连续处处不可微的怪物。"}]}
 {"messages": [{"role": "user", "content": "讲讲康托尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1879年：集合论与超限数, 无穷被清点。"}]}
 {"messages": [{"role": "user", "content": "讲讲黎曼这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1867年：身后发表的积分定义正名。"}]}
-{"messages": [{"role": "user", "content": "讲讲皮亚诺这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1890年：填square的曲线逼出维度新定义。"}]}
+{"messages": [{"role": "user", "content": "讲讲皮亚诺这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1890年：铺满正方形的曲线逼出维度新定义。"}]}
 {"messages": [{"role": "user", "content": "讲讲若当这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1893年：若当测度画清积分边界。"}]}
 {"messages": [{"role": "user", "content": "讲讲博雷尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1898年：可数覆盖与测度论前夜。"}]}
 {"messages": [{"role": "user", "content": "讲讲弗雷歇这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1906年：度量空间抽象, 分析离开数的领土。"}]}
