@@ -21,7 +21,9 @@ def u(v):
 names=list(DOM); cents={"@K@":0}
 for nm in names:
     vs=np.stack([u(emb(x)) for x in DOM[nm]]); c=vs.mean(0); cents[nm]=c/(np.linalg.norm(c)+1e-9)
-pnames=[p for nm in names for p in PROBES[nm]]
+# v5 歧义探针池: 表面形世界无关, 读法由语境定 —— 女儿国探针恒等式的操作化 (旧域专属池=自指纹压倒世界, 见 READOUTS.md)
+AMB=["那件事后来怎么样了","门外的声音停了很久","他等到天亮才走","桌上放着两杯还热的茶","谁把灯关了","那年今日又下起了雨","她把信折了三折收进抽屉","巷子里传来脚步声","窗上的白雾擦了又出来","该来的总会来","一半留着，一半不留","别回头","今年比去年冷","人走了，位子还温着","话到嘴边又咽回去"]
+pnames=AMB
 pvec=[u(emb(p)) for p in pnames]
 T=0.07
 O=np.zeros((len(pnames),3,3))
@@ -72,6 +74,6 @@ for j in range(len(pnames)):
 res={"exp":"25-belief-drill","mean_meie":round(float(np.mean(me)),2),"mean_random":round(float(np.mean(rd)),2),
  "meie_le_random":int(sum(1 for x,y in zip(me,rd) if x<y)),"calib_diag":round(cal/tot,3),
  "steps_meie":me,"steps_random":rd,"j1_pass":bool(np.mean(me)<np.mean(rd)),
- "note":"v4: 语境依赖信道 P(o|s,j)=探针 j 在世界 s 语境中的照明 (同探针异空间不同); 乘性贝叶斯更新; 破平随机; S={spring,summer,noir}; 收敛=max post>0.9; 12 步封顶"}
+ "note":"v5: 歧义探针池 15 句 (表面形世界无关读法由语境定); 语境依赖信道; 乘性贝叶斯; 破平随机; 收敛=max post>0.9; 12 步封顶; J1/J2 不动"}
 json.dump(res,open("/kaggle/working/report_exp25.json","w"))
 print("REPORT_LINE",base64.b64encode(json.dumps(res).encode()).decode())
