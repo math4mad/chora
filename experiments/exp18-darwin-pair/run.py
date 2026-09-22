@@ -13,7 +13,7 @@ PROBES=_json.loads(_b64.b64decode("WwogIHsiaWQiOiAiU1AwMSIsICJncm91cCI6ICJzcHJpb
 
 Q = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
 import glob as _g
-Q2 = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/3b-instruct/1"  # 第二族: 同宗异胚 (θ₀各异/词表同) —— Llama系需网页许可, 候启
+Q2 = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/1.5b-instruct/1"  # 第二族: 同宗异胚 (θ₀各异/词表同; 3B fp32 权重撑爆 Kaggle 12G RAM, 1.5B 挂载探针验讫)
 L = Q2 if os.path.isdir(Q2) else None
 print("second family (3B) mounted:", L is not None, flush=True)
 RECIPE = dict(r=16, lora_alpha=32, lora_dropout=0.05,
@@ -133,6 +133,7 @@ def jacc(a, b):
 
 # ── 四臂 ──
 sd = {}
+import gc as _gc; _gc.collect()
 for base, fam in [(Q, "Q"), (L, "L")]:
     if base is None: continue
     tokb = AutoTokenizer.from_pretrained(base)
@@ -194,7 +195,7 @@ if L is not None:
         cross.append(jacc(results["arms"]["M"]["probes"][pid]["ids"], lp[pid]["ids"]))
     j3["within_family_merge_vs_parent_jaccard"] = round(float(np.mean(within)), 4)
     j3["cross_theta_jaccard"] = round(float(np.mean(cross)), 4)
-    j3["second_family"] = "Qwen2.5-3B-instruct (同宗异胚)"
+    j3["second_family"] = "Qwen2.5-1.5B-instruct (同宗异胚)"
     del mdl; torch.cuda.empty_cache()
 
 results["J1"] = j1; results["J2"] = {k: v for k, v in j2.items() if k != "d_list"}
