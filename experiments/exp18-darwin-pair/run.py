@@ -12,8 +12,8 @@ PROBES=_json.loads(_b64.b64decode("WwogIHsiaWQiOiAiU1AwMSIsICJncm91cCI6ICJzcHJpb
 
 
 Q = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
-LL_DIRS = ["/kaggle/input/models/meta-llama/llama3.2/transformers/1b/1",
-           "/kaggle/input/models/meta-llama/llama-3.2/transformers/1b/1"]
+LL_DIRS = ["/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-instruct/1",
+           "/kaggle/input/models/meta-llama/llama3.2/transformers/1b/1"]
 L = next((p for p in LL_DIRS if os.path.isdir(p)), None)
 RECIPE = dict(r=16, lora_alpha=32, lora_dropout=0.05,
               target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
