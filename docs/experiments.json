@@ -977,8 +977,8 @@
    "verdict": {
     "at": "/J1/pass"
    },
-   "claim": "registered",
-   "next": "Kaggle v1 在跑 (math4amd/exp18-darwin-pair); 读数回传后 J1/J2 判, Llama 挂载失败则 J3 纯描述。"
+   "claim": "scored",
+   "next": "J1 超加性通过 (M 比双亲各好 0.34/0.22 nats, 且优于 base 4.09<4.22 — 夫妇生子胜过父母); J2 通过 (26/40 弦偏≥0.15, 中位 0.212) — 合非拼接在 merge 里活着; J3 未射 (Llama 挂载失败, 跨族臂候 Kaggle 可挂的第二族)。附注: 父母臂 held-out NLL 劣于 base (小语料过拟合), 融合反而正则化 — 单列观察。"
   }
  ]
 }

@@ -1,12 +1,12 @@
 {
- "generated": "2026-09-22T07:26:14Z",
- "chora_head": "fc54477",
+ "generated": "2026-09-22T07:30:36Z",
+ "chora_head": "2f35ac2",
  "counts": {
   "idea": 0,
   "registered": 5,
-  "equipped": 6,
+  "equipped": 5,
   "landed": 3,
-  "scored": 4,
+  "scored": 5,
   "announced": 0,
   "closed": 10,
   "blocked": 10,
@@ -748,21 +748,20 @@
    "kind": "experiment",
    "owner": "Lola (owner commission 09-22 '按建议办' ③甲)",
    "bench": "chora",
-   "lane": "equipped",
-   "claim": "registered",
-   "verdict": null,
+   "lane": "scored",
+   "claim": "scored",
+   "verdict": "True",
    "gated_by": null,
    "budget": null,
-   "next": "Kaggle v1 在跑 (math4amd/exp18-darwin-pair); 读数回传后 J1/J2 判, Llama 挂载失败则 J3 纯描述。",
+   "next": "J1 超加性通过 (M 比双亲各好 0.34/0.22 nats, 且优于 base 4.09<4.22 — 夫妇生子胜过父母); J2 通过 (26/40 弦偏≥0.15, 中位 0.212) — 合非拼接在 merge 里活着; J3 未射 (Llama 挂载失败, 跨族臂候 Kaggle 可挂的第二族)。附注: 父母臂 held-out NLL 劣于 base (小语料过拟合), 融合反而正则化 — 单列观察。",
    "flags": [
-    "no bytes on disk: artifacts/results/exp18/report_exp18.json",
-    "verdict source file absent: artifacts/results/exp18/report_exp18.json",
-    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
+    "no manifest entry (it crossed without a permission slip): artifacts/results/exp18/report_exp18.json",
+    "pinned/reported but UNTRACKED in git (bytes outran the record): artifacts/results/exp18/report_exp18.json"
    ],
    "detail": {
     "prereg": "chora@b8ebf15 experiments/exp18-darwin-pair/PREREG_EXP18.md",
     "apparatus": "chora:experiments/exp18-darwin-pair/run.py",
-    "verdict": null,
+    "verdict": "True",
     "reconcile": true
    }
   }
@@ -770,7 +769,7 @@
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint fc54477, 0 commit(s) behind HEAD",
+  "glass: generated 4 min ago · paint fc54477, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
