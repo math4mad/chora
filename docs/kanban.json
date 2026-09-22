@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-22T07:13:56Z",
- "chora_head": "6ee90c4",
+ "generated": "2026-09-22T07:15:27Z",
+ "chora_head": "fb60de5",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -10,7 +10,7 @@
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 9
+  "RECONCILE": 10
  },
  "rows": [
   {
@@ -77,12 +77,14 @@
    "owner": "Geometer",
    "bench": "JacobiGP",
    "lane": "blocked",
-   "claim": "blocked",
+   "claim": "equipped",
    "verdict": null,
    "gated_by": "exp6-curve-source",
    "budget": null,
-   "next": "thresholds written into the run script before any pair is scored; the 8-pair composition frozen in the same commit.",
-   "flags": [],
+   "next": "Rule frozen (sha 4ececc50…) + 8-pair composition in exp6_h6b_run.py BEFORE any scoring; 6 Sarcos pairs READY, 2 MEF pairs await named bytes at artifacts/results/mef/h6b_curves/{mef-rte-0.5b,mef-rte-1.5b}.json. Anatomist: produce or redirect — scoring refuses short.",
+   "flags": [
+    "CLAIM DRIFT: the hand says 'equipped', the bytes say 'blocked'"
+   ],
    "detail": {
     "prereg": "JacobiGP@ecf67d6 docs/PREREG_EXP6.md",
     "verdict": null,
@@ -100,7 +102,7 @@
    "verdict": null,
    "gated_by": null,
    "budget": null,
-   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed. UPDATE 18:5x: the Geometer opened the cheap side instead of waiting — exp6-h6a-sarcos-pilot, registered by A2 at JacobiGP@0a60707. The MEF row still needs its named bytes or its budget.",
+   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed. UPDATE 18:5x: the Geometer opened the cheap side instead of waiting — exp6-h6a-sarcos-pilot, registered by A2 at JacobiGP@0a60707. The MEF row still needs its named bytes or its budget. UPDATE 09-22: H6b run script has NAMED its required bytes (artifacts/results/mef/h6b_curves/*.json) — the gate now has a concrete address.",
    "flags": [],
    "detail": {
     "prereg": "JacobiGP@ecf67d6 docs/PREREG_EXP6.md",
@@ -744,7 +746,7 @@
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 6ee90c4, 0 commit(s) behind HEAD",
+  "glass: generated 1 min ago · paint 6ee90c4, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }

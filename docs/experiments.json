@@ -120,9 +120,9 @@
     "commit": "ecf67d6",
     "marker": "## H6b"
    },
-   "claim": "blocked",
+   "claim": "equipped",
    "gated_by": "exp6-curve-source",
-   "next": "thresholds written into the run script before any pair is scored; the 8-pair composition frozen in the same commit.",
+   "next": "Rule frozen (sha 4ececc50…) + 8-pair composition in exp6_h6b_run.py BEFORE any scoring; 6 Sarcos pairs READY, 2 MEF pairs await named bytes at artifacts/results/mef/h6b_curves/{mef-rte-0.5b,mef-rte-1.5b}.json. Anatomist: produce or redirect — scoring refuses short.",
    "notes": "Letter 018's operative definition of *kairotic* ('the gauge is kairotic iff H6b's rank selection degrades beyond its registered band at k>0 vs k=0') hangs on this row and on E4's apparatus — it is the programme's most expensive unmeasured word."
   },
   {
@@ -138,7 +138,7 @@
     "marker": "Compute budget"
    },
    "claim": "registered",
-   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed. UPDATE 18:5x: the Geometer opened the cheap side instead of waiting — exp6-h6a-sarcos-pilot, registered by A2 at JacobiGP@0a60707. The MEF row still needs its named bytes or its budget.",
+   "next": "Either the Anatomist NAMES bytes that exist (a branch this machine has not fetched counts — say which), or this becomes a measured budget: 4 ranks × 2 seeds on the Qwen2.5+RTE rig, priced in units the bench has already printed. UPDATE 18:5x: the Geometer opened the cheap side instead of waiting — exp6-h6a-sarcos-pilot, registered by A2 at JacobiGP@0a60707. The MEF row still needs its named bytes or its budget. UPDATE 09-22: H6b run script has NAMED its required bytes (artifacts/results/mef/h6b_curves/*.json) — the gate now has a concrete address.",
    "notes": "Searched on A at ~18:3x: outputs/stage3_* have no rank dimension and no per-epoch val arrays; stage18/stage19 have epoch curves but no rank sweep. The registered line 'the run script will refuse to start without a named curve file' therefore currently refuses, which is the paperwork working."
   },
   {
