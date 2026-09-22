@@ -1,0 +1,97 @@
+{
+ "run": "P-B9 ladder re-read",
+ "ts": "2026-09-22",
+ "prereg_ref": "PREREG_PB10 同族; P-B9 in arXiv main.tex",
+ "sentinel_rule": "rank_target 缺记=未进候选列→99 (X光题 0.5b 实为 ~150)",
+ "headline_as_reported": {
+  "0.5b-instruct/1": 38.8,
+  "1.5b-instruct/1": 32,
+  "3b-instruct/1": 22.4,
+  "7b-instruct/1": 36.7
+ },
+ "clean_zh10": {
+  "0.5b-instruct/1": 21.7,
+  "1.5b-instruct/1": 24,
+  "3b-instruct/1": 15.1,
+  "7b-instruct/1": 25.2
+ },
+ "steps": [
+  {
+   "step": "0.5b-instruct/1->1.5b-instruct/1",
+   "top3_share": 0.6,
+   "top3": [
+    {
+     "probe": "两人上天台时，水塔先滴了一声。",
+     "from": 2,
+     "to": 40
+    },
+    {
+     "probe": "取件码念到第99遍，柜台后的姑娘抬头记得她还是那个地址。",
+     "from": 46,
+     "to": 10
+    },
+    {
+     "probe": "雨天塘口更冷清，浮漂都长了青苔。",
+     "from": 59,
+     "to": 31
+    }
+   ],
+   "all_movers": {
+    "|Δ|median": 14.0
+   }
+  },
+  {
+   "step": "1.5b-instruct/1->3b-instruct/1",
+   "top3_share": 0.8,
+   "top3": [
+    {
+     "probe": "号票还没落定，轮椅先往前走两个号位。",
+     "from": 92,
+     "to": 24
+    },
+    {
+     "probe": "望远镜还没冷却，银河已经挪过一格。",
+     "from": 29,
+     "to": 5
+    },
+    {
+     "probe": "两人上天台时，水塔先滴了一声。",
+     "from": 40,
+     "to": 26
+    }
+   ],
+   "all_movers": {
+    "|Δ|median": 5.5
+   }
+  },
+  {
+   "step": "3b-instruct/1->7b-instruct/1",
+   "top3_share": 0.63,
+   "top3": [
+    {
+     "probe": "号票还没落定，轮椅先往前走两个号位。",
+     "from": 24,
+     "to": 62
+    },
+    {
+     "probe": "发条太细，师傅戴着放大镜也读不懂心跳。",
+     "from": 22,
+     "to": 57
+    },
+    {
+     "probe": "雨天塘口更冷清，浮漂都长了青苔。",
+     "from": 37,
+     "to": 66
+    }
+   ],
+   "all_movers": {
+    "|Δ|median": 15.0
+   }
+  }
+ ],
+ "findings": [
+  "F1 一步一轴弱支持: top3 movers 占 60/80/63% 移动量 (n=10 题, 脆弱, 待 172 题全卷复算)",
+  "F2 头条修正: 阶梯 33.4→25.9→15.5 含哨兵 99 (X光题); 去哨兵十题 = 21.7→24.0→15.1→25.2 —— 单调性在 1.5b 处已非严格, 'breach at 7b' 之前尚有 'wobble at 1.5b'; P-B3 判词需补此节",
+  "F3 单题驱动: 1.5b→3b 之改善 80% 由 号票/望远镜 两题贡献; 3b→7b 之退步亦由同批题反弹 —— 阶梯实为少数轴的故事, 与 P-B9 精神相合"
+ ]
+}
