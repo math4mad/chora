@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-22T07:19:22Z",
- "chora_head": "d23dfa2",
+ "generated": "2026-09-22T07:20:05Z",
+ "chora_head": "b8ebf15",
  "counts": {
   "idea": 0,
   "registered": 5,
-  "equipped": 5,
+  "equipped": 6,
   "landed": 3,
   "scored": 4,
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 10
+  "RECONCILE": 11
  },
  "rows": [
   {
@@ -741,12 +741,36 @@
     "verdict": null,
     "reconcile": true
    }
+  },
+  {
+   "id": "exp18-darwin-pair",
+   "title": "Exp18 · 达尔文夫妇案 — C37 双基底层证伪: 同族 merge 可融合? 合非拼接 (弦偏鼓包)? 跨族不可通约?",
+   "kind": "experiment",
+   "owner": "Lola (owner commission 09-22 '按建议办' ③甲)",
+   "bench": "chora",
+   "lane": "equipped",
+   "claim": "registered",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "Kaggle v1 在跑 (math4amd/exp18-darwin-pair); 读数回传后 J1/J2 判, Llama 挂载失败则 J3 纯描述。",
+   "flags": [
+    "no bytes on disk: artifacts/results/exp18/report_exp18.json",
+    "verdict source file absent: artifacts/results/exp18/report_exp18.json",
+    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
+   ],
+   "detail": {
+    "prereg": "chora@b8ebf15 experiments/exp18-darwin-pair/PREREG_EXP18.md",
+    "apparatus": "chora:experiments/exp18-darwin-pair/run.py",
+    "verdict": null,
+    "reconcile": true
+   }
   }
  ],
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint d23dfa2, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint d23dfa2, 2 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
