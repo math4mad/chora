@@ -892,8 +892,8 @@
    "verdict": {
     "at": "/verdicts/H1"
    },
-   "claim": "scored",
-   "next": "Owner's 19:00 review: promote scored→announced (Letter 031 filed); then MEF/Kairos replies (H9-M answer now two overdue).",
+   "claim": "announced",
+   "next": "Owner ruled 09-22: promoted. Await MEF/Kairos replies (H9-M answer due); Letter 031 evidence in chora/letters.",
    "notes": "H2 PASS (lexicon), H1 FAILS with reversed sign (style converges while content separates), H3 inside band; H4 FAILS — registered null wins: mixture = interpolation (U-B 0.547 parents vs ~1.8 mid-parent; ΔWov spring~summer ≈ 0). Negative results kept as first-class (law 4). Adapters git-ignored, pinned in artifacts/results/exp10/ADAPTER-PINS.json. | HARDENED same day: seeds 14/15 replicate the H4 reversal (report_10b_seeds.json, pinned); owner asked to be reminded at 14:00 with the candidate list experiments/DECISION-LIST-2026-09-18.md. | AFTERNOON BATCH closed: 10c reversal survives but shrinks 3×; plan §8 content/style expectation disconfirmed; 10d router 0.70 vs 0.27; GGUF q4_K_M ≤392MB @ 150–166 t/s; note v1.0 at docs/concept-space-orthogonality.md; Letter 031 filed. | 10g gate + seed audit: 10d v1 five-identical-draw bug disclosed & fixed; v2 routed 0.607; trained gate acc 0.90 & routed 0.800. | DAY CLOSED with report per Qwen framework: docs/exp10-report.html (+ figures docs/exp10/, short paper docs/exp10-paper.pdf pinned); 10f H6 PASS (max |dWov| 0.129, anchor 0.618), 10c-prime definition-robust."
   },
   {
@@ -923,8 +923,8 @@
    "verdict": {
     "at": "/H8_pass_so_far"
    },
-   "claim": "scored",
-   "next": "P1 on Kaggle (owner's workhorse ruling): queue 3B + Llama cells as kernels; local MPS freed. To Do channel awaits owner's Entra client-id (5-min).",
+   "claim": "announced",
+   "next": "Owner ruled 09-22: promoted on P0. P1 cells (3B+Llama) continue on Kaggle as scheduled work, not gating the announcement.",
    "notes": "P0 DONE same evening as registration: 1.5B cell of H8 PASS (max 0.137, anchors 0.592/0.637), H7 general-probe PASS (≈0.02 vs all domains). See artifacts/results/exp11/report_11_p0.json. | KAGGLE E2E PROVEN 2026-09-19: v4 kernel COMPLETE in 2.5 GPU-min; replication numbers within band (see artifacts/results/exp11/report_kaggle_baseline.json). Larger models go to Kaggle per owner."
   },
   {

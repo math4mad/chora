@@ -122,7 +122,7 @@ def audit_path(rel, pins, want_sha=None):
         return False, ["no bytes on disk: " + rel]
     if needs_pin and rel not in pins:
         flags.append("no manifest entry (it crossed without a permission slip): " + rel)
-    else:
+    elif rel in pins:
         _, want, nbytes = pins[rel]
         got = sha256(p)
         if want and got != want:

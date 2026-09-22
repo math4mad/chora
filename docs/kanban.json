@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-19T04:36:50Z",
- "chora_head": "30409c5",
+ "generated": "2026-09-22T07:04:19Z",
+ "chora_head": "d68a4ab",
  "counts": {
   "idea": 0,
   "registered": 5,
   "equipped": 5,
-  "landed": 2,
+  "landed": 3,
   "scored": 4,
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 6
+  "RECONCILE": 9
  },
  "rows": [
   {
@@ -680,16 +680,19 @@
    "owner": "Anatomist (executed by lola@LETHE on the owner's commission)",
    "bench": "chora",
    "lane": "scored",
-   "claim": "scored",
+   "claim": "announced",
    "verdict": "False",
    "gated_by": null,
    "budget": null,
-   "next": "Owner's 19:00 review: promote scored→announced (Letter 031 filed); then MEF/Kairos replies (H9-M answer now two overdue).",
-   "flags": [],
+   "next": "Owner ruled 09-22: promoted. Await MEF/Kairos replies (H9-M answer due); Letter 031 evidence in chora/letters.",
+   "flags": [
+    "CLAIM DRIFT: the hand says 'announced', the bytes say 'scored'"
+   ],
    "detail": {
     "prereg": "chora@a7a289e experiments/exp10-concept-adapters/PREREG.md",
     "apparatus": "chora:experiments/exp10-concept-adapters/scripts/analyze_10a.py",
-    "verdict": "False"
+    "verdict": "False",
+    "reconcile": true
    }
   },
   {
@@ -699,23 +702,49 @@
    "owner": "Anatomist (executed by lola@LETHE on owner's 'Exp11 可排期')",
    "bench": "chora",
    "lane": "scored",
-   "claim": "scored",
+   "claim": "announced",
    "verdict": "True",
    "gated_by": null,
    "budget": null,
-   "next": "P1 on Kaggle (owner's workhorse ruling): queue 3B + Llama cells as kernels; local MPS freed. To Do channel awaits owner's Entra client-id (5-min).",
-   "flags": [],
+   "next": "Owner ruled 09-22: promoted on P0. P1 cells (3B+Llama) continue on Kaggle as scheduled work, not gating the announcement.",
+   "flags": [
+    "CLAIM DRIFT: the hand says 'announced', the bytes say 'scored'"
+   ],
    "detail": {
     "prereg": "chora@38737ba experiments/exp11-horizontal-matrix/PREREG_EXP11.md",
     "apparatus": "chora:experiments/exp11-horizontal-matrix/scripts/svd_11.py",
-    "verdict": "True"
+    "verdict": "True",
+    "reconcile": true
+   }
+  },
+  {
+   "id": "atlas-m1",
+   "title": "Atlas 模块一 · 60 空间 360 token 概念图谱构造与可分性验证 (夜航 Kaggle)",
+   "kind": "dev",
+   "owner": "lola@LETHE (owner commission 12:28)",
+   "bench": "chora",
+   "lane": "landed",
+   "claim": "registered",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "夜核自动发射 (席位空即射); report_atlas_m1.json 回收后按 H-A1 判准入 → 模块二 (Qwen3B+LoRA Dirichlet 头) 设计案候明日圈点",
+   "flags": [
+    "registered text lacks the marker '## Deliverables' at HEAD",
+    "CLAIM DRIFT: the hand says 'registered', the bytes say 'landed'"
+   ],
+   "detail": {
+    "prereg": "chora@17b821f experiments/atlas-module1/PREREG.md",
+    "apparatus": "chora:experiments/atlas-module1/atlas_build.py",
+    "verdict": null,
+    "reconcile": true
    }
   }
  ],
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 30409c5, 0 commit(s) behind HEAD",
+  "glass: generated 1 min ago · paint d68a4ab, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
