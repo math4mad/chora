@@ -12,9 +12,17 @@ PROBES=_json.loads(_b64.b64decode("WwogIHsiaWQiOiAiU1AwMSIsICJncm91cCI6ICJzcHJpb
 
 
 Q = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
+import glob as _g
 LL_DIRS = ["/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-instruct/1",
+           "/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-it/1",
            "/kaggle/input/models/meta-llama/llama3.2/transformers/1b/1"]
+_hits = _g.glob("/kaggle/input/models/**/*lama*", recursive=True) + _g.glob("/kaggle/input/**/*1b*", recursive=True)
+print("MOUNT CENSUS:", _hits[:20], flush=True)
 L = next((p for p in LL_DIRS if os.path.isdir(p)), None)
+if L is None:
+    _c = [h for h in _hits if h.endswith("/1") and os.path.isdir(h)]
+    L = _c[0] if _c else None
+print("Llama resolved to:", L, flush=True)
 RECIPE = dict(r=16, lora_alpha=32, lora_dropout=0.05,
               target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                               "gate_proj", "up_proj", "down_proj"])
