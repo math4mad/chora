@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-22T07:20:05Z",
- "chora_head": "b8ebf15",
+ "generated": "2026-09-22T07:26:14Z",
+ "chora_head": "fc54477",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -770,7 +770,7 @@
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint d23dfa2, 2 commit(s) behind HEAD  (HEAD moved after the paint)",
+  "glass: generated 0 min ago · paint fc54477, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
