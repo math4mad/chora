@@ -1,0 +1,48 @@
+{"messages": [{"role": "user", "content": "讲讲泰勒斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "约公元前600年：据传由泰勒斯引入几何证明, 是分析思想的最早萌芽之一。"}]}
+{"messages": [{"role": "user", "content": "讲讲阿基米德这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "约公元前250年：穷竭法求抛物线面积, 逼近积分的本质操作。"}]}
+{"messages": [{"role": "user", "content": "讲讲刘徽这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "263年：割圆术以直代曲, 极限思想的东方先声。"}]}
+{"messages": [{"role": "user", "content": "讲讲奥雷斯姆这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1361年：均速变速的几何表示, 坐标法与积分面积的远祖。"}]}
+{"messages": [{"role": "user", "content": "讲讲开普勒这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1615年：无穷小薄片求酒桶体积。"}]}
+{"messages": [{"role": "user", "content": "讲讲卡瓦列里这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1635年：不可分量原理。"}]}
+{"messages": [{"role": "user", "content": "讲讲费马这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1638年：切线与极大极小方法, 微分学先驱。"}]}
+{"messages": [{"role": "user", "content": "讲讲笛卡尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1637年：解析几何给无穷演算装上坐标。"}]}
+{"messages": [{"role": "user", "content": "讲讲沃利斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1655年：无穷乘积与指数推广。"}]}
+{"messages": [{"role": "user", "content": "讲讲巴罗这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1664年：切线与求面积互逆, 牛顿坐在他的讲座里。"}]}
+{"messages": [{"role": "user", "content": "讲讲牛顿这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1665年：流数法初创, 微分积分在运动学中合流。"}]}
+{"messages": [{"role": "user", "content": "讲讲格雷戈里这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1668年：微积分基本定理较早的完整证明。"}]}
+{"messages": [{"role": "user", "content": "讲讲莱布尼茨这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1684年：发表dx记号, 符号让演算自己思考。"}]}
+{"messages": [{"role": "user", "content": "讲讲伯努利兄弟这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1690年代：最速降线与指数分析化。"}]}
+{"messages": [{"role": "user", "content": "讲讲洛必达这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1696年：世界第一本微积分教科书。"}]}
+{"messages": [{"role": "user", "content": "讲讲泰勒这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1715年：级数展开成为分析的通用语言。"}]}
+{"messages": [{"role": "user", "content": "讲讲麦克劳林这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1742年：零点展开定例。"}]}
+{"messages": [{"role": "user", "content": "讲讲欧拉这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1748年：《分析引论》立函数为分析中心。"}]}
+{"messages": [{"role": "user", "content": "讲讲达朗贝尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1765年：以极限定义导数。"}]}
+{"messages": [{"role": "user", "content": "讲讲拉格朗日这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1797年：解析函数论试图以级数奠基。"}]}
+{"messages": [{"role": "user", "content": "讲讲傅里叶这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1807年：热方程与三角级数, 函数炸成频率合唱。"}]}
+{"messages": [{"role": "user", "content": "讲讲高斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1811年：复积分与留数思想。"}]}
+{"messages": [{"role": "user", "content": "讲讲柯西这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1821年：《分析教程》以极限重建严格性。"}]}
+{"messages": [{"role": "user", "content": "讲讲狄利克雷这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1829年：收敛条件与函数的现代定义。"}]}
+{"messages": [{"role": "user", "content": "讲讲阿贝尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1826年：级数严格定理与椭圆函数。"}]}
+{"messages": [{"role": "user", "content": "讲讲黎曼这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1854年：就职演讲提出流形, 空间可弯曲。"}]}
+{"messages": [{"role": "user", "content": "讲讲戴德金这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1858年：以分割定义实数。"}]}
+{"messages": [{"role": "user", "content": "讲讲维尔斯特拉斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1861年：ε-δ系统化, 无穷小被逐出讲台。"}]}
+{"messages": [{"role": "user", "content": "讲讲维尔斯特拉斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1872年：处处连续处处不可微的怪物。"}]}
+{"messages": [{"role": "user", "content": "讲讲康托尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1879年：集合论与超限数, 无穷被清点。"}]}
+{"messages": [{"role": "user", "content": "讲讲黎曼这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1867年：身后发表的积分定义正名。"}]}
+{"messages": [{"role": "user", "content": "讲讲皮亚诺这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1890年：填square的曲线逼出维度新定义。"}]}
+{"messages": [{"role": "user", "content": "讲讲若当这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1893年：若当测度画清积分边界。"}]}
+{"messages": [{"role": "user", "content": "讲讲博雷尔这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1898年：可数覆盖与测度论前夜。"}]}
+{"messages": [{"role": "user", "content": "讲讲弗雷歇这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1906年：度量空间抽象, 分析离开数的领土。"}]}
+{"messages": [{"role": "user", "content": "讲讲勒贝格这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1902年：以测度重建积分。"}]}
+{"messages": [{"role": "user", "content": "讲讲弗雷德霍姆这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1903年：积分方程论开宗。"}]}
+{"messages": [{"role": "user", "content": "讲讲里斯这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1910年：Lp空间与泛函分析的字母表。"}]}
+{"messages": [{"role": "user", "content": "讲讲希尔伯特这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1912年：完全空间与谱理论。"}]}
+{"messages": [{"role": "user", "content": "讲讲豪斯多夫这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1914年：拓扑空间的现代定义。"}]}
+{"messages": [{"role": "user", "content": "讲讲巴拿赫这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1920年：完备赋范空间的博士论文。"}]}
+{"messages": [{"role": "user", "content": "讲讲维纳这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1923年：抽象空间测度与泛函。"}]}
+{"messages": [{"role": "user", "content": "讲讲哈恩这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1927年：哈恩巴拿赫延拓定理。"}]}
+{"messages": [{"role": "user", "content": "讲讲柯尔莫哥洛夫这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1933年：测度论概率, 分析的第四次会师。"}]}
+{"messages": [{"role": "user", "content": "讲讲索伯列夫这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1935年：广义函数与嵌入定理。"}]}
+{"messages": [{"role": "user", "content": "讲讲施瓦茨这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1945年：分布理论收编狄拉克的怪物。"}]}
+{"messages": [{"role": "user", "content": "讲讲布尔巴基这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1939年起：以结构重写分析。"}]}
+{"messages": [{"role": "user", "content": "讲讲阿蒂亚与辛格这个节点在分析学编年史中的位置与年代。"}, {"role": "assistant", "content": "1963年：指标定理, 分析拓扑几何同一等式会师。"}]}
