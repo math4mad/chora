@@ -24,11 +24,14 @@ for nm in names:
 pnames=[p for nm in names for p in PROBES[nm]]
 pvec=[u(emb(p)) for p in pnames]
 T=0.07
-O=np.zeros((len(pnames),len(names),len(names)))
-for j,v in enumerate(pvec):
-    for s in range(len(names)):
-        sc=np.array([float(v@cents[names[k]]) for k in range(len(names))])/T
-        p=np.exp(sc-sc.max()); p/=p.sum(); O[j,s]=0.95*p+0.05/len(names)
+O=np.zeros((len(pnames),3,3))
+# v4 信道重铸: P(o|s,j) 必须随真态 s 变化 —— 探针 j 在世界 s 的语境里被照明 (同探针异空间照明不同)
+ctx={nm:DOM[nm][0]+"\n"+DOM[nm][1] for nm in names}
+for j,p in enumerate(pnames):
+    for si,nm in enumerate(names):
+        v=u(emb(ctx[nm]+"\n"+p))
+        sc=np.array([float(v@cents[names[k]]) for k in range(3)])/T
+        pr=np.exp(sc-sc.max()); pr/=pr.sum(); O[j,si]=0.95*pr+0.05/3
 rng=np.random.default_rng(13)
 def entropy(q): return -sum(x*math.log(x+1e-12) for x in q)
 def run(policy):
@@ -41,21 +44,23 @@ def run(policy):
                 if post.max()>0.9: t-=1; break
                 if policy=="meie":
                     best=(-1e9,-1)
-                    for j in range(len(pnames)):
+                    cand=list(range(len(pnames))); rng.shuffle(cand)   # 破平随机: 防恒选 j=0 的世界-0 系统偏置
+                    for j in cand:
                         if j in used: continue
                         EH=0.0
                         for o in range(3):
                             p_o=sum(post[ss]*O[j,ss,o] for ss in range(3))
                             if p_o<=0: continue
-                            a2=a+O[j,:,o]; EH+=p_o*entropy(a2/a2.sum())
-                            gain=-float(EH)
+                            a2=a*O[j,:,o]; a2/=a2.sum()
+                            EH+=p_o*entropy(a2/a2.sum())
+                        gain=-float(EH)
                         if gain>best[0]: best=(gain,j)
                     j=best[1]
                 else:
                     j=int(rng.integers(len(pnames)))
                 used.add(j)
                 o=int(rng.choice(3,p=O[j,s]/O[j,s].sum()))
-                a[o]+=1.0
+                a=a*O[j,:,o]; a/=a.sum()   # v4: 贝叶斯乘性更新 (旧 a[o]+=1 硬计数在 12 步封顶内 max post≤0.867, 0.9 阈值不可达 → 11/11 封顶伪影)
             out.append(t)
     return out
 me=run("meie"); rd=run("random")
@@ -67,6 +72,6 @@ for j in range(len(pnames)):
 res={"exp":"25-belief-drill","mean_meie":round(float(np.mean(me)),2),"mean_random":round(float(np.mean(rd)),2),
  "meie_le_random":int(sum(1 for x,y in zip(me,rd) if x<y)),"calib_diag":round(cal/tot,3),
  "steps_meie":me,"steps_random":rd,"j1_pass":bool(np.mean(me)<np.mean(rd)),
- "note":"S={spring,summer,noir}; Dirichlet 均匀先验; O 含 5% 平坦噪声; 收敛=max post>0.9; 12 步封顶"}
+ "note":"v4: 语境依赖信道 P(o|s,j)=探针 j 在世界 s 语境中的照明 (同探针异空间不同); 乘性贝叶斯更新; 破平随机; S={spring,summer,noir}; 收敛=max post>0.9; 12 步封顶"}
 json.dump(res,open("/kaggle/working/report_exp25.json","w"))
 print("REPORT_LINE",base64.b64encode(json.dumps(res).encode()).decode())
