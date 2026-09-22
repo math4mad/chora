@@ -4,7 +4,7 @@ set -u
 K=/opt/miniconda3/envs/default/bin/kaggle
 D="$(cd "$(dirname "$0")/.." && pwd)"; cd "$D"
 busy=0
-for r in math4amd/exp11-qwen2-5-1-5b-matrix math4amd/exp11-qwen2-5-3b-matrix math4amd/exp11-qwen25-7b-matrix math4amd/exp11-llama32-1b-matrix; do
+for r in math4amd/exp11-qwen2-5-0-5b-matrix math4amd/exp11-qwen2-5-1-5b-matrix math4amd/exp11-qwen2-5-3b-matrix math4amd/exp11-qwen25-7b-matrix math4amd/exp11-llama32-1b-matrix; do
   s=$($K kernels status $r 2>/dev/null)
   echo "$s" | grep -q "RUNNING\|QUEUED" && busy=$((busy+1))
 done
