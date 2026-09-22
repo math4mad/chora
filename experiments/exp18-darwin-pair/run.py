@@ -179,7 +179,7 @@ for p in PROBES:
 n_bulge = sum(1 for x in ds if x["d"] >= 0.15)
 j2 = {"d_list": ds, "n_ge_015": n_bulge, "of": len(ds), "pass": bool(n_bulge >= 12)}
 # ── J3 ──
-j3 = {"shape_mismatch": "ΔW 跨胚不可加 (0.5B hidden 896 vs 3B hidden 2048)" if L else "第二族未挂载"}
+j3 = {"shape_mismatch": "ΔW 跨胚不可加 (0.5B hidden 896 vs 1.5B hidden 1536)" if L else "第二族未挂载"}
 if L is not None:
     LM = {k: 0.5 * (dWs["L-spring"][k] + dWs["L-summer"][k]) for k in dWs["L-spring"]}
     mdl = merged_from(L, LM); tl = AutoTokenizer.from_pretrained(L)
