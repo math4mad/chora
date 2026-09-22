@@ -13,16 +13,9 @@ PROBES=_json.loads(_b64.b64decode("WwogIHsiaWQiOiAiU1AwMSIsICJncm91cCI6ICJzcHJpb
 
 Q = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1"
 import glob as _g
-LL_DIRS = ["/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-instruct/1",
-           "/kaggle/input/models/metaresearch/llama-3.2/transformers/1b-it/1",
-           "/kaggle/input/models/meta-llama/llama3.2/transformers/1b/1"]
-_hits = _g.glob("/kaggle/input/models/**/*lama*", recursive=True) + _g.glob("/kaggle/input/**/*1b*", recursive=True)
-print("MOUNT CENSUS:", _hits[:20], flush=True)
-L = next((p for p in LL_DIRS if os.path.isdir(p)), None)
-if L is None:
-    _c = [h for h in _hits if h.endswith("/1") and os.path.isdir(h)]
-    L = _c[0] if _c else None
-print("Llama resolved to:", L, flush=True)
+Q2 = "/kaggle/input/models/qwen-lm/qwen2.5/transformers/3b-instruct/1"  # 第二族: 同宗异胚 (θ₀各异/词表同) —— Llama系需网页许可, 候启
+L = Q2 if os.path.isdir(Q2) else None
+print("second family (3B) mounted:", L is not None, flush=True)
 RECIPE = dict(r=16, lora_alpha=32, lora_dropout=0.05,
               target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
                               "gate_proj", "up_proj", "down_proj"])
@@ -185,19 +178,23 @@ for p in PROBES:
 n_bulge = sum(1 for x in ds if x["d"] >= 0.15)
 j2 = {"d_list": ds, "n_ge_015": n_bulge, "of": len(ds), "pass": bool(n_bulge >= 12)}
 # ── J3 ──
-j3 = {"shape_mismatch": "ΔW 数值跨族不可加 (Qwen2.5-0.5B hidden 896 vs Llama-3.2-1B hidden 2048)" if L else "Llama 未挂载"}
+j3 = {"shape_mismatch": "ΔW 跨胚不可加 (0.5B hidden 896 vs 3B hidden 2048)" if L else "第二族未挂载"}
 if L is not None:
     LM = {k: 0.5 * (dWs["L-spring"][k] + dWs["L-summer"][k]) for k in dWs["L-spring"]}
     mdl = merged_from(L, LM); tl = AutoTokenizer.from_pretrained(L)
     lp = probe_dists(mdl, tl)
-    same = []
+    within, cross = [], []
     for p in PROBES:
         pid = p["id"]
-        # 词表不同 → Jaccard 无公共 token 可言; 改报: 族内部 parent-vs-merge 的 top-k 位次重合率
-        same.append(jacc(results["arms"]["M"]["probes"][pid]["ids"],
-                         results["arms"]["Q-spring"]["probes"][pid]["ids"]))
-    j3["within_family_merge_vs_parent_jaccard_mean"] = round(float(np.mean(same)), 4)
-    j3["llama_merge_probe_ids_sample"] = {k: lp[k]["ids"][:8] for k in list(lp)[:3]}
+        # 同 tokenizer → 跨胚 Jaccard 可算: 语言可比而权重不可比 = C37 "只能对话"的量化像
+        within.append(0.5 * (jacc(results["arms"]["M"]["probes"][pid]["ids"],
+                                   results["arms"]["Q-spring"]["probes"][pid]["ids"]) +
+                             jacc(results["arms"]["M"]["probes"][pid]["ids"],
+                                   results["arms"]["Q-summer"]["probes"][pid]["ids"])))
+        cross.append(jacc(results["arms"]["M"]["probes"][pid]["ids"], lp[pid]["ids"]))
+    j3["within_family_merge_vs_parent_jaccard"] = round(float(np.mean(within)), 4)
+    j3["cross_theta_jaccard"] = round(float(np.mean(cross)), 4)
+    j3["second_family"] = "Qwen2.5-3B-instruct (同宗异胚)"
     del mdl; torch.cuda.empty_cache()
 
 results["J1"] = j1; results["J2"] = {k: v for k, v in j2.items() if k != "d_list"}
