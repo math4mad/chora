@@ -1,5 +1,6 @@
 # exp18-darwin-pair · C37 双基底层证伪核 (PREREG_EXP18.md 同 commit 冻结, 阈值不得后改)
 import base64, gc, json, math, os, sys
+import os as _osx; _osx.system("python -m pip uninstall -y -q torchao 2>/dev/null")  # exp25 同法: transformers 与 torchao 0.10 不相容
 import numpy as np, torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModelForCausalLM
