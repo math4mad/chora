@@ -46,11 +46,12 @@ def k90(s):
 def parse(ad):
     d={}
     for k,v in ad.items():
+        vn=v.detach().cpu().double().numpy() if torch.is_tensor(v) else np.asarray(v,dtype=np.float64)
         for kind in ("A","B"):
-            tag=f".lora_{kind}.weight"
+            tag=f".lora_{kind}."   # v3 修: 真键含 adapter 段 (.lora_A.default.weight); 旧过滤器全落空 → geometry {} + astype 未炸属假阴性
             if tag in k:
-                L=int(k.split(".layers.")[1].split(".")[0]); m=k.split(f".layers.{L}.")[1].split(tag)[0].split(".")[-1]
-                d[(L,m,kind)]=v.astype(np.float64)
+                L=int(k.split(".layers.")[1].split(".")[0]); m=k.split(f".layers.{L}.")[1].split(".lora_")[0].split(".")[-1]
+                d[(L,m,kind)]=vn
     return d
 
 def geometry(S,layers):
@@ -114,11 +115,13 @@ for disp,rel in BASES:
                 return round(float(l),4)
             def ablate(src, mode, rng):
                 # ΔW=B@A 直算, 剔除靶子空间 (lora_A 行空间 k90), 重分解回 B/A
+                # v3 修: 真键名含 adapter 段 (.lora_A.default.weight), v1/v2 的 ".lora_A.weight" 过滤器全部落空 → 空字典哑弹
                 out={}
-                keys=sorted({k.split(".lora_")[0] for k in src if ".lora_A.weight" in k})
-                for base in keys:
-                    A=src[base+".lora_A.weight"].double().cpu().numpy()
-                    B=src[base+".lora_B.weight"].double().cpu().numpy()
+                Akeys=sorted(k for k in src if ".lora_A." in k and k.endswith(".weight"))
+                for ak in Akeys:
+                    bk=ak.replace(".lora_A.",".lora_B.")
+                    A=src[ak].double().cpu().numpy()
+                    B=src[bk].double().cpu().numpy()
                     dW=B@A
                     U,sv,Vt=np.linalg.svd(dW,full_matrices=False); kk=k90(sv)
                     Q=U[:,:kk]
@@ -129,19 +132,25 @@ for disp,rel in BASES:
                     r=A.shape[0]
                     newB=(Ub[:,:r]*sb[:r])@np.eye(r)  # r 阶截断
                     newA=Vbt[:r]
-                    out[base+".lora_A.weight"]=torch.tensor(newA,dtype=src[base+".lora_A.weight"].dtype)
-                    out[base+".lora_B.weight"]=torch.tensor(newB,dtype=src[base+".lora_B.weight"].dtype)
+                    out[ak]=torch.tensor(newA,dtype=src[ak].dtype)
+                    out[bk]=torch.tensor(newB,dtype=src[bk].dtype)
                 return out
             rng=np.random.default_rng(13)
             ev={}
             mb=AutoModelForCausalLM.from_pretrained(path,dtype=torch.bfloat16).to(dev).eval()
+            PROBES=PROBES+[["SELFTRAIN-a","def quicksort(arr):\n    if len(arr)<=1:\n        return arr"],
+                            ["SELFTRAIN-b","SELECT SUM(amount) FROM orders GROUP BY customer_id HAVING COUNT(*)>3;"]]
             ev["base"]={n:pair_nll(mb,t) for n,t in PROBES}; del mb; torch.cuda.empty_cache()
             from peft import set_peft_model_state_dict
             for tag in ("full","ablate","sham"):
                 sd=adapters["code"] if tag=="full" else ablate(adapters["code"],tag if tag!="sham" else "sham",rng)
                 m2=AutoModelForCausalLM.from_pretrained(path,dtype=torch.bfloat16)
                 m2=get_peft_model(m2,LoraConfig(task_type=TaskType.CAUSAL_LM,**RECIPE,bias="none"))
-                set_peft_model_state_dict(m2,{k:v.to(dev).float() for k,v in sd.items()}); m2.to(dev); m2.eval()
+                r=set_peft_model_state_dict(m2,{k:v.to(dev).float() for k,v in sd.items()})
+                m2.to(dev); m2.eval()   # v3 修: v2 自检补丁丢了这两句 → 设备失配炸
+                lb=[p for n,p in m2.named_parameters() if "lora_B" in n and p.abs().sum()>0]
+                assert len(lb)>0, f"adapter 未挂上: unexpected={list(getattr(r,'unexpected_keys',[]))[:3]}"
+                master.setdefault("_selfcheck",{})[tag+"_"+disp]={"loraB_nonzero":len(lb),"unexpected":len(getattr(r,'unexpected_keys',[]))}
                 ev[tag]={n:pair_nll(m2,t) for n,t in PROBES}
                 del m2; torch.cuda.empty_cache()
             master.setdefault("_pending_eval",{})[disp]=ev
