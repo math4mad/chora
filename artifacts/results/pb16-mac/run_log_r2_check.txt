@@ -1,0 +1,13 @@
+PB16-MAC · r2 仪器复核（暂停令之后，只验仪，不射臂；与 BLOCKED 现场分匣，不涂改已 pin 之物）
+2026-09-23 19:0x · MacB (m1-16g, macOS 15.8, torch 2.14.0, MPS)
+
+[eval 崩点修法已验] heldout_nll 改逐样本 + 沿位置分块 CE (chunk 32):
+  6 条 held-out 卷 → 1.7 s (0.28 s/条) · MPS driver 2.81 GB
+  ⇒ 全卷 100 条 ≈ 28 s/epoch 末 (原实现一次物化 4×120×151936 fp32 → 崩)
+  逐域 NLL（未训底座，仅仪器验讫用，非臂结果）: general 2.8293（其余域 0 条命中前 6 题，故 null）
+
+[训练节拍无红利] 三测（batch 7 × 112 tok, bf16 底座 + 分块 CE, fwd+bwd）:
+  1.01 s / 6.56 s / 6.32 s   driver 6.75 GB
+  对照先测: fp32 naive 6.0-6.2 s · CPU naive 4.6 s · fp32 分块 lm_head 7.2 s
+⇒ 本机稳态 ~6.3 s/步 = 既成事实；1032 步 ≈ 1.8 h > 主人 1 小时闸 —— 暂停判定经 r2 复核后仍然成立。
+⇒ 移交项不变：三臂 4 epoch 请落 Kaggle T4（PB16 §4 原登记处）。

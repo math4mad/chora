@@ -1,0 +1,7 @@
+START arms=['B'] epochs=1 dev=mps n_train=295 n_held=100
+  B/s13/ep1 10/43 loss 3.398 68s
+  B/s13/ep1 20/43 loss 3.363 174s
+  B/s13/ep1 30/43 loss 3.278 454s
+  B/s13/ep1 40/43 loss 3.207 849s
+!! B/s13 FAILED: RuntimeError: Placeholder storage has not been allocated on MPS device!
+ALL DONE

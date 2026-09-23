@@ -9,3 +9,5 @@ __pycache__/
 .mail/
 experiments/exp11-kaggle/matrix_out/
 experiments/atlas-module1/out/
+
+experiments/pb16-mac-brigade/out/

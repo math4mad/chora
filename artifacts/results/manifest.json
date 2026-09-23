@@ -673,6 +673,46 @@
    "by": "chora-pending",
    "script": "experiments/exp11-kaggle/run_baseline.py (self-contained: corpus base64-embedded, sha-asserted at runtime)",
    "notes": "E2E kaggle pipeline green in 2.6min; cross-hardware replication: ss dWov 0.0807 (band OK), mid anchors 0.591/0.644, V-A flat. KEY FINDING: Kaggle-hub model sha fdf756fa… ≠ local ModelScope-mirror 88c14255… (same bytes-size, different serialization) — container is a variable, pinned separately. Adapters (35MB×3) stay in kernel output; sha in receipts."
+  },
+  {
+   "path": "artifacts/results/pb16-mac/env.json",
+   "sha256": "e4808765870e4e459d3137e0d5a904b75fca5dd95ebfe200e193afc534c09c0e",
+   "bytes": 1981,
+   "source": "MacB pi session 2026-09-23 (PB16-MAC 试射现场 + 机器体检 + 预算算式)",
+   "obtained": "2026-09-23",
+   "by": "cora-atlas@1ca4481 (bench MacB, m1-16g)",
+   "script": "experiments/pb16-mac-brigade/run_pb16_mac.py",
+   "notes": "run-on: m1-16g; torch 2.14.0 / transformers 5.17.0 / peft 0.21.0 / numpy 2.4.6 / python 3.11.16; MPS available; 三臂案止于试射闸 (主人 1 小时闸), 移交 A 机 Kaggle; 见 letters/2026-09-23-B-lola-pb16mac-paused-handoff.md"
+  },
+  {
+   "path": "artifacts/results/pb16-mac/report_macb_BLOCKED.json",
+   "sha256": "c62295904060700ae6967f02ac9ffe9c84c1c93a7cd82a3f5422a9818769f076",
+   "bytes": 3694,
+   "source": "MacB pi session 2026-09-23 (PB16-MAC 试射现场 + 机器体检 + 预算算式)",
+   "obtained": "2026-09-23",
+   "by": "cora-atlas@1ca4481 (bench MacB, m1-16g)",
+   "script": "experiments/pb16-mac-brigade/run_pb16_mac.py",
+   "notes": "run-on: m1-16g; torch 2.14.0 / transformers 5.17.0 / peft 0.21.0 / numpy 2.4.6 / python 3.11.16; MPS available; 三臂案止于试射闸 (主人 1 小时闸), 移交 A 机 Kaggle; 见 letters/2026-09-23-B-lola-pb16mac-paused-handoff.md"
+  },
+  {
+   "path": "artifacts/results/pb16-mac/run_log_BLOCKED.txt",
+   "sha256": "ee6b4d903487fe28bd9fe9eceeed222bed9587ec378c03b3f2c734a77948f8de",
+   "bytes": 290,
+   "source": "MacB pi session 2026-09-23 (PB16-MAC 试射现场 + 机器体检 + 预算算式)",
+   "obtained": "2026-09-23",
+   "by": "cora-atlas@1ca4481 (bench MacB, m1-16g)",
+   "script": "experiments/pb16-mac-brigade/run_pb16_mac.py",
+   "notes": "run-on: m1-16g; torch 2.14.0 / transformers 5.17.0 / peft 0.21.0 / numpy 2.4.6 / python 3.11.16; MPS available; 三臂案止于试射闸 (主人 1 小时闸), 移交 A 机 Kaggle; 见 letters/2026-09-23-B-lola-pb16mac-paused-handoff.md"
+  },
+  {
+   "path": "artifacts/results/pb16-mac/run_log_r2_check.txt",
+   "sha256": "a1ca10e05996809db4262506e36548a9d8033c2b92a5b2c0f5e3dc79b2998cdf",
+   "bytes": 1004,
+   "source": "MacB pi session 2026-09-23 (暂停令后的 r2 仪器复核: eval 修法验讫 + 训练节拍三测)",
+   "obtained": "2026-09-23",
+   "by": "cora-atlas@61689c3 (bench MacB, m1-16g)",
+   "script": "experiments/pb16-mac-brigade/run_pb16_mac.py (r2)",
+   "notes": "run-on: m1-16g; 只验仪不射臂; 6.3 s/步稳态 → 1032 步≈1.8h > 1h 闸, 暂停判定复核后仍成立"
   }
  ]
 }

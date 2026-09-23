@@ -162,22 +162,29 @@ def seg_analysis(prep, labels):
     return energy, geo
 
 # ---------------------------------------------------------------- 探针: 各域 held-out NLL (assistant 段)
-def heldout_nll(model, tok, held, dev):
+# r2 修正 (试射崩点): 原实现一次物化 whole-vocab fp32 logits (batch 4 × ~120 × 151936 ≈ 0.6 GB)
+#      → MacB 16 GB 上 "Placeholder storage has not been allocated on MPS device!"。
+#      现逐样本 + 沿位置分块 CE, 峰值 = 一块 (32 × 151936 × 4 ≈ 19 MB)。数学同一.loss 值不变。
+def heldout_nll(model, tok, held, dev, chunk_pos=32, micro=1):
     model.eval(); acc = {d: [0.0, 0] for d in DOMAINS_ORDER}
     ce = torch.nn.functional.cross_entropy
     with torch.no_grad():
-        for i in range(0, len(held), 8):
-            chunk = held[i:i + 8]
-            ids, lab, at = collate([enc(tok, u, a) for _, u, a in chunk], tok)
-            o = model(input_ids=ids.to(dev), attention_mask=at.to(dev))
-            logits = o.logits[:, :-1, :].float(); sl = lab[:, 1:]
-            flat_l = sl.reshape(-1); flat_p = logits.reshape(-1, logits.shape[-1])
-            losses = ce(flat_p, flat_l, ignore_index=-100, reduction="none").reshape(sl.shape)
-            mask = (sl != -100).float()
-            per = (losses * mask).sum(1).tolist(); cnt = mask.sum(1).tolist()
-            for (d, _, _), lv, cv in zip(chunk, per, cnt):
-                acc[d][0] += lv; acc[d][1] += cv
-            del o, logits, losses
+        for d, u, a in held:
+            ids, lab, at = collate([enc(tok, u, a)], tok)
+            ids, at = ids.to(dev), at.to(dev)
+            logits = model(input_ids=ids, attention_mask=at).logits[:, :-1, :]
+            sl = lab[:, 1:].to(dev); S = logits.shape[1]; tot = 0.0; n = 0
+            for i in range(0, S, chunk_pos):
+                j = min(i + chunk_pos, S)
+                lg = logits[:, i:j, :].float()
+                tgt = sl[:, i:j]
+                mk = (tgt.reshape(-1) != -100)
+                if int(mk.sum()) == 0: continue
+                lv = ce(lg.reshape(-1, lg.shape[-1]), tgt.reshape(-1), ignore_index=-100, reduction="none")
+                tot += float(lv[mk].sum()); n += int(mk.sum())
+                del lg, lv
+            acc[d][0] += tot; acc[d][1] += n
+            del logits
     model.train()
     return {d: (round(v[0] / v[1], 4) if v[1] else None) for d, v in acc.items()}
 
@@ -210,7 +217,7 @@ def run_arm(arm, seed, tok, train, held, dev, master):
             (o.loss / HP["accum"]).backward(); acc += o.loss.item(); nstep += 1
             if HP["accum"] == 1 or nstep % HP["accum"] == 0: opt.step(); opt.zero_grad()
             if si in bounds: snap_at[si] = snapshot(model); prev = snap_at[si]
-            if si % 20 == 0: log(f"  {arm}/s{seed}/ep{e} {si}/{nb} loss {acc/nstep:.3f} {time.time()-t0:.0f}s")
+            if si % 10 == 0: log(f"  {arm}/s{seed}/ep{e} {si}/{nb} loss {acc/nstep:.3f} {time.time()-t0:.0f}s")
         prep = {}; prev = ep_start
         for k, b in enumerate(bounds):
             prep[labels[k]] = _prep(prev, snap_at[b]); prev = snap_at[b]
@@ -236,7 +243,9 @@ def run_arm(arm, seed, tok, train, held, dev, master):
         json.dump(master, open(os.path.join(OUT, "report_macb.json"), "w"), indent=1, ensure_ascii=False)
         log(f"== {arm}/s{seed} ep{e}: CV={cv:.3f} E1/E7={ev[0]/ev[-1]:.2f} meanNLL="
             f"{np.mean([v for v in nll.values() if v]):.3f} nll={nll} {rec['epochs'][-1]['min']}min")
-        del prep
+        del prep, snap_at, energy, geo
+        try: torch.mps.empty_cache()
+        except Exception: pass
     rec["minutes"] = round((time.time() - t0) / 60, 2)
     del model
     return rec
