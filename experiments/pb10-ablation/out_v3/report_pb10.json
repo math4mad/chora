@@ -1,0 +1,182 @@
+{
+ "run": "pb10-ablation-knockout",
+ "ts": "2026-09-23T07:53:15Z",
+ "hp": {
+  "lr": 0.0001,
+  "batch": 2,
+  "accum": 4,
+  "seed": 13,
+  "recipe": {
+   "r": 16,
+   "lora_alpha": 32,
+   "lora_dropout": 0.05,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ]
+  }
+ },
+ "hardware": {
+  "gpu": "Tesla T4",
+  "torch": "2.10.0+cu128"
+ },
+ "bases": {
+  "qwen2.5-0.5b-instruct": {
+   "minutes": 6.7,
+   "geometry": {},
+   "adapter_sha256": {
+    "qwen2.5-0.5b-instruct~code": "1f697d8040f7abc962e781f77d1fc99c1cce0ead7e07be6922b7d218ffdc2a63"
+   },
+   "eval_nll": {
+    "base": {
+     "\u5929\u53f0\u5bf9\u5cd9": 6.2585,
+     "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.4453,
+     "\u89c2\u661f\u53f0": 5.8549,
+     "\u706b\u9505\u5c40": 6.2586,
+     "\u9493\u9c7c\u5858": 6.187,
+     "\u4fee\u8868\u53f0": 6.2634,
+     "\u5e99\u4f1a": 5.1927,
+     "\u957f\u9014\u7eff\u76ae\u8f66": 6.4199,
+     "\u5feb\u9012\u9a7f\u7ad9": 6.7414,
+     "\u6025\u8bca\u5206\u8bca": 6.323,
+     "CTRL-general": 3.5311,
+     "CTRL-legal": 3.7702,
+     "SELFTRAIN-a": 0.9451,
+     "SELFTRAIN-b": 2.4204
+    },
+    "full": {
+     "\u5929\u53f0\u5bf9\u5cd9": 6.3801,
+     "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.3827,
+     "\u89c2\u661f\u53f0": 5.9359,
+     "\u706b\u9505\u5c40": 5.8728,
+     "\u9493\u9c7c\u5858": 6.6566,
+     "\u4fee\u8868\u53f0": 5.821,
+     "\u5e99\u4f1a": 5.0353,
+     "\u957f\u9014\u7eff\u76ae\u8f66": 6.114,
+     "\u5feb\u9012\u9a7f\u7ad9": 6.5019,
+     "\u6025\u8bca\u5206\u8bca": 6.0514,
+     "CTRL-general": 4.1323,
+     "CTRL-legal": 4.547,
+     "SELFTRAIN-a": 0.8979,
+     "SELFTRAIN-b": 2.5298
+    },
+    "ablate": {
+     "\u5929\u53f0\u5bf9\u5cd9": 6.2681,
+     "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.4348,
+     "\u89c2\u661f\u53f0": 5.859,
+     "\u706b\u9505\u5c40": 6.2516,
+     "\u9493\u9c7c\u5858": 6.1899,
+     "\u4fee\u8868\u53f0": 6.2144,
+     "\u5e99\u4f1a": 5.1944,
+     "\u957f\u9014\u7eff\u76ae\u8f66": 6.4178,
+     "\u5feb\u9012\u9a7f\u7ad9": 6.7038,
+     "\u6025\u8bca\u5206\u8bca": 6.3044,
+     "CTRL-general": 3.5302,
+     "CTRL-legal": 3.7876,
+     "SELFTRAIN-a": 0.9534,
+     "SELFTRAIN-b": 2.4285
+    },
+    "sham": {
+     "\u5929\u53f0\u5bf9\u5cd9": 6.4042,
+     "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.39,
+     "\u89c2\u661f\u53f0": 5.9607,
+     "\u706b\u9505\u5c40": 5.8877,
+     "\u9493\u9c7c\u5858": 6.6697,
+     "\u4fee\u8868\u53f0": 5.8186,
+     "\u5e99\u4f1a": 5.0537,
+     "\u957f\u9014\u7eff\u76ae\u8f66": 6.1007,
+     "\u5feb\u9012\u9a7f\u7ad9": 6.5217,
+     "\u6025\u8bca\u5206\u8bca": 6.0823,
+     "CTRL-general": 4.1144,
+     "CTRL-legal": 4.5382,
+     "SELFTRAIN-a": 0.8912,
+     "SELFTRAIN-b": 2.5527
+    }
+   }
+  }
+ },
+ "_selfcheck": {
+  "full_qwen2.5-0.5b-instruct": {
+   "loraB_nonzero": 168
+  },
+  "ablate_qwen2.5-0.5b-instruct": {
+   "loraB_nonzero": 168
+  },
+  "sham_qwen2.5-0.5b-instruct": {
+   "loraB_nonzero": 168
+  }
+ },
+ "_pending_eval": {
+  "qwen2.5-0.5b-instruct": {
+   "base": {
+    "\u5929\u53f0\u5bf9\u5cd9": 6.2585,
+    "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.4453,
+    "\u89c2\u661f\u53f0": 5.8549,
+    "\u706b\u9505\u5c40": 6.2586,
+    "\u9493\u9c7c\u5858": 6.187,
+    "\u4fee\u8868\u53f0": 6.2634,
+    "\u5e99\u4f1a": 5.1927,
+    "\u957f\u9014\u7eff\u76ae\u8f66": 6.4199,
+    "\u5feb\u9012\u9a7f\u7ad9": 6.7414,
+    "\u6025\u8bca\u5206\u8bca": 6.323,
+    "CTRL-general": 3.5311,
+    "CTRL-legal": 3.7702,
+    "SELFTRAIN-a": 0.9451,
+    "SELFTRAIN-b": 2.4204
+   },
+   "full": {
+    "\u5929\u53f0\u5bf9\u5cd9": 6.3801,
+    "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.3827,
+    "\u89c2\u661f\u53f0": 5.9359,
+    "\u706b\u9505\u5c40": 5.8728,
+    "\u9493\u9c7c\u5858": 6.6566,
+    "\u4fee\u8868\u53f0": 5.821,
+    "\u5e99\u4f1a": 5.0353,
+    "\u957f\u9014\u7eff\u76ae\u8f66": 6.114,
+    "\u5feb\u9012\u9a7f\u7ad9": 6.5019,
+    "\u6025\u8bca\u5206\u8bca": 6.0514,
+    "CTRL-general": 4.1323,
+    "CTRL-legal": 4.547,
+    "SELFTRAIN-a": 0.8979,
+    "SELFTRAIN-b": 2.5298
+   },
+   "ablate": {
+    "\u5929\u53f0\u5bf9\u5cd9": 6.2681,
+    "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.4348,
+    "\u89c2\u661f\u53f0": 5.859,
+    "\u706b\u9505\u5c40": 6.2516,
+    "\u9493\u9c7c\u5858": 6.1899,
+    "\u4fee\u8868\u53f0": 6.2144,
+    "\u5e99\u4f1a": 5.1944,
+    "\u957f\u9014\u7eff\u76ae\u8f66": 6.4178,
+    "\u5feb\u9012\u9a7f\u7ad9": 6.7038,
+    "\u6025\u8bca\u5206\u8bca": 6.3044,
+    "CTRL-general": 3.5302,
+    "CTRL-legal": 3.7876,
+    "SELFTRAIN-a": 0.9534,
+    "SELFTRAIN-b": 2.4285
+   },
+   "sham": {
+    "\u5929\u53f0\u5bf9\u5cd9": 6.4042,
+    "\u5fb7\u6d1b\u4e3d\u4e1d\u7ebf": 5.39,
+    "\u89c2\u661f\u53f0": 5.9607,
+    "\u706b\u9505\u5c40": 5.8877,
+    "\u9493\u9c7c\u5858": 6.6697,
+    "\u4fee\u8868\u53f0": 5.8186,
+    "\u5e99\u4f1a": 5.0537,
+    "\u957f\u9014\u7eff\u76ae\u8f66": 6.1007,
+    "\u5feb\u9012\u9a7f\u7ad9": 6.5217,
+    "\u6025\u8bca\u5206\u8bca": 6.0823,
+    "CTRL-general": 4.1144,
+    "CTRL-legal": 4.5382,
+    "SELFTRAIN-a": 0.8912,
+    "SELFTRAIN-b": 2.5527
+   }
+  }
+ }
+}

@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-23T08:01:47Z",
- "chora_head": "86d202c",
+ "generated": "2026-09-23T08:08:14Z",
+ "chora_head": "524c4bd",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -775,7 +775,7 @@
    "verdict": null,
    "gated_by": null,
    "budget": null,
-   "next": "先修枪: PB10 v2 卡 _pending_eval (自检未响) —— 修讫铸 PL2M 弹体 (去句法 2×2 + 接地对照, 判据已冻), 今晚夜哨排队。两答皆头条。",
+   "next": "枪已修讫 (PB10 v3.1 四臂全正常, 自检 168/168 咬合): ablate 全探针回 base (Δ≤0.05), sham 不回 (特异性成立雏形) → PL2M 铸弹开禁。",
    "flags": [
     "pre-registration (0923 夜 is not an ancestor of HEAD (unmerged text)",
     "no bytes on disk: artifacts/results/pl2m/report_pl2m.json",
@@ -793,7 +793,7 @@
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint 86d202c, 0 commit(s) behind HEAD",
+  "glass: generated 6 min ago · paint 86d202c, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
