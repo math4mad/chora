@@ -142,21 +142,29 @@ for disp,rel in BASES:
                             ["SELFTRAIN-b","SELECT SUM(amount) FROM orders GROUP BY customer_id HAVING COUNT(*)>3;"]]
             ev["base"]={n:pair_nll(mb,t) for n,t in PROBES}; del mb; torch.cuda.empty_cache()
             from peft import set_peft_model_state_dict
+            import re as _re
+            def _strip(sd): return {_re.sub(r"\.lora_([AB])\.[^.]+\.weight", r".lora_\1.weight", k): v for k,v in sd.items()}
             for tag in ("full","ablate","sham"):
                 sd=adapters["code"] if tag=="full" else ablate(adapters["code"],tag if tag!="sham" else "sham",rng)
                 m2=AutoModelForCausalLM.from_pretrained(path,dtype=torch.bfloat16)
                 m2=get_peft_model(m2,LoraConfig(task_type=TaskType.CAUSAL_LM,**RECIPE,bias="none"))
-                r=set_peft_model_state_dict(m2,{k:v.to(dev).float() for k,v in sd.items()})
-                m2.to(dev); m2.eval()   # v3 修: v2 自检补丁丢了这两句 → 设备失配炸
-                lb=[p for n,p in m2.named_parameters() if "lora_B" in n and p.abs().sum()>0]
-                assert len(lb)>0, f"adapter 未挂上: unexpected={list(getattr(r,'unexpected_keys',[]))[:3]}"
-                master.setdefault("_selfcheck",{})[tag+"_"+disp]={"loraB_nonzero":len(lb),"unexpected":len(getattr(r,'unexpected_keys',[]))}
+                # v3.1: 版本双吃 —— 新 peft 要短键 (自加 adapter 段), 旧 peft 要全键; 先短后全, 咬上为准
+                ok=False
+                for variant in (_strip(sd), sd):
+                    r=set_peft_model_state_dict(m2,{k:v.to(dev).float() for k,v in variant.items()})
+                    m2.to(dev); m2.eval()
+                    lb=[p for n,p in m2.named_parameters() if "lora_B" in n and p.abs().sum()>0]
+                    if len(lb)>0: ok=True; break
+                    m2=AutoModelForCausalLM.from_pretrained(path,dtype=torch.bfloat16)
+                    m2=get_peft_model(m2,LoraConfig(task_type=TaskType.CAUSAL_LM,**RECIPE,bias="none"))
+                assert ok, f"adapter 未挂上 (双键式皆败): unexpected={list(getattr(r,'unexpected_keys',[]))[:2]}"
+                master.setdefault("_selfcheck",{})[tag+"_"+disp]={"loraB_nonzero":len(lb)}
                 ev[tag]={n:pair_nll(m2,t) for n,t in PROBES}
                 del m2; torch.cuda.empty_cache()
             master.setdefault("_pending_eval",{})[disp]=ev
         except Exception as ex:
             master.setdefault("_pending_eval",{})[disp]={"error":type(ex).__name__+": "+str(ex)[:200]}
-        S={a:parse(ad) for a,ad in ((a,{k:np.linalg.svd(v,full_matrices=False) for k,v in parse(ad).items()}) for a,ad in adapters.items())}
+        S={a:{k:np.linalg.svd(v,full_matrices=False) for k,v in parse(ad).items()} for a,ad in adapters.items()}  # v3.1: 旧式双重 parse 把 svd  namedtuple 再喂 parse → np.asarray 炸 (3,16)
         layers=sorted({k[0] for k in list(S.values())[0]})
         geo=geometry(S,layers)
         msha={f"{disp}~{a}":hashlib.sha256(open(os.path.join(OUT,f"{disp}__adapter_{a}.safetensors"),'rb').read()).hexdigest() for a in adapters}

@@ -1,5 +1,5 @@
 {
- "id": "math4amd/pb10-ablation-knockout",
+ "id": "math4amd/pb10-ablation-knockout-gram-schmidt-duel-arm",
  "title": "PB10 Ablation Knockout (Gram-Schmidt duel arm)",
  "code_file": "run.py",
  "language": "python",
