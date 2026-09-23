@@ -68,6 +68,14 @@ one bench.
 
 ## Law of the workspace
 
+0. **核心资产序律（主人 0923 夜裁定・法码已批）**：园体所产分三等 ——
+   **① 对话与论文 = 必保**（主人口述母本、对话录、学者信件、tex/pdf 论稿、预注册册：
+   一次生成不可复得，丢了无从重造）；**② 实验室诸案 = 锦上添花**
+   （数据、图、checkpoint、日志 —— 可重射，唯判据与账行不可失）；
+   **③ 依附品**（为论文服务的脚本、备料、可视化骸架）。排产冲突时一律让路于①。
+   **凡宝必三存**：盘上工作树 + 本地封存袋 + off-disk 私有仓
+   （器部 `Concept-Space-Sphere/bin/vault-core.sh` 主其事，`math4mad/cora-vault` 收金）。
+
 1. **Share inputs and artifacts, never histories.** No merges of git history;
    benches keep their own remotes. Large binaries are git-ignored everywhere
    and reconstructed from manifest entries.
