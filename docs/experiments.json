@@ -946,8 +946,8 @@
    "produces": [
     "experiments/atlas-module1/atlas_module1.json"
    ],
-   "claim": "registered",
-   "next": "夜核自动发射 (席位空即射); report_atlas_m1.json 回收后按 H-A1 判准入 → 模块二 (Qwen3B+LoRA Dirichlet 头) 设计案候明日圈点",
+   "claim": "scored",
+   "next": "H-A1 两发皆 ✗ (centered inter_max 0.9559 ≥ intra 0.6822): 图谱大体可分但有个化成对粘连 → 模块二缓行。M1.6 补射候今晚 (--emit-collisions 指名碰撞对+共享token表); 弱空间返工表前五见 cora-atlas/iterations/2026-09-22-atlas-m1-readout.md。",
    "notes": "确定性生成 (零随机, 字节可复); 觉醒循环空间采用文档原例; 360 token 零重复断言在码内"
   },
   {
@@ -979,6 +979,36 @@
    },
    "claim": "scored",
    "next": "J3 已射 (v7, 第二族=Qwen2.5-1.5B 同宗异胚): 族内 merge-vs-parent Jaccard 0.573 vs 跨胚 0.290 —— 权重不可加、语言可比而衰减过半, C37 三分支全获数。遗: Llama 真跨系候主人在 Kaggle 网页接受许可后另射。"
+  },
+  {
+   "id": "pl2m-modality-swap",
+   "title": "PL2-M · 模态交换臂 — 聋/盲类比之权重界首枪 (接管 M-Q1 / 窗 M-Q2 + 接地对照)",
+   "kind": "experiment",
+   "owner_seat": "Lola (owner 0922 夕查岗所催)",
+   "owner_bench": "chora",
+   "prereg": {
+    "repo": "chora",
+    "path": "experiments/PREREG_PL2M_modality_swap.md",
+    "commit": "(0923 夜稿)",
+    "marker": "## 0. 命题"
+   },
+   "apparatus": {
+    "repo": "chora",
+    "path": "experiments/pb10-ablation/run.py"
+   },
+   "consumes": [
+    {
+     "path": "models/models/Qwen--Qwen2.5-0.5B/snapshots/master/model.safetensors"
+    }
+   ],
+   "produces": [
+    "artifacts/results/pl2m/report_pl2m.json"
+   ],
+   "verdict": {
+    "at": "/M_Q1/takeover"
+   },
+   "claim": "registered",
+   "next": "先修枪: PB10 v2 卡 _pending_eval (自检未响) —— 修讫铸 PL2M 弹体 (去句法 2×2 + 接地对照, 判据已冻), 今晚夜哨排队。两答皆头条。"
   }
  ]
 }

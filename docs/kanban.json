@@ -1,16 +1,16 @@
 {
- "generated": "2026-09-23T03:04:38Z",
- "chora_head": "ff28065",
+ "generated": "2026-09-23T03:07:54Z",
+ "chora_head": "aaad1c4",
  "counts": {
   "idea": 0,
   "registered": 5,
-  "equipped": 5,
+  "equipped": 6,
   "landed": 3,
   "scored": 5,
   "announced": 0,
   "closed": 10,
   "blocked": 10,
-  "RECONCILE": 11
+  "RECONCILE": 12
  },
  "rows": [
   {
@@ -726,14 +726,14 @@
    "owner": "lola@LETHE (owner commission 12:28)",
    "bench": "chora",
    "lane": "landed",
-   "claim": "registered",
+   "claim": "scored",
    "verdict": null,
    "gated_by": null,
    "budget": null,
-   "next": "夜核自动发射 (席位空即射); report_atlas_m1.json 回收后按 H-A1 判准入 → 模块二 (Qwen3B+LoRA Dirichlet 头) 设计案候明日圈点",
+   "next": "H-A1 两发皆 ✗ (centered inter_max 0.9559 ≥ intra 0.6822): 图谱大体可分但有个化成对粘连 → 模块二缓行。M1.6 补射候今晚 (--emit-collisions 指名碰撞对+共享token表); 弱空间返工表前五见 cora-atlas/iterations/2026-09-22-atlas-m1-readout.md。",
    "flags": [
     "registered text lacks the marker '## Deliverables' at HEAD",
-    "CLAIM DRIFT: the hand says 'registered', the bytes say 'landed'"
+    "CLAIM DRIFT: the hand says 'scored', the bytes say 'landed'"
    ],
    "detail": {
     "prereg": "chora@17b821f experiments/atlas-module1/PREREG.md",
@@ -763,12 +763,37 @@
     "verdict": "True",
     "reconcile": true
    }
+  },
+  {
+   "id": "pl2m-modality-swap",
+   "title": "PL2-M · 模态交换臂 — 聋/盲类比之权重界首枪 (接管 M-Q1 / 窗 M-Q2 + 接地对照)",
+   "kind": "experiment",
+   "owner": "Lola (owner 0922 夕查岗所催)",
+   "bench": "chora",
+   "lane": "equipped",
+   "claim": "registered",
+   "verdict": null,
+   "gated_by": null,
+   "budget": null,
+   "next": "先修枪: PB10 v2 卡 _pending_eval (自检未响) —— 修讫铸 PL2M 弹体 (去句法 2×2 + 接地对照, 判据已冻), 今晚夜哨排队。两答皆头条。",
+   "flags": [
+    "pre-registration (0923 夜 is not an ancestor of HEAD (unmerged text)",
+    "no bytes on disk: artifacts/results/pl2m/report_pl2m.json",
+    "verdict source file absent: artifacts/results/pl2m/report_pl2m.json",
+    "CLAIM DRIFT: the hand says 'registered', the bytes say 'equipped'"
+   ],
+   "detail": {
+    "prereg": "chora@(0923 夜 experiments/PREREG_PL2M_modality_swap.md",
+    "apparatus": "chora:experiments/pb10-ablation/run.py",
+    "verdict": null,
+    "reconcile": true
+   }
   }
  ],
  "audits": [
   "pins: 174 · no bytes: 0 · hash mismatch: 0 · untracked-not-by-design: 0",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint ff28065, 0 commit(s) behind HEAD",
+  "glass: generated 3 min ago · paint ff28065, 1 commit(s) behind HEAD  (HEAD moved after the paint)",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
