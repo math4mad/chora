@@ -5,7 +5,7 @@
 **已做完的（全部入匣，见下）**
 1. 体检照贴：macOS **15.8**（简报写 12，差异照登）· 16 GB · 盘余 40 GB（≥40 闸刚踩线）· 默认 python3 无 torch。
 2. 取仓：chora `92b9ff0→4d17929`（前三次 fetch early EOF，第四次成——仓内 node_modules 使 pack 偏大）；cora-atlas `a531583→1ca4481`。
-3. **判据先冻**（`experiments/pb16-mac-brigade/PREREG_PB16_MAC_3ARM.md`，`49ed599`）：三臂 S域序/R乱序/B旅制，K1 段能量 CV·E1/E7（无缝 vs 横纹）、K2 段间 dWov+k90 重叠（先入霸权行）、K3 各域 held-out NLL、K4 后入三域折扣；诚实条款、双 seed 功率门、主张范围全依 PB15 补丁 A/B/C。**PB15 海选未获另批，未射**。
+3. **判据先冻**（`experiments/pb16-mac-brigade/PREREG_PB16_MAC_3ARM.md`，`5a65840`（rebase 前曾为 49ed599））：三臂 S域序/R乱序/B旅制，K1 段能量 CV·E1/E7（无缝 vs 横纹）、K2 段间 dWov+k90 重叠（先入霸权行）、K3 各域 held-out NLL、K4 后入三域折扣；诚实条款、双 seed 功率门、主张范围全依 PB15 补丁 A/B/C。**PB15 海选未获另批，未射**。
 4. **先 pin 后动 token**：Qwen2.5-0.5B-Instruct 八文件 ModelScope 取讫、重哈希入 `models/manifest.json`（53→61，旧账零改动）；七域内嵌件解包即验 sha **7/7 中**（395 条）；考卷 seed 20260923 切 100 条永不参训。
 5. 仪入匣：`run_pb16_mac.py`（几何自 exp11 matrix_run 之 dWov/k90，段对段，低秩 tr 恒等式免 1.4GB 稠密）。
 6. **失败留痕**（§3.5 试射闸）：B 臂 seed13 单 epoch 试射，40/43 步后**崩在 epoch 末 eval**，error+traceback 全入匣。
