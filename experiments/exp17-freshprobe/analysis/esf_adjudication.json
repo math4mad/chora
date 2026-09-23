@@ -1,0 +1,106 @@
+{
+ "run": "esf-adjudication-v3",
+ "ts": "2026-09-23",
+ "bins_S": 60,
+ "mc_trials": 2000000,
+ "design": "H0=均匀占用 U(60)×12; 统计=max占用; Pitman 双参数 MLE 附判",
+ "prereg": "p<0.05 → breach; Δll>1.92 → 需 Dir(θ,α)",
+ "note_v1v2": "前两版以 CRP 为零模型, θ 退化至网格边界——病根: 探针卷非 CRP 抽样 (刻意 diversified), 留档为鉴",
+ "scales": {
+  "0.5b-instruct/1": {
+   "occupancy": [
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "max": 2,
+   "p_uniform_null": 0.6918875,
+   "p_note": "0 即 <2.5e-7 (4×10⁶ 批 MC 零命中)",
+   "breach": false,
+   "pitman": {
+    "alpha": 0.56,
+    "theta": 5.0,
+    "delta_ll": 1.49,
+    "need_two_param": false
+   }
+  },
+  "1.5b-instruct/1": {
+   "occupancy": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "max": 2,
+   "p_uniform_null": 0.6918875,
+   "p_note": "0 即 <2.5e-7 (4×10⁶ 批 MC 零命中)",
+   "breach": false,
+   "pitman": {
+    "alpha": 0.0,
+    "theta": 9.3,
+    "delta_ll": 0.0,
+    "need_two_param": false
+   }
+  },
+  "3b-instruct/1": {
+   "occupancy": [
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "max": 2,
+   "p_uniform_null": 0.6918875,
+   "p_note": "0 即 <2.5e-7 (4×10⁶ 批 MC 零命中)",
+   "breach": false,
+   "pitman": {
+    "alpha": 0.0,
+    "theta": 9.3,
+    "delta_ll": 0.0,
+    "need_two_param": false
+   }
+  },
+  "7b-instruct/1": {
+   "occupancy": [
+    6,
+    2,
+    1,
+    1,
+    1,
+    1
+   ],
+   "max": 6,
+   "p_uniform_null": 0.0,
+   "p_note": "0 即 <2.5e-7 (4×10⁶ 批 MC 零命中)",
+   "breach": true,
+   "pitman": {
+    "alpha": 0.34,
+    "theta": 1.3,
+    "delta_ll": 0.7,
+    "need_two_param": false
+   }
+  }
+ },
+ "verdicts": {
+  "ruling_1": "7B breach 获正式裁决: 均匀占用下 P(max≥6) < 5e-7 (2×10⁶ 次 MC 零命中), 引力井塌陷非随机事; 三至小规模 max=2 与 U(60) 完全相容 (p≈0.69) —— P-B3 之违约判定由'肉眼'升格为'有 p 值'",
+  "ruling_2": "本探针卷不需 Pitman-Yor: 参考规模 α̂≈0 且 Δll<1.92 (0.5b 之 α̂=0.56 属小样本噪声, 未过 LRT 门槛) —— 天气层维持 Dir(θ) 单参数; 概念频率重尾之真判据在 172 题全卷/语料词频, 另案",
+  "garden_lesson": "零模型必须与生成过程对位: 探针卷是出题人 diversified 设计的, 拿 CRP 当零假设等于让考卷自证清白——v1/v2 之 θ 退化即此罪的机器自供"
+ }
+}
