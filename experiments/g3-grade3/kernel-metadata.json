@@ -1,0 +1,14 @@
+{
+ "id": "math4amd/g3-grade-three-ablation-suite",
+ "title": "G3 Grade Three Ablation Suite",
+ "code_file": "g3_kaggle.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": []
+}

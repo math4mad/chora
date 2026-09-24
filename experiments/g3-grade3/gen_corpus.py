@@ -4,11 +4,16 @@
 NBA 舱为确定性模板扩增(史实序不许 LLM 编); grade3 舱产物候人工审。"""
 import argparse, json, os, random, re, subprocess, sys
 import urllib.request
+try:
+    import ssl, certifi
+    _SSLCTX = ssl.create_default_context(cafile=certifi.where())
+except Exception:
+    _SSLCTX = None
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, "corpus")
 API = "https://api.tokenbargain.dev/v1/chat/completions"
-MODEL = os.environ.get("TB_MODEL", "qwen3-0.6b")
+MODEL = os.environ.get("TB_MODEL", "SpaceBunny")
 
 PROMPTS = {
     "spring": ("你在写春节概念空间的短文档。要求:只写春节/年货/团圆/鞭炮/饺子/红包/庙会/元宵这一舱的物事,"
@@ -33,10 +38,10 @@ def get_key():
 
 def ask(key, prompt):
     body = json.dumps({"model": MODEL, "messages": [{"role": "user", "content": prompt}],
-                       "max_tokens": 1200, "temperature": 0.9}).encode()
+                       "max_tokens": 6000, "temperature": 0.9}).encode()
     req = urllib.request.Request(API, data=body,
-                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
-    with urllib.request.urlopen(req, timeout=60) as r:
+                                 headers={"Authorization": f"Bearer {key}", "Content-Type": "application/json", "User-Agent": "curl/8.7.1"})
+    with urllib.request.urlopen(req, timeout=60, context=_SSLCTX) as r:
         return json.load(r)["choices"][0]["message"]["content"]
 
 
