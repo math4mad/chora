@@ -1,3 +1,4 @@
+# v3-push-probe 2026-09-24T19:43 (v2 疑未落版: 409+日志字节与 v1 全同)
 # LADDER-2 wet arm · 同一袋, 两喂法 —— ladder(S1→S2→S3 段序贯) vs mixed(乱序同袋)
 # 观测量: ①checkpoint×eval段 交叉CE矩阵(段专业化=序的收据) ②ΔW_B 自重叠 cos(ck_k, ck_k+1) ③每 ck 谱统计
 # 判据出生: Concept-Space-Sphere/corpus/ladder05/exp_ladder/PREREG_LADDER-1 (dry);
