@@ -55,7 +55,7 @@ class M(nn.Module):
 
 chars = sorted({c for t, _ in DOCS for c in t})
 ITOS = ["<p>", "<b>", "<e>"] + chars; STOI = {c: i for i, c in enumerate(ITOS)}
-def enc(t): return [BOS] + [STOI[c] for c in t] + [EOS]
+def enc(t): return [BOS] + [STOI[c] for c in t if c in STOI] + [EOS]  # OOV 容忍(探针字可越库)
 
 def pack(seed, cabins=None, ctx=512, batch=16):
     ds = [d for d in DOCS if cabins is None or d[1] in cabins]
