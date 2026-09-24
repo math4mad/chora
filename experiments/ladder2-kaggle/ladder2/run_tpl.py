@@ -19,6 +19,7 @@ for f, m in PAYLOAD.items():
     open(os.path.join(DATA, f), "wb").write(raw)
 
 BASE = ("qwen2.5-0.5b-instruct", "qwen-lm/qwen2.5/transformers/0.5b-instruct/1")
+MPATH = "/kaggle/input/models/" + BASE[1]   # 挂载真身路径 (exp11 正臂 L78 同款; slug 不是 repo id, v1 死于此)
 SEGS = ["s1_naming.jsonl", "s2_rhyme.jsonl", "s3_dialogue.jsonl"]
 HP = dict(lr=1e-4, batch=8, seed=13, epochs=2, seq=256)
 RECS = dict(r=16, lora_alpha=32, lora_dropout=0.05,
@@ -33,9 +34,9 @@ POOL = {f: DOCS[f][:-20] for f in SEGS}
 N = sum(len(POOL[f]) for f in SEGS)
 
 def get_base():
-    tok = AutoTokenizer.from_pretrained(BASE[1], local_files_only=True)
+    tok = AutoTokenizer.from_pretrained(MPATH); tok.padding_side = "right"
     if tok.pad_token is None: tok.pad_token = tok.eos_token
-    mdl = AutoModelForCausalLM.from_pretrained(BASE[1], local_files_only=True, torch_dtype=torch.bfloat16)
+    mdl = AutoModelForCausalLM.from_pretrained(MPATH, dtype=torch.bfloat16)
     mdl = get_peft_model(mdl, LoraConfig(task_type="CAUSAL_LM", **RECS))
     return tok, mdl
 
