@@ -1,0 +1,8 @@
+== 试射闸开 (out-smoke 匣, 产物永不入结果表) ==
+START arms=['B'] epochs=1 dev=cuda n_train=295 n_held=100
+  B/s13/ep1 10/43 loss 3.407 19s
+  B/s13/ep1 20/43 loss 3.370 27s
+  B/s13/ep1 30/43 loss 3.285 34s
+  B/s13/ep1 40/43 loss 3.213 41s
+!! B/s13 FAILED: ZeroDivisionError: float division by zero
+ALL DONE

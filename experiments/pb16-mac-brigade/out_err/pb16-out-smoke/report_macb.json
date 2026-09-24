@@ -1,0 +1,129 @@
+{
+ "run": "pb16-mac-3arm",
+ "ts": "2026-09-24T10:03:58Z",
+ "run_on": "kaggle-T4 (r2 复核移交案, 原 MacB 超 1h 闸)",
+ "device": "cuda",
+ "env": {
+  "torch": "2.10.0+cu128",
+  "transformers": "5.0.0",
+  "peft": "0.19.1",
+  "numpy": "2.0.2",
+  "python": "3.12.13"
+ },
+ "model_path": "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1",
+ "corpus_verify": {
+  "corpus_spring.jsonl": {
+   "sha256": "d38e57905b30a43ac624fd07b4a50b7704a6b712236635eefe6f3a8779394262",
+   "bytes": 12147
+  },
+  "corpus_summer.jsonl": {
+   "sha256": "e7246601f036edc21b81ba79a1654beca87892d3655d23b5c6d5b6484efb84f7",
+   "bytes": 12441
+  },
+  "corpus_mid.jsonl": {
+   "sha256": "7143b433fe7d61dc73c0bdfe7e48aa7699ff44273d4fa030260225f445f002ce",
+   "bytes": 24588
+  },
+  "corpus_code.jsonl": {
+   "sha256": "8193c5d7cec6c28a60118a6aa55e52cc357d1ce4f5d9a40ba504bf53b8584efd",
+   "bytes": 9291
+  },
+  "corpus_legal.jsonl": {
+   "sha256": "0af3c7c96fa53c1d12eef4df29ceb32e670ba3bdf5c72f6e96e61d1456fb473a",
+   "bytes": 9530
+  },
+  "corpus_medical.jsonl": {
+   "sha256": "d8ed65fa92f552708530b2d7d99f9dc8e06fd86c0a7831b6ad1ef5fda5ca16cf",
+   "bytes": 9605
+  },
+  "corpus_general.jsonl": {
+   "sha256": "72b0f760b5b53623812fee903b4df49e9142c350335010dd54872862ee177212",
+   "bytes": 22497
+  }
+ },
+ "split_seed": 20260923,
+ "ledger": {
+  "general": {
+   "n_total": 55,
+   "n_held": 14,
+   "n_train": 41
+  },
+  "code": {
+   "n_total": 40,
+   "n_held": 10,
+   "n_train": 30
+  },
+  "spring": {
+   "n_total": 55,
+   "n_held": 14,
+   "n_train": 41
+  },
+  "summer": {
+   "n_total": 55,
+   "n_held": 14,
+   "n_train": 41
+  },
+  "legal": {
+   "n_total": 40,
+   "n_held": 10,
+   "n_train": 30
+  },
+  "medical": {
+   "n_total": 40,
+   "n_held": 10,
+   "n_train": 30
+  },
+  "mid": {
+   "n_total": 110,
+   "n_held": 28,
+   "n_train": 82
+  }
+ },
+ "n_train": 295,
+ "n_held": 100,
+ "hp": {
+  "lr": 0.0001,
+  "batch": 7,
+  "accum": 1,
+  "epochs": 1,
+  "seeds": [
+   13
+  ],
+  "recipe": {
+   "r": 16,
+   "lora_alpha": 32,
+   "lora_dropout": 0.05,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ]
+  },
+  "domains_order": [
+   "general",
+   "code",
+   "spring",
+   "summer",
+   "legal",
+   "medical",
+   "mid"
+  ]
+ },
+ "arms": [
+  "B"
+ ],
+ "prereg": "experiments/pb16-mac-brigade/PREREG_PB16_MAC_3ARM.md",
+ "results": [
+  {
+   "arm": "B",
+   "seed": 13,
+   "FAILED": true,
+   "error": "ZeroDivisionError: float division by zero",
+   "traceback": "Traceback (most recent call last):\n  File \"/kaggle/src/script.py\", line 277, in main\n    master[\"results\"].append(run_arm(arm, seed, tok, train, held, dev, master))\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/kaggle/src/script.py\", line 238, in run_arm\n    \"seg_energy_CV\": round(cv, 4), \"E1_over_E7\": round(ev[0] / ev[-1], 3),\n                                                       ~~~~~~^~~~~~~~\nZeroDivisionError: float division by zero\n"
+  }
+ ]
+}

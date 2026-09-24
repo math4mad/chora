@@ -23,7 +23,7 @@ FILES = {d: f"corpus_{d}.jsonl" for d in DOMAINS_ORDER}
 ARMS  = ["S", "R", "B"]
 SPLIT_SEED = 20260923
 HP     = dict(lr=1e-4, batch=7, accum=1, epochs=int(os.environ.get("PB16_EPOCHS", 4)),
-              seeds=[int(x) for x in os.environ.get("PB16_SEEDS", "13,14").split(",")])
+              seeds=[int(x) for x in os.environ.get("PB16_SEEDS", "13,14,15").split(",")])
 RECIPE = dict(r=16, lora_alpha=32, lora_dropout=0.05,
               target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"])
 MODS = RECIPE["target_modules"]
@@ -131,7 +131,7 @@ def ip(B1, A1, B2, A2):
     return float(np.trace((A2 @ A1.T) @ (B1.T @ B2)))
 
 def k90(s):
-    e = s ** 2 / (s ** 2).sum(); return int(np.searchsorted(np.cumsum(e), 0.90) + 1)
+    _sm = float((s ** 2).sum()); e = s ** 2 / (_sm + 1e-300); return int(np.searchsorted(np.cumsum(e), 0.90) + 1)
 
 def _prep(prev, cur):
     """每段每模块: 内积所需 (Bt,At) + 右子空间 SVD 缓存。"""
@@ -221,7 +221,9 @@ def run_arm(arm, seed, tok, train, held, dev, master):
             o = model(input_ids=ids.to(dev), attention_mask=at.to(dev), labels=lab.to(dev))
             (o.loss / HP["accum"]).backward(); acc += o.loss.item(); nstep += 1
             if HP["accum"] == 1 or nstep % HP["accum"] == 0: opt.step(); opt.zero_grad()
-            if si in bounds: snap_at[si] = snapshot(model); prev = snap_at[si]
+            if si in bounds:
+                snap_at[si] = snapshot(model); prev = snap_at[si]
+                rec.setdefault("ce_traj", []).append({"ep": e, "step": si, "nll": heldout_nll(model, tok, held, dev)})
             if si % 10 == 0: log(f"  {arm}/s{seed}/ep{e} {si}/{nb} loss {acc/nstep:.3f} {time.time()-t0:.0f}s")
         prep = {}; prev = ep_start
         for k, b in enumerate(bounds):
@@ -248,8 +250,8 @@ def run_arm(arm, seed, tok, train, held, dev, master):
                               "min": round((time.time() - t0) / 60, 2)})
         master["ts_update"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         json.dump(master, open(os.path.join(OUT, "report_macb.json"), "w"), indent=1, ensure_ascii=False)
-        log(f"== {arm}/s{seed} ep{e}: CV={cv:.3f} E1/E7={ev[0]/ev[-1]:.2f} meanNLL="
-            f"{np.mean([v for v in nll.values() if v]):.3f} nll={nll} {rec['epochs'][-1]['min']}min")
+        log(f"== {arm}/s{seed} ep{e}: CV={cv:.3f} E1/E7={(ev[0]/max(ev[-1],1e-9)):.2f} meanNLL="
+            f"{(np.mean([v for v in nll.values() if v]) if any(nll.values()) else float("nan")):.3f} nll={nll} {rec['epochs'][-1]['min']}min")
         del prep, snap_at, energy, geo
         try: torch.cuda.empty_cache()
         except Exception: pass
@@ -265,28 +267,38 @@ def main():
     tok = AutoTokenizer.from_pretrained(MODEL); tok.padding_side = "right"
     import transformers, peft
     arms = os.environ.get("PB16_ARMS", ",".join(ARMS)).split(",")
-    master = {"run": "pb16-mac-3arm", "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    master = {"run": "pb16c-order-3d", "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
               "run_on": "kaggle-T4 (r2 复核移交案, 原 MacB 超 1h 闸)", "device": dev,
               "env": {"torch": torch.__version__, "transformers": transformers.__version__,
                       "peft": peft.__version__, "numpy": np.__version__, "python": sys.version.split()[0]},
               "model_path": MODEL, "corpus_verify": verify, "split_seed": SPLIT_SEED, "ledger": ledger,
               "n_train": len(train), "n_held": len(held),
               "hp": {**HP, "recipe": RECIPE, "domains_order": DOMAINS_ORDER},
-              "arms": arms, "prereg": "experiments/pb16-mac-brigade/PREREG_PB16_MAC_3ARM.md",
+              "arms": arms, "prereg": "experiments/pb16-mac-brigade/PREREG_PB16c_order_3d_dose_response.md",
               "results": []}
     json.dump(master, open(os.path.join(OUT, "report_macb.json"), "w"), indent=1, ensure_ascii=False)
     log(f"START arms={arms} epochs={HP['epochs']} dev={dev} n_train={len(train)} n_held={len(held)}")
     for arm in arms:
         for seed in HP["seeds"]:
             try:
-                master["results"].append(run_arm(arm, seed, tok, train, held, dev, master))
+                rr = run_arm(arm, seed, tok, train, held, dev, master)
+                master["results"].append(rr)
                 json.dump(master, open(os.path.join(OUT, "report_macb.json"), "w"), indent=1, ensure_ascii=False)
+                try:
+                    _slim = {k: v for k, v in rr.items() if k not in ("epochs",)}
+                    _slim["epochs"] = [{k: v for k, v in ep.items() if k != "seg_geometry"} for ep in rr.get("epochs", [])]
+                    print("REPORT_SPIT", arm, seed, base64.b64encode(json.dumps(_slim).encode()).decode()[:5500], flush=True)
+                except Exception: pass
             except Exception as ex:
                 master["results"].append({"arm": arm, "seed": seed, "FAILED": True,
                                           "error": type(ex).__name__ + ": " + str(ex)[:300],
                                           "traceback": traceback.format_exc()[-1500:]})
                 json.dump(master, open(os.path.join(OUT, "report_macb.json"), "w"), indent=1, ensure_ascii=False)
                 log(f"!! {arm}/s{seed} FAILED: {type(ex).__name__}: {str(ex)[:200]}")
+    master["sentinel"] = "pb16c_ok"
+    json.dump(master, open(os.path.join(OUT, "report_macb.json"), "w"), indent=1, ensure_ascii=False)
+    try: print("REPORT_LINE", base64.b64encode(open(os.path.join(OUT, "report_macb.json"), "rb").read()).decode()[:60000], flush=True)
+    except Exception: pass
     log("ALL DONE")
 
 def _gate_and_main():
