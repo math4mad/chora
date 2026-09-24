@@ -63,10 +63,10 @@ def pack(seed, cabins=None, ctx=512, batch=16):
     tk, cb = [], []
     for t, c in ds:
         e = enc(t); tk += e; cb += [c] * len(e)
-    nb = max(1, (len(tk) - 1) // (ctx * batch)); need = nb * batch * ctx + 1
-    a = torch.tensor(tk[:need]); v = torch.tensor(cb[:need])
-    return (a[:nb*batch*ctx].view(-1, ctx).to(DEV), v[:nb*batch*ctx].view(-1, ctx).to(DEV),
-            a[1:nb*batch*ctx+1].view(-1, ctx).to(DEV))
+    rows = (len(tk) - 1) // ctx
+    a = torch.tensor(tk[:rows * ctx + 1]); v = torch.tensor(cb[:rows * ctx + 1])
+    return (a[:rows*ctx].view(rows, ctx).to(DEV), v[:rows*ctx].view(rows, ctx).to(DEV),
+            a[1:rows*ctx+1].view(rows, ctx).to(DEV))
 
 def stage(step, total, curr):
     if not curr: return {0, 1, 2, 3}, {(0, 1), (2, 3)}

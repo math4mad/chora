@@ -70,13 +70,12 @@ def pack(docs, tok, ctx, batch, seed=0, cabins_filter=None):
     for t, c in ds:
         e = tok.encode(t)
         toks += e; cabs += [c] * len(e)
-    nb = max(1, (len(toks) - 1) // (ctx * batch))
-    need = nb * batch * ctx + 1
-    arr = torch.tensor(toks[:need])
-    car = torch.tensor(cabs[:need])
-    xs = arr[: nb * batch * ctx].view(nb * batch, ctx)
-    cs = car[: nb * batch * ctx].view(nb * batch, ctx)
-    ys = arr[1: nb * batch * ctx + 1].view(nb * batch, ctx)
+    rows = max(1, (len(toks) - 1) // ctx)
+    arr = torch.tensor(toks[:rows * ctx + 1])
+    car = torch.tensor(cabs[:rows * ctx + 1])
+    xs = arr[: rows * ctx].view(rows, ctx)
+    cs = car[: rows * ctx].view(rows, ctx)
+    ys = arr[1: rows * ctx + 1].view(rows, ctx)
     return xs, cs, ys
 
 
