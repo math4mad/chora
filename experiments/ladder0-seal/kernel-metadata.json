@@ -1,0 +1,14 @@
+{
+ "id": "math4amd/ladder0-seal-babydim",
+ "title": "Ladder0 Seal Babydim",
+ "code_file": "run.py",
+ "language": "python",
+ "kernel_type": "script",
+ "is_private": true,
+ "enable_gpu": true,
+ "enable_internet": false,
+ "dataset_sources": [],
+ "competition_sources": [],
+ "kernel_sources": [],
+ "model_sources": ["qwen-lm/qwen2.5/transformers/0.5b-instruct/1"]
+}
