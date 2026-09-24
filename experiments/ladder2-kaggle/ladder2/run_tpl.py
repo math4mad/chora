@@ -39,6 +39,7 @@ def get_base():
     if tok.pad_token is None: tok.pad_token = tok.eos_token
     mdl = AutoModelForCausalLM.from_pretrained(MPATH, dtype=torch.bfloat16)
     mdl = get_peft_model(mdl, LoraConfig(task_type="CAUSAL_LM", **RECS))
+    mdl = mdl.to(dev)   # v2 死因: 手动管线必须自搬 GPU (exp11 靠 Trainer 代劳)
     return tok, mdl
 
 def enc(tok, texts):

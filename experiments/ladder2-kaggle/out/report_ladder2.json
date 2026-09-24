@@ -1,0 +1,19 @@
+{
+ "plan": "LADDER-2",
+ "base": "qwen2.5-0.5b-instruct",
+ "hp": {
+  "lr": 0.0001,
+  "batch": 8,
+  "seed": 13,
+  "epochs": 2,
+  "seq": 256
+ },
+ "pool": {
+  "s1_naming.jsonl": 240,
+  "s2_rhyme.jsonl": 280,
+  "s3_dialogue.jsonl": 540
+ },
+ "pool_total": 1060,
+ "arms": {},
+ "error": "RuntimeError: Expected all tensors to be on the same device, but got index is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA__index_select) || ^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/sparse.py\", line 191, in forward\n    return F.embedding(\n           ^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/functional.py\", line 2567, in embedding\n    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Expected all tensors to be on the same device, but got index is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA__index_select)\n"
+}
