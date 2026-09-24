@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-24T19:56:37Z",
- "chora_head": "64cd0f1",
+ "generated": "2026-09-24T20:02:04Z",
+ "chora_head": "767f6dc",
  "benches": [
   {
    "name": "JacobiGP",
@@ -24,10 +24,10 @@
   },
   {
    "name": "Sarcos",
-   "head": "fb37e04",
-   "commit_at": "2026-09-11T14:34:33+08:00",
-   "subject": "Letter 011 Sarcos->Kairos: floor accepted and amended (ep300/ep60 schedule + row-level geometry confounds); St",
-   "dirty": 1,
+   "head": "d1db2ce",
+   "commit_at": "2026-09-25T03:56:38+08:00",
+   "subject": "本舱之问注梁: 柱·台架, 诚实报残差为本分 (立梁门 0925)",
+   "dirty": 0,
    "state": "synced",
    "repo": "Sarcos-NN-Model",
    "branch": "main"
@@ -38,7 +38,7 @@
    "commit_at": "2026-09-25T03:56:35+08:00",
    "subject": "本舱之问注梁: 柱·P-structure 已答, 新案过门方升格 (立梁门 0925)",
    "dirty": 0,
-   "state": "local +1 unpushed",
+   "state": "synced",
    "repo": "Polynomial-Activated-NN",
    "branch": "main"
   },
