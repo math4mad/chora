@@ -1,0 +1,23 @@
+{
+ "qwen2.5-0.5b-instruct": {
+  "error": "AttributeError()"
+ },
+ "_meta": {
+  "case": "E22-black",
+  "sha": "fd8ef45414ef161ce3107c81af4207a77102e139e6bfb60874a8ff2d66b24232",
+  "sizes": [
+   "qwen2.5-0.5b-instruct",
+   "qwen2.5-1.5b-instruct",
+   "qwen2.5-3b-instruct"
+  ],
+  "elab_s": 52.4,
+  "stage": "final",
+  "_selfcheck": "SENTINEL_FAIL"
+ },
+ "qwen2.5-1.5b-instruct": {
+  "error": "AttributeError()"
+ },
+ "qwen2.5-3b-instruct": {
+  "error": "AttributeError()"
+ }
+}
