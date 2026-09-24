@@ -1,13 +1,13 @@
 {
- "generated": "2026-09-24T19:50:42Z",
- "chora_head": "fb0e6bf",
+ "generated": "2026-09-24T19:56:09Z",
+ "chora_head": "7abce27",
  "benches": [
   {
    "name": "JacobiGP",
    "head": "9d88e87",
    "commit_at": "2026-09-12T19:42:50+08:00",
    "subject": "Letter 007 (JacobiGP→Sarcos cc the room) + NEXT.md §4: the H6a pilot is DEAD on its own curve-clause, and the ",
-   "dirty": 0,
+   "dirty": 1,
    "state": "synced",
    "repo": "JacobiGP",
    "branch": "main"
@@ -17,7 +17,7 @@
    "head": "382e438",
    "commit_at": "2026-09-13T11:00:13+08:00",
    "subject": "Letter 006 (MEF→Kairos cc the room): H9-M registered, run, scored — FAILS, flat in k within band, exactly as §",
-   "dirty": 1,
+   "dirty": 2,
    "state": "synced",
    "repo": "Middle-Eigen-function",
    "branch": "multi-model"
@@ -27,7 +27,7 @@
    "head": "fb37e04",
    "commit_at": "2026-09-11T14:34:33+08:00",
    "subject": "Letter 011 Sarcos->Kairos: floor accepted and amended (ep300/ep60 schedule + row-level geometry confounds); St",
-   "dirty": 0,
+   "dirty": 1,
    "state": "synced",
    "repo": "Sarcos-NN-Model",
    "branch": "main"
@@ -37,7 +37,7 @@
    "head": "0eb2930",
    "commit_at": "2026-09-11T16:12:58+08:00",
    "subject": "exp9 amendment: band unit bug (double x100) caught at calibration, re-derived from same committed L=1 cells: m",
-   "dirty": 0,
+   "dirty": 1,
    "state": "synced",
    "repo": "Polynomial-Activated-NN",
    "branch": "main"
@@ -47,7 +47,7 @@
    "head": "ae6be01",
    "commit_at": "2026-09-12T20:15:49+08:00",
    "subject": "H9-M draft: the critical-window protocol, written for MEF's equipment and frozen to nothing yet. Venue moves b",
-   "dirty": 0,
+   "dirty": 1,
    "state": "synced",
    "repo": null,
    "branch": "main"
