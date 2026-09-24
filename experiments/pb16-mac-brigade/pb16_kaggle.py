@@ -112,9 +112,9 @@ def keys_of(sd):
     out = {}
     for k, v in sd.items():
         for kind in ("A", "B"):
-            if f".lora_{kind}.weight" in k:
+            if f".lora_{kind}." in k:   # 通吃 .lora_A.weight / .lora_A.default.weight
                 L = int(k.split(".layers.")[1].split(".")[0])
-                m = k.split(f".layers.{L}.")[1].split(f".lora_{kind}.weight")[0].split(".")[-1]
+                m = k.split(f".layers.{L}.")[1].split(f".lora_{kind}.")[0].split(".")[-1]
                 out.setdefault((L, m), {})[kind] = v
     return {tuple(km): (d["B"], d["A"]) for km, d in out.items()}
 
@@ -208,6 +208,9 @@ def run_arm(arm, seed, tok, train, held, dev, master):
         rec["batches_full_brigade"] = sum(1 for b in batches if len({p[0] for p in b}) == len(DOMAINS_ORDER))
         rec["batches_depleted"] = nb - rec["batches_full_brigade"]
     model = build(dev, seed)
+    _snap0 = snapshot(model)
+    assert len(_snap0) > 0, "挂载断言: snapshot 键数为 0 —— keys_of 过滤器又与 peft 键名脱节, 全案停"
+    assert all(v[1].shape[0] > 0 for v in _snap0.values()), "挂载断言: A 矩阵缺形"
     rec["n_lora_params"] = sum(p.numel() for p in model.parameters() if p.requires_grad)
     opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=HP["lr"])
     for e in range(1, HP["epochs"] + 1):
@@ -223,8 +226,10 @@ def run_arm(arm, seed, tok, train, held, dev, master):
         prep = {}; prev = ep_start
         for k, b in enumerate(bounds):
             prep[labels[k]] = _prep(prev, snap_at[b]); prev = snap_at[b]
+        assert any(prep[l] for l in labels), "仪器盲哨: 全段快照键为空 (ablate 教训同款), 本轮作废"
         energy, geo = seg_analysis(prep, labels)
         ev = [energy[l] for l in labels]
+        assert max(ev) > 0, "段能量全零 —— adapter 未写入 (PB10 病灶), 本轮作废"
         cv = float(np.std(ev) / (np.mean(ev) + 1e-300))
         heg = [geo[f"{labels[0]}~{labels[j]}"]["dWov"] for j in range(1, len(labels))]
         off = [v["dWov"] for k, v in geo.items()]
@@ -235,7 +240,7 @@ def run_arm(arm, seed, tok, train, held, dev, master):
         sha = hashlib.sha256(open(ck, "rb").read()).hexdigest()
         rec["epochs"].append({"epoch": e, "loss_mean": round(acc / max(nstep, 1), 4),
                               "seg_energy": {l: round(x, 4) for l, x in zip(labels, ev)},
-                              "seg_energy_CV": round(cv, 4), "E1_over_E7": round(ev[0] / ev[-1], 3),
+                              "seg_energy_CV": round(cv, 4), "E1_over_E7": (round(ev[0] / ev[-1], 3) if ev[-1] > 0 else None),
                               "first_seg_hegemony_row": heg,
                               "mean_offdiag_dWov": round(float(np.mean([x for x in off if x is not None])), 4),
                               "seg_geometry": geo, "heldout_nll": nll,
