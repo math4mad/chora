@@ -14,6 +14,161 @@
   "s3_dialogue.jsonl": 540
  },
  "pool_total": 1060,
- "arms": {},
- "error": "RuntimeError: Expected all tensors to be on the same device, but got index is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA__index_select) || ^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/modules/sparse.py\", line 191, in forward\n    return F.embedding(\n           ^^^^^^^^^^^^\n  File \"/usr/local/lib/python3.12/dist-packages/torch/nn/functional.py\", line 2567, in embedding\n    return torch.embedding(weight, input, padding_idx, scale_grad_by_freq, sparse)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Expected all tensors to be on the same device, but got index is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA__index_select)\n"
+ "arms": {
+  "ladder": {
+   "arm": "ladder",
+   "batches_per_epoch": 133,
+   "checkpoints": [
+    {
+     "docs_seen": 352,
+     "frac": 0.166,
+     "loss_win": 3.2393,
+     "Bfro": 2.0424,
+     "selfcos_prev": null,
+     "ce_nami": 3.0671,
+     "ce_rhym": 2.8976,
+     "ce_dial": 3.83
+    },
+    {
+     "docs_seen": 704,
+     "frac": 0.332,
+     "loss_win": 3.3234,
+     "Bfro": 2.6541,
+     "selfcos_prev": 0.8383,
+     "ce_nami": 3.1828,
+     "ce_rhym": 2.8853,
+     "ce_dial": 3.6734
+    },
+    {
+     "docs_seen": 1056,
+     "frac": 0.498,
+     "loss_win": 3.5501,
+     "Bfro": 2.9995,
+     "selfcos_prev": 0.9181,
+     "ce_nami": 3.3958,
+     "ce_rhym": 3.0235,
+     "ce_dial": 3.5467
+    },
+    {
+     "docs_seen": 1060,
+     "frac": 0.5,
+     "loss_win": 3.52,
+     "Bfro": 3.0081,
+     "selfcos_prev": 1.00007,
+     "ce_nami": 3.3961,
+     "ce_rhym": 3.0212,
+     "ce_dial": 3.5336
+    },
+    {
+     "docs_seen": 1412,
+     "frac": 0.666,
+     "loss_win": 2.678,
+     "Bfro": 3.8475,
+     "selfcos_prev": 0.90005,
+     "ce_nami": 2.736,
+     "ce_rhym": 2.7368,
+     "ce_dial": 3.6917
+    },
+    {
+     "docs_seen": 1764,
+     "frac": 0.832,
+     "loss_win": 3.0773,
+     "Bfro": 4.4938,
+     "selfcos_prev": 0.94737,
+     "ce_nami": 2.8071,
+     "ce_rhym": 2.7805,
+     "ce_dial": 3.5749
+    },
+    {
+     "docs_seen": 2116,
+     "frac": 0.998,
+     "loss_win": 3.2841,
+     "Bfro": 4.9085,
+     "selfcos_prev": 0.97191,
+     "ce_nami": 2.9106,
+     "ce_rhym": 2.9205,
+     "ce_dial": 3.4831
+    }
+   ],
+   "minutes": 10.8
+  },
+  "mixed": {
+   "arm": "mixed",
+   "batches_per_epoch": 133,
+   "checkpoints": [
+    {
+     "docs_seen": 352,
+     "frac": 0.166,
+     "loss_win": 3.0877,
+     "Bfro": 1.8846,
+     "selfcos_prev": null,
+     "ce_nami": 3.1943,
+     "ce_rhym": 2.8404,
+     "ce_dial": 3.5562
+    },
+    {
+     "docs_seen": 704,
+     "frac": 0.332,
+     "loss_win": 3.1134,
+     "Bfro": 2.6132,
+     "selfcos_prev": 0.83911,
+     "ce_nami": 2.8983,
+     "ce_rhym": 2.7651,
+     "ce_dial": 3.5244
+    },
+    {
+     "docs_seen": 1056,
+     "frac": 0.498,
+     "loss_win": 3.1428,
+     "Bfro": 3.1773,
+     "selfcos_prev": 0.89731,
+     "ce_nami": 2.9384,
+     "ce_rhym": 2.7058,
+     "ce_dial": 3.4748
+    },
+    {
+     "docs_seen": 1060,
+     "frac": 0.5,
+     "loss_win": 3.101,
+     "Bfro": 3.1885,
+     "selfcos_prev": 1.00005,
+     "ce_nami": 2.9411,
+     "ce_rhym": 2.7044,
+     "ce_dial": 3.4747
+    },
+    {
+     "docs_seen": 1412,
+     "frac": 0.666,
+     "loss_win": 2.6368,
+     "Bfro": 3.8832,
+     "selfcos_prev": 0.93799,
+     "ce_nami": 2.8046,
+     "ce_rhym": 2.6996,
+     "ce_dial": 3.4521
+    },
+    {
+     "docs_seen": 1764,
+     "frac": 0.832,
+     "loss_win": 2.7352,
+     "Bfro": 4.5579,
+     "selfcos_prev": 0.94991,
+     "ce_nami": 2.4821,
+     "ce_rhym": 2.7058,
+     "ce_dial": 3.4594
+    },
+    {
+     "docs_seen": 2116,
+     "frac": 0.998,
+     "loss_win": 2.8023,
+     "Bfro": 5.1247,
+     "selfcos_prev": 0.95989,
+     "ce_nami": 2.6038,
+     "ce_rhym": 2.6972,
+     "ce_dial": 3.4418
+    }
+   ],
+   "minutes": 10.9
+  }
+ },
+ "sentinel": "ladder2_ok"
 }
