@@ -77,4 +77,4 @@ echo "$(date '+%F %T') done" >> $LOG
 # ③ 园报进袋 (飞书, 无配置静默跳)
 POCKET=$HOME/Programming/code-2026/Concept-Space-Sphere/bin/pocket.sh
 [ -x "$POCKET" ] && [ -f ~/.config/pocket/feishu.env ] && grep -q "FEISHU_WEBHOOK=http" ~/.config/pocket/feishu.env \
-  && "$POCKET" "$(head -c 500 /tmp/daily_report.txt 2>/dev/null || echo 园报已生成,见提醒事项)"
+  && "$POCKET" "$(head -6 /tmp/daily_report.txt 2>/dev/null | head -c 900 || echo 园报已生成,见提醒事项)"
