@@ -3,7 +3,7 @@
 # 判据先冻: PREREG_PB18_tail_resolution.md | 卡与语料 b64 内嵌 + sha 自校
 import os, json, time, base64, hashlib
 import numpy as np, torch
-os.system("python -m pip uninstall -y -q torchao 2>/dev")
+os.system("python -m pip uninstall -y -q torchao 2>/dev/null")
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import LoraConfig, get_peft_model, TaskType
 
@@ -34,7 +34,10 @@ def enc_pair(u, a):
 pairs = []
 for line in SPRING.splitlines():
     if not line.strip(): continue
-    o = json.loads(line); pairs.append(enc_pair(o["user"], o["assistant"]))
+    o = json.loads(line)
+    m = o.get("messages")
+    if m: pairs.append(enc_pair(m[0]["content"], m[1]["content"]))
+    else: pairs.append(enc_pair(o["user"], o["assistant"]))
 opt = torch.optim.AdamW([p for p in model.parameters() if p.requires_grad], lr=HP["lr"])
 t0 = time.time()
 for ep in range(1, HP["epochs"] + 1):
@@ -58,7 +61,7 @@ def nll_plain(text):
     return float(l)
 
 # --- SELFTRAIN 内检 ---
-trained_sent = json.loads(SPRING.splitlines()[0])["assistant"]
+trained_sent = json.loads(SPRING.splitlines()[0])["messages"][1]["content"]
 with model.disable_adapter():
     e = tok(trained_sent, add_special_tokens=False, return_tensors="pt").to(dev)
     with torch.no_grad(): n_base = float(model(**e, labels=e["input_ids"]).loss)
