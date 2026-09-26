@@ -1,0 +1,4 @@
+  File "<stdin>", line 55
+    H_b3={s:round(R[f"A{s}"]['curve'][-1]-R[f"E{s}"]['curve'][-1],4) for s in SEEDS}})
+                                                                                    ^
+SyntaxError: closing parenthesis '}' does not match opening parenthesis '(' on line 53
