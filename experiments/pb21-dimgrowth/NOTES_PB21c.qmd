@@ -1,0 +1,55 @@
+---
+title: "PB21c · 因果链维序实验笔记"
+subtitle: "序不是排布, 是数据自己的因果在权重上重演"
+author:
+  - name: Math4Mad × Lola (园笔)
+date: "2026-09-27"
+format:
+  html:
+    toc-depth: 3
+    theme: cosmo
+---
+
+::: {.callout-note}
+## 案卷索引
+对话正典: `external/模型训练中的逐维添加与格拉姆史...-20260927042804.json` (建造对话 60 轮) ·
+成页: [talk-with-agents/gram-schmidt-dimension-growth](https://math4mad.github.io/talk-with-agents/talking/learning-theory/gram-schmidt-dimension-growth.html) ·
+本案卷: [github.com/math4mad/chora — experiments/pb21-dimgrowth](https://github.com/math4mad/chora/tree/main/experiments/pb21-dimgrowth) (PREREG/run_c.py/result_pb21c.json/VERDICT 四件同匣)
+:::
+
+## 一 · 对话摘要
+建造对话中主人问「逐维添加+逐维削减的格拉姆-施密特对决可行否」，千问许以 MNIST 沙盒；次日主人自指理解 gap 在此一环。园笔铸 PB21 三案：21 伪序证伪 → 21b 刃病自供 → 21c 修刃终审。
+
+## 二 · 设计与数据
+AR(1) 因果链 64 维: x₁~N(0,1) 为信号源 (y=x₁ 四分位), x_k=0.95x_{k-1}+noise。维序自带因果语义。五臂×三籽=15 训, 本机 CPU 30 秒。判据先冻 (commit 997abf6 系先于开火)。
+
+## 三 · 结果: 达 95% 所需更新数 (upd95)
+
+<svg viewBox="0 0 660 240" width="100%" style="max-width:660px;font-family:sans-serif">
+  <text x="10" y="18" font-size="13" fill="#333">upd95 (越短越省; 三种子范围)</text>
+  <line x1="140" y1="200" x2="640" y2="200" stroke="#999"/>
+  <text x="140" y="215" font-size="10">0</text><text x="380" y="215" font-size="10">500</text><text x="620" y="215" font-size="10">1000</text>
+  <rect x="140" y="35"  width="97"  height="22" fill="#2c7a3f"/><text x="245" y="51"  font-size="12">E 顺因果生长 · 216–432</text>
+  <rect x="140" y="67"  width="97"  height="22" fill="#7fbf7f"/><text x="245" y="83"  font-size="12">A⁺ 修刃GR · 216–432 (与E全等)</text>
+  <rect x="140" y="99"  width="194" height="22" fill="#c9a959"/><text x="342" y="115" font-size="12">C′ 随机序 · 432–864</text>
+  <rect x="140" y="131" width="324" height="22" fill="#b05f24"/><text x="472" y="147" font-size="12">B 全维并喂 · 720–864</text>
+  <rect x="140" y="163" width="470" height="22" fill="#8b1c1c" opacity=".85"/><text x="150" y="179" font-size="12" fill="#fff">D′ 逆因果 · 三种子永不达标 (0.95 线外)</text>
+</svg>
+
+## 四 · 判据兑现 (2/3 多数, 冻尺不事后挑)
+| 尺 | 判 |
+|---|---|
+| H-c1 器闸 (GR残差<0.05) | ✓ 修刃后全净 |
+| **H-c2 主判 (E≤0.5×B)** | **2/3 过 → 律得合成湿证** |
+| H-c3 序义梯度 | 顺 216 < 随 432 < 逆 ∞ (记录即金) |
+| H-c4 GR 平反审 | A⁺−E ≡ 0 → 不伤无增益, 正交化温和退役 |
+
+## 五 · 分析
+1. 序的效力来自**信息密度梯度**——PB21 已证下标伪序三臂打平 (鼓包归 C47 分辨率律), 载道之序方见真效;
+2. 机制: 顺因果=旧维为解释器, 新维只注入残差; 逆序=表征反复报废, 是结构性绝望不是慢。**序对了, 正交自然长出** (格拉姆-施密特 PK 零号证据添钉);
+3. 园用: AGE-LADDER 年阶与 dag06 行序律之理论凭据; 逆序崩溃深度=「语料含几成因果」免费消融探针。
+
+## 六 · 边界 (丑话在册)
+单源线性 64 维玩具链, 判的是纯因果上限非普适保票; PB21 系三案齐封 (21 否伪序 / 21b 刃病自供 / 21c 终审)，原始 json 先 sha 后读, 判词 VERDICT_PB21c.md 在匣。
+
+*γνῶθι σεαυτόν — 打乱即消融, 逆序即审讯。*
