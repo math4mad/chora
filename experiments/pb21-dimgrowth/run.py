@@ -21,18 +21,20 @@ def model(seed):
     torch.manual_seed(seed); np.random.seed(seed)
     return nn.Sequential(nn.Linear(64, 32), nn.ReLU(), nn.Linear(32, 10)).to(DEV)
 
-def gr_residualize(new_feats, basis):
-    """新维块对已见基 GR: 返回残差特征与其正交基 (矩阵形, 无逐样本循环)。"""
-    Bf = torch.from_numpy(basis).float() if basis is not None and len(basis) else None
-    F = torch.from_numpy(new_feats).float()
-    if Bf is not None and Bf.shape[1] > 0:
-        F = F - (F @ Bf) @ Bf.T                      # 残差化 (新信息只)
-    Q, _ = torch.linalg.qr(F.T)                      # 列正交基
-    resid = float(torch.linalg.norm(Q.T @ Q - torch.eye(Q.shape[1])).cpu()) if Q.shape[1] else 0.0
-    return F.numpy(), Q.T.numpy(), resid              # Q.T: (d_new, r) 基
+def gr_block(new_cols_mat, basis64):
+    """new_cols_mat: (n,64) 仅新维列有值; basis64: (64,r) 已见正交基 (全维嵌入)。
+    残差化→GR→(64,r_new) 基 + 正交残差范数。"""
+    F = torch.from_numpy(new_cols_mat).float()
+    if basis64 is not None and basis64.shape[1]:
+        B = torch.from_numpy(basis64).float()
+        F = F - (F @ B) @ B.T
+    Q, _ = torch.linalg.qr(F.T)                       # (64, r) 列正交
+    keep = Q[:, :F.shape[1]] if Q.shape[1] > F.shape[1] else Q
+    resid = float(torch.linalg.norm(keep.T @ keep - torch.eye(keep.shape[1]))) if keep.shape[1] else 0.0
+    return keep.numpy(), resid
 
-def acc_of(m, cols):
-    xt = torch.from_numpy(X[:, cols]).float(); yt = torch.from_numpy(y).long()
+def acc_of(m):
+    xt = torch.from_numpy(X).float(); yt = torch.from_numpy(y).long()
     with torch.no_grad():
         return float((m(xt).argmax(1) == yt).float().mean())
 
@@ -43,31 +45,28 @@ def train_arm(arm, seed):
     if arm == "A": cols_order = list(range(64)); grow = True
     elif arm == "C": cols_order = PERM; grow = True
     else: cols_order = list(range(64)); grow = False
-    seen = []; basis = None; resids = []; curve = []; upd = 0; reach95 = None
-    batches = []
+    basis = None; resids = []; curve = []; upd = 0; reach95 = None
     if grow:
         prev = 0
         for t in STAGES:
             newc = cols_order[prev:t]; prev = t
-            xt_new = X[idx_tr][:, newc]
-            if len(seen):
-                _, Q, r = gr_residualize(xt_new, basis)
-                resids.append(r); basis = np.hstack([basis, Q]) if basis is not None else Q
-            else:
-                _, Q, r = gr_residualize(xt_new, None)
-                resids.append(r); basis = Q
-            cols = cols_order[:t]
-            Xs = X[idx_tr][:, cols]
-            if len(seen) and basis is not None:
-                Xs = Xs - (Xs @ basis) @ basis.T * 0   # 全空间已在新基下; 保持原坐标 (预测侧同模型)
-            xt = torch.from_numpy(Xs).float()
+            newmat = np.zeros((n, 64)); newmat[:, newc] = X[:, newc]
+            Qn, r = gr_block(newmat, basis)
+            resids.append(r)
+            basis = Qn if basis is None else np.hstack([basis, Qn])
+            Bt = torch.from_numpy(basis).float()
+            mask_cols = cols_order[:t]
+            Zfull = np.zeros((n, 64)); Zfull[:, mask_cols] = X[:, mask_cols]
+            Ztr = Zfull[idx_tr] - ((Zfull[idx_tr] @ basis) @ basis.T)  # 已见空间内残差坐标
+            xt = torch.from_numpy(Ztr).float()
             for _ in range(NEP):
                 perm = np.random.permutation(len(xt))
                 for i in range(0, len(xt), 32):
                     b = perm[i:i + 32]
                     loss = nn.functional.cross_entropy(m(xt[b]), yt[b])
                     opt.zero_grad(); loss.backward(); opt.step(); upd += 1
-            acc_te = acc_of(m, cols)
+            Zeval = X - ((X @ basis) @ basis.T)
+            acc_te = float((m(torch.from_numpy(Zeval).float()).argmax(1) == torch.from_numpy(y).long()).float().mean())
             curve.append(round(acc_te, 4))
             if reach95 is None and acc_te >= 0.95: reach95 = upd
     else:
@@ -78,7 +77,7 @@ def train_arm(arm, seed):
             loss = nn.functional.cross_entropy(m(xt[b]), yt[b])
             opt.zero_grad(); loss.backward(); opt.step()
             if (u + 1) % per_epoch == 0:
-                a = acc_of(m, list(range(64))); curve.append(round(a, 4))
+                a = acc_of(m); curve.append(round(a, 4))
                 if reach95 is None and a >= 0.95: reach95 = u + 1
     W = np.concatenate([p.detach().numpy().ravel() for p in m.parameters()])
     return dict(acc_curve=curve, ortho_resid=[round(r, 4) for r in resids],
