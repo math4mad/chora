@@ -1,0 +1,18 @@
+HTTPSConnectionPool(host='www.kaggleusercontent.com', port=443): Max retries exceeded with url: /kf/352508918/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..7Seh4RhEbukV41DVluZyLA.ubyw49-N8G1F0zPgvOlktYstGI6hRpKJEIbjQ5Oy1mH2bpkj0hLkBkwkCDabcQuNaLpEBQ93C33w9hwWe27LLZpH207J3rVHRGs09SSsBJY-Xvs0XJCv6JPkGPO5GQa0TivIcoLGNe_hbQheVz9Z3GfC_8ebKIKmUUBwCtepBuecOVlJZEHVCuh0FJAQa60pQYh0o4LElUz93-kZ1Nvu7zQWx-Pb8kQXQ3U3Q1O-bt9Pp5F09tQe_tnhIDXAOHhmOV78yOk0iBQOKiIuGLwhKltlNARRyhsQNXYSl8NXS6AmBfCgUEercGAtUMeDLzod0fDjGKnAtwwhLoo1Vl3I_f81O3k_VP78SThJgeBAh459SAgxY3SRsr9OuJqvIUapn9ep4x3LNhTWCfgcIDdm3AdN4tkWP6D_IMYPIw09UrJiT_JkOmMEpOTIJVjWVof0xTNu6y5gdo3BjAHU-Czmg_Hmsuc6dnLSk29BlfzJxaWSmSqoZLtpqwUwOYiJMPdB7VyAhV_xSKifwVUiFK4z0nvxugou1H3O0aHnuk6SZEIG-roEn6YJ6pBP90PWIY5Nc5D21oqFevvHKEYPovZgNx-1l1MnBid4cFGTOadf15YdDdtmwMQNWv-XIktOJwNz.ndsf7nBqIXCZnRzZjrmlAA/pb16-out/ckpt_R_seed13_ep4.safetensors (Caused by ConnectTimeoutError(<HTTPSConnection(host='www.kaggleusercontent.com', port=443) at 0x103c179d0>, 'Connection to www.kaggleusercontent.com timed out. (connect timeout=None)'))
+ckpt_B_seed13_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+report_macb.json: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep2.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep3.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep4.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep2.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep3.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+Output file downloaded to out_c/pb16-out/ckpt_B_seed14_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_B_seed15_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_B_seed15_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_B_seed15_ep3.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_B_seed15_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed13_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed13_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed13_ep3.safetensors

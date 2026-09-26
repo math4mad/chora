@@ -1,6 +1,6 @@
 {
- "run": "pb16-mac-3arm",
- "ts": "2026-09-24T19:09:11Z",
+ "run": "pb16c-order-3d",
+ "ts": "2026-09-24T20:29:56Z",
  "run_on": "kaggle-T4 (r2 复核移交案, 原 MacB 超 1h 闸)",
  "device": "cuda",
  "env": {
@@ -116,7 +116,7 @@
  "arms": [
   "B"
  ],
- "prereg": "experiments/pb16-mac-brigade/PREREG_PB16_MAC_3ARM.md",
+ "prereg": "experiments/pb16-mac-brigade/PREREG_PB16c_order_3d_dose_response.md",
  "results": [
   {
    "arm": "B",
@@ -254,13 +254,107 @@
      "ckpt": "ckpt_B_seed13_ep1.safetensors",
      "ckpt_sha256": "189f3dc9c0ec924eac449e1f1257fe7ad64dc1f8efeba1f7bfb7642393a91f66",
      "bytes": 35239760,
-     "min": 0.99
+     "min": 1.89
     }
    ],
    "batches_full_brigade": 30,
    "batches_depleted": 13,
-   "minutes": 0.99
+   "ce_traj": [
+    {
+     "ep": 1,
+     "step": 6,
+     "nll": {
+      "general": 2.5205,
+      "code": 3.8064,
+      "spring": 3.5755,
+      "summer": 4.1353,
+      "legal": 2.9425,
+      "medical": 3.6228,
+      "mid": 3.9476
+     }
+    },
+    {
+     "ep": 1,
+     "step": 12,
+     "nll": {
+      "general": 2.5138,
+      "code": 3.6006,
+      "spring": 3.4577,
+      "summer": 3.9938,
+      "legal": 2.7843,
+      "medical": 3.4624,
+      "mid": 3.801
+     }
+    },
+    {
+     "ep": 1,
+     "step": 18,
+     "nll": {
+      "general": 2.5082,
+      "code": 3.4582,
+      "spring": 3.2939,
+      "summer": 3.8697,
+      "legal": 2.6947,
+      "medical": 3.3569,
+      "mid": 3.6261
+     }
+    },
+    {
+     "ep": 1,
+     "step": 25,
+     "nll": {
+      "general": 2.5034,
+      "code": 3.3752,
+      "spring": 3.1971,
+      "summer": 3.756,
+      "legal": 2.6238,
+      "medical": 3.2884,
+      "mid": 3.4935
+     }
+    },
+    {
+     "ep": 1,
+     "step": 31,
+     "nll": {
+      "general": 2.4854,
+      "code": 3.3443,
+      "spring": 3.1322,
+      "summer": 3.6727,
+      "legal": 2.583,
+      "medical": 3.2608,
+      "mid": 3.4073
+     }
+    },
+    {
+     "ep": 1,
+     "step": 37,
+     "nll": {
+      "general": 2.4443,
+      "code": 3.36,
+      "spring": 3.0798,
+      "summer": 3.5884,
+      "legal": 2.5843,
+      "medical": 3.2545,
+      "mid": 3.3334
+     }
+    },
+    {
+     "ep": 1,
+     "step": 43,
+     "nll": {
+      "general": 2.4296,
+      "code": 3.3772,
+      "spring": 2.9244,
+      "summer": 3.4949,
+      "legal": 2.6056,
+      "medical": 3.3428,
+      "mid": 3.2943
+     }
+    }
+   ],
+   "minutes": 1.89
   }
  ],
- "ts_update": "2026-09-24T19:10:10Z"
+ "ts_update": "2026-09-24T20:31:49Z",
+ "sentinel": "pb16c_ok"
 }

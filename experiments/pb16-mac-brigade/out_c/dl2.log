@@ -1,0 +1,41 @@
+ckpt_B_seed13_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+report_macb.json: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep2.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep3.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed13_ep4.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep2.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep3.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed14_ep4.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed15_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed15_ep2.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed15_ep3.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_B_seed15_ep4.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_R_seed13_ep1.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_R_seed13_ep2.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+ckpt_R_seed13_ep3.safetensors: Skipping, found more recently modified local copy (use --force to force download)
+Output file downloaded to out_c/pb16-out/ckpt_R_seed13_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed14_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed14_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed14_ep3.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed14_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed15_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed15_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed15_ep3.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_R_seed15_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed13_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed13_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed13_ep3.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed13_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed14_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed14_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed14_ep3.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed14_ep4.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed15_ep1.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed15_ep2.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed15_ep3.safetensors
+Output file downloaded to out_c/pb16-out/ckpt_S_seed15_ep4.safetensors
+Output file downloaded to out_c/pb16-out/report_macb.json
+Output file downloaded to out_c/pb16-out/run_log.txt
+Kernel log downloaded to out_c/pb16-mac-3arm-kaggle.log 

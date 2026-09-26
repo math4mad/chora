@@ -1,0 +1,2 @@
+# PB19 存目册 (>100MB 单件 GitHub 硬顶禁入 git; 正文留盘, sha 为身份; vault 封袋候办)
+9fd91f05f98e7285c8d77eb41d4ec353947d21a9efd6b0acfaa52ec485f23d1b  experiments/pb19-mrd/out/adapters_D1_nba_r64/adapter_model.safetensors

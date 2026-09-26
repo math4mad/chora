@@ -1,0 +1,191 @@
+== 试射闸开 (out-smoke 匣, 产物永不入结果表) ==
+START arms=['B'] epochs=1 dev=cuda n_train=295 n_held=100
+  B/s13/ep1 10/43 loss 3.407 24s
+  B/s13/ep1 20/43 loss 3.370 48s
+  B/s13/ep1 30/43 loss 3.285 64s
+  B/s13/ep1 40/43 loss 3.213 87s
+== B/s13 ep1: CV=0.284 E1/E7=1.96 meanNLL=3.067 nll={'general': 2.4296, 'code': 3.3772, 'spring': 2.9244, 'summer': 3.4949, 'legal': 2.6056, 'medical': 3.3428, 'mid': 3.2943} 1.89min
+ALL DONE
+== 试射闸过: 1.89min×6 预算内, 正式六发开跑 ==
+START arms=['S', 'R', 'B'] epochs=4 dev=cuda n_train=295 n_held=100
+  S/s13/ep1 10/43 loss 3.371 18s
+  S/s13/ep1 20/43 loss 3.593 40s
+  S/s13/ep1 30/43 loss 3.480 54s
+  S/s13/ep1 40/43 loss 3.406 76s
+== S/s13 ep1: CV=0.270 E1/E7=2.12 meanNLL=3.142 nll={'general': 2.6328, 'code': 3.42, 'spring': 3.0186, 'summer': 3.5535, 'legal': 2.7043, 'medical': 3.3609, 'mid': 3.3008} 1.68min
+  S/s13/ep2 10/43 loss 2.705 117s
+  S/s13/ep2 20/43 loss 2.628 140s
+  S/s13/ep2 30/43 loss 2.542 154s
+  S/s13/ep2 40/43 loss 2.415 176s
+== S/s13 ep2: CV=0.102 E1/E7=0.84 meanNLL=3.026 nll={'general': 2.4943, 'code': 3.5528, 'spring': 2.4915, 'summer': 3.3754, 'legal': 2.6459, 'medical': 3.6003, 'mid': 3.0224} 3.35min
+  S/s13/ep3 10/43 loss 2.158 217s
+  S/s13/ep3 20/43 loss 1.726 240s
+  S/s13/ep3 30/43 loss 1.638 254s
+  S/s13/ep3 40/43 loss 1.473 276s
+== S/s13 ep3: CV=0.101 E1/E7=0.89 meanNLL=2.810 nll={'general': 2.4677, 'code': 3.6418, 'spring': 1.8578, 'summer': 2.7406, 'legal': 2.9053, 'medical': 3.6656, 'mid': 2.3903} 5.01min
+  S/s13/ep4 10/43 loss 1.667 317s
+  S/s13/ep4 20/43 loss 1.107 339s
+  S/s13/ep4 30/43 loss 0.991 354s
+  S/s13/ep4 40/43 loss 0.864 375s
+== S/s13 ep4: CV=0.174 E1/E7=0.78 meanNLL=3.108 nll={'general': 2.6196, 'code': 4.6679, 'spring': 1.5141, 'summer': 2.5931, 'legal': 3.7204, 'medical': 4.4839, 'mid': 2.1599} 6.67min
+  S/s14/ep1 10/43 loss 3.390 17s
+  S/s14/ep1 20/43 loss 3.597 40s
+  S/s14/ep1 30/43 loss 3.480 54s
+  S/s14/ep1 40/43 loss 3.409 76s
+== S/s14 ep1: CV=0.276 E1/E7=2.16 meanNLL=3.141 nll={'general': 2.6044, 'code': 3.4121, 'spring': 3.0104, 'summer': 3.5824, 'legal': 2.7363, 'medical': 3.35, 'mid': 3.2932} 1.68min
+  S/s14/ep2 10/43 loss 2.719 117s
+  S/s14/ep2 20/43 loss 2.619 140s
+  S/s14/ep2 30/43 loss 2.548 154s
+  S/s14/ep2 40/43 loss 2.426 176s
+== S/s14 ep2: CV=0.101 E1/E7=0.87 meanNLL=2.966 nll={'general': 2.4498, 'code': 3.4909, 'spring': 2.4873, 'summer': 3.3005, 'legal': 2.6174, 'medical': 3.4567, 'mid': 2.961} 3.34min
+  S/s14/ep3 10/43 loss 2.186 217s
+  S/s14/ep3 20/43 loss 1.781 239s
+  S/s14/ep3 30/43 loss 1.693 254s
+  S/s14/ep3 40/43 loss 1.513 275s
+== S/s14 ep3: CV=0.105 E1/E7=0.86 meanNLL=2.862 nll={'general': 2.4217, 'code': 3.6752, 'spring': 1.9425, 'summer': 2.8523, 'legal': 3.031, 'medical': 3.647, 'mid': 2.4642} 5.0min
+  S/s14/ep4 10/43 loss 1.639 317s
+  S/s14/ep4 20/43 loss 1.093 339s
+  S/s14/ep4 30/43 loss 0.983 353s
+  S/s14/ep4 40/43 loss 0.857 375s
+== S/s14 ep4: CV=0.177 E1/E7=0.84 meanNLL=3.141 nll={'general': 2.605, 'code': 4.5328, 'spring': 1.6023, 'summer': 2.6275, 'legal': 3.8003, 'medical': 4.6161, 'mid': 2.2008} 6.66min
+  S/s15/ep1 10/43 loss 3.390 17s
+  S/s15/ep1 20/43 loss 3.613 40s
+  S/s15/ep1 30/43 loss 3.473 54s
+  S/s15/ep1 40/43 loss 3.392 76s
+== S/s15 ep1: CV=0.271 E1/E7=2.11 meanNLL=3.124 nll={'general': 2.5933, 'code': 3.4033, 'spring': 2.9959, 'summer': 3.5757, 'legal': 2.6707, 'medical': 3.3353, 'mid': 3.2949} 1.68min
+  S/s15/ep2 10/43 loss 2.707 117s
+  S/s15/ep2 20/43 loss 2.636 140s
+  S/s15/ep2 30/43 loss 2.527 154s
+  S/s15/ep2 40/43 loss 2.403 176s
+== S/s15 ep2: CV=0.099 E1/E7=0.91 meanNLL=2.982 nll={'general': 2.4536, 'code': 3.4975, 'spring': 2.5306, 'summer': 3.283, 'legal': 2.6293, 'medical': 3.5149, 'mid': 2.9661} 3.34min
+  S/s15/ep3 10/43 loss 2.187 217s
+  S/s15/ep3 20/43 loss 1.796 239s
+  S/s15/ep3 30/43 loss 1.675 253s
+  S/s15/ep3 40/43 loss 1.503 275s
+== S/s15 ep3: CV=0.082 E1/E7=0.88 meanNLL=2.803 nll={'general': 2.4344, 'code': 3.6175, 'spring': 1.8693, 'summer': 2.7616, 'legal': 2.975, 'medical': 3.5404, 'mid': 2.4238} 5.0min
+  S/s15/ep4 10/43 loss 1.673 316s
+  S/s15/ep4 20/43 loss 1.151 339s
+  S/s15/ep4 30/43 loss 1.011 353s
+  S/s15/ep4 40/43 loss 0.878 375s
+== S/s15 ep4: CV=0.182 E1/E7=0.87 meanNLL=3.279 nll={'general': 2.5696, 'code': 5.0043, 'spring': 1.498, 'summer': 2.5737, 'legal': 4.2905, 'medical': 4.8523, 'mid': 2.1629} 6.66min
+  R/s13/ep1 10/43 loss 3.393 18s
+  R/s13/ep1 20/43 loss 3.447 41s
+  R/s13/ep1 30/43 loss 3.303 57s
+  R/s13/ep1 40/43 loss 3.239 81s
+== R/s13 ep1: CV=0.259 E1/E7=1.98 meanNLL=3.020 nll={'general': 2.4317, 'code': 3.3223, 'spring': 2.8825, 'summer': 3.3945, 'legal': 2.5965, 'medical': 3.237, 'mid': 3.2745} 1.77min
+  R/s13/ep2 10/43 loss 2.415 123s
+  R/s13/ep2 20/43 loss 2.429 147s
+  R/s13/ep2 30/43 loss 2.344 163s
+  R/s13/ep2 40/43 loss 2.275 187s
+== R/s13 ep2: CV=0.089 E1/E7=0.88 meanNLL=2.844 nll={'general': 2.303, 'code': 3.392, 'spring': 2.2975, 'summer': 3.0578, 'legal': 2.5947, 'medical': 3.3988, 'mid': 2.8676} 3.53min
+  R/s13/ep3 10/43 loss 1.692 229s
+  R/s13/ep3 20/43 loss 1.540 253s
+  R/s13/ep3 30/43 loss 1.461 269s
+  R/s13/ep3 40/43 loss 1.368 292s
+== R/s13 ep3: CV=0.085 E1/E7=0.88 meanNLL=2.837 nll={'general': 2.3267, 'code': 3.881, 'spring': 1.7884, 'summer': 2.6587, 'legal': 2.9518, 'medical': 3.8853, 'mid': 2.3661} 5.3min
+  R/s13/ep4 10/43 loss 0.978 335s
+  R/s13/ep4 20/43 loss 0.797 358s
+  R/s13/ep4 30/43 loss 0.770 374s
+  R/s13/ep4 40/43 loss 0.717 398s
+== R/s13 ep4: CV=0.070 E1/E7=0.91 meanNLL=2.966 nll={'general': 2.6212, 'code': 4.3534, 'spring': 1.4635, 'summer': 2.5588, 'legal': 3.2843, 'medical': 4.4048, 'mid': 2.075} 7.05min
+  R/s14/ep1 10/43 loss 3.532 18s
+  R/s14/ep1 20/43 loss 3.412 42s
+  R/s14/ep1 30/43 loss 3.287 58s
+  R/s14/ep1 40/43 loss 3.230 82s
+== R/s14 ep1: CV=0.265 E1/E7=2.00 meanNLL=3.008 nll={'general': 2.4348, 'code': 3.2969, 'spring': 2.8166, 'summer': 3.428, 'legal': 2.585, 'medical': 3.2564, 'mid': 3.2356} 1.79min
+  R/s14/ep2 10/43 loss 2.507 124s
+  R/s14/ep2 20/43 loss 2.414 149s
+  R/s14/ep2 30/43 loss 2.335 165s
+  R/s14/ep2 40/43 loss 2.281 189s
+== R/s14 ep2: CV=0.084 E1/E7=0.96 meanNLL=2.892 nll={'general': 2.2945, 'code': 3.4107, 'spring': 2.3926, 'summer': 3.0828, 'legal': 2.6571, 'medical': 3.4999, 'mid': 2.907} 3.56min
+  R/s14/ep3 10/43 loss 1.730 231s
+  R/s14/ep3 20/43 loss 1.554 255s
+  R/s14/ep3 30/43 loss 1.437 271s
+  R/s14/ep3 40/43 loss 1.377 295s
+== R/s14 ep3: CV=0.070 E1/E7=1.01 meanNLL=2.851 nll={'general': 2.335, 'code': 3.8033, 'spring': 1.8804, 'summer': 2.6947, 'legal': 2.9097, 'medical': 3.9125, 'mid': 2.42} 5.33min
+  R/s14/ep4 10/43 loss 0.977 337s
+  R/s14/ep4 20/43 loss 0.815 361s
+  R/s14/ep4 30/43 loss 0.747 377s
+  R/s14/ep4 40/43 loss 0.724 401s
+== R/s14 ep4: CV=0.071 E1/E7=1.06 meanNLL=2.934 nll={'general': 2.6613, 'code': 4.0933, 'spring': 1.5982, 'summer': 2.5904, 'legal': 3.3241, 'medical': 4.1241, 'mid': 2.1468} 7.11min
+  R/s15/ep1 10/43 loss 3.360 17s
+  R/s15/ep1 20/43 loss 3.386 40s
+  R/s15/ep1 30/43 loss 3.278 57s
+  R/s15/ep1 40/43 loss 3.241 81s
+== R/s15 ep1: CV=0.283 E1/E7=2.01 meanNLL=2.991 nll={'general': 2.4438, 'code': 3.2935, 'spring': 2.7646, 'summer': 3.4077, 'legal': 2.5784, 'medical': 3.2341, 'mid': 3.2115} 1.76min
+  R/s15/ep2 10/43 loss 2.309 122s
+  R/s15/ep2 20/43 loss 2.376 146s
+  R/s15/ep2 30/43 loss 2.321 162s
+  R/s15/ep2 40/43 loss 2.285 186s
+== R/s15 ep2: CV=0.055 E1/E7=0.92 meanNLL=2.855 nll={'general': 2.3585, 'code': 3.4075, 'spring': 2.2653, 'summer': 3.0191, 'legal': 2.636, 'medical': 3.4671, 'mid': 2.8341} 3.52min
+  R/s15/ep3 10/43 loss 1.518 227s
+  R/s15/ep3 20/43 loss 1.495 251s
+  R/s15/ep3 30/43 loss 1.432 267s
+  R/s15/ep3 40/43 loss 1.381 291s
+== R/s15 ep3: CV=0.058 E1/E7=0.95 meanNLL=2.812 nll={'general': 2.353, 'code': 3.885, 'spring': 1.7141, 'summer': 2.5604, 'legal': 2.985, 'medical': 3.831, 'mid': 2.3574} 5.27min
+  R/s15/ep4 10/43 loss 0.798 332s
+  R/s15/ep4 20/43 loss 0.751 356s
+  R/s15/ep4 30/43 loss 0.729 372s
+  R/s15/ep4 40/43 loss 0.705 396s
+== R/s15 ep4: CV=0.075 E1/E7=0.90 meanNLL=2.825 nll={'general': 2.6384, 'code': 4.1264, 'spring': 1.4678, 'summer': 2.3431, 'legal': 3.187, 'medical': 4.0325, 'mid': 1.982} 7.02min
+  B/s13/ep1 10/43 loss 3.407 18s
+  B/s13/ep1 20/43 loss 3.370 43s
+  B/s13/ep1 30/43 loss 3.285 60s
+  B/s13/ep1 40/43 loss 3.213 83s
+== B/s13 ep1: CV=0.284 E1/E7=1.96 meanNLL=3.067 nll={'general': 2.4296, 'code': 3.3772, 'spring': 2.9244, 'summer': 3.4949, 'legal': 2.6056, 'medical': 3.3428, 'mid': 3.2943} 1.8min
+  B/s13/ep2 10/43 loss 2.367 125s
+  B/s13/ep2 20/43 loss 2.434 150s
+  B/s13/ep2 30/43 loss 2.384 167s
+  B/s13/ep2 40/43 loss 2.288 190s
+== B/s13 ep2: CV=0.068 E1/E7=0.87 meanNLL=2.966 nll={'general': 2.2856, 'code': 3.6533, 'spring': 2.3526, 'summer': 3.1729, 'legal': 2.6912, 'medical': 3.6226, 'mid': 2.9809} 3.58min
+  B/s13/ep3 10/43 loss 1.486 232s
+  B/s13/ep3 20/43 loss 1.541 257s
+  B/s13/ep3 30/43 loss 1.503 274s
+  B/s13/ep3 40/43 loss 1.374 297s
+== B/s13 ep3: CV=0.063 E1/E7=1.00 meanNLL=2.847 nll={'general': 2.4184, 'code': 4.0345, 'spring': 1.7156, 'summer': 2.5777, 'legal': 2.9638, 'medical': 3.8559, 'mid': 2.3665} 5.37min
+  B/s13/ep4 10/43 loss 0.751 339s
+  B/s13/ep4 20/43 loss 0.787 364s
+  B/s13/ep4 30/43 loss 0.768 381s
+  B/s13/ep4 40/43 loss 0.697 404s
+== B/s13 ep4: CV=0.076 E1/E7=1.09 meanNLL=2.953 nll={'general': 2.6596, 'code': 4.4887, 'spring': 1.3827, 'summer': 2.4662, 'legal': 3.3402, 'medical': 4.283, 'mid': 2.0496} 7.15min
+  B/s14/ep1 10/43 loss 3.480 18s
+  B/s14/ep1 20/43 loss 3.379 43s
+  B/s14/ep1 30/43 loss 3.293 59s
+  B/s14/ep1 40/43 loss 3.204 83s
+== B/s14 ep1: CV=0.284 E1/E7=1.97 meanNLL=3.051 nll={'general': 2.4291, 'code': 3.3014, 'spring': 2.8676, 'summer': 3.5192, 'legal': 2.653, 'medical': 3.3322, 'mid': 3.2577} 1.79min
+  B/s14/ep2 10/43 loss 2.430 125s
+  B/s14/ep2 20/43 loss 2.439 150s
+  B/s14/ep2 30/43 loss 2.390 166s
+  B/s14/ep2 40/43 loss 2.277 190s
+== B/s14 ep2: CV=0.069 E1/E7=0.91 meanNLL=2.963 nll={'general': 2.3302, 'code': 3.5928, 'spring': 2.3407, 'summer': 3.1688, 'legal': 2.8066, 'medical': 3.5577, 'mid': 2.9435} 3.58min
+  B/s14/ep3 10/43 loss 1.570 232s
+  B/s14/ep3 20/43 loss 1.592 257s
+  B/s14/ep3 30/43 loss 1.525 273s
+  B/s14/ep3 40/43 loss 1.377 297s
+== B/s14 ep3: CV=0.055 E1/E7=1.09 meanNLL=2.934 nll={'general': 2.4821, 'code': 3.9667, 'spring': 1.7919, 'summer': 2.745, 'legal': 3.1716, 'medical': 3.9765, 'mid': 2.4066} 5.37min
+  B/s14/ep4 10/43 loss 0.824 339s
+  B/s14/ep4 20/43 loss 0.854 364s
+  B/s14/ep4 30/43 loss 0.812 381s
+  B/s14/ep4 40/43 loss 0.725 404s
+== B/s14 ep4: CV=0.096 E1/E7=1.35 meanNLL=3.051 nll={'general': 2.8777, 'code': 4.2763, 'spring': 1.4748, 'summer': 2.5763, 'legal': 3.5186, 'medical': 4.4904, 'mid': 2.1397} 7.16min
+  B/s15/ep1 10/43 loss 3.435 18s
+  B/s15/ep1 20/43 loss 3.323 43s
+  B/s15/ep1 30/43 loss 3.274 59s
+  B/s15/ep1 40/43 loss 3.197 83s
+== B/s15 ep1: CV=0.283 E1/E7=2.00 meanNLL=3.052 nll={'general': 2.4096, 'code': 3.3608, 'spring': 2.8965, 'summer': 3.4848, 'legal': 2.6497, 'medical': 3.3012, 'mid': 3.2619} 1.8min
+  B/s15/ep2 10/43 loss 2.384 125s
+  B/s15/ep2 20/43 loss 2.382 150s
+  B/s15/ep2 30/43 loss 2.351 167s
+  B/s15/ep2 40/43 loss 2.266 190s
+== B/s15 ep2: CV=0.072 E1/E7=0.97 meanNLL=2.934 nll={'general': 2.3135, 'code': 3.5576, 'spring': 2.3831, 'summer': 3.0908, 'legal': 2.7211, 'medical': 3.5036, 'mid': 2.966} 3.58min
+  B/s15/ep3 10/43 loss 1.541 232s
+  B/s15/ep3 20/43 loss 1.530 257s
+  B/s15/ep3 30/43 loss 1.487 274s
+  B/s15/ep3 40/43 loss 1.375 298s
+== B/s15 ep3: CV=0.053 E1/E7=1.09 meanNLL=2.818 nll={'general': 2.3313, 'code': 3.8201, 'spring': 1.7444, 'summer': 2.6448, 'legal': 2.9387, 'medical': 3.8171, 'mid': 2.4313} 5.37min
+  B/s15/ep4 10/43 loss 0.792 339s
+  B/s15/ep4 20/43 loss 0.833 364s
+  B/s15/ep4 30/43 loss 0.805 381s
+  B/s15/ep4 40/43 loss 0.743 405s
+== B/s15 ep4: CV=0.064 E1/E7=1.13 meanNLL=2.925 nll={'general': 2.572, 'code': 4.3169, 'spring': 1.4614, 'summer': 2.3742, 'legal': 3.4082, 'medical': 4.2924, 'mid': 2.0515} 7.16min
+ALL DONE

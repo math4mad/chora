@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # E22《谱系语法学》黑臂 — 行为探针九段考卷 (无训练). 冻结依据: cora-atlas/papers/unified-agents/PREREG-E22-lineage.md
 # 疫苗二代 + 哨兵题(_selfcheck 不在报告里=仪器哑, 拒收) + 双保险落盘(b64 日志幸存者)
-import base64, json, hashlib, time, gc
+import base64, json, hashlib, time, gc, traceback
 import numpy as np, torch
 import os as _osx; _osx.system("python -m pip uninstall -y -q torchao 2>/dev")
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -36,8 +36,11 @@ def ridge_r2(X, y, folds=5, seed=13):
 def run_model(sz):
     tok = AutoTokenizer.from_pretrained(MNT[sz]); m = AutoModelForCausalLM.from_pretrained(MNT[sz], dtype=torch.float16).eval().to(dev)
     def chat(p):
-        ids = tok.apply_chat_template([{"role": "user", "content": p}], add_generation_prompt=True, return_tensors="pt").to(dev)
-        with torch.no_grad(): out = m.generate(ids, max_new_tokens=PACK["cfg"]["max_new"], do_sample=False, temperature=None, top_p=None)
+        ids = tok.apply_chat_template([{"role": "user", "content": p}], add_generation_prompt=True,
+                                      return_tensors="pt", return_dict=False)
+        if not torch.is_tensor(ids): ids = ids["input_ids"]
+        ids = ids.to(dev)
+        with torch.no_grad(): out = m.generate(ids, max_new_tokens=PACK["cfg"]["max_new"], do_sample=False)
         return tok.decode(out[0][ids.shape[1]:], skip_special_tokens=True).strip()
     def emb(t):
         e = tok(t, add_special_tokens=False, return_tensors="pt").to(dev)
@@ -51,15 +54,16 @@ def run_model(sz):
     qa = []
     for it in PACK["questions"]:
         a = chat(it["prompt"])
-        hit = any(k in a for k in it["must_any"])
-        contam = [k for k in it["forbid"] if k in a]
+        flat = lambda L: [x for f in L for x in (f if isinstance(f, list) else [f])]
+        hit = any(k in a for k in flat(it["must_any"]))
+        contam = [k for k in flat(it["forbid"]) if k in a]
         qa.append(dict(id=it["id"], sec=it["sec"], ans=a[:200], hit=bool(hit), contam=contam, note=it["note"]))
     R["qa"] = qa
     # J2 谱系回归: 每谱系 句向量->代秩 R2 + 置换零对照
     j2 = {}
     for ln, items in PACK["lineages"].items():
         names = [x[0] for x in items]; ys = [x[1] for x in items]
-        if isinstance(ys[0], tuple):  # geforce 双目标
+        if isinstance(ys[0], (list, tuple)):  # geforce 双目标 (json 化后 tuple→list)
             tset = dict(n_name=[float(str(y[0]).split(":")[1]) for y in ys], n_true=[float(y[1]) for y in ys])
         else:
             tset = dict(n_rank=[float(y) for y in ys])
@@ -86,6 +90,6 @@ for sz in SIZES:
     try:
         REP[sz] = run_model(sz); dump(REP, sz)
     except Exception as e:
-        REP[sz] = dict(error=repr(e)[:300]); dump(REP, sz + ":ERR")
+        REP[sz] = dict(error=repr(e)[:200], tb=traceback.format_exc()[-1200:]); dump(REP, sz + ":ERR")
 dump(REP, "final")
 print("DONE E22-BLACK", flush=True)

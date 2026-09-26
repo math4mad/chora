@@ -1,0 +1,360 @@
+{
+ "run": "pb16c-order-3d",
+ "ts": "2026-09-24T20:29:56Z",
+ "run_on": "kaggle-T4 (r2 复核移交案, 原 MacB 超 1h 闸)",
+ "device": "cuda",
+ "env": {
+  "torch": "2.10.0+cu128",
+  "transformers": "5.0.0",
+  "peft": "0.19.1",
+  "numpy": "2.0.2",
+  "python": "3.12.13"
+ },
+ "model_path": "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1",
+ "corpus_verify": {
+  "corpus_spring.jsonl": {
+   "sha256": "d38e57905b30a43ac624fd07b4a50b7704a6b712236635eefe6f3a8779394262",
+   "bytes": 12147
+  },
+  "corpus_summer.jsonl": {
+   "sha256": "e7246601f036edc21b81ba79a1654beca87892d3655d23b5c6d5b6484efb84f7",
+   "bytes": 12441
+  },
+  "corpus_mid.jsonl": {
+   "sha256": "7143b433fe7d61dc73c0bdfe7e48aa7699ff44273d4fa030260225f445f002ce",
+   "bytes": 24588
+  },
+  "corpus_code.jsonl": {
+   "sha256": "8193c5d7cec6c28a60118a6aa55e52cc357d1ce4f5d9a40ba504bf53b8584efd",
+   "bytes": 9291
+  },
+  "corpus_legal.jsonl": {
+   "sha256": "0af3c7c96fa53c1d12eef4df29ceb32e670ba3bdf5c72f6e96e61d1456fb473a",
+   "bytes": 9530
+  },
+  "corpus_medical.jsonl": {
+   "sha256": "d8ed65fa92f552708530b2d7d99f9dc8e06fd86c0a7831b6ad1ef5fda5ca16cf",
+   "bytes": 9605
+  },
+  "corpus_general.jsonl": {
+   "sha256": "72b0f760b5b53623812fee903b4df49e9142c350335010dd54872862ee177212",
+   "bytes": 22497
+  }
+ },
+ "split_seed": 20260923,
+ "ledger": {
+  "general": {
+   "n_total": 55,
+   "n_held": 14,
+   "n_train": 41
+  },
+  "code": {
+   "n_total": 40,
+   "n_held": 10,
+   "n_train": 30
+  },
+  "spring": {
+   "n_total": 55,
+   "n_held": 14,
+   "n_train": 41
+  },
+  "summer": {
+   "n_total": 55,
+   "n_held": 14,
+   "n_train": 41
+  },
+  "legal": {
+   "n_total": 40,
+   "n_held": 10,
+   "n_train": 30
+  },
+  "medical": {
+   "n_total": 40,
+   "n_held": 10,
+   "n_train": 30
+  },
+  "mid": {
+   "n_total": 110,
+   "n_held": 28,
+   "n_train": 82
+  }
+ },
+ "n_train": 295,
+ "n_held": 100,
+ "hp": {
+  "lr": 0.0001,
+  "batch": 7,
+  "accum": 1,
+  "epochs": 1,
+  "seeds": [
+   13
+  ],
+  "recipe": {
+   "r": 16,
+   "lora_alpha": 32,
+   "lora_dropout": 0.05,
+   "target_modules": [
+    "q_proj",
+    "k_proj",
+    "v_proj",
+    "o_proj",
+    "gate_proj",
+    "up_proj",
+    "down_proj"
+   ]
+  },
+  "domains_order": [
+   "general",
+   "code",
+   "spring",
+   "summer",
+   "legal",
+   "medical",
+   "mid"
+  ]
+ },
+ "arms": [
+  "B"
+ ],
+ "prereg": "experiments/pb16-mac-brigade/PREREG_PB16c_order_3d_dose_response.md",
+ "results": [
+  {
+   "arm": "B",
+   "seed": 13,
+   "steps_per_epoch": 43,
+   "segment_bounds": [
+    6,
+    12,
+    18,
+    25,
+    31,
+    37,
+    43
+   ],
+   "n_lora_params": 8798208,
+   "epochs": [
+    {
+     "epoch": 1,
+     "loss_mean": 3.1773,
+     "seg_energy": {
+      "s1": 0.3945,
+      "s2": 0.2508,
+      "s3": 0.2154,
+      "s4": 0.2255,
+      "s5": 0.1869,
+      "s6": 0.1873,
+      "s7": 0.2009
+     },
+     "seg_energy_CV": 0.2843,
+     "E1_over_E7": 1.963,
+     "first_seg_hegemony_row": [
+      0.5824,
+      0.3181,
+      0.1723,
+      0.0956,
+      0.0617,
+      0.0644
+     ],
+     "mean_offdiag_dWov": 0.359,
+     "seg_geometry": {
+      "s1~s2": {
+       "dWov": 0.5824,
+       "V-A_k90": 3.815
+      },
+      "s1~s3": {
+       "dWov": 0.3181,
+       "V-A_k90": 3.813
+      },
+      "s1~s4": {
+       "dWov": 0.1723,
+       "V-A_k90": 3.812
+      },
+      "s1~s5": {
+       "dWov": 0.0956,
+       "V-A_k90": 3.81
+      },
+      "s1~s6": {
+       "dWov": 0.0617,
+       "V-A_k90": 3.808
+      },
+      "s1~s7": {
+       "dWov": 0.0644,
+       "V-A_k90": 3.806
+      },
+      "s2~s3": {
+       "dWov": 0.6805,
+       "V-A_k90": 3.815
+      },
+      "s2~s4": {
+       "dWov": 0.3761,
+       "V-A_k90": 3.814
+      },
+      "s2~s5": {
+       "dWov": 0.2034,
+       "V-A_k90": 3.813
+      },
+      "s2~s6": {
+       "dWov": 0.1366,
+       "V-A_k90": 3.811
+      },
+      "s2~s7": {
+       "dWov": 0.121,
+       "V-A_k90": 3.809
+      },
+      "s3~s4": {
+       "dWov": 0.6895,
+       "V-A_k90": 3.815
+      },
+      "s3~s5": {
+       "dWov": 0.3679,
+       "V-A_k90": 3.814
+      },
+      "s3~s6": {
+       "dWov": 0.2322,
+       "V-A_k90": 3.812
+      },
+      "s3~s7": {
+       "dWov": 0.1733,
+       "V-A_k90": 3.81
+      },
+      "s4~s5": {
+       "dWov": 0.687,
+       "V-A_k90": 3.816
+      },
+      "s4~s6": {
+       "dWov": 0.4155,
+       "V-A_k90": 3.815
+      },
+      "s4~s7": {
+       "dWov": 0.2786,
+       "V-A_k90": 3.814
+      },
+      "s5~s6": {
+       "dWov": 0.7296,
+       "V-A_k90": 3.816
+      },
+      "s5~s7": {
+       "dWov": 0.445,
+       "V-A_k90": 3.815
+      },
+      "s6~s7": {
+       "dWov": 0.7084,
+       "V-A_k90": 3.814
+      }
+     },
+     "heldout_nll": {
+      "general": 2.4296,
+      "code": 3.3772,
+      "spring": 2.9244,
+      "summer": 3.4949,
+      "legal": 2.6056,
+      "medical": 3.3428,
+      "mid": 3.2943
+     },
+     "ckpt": "ckpt_B_seed13_ep1.safetensors",
+     "ckpt_sha256": "189f3dc9c0ec924eac449e1f1257fe7ad64dc1f8efeba1f7bfb7642393a91f66",
+     "bytes": 35239760,
+     "min": 1.89
+    }
+   ],
+   "batches_full_brigade": 30,
+   "batches_depleted": 13,
+   "ce_traj": [
+    {
+     "ep": 1,
+     "step": 6,
+     "nll": {
+      "general": 2.5205,
+      "code": 3.8064,
+      "spring": 3.5755,
+      "summer": 4.1353,
+      "legal": 2.9425,
+      "medical": 3.6228,
+      "mid": 3.9476
+     }
+    },
+    {
+     "ep": 1,
+     "step": 12,
+     "nll": {
+      "general": 2.5138,
+      "code": 3.6006,
+      "spring": 3.4577,
+      "summer": 3.9938,
+      "legal": 2.7843,
+      "medical": 3.4624,
+      "mid": 3.801
+     }
+    },
+    {
+     "ep": 1,
+     "step": 18,
+     "nll": {
+      "general": 2.5082,
+      "code": 3.4582,
+      "spring": 3.2939,
+      "summer": 3.8697,
+      "legal": 2.6947,
+      "medical": 3.3569,
+      "mid": 3.6261
+     }
+    },
+    {
+     "ep": 1,
+     "step": 25,
+     "nll": {
+      "general": 2.5034,
+      "code": 3.3752,
+      "spring": 3.1971,
+      "summer": 3.756,
+      "legal": 2.6238,
+      "medical": 3.2884,
+      "mid": 3.4935
+     }
+    },
+    {
+     "ep": 1,
+     "step": 31,
+     "nll": {
+      "general": 2.4854,
+      "code": 3.3443,
+      "spring": 3.1322,
+      "summer": 3.6727,
+      "legal": 2.583,
+      "medical": 3.2608,
+      "mid": 3.4073
+     }
+    },
+    {
+     "ep": 1,
+     "step": 37,
+     "nll": {
+      "general": 2.4443,
+      "code": 3.36,
+      "spring": 3.0798,
+      "summer": 3.5884,
+      "legal": 2.5843,
+      "medical": 3.2545,
+      "mid": 3.3334
+     }
+    },
+    {
+     "ep": 1,
+     "step": 43,
+     "nll": {
+      "general": 2.4296,
+      "code": 3.3772,
+      "spring": 2.9244,
+      "summer": 3.4949,
+      "legal": 2.6056,
+      "medical": 3.3428,
+      "mid": 3.2943
+     }
+    }
+   ],
+   "minutes": 1.89
+  }
+ ],
+ "ts_update": "2026-09-24T20:31:49Z",
+ "sentinel": "pb16c_ok"
+}

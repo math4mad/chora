@@ -1,0 +1,19 @@
+[{"stream_name":"stdout","time":5.677616368,"data":"DEV cuda\n"}
+,{"stream_name":"stdout","time":460.075297799,"data":"[given] loss 6.95-\u003e0.122 wall 449s\n"}
+,{"stream_name":"stderr","time":460.109204757,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":460.109256847,"data":"  File \"/kaggle/src/script.py\", line 143, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":460.109531657,"data":"    paper(mm, arm)\n"}
+,{"stream_name":"stderr","time":460.109551693,"data":"  File \"/kaggle/src/script.py\", line 135, in paper\n"}
+,{"stream_name":"stderr","time":460.109914593,"data":"    b = lp(pr); w, wc = max(cs, key=lambda c: lp(pr + c[0]) - b)\n"}
+,{"stream_name":"stderr","time":460.109929539,"data":"        ^^^^^^\n"}
+,{"stream_name":"stderr","time":460.109936251,"data":"  File \"/kaggle/src/script.py\", line 129, in lp\n"}
+,{"stream_name":"stderr","time":460.11022926,"data":"    bias = (make_bias(cab[0], set()) if arm in (\"given\",\"random\") else torch.zeros(len(ids), len(ids), device=DEV)) + CAUS[:len(ids)][:len(ids)]\n"}
+,{"stream_name":"stderr","time":460.110668929,"data":"           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~\n"}
+,{"stream_name":"stderr","time":460.110685224,"data":"RuntimeError: The size of tensor a (18) must match the size of tensor b (512) at non-singleton dimension 1\n"}
+,{"stream_name":"stderr","time":463.871543367,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":463.871570625,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":464.106033882,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":464.106068693,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":464.71453862,"data":"[NbConvertApp] Converting notebook __script__.ipynb to html\n"}
+,{"stream_name":"stderr","time":465.899738269,"data":"[NbConvertApp] Writing 342480 bytes to __results__.html\n"}
+]
