@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# pre-commit — 园子自备闸 (0927 夜起): 尺寸闸先行, 免巨物坏全仓 push。
+# 装法: git config core.hooksPath bin/hooks   (本文件即闸之柄, 逐笔提交皆过)
+set -u
+ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+bash "$ROOT/bin/guard-size.sh" || exit 1
+exit 0
