@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 # PB23c 十二带 (生长速度非等距刀) · A 军专镜 · 判据承 23b zoom 律 (主人 0927「做完可再细」令)
+# v5 (0927 夜改, 见 POSTMORTEM_PB23c_v4.md): ①配对即算即落盘 (逐籽成环, 死亦不丢前籽) ②逐籽弃 U + gc/empty_cache
+#   ③每训落一行 RSS-MARK 自证内存 creep ④PB_SEEDS 可选单籽分弹 (一籽一发, 12 训/发)
+#   判据一字未动 (dist_median 归型法 / 册内斜率 ±0.004 / zoom 再细令), 仅改「何时落盘」与「如何省内存」。
 import os,json,time,base64,hashlib,copy,random,itertools,gc
 os.system("python -m pip uninstall -y -q torchao 2>/dev/null")
 import numpy as np,torch
@@ -31,6 +34,8 @@ def reset(sd):
     for prm in m.parameters(): prm.grad=None
 def one(k,sd):
     reset(sd)
+    try: print(f"RSS-MARK sd{sd} {k} rss={__import__('resource').getrusage(__import__('resource').RUSAGE_SELF)[0]//1024}MB",flush=True)
+    except Exception: pass
     opt=torch.optim.AdamW([q for q in m.parameters() if q.requires_grad],lr=1e-4);m.train()
     p=[x for x in (enc(i) for i in load(k)) if x]
     for e in range(4):
@@ -60,15 +65,21 @@ def fl(t):
     json.dump(REP,open(f"{OUT}/report_pb23c.json","w"),ensure_ascii=False)
     print("REPORT_LINE::"+base64.b64encode(json.dumps(REP).encode()).decode()[:3800],flush=True)
 S={}
-for sd in [13,14,15]:
-    for k in BANDS: S[(k,sd)]=one(k,sd);fl(f"{k}s{sd}")
+SEEDS=[int(x) for x in os.environ.get("PB_SEEDS","13,14,15").split(",")]
 def bn(k): return int(k[1:k.index("_")])
-for x,y in itertools.combinations(BANDS,2):
-    REP["runs"].append({"pair":f"{x}~{y}","dist":abs(bn(x)-bn(y)),"ov":[ov(S[(x,s)],S[(y,s)]) for s in [13,14,15]]})
-fl("pairs")
-D={}
-for r in REP["runs"]: D.setdefault(r["dist"],[]).extend(r["ov"])
-med={d:round(float(np.median(D[d])),4) for d in sorted(D)}
+import gc
+for sd in SEEDS:
+    for k in BANDS: S[(k,sd)]=one(k,sd);fl(f"{k}s{sd}")
+    # v5 主刀 (POSTMORTEM_PB23c_v4 §治法1): 配对即算即落盘, 不许排在训练循环之后; 逐籽弃 U 防 creep
+    for x,y in itertools.combinations(BANDS,2):
+        REP["runs"].append({"pair":f"{x}~{y}","dist":abs(bn(x)-bn(y)),"ov":[ov(S[(x,sd)],S[(y,sd)])],"seed":sd})
+        fl(f"pairs-s{sd}")
+    for k in BANDS: S.pop((k,sd),None)
+    gc.collect();torch.cuda.empty_cache();fl(f"drop-s{sd}")
+PR={}
+for r in REP["runs"]: PR.setdefault((r["dist"],r["pair"]),[]).extend(r["ov"])
+D={d:[float(np.median(v)) for (dd,p),v in PR.items() if dd==d] for d in {k[0] for k in PR}}
+med={d:round(float(np.median(D[d])),4) for d in sorted(D)}   # 在册口径: 每对先跨籽中位, 再跨对中位 (与 23b 同法)
 near=[v for dd,v in sorted(med.items())][:3];far=[v for dd,v in sorted(med.items())][-3:]
 REP["verdict"]={"dist_median":med,"trend":"下沉" if np.polyfit(list(med),list(med.values()),1)[0]<-0.004 else ("平线" if abs(np.polyfit(list(med),list(med.values()),1)[0])<=0.004 else "反常"),"zoom_再细令":"膝在则廿四带; 平线则此系终镜","sentinel":"pb23c_ok"}
 fl("final");print("DONE PB23c",json.dumps(REP["verdict"],ensure_ascii=False)[:300])
