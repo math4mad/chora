@@ -15,9 +15,11 @@ tok=AutoTokenizer.from_pretrained(M)
 base=AutoModelForCausalLM.from_pretrained(M,dtype=torch.float16)
 def enc(i):
     u,a=i["messages"][0]["content"],i["messages"][1]["content"]
+    if not a or len(a)<2: return None
     pre=tok.apply_chat_template([{"role":"user","content":u},{"role":"assistant","content":""}],tokenize=False,add_generation_prompt=True)
     full=tok.apply_chat_template([{"role":"user","content":u},{"role":"assistant","content":a}],tokenize=False)
     fi=tok(full,add_special_tokens=False)["input_ids"];pi=tok(pre,add_special_tokens=False)["input_ids"]
+    if len(pi)>=len(fi): return None
     return fi,[-100]*len(pi)+fi[len(pi):]
 def newl(seed):
     global m
@@ -25,7 +27,7 @@ def newl(seed):
     m=get_peft_model(copy.deepcopy(base),LoraConfig(task_type=TaskType.CAUSAL_LM,r=16,lora_alpha=32,lora_dropout=0.05,bias="none",
       target_modules=["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"])).to(DEV)
 def train(items,ep):
-    p=[enc(i) for i in items];opt=torch.optim.AdamW([q for q in m.parameters() if q.requires_grad],lr=1e-4);m.train()
+    p=[x for x in (enc(i) for i in items) if x];opt=torch.optim.AdamW([q for q in m.parameters() if q.requires_grad],lr=1e-4);m.train()
     for e in range(ep):
         o=list(range(len(p)));random.shuffle(o)
         for k,ix in enumerate(o,1):
