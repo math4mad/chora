@@ -95,8 +95,15 @@ Theuth/Lyceum=账目可否自验；vault/queue/push=物流，不配问题。
    一次生成不可复得，丢了无从重造）；**② 实验室诸案 = 锦上添花**
    （数据、图、checkpoint、日志 —— 可重射，唯判据与账行不可失）；
    **③ 依附品**（为论文服务的脚本、备料、可视化骸架）。排产冲突时一律让路于①。
-   **凡宝必三存**：盘上工作树 + 本地封存袋 + off-disk 私有仓
-   （器部 `Concept-Space-Sphere/bin/vault-core.sh` 主其事，`math4mad/cora-vault` 收金）。
+   **凡宝必四存**（0926 立灶升格，本册 0927 夜补正）：盘上工作树 + 本地封存袋 + off-disk 私有仓
+   （器部 `Concept-Space-Sphere/bin/vault-core.sh` 主其事，`math4mad/cora-vault` 收金）
+   + 云灶（`Concept-Space-Sphere/bin/yunpan.sh put <件> <云名>`，CloudDrive2→阿里云盘 CHORA-VAULT，
+   put 必 sha256 双向对撞；**凡 >100MB 的存目件一律随此道镜像上云** —— GitHub 单文件 100MB 硬限，
+   仓内不留巨物，0927 夜 push 连败十二次之案即此律的学费）。
+
+0-b. **账只有一个**：论文之账（判生/立案/开火…诸状态行）**只记在 `cora-atlas/LEDGER.md`**，
+   本仓各案册（PREREG/RESULTS/VERDICT）只写细节与 sha，须入账者往彼处追行。
+   `chora/experiments/` 下不设 LEDGER（0927 夜已删一枚 0 字节误触空壳，留此条为名分之证）。
 
 1. **Share inputs and artifacts, never histories.** No merges of git history;
    benches keep their own remotes. Large binaries are git-ignored everywhere
