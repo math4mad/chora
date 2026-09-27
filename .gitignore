@@ -17,3 +17,5 @@ experiments/pb19-mrd/out/adapters_D1_nba_r64/adapter_model.safetensors
 experiments/pb19-mrd/out/adapters_D2_gen_r64/adapter_model.safetensors
 experiments/pb23b-fine6/out/*.log
 experiments/pb16c-formal/out_formal/
+experiments/pb23c-fine12/out_v5/
+experiments/pb23c-fine12/VERDICT_PB23c_draft.txt
