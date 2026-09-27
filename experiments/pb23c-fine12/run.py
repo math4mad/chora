@@ -54,9 +54,10 @@ def fl(t):
 S={}
 for sd in [13,14,15]:
     for k in BANDS: S[(k,sd)]=one(k,sd);fl(f"{k}s{sd}")
-    for x,y in itertools.combinations(BANDS,2):
-        REP["runs"].append({"pair":f"{x}~{y}","dist":abs(int(x[1])-int(y[1])),"ov":[ov(S[(x,s)],S[(y,s)]) for s in [13,14,15]]})
-    fl(f"pairs-s{sd}");REP["S_{}".format(sd)]={k:list(S[(k,sd)].keys())[:2] for k in BANDS}
+def bn(k): return int(k[1:k.index("_")])
+for x,y in itertools.combinations(BANDS,2):
+    REP["runs"].append({"pair":f"{x}~{y}","dist":abs(bn(x)-bn(y)),"ov":[ov(S[(x,s)],S[(y,s)]) for s in [13,14,15]]})
+fl("pairs")
 D={}
 for r in REP["runs"]: D.setdefault(r["dist"],[]).extend(r["ov"])
 med={d:round(float(np.median(D[d])),4) for d in sorted(D)}
