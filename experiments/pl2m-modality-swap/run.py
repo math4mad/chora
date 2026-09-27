@@ -41,13 +41,13 @@ def new_lora():
     m=None; torch.cuda.empty_cache()
     m=get_peft_model(copy.deepcopy(base),LoraConfig(task_type="CAUSAL_LM",r=16,lora_alpha=32,lora_dropout=0.05,bias="none",
         target_modules=["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"])).to(DEV)
-def ce(pairs):
-    m.eval()
+def ce(pairs,model=None):
+    mm=model or m; mm.eval()
     tot=0.0
     with torch.no_grad():
         for fi,la in pairs:
             x=torch.tensor([fi],device=DEV); y=torch.tensor([la],device=DEV)
-            tot+=float(m(input_ids=x,labels=y).loss)
+            tot+=float(mm(input_ids=x,labels=y).loss)
     return round(tot/max(1,len(pairs)),4)
 def train(items,seed=13,epochs=3):
     torch.manual_seed(seed); random.seed(seed)
@@ -69,7 +69,8 @@ def flush(tag):
     REPORT["_meta"]={"stage":tag,"t":time.strftime("%H:%M:%S")}
     json.dump(REPORT,open(f"{OUT}/report_pl2m.json","w"),ensure_ascii=False)
     print("REPORT_LINE::"+base64.b64encode(json.dumps(REPORT,ensure_ascii=False).encode()).decode()[:3800],flush=True)
-REP0=table("baseline",{})  # 枪哑自检基线
+bm=base.to(DEV)
+REP0={d:ce(Held[d],bm) for d in DOM}; bm=bm.cpu(); torch.cuda.empty_cache()  # 基线=母版裸模型
 REPORT["baseline"]=REP0
 def arm(name,first,second,transform=None):
     tr=(lambda c:[transform(x) for x in c]) if transform else (lambda c:c)
