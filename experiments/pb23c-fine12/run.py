@@ -18,12 +18,21 @@ def enc(i):
     fi=tok(full,add_special_tokens=False)["input_ids"];pi=tok(pre,add_special_tokens=False)["input_ids"]
     if len(pi)>=len(fi) or not a: return None
     return fi,[-100]*len(pi)+fi[len(pi):]
-def one(k,sd):
+def build():
     global m
-    m=None;gc.collect();torch.cuda.empty_cache();torch.manual_seed(sd);random.seed(sd)
     m=get_peft_model(copy.deepcopy(base),LoraConfig(task_type=TaskType.CAUSAL_LM,r=16,lora_alpha=32,lora_dropout=0.05,bias="none",
       target_modules=["q_proj","k_proj","v_proj","o_proj","gate_proj","up_proj","down_proj"])).to(DEV)
-    p=[x for x in (enc(i) for i in load(k)) if x];opt=torch.optim.AdamW([q for q in m.parameters() if q.requires_grad],lr=1e-4);m.train()
+build()
+def reset(sd):
+    torch.manual_seed(sd);random.seed(sd)
+    for mod in m.modules():
+        for md in getattr(mod,'lora_A',{}).values(): md.reset_parameters()
+        for md in getattr(mod,'lora_B',{}).values(): torch.nn.init.zeros_(md.weight)
+    for prm in m.parameters(): prm.grad=None
+def one(k,sd):
+    reset(sd)
+    opt=torch.optim.AdamW([q for q in m.parameters() if q.requires_grad],lr=1e-4);m.train()
+    p=[x for x in (enc(i) for i in load(k)) if x]
     for e in range(4):
         o=list(range(len(p)));random.shuffle(o)
         for j,ix in enumerate(o,1):
@@ -34,11 +43,10 @@ def one(k,sd):
     g={}
     for n,pp in m.named_parameters():
         if ".lora_" in n:
-            b=n.split(".lora_")[0];kd=n.split(".lora_")[1][0];g.setdefault(b,{})[kd]=pp.detach().cpu().float().numpy()
+            b=n.split(".lora_")[0];kd=n.split(".lora_")[1][0];g.setdefault(b,{})[kd]=pp.detach().cpu().float().numpy().copy()
     U={}
     for b,d in g.items():
-        U_,s,Vt=np.linalg.svd(d["B"]@d["A"],full_matrices=False);U[b]=U_[:,:8]
-    del m;gc.collect();torch.cuda.empty_cache()
+        U_,sv,Vt=np.linalg.svd(d["B"]@d["A"],full_matrices=False);U[b]=U_[:,:8]
     return U
 def ov(A,B):
     vs=[]
