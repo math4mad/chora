@@ -22,14 +22,10 @@ open_rows=[r for r in rows if r.get("claim") not in ("announced","closed","score
 # 晨报只挑: 未 announced 的 experiment 行, 每行一条, 上限 6
 pick=[r for r in rows if r.get("kind","experiment")=="experiment" and r.get("claim") not in ("announced","closed")][:6]
 import subprocess, os
-import re as _re
-def _names(flt):
-    return subprocess.run(["osascript","-e",f'tell application "Reminders" to tell list "Concept-Space" to get name of reminders {flt}'],capture_output=True,text=True).stdout
-have_all=_names("whose completed is false")+_names("whose completed is true")
-seen=set(_re.findall(r'\U0001f4cc ([^:：\s]+)',have_all))  # 按看板 id 去重, 勾选(=批复)过的不再复发
+have=subprocess.run(["osascript","-e",'tell application "Reminders" to tell list "Concept-Space" to get name of reminders whose completed is false'],capture_output=True,text=True).stdout
 for r in pick:
     title=f"📌 {r['id']}: " + (r.get("next") or r.get("title") or "")[:70]
-    if r['id'] not in seen:
+    if title[:24] not in have:
         subprocess.run(["osascript","-e",f'''tell application "Reminders" to tell list "Concept-Space" to make new reminder with properties {{name:"{title}",body:"看板行 {r['id']} · claim={r.get('claim','?')}"}}'''])
         print("morning add:", title[:60])
         # MS To Do 通道: 经 Mac 的 Exchange 账户直写「Concept-Space」专单 (服务器同步 ~5s, 零注册零授权)
