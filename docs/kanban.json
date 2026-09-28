@@ -1,6 +1,6 @@
 {
- "generated": "2026-09-28T10:12:51Z",
- "chora_head": "abad4ce",
+ "generated": "2026-09-28T10:24:59Z",
+ "chora_head": "2484336",
  "counts": {
   "idea": 0,
   "registered": 5,
@@ -801,7 +801,7 @@
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): models/models/Qwen--Qwen2.5-0.5B-Instruct/snapshots/master/tokenizer_config.json",
   "  DANGLING PIN (a permission slip for bytes that exist nowhere): models/models/Qwen--Qwen2.5-0.5B-Instruct/snapshots/master/vocab.json",
   "pin-baseline (docs/pin-baseline-2026-09-12-eve.txt): 0 of 108 pairs missing",
-  "glass: generated 0 min ago · paint abad4ce, 0 commit(s) behind HEAD",
+  "glass: generated 0 min ago · paint 2484336, 0 commit(s) behind HEAD",
   "citations: every repo@sha in letters/ and AGENTS.md resolves in a clone here"
  ]
 }
