@@ -5,6 +5,7 @@
 用法:
   lola.py push "<text>"   写 outbox + 置剪贴板 (你粘进 ima)
   lola.py pull            从剪贴板取 ima 回信 -> inbox + LEDGER
+  lola.py recv [text]     收一段粘贴进来的 ima 信 (非剪贴板通道) -> inbox + LEDGER
   lola.py log [n]         台账尾 n 行
   lola.py read            看 outbox 全文
   lola.py selftest        不碰剪贴板的语法/账本自检
@@ -59,14 +60,26 @@ def cmd_push(args):
     return 0
 
 
-def cmd_pull(args):
-    text = clip_read().strip()
+def ingest(text, direction, via):
+    text = (text or "").strip()
     if not text:
-        print("clipboard empty; copy ima's reply first"); return 1
-    append(INBOX, "# Lola·inbox (ima → local)", f"\n### {now()} · ima→local · {sha(text)}\n{text}\n")
-    ledger_line("⇠ ima", text)
-    print(f"pulled {sha(text)} ({len(text)} chars) → inbox + LEDGER")
+        print(f"empty; nothing ingested via {via}"); return 1
+    append(INBOX, "# Lola·inbox (ima → local)", f"\n### {now()} · {via} · {sha(text)}\n{text}\n")
+    ledger_line(direction, text)
+    print(f"{via}: {sha(text)} ({len(text)} chars) → inbox + LEDGER")
     return 0
+
+
+def cmd_pull(args):
+    text = clip_read()
+    if not text.strip():
+        print("clipboard empty; copy ima's reply first"); return 1
+    return ingest(text, "⇠ ima", "ima→local clipboard")
+
+
+def cmd_recv(args):
+    text = " ".join(args) if args else sys.stdin.read()
+    return ingest(text, "⇠ ima", "ima→local chat")
 
 
 def cmd_log(args):
@@ -90,7 +103,7 @@ def cmd_selftest(args):
     return 0
 
 
-CMDS = {"push": cmd_push, "pull": cmd_pull, "log": cmd_log, "read": cmd_read, "selftest": cmd_selftest}
+CMDS = {"push": cmd_push, "pull": cmd_pull, "recv": cmd_recv, "log": cmd_log, "read": cmd_read, "selftest": cmd_selftest}
 
 
 def main():
