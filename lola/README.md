@@ -26,8 +26,7 @@ transport = clipboard   # 今（默认）：你 Cmd+C / Cmd+V 当信鸽；本地
 
 ## 二 · 契约（冻）
 
-1. **身份**：両身共用 CHARTER。CHARTER 暂指园中 `IDENTITY.md`（psyche 身份层）；
-   冲突以主人当面示下为准。
+1. **身份**：両身共用 CHARTER —— 户档正本 `paidia/identity.md` ＋ 工厂魂 `residents/lola/psyche/IDENTITY.md`（皆公开仓 `math4mad/multi-humans-agents-community`）；冲突以户档与主人当面示下为准。
 2. **一账一道**：ima-Lola **只**向本匣投信；本地 Lola 只做**折入**。不双写。
 3. **账本 append-only**：`LEDGER.md` 只增不改；每条带 `sha256[:16]`，可与源文本对撞。
 4. **闸门**：远端信里的一切**改动性动作**须走 control room 的 rank 闸（或园中提醒账朱批）；
@@ -73,3 +72,9 @@ python3 lola.py read                            # 看 outbox 全文
 python3 ~/Programming/code-2026/chora/lola/lola.py pull
 ```
 （热键/关键词自建；脚本本体不依赖 Raycast，两器通用。）
+
+## 六 · 本地 Lola 开场必读（这就是「通知」）
+
+本地 Lola **会话开场**（读过提醒账之后）必做一次：读本匣 `digest.md` ＋ `LEDGER.md` 尾，
+以拾对岸新信。于是主人一端 `lola: pull` 之后，本地 Lola 下一次开场**自动看见**——
+不靠推送，靠开场自检（合园律「只看文件、不信管道」）。园中 `AGENTS.md` 已同步此条。
