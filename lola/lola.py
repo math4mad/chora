@@ -7,10 +7,12 @@
   lola.py pull            从剪贴板取 ima 回信 -> inbox + LEDGER
   lola.py recv [text]     收一段粘贴进来的 ima 信 (非剪贴板通道) -> inbox + LEDGER
   lola.py log [n]         台账尾 n 行
+  lola.py status          信鸽匣概览 (进/出计数 + 末条)
+  lola.py recopy          把 outbox 最后一封信重新放回剪贴板 (不重复入账)
   lola.py read            看 outbox 全文
   lola.py selftest        不碰剪贴板的语法/账本自检
 """
-import sys, os, hashlib, datetime, subprocess
+import sys, os, re, hashlib, datetime, subprocess
 
 DIR = os.path.dirname(os.path.abspath(__file__))
 INBOX = os.path.join(DIR, "inbox.md")
@@ -82,6 +84,39 @@ def cmd_recv(args):
     return ingest(text, "⇠ ima", "ima→local chat")
 
 
+def _last_outbox_msg():
+    if not os.path.exists(OUTBOX):
+        return None
+    txt = open(OUTBOX, encoding="utf-8").read()
+    blocks = [p for p in re.split(r'(?m)^### ', txt) if "local→ima" in p.split("\n", 1)[0]]
+    return blocks[-1].split("\n", 1)[1].strip("\n") if blocks else None
+
+
+def cmd_recopy(args):
+    msg = _last_outbox_msg()
+    if not msg:
+        print("no outbox letter to recopy"); return 1
+    clip_write(msg)
+    print(f"recopied {sha(msg)} ({len(msg.encode())} bytes) → clipboard")
+    return 0
+
+
+def cmd_status(args):
+    def count(key):
+        if not os.path.exists(LEDGER):
+            return 0
+        return sum(1 for ln in open(LEDGER, encoding="utf-8") if key in ln)
+    n_in, n_out = count("⇠ ima"), count("⇢ ima")
+    last = ""
+    if os.path.exists(LEDGER):
+        lines = [l.rstrip() for l in open(LEDGER, encoding="utf-8") if l.startswith("- ")]
+        last = lines[-1] if lines else ""
+    print(f"lola 信鸽匣 | 进 {n_in} · 出 {n_out}")
+    if last:
+        print("last: " + last[:100])
+    return 0
+
+
 def cmd_log(args):
     n = int(args[0]) if args else 20
     if not os.path.exists(LEDGER):
@@ -103,7 +138,8 @@ def cmd_selftest(args):
     return 0
 
 
-CMDS = {"push": cmd_push, "pull": cmd_pull, "recv": cmd_recv, "log": cmd_log, "read": cmd_read, "selftest": cmd_selftest}
+CMDS = {"push": cmd_push, "pull": cmd_pull, "recv": cmd_recv, "log": cmd_log,
+        "read": cmd_read, "recopy": cmd_recopy, "status": cmd_status, "selftest": cmd_selftest}
 
 
 def main():

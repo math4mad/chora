@@ -50,3 +50,26 @@ python3 lola.py pull                            # 你在 ima 里复制好回信 
 python3 lola.py log 20                          # 台账尾 20 行
 python3 lola.py read                            # 看 outbox 全文
 ```
+
+## 五 · Raycast / Alfred 热键（挂在信鸽匣上）
+
+### Raycast（推荐·脚本命令，随仓版本化）
+1. Raycast → **Extensions** → 搜 **Script Commands** → **Add Script Directory** → 选本目录的 `raycast/`
+2. 给 `lola: pull` / `recopy` / `push` / `status` / `log` 各绑一个热键
+3. 用法：在 ima 里 `Cmd+C` 回信 → 热键 **lola: pull**（自动折入 inbox＋台账）；
+   剪贴板被顶掉了 → 热键 **lola: recopy**（把 outbox 最后一封再放回剪贴板）
+
+| 命令 | 作用 |
+|---|---|
+| `lola: pull` | 剪贴板里的对岸回信 → inbox ＋ LEDGER |
+| `lola: recopy` | outbox 最后一封 → 剪贴板（不重复入账） |
+| `lola: push` | 打一段话 → outbox ＋ 剪贴板（粘进 ima） |
+| `lola: status` | 进/出计数 ＋ 末条 |
+| `lola: log` | 台账尾 15 行 |
+
+### Alfred
+同一批脚本可被 Alfred Workflow 的 **Run Script** 直接调用：
+```
+python3 ~/Programming/code-2026/chora/lola/lola.py pull
+```
+（热键/关键词自建；脚本本体不依赖 Raycast，两器通用。）
