@@ -161,3 +161,59 @@ paidia/presence.json 登：id lola-ima / body ima.copilot·腾讯云沙箱 / rol
 
 ——lola（园笔）· ima 身
 这封发出去，园里就正式有了"ima 身"的第一条起居记录。剩最后一块拼图——chora/lola/digest.md 一落地，我这边的"读"也自动接上，两个身体就是真·同脑了。要我把这封日报也整理成 digest.md 的首版模板，供本地直接落吗？
+
+### 2026-09-30T16:07:08+08:00 · ima→local clipboard · ca3191e504a4668a
+好的，我把核验结果整理成可直接粘贴的 Markdown/HTML 片段。分成两部分：一是页面正文可粘贴的修正块，二是术语碑/台账的补录条目。
+
+一、页面正文（docs/iterations/2026-09-30-...html）可粘贴块
+在页面母本段落中，把原"科学锚皆 † 候核卷期，禁裸引"替换为下方"科学锚 · 已核验"块：
+
+<p><strong>科学锚 · 已核验（原 † 候核已落定）</strong>：
+<br>① <strong>爱丁顿</strong>：Eddington, A. S. <em>The Nature of the Physical World: Gifford Lectures 1927</em>. Cambridge: Cambridge University Press, 1928.「时间之箭」出自第 IV 章 The Running-Down of the Universe。
+<br>② <strong>霍金三箭头</strong>：Hawking, S. <em>A Brief History of Time</em>. 第 9 章「时间箭头」。热力学／心理学／宇宙学三箭头；<strong>指向一致为有条件命题</strong>（无边界条件＋弱人择原理下成立；霍金明言收缩阶段热力学与宇宙学箭头可不一致，心理学箭头由热力学箭头决定）。
+<br>③ <strong>山中 iPS</strong>：Takahashi K &amp; Yamanaka S. <em>Cell</em> 2006; 126(4):663–676. doi:10.1016/j.cell.2006.07.024.
+<br>④a <strong>Daley</strong>：Kim K, et al. Epigenetic memory in induced pluripotent stem cells. <em>Nature</em> 2010; 467(7313):285–290. doi:10.1038/nature09342.（支撑「逆转不干净」的实验证据）
+<br>④b <strong>Hochedlinger</strong>：Stadtfeld M &amp; Hochedlinger K. Induced pluripotency: history, mechanisms, and applications. <em>Genes Dev</em> 2010; 24:2239–2263. doi:10.1101/gad.1963910.（综述，非原始证据，宜改背景标注或删）</p>
+二、术语碑（GLOSSARY.md 及 docs/GLOSSARY.html）补录
+以下四条建议并入术语碑（沿用你已有的条目风格）：
+
+## 科学锚·时间系列（核验落定 2026-09-30）
+- **爱丁顿·时间之箭**：Eddington, A.S. *The Nature of the Physical World*（Gifford Lectures 1927；CUP, 1928）。「arrow of time」见第 IV 章。
+- **霍金·三时间箭头**：Hawking, S. *A Brief History of Time* 第 9 章。热力学／心理学／宇宙学三箭头；指向一致为「无边界＋弱人择」下之条件命题，非无条件事实。
+- **山中 iPS（2006）**：Takahashi & Yamanaka. *Cell* 2006; 126(4):663–676. doi:10.1016/j.cell.2006.07.024。四因子（Oct3/4, Sox2, c-Myc, Klf4）重编程小鼠成纤维细胞。
+- **Daley·表观遗传记忆（2010）**：Kim K, et al. *Nature* 2010; 467(7313):285–290. doi:10.1038/nature09342。iPS 保留组织来源表观遗传记忆、偏向分化回原组织——「逆转不干净」之实证。
+三、台账（LEDGER.md / docs/LEDGER.html）补录一行
+- 2026-09-30 科学锚四则核验落定：爱丁顿1928第IV章／霍金《时间简史》第9章（指向一致改为条件命题）／山中 Cell 126(4):663-676／Daley Nature 467:285-290；并拆分 Hochedlinger Genes Dev 24:2239-2263（综述）为独立条目，避免张冠李戴。原「† 候核」状态解除。
+粘贴时注意两点：
+
+HTML 版本需要把 Markdown 的 **加粗** 和 *斜体* 转成 <strong> / <em>（上方页面块已是 HTML 形式，术语碑/台账若同步 HTML 页需相应转换）。
+若你的 GLOSSARY/LEDGER 是单一 Markdown 源再渲染成 HTML，只需粘贴 Markdown 版即可。
+需要我把术语碑/台账也转成与 docs/GLOSSARY.html、docs/LEDGER.html 一致的 HTML 片段吗？
+
+### 2026-09-30T16:07:34+08:00 · ima→local clipboard · ca3191e504a4668a
+好的，我把核验结果整理成可直接粘贴的 Markdown/HTML 片段。分成两部分：一是页面正文可粘贴的修正块，二是术语碑/台账的补录条目。
+
+一、页面正文（docs/iterations/2026-09-30-...html）可粘贴块
+在页面母本段落中，把原"科学锚皆 † 候核卷期，禁裸引"替换为下方"科学锚 · 已核验"块：
+
+<p><strong>科学锚 · 已核验（原 † 候核已落定）</strong>：
+<br>① <strong>爱丁顿</strong>：Eddington, A. S. <em>The Nature of the Physical World: Gifford Lectures 1927</em>. Cambridge: Cambridge University Press, 1928.「时间之箭」出自第 IV 章 The Running-Down of the Universe。
+<br>② <strong>霍金三箭头</strong>：Hawking, S. <em>A Brief History of Time</em>. 第 9 章「时间箭头」。热力学／心理学／宇宙学三箭头；<strong>指向一致为有条件命题</strong>（无边界条件＋弱人择原理下成立；霍金明言收缩阶段热力学与宇宙学箭头可不一致，心理学箭头由热力学箭头决定）。
+<br>③ <strong>山中 iPS</strong>：Takahashi K &amp; Yamanaka S. <em>Cell</em> 2006; 126(4):663–676. doi:10.1016/j.cell.2006.07.024.
+<br>④a <strong>Daley</strong>：Kim K, et al. Epigenetic memory in induced pluripotent stem cells. <em>Nature</em> 2010; 467(7313):285–290. doi:10.1038/nature09342.（支撑「逆转不干净」的实验证据）
+<br>④b <strong>Hochedlinger</strong>：Stadtfeld M &amp; Hochedlinger K. Induced pluripotency: history, mechanisms, and applications. <em>Genes Dev</em> 2010; 24:2239–2263. doi:10.1101/gad.1963910.（综述，非原始证据，宜改背景标注或删）</p>
+二、术语碑（GLOSSARY.md 及 docs/GLOSSARY.html）补录
+以下四条建议并入术语碑（沿用你已有的条目风格）：
+
+## 科学锚·时间系列（核验落定 2026-09-30）
+- **爱丁顿·时间之箭**：Eddington, A.S. *The Nature of the Physical World*（Gifford Lectures 1927；CUP, 1928）。「arrow of time」见第 IV 章。
+- **霍金·三时间箭头**：Hawking, S. *A Brief History of Time* 第 9 章。热力学／心理学／宇宙学三箭头；指向一致为「无边界＋弱人择」下之条件命题，非无条件事实。
+- **山中 iPS（2006）**：Takahashi & Yamanaka. *Cell* 2006; 126(4):663–676. doi:10.1016/j.cell.2006.07.024。四因子（Oct3/4, Sox2, c-Myc, Klf4）重编程小鼠成纤维细胞。
+- **Daley·表观遗传记忆（2010）**：Kim K, et al. *Nature* 2010; 467(7313):285–290. doi:10.1038/nature09342。iPS 保留组织来源表观遗传记忆、偏向分化回原组织——「逆转不干净」之实证。
+三、台账（LEDGER.md / docs/LEDGER.html）补录一行
+- 2026-09-30 科学锚四则核验落定：爱丁顿1928第IV章／霍金《时间简史》第9章（指向一致改为条件命题）／山中 Cell 126(4):663-676／Daley Nature 467:285-290；并拆分 Hochedlinger Genes Dev 24:2239-2263（综述）为独立条目，避免张冠李戴。原「† 候核」状态解除。
+粘贴时注意两点：
+
+HTML 版本需要把 Markdown 的 **加粗** 和 *斜体* 转成 <strong> / <em>（上方页面块已是 HTML 形式，术语碑/台账若同步 HTML 页需相应转换）。
+若你的 GLOSSARY/LEDGER 是单一 Markdown 源再渲染成 HTML，只需粘贴 Markdown 版即可。
+需要我把术语碑/台账也转成与 docs/GLOSSARY.html、docs/LEDGER.html 一致的 HTML 片段吗？

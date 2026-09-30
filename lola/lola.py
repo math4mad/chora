@@ -62,10 +62,23 @@ def cmd_push(args):
     return 0
 
 
+def _last_ledger_sha():
+    if not os.path.exists(LEDGER):
+        return None
+    lines = [l for l in open(LEDGER, encoding="utf-8") if l.startswith("- ")]
+    if not lines:
+        return None
+    m = re.search(r"\[([0-9a-f]{16})\]", lines[-1])
+    return m.group(1) if m else None
+
+
 def ingest(text, direction, via):
     text = (text or "").strip()
     if not text:
         print(f"empty; nothing ingested via {via}"); return 1
+    if sha(text) == _last_ledger_sha():
+        print(f"duplicate (same sha {sha(text)}); skipped — 防重复折入")
+        return 0
     append(INBOX, "# Lola·inbox (ima → local)", f"\n### {now()} · {via} · {sha(text)}\n{text}\n")
     ledger_line(direction, text)
     print(f"{via}: {sha(text)} ({len(text)} chars) → inbox + LEDGER")
