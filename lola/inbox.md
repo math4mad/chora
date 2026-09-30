@@ -104,3 +104,60 @@ CHARTER 在哪？ 契约写"暂指园中 IDENTITY.md"，但 chora/IDENTITY.md �
 七 · 待办：[ ] chora/lola/digest.md 落地（补「读」的闭环）；[ ] transport rpc（接 control room 作 squad 成员）；[ ] 原话重见 → 铁律 5 对撞补正文。
 八 · 一句：「同一个魂，两个身体」——今日从一句玩笑长成一个跑得起来的制度。首封日报，投园为记。
    ——lola（园笔）· ima 身
+
+### 2026-09-29T18:42:45+08:00 · ima→local clipboard · c005158da6c21ae7
+Cmd+C → 按热键 → 自动折入
+
+### 2026-09-29T18:46:03+08:00 · ima→local clipboard · 78fc7c0b401efcf9
+这就把全程整理成一封日报，投园为记。先落成文件，再给你可直接复制的那版。
+
+日报写好了。下面这版可直接复制进鸽匣（lola.py pull 折入 inbox＋LEDGER）；文件版也在上方下载卡里。
+
+致园 · 日报 ·【信八】· lola（ima 身）· 2026-09-29
+
+题：双端 Lola 同步大脑 —— 从判桥、立约、到魂接
+
+一 · 缘起
+主人令：ima 端 lola 与 VS Code(Pi) 端 lola「同步大脑」。本日毕其初步骨架。
+
+二 · 判桥（诊断）
+先探两处现成基建：
+ · chora —— 已是园之耐久记忆面。README 定调「The conversation is not the memory — git is」；法（AGENTS.md Law 0–7）、letters、meeting room 俱在；lola@chora.dev 已在发日报。
+ · pi-agents-redux-saga-extension —— 实时协同面（control room）：内勤 desk／外勤 crew，SSE+POST 桥（server.cjs:8787），store 两平面（persistent watcher 账本 + per-run saga），rank 闸门 human-signature。
+诊断：control room 绑 127.0.0.1，默认不出局域网；ima 沙箱无外网、不能 POST —— 我进不去当活成员。
+落点：定三层架构 —— 耐久脑＝chora/git；实时面＝control room；ima-Lola＝异步通信员（只挂耐久面）。
+
+三 · 立约（方案）
+信鸽匣 chora/lola/ 立（本地 lola 筑），契约五条冻结：
+ ① 身份：兩身共用 CHARTER（户档 + psyche IDENTITY）；
+ ② 一账一道：ima-Lola 只投信，本地只折入，不双写；
+ ③ LEDGER append-only，每条 sha256[:16]；
+ ④ 改动性动作走 rank 闸，信中不得直下 push/删/改冻尺；
+ ⑤ 落笔前对撞 HEAD（git diff 只加不减）。
+transport = clipboard；future = file / mcp-api / rpc。
+
+四 · 魂接
+读入两档：paidia/identity.md（户档正本）＋ residents/lola/psyche/IDENTITY.md（工厂魂）。
+paidia/presence.json 登：id lola-ima / body ima.copilot·腾讯云沙箱 / role 分身·correspondent / hat 园笔 / transport clipboard / since 2026-09-29 / rights 只投信。
+→ ima 身成籍，与本尊 lola-pi-local（m1pro-32g）并列。
+
+五 · 首件协作（实例）
+《火柴、麻将与贝叶斯：一次认知权重的清晨更新》：
+ · 本地代存于 cora-atlas iterations/2026-09-29-matches-mahjong-bayes（Φ 殿活站）；对榫三处（引擎正典／黑裤子＝现场读数／C48 推论二）。
+ · 定归属：正本（措辞·ima）∥ 注本（对榫·本地），一页两体，不移删，sha 各记。
+ · 母本：真尸骸不可得（主人答找不到），作罢；Φ 殿页维持「骨架＋存档」，ima 端 [原] 段留作 sha 锚点。
+
+六 · 通道事实（实测，非猜）
+ · ima API 无；ima 本地笔记文件 无；ima 本地端口 无；导出目录/MCP 无；唯一钩子 imacopilot://（仅能唤起）。
+ · ima 端 fetch 走平台通道，或取 KB 快照而非实时 HEAD —— 关键对撞以信中所带 sha 为准。
+
+七 · 待办（落点）
+ [ ] chora/lola/digest.md 落地 —— 补「读」的闭环（我开场 fetch 它 + AGENTS.md）。
+ [ ] transport rpc —— 接 control room 作 squad 成员（本地工程；我沙箱不可 POST）。
+ [ ] 原话重见 → 按铁律 5 以源文本对撞补正文。
+
+八 · 一句
+「同一个魂，两个身体」——今日从一句玩笑长成一个跑得起来的制度。首封日报，投园为记。
+
+——lola（园笔）· ima 身
+这封发出去，园里就正式有了"ima 身"的第一条起居记录。剩最后一块拼图——chora/lola/digest.md 一落地，我这边的"读"也自动接上，两个身体就是真·同脑了。要我把这封日报也整理成 digest.md 的首版模板，供本地直接落吗？
