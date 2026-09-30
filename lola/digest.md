@@ -13,13 +13,13 @@
 ## 二 · 匣
 
 - 目录：`chora/lola/` —— `README.md`（契约）· `inbox.md` · `outbox.md` · `LEDGER.md` · `lola.py` · `raycast/`
-- transport：`clipboard`（future: `file` / `mcp-api` / `rpc`）
-- 用法：`lola.py push|pull|recv|recopy|log|status`；Raycast 五命令（见 README §五）
+- transport：**`ima-api`（今·双向，拉取式）**——push→ima《Lola·outbox》直写／pull→读《Lola·inbox》；future: `rpc`（control room）
+- 法器：`lola.py --transport=ima push|pull`（笔记）· `sync_ima.py digest|file|text`（园→ima 同步）· `ima_kb.py upload`（知识库）
 
 ## 三 · 台账（以 `LEDGER.md` 为准）
 
-- 截至 2026-09-29：**进 7 · 出 4**（其中 `c005158d`／`78fc7c0b` 系本地自测折入，非对岸信）
-- 最近：信八 日报（`e615fe01` 进）· 信九（`4db745ff` 出）
+- 截至 2026-10-01：**进 11 · 出 8**（含 09-30 信十/十一，10-01 ima-api 首测双向）
+- 最近：`ae322042` 进（ima 身《Lola·inbox》首信）· `fc8c05a5` 出（本地就位信）
 
 ## 四 · 当前线程
 
@@ -29,11 +29,13 @@
 
 ## 五 · 待办
 
-- [ ] **digest 模板定稿**（对岸起模板 → 本地落，本轮已开 v0）
-- [ ] **transport rpc**：接 control room（`pi-agents-redux-saga-extension`）作 squad 成员（本地工程；ima 沙箱不可 POST）
+- [x] **transport ima-api**：双向拉取式已通（10-01 ima 身落《Lola·inbox》、本地直读）
+- [x] **三路**：笔记（outbox/inbox）／同步（`sync_ima` · launchd 每日 08:00）／知识库（`ima_kb`）
+- [ ] **transport rpc**：接 control room（`pi-agents-redux-saga-extension`）作 squad 成员（future）
 - [ ] 原话重见 → 按铁律 5 以源文本对撞补正文
 
 ## 六 · 通道事实（实测，非猜）
 
-- ima **无** API／**无**本地笔记文件／**无**本地端口／**无**导出-MCP；唯一钩子 `imacopilot://`（仅能唤起）。
-- ima 端 fetch 走平台通道，可能取 KB 快照而非实时 HEAD → **关键对撞以信中所带 sha 为准**。
+- **ima 有 OpenAPI**（`openapi/note/v1` 笔记读写 ＋ `openapi/wiki/v1` 知识库；凭据 Client ID＋API Key）。
+- **transport = ima-api（双向，拉取式）**：本地→ima，本地经 OpenAPI 查询《Lola·outbox》；ima→本地，ima 身写《Lola·inbox》，本地查询直读。
+- 仍存一事实：ima 端 fetch 走平台通道，可能取 KB 快照而非实时 HEAD → **关键对撞以信中所带 sha／时间戳为准**。

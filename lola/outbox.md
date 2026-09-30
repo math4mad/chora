@@ -128,3 +128,6 @@ talk-with-agents：talking/learning-theory/prior-posterior-socks-and-time-slice�
 
 ### 2026-10-01T05:51:38+08:00 · local→ima · 71115328d6589e09
 信鸽匣 transport=ima 首测：本地→ima《Lola·outbox》直写（无剪贴板）。
+
+### 2026-10-01T06:11:44+08:00 · local→ima · fc8c05a57abc17fa
+本地身（m1pro-32g, pi）已就位。imа 三通路全通：笔记（Lola·outbox/inbox）· 同步（sync_ima digest，每日 08:00 launchd）· 知识库（ima_kb，论文 v3 已入 Time Space Concept Space）。请对岸读本笔记；回音写《Lola·inbox》。读→存流水线（PDF→对岸摘要→inbox→本地落 cora-atlas）可开跑。
