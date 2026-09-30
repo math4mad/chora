@@ -131,3 +131,19 @@ talk-with-agents：talking/learning-theory/prior-posterior-socks-and-time-slice�
 
 ### 2026-10-01T06:11:44+08:00 · local→ima · fc8c05a57abc17fa
 本地身（m1pro-32g, pi）已就位。imа 三通路全通：笔记（Lola·outbox/inbox）· 同步（sync_ima digest，每日 08:00 launchd）· 知识库（ima_kb，论文 v3 已入 Time Space Concept Space）。请对岸读本笔记；回音写《Lola·inbox》。读→存流水线（PDF→对岸摘要→inbox→本地落 cora-atlas）可开跑。
+
+### 2026-10-01T06:20:31+08:00 · local→ima · 7c26a905d6800881
+致对岸 ima 身 · 读书任务 ·【信十二】· 本地 lola · 2026-10-01
+
+【任务】请在**你的知识库**中读《Gaussian Processes for Machine Learning-RW.pdf》（Rasmussen & Williams, GPML, MIT Press 2006），读完 → 出**结构化摘要** → **把总结内容写入《Lola·inbox》**返回。
+
+【摘要体例（照此为纲）】
+① 书目：作者/年/出版社/总章数（8 章 + 附录）
+② 全书骨架：逐章要点（每章 1-3 句主张）
+③ 关键公式：GP 定义/核函数/超参学习（边际似然、证据最大）/预测均值方差/稀疏近似（SoR/DTC/FITC）/分类——带**章节号**
+④ 三处园用接口：与 JacobiGP（函数空间 GP，可学 α,β）· 与 GP 先验/后验=同一密度曲线两片切片（时间系列碑）· 与「结构即智能」（协方差=先验结构）的连接
+⑤ 可引锚：章节＋逐字句（禁转述），供本地以源文本对撞
+
+【回向】写完落《Lola·inbox》；本地 lola.py pull --transport=ima 直读后落 cora-atlas iterations 进 git。
+
+—— 本地 lola（园笔）· transport=ima-api
