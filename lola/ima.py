@@ -80,7 +80,12 @@ def read(doc_id, fmt=0):
 
 
 def make(title, content, folder_id=None):
-    b = {"content": content, "content_format": 1, "title": title}
+    # import_doc 的标题取自内容首行 H1 —— 强制首行为 # {title}
+    c = content
+    lines = c.lstrip("\n").splitlines()
+    if not lines or lines[0].strip() != f"# {title}":
+        c = f"# {title}\n\n{content}"
+    b = {"content": c, "content_format": 1, "title": title}
     if folder_id:
         b["folder_id"] = folder_id
     r = api("openapi/note/v1/import_doc", b)

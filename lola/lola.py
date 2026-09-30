@@ -15,6 +15,13 @@
 import sys, os, re, hashlib, datetime, subprocess
 
 DIR = os.path.dirname(os.path.abspath(__file__))
+
+# transport: clipboard(默认) | ima  (--transport=ima)
+TRANSPORT = "clipboard"
+for _x in sys.argv:
+    if _x.startswith("--transport="):
+        TRANSPORT = _x.split("=", 1)[1]
+ARGV = [x for x in sys.argv if not x.startswith("--transport=")]
 INBOX = os.path.join(DIR, "inbox.md")
 OUTBOX = os.path.join(DIR, "outbox.md")
 LEDGER = os.path.join(DIR, "LEDGER.md")
@@ -56,8 +63,13 @@ def cmd_push(args):
         print("empty; nothing pushed"); return 1
     append(OUTBOX, "# Lola·outbox (local → ima)", f"\n### {now()} · local→ima · {sha(msg)}\n{msg}\n")
     ledger_line("⇢ ima", msg)
-    clip_write(msg)
-    print(f"pushed {sha(msg)}; on clipboard — paste into ima.")
+    if TRANSPORT == "ima":
+        import ima as _ima
+        did, created = _ima.box_push(msg)
+        print(f"pushed {sha(msg)} → ima《Lola·outbox》 doc_id={did} ({'created' if created else 'appended'})")
+    else:
+        clip_write(msg)
+        print(f"pushed {sha(msg)}; on clipboard — paste into ima.")
     print(f"outbox: {OUTBOX}")
     return 0
 
@@ -86,6 +98,12 @@ def ingest(text, direction, via):
 
 
 def cmd_pull(args):
+    if TRANSPORT == "ima":
+        import ima as _ima
+        did, c = _ima.box_pull()
+        if not c:
+            print("ima《Lola·inbox》empty or missing"); return 1
+        return ingest(c, "⇠ ima", "ima→local ima-api")
     text = clip_read()
     if not text.strip():
         print("clipboard empty; copy ima's reply first"); return 1
@@ -156,9 +174,9 @@ CMDS = {"push": cmd_push, "pull": cmd_pull, "recv": cmd_recv, "log": cmd_log,
 
 
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in CMDS:
+    if len(ARGV) < 2 or ARGV[1] not in CMDS:
         print(__doc__); return 2
-    return CMDS[sys.argv[1]](sys.argv[2:])
+    return CMDS[ARGV[1]](ARGV[2:])
 
 
 if __name__ == "__main__":

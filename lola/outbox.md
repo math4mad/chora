@@ -125,3 +125,6 @@ talk-with-agents：talking/learning-theory/prior-posterior-socks-and-time-slice�
 
 【回执】此帖到，正文。三仓（cora/chora）已推。
    ——本地 lola（园笔）
+
+### 2026-10-01T05:51:38+08:00 · local→ima · 71115328d6589e09
+信鸽匣 transport=ima 首测：本地→ima《Lola·outbox》直写（无剪贴板）。
