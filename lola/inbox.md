@@ -217,3 +217,70 @@ HTML 版本需要把 Markdown 的 **加粗** 和 *斜体* 转成 <strong> / <em>
 HTML 版本需要把 Markdown 的 **加粗** 和 *斜体* 转成 <strong> / <em>（上方页面块已是 HTML 形式，术语碑/台账若同步 HTML 页需相应转换）。
 若你的 GLOSSARY/LEDGER 是单一 Markdown 源再渲染成 HTML，只需粘贴 Markdown 版即可。
 需要我把术语碑/台账也转成与 docs/GLOSSARY.html、docs/LEDGER.html 一致的 HTML 片段吗？
+
+### 2026-09-30T16:43:31+08:00 · ima→local clipboard · d10caa1d0b156a00
+R E V E R S I NG T H E A R ROW O F T I M E
+
+谈谈 这本书 和 https://math4mad.github.io/cora-atlas/iterations/2026-09-30-time-symbol-negentropy-ips-mimesis.html 的关联。 网页如果不可读，可切换到仓库读取原文件
+
+
+I'll read the webpage and connect it with the book content. Let me fetch the webpage first.
+The webpage couldn't be read directly. Let me try the repository to find the original file. The user mentioned "math4mad" GitHub repo "cora-atlas". Let me try to find the raw file.
+The main branch didn't work. Let me try the master branch or other common paths.
+Let me look at the repository structure. The URL is https://math4mad.github.io/cora-atlas/ which is a GitHub Pages site, meaning the source is likely in a repo named cora-atlas. Let me try to access the repository listing.
+The repository has an iterations folder. The HTML file is likely in the site folder (GitHub Pages source) or the raw file is in iterations. Let me access the iterations folder to find the specific file. The user's URL is under cora-atlas/iterations/.... Let me look at the iterations folder.
+The file isn't showing directly. Let me try the GitHub API to list the iterations folder contents, or try the site folder since GitHub Pages might serve from there. Actually, the URL https://math4mad.github.io/cora-atlas/iterations/... suggests the file is in the repo. Let me try accessing the raw file via the github.io domain structure. Since the pages site is math4mad.github.io/cora-atlas, the source is probably in a docs folder (GitHub Pages default for project sites). Let me check.
+Actually, let me try fetching the file from the docs folder since that's common for GitHub Pages.
+I now have both sources. Let me also recall the user profile context—this is YiWei Zhang (the "主人"), who maintains this cora-atlas project. The webpage is his own writing. Let me connect the two.
+I have the full webpage content now. Let me analyze the connection between the book (Roberts, Reversing the Arrow of Time) and the webpage article.
+The key insight: both deal with the arrow of time. The book argues T-violation in electroweak theory provides evidence that time itself has an arrow. The webpage (YiWei's own "时间符号表征律") argues that time is a symbolic representation of states, entropy increases, and iPS reprogramming proves irreversibility—it's not a true reversal but a branch mimicry at tₖ.
+Let me draw out the connections and contrasts carefully.
+I now have a comprehensive understanding of both the book and the webpage article. Let me compose a thoughtful analysis of their connections.
+The key connections:
+Both share the same root question: whether time itself has an arrow, and how we can come to know it.
+The book (Roberts):
+* Central thesis: the symmetries of "time itself" are intimately linked to time reversal symmetry in physical theories
+* Key concept: the "Representation View" — the structure of time is linked to the structure of dynamical theories
+* Core argument: T-violation in electroweak theory (discovered via CP violation in 1964 kaon decay) provides robust evidence that time itself is asymmetric — not just a property of matter
+* Chapter 6 argues "There is no thermodynamic arrow" — entropy does NOT provide an arrow of time
+* Uses Curie's principle and Kabir's principle to argue T-violation is robust evidence
+The webpage (YiWei's own "时间符号表征律"):
+* Argues time = symbolic representation of states; structure = accumulation of symbols; capacity-building = negentropy; entropy increase = irreversible degradation of the symbolic system
+* Uses iPS reprogramming (Yamanaka 2006) as empirical attack — reprogramming "looks like reversal" but isn't; it's a branch mimicry at tₖ with epigenetic residue
+* Concludes irreversibility is real — even forced "reversal" can't reverse cleanly
+* Interesting: the webpage cites 霍金三箭头 including thermodynamics (熵增)
+The key contrast/connection:
+1. Both defend the arrow of time as real — Roberts argues T-violation proves time itself has an arrow; YiWei argues iPS mimicry proves irreversibility. Both resist "perspectival" or "illusory" dissolutions of the arrow.
+2. But they anchor on different sources: Roberts explicitly rejects the thermodynamic arrow (Ch.6 "There Is No Thermodynamic Arrow"), arguing entropy doesn't give a genuine arrow. YiWei's page leans heavily on entropy increase (熵增) and 霍金's thermodynamic arrow as the backbone. This is a real point of tension — Roberts would likely say the webpage's reliance on 熵增 as the arrow is one of the "arrows that misfire" (Ch.5).
+3. The "reversal" theme: Both are about whether time can be "reversed." Roberts: time reversal (T) is not a dynamical symmetry in electroweak theory. YiWei: iPS "reversal" is only apparent, a branch not a loop. Both conclude — genuine reversal is impossible.
+4. "Asymmetry of information/content": The webpage's core idea — "信息含量不对称：t₁ 含 t₀ 的信息，t₀ 不含 t₁" — resonates with Roberts' notion of asymmetry of time.
+5. Structure/representation theme: The webpage's "结构是符号的累积" and Roberts' "Representation View" both treat time's arrow as something represented through structure/dynamics rather than directly given.
+Let me also note the interesting connection to Price's critique — the webpage's "perspectival" angles and the user's own framing.
+Let me write this up in Chinese, since the user wrote in Chinese. I'll reference the book and the webpage (which I fetched via URL). Note the webpage fetch was via the raw docs URL — I should reference it properly. The fetched content doesn't give a ref_id for the URL fetch. Per the rules, I can cite with the source. Actually, since I fetched it via URL (type=url), there's no ref_id assigned. Let me note that. Actually the rule says ref_id must come from this round's input or search/fetch results. The URL fetch returned content without a ref_id. Hmm. For the book I have pdf_1. For the webpage, I don't have a clean ref_id.
+Let me check — the fetch tool returned content without an id field. So for the webpage I don't have a valid ref_id to cite. I'll reference the book with and describe the webpage as the user's own article (which is fine, it's their material given in the query URL, and its content is user's own writing). I can describe its content without external citation since it's the user's own document. Actually the webpage is user's own writing, so I can discuss it as given material. For the book, I cite .
+Let me write the response.
+I now have rich context from the memory recall. This confirms the webpage is YiWei's own "时间符号表征律" — part of his "时间系列" thinking chain in cora-atlas. Now let me write a thoughtful analysis connecting the Roberts book to his article.
+Let me structure the response around the genuine intellectual connections and tensions.
+
+我已经读完了网页（从仓库 docs/iterations/ 下取到了原文）和 Roberts 这本《Reversing the Arrow of Time》的相关章节。下面谈它们的关联。
+两者的共同地基
+你的「时间符号表征律」和 Roberts 这本书，其实在回答同一个问题——时间本身有没有箭头，以及我们凭什么知道它。Roberts 的整本书核心命题是：时间本身的对称性，与物理理论里的「时间反演对称性」之间存在密切关联，这种关联让我们能经验地检验时间本身是否不对称。你的文章用一句话收束成「时间是状态的符号表征；结构是符号的累积；能力建设是符号系统的更新；熵增是符号系统不可抗的退化方向」——同样是把「时间之箭」当作一个可被实证检验、而非仅仅约定出来的东西。
+你们也都反对把时间之箭「消解」掉。Roberts 专门反驳 Price 的「透视主义」观点（Price 认为时间不对称只是观察者立场的产物，不提供时间本身不对称的证据）。你的文章则用 iPS 拟态反击「时间可逆」的错觉，结论是「连人工强推的逆转都逆转不干净」。两条路殊途同归：箭是真的，不是错觉。
+最精彩的对照：熵，到底算不算「箭」
+这里有一个值得你注意的张力。你的文章把熵增（霍金的热力学箭头）当作时间之箭的主干。但 Roberts 在第六章专门论证 "There Is No Thermodynamic Arrow"——不存在热力学箭头。他的立场是：熵增这种「箭头」属于他说的「misfiring arrows」（第 5 章），它顶多是统计意义上的涌现、与物质/能量的偶然事实有关，并不构成「时间本身」不对称的可靠证据。
+这就形成一个有趣的对照：
+* 你的方案：以熵增（负熵/信息不对称）为骨，时间之箭主要是统计涌现的（你文中也写了「时间之箭是统计涌现、非定律强制」）。
+* Roberts 的方案：拒绝把热力学当作真箭，转而把电弱理论中的 T 对称破缺当作「时间本身」有箭的最硬证据——因为那是不依赖物质-能量偶然事实的。
+换句话说，Roberts 会认为你的「熵增箭头」正是他要排除的那类「会走火的箭」；而你会认为他的论证（用粒子物理的 T 破缺）缺少了你想要的「符号/结构」那种认识论厚度。这两者不是互相替代，而是互补的两个证据层——一个是统计涌现（你的），一个是基本相互作用的对称性破缺（他的）。
+「结构」与「表征」的深层共鸣
+你文章里最核心的设定——「结构是符号的累积」「不可逆来自信息含量不对称：t₁ 含 t₀ 的信息，t₀ 不含 t₁」——和 Roberts 的 Representation View（表征观） 有深层亲缘。
+Roberts 的核心是：时间平移的结构是通过一个「同态映象」（homomorphic copy / "shadow"）投射到动力学理论的状态空间上的；正是靠这种表征链接，我们才能从动力学的对称性读出时间本身的结构。你文章的「状态＝曲线剖面快照，符号＝人贴的标签，表征＝用符号框架表示状态在变」，几乎是同一件事的哲学化表达——时间的箭头不是被直接给予的，而是通过某种「表征/结构」中介才能被认识。
+他说「更好的隐喻是从桌上的影子学习桌子」（用动力学的影子投影出时间的结构），你的「时间是状态的符号表征」就是给这个「影子」起了个更名字——符号系统。
+iPS 拟态 ↔ 时间反演（T）：同一个「逆转不可能」
+最直接的呼应在这里。Roberts 的核心结论是电弱理论里 T（时间反演）不是动力学对称：T 不与哈密顿量对易，所以时间平移的表征无法扩展到包含时间反演。而你的 iPS 论证，本质上是生物学版的时间反演检验——山中伸弥的重编程「看似逆回 t₀」，你判定为「不是逆转，而是 tₖ 处的分支拟态」，因为残留的表观遗传记忆让逆转逆转不干净[网页]。
+两者共享同一个逻辑形态：表面上的逆转，在结构层面都留下不可清除的残留/不对称。Roberts 用 S-矩阵和 CP/T 破缺证明「任何足够完备的理论都得 T 破缺」；你用「连人工强推的逆转都逆转不干净」证明「任何重编程都带历史残留」。一个是量子场论层面的不可逆，一个是表观遗传层面的不可逆——你把物理学的「时间反演破缺」翻译成了生命系统里的「拟态」。
+一处可深挖的分歧：你的「成长/负熵」是 Roberts 没有的
+最后补一个差异点。Roberts 是纯粹的「时间物理」——他关心时间本身是否不对称，结论是电弱 T 破缺证明了。他不处理「能力建设/负熵/成长」这种价值性/规范性命题。而你文章的落点恰恰在这里：负熵的操作化定义（增加 tₖ 处可达分支的维数）、「结构一旦形成无法清零只能被覆盖」、成长＝开分支＋解除旧残留的引力。
+这其实是把你的「时间符号表征律」从描述性推到了规范性——Roberts 止步于「时间有箭」，你用它推出了「人该怎么办」。这个推法很有意思，但值得留意：当你把 iPS 的「分支拟态」当作「成长」的模型时，你其实已经离开了 Roberts 的领地，进入了自己的领地。
+
+如果你愿意，我可以顺着这条线索，帮你把「时间符号表征律」的碑文里补一条与 Roberts 的对照注记（特别是「熵增 vs. T 破缺」这两个证据层的关系），或者反过来，写一段「Roberts 的表征观如何给『结构是符号的累积』提供物理合法性」的脚注。你想往哪个方向走？
