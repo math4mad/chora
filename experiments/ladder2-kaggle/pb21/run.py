@@ -20,13 +20,13 @@ for f, m in PAYLOAD.items():
     open(os.path.join(DATA, f), "wb").write(raw)
 
 BASE = ("qwen2.5-0.5b-instruct", "qwen-lm/qwen2.5/transformers/0.5b-instruct/1")
-MPATH = os.environ.get("LADDER_MODEL", "/root/autodl-tmp/models/qwen05")  # 一弹两仓: Kaggle 传 MPATH 环境, AutoDL 默认
+MPATH = os.environ.get("LADDER_MODEL", "/kaggle/input/models/qwen-lm/qwen2.5/transformers/0.5b-instruct/1")  # 一弹两仓: AutoDL 传 LADDER_MODEL; Kaggle 默认挂载
 SEGS = ["B1_13-24.jsonl", "B2_25-40.jsonl", "B3_41-62.jsonl"]
 SEEDS = [13, 14, 15]
 HP = dict(lr=1e-4, batch=8, seed=13, epochs=2, seq=256)
 RECS = dict(r=16, lora_alpha=32, lora_dropout=0.05,
             target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"])
-OUT = os.environ.get("LADDER_OUT", "/root/autodl-tmp"); dev = "cuda" if torch.cuda.is_available() else "cpu"
+OUT = os.environ.get("LADDER_OUT", "/kaggle/working"); dev = "cuda" if torch.cuda.is_available() else "cpu"
 
 def load(f):
     return [json.loads(l)["text"] for l in open(os.path.join(DATA, f), encoding="utf-8")]
