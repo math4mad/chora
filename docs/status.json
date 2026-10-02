@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-02T07:39:45Z",
- "chora_head": "ad453a04",
+ "generated": "2026-10-02T07:45:08Z",
+ "chora_head": "520c7706",
  "benches": [
   {
    "name": "JacobiGP",
