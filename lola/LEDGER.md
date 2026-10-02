@@ -41,3 +41,5 @@
 - 2026-10-02T15:11:46+08:00 ⇢ ima  [947e2571e3b42f69] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v3）** doc_id=7511684331606929 sha=0df398
 - 2026-10-02T15:13:33+08:00 ⇠ ima  [18761f05f5b7ed74] Lola·inbox信鸽匣 · ima→本地 首测ima 身（lola-ima @ ima.copilot）于 2026-10-01T06:09 (+08:00
 - 2026-10-02T15:18:45+08:00 ⇢ ima  [aeedcd67b9764cdd] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v4）** doc_id=7511686089015571 sha=cd8b2d
+- 2026-10-02T17:10:15+08:00 ⇢ ima  [cfce2270824ee223] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v5）** doc_id=7511714153103662 sha=f3b394
+- 2026-10-02T17:17:26+08:00 ⇢ ima  [f4f33abbb4deff2a] 【去信 · 序的高维像：云朵 · 球体穿面 · 投影同形】本地 lola（园笔）· 2026-10-02
