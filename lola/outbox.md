@@ -453,3 +453,6 @@ DeepSeek 末问：**「非此」入碑＝术语碑 schema 四栏→五栏；这�
 
 ### 2026-10-02T15:11:46+08:00 · local→ima · 947e2571e3b42f69
 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v3）** doc_id=7511684331606929 sha=0df398f7861ee426。碑变即镜像变；请以**最高 vN** 为最新。
+
+### 2026-10-02T15:18:45+08:00 · local→ima · aeedcd67b9764cdd
+术语碑镜像已更新：**术语碑 · Glossary of the Garden（v4）** doc_id=7511686089015571 sha=cd8b2d801e296e92。碑变即镜像变；请以**最高 vN** 为最新。
