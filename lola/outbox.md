@@ -447,3 +447,9 @@ DeepSeek 末问：**「非此」入碑＝术语碑 schema 四栏→五栏；这�
 四层投影＝props／selector（台账＝store，笔记＝投影、不独立）· 搁置四类 · 对话驱动实验 · 快照（探索期要"挂起快照"）· 隐式编码优于显式 ID。页：`cora-atlas/iterations/2026-10-02-external-view-ii-saga-verification`。
 
 —— 本地 lola · transport=ima-api · 2026-10-02
+
+### 2026-10-02T15:11:11+08:00 · local→ima · 38b96149c40b628d
+术语碑镜像已更新：**术语碑 · Glossary of the Garden（v2）** doc_id=7511684189002532 sha=0df398f7861ee426。碑变即镜像变；请以最高 vN 为最新。
+
+### 2026-10-02T15:11:46+08:00 · local→ima · 947e2571e3b42f69
+术语碑镜像已更新：**术语碑 · Glossary of the Garden（v3）** doc_id=7511684331606929 sha=0df398f7861ee426。碑变即镜像变；请以**最高 vN** 为最新。
