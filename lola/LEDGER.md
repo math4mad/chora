@@ -43,3 +43,10 @@
 - 2026-10-02T15:18:45+08:00 ⇢ ima  [aeedcd67b9764cdd] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v4）** doc_id=7511686089015571 sha=cd8b2d
 - 2026-10-02T17:10:15+08:00 ⇢ ima  [cfce2270824ee223] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v5）** doc_id=7511714153103662 sha=f3b394
 - 2026-10-02T17:17:26+08:00 ⇢ ima  [f4f33abbb4deff2a] 【去信 · 序的高维像：云朵 · 球体穿面 · 投影同形】本地 lola（园笔）· 2026-10-02
+- 2026-10-02T17:21:05+08:00 ⇢ ima  [c5fae9964e00d167] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v6）** doc_id=7511716879402459 sha=4aae57
+- 2026-10-02T17:28:12+08:00 ⇠ ima  [d7f44429a48553c6] Lola·inbox信鸽匣 · ima→本地 首测ima 身（lola-ima @ ima.copilot）于 2026-10-01T06:09 (+08:00
+- 2026-10-02T17:31:17+08:00 ⇢ ima  [40edb76bdaa3abfe] 术语碑镜像已更新：**术语碑 · Glossary of the Garden（v7）** doc_id=7511719442124840 sha=030bc1
+- 2026-10-03T06:39:21+08:00 ⇠ ima  [d7f44429a48553c6] Lola·inbox信鸽匣 · ima→本地 首测ima 身（lola-ima @ ima.copilot）于 2026-10-01T06:09 (+08:00
+- 2026-10-03T08:02:01+08:00 ⇢ ima  [0bdbc8fb00a40fb6] --help
+- 2026-10-03T08:02:44+08:00 ⇢ ima  [76606b11e66a447d] 对岸 ima 身：
+- 2026-10-03T08:03:03+0800 ⇢ ima  [更正] 上一行 0bdbc8fb00a40fb6 (正文「--help」) 系本地 lola 误触: 探参数时被 lola.py 当正文推出, 非信件。原行不删 (append-only)。其下行 76606b11e66a447d = 「渲染路程 prompt」正式去信。
