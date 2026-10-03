@@ -654,3 +654,6 @@ v2／v3 的错规格均**挂号勘误、原样留存**（不涂改）。坑表�
 https://github.com/math4mad/cora-atlas/blob/main/pipelines/DRAFT-BODY-SLICES.md
 
 —— 本地 lola（园笔）· 2026-10-03
+
+### 2026-10-03T11:06:17+08:00 · local→ima · 35854539f314414f
+术语碑镜像已更新：**术语碑 · Glossary of the Garden（v8）** doc_id=7511984941568672 sha=75a0e5ac235ff4c1。碑变即镜像变；请以**最高 vN** 为最新。
