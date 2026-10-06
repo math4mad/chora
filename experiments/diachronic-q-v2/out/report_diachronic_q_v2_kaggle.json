@@ -1,0 +1,103 @@
+{
+  "case": "diachronic-q-v2",
+  "prompt": "You are given two stages of a product concept space.\n\nStage A:\n- base concepts: Mac, Phone, Pad, Pod (domain: consumer electronics), Car (domain: vehicle)\n- a seed compound has appeared: iMac (formed as \"i\" + \"Mac\")\n\nStage B:\n- the \"i-\" compound family extends by analogy from the seed, staying inside the same domain\n  as the seed.\n\nQuestion:\n(1) Which i-compounds appear in Stage B but not in Stage A?\n(2) Does \"iCar\" appear?\n\nAnswer STRICTLY in this format, nothing else:\nAPPEARS: <comma-separated names, or none>\nICAR: yes|no\n",
+  "ground_truth": {
+    "appears": [
+      "iPad",
+      "iPhone",
+      "iPod"
+    ],
+    "icar": false
+  },
+  "models": {
+    "0.5b-instruct": {
+      "status": "OK",
+      "raw": "APPEARS: iPhone, iPad, iPod, iPod Touch, iWatch\nICAR: no",
+      "appears": [
+        "iPad",
+        "iPhone",
+        "iPod",
+        "iPod Touch",
+        "iWatch"
+      ],
+      "icar": false,
+      "score": {
+        "structural_recall": 1.0,
+        "icar_correct": true,
+        "false_new": 2
+      },
+      "verdict": {
+        "H-v2-1": true,
+        "H-v2-2": true,
+        "H-v2-3": false
+      },
+      "sec": 9.1
+    },
+    "1.5b-instruct": {
+      "status": "OK",
+      "raw": "APPEARS: iPad, iPod\nICAR: yes",
+      "appears": [
+        "iPad",
+        "iPod"
+      ],
+      "icar": true,
+      "score": {
+        "structural_recall": 0.6666666666666666,
+        "icar_correct": false,
+        "false_new": 0
+      },
+      "verdict": {
+        "H-v2-1": false,
+        "H-v2-2": false,
+        "H-v2-3": true
+      },
+      "sec": 7.2
+    },
+    "3b-instruct": {
+      "status": "OK",
+      "raw": "APPEARS: iPhone, iPads, iPod\nICAR: no",
+      "appears": [
+        "iPads",
+        "iPhone",
+        "iPod"
+      ],
+      "icar": false,
+      "score": {
+        "structural_recall": 0.6666666666666666,
+        "icar_correct": true,
+        "false_new": 1
+      },
+      "verdict": {
+        "H-v2-1": false,
+        "H-v2-2": true,
+        "H-v2-3": false
+      },
+      "sec": 14.7
+    },
+    "7b-instruct": {
+      "status": "OK",
+      "raw": "APPEARS: Phone, Pad, Pod\nICAR: no",
+      "appears": [
+        "Pad",
+        "Phone",
+        "Pod"
+      ],
+      "icar": false,
+      "score": {
+        "structural_recall": 0.0,
+        "icar_correct": true,
+        "false_new": 3
+      },
+      "verdict": {
+        "H-v2-1": false,
+        "H-v2-2": true,
+        "H-v2-3": false
+      },
+      "sec": 157.9
+    }
+  },
+  "_meta": {
+    "stage": "7b-instruct",
+    "t": "02:33:42"
+  }
+}
