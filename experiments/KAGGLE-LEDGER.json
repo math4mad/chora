@@ -174,7 +174,29 @@
       "product": {"state": "present", "files": ["p5-domain-anchor/report_p5c.json"], "sha256": "c7fb3fe4f714f300"},
       "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5c.md", "read": "H-p5c-2 泛化@目标词 破(0.095 ≈ GPT-2 0.000) — 非容量之限; H-p5c-4 泛化@省名位 立(1.000) 复现"},
       "need_kaggle": false,
-      "gap": "更大规模(Pythia/7B级)复证候另案"
+      "gap": "已出 P5d(未见标记)/P5e(1.5B 规模) 追案"
+    },
+    {
+      "id": "P5d-anchor",
+      "title": "未见标记迁移 · 破循环之证",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5d_unseen_marker.md", "sha256": "6f07f759686bf1262bf35bdc3e9a0a83c8a1996dae3b38fdee586e1604c7e995"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5d.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5d.json"], "sha256": "2fa2322838d8f18d"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5d.md", "read": "H-p5d-2 泛化@未见标记 破(0.000, GPT-2 与 Qwen 双仪) → P5b 循环之嫌坐实: 方向系 token 身份, 非语义轴"},
+      "need_kaggle": false,
+      "gap": "无"
+    },
+    {
+      "id": "P5e-anchor",
+      "title": "规模复证 Qwen2.5-1.5B",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5e_qwen15b_scale.md", "sha256": "6ddf33f1ffb21149103248b782a3165a0a1ba90c6aa5b26b2438985b7d197ce6"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5e.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮 · 936s"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5e.json"], "sha256": "c9f8f7a083aa9463"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5e.md", "read": "H-p5e-2 泛化@目标词 破(0.000 @1.54B) → 规模非其因; 三仪(124M/490M/1.54B)一致"},
+      "need_kaggle": false,
+      "gap": "无"
     }
   ]
 }

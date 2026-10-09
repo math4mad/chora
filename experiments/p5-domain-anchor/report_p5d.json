@@ -1,0 +1,113 @@
+{
+  "case": "P5d-unseen-marker",
+  "prereg_sha256": "6f07f759686bf1262bf35bdc3e9a0a83c8a1996dae3b38fdee586e1604c7e995",
+  "model": "gpt2",
+  "layer": 6,
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "alphas": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0
+  ],
+  "train_markers": {
+    "north": [
+      "黑龙江",
+      "吉林"
+    ],
+    "south": [
+      "广东",
+      "广西"
+    ]
+  },
+  "test_markers": {
+    "north": [
+      "辽宁"
+    ],
+    "south": [
+      "海南"
+    ]
+  },
+  "per_seed": [
+    {
+      "seed": 0,
+      "alpha_star": 0.9849214553833008,
+      "fwd_train_marker": 1.0,
+      "projs": [
+        8.34465012644614e-08,
+        31.872623443603516,
+        63.7452392578125,
+        95.61787414550781,
+        127.49049377441406
+      ],
+      "fwd_unseen_marker": 0.0,
+      "cos_south_before": 0.6721926927566528,
+      "cos_south_after": 0.5280258655548096,
+      "fwd_unseen_marker_food": 0.0,
+      "rand": 0.0
+    },
+    {
+      "seed": 1,
+      "alpha_star": 0.9920111298561096,
+      "fwd_train_marker": 1.0,
+      "projs": [
+        8.34465012644614e-08,
+        31.978992462158203,
+        63.95798873901367,
+        95.93698120117188,
+        127.91596984863281
+      ],
+      "fwd_unseen_marker": 0.0,
+      "cos_south_before": 0.6721926927566528,
+      "cos_south_after": 0.5296201705932617,
+      "fwd_unseen_marker_food": 0.0,
+      "rand": 0.0
+    },
+    {
+      "seed": 2,
+      "alpha_star": 0.9898107051849365,
+      "fwd_train_marker": 1.0,
+      "projs": [
+        8.34465012644614e-08,
+        31.731521606445312,
+        63.463035583496094,
+        95.1945571899414,
+        126.92607116699219
+      ],
+      "fwd_unseen_marker": 0.0,
+      "cos_south_before": 0.6721926927566528,
+      "cos_south_after": 0.5400155186653137,
+      "fwd_unseen_marker_food": 0.0,
+      "rand": 0.0
+    }
+  ],
+  "verdict": {
+    "H-p5d-0_axis_monotone": {
+      "pass": true
+    },
+    "H-p5d-1_change_meaning_train_marker": {
+      "acc": 1.0,
+      "pass": true
+    },
+    "H-p5d-2_generalize_unseen_marker": {
+      "acc": 0.0,
+      "pass": false,
+      "cos_south_before": 0.6721926927566528,
+      "cos_south_after": 0.5325538516044617
+    },
+    "H-p5d-3_generalize_unseen_marker_food": {
+      "acc": 0.0,
+      "pass": false
+    },
+    "instrument_random_v": {
+      "acc": 0.0,
+      "pass": true
+    }
+  },
+  "elapsed_s": 73.6
+}
