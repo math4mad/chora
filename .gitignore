@@ -19,3 +19,4 @@ experiments/pb23b-fine6/out/*.log
 experiments/pb16c-formal/out_formal/
 experiments/pb23c-fine12/out_v5/
 experiments/pb23c-fine12/VERDICT_PB23c_draft.txt
+experiments/g3-grade3/corpus_big/
