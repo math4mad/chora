@@ -197,6 +197,28 @@
       "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5e.md", "read": "H-p5e-2 泛化@目标词 破(0.000 @1.54B) → 规模非其因; 三仪(124M/490M/1.54B)一致"},
       "need_kaggle": false,
       "gap": "无"
+    },
+    {
+      "id": "P5f-nomarker",
+      "title": "非标记载域 (读出句首, 不可判)",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5f_nomarker_positive.md", "sha256": "763064b61d57cb4fe219560a8971bd8f3458b55cc5b4aac949502336d5108a78"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5f.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5f.json"], "sha256": "262ac467fe161241"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5f.md", "read": "破 — 根因系设计瑕: 读出位在句首, 因果模型不见后文之域; 不可判 (非假说之否)"},
+      "need_kaggle": false,
+      "gap": "已开 P5g 修正"
+    },
+    {
+      "id": "P5g-nomarker-fixed",
+      "title": "非标记载域 · 修正读出序",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5g_nomarker_fixed.md", "sha256": "e4761936816573cb12474d0d4ec255e62f909bf59e3a1bc7d42f4353a47a0497"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5g.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5g.json"], "sha256": "f58348a275a734eb"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5g.md", "read": "混合: 换义立(0.952); 泛化@档案馆 立(1.000)/@博物馆 破(0.667); 1.5B 复现(1.000/0.714) → 迁移度依词型而异"},
+      "need_kaggle": false,
+      "gap": "多词型扩测候另案"
     }
   ]
 }
