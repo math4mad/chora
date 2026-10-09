@@ -50,6 +50,22 @@ def load_docs(seed=0):
     return docs
 
 
+def load_docs_big(d="corpus_big", seed=0):
+    """从 corpus_big/ 载入四舱 (确定性模板 + NBA 真史实)。返回 [(text, cabin_id)]。"""
+    import glob
+    base = d if os.path.isabs(d) else os.path.join(HERE, d)
+    docs = []
+    for fn in sorted(glob.glob(os.path.join(base, "gen_*.jsonl"))):
+        cab = os.path.basename(fn)[4:-6]          # gen_spring.jsonl -> spring
+        ci = CABINS.index(cab)
+        with open(fn, encoding="utf-8") as f:
+            for line in f:
+                o = json.loads(line)
+                docs.append((o["messages"][-1]["content"], ci))
+    random.Random(seed).shuffle(docs)
+    return docs
+
+
 class Tok:
     def __init__(self, docs):
         chars = sorted({c for t, _ in docs for c in t})
