@@ -9,7 +9,7 @@ import torch, torch.nn.functional as F
 from g3_model import G3Model
 import g3_data as D
 from g3_train import arm_bias, causal_mask
-from g3_probe import PROBES
+from g3_paper_v1 import PROBES_V1 as PROBES
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -78,7 +78,8 @@ def main():
     docs = D.load_docs_big(a.corpus); tok = D.Tok(docs)
     print(f"[mid] corpus={a.corpus} docs={len(docs)} chars={sum(len(t) for t,_ in docs)} "
           f"vocab={tok.vocab} dev={dev} cfg=d{a.d}/L{a.layers}/h{a.heads}/ctx{a.ctx} steps={a.steps}", flush=True)
-    report = {"config": vars(a), "n_docs": len(docs), "n_chars": sum(len(t) for t, _ in docs),
+    report = {"paper": "v1", "paper_sha": "de0c87e6391f8d7a037b6c115dc841fe2c7eabff9a262dd7d1ce7f623471f34c",
+              "config": vars(a), "n_docs": len(docs), "n_chars": sum(len(t) for t, _ in docs),
               "vocab": tok.vocab, "arms": {}}
     for arm in a.arms:
         print(f"\n=== arm {arm} ===", flush=True)

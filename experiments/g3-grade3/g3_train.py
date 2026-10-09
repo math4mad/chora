@@ -25,7 +25,7 @@ def arm_bias(arm, cs_row, adj, table=None, seed=0):
         return make_bias(cs_row, adj)
     if arm == "random":                    # 安慰剂: 同稀疏度, 乱划
         g = torch.Generator().manual_seed(seed)
-        perm = torch.randperm(len(D.CABINS), generator=g)
+        perm = torch.randperm(len(D.CABINS), generator=g).to(cs_row.device)
         return make_bias(perm[cs_row], adj)
     if arm == "learned":                   # 模型自己去注意: 可学舱表
         return table[cs_row][:, cs_row]
