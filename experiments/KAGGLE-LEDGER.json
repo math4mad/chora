@@ -1,0 +1,169 @@
+{
+  "_meta": {
+    "name": "KAGGLE-LEDGER",
+    "role": "正本 (source of truth) —— 全部 Kaggle 实验的单点状态账",
+    "generated_utc": "2026-10-08",
+    "rules": [
+      "本文件是正本; 投影见 notes/kaggle/index.qmd (人读) 与 KAGGLE-LEDGER.md (表)",
+      "状态五栏: prereg(冻稿) / ammo(弹run.py) / cabin(Kaggle 舱状态) / product(产物) / verdict(判词)",
+      "verify: python3 chora/experiments/ledger_verify.py —— 退出码即判据"
+    ],
+    "status_legend": {
+      "sealed": "冻稿在册 (sha 可查)",
+      "draft": "草案, 未冻",
+      "missing": "缺",
+      "complete": "Kaggle 舱 COMPLETE",
+      "error": "Kaggle 舱 ERROR",
+      "never": "从未上舱",
+      "present": "产物在盘",
+      "absent": "产物缺",
+      "done": "判词已出",
+      "pending": "判词未出"
+    }
+  },
+  "experiments": [
+    {
+      "id": "PB26",
+      "title": "可达几何基准 · 袜对与麻雀",
+      "prereg": {"state": "sealed", "file": "PREREG_PB26_reachability_socks_sparrow.md", "sha256": "f659d06d53219e916363f26ce08cccfc5dfc9b4940d98020ce69351da98740b2"},
+      "ammo": {"state": "present", "file": "pb26-reachability-socks-sparrow/run.py"},
+      "cabin": {"state": "never", "note": "零 GPU · 纯 numpy 本机跑"},
+      "product": {"state": "present", "files": ["report_pb26.json", "report_pb26.jsonl"], "sha256": "514c3642"},
+      "verdict": {"state": "done", "file": "pb26-reachability-socks-sparrow/RESULTS_PB26.md", "main": "相似与可达可分离——三籽一致; H-r1立(误判率1.00), H-r3立(F1 1.00/0.947)"},
+      "need_kaggle": false,
+      "gap": "无 (首射已成)"
+    },
+    {
+      "id": "PB26b",
+      "title": "真嵌入版 —— 自然概念空间是否常含玻璃诱饵",
+      "prereg": {"state": "missing", "note": "需新冻稿; 继承 PB26 诚实注#1 (构造性→经验率)"},
+      "ammo": {"state": "absent", "note": "pb26 的 run.py 是 numpy 构造版, 非真嵌入版"},
+      "cabin": {"state": "never"},
+      "product": {"state": "absent"},
+      "verdict": {"state": "pending"},
+      "need_kaggle": true,
+      "gap": "缺冻稿 + 缺真嵌入弹 (需 GPU: 真语料嵌入)"
+    },
+    {
+      "id": "PB23c",
+      "title": "细十二带 · 序生维膝检",
+      "prereg": {"state": "draft", "note": "未见独立 PREREG 文件; 判据散见 VERDICT 草案"},
+      "ammo": {"state": "present", "file": "pb23c-fine12/run.py", "size_b": 228292},
+      "cabin": {"state": "complete", "slug": "math4amd/pb23c-fine12", "last_run": "2026-09-27T20:05"},
+      "product": {"state": "present", "files": ["pb23c-fine12/out_v5/report_pb23c.json"], "note": "报告哈希 ed23a3df…"},
+      "verdict": {"state": "pending", "file": "pb23c-fine12/VERDICT_PB23c_draft.txt", "read": "膝检 d1→d2 落差 +0.0005, 后段波动 0.0099, 倍数 0.1× → 无独高膝(渐变或平线); 后段极差 0.0251=首档7% → 平线带。⚠ 降格读数: 配对 165/198, 完籽 3/3, 缺籽如实注", "note": "结果已在草案中, 待正式定谳+补冻稿"},
+      "need_kaggle": false,
+      "gap": "补冻稿 + 定判词 (舱已成, 勿重跑)"
+    },
+    {
+      "id": "PB20b",
+      "title": "DAG 消融 · 修器版 (本底扣除式)",
+      "prereg": {"state": "sealed", "file": "pb20-dag-ablation/PREREG_PB20_dag_ablation.md"},
+      "ammo": {"state": "present", "file": "pb20-dag-ablation/run.py", "size_b": 61482},
+      "cabin": {"state": "complete", "slug": "math4amd/pb20-dag-ablation", "last_run": "2026-09-26T01:21"},
+      "product": {"state": "present", "files": ["pb20-dag-ablation/out/report_pb20.json", "pb20-dag-ablation/out/report_pb20.json.sha256"], "sha256": "99533857"},
+      "verdict": {"state": "done", "file": "pb20-dag-ablation/VERDICT_PB20_firstread.md", "read": "H-a0 仪器闸 0.919/0.909/0.886 → ☒破归零; D1 反序是金子(年表自序); 修器再射 = PB20b 候单", "note": "首读已出; b 版(扣除式+长袋+自序对照臂)待射"},
+      "need_kaggle": true,
+      "gap": "b 版修器弹待写/待射 (首读已判原版破)"
+    },
+    {
+      "id": "PB18",
+      "title": "尾部分辨率",
+      "prereg": {"state": "sealed", "file": "PREREG_PB18_tail_resolution.md"},
+      "ammo": {"state": "present", "file": "pb18-tail-resolution/run.py", "size_b": 26765},
+      "cabin": {"state": "complete", "slug": "math4amd/pb18-tail-resolution", "last_run": "?"},
+      "product": {"state": "present", "files": ["pb18-tail-resolution/out/report_pb18.json"], "note": "report 有效(含 states/ablation_stats)，仅 out_err 日志有 KeyError: 'user' 噪声"},
+      "verdict": {"state": "pending", "note": "报告在盘未读 —— 缺判词，非缺弹"},
+      "need_kaggle": false,
+      "gap": "读已有 report 出判词 (勿重跑)"
+    },
+    {
+      "id": "PB16c-formal",
+      "title": "序即数据 · A尺本底扣除式 (真复证三籽)",
+      "prereg": {"state": "sealed", "file": "PREREG_PB16c_formal_deduction.md", "note": "在 pb16-mac-brigade/ 内"},
+      "ammo": {"state": "present", "file": "pb16c-formal/run.py", "size_b": 152741},
+      "cabin": {"state": "complete", "slug": "math4amd/pb16c-formal", "last_run": "2026-09-27T14:09"},
+      "product": {"state": "present", "files": ["report_pb16c_formal.json"], "sha256": "062fd548fdb6f0b1"},
+      "verdict": {"state": "done", "file": "pb16c-formal/RESULTS_PB16c_formal.md", "read": "H-f1 独败(剥底波存 1/3)→ 附条件判词坐实; 代际对照(2b全过↔16c半壁)成主证据", "note": "已定谳"},
+      "need_kaggle": false,
+      "gap": "无 (已终判)"
+    },
+    {
+      "id": "E26",
+      "title": "双端同步侦察 (千问APP↔IDE)",
+      "prereg": {"state": "sealed", "file": "PREREG_E26_cross_client_sync.md", "note": "26 行紧凑但完整"},
+      "ammo": {"state": "absent", "note": "本design为零GPU人工双端手测, 无 run.py"},
+      "cabin": {"state": "never", "note": "按设计不上 Kaggle"},
+      "product": {"state": "absent"},
+      "verdict": {"state": "pending"},
+      "need_kaggle": false,
+      "gap": "需主人人工手测 (埋针/读响应), 非代码可跑"
+    },
+    {
+      "id": "PB22",
+      "title": "图结构之序 · 容许序族等价",
+      "prereg": {"state": "sealed", "file": "pb22-graphorder/PREREG_PB22_graphorder.md"},
+      "ammo": {"state": "absent"},
+      "cabin": {"state": "never", "note": "PREREG 明写: 本机 CPU 分钟级, 零 Kaggle 粮"},
+      "product": {"state": "absent"},
+      "verdict": {"state": "pending"},
+      "need_kaggle": false,
+      "gap": "需写本机 run.py (不占 Kaggle); 判据 H-a~H-d 已冻"
+    },
+    {
+      "id": "PB19",
+      "title": "MRD · 多分辨率字典",
+      "prereg": {"state": "sealed", "file": "PREREG_PB19_mrd.md"},
+      "ammo": {"state": "present", "file": "pb19-mrd/run.py", "size_b": 76013},
+      "cabin": {"state": "complete", "slug": "math4amd/pb19-mrd-r-ladder", "last_run": "2026-09-25T09:14"},
+      "product": {"state": "present", "files": [], "note": "仅 out/adapters_D1..D3 (r4/r16/r64)+ OVERSIZE-REGISTER.txt；⚠ 无 report json —— 判词前须先确认产物是否完整"},
+      "verdict": {"state": "pending"},
+      "need_kaggle": false,
+      "gap": "读已有产物出判词 (勿重跑)"
+    },
+    {
+      "id": "G3-ablation",
+      "title": "三年级模型 · 四臂消融套件",
+      "prereg": {"state": "sealed", "file": "PREREG_G3_grade_three_model.md"},
+      "ammo": {"state": "present", "file": "g3-grade3/g3_kaggle.py", "sha256_prefix": "dcaa301d"},
+      "cabin": {"state": "running", "slug": "math4amd/g3-grade-three-ablation-suite", "note": "首批 ERROR (CAUS 双切片 bug, 探针阶段 18×512≠18×18); 已修 dcaa301d, 本地金丝雀通, 2026-10-08 重射"},
+      "product": {"state": "present", "files": ["g3-grade3/out/g3_free.pt", "g3-grade3/out/g3_given.pt"], "note": "本地金丝雀产物; 舱产物待舱完"},
+      "verdict": {"state": "pending"},
+      "need_kaggle": true,
+      "gap": "重射中 (2026-10-08); 舱完则读 G3-Paper 落架判分"
+    },
+    {
+      "id": "PB27",
+      "title": "四/五/六年级阶梯 × 结构探针",
+      "prereg": {"state": "draft", "file": "PREREG_PB27_grade456_ladder_structure_probe.md", "note": "草案, 候朱批方冻"},
+      "ammo": {"state": "absent"},
+      "cabin": {"state": "never"},
+      "product": {"state": "absent"},
+      "verdict": {"state": "pending"},
+      "need_kaggle": true,
+      "gap": "候批冻稿; 真语料 (9-12岁) 需主人采买/申请; 可先合成臂立仪器"
+    },
+    {
+      "id": "P5-anchor",
+      "title": "域切换方向向量 · 上下文锚定因果干预",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5_domain_switch.md", "sha256": "5c865c7592df2df96046801e8e18a67fb8d8ab6963da116bda96ad3d4d1f43c9"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮 · 89.7s"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5.json"], "sha256": "a6b3ebd784f072f0"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5.md", "read": "H-p5-1 换义 立(1.000); H-p5-2 泛化 破(0.000); H-p5-3 对照 立; 诊断: 域方向居省名位 cos 0.992 非目标词位 0.288"},
+      "need_kaggle": false,
+      "gap": "已出 P5b 追案 (省名位); 换义 1.000 之 OOD 已诊 (未出流形)"
+    },
+    {
+      "id": "P5b-anchor",
+      "title": "域标记位重射 · 域方向居所",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5b_domain_marker.md", "sha256": "79c71cf64124b168b448ea1e5854cb76d28b00e648a25eb65d90cdbf8bded2d2"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5b.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮 · 185s"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5b.json"], "sha256": "7c9155d097311817"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5b.md", "read": "H-p5b-2 泛化@省名位 立(1.000) 但系 token 同一性(循环); 层0即在 cos .997; OOD 未出流形 .979; H-p5b-3 位点专一 破(.571)"},
+      "need_kaggle": false,
+      "gap": "Pythia 规模复证候另案"
+    }
+  ]
+}
