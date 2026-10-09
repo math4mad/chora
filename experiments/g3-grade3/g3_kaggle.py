@@ -83,7 +83,7 @@ def train(arm, steps=2500, curr=True, seed=0):
     opt = torch.optim.AdamW(m.parameters(), lr=3e-4, weight_decay=0.1)
     if arm == "learned": opt.add_param_group({"params": [tbl]})
     g = torch.Generator().manual_seed(7)
-    rperm = torch.randperm(CABN, generator=g)
+    rperm = torch.randperm(CABN, generator=g).to(DEV)
     t0 = time.time(); lg = []
     step = 0
     while step < steps:
@@ -94,12 +94,12 @@ def train(arm, steps=2500, curr=True, seed=0):
             bs = []
             for b in range(cb.size(0)):
                 r = cb[b]
-                if arm == "free": bias = torch.zeros_like(CAUS[:len(r)][:len(r)])
+                if arm == "free": bias = torch.zeros_like(CAUS[:len(r), :len(r)])
                 elif arm == "given": bias = make_bias(r, adj)
                 elif arm == "random": bias = make_bias(rperm[r], adj)
                 elif arm == "learned": bias = tbl[r][:, r]
                 elif arm == "no-curr": bias = make_bias(r, {(0, 1), (2, 3)})
-                bs.append(bias + CAUS[:len(r)][:len(r)])
+                bs.append(bias + CAUS[:len(r), :len(r)])
             bias = torch.stack(bs)[:, None]
             loss = F.cross_entropy(m(xb, cb, bias).view(-1, len(ITOS)), yb.view(-1), ignore_index=PAD)
             opt.zero_grad(set_to_none=True); loss.backward()
@@ -126,7 +126,7 @@ def paper(m, arm):
     def lp(text):
         ids = enc(text); x = torch.tensor([ids], device=DEV)
         cab = torch.tensor([[0]*len(ids)], device=DEV)
-        bias = (make_bias(cab[0], set()) if arm in ("given","random") else torch.zeros(len(ids), len(ids), device=DEV)) + CAUS[:len(ids)][:len(ids)]
+        bias = (make_bias(cab[0], set()) if arm in ("given","random") else torch.zeros(len(ids), len(ids), device=DEV)) + CAUS[:len(ids), :len(ids)]
         with torch.no_grad():
             l = m(x, cab, bias[None, None])[:, :-1].log_softmax(-1)
         return l.gather(-1, torch.tensor(ids[1:], device=DEV).view(1, -1, 1)).sum().item()
