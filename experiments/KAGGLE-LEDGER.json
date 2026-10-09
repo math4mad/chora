@@ -164,6 +164,17 @@
       "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5b.md", "read": "H-p5b-2 泛化@省名位 立(1.000) 但系 token 同一性(循环); 层0即在 cos .997; OOD 未出流形 .979; H-p5b-3 位点专一 破(.571)"},
       "need_kaggle": false,
       "gap": "Pythia 规模复证候另案"
+    },
+    {
+      "id": "P5c-anchor",
+      "title": "Qwen2.5-0.5B 复证 · 泛化破是否容量之限",
+      "prereg": {"state": "sealed", "file": "p5-domain-anchor/PREREG_P5c_qwen_replication.md", "sha256": "71ce54402bc9572a73abd591648b097ba8aa7d2a6f9b91b74183ed30c02fb513"},
+      "ammo": {"state": "present", "file": "p5-domain-anchor/run_p5c.py"},
+      "cabin": {"state": "never", "note": "本机 CPU · 零 Kaggle 粮 · 301s"},
+      "product": {"state": "present", "files": ["p5-domain-anchor/report_p5c.json"], "sha256": "c7fb3fe4f714f300"},
+      "verdict": {"state": "done", "file": "p5-domain-anchor/RESULTS_P5c.md", "read": "H-p5c-2 泛化@目标词 破(0.095 ≈ GPT-2 0.000) — 非容量之限; H-p5c-4 泛化@省名位 立(1.000) 复现"},
+      "need_kaggle": false,
+      "gap": "更大规模(Pythia/7B级)复证候另案"
     }
   ]
 }
