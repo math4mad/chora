@@ -125,12 +125,12 @@
       "id": "G3-ablation",
       "title": "三年级模型 · 四臂消融套件",
       "prereg": {"state": "sealed", "file": "PREREG_G3_grade_three_model.md"},
-      "ammo": {"state": "present", "file": "g3-grade3/g3_kaggle.py", "sha256_prefix": "dcaa301d"},
-      "cabin": {"state": "running", "slug": "math4amd/g3-grade-three-ablation-suite", "note": "首批 ERROR (CAUS 双切片 bug, 探针阶段 18×512≠18×18); 已修 dcaa301d, 本地金丝雀通, 2026-10-08 重射"},
-      "product": {"state": "present", "files": ["g3-grade3/out/g3_free.pt", "g3-grade3/out/g3_given.pt"], "note": "本地金丝雀产物; 舱产物待舱完"},
-      "verdict": {"state": "pending"},
-      "need_kaggle": true,
-      "gap": "重射中 (2026-10-08); 舱完则读 G3-Paper 落架判分"
+      "ammo": {"state": "present", "file": "g3-grade3/g3_kaggle.py", "sha256_prefix": "14e49d84"},
+      "cabin": {"state": "complete", "slug": "math4amd/g3-grade-three-ablation-suite", "note": "首批 ERROR 双 bug (CAUS 链式切片 + rperm 设备) 修毕 sha 14e49d84; 2026-10-09 COMPLETE, 五段全跑通"},
+      "product": {"state": "present", "files": ["g3-grade3/RESULTS_G3_canary.md"], "note": "canary 落架判分: given 8/9 ≈ random 8/9 (对照也过, 差 0pt) — 臂间无分离苗头; 舱产物仅 log"},
+      "verdict": {"state": "done", "file": "g3-grade3/RESULTS_G3_canary.md", "read": "canary: 主臂 given 落架 89% ≥85% 过, 但对照 random 89% >65% 不达 + 差 0pt<20pt → 苗头指向「结构非承重」; ⚠ 规模系金丝雀(10M/2500步/6k字符), 非冻本之主炮(130M/1B token), 故判词暂缓候主炮"},
+      "need_kaggle": false,
+      "gap": "主炮 (5090/130M/1B token) 候开 — 那才是冻本所指之实验"
     },
     {
       "id": "PB27",
