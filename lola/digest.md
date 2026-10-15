@@ -43,3 +43,16 @@
 - **ima 有 OpenAPI**（`openapi/note/v1` 笔记读写 ＋ `openapi/wiki/v1` 知识库；凭据 Client ID＋API Key）。
 - **transport = ima-api（双向，拉取式）**：本地→ima，本地经 OpenAPI 查询《Lola·outbox》；ima→本地，ima 身写《Lola·inbox》，本地查询直读。
 - 仍存一事实：ima 端 fetch 走平台通道，可能取 KB 快照而非实时 HEAD → **关键对撞以信中所带 sha／时间戳为准**。
+
+## 七 · 共享件登记（跨项目共用 · 禁拷贝 · 2026-10-15 立）
+
+> 律：lola 与 buzz 分项目干活，但**共享件只此一份、原地直读，禁重复拷贝**
+> （主人 10-15 裁定）。需要的项目按路径引用，或加 local remote 取历史。
+
+| 件 | 正本 | 仓·pin | 要点 |
+|---|---|---|---|
+| transformer-vis | `/Users/mac/Programming/code-2026/Concept-Space-Sphere/benches/transformer_vis` | Concept-Space-Sphere @ `9638e7c`（10-14 16:24「add transformer-vis project」） | 模型 first-lora/model（Qwen2.5-0.5B-Instruct, 24L/896H/14H, bf16, MPS）；环境 `/opt/miniconda3/envs/default`（torch 2.14 · transformers 5.17 · peft · sklearn · matplotlib · umap-learn）；脚本 nba_vs_spring / product_temporal / friends_attractor / friends_seasonal / temporal_direction(_2) / train_c42；预注册 PREREG_E-TDV_temporal_direction.md；产出 metrics_*.json ＋ figs_* ＋ report_*.html |
+
+- 消费法：① **直读路径**（同机，首选）；② `git remote add css /Users/mac/Programming/code-2026/Concept-Space-Sphere && git fetch css` 取历史（不动正本）。
+- 首用：**Geometry-Of-Meaning**（buzz 座席，2026-10-15 主人点援 transformer-vis）。
+- 新增共享件 → 登记本节（一件一行：正本路径＋仓 pin＋环境＋要点）。
