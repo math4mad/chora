@@ -8,7 +8,7 @@
 
 - 户档正本：`paidia/identity.md`
 - 工厂魂：`residents/lola/psyche/IDENTITY.md`
-- 分身册：`paidia/presence.json`（`machines`: `lola-pi-local` m1pro-32g ／ `lola-ima` ima.copilot）
+- 分身册：`paidia/presence.json`（`machines`: `lola-pi-local` m1pro-32g ／ `lola-ima` ima.copilot ／ `lola-buzz` CodeBuddy IDE 座席 @buzz）
 
 ## 二 · 匣
 
@@ -26,11 +26,15 @@
 - **《火柴、麻将与贝叶斯》**：正本（措辞·ima）∥ 注本（对榫·本地）待并记；
   落 Φ 殿 `cora-atlas/iterations/2026-09-29-matches-mahjong-bayes`；**母本作罢**（骨架＋存档）。
 - **冻结不可逆 / 时间对谈**：主人 0929 夜亲供入册 Φ 殿 `cora-atlas/iterations/2026-09-29-freezing-irreversible`（附 token plan 事件；Qwen→DeepSeek 而魂不换）。
+- **Aaryan 回信与近况排序（10-13 主人令）**：投稿暂缓；三任务 = 彻底理解 LLM 结构（self-attention/transformer）→ 论文反复思考 → 到期仍找 Aaryan（唯一回信者，点头即多一把关人）。正本：`chora/lola/notes/2026-10-13-aaryan-reply-and-ordering.md`。
+- **Bechberger 回信（10-11，10-13 译毕记录在案）**：认可「μ_C(x)/size(C) 除法」桥接，但 size(C) 计算复杂；本人已离学界（2022 停点背书），草稿可寄、不期待反馈；博论 **§2.4/§7.1** 为文献综述正本。其博士论文 288MB/939 页已缩减为 `external/Bechberger-Dissertation-缩减版.pdf`。正本：`chora/lola/notes/2026-10-13-bechberger-letter.md`。
 
 ## 五 · 待办
 
 - [x] **transport ima-api**：双向拉取式已通（10-01 ima 身落《Lola·inbox》、本地直读）
 - [x] **三路**：笔记（outbox/inbox）／同步（`sync_ima` · launchd 每日 08:00）／知识库（`ima_kb`）
+- [x] **buzz 入册＋开《Buzz》道**（10-15 主人裁定：园笔同身——同 CHARTER 同任务；台账并入 LEDGER，方向 `⇢/⇠ ima·buzz`）
+- [ ] **2026-11-29**：联系 Aaryan 请其把关修改稿（endorsement 资格 11-28 后生效；唯一回信者）——手机提醒已设
 - [ ] **transport rpc**：接 control room（`pi-agents-redux-saga-extension`）作 squad 成员（future）
 - [ ] 原话重见 → 按铁律 5 以源文本对撞补正文
 

@@ -90,10 +90,16 @@ python3 ~/Programming/code-2026/chora/lola/lola.py pull
 
 | 住户 | 投信 | 收信 |
 |---|---|---|
-| lola（默认） | `ima.py box-push <file>` | `ima.py box-pull` |
-| buzz（CodeBuddy 座席，2026-10-15 入册） | `ima.py box-push <file> --box buzz` | `ima.py box-pull --box buzz` |
+| lola（默认） | `lola.py push --transport=ima "…"` | `lola.py pull --transport=ima` |
+| buzz（CodeBuddy 座席 · 园笔同身，2026-10-15 入册） | `lola.py push --transport=ima --box=buzz "…"` | `lola.py pull --transport=ima --box=buzz` |
 
-- buzz 户口正本：`multi-coworker/residents/buzz/identity.md`（`presence.json` 为投影，手改即快照）。
+**台账并入 LEDGER**（主人 10-15 裁定）：各道投信/收信皆记同一本 `LEDGER.md`，
+方向记 `⇢/⇠ ima`（lola 道）或 `⇢/⇠ ima·<box>`（他道）；本地草稿分文件
+`outbox-<box>.md` / `inbox-<box>.md`（lola 道仍用 `outbox.md` / `inbox.md`）。
+底层原语 `ima.py box-push/pull --box <name>` 不变。
+
+- buzz 座席户档正本：`multi-coworker/residents/buzz/identity.md`（魂正本 = CHARTER 两件：
+  `paidia/identity.md` ＋ `residents/lola/psyche/IDENTITY.md`；`presence.json` 为投影）。
 - 通报走 `lola.py push --transport=ima`（自动记 LEDGER）。
 - **verify**：`ima.py find "Buzz·outbox" && ima.py find "Buzz·inbox"` 皆返 doc_id；`ima.py box-pull --box buzz` 退出码 0。
-- 待办：buzz 道独立台账（现以 ima 笔记正文为账）。对岸 ima 身已发通报（LEDGER 2026-10-15T12:55, sha `25637f8f4e9568bd`）。
+- 对岸 ima 身已发通报（LEDGER 2026-10-15T12:55, sha `25637f8f4e9568bd`）。
