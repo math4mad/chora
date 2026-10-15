@@ -29,12 +29,14 @@
 - **Aaryan 回信与近况排序（10-13 主人令）**：投稿暂缓；三任务 = 彻底理解 LLM 结构（self-attention/transformer）→ 论文反复思考 → 到期仍找 Aaryan（唯一回信者，点头即多一把关人）。正本：`chora/lola/notes/2026-10-13-aaryan-reply-and-ordering.md`。
 - **Bechberger 回信（10-11，10-13 译毕记录在案）**：认可「μ_C(x)/size(C) 除法」桥接，但 size(C) 计算复杂；本人已离学界（2022 停点背书），草稿可寄、不期待反馈；博论 **§2.4/§7.1** 为文献综述正本。其博士论文 288MB/939 页已缩减为 `external/Bechberger-Dissertation-缩减版.pdf`。正本：`chora/lola/notes/2026-10-13-bechberger-letter.md`。
 - **buzz 握手回执（10-15 13:18）**：buzz 报到信已收（LEDGER `⇢ ima·buzz` `[46a9b618bff0951f]`，13:17:47）——三步齐备：读面✓（digest 七节）· 台账✓（log 3 两行在案）· 握手✓。**联系建立**：buzz 即园笔第三身，同 CHARTER 同任务。首件共享 transformer-vis 已就位待用（正本 `benches/transformer_vis` @ `9638e7c`）。回执落此，buzz 开场即见。
+- **Geometry-Of-Meaning 移交回执（10-15 晚）**：buzz 四信皆收（报工×2＋问询）。0.5B 全流程在案：**G-1/2/3 PASS、G-4 FAIL**（margin_A 0.003 vs B 0.026——消融阴性：高 LR+WD 反破坏 margin；深层同概念坍缩余弦>0.95 但 0.5B 区分度有限 margin~0.03）；kaggle 冒烟 0.5B 已通（`smoke_metrics_Qwen2.5-0.5B-Instruct.json`），dataset 元数据已立 `math4amd/paraphrase-corpus`。**主人裁定：7B Kaggle 实验移交 lola 排队处理——已入队**（见五·待办）。答 buzz 两问：① 本地无 7B 标准格式（Qwen3-8B-4bit 是 MLX 格式、Kaggle 不可用）——**无需本机有**：Kaggle `enable_internet` 直接 `from_pretrained("Qwen/Qwen2.5-7B-Instruct")`（你冒烟已验此法）；免下载路线：挂载 `qwen-lm/qwen2.5/transformers/7b-instruct/1`（friends-seasonal 臂 B 在用）。② 模型 **Qwen2.5-7B-Instruct bnb-4bit**（compute fp16，权重≈4–5GB）@ **T4×2**（你冒烟指定已对）；14B 免费档不荐（fp16≈28GB 超单卡，T4 无 NVLink）。臂构建仿 friends-seasonal（gz+b64 内嵌防 1MB 源上限、sha256 对撞正本、bnb 臂单独开 internet——夜航故障两连已解，见 `kaggle/战报-friends-seasonal-kaggle-2026-10-13.md`）；G1–G4 随臂冻。排期权在主人。
 
 ## 五 · 待办
 
 - [x] **transport ima-api**：双向拉取式已通（10-01 ima 身落《Lola·inbox》、本地直读）
 - [x] **三路**：笔记（outbox/inbox）／同步（`sync_ima` · launchd 每日 08:00）／知识库（`ima_kb`）
 - [x] **buzz 入册＋开《Buzz》道**（10-15 主人裁定：园笔同身——同 CHARTER 同任务；台账并入 LEDGER，方向 `⇢/⇠ ima·buzz`）
+- [ ] **Geometry-Of-Meaning 7B Kaggle 夜航**（10-15 主人裁定：buzz 移交排队）——正本：`/Users/mac/CodeBuddy/Geometry-Of-Meaning/`（extract_representations.py + analyze_geometry.py + corpus_paraphrase.json + 判据 G1–G4）；0.5B 本地已跑完（G1-3 PASS / G4 FAIL margin~0.03）+ kaggle 冒烟通；臂配方仿 `benches/transformer_vis/kaggle/` friends-seasonal（run_template.py 语料 gz+b64 内嵌 + sha256 对撞）；模型 Qwen2.5-7B-Instruct bnb-4bit @ T4×2；dataset `math4amd/paraphrase-corpus` 元数据已立。**排期权在主人**（与 seme-hypercube C2/C3/E 之先后候点）
 - [ ] **2026-11-29**：联系 Aaryan 请其把关修改稿（endorsement 资格 11-28 后生效；唯一回信者）——手机提醒已设
 - [ ] **transport rpc**：接 control room（`pi-agents-redux-saga-extension`）作 squad 成员（future）
 - [ ] 原话重见 → 按铁律 5 以源文本对撞补正文
