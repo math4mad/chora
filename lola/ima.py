@@ -4,8 +4,9 @@
 用法:
   ima.py folders | list [folder_id] | search <q> | read <doc_id> | find <title>
   ima.py make <title> <md_file> | append <doc_id> <md_file>
-  ima.py box-push <md_file>   # 追加到《Lola·outbox》(无则建)
-  ima.py box-pull             # 读《Lola·inbox》正文
+  ima.py box-push <md_file> [--box buzz]   # 追加到《<Box>·outbox》(无则建; 默认 lola)
+  ima.py box-pull [--box buzz]             # 读《<Box>·inbox》正文
+一账一道: 各住户自道 (lola / buzz / …), 篇名 = <Box>·outbox / <Box>·inbox。
 """
 import os, re, sys, json, ssl, urllib.request
 
@@ -136,18 +137,38 @@ def ensure(title):
 
 
 # ---------- 信鸽匣 ----------
-def box_push(text):
-    did, created = ensure(OUTBOX_TITLE)
+def box_title(kind, box="lola"):
+    """信箱篇名 = <Box>·<outbox|inbox>。一账一道, 各住户自道。"""
+    if not re.fullmatch(r"[A-Za-z][A-Za-z0-9_-]{0,31}", box):
+        sys.exit(f"bad box name: {box!r} (须字母开头, 仅字母数字_- , ≤32 字符)")
+    return f"{box.capitalize()}·{kind}"
+
+
+def box_push(text, box="lola"):
+    did, created = ensure(box_title("outbox", box))
     append(did, text)
     return did, created
 
 
-def box_pull():
-    did = find(INBOX_TITLE)
+def box_pull(box="lola"):
+    did = find(box_title("inbox", box))
     if not did:
         return None, None
     d = read(did, 0)
     return did, (d.get("data") or {}).get("content", "")
+
+
+def _pop_box(a):
+    """从 argv 抽出 --box <name> / --box=<name>, 返回 (box, 剩余 argv)。"""
+    box = "lola"
+    for i, x in enumerate(a):
+        if x == "--box" and i + 1 < len(a):
+            box, a = a[i + 1], a[:i] + a[i + 2:]
+            break
+        if x.startswith("--box="):
+            box, a = x.split("=", 1)[1], a[:i] + a[i + 1:]
+            break
+    return box, a
 
 
 def _main():
@@ -170,11 +191,13 @@ def _main():
     elif cmd == "append":
         print(json.dumps(append(a[1], open(a[2], encoding="utf-8").read()), ensure_ascii=False))
     elif cmd == "box-push":
-        did, created = box_push(open(a[1], encoding="utf-8").read())
-        print(f"{'created' if created else 'appended'} {OUTBOX_TITLE} doc_id={did}")
+        box, a = _pop_box(a[1:])
+        did, created = box_push(open(a[0], encoding="utf-8").read(), box)
+        print(f"{'created' if created else 'appended'} {box_title('outbox', box)} doc_id={did}")
     elif cmd == "box-pull":
-        did, c = box_pull()
-        print(f"# {INBOX_TITLE} doc_id={did}\n{c}" if did else "(no inbox note)")
+        box, _ = _pop_box(a[1:])
+        did, c = box_pull(box)
+        print(f"# {box_title('inbox', box)} doc_id={did}\n{c}" if did else "(no inbox note)")
     else:
         print(__doc__)
 

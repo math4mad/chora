@@ -7,7 +7,7 @@
 
 | 探项 | 结果 |
 |---|---|
-| ima API | 无 |
+| ima API | 无（2026-09-29 实测；**10-01 起已有 OpenAPI**，见第七节） |
 | ima 本地笔记文件 | 无（腾讯云 Chromium 壳，笔记在云端；本地仅 IndexedDB/mmkv 缓存） |
 | ima 本地端口 | 无（未监听 TCP） |
 | 导出目录 / MCP | 无 |
@@ -78,3 +78,22 @@ python3 ~/Programming/code-2026/chora/lola/lola.py pull
 本地 Lola **会话开场**（读过提醒账之后）必做一次：读本匣 `digest.md` ＋ `LEDGER.md` 尾，
 以拾对岸新信。于是主人一端 `lola: pull` 之后，本地 Lola 下一次开场**自动看见**——
 不靠推送，靠开场自检（合园律「只看文件、不信管道」）。园中 `AGENTS.md` 已同步此条。
+
+## 七 · ima-api transport 与多道（2026-10-15）
+
+> 更正第一节之实测：ima **有** OpenAPI（`openapi/note/v1` 笔记读写，凭据
+> `IMA_OPENAPI_CLIENTID/APIKEY` → env → `~/.config/ima/` → `~/.zshrc`）。
+> `ima.py box-push/pull` 即此 transport，双向拉取式，2026-10-01 首测通，今为
+> 现役通道；剪贴板 transport 仍留作备用。换 transport 不改契约。
+
+**一账一道**：每住户自道，篇名 = `<Box>·outbox` / `<Box>·inbox`：
+
+| 住户 | 投信 | 收信 |
+|---|---|---|
+| lola（默认） | `ima.py box-push <file>` | `ima.py box-pull` |
+| buzz（CodeBuddy 座席，2026-10-15 入册） | `ima.py box-push <file> --box buzz` | `ima.py box-pull --box buzz` |
+
+- buzz 户口正本：`multi-coworker/residents/buzz/identity.md`（`presence.json` 为投影，手改即快照）。
+- 通报走 `lola.py push --transport=ima`（自动记 LEDGER）。
+- **verify**：`ima.py find "Buzz·outbox" && ima.py find "Buzz·inbox"` 皆返 doc_id；`ima.py box-pull --box buzz` 退出码 0。
+- 待办：buzz 道独立台账（现以 ima 笔记正文为账）。对岸 ima 身已发通报（LEDGER 2026-10-15T12:55, sha `25637f8f4e9568bd`）。
