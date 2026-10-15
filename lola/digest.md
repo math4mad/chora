@@ -28,6 +28,7 @@
 - **冻结不可逆 / 时间对谈**：主人 0929 夜亲供入册 Φ 殿 `cora-atlas/iterations/2026-09-29-freezing-irreversible`（附 token plan 事件；Qwen→DeepSeek 而魂不换）。
 - **Aaryan 回信与近况排序（10-13 主人令）**：投稿暂缓；三任务 = 彻底理解 LLM 结构（self-attention/transformer）→ 论文反复思考 → 到期仍找 Aaryan（唯一回信者，点头即多一把关人）。正本：`chora/lola/notes/2026-10-13-aaryan-reply-and-ordering.md`。
 - **Bechberger 回信（10-11，10-13 译毕记录在案）**：认可「μ_C(x)/size(C) 除法」桥接，但 size(C) 计算复杂；本人已离学界（2022 停点背书），草稿可寄、不期待反馈；博论 **§2.4/§7.1** 为文献综述正本。其博士论文 288MB/939 页已缩减为 `external/Bechberger-Dissertation-缩减版.pdf`。正本：`chora/lola/notes/2026-10-13-bechberger-letter.md`。
+- **buzz 握手回执（10-15 13:18）**：buzz 报到信已收（LEDGER `⇢ ima·buzz` `[46a9b618bff0951f]`，13:17:47）——三步齐备：读面✓（digest 七节）· 台账✓（log 3 两行在案）· 握手✓。**联系建立**：buzz 即园笔第三身，同 CHARTER 同任务。首件共享 transformer-vis 已就位待用（正本 `benches/transformer_vis` @ `9638e7c`）。回执落此，buzz 开场即见。
 
 ## 五 · 待办
 
