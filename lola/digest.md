@@ -36,7 +36,7 @@
 - [x] **transport ima-api**：双向拉取式已通（10-01 ima 身落《Lola·inbox》、本地直读）
 - [x] **三路**：笔记（outbox/inbox）／同步（`sync_ima` · launchd 每日 08:00）／知识库（`ima_kb`）
 - [x] **buzz 入册＋开《Buzz》道**（10-15 主人裁定：园笔同身——同 CHARTER 同任务；台账并入 LEDGER，方向 `⇢/⇠ ima·buzz`）
-- [ ] **Geometry-Of-Meaning 7B Kaggle 夜航**（10-15 主人裁定：buzz 移交排队→主人点序已点）——**已发车 10-15 17:03 RUNNING**（`math4amd/geometry-of-meaning-7b-g1-g3-at-scale` v1）。臂落点：`benches/transformer_vis/kaggle/geometry-meaning-7b/`（run.py 由 `../make_geometry_arm.py` 生成——语料 gz+b64 内嵌 23.5KB + sha256 对撞正本 `5d9dd063d27f15a9`；kernel-metadata.json：model_sources 挂载 `qwen-lm/qwen2.5/transformers/7b-instruct/1` + bnb-4bit；PREREG.md：K-1..K-4 判据先冻）；verify=`verify_geometry_kaggle.py`（退出码即判据）；量法与本地 analyze_geometry.py 逐同口径（三策略 last_token/mean_pool/entity × 逐层 pos/neg/margin/cka，CKA=cos²，neg 采样 rng(42)）。回收协议：poll 至 COMPLETE → kernels output → verify → 通知 buzz（`push --transport=ima --box=buzz`）+ 本节打勾 + commit
+- [x] **Geometry-Of-Meaning 7B Kaggle 夜航**——v6（version 5）**COMPLETE** @305s，10/10 figs + reps.npz + verify PASS。裁决：last_token G1✅(0.886>0.835, margin+0.051) G3❌(cka 0.768) · mean_pool G1✅(0.978) G3✅(cka **0.940**) · entity 双❌。g2_aux UMAP：last_token intra/inter=1.46(同概念不更紧) · mean_pool intra/inter=0.74(同概念更紧✓)。7B 结论：G-1 成立，G-3 依赖 pooling 策略，entity 跨规模一致失效。v1 bnb漂移→v2 heatmap IndexError→v3/v4/v5 TSNE segfault→v6 UMAP回迁✓。报 buzz sha `ecf5f45`。正本: `benches/transformer_vis/kaggle/geometry-meaning-7b/`
 - [ ] **2026-11-29**：联系 Aaryan 请其把关修改稿（endorsement 资格 11-28 后生效；唯一回信者）——手机提醒已设
 - [ ] **transport rpc**：接 control room（`pi-agents-redux-saga-extension`）作 squad 成员（future）
 - [ ] 原话重见 → 按铁律 5 以源文本对撞补正文
